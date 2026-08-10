@@ -25,6 +25,15 @@
   `link-check.yml`（PR 增量 + 每周全量死链检查）
 - 确立双许可：原创文档 CC BY 4.0，`scripts/` 代码 MIT
 
+### 修复
+
+- **修复 `.gitattributes` 换行符陷阱**：原 `* text=auto eol=lf` 会把 vendored 的
+  `src/` 在全新 checkout 时归一化成 LF，导致 `upstream.lock` 的 `content_hash`
+  失配、`vendor.py --verify` 在 Linux CI runner 必然失败。改为对 `**/src/**` 设
+  `-text`（git 不触碰换行符），仓库存上游原始字节；已 `git add --renormalize`
+  让 superpowers/src 的 blob 回到 CRLF。同时修正了 `docs/vendoring-guide.md`
+  里与之相反的错误说明。
+
 ### 新增
 
 - `meta-skillcraft/agent-skills-spec` —— Agent Skills 开放规范（🔗 存根）

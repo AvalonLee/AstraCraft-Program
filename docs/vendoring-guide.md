@@ -172,8 +172,11 @@ python scripts/vendor.py --verify
 重算所有 vendored 条目 `src/` 的 `content_hash`，与 `upstream.lock` 比对。
 失配说明有人改了上游文件——这违反零修改原则，会带来 Apache-2.0 的改动标注义务。
 
-**常见误报**：Windows 下换行符被转成 CRLF。`.gitattributes` 已设
-`* text=auto eol=lf` 防止这种情况，如果仍然失配，检查是不是编辑器自动改了行尾。
+**换行符陷阱（已踩坑并修复）**：`content_hash` 是按上游**原始字节**算的。
+`.gitattributes` 里对 `**/src/**` 设了 `-text`，git 不会触碰 vendored 文件的换行符，
+仓库存的就是上游原始字节（可能是 CRLF）。**千万不要**对 `src/` 用 `eol=lf` 归一化——
+那会把全新 checkout 的文件转成 LF，导致 `verify` 在 CI（Linux runner）必然失配。
+如果对 `src/` 改了属性，记得 `git add --renormalize <条目>/src/` 让 blob 回到原始字节。
 
 ---
 

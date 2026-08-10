@@ -1,0 +1,22 @@
+# ============================================================================
+# 上游来源锁文件（link-only 存根）
+# ----------------------------------------------------------------------------
+# 本条目为 link-only 存根，本仓库不收录源码，因此没有 content_hash。
+# 此文件仅记录上游来源，供 GET-IT.md 与校验脚本去重判定使用。
+# 不要手改下面的字段，如需更新请同步 meta.yml 与 GET-IT.md。
+# ============================================================================
+
+source_url: "https://github.com/anthropics/skills"
+source_type: github
+ref: null
+commit: null
+commit_date: null
+synced_at: "2026-08-10"
+synced_by: "manual (link-only stub)"
+subpath: "document-skills"
+file_count: 0
+total_bytes: 0
+content_hash: null
+
+excluded: []
+local_patches: []

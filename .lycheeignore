@@ -1,0 +1,23 @@
+# lychee 全量链接检查的忽略规则（正则）
+
+# 本地占位与示例地址
+^https?://(localhost|127\.0\.0\.1|0\.0\.0\.0)
+^https?://example\.(com|org|net)
+^https?://your-(domain|repo|org)
+
+# 模板文件里的占位 URL
+^https://github\.com/OWNER/REPO
+
+# 常年对爬虫返回 403 但实际可访问的站点
+^https://www\.linkedin\.com
+^https://twitter\.com
+^https://x\.com
+^https://medium\.com
+
+# GitHub 匿名请求容易触发限流的比较/搜索页
+^https://github\.com/.+/compare/
+^https://github\.com/search\?
+
+# 邮件与协议地址
+^mailto:
+^tel:

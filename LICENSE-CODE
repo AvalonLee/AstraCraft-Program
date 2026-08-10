@@ -1,0 +1,34 @@
+MIT License
+
+Copyright (c) 2026 A.Lee
+
+本许可证仅适用于 SkillMall 仓库中由本仓库作者原创编写的代码，
+具体范围为 `scripts/` 目录下的全部文件，以及 `.github/workflows/`
+下的工作流配置。
+
+本许可证不适用于：
+  - 本仓库的原创文档内容（README、docs/、各条目的 README.zh-CN.md
+    与 NOTES.zh-CN.md），这些内容适用根目录 LICENSE 中的 CC BY 4.0；
+  - 各收录条目 `src/` 目录下的第三方 vendored 代码，这些内容的著作权
+    归各自原作者所有，适用其自带的 LICENSE 文件，汇总见
+    THIRD_PARTY_NOTICES.md。
+
+---
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

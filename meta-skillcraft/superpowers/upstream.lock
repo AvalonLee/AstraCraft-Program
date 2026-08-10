@@ -1,0 +1,29 @@
+# ============================================================================
+# 上游同步状态锁文件
+# ----------------------------------------------------------------------------
+# ⚠️ 由 scripts/vendor.py 自动生成，请勿手动编辑。
+#    手改会导致 content_hash 校验失配。
+# ============================================================================
+
+source_url: "https://github.com/obra/superpowers.git"
+source_type: "github"
+ref: "main"
+commit: "44c9b2d6e889982ac18c27d05a19fefe335194e1"
+commit_date: "2026-07-28T12:25:36-07:00"
+synced_at: "2026-08-10T13:17:00Z"
+synced_by: "scripts/vendor.py v1.0.0"
+subpath: "."
+file_count: 180
+total_bytes: 1590929
+content_hash: "sha256:abbf23c95484fdb42615c55653770e730fe891ea88e02a40d4f5afa6aef544ce"
+
+excluded:
+  - ".git/"
+  - ".github/workflows/"
+  - "node_modules/"
+  - "__pycache__/"
+  - ".venv/"
+  - ".DS_Store"
+
+# 必须保持为空。零修改 vendoring 可规避 Apache-2.0 的改动标注义务。
+local_patches: []

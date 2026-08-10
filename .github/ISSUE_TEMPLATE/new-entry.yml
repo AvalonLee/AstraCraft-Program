@@ -1,0 +1,58 @@
+name: 建议收录新条目
+description: 推荐一个你认为不错的优质开源 Skill 或关联项目
+title: "[收录] <项目名称>"
+labels: ["收录建议"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: 项目名称
+      description: 上游仓库或项目的名称
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: 上游地址
+      description: GitHub 或其他开源托管平台的仓库 URL
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: 建议分类
+      options:
+        - writing-docs（写作与文档）
+        - dev-engineering（研发与代码）
+        - design-creative（设计与创意）
+        - data-analytics（数据与分析）
+        - research-intel（研究与信息获取）
+        - ops-automation（运维与自动化）
+        - business-office（商业与办公）
+        - agent-infra（Agent 基础设施）
+        - meta-skillcraft（技能工程）
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: 许可证
+      description: 例如 MIT / Apache-2.0 / CC-BY-4.0；不确定就填「未知」
+      placeholder: MIT
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: 为什么值得收录
+      description: 它解决什么问题、有什么亮点、你实测过吗？
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 自检
+      options:
+        - label: 我确认该项目是开源的（非 source-available / 非无 LICENSE 伪开源）
+          required: false

@@ -1,0 +1,152 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/AvalonLee/SkillMall/scripts/schema/meta.schema.json",
+  "title": "SkillMall Entry Metadata",
+  "description": "SkillMall 收录条目的元数据结构。人工维护，与脚本维护的 upstream.lock 分工。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name_zh",
+    "name_en",
+    "summary_zh",
+    "summary_en",
+    "category",
+    "kind",
+    "tags",
+    "languages",
+    "doc_languages",
+    "license",
+    "license_tier",
+    "copyright_holder",
+    "vendoring",
+    "homepage",
+    "repo",
+    "admission",
+    "added_at",
+    "updated_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "maxLength": 64,
+      "description": "全局唯一标识，必须等于所在目录名"
+    },
+    "name_zh": { "type": "string", "minLength": 1, "maxLength": 80 },
+    "name_en": { "type": "string", "minLength": 1, "maxLength": 80 },
+    "summary_zh": { "type": "string", "minLength": 8, "maxLength": 200 },
+    "summary_en": { "type": "string", "minLength": 8, "maxLength": 200 },
+    "category": {
+      "type": "string",
+      "enum": [
+        "writing-docs",
+        "dev-engineering",
+        "design-creative",
+        "data-analytics",
+        "research-intel",
+        "ops-automation",
+        "business-office",
+        "agent-infra",
+        "meta-skillcraft"
+      ]
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "skill",
+        "skill-collection",
+        "mcp-server",
+        "cli-tool",
+        "framework",
+        "spec"
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1,
+      "maxItems": 10,
+      "uniqueItems": true
+    },
+    "languages": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z0-9+#.-]+$" },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "doc_languages": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z]{2}(-[A-Za-z]+)?$" },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1,
+      "description": "SPDX 标识符，或 UNKNOWN / LicenseRef-xxx"
+    },
+    "license_tier": {
+      "type": "string",
+      "enum": ["A", "B", "C"],
+      "description": "A=绿灯可vendoring B=黄灯有附加义务 C=红灯仅存根"
+    },
+    "license_file": {
+      "type": ["string", "null"],
+      "description": "相对条目目录的路径，如 src/LICENSE"
+    },
+    "copyright_holder": { "type": "string", "minLength": 1 },
+    "vendoring": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode"],
+      "properties": {
+        "mode": { "type": "string", "enum": ["full", "link-only"] },
+        "path": { "type": ["string", "null"] }
+      }
+    },
+    "homepage": { "type": "string", "format": "uri", "pattern": "^https?://" },
+    "repo": { "type": "string", "format": "uri", "pattern": "^https?://" },
+    "docs_url": {
+      "type": ["string", "null"],
+      "pattern": "^https?://"
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "stars": { "type": ["integer", "null"], "minimum": 0 },
+        "pushed_at": { "type": ["string", "null"] },
+        "checked_at": { "type": ["string", "null"] },
+        "archived": { "type": ["boolean", "null"] }
+      }
+    },
+    "admission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tier", "checked"],
+      "properties": {
+        "tier": { "type": "string", "enum": ["core", "standard", "watch"] },
+        "checked": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["H1", "H2", "H3", "H4", "H5"] },
+          "uniqueItems": true
+        },
+        "exception": { "type": ["string", "null"] }
+      }
+    },
+    "added_at": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "updated_at": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "related": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "aliases": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "risk_notes": { "type": ["string", "null"] }
+  }
+}

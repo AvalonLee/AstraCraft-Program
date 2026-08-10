@@ -1,0 +1,79 @@
+# ============================================================================
+# SkillMall 条目元数据
+# ── 本条目为 link-only 存根：本仓库不收录规范源码，仅链接到官方规范 ──
+# ============================================================================
+
+# ── 身份 ────────────────────────────────────────────────────────────────────
+id: agent-skills-spec
+name_zh: Agent Skills 规范
+name_en: Agent Skills Specification
+
+# 一句话简介，≤200 字符，会直接出现在 INDEX 表格里，写得具体一点
+summary_zh: Anthropic 发起、社区共建的开放智能体技能格式标准，定义 SKILL.md 结构与按需三级加载机制。本仓库仅链接官方规范，不冻结副本。
+summary_en: The open standard for agent skills by Anthropic, defining SKILL.md structure and progressive-disclosure loading. This entry links to the live spec only.
+
+# ── 分类与标签 ──────────────────────────────────────────────────────────────
+category: meta-skillcraft
+
+# kind 六选一：skill | skill-collection | mcp-server | cli-tool | framework | spec
+kind: spec
+
+# 交叉检索用。建议 3-6 个，中英文混用没关系，但同一概念在全仓要统一写法
+tags: [spec, standard, agent-skills, skill-md, interoperability]
+
+# 实现语言（小写）。纯文档类填 [markdown]
+languages: [markdown]
+
+# 上游文档提供的语言，ISO 639-1
+doc_languages: [en]
+
+# ── 许可证 ──────────────────────────────────────────────────────────────────
+# license_tier:
+#   A = 绿灯，可直接 vendoring（MIT/BSD/ISC/0BSD/Unlicense/CC0/CC-BY-4.0）
+#   B = 黄灯，可 vendoring 但需带 NOTICE 且零修改（Apache-2.0/MPL-2.0/OFL-1.1）
+#   C = 红灯，禁止拷贝源码，只能做 link-only 存根
+#
+# 注意：本条目 license_tier=A（规范文档为 CC-BY-4.0），却选择 link-only。
+# 这是**刻意为之**：规范是"活的标准"，应始终指向其权威最新版本（agentskills.io），
+# 冻结一份副本反而可能误导读者。因此 CI 会提示「A 级可 vendoring 但 mode=link-only」，
+# 该告警属预期，不影响通过。
+license: CC-BY-4.0
+license_tier: A
+license_file: null                  # link-only 存根，本仓库未保留上游 LICENSE 副本
+
+# 从上游信息里抄，不要凭印象填
+copyright_holder: Anthropic PBC
+
+# ── Vendoring ───────────────────────────────────────────────────────────────
+vendoring:
+  mode: link-only                   # full | link-only；本存根不拷源码
+
+# ── 链接 ────────────────────────────────────────────────────────────────────
+homepage: https://agentskills.io/specification
+repo: https://github.com/anthropics/skills
+
+# ── 指标（由 scripts/sync_metrics.py 自动回写，不要手填）────────────────────
+metrics:
+  stars: null
+  pushed_at: null
+  checked_at: "2026-08-10"
+  archived: false
+
+# ── 收录评级 ────────────────────────────────────────────────────────────────
+admission:
+  tier: standard
+  checked: [H1, H2, H3, H4]
+  exception: null
+
+# ── 时间 ────────────────────────────────────────────────────────────────────
+added_at: "2026-08-10"
+updated_at: "2026-08-10"
+
+# ── 关系 ────────────────────────────────────────────────────────────────────
+related: [superpowers, anthropics-office-skills]
+
+# aliases: 上游曾用名、改名前的名字、常见别称。
+aliases: [agentskills-spec, agent-skills, agentskills]
+
+# ── 风险备注 ────────────────────────────────────────────────────────────────
+risk_notes: null

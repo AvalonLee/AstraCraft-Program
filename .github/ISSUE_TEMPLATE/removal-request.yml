@@ -1,0 +1,23 @@
+name: 下架请求（著作权人）
+description: 如果你是某项内容的著作权人，希望本仓库移除相关收录
+title: "[下架] <条目或项目名称>"
+labels: ["下架请求"]
+body:
+  - type: input
+    id: entry
+    attributes:
+      label: 要求下架的条目 / 项目
+      description: 例如 anthropics-office-skills 或对应上游仓库地址
+    validations:
+      required: true
+  - type: textarea
+    id: proof
+    attributes:
+      label: 身份与诉求
+      description: 一句话说明你的身份（如「我是 XX 项目的维护者」）和诉求即可，无需法律文书。
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        > 我们承诺 **7 日内处理**，删除相关内容并在 CHANGELOG 中记录。

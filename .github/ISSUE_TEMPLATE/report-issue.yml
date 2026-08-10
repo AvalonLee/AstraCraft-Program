@@ -1,0 +1,31 @@
+name: 报错 / 链接失效 / 内容有误
+description: 发现某个条目链接失效、文档写错、或 vendored 源码有问题
+title: "[问题] <条目或文件>"
+labels: ["问题反馈"]
+body:
+  - type: input
+    id: entry
+    attributes:
+      label: 相关条目 / 文件
+      description: 例如 meta-skillcraft/superpowers 或 docs/license-policy.md
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: 问题类型
+      options:
+        - 链接失效（404 / 超时）
+        - 文档内容有误
+        - vendored 源码缺失或损坏
+        - 协议分级 / 归属声明错误
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: 详细描述
+      description: 复现步骤、错误截图、期望的正确内容等
+    validations:
+      required: true

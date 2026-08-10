@@ -1,0 +1,75 @@
+# ============================================================================
+# SkillMall 条目元数据
+# ── 本条目为 link-only 存根：协议为 source-available，禁止再分发，故不收录源码 ──
+# ============================================================================
+
+# ── 身份 ────────────────────────────────────────────────────────────────────
+id: anthropics-office-skills
+name_zh: Anthropic Office 文档技能
+name_en: Anthropic Office Skills (docx/pdf/pptx/xlsx)
+
+# 一句话简介，≤200 字符，会直接出现在 INDEX 表格里，写得具体一点
+summary_zh: Anthropic 官方维护的文档处理技能集合——docx 生成编辑、pdf 读写合并、pptx 演示稿、xlsx 表格。生产级实现，但 source-available 非开源，本仓库仅链接不转载。
+summary_en: Anthropic's official document-handling skills (docx/pdf/pptx/xlsx). Production-grade but source-available, not open source; this entry links only.
+
+# ── 分类与标签 ──────────────────────────────────────────────────────────────
+category: business-office
+
+# kind 六选一：skill | skill-collection | mcp-server | cli-tool | framework | spec
+kind: skill-collection
+
+# 交叉检索用。建议 3-6 个，中英文混用没关系，但同一概念在全仓要统一写法
+tags: [office, docx, pdf, pptx, xlsx, document-generation, claude]
+
+# 实现语言（小写）。纯文档类填 [markdown]
+languages: [python, markdown]
+
+# 上游文档提供的语言，ISO 639-1
+doc_languages: [en]
+
+# ── 许可证 ──────────────────────────────────────────────────────────────────
+# license_tier C = 红灯：source-available 禁止再分发，只能做 link-only 存根。
+# LicenseRef-Anthropic-Source-Available 是 Anthropic 自定义协议，非 OSI 开源，
+# 上游 README 明示这四个技能「source-available, not open source」。
+license: LicenseRef-Anthropic-Source-Available
+license_tier: C
+license_file: null                  # link-only 存根，本仓库未保留上游 LICENSE 副本
+
+# 从上游信息里抄，不要凭印象填
+copyright_holder: Anthropic PBC
+
+# ── Vendoring ───────────────────────────────────────────────────────────────
+vendoring:
+  mode: link-only                   # full | link-only；红灯协议禁止 vendoring
+
+# ── 链接 ────────────────────────────────────────────────────────────────────
+homepage: https://github.com/anthropics/skills
+repo: https://github.com/anthropics/skills
+
+# ── 指标（由 scripts/sync_metrics.py 自动回写，不要手填）────────────────────
+metrics:
+  stars: null
+  pushed_at: null
+  checked_at: "2026-08-10"
+  archived: false
+
+# ── 收录评级 ────────────────────────────────────────────────────────────────
+admission:
+  tier: standard
+  checked: [H1, H2, H3, H4]
+  exception: null
+
+# ── 时间 ────────────────────────────────────────────────────────────────────
+added_at: "2026-08-10"
+updated_at: "2026-08-10"
+
+# ── 关系 ────────────────────────────────────────────────────────────────────
+related: [agent-skills-spec]
+
+# aliases: 上游曾用名、改名前的名字、常见别称。
+aliases: [anthropic-document-skills, anthropics-document-skills, claude-office-skills]
+
+# ── 风险备注 ────────────────────────────────────────────────────────────────
+# 仅 docx/pdf/pptx/xlsx 四个技能为 source-available；
+# 同仓库其他技能多为 Apache-2.0，属可收录范围，可另行建条目。
+risk_notes: 仅 docx/pdf/pptx/xlsx 四个技能为 source-available 不可转载；同仓库其他技能（如 skill-creator、algorithmic-art）多为 Apache-2.0，可另行收录。

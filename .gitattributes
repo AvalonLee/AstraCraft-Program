@@ -1,6 +1,10 @@
-# 统一换行为 LF，防止 Windows 环境下 CRLF 污染 vendored 的上游文件。
-# vendored 内容必须与上游逐字节一致，否则 upstream.lock 的 content_hash 会失配。
+# 自有文档/脚本统一换行为 LF（便于跨平台 diff）。
 * text=auto eol=lf
+
+# vendored 上游快照：禁止 git 触碰换行符，必须与上游逐字节一致，
+# 否则 upstream.lock 的 content_hash 会在全新 checkout 时失配（verify 失败）。
+# 注意：绝不能对 src/ 用 eol=lf 归一化 —— 那会破坏快照哈希。
+**/src/** -text
 
 # 二进制资源不做换行转换
 *.png binary

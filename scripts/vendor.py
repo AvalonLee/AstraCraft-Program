@@ -286,7 +286,8 @@ def cmd_verify(_args: argparse.Namespace) -> int:
         print(
             f"\n{failures} 个条目校验失败。\n"
             "vendoring 必须零修改——补充说明请写进 NOTES.zh-CN.md，不要改 src/ 里的文件。\n"
-            "若失配是换行符导致，检查 .gitattributes 是否生效（应为 eol=lf）。"
+            "若失配是换行符导致，检查 .gitattributes 是否对 **/src/** 设了 -text"
+            "（vendored 文件不应被换行归一化，否则全新 checkout 会变 LF 导致哈希失配）。"
         )
         return 1
 

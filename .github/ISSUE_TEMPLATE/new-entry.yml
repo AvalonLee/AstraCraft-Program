@@ -54,5 +54,5 @@ body:
     attributes:
       label: 自检
       options:
-        - label: 我确认该项目是开源的（非 source-available / 非无 LICENSE 伪开源）
+        - label: 我确认该项目来源可溯、文档可用，且能写清安装指令
           required: false

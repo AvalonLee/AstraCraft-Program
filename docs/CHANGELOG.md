@@ -16,6 +16,11 @@
 
 ### 结构
 
+- **设定调整：从「快照式收录」改为「轻量索引」**：不再收录上游源码快照——删除所有
+  `src/`、`upstream.lock` 与 vendoring 工具链（`vendor.py` 移除）；每个条目只保留一个
+  `SKILL.md`（frontmatter 元数据 + 介绍 + 安装指令），Agent 据此快速定位并安装对应
+  skill 项目。脚本（validate/gen_index 改为解析 SKILL.md frontmatter）、docs、
+  .gitignore/.gitattributes、CI 同步改写
 - **仓库结构重组**：九大用途分类移入统一 `entries/` 大目录；文档类文件
   （CONTRIBUTING / CODE_OF_CONDUCT / CHANGELOG / THIRD_PARTY_NOTICES）统一移入 `docs/`；
   根目录仅保留 README / INDEX / LICENSE / LICENSE-CODE 等核心入口。脚本与 CI 同步适配

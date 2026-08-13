@@ -1,13 +1,15 @@
 """SkillMall 脚本共享工具。
 
-提供条目发现、加载与常量定义，供 validate.py / gen_index.py / vendor.py 复用。
+提供条目发现、SKILL.md frontmatter 加载与常量定义，供 validate.py / gen_index.py 复用。
+
+SkillMall 的收录形态：每个条目只保存一个 `SKILL.md`（介绍 + 安装指令），
+不收录上游源码快照。Agent 通过该文件快速定位并安装对应 skill 项目。
 """
 
 from __future__ import annotations
 
-import hashlib
 import sys
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
@@ -24,7 +26,6 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 SCHEMA_PATH = REPO_ROOT / "scripts" / "schema" / "meta.schema.json"
 TEMPLATE_DIR = REPO_ROOT / "_template"
 INDEX_PATH = REPO_ROOT / "INDEX.md"
-NOTICES_PATH = REPO_ROOT / "docs" / "THIRD_PARTY_NOTICES.md"
 CHANGELOG_PATH = REPO_ROOT / "docs" / "CHANGELOG.md"
 
 # 九大一级分类：目录名 -> (中文名, 定位)
@@ -55,58 +56,16 @@ TIER_LABELS: dict[str, str] = {
     "watch": "观察",
 }
 
-# 协议分级白名单。判定流程见 docs/license-policy.md
-LICENSE_TIER_A = {
-    "MIT",
-    "MIT-0",
-    "BSD-2-Clause",
-    "BSD-3-Clause",
-    "ISC",
-    "0BSD",
-    "Unlicense",
-    "CC0-1.0",
-    "CC-BY-4.0",
-}
-LICENSE_TIER_B = {
-    "Apache-2.0",
-    "MPL-2.0",
-    "OFL-1.1",
-}
-
-# 明确禁止 vendoring 的协议。不在 A/B/C 任一名单内的一律按 C 处理。
-LICENSE_TIER_C_KNOWN = {
-    "GPL-2.0",
-    "GPL-3.0",
-    "GPL-2.0-only",
-    "GPL-3.0-only",
-    "GPL-2.0-or-later",
-    "GPL-3.0-or-later",
-    "AGPL-3.0",
-    "AGPL-3.0-only",
-    "AGPL-3.0-or-later",
-    "LGPL-2.1",
-    "LGPL-3.0",
-    "SSPL-1.0",
-    "BUSL-1.1",
-    "CC-BY-NC-4.0",
-    "CC-BY-ND-4.0",
-    "CC-BY-NC-SA-4.0",
-    "UNKNOWN",
-}
-
-REQUIRED_ENTRY_FILES = ("meta.yml", "upstream.lock", "README.zh-CN.md", "NOTES.zh-CN.md")
-
-# 破例条目占比上限，超出仅告警不中断
-EXCEPTION_QUOTA = 0.15
+# 每个条目的入口文件：唯一一个给 Agent 读的「介绍 + 安装指令」文档
+ENTRY_FILE = "SKILL.md"
 
 
 @dataclass
 class Entry:
-    """一个收录条目。"""
+    """一个收录条目（由单个 SKILL.md 描述，不包含上游源码）。"""
 
     path: Path
     meta: dict[str, Any]
-    lock: dict[str, Any] = field(default_factory=dict)
 
     @property
     def id(self) -> str:
@@ -125,41 +84,43 @@ class Entry:
         return self.path.relative_to(REPO_ROOT).as_posix()
 
     @property
-    def is_vendored(self) -> bool:
-        return self.meta.get("vendoring", {}).get("mode") == "full"
+    def skill_file(self) -> Path:
+        return self.path / ENTRY_FILE
 
     @property
-    def marker(self) -> str:
-        """INDEX 中区分 vendored 与存根的标记。"""
-        return "📦" if self.is_vendored else "🔗"
+    def tier(self) -> str:
+        return str(self.meta.get("tier", ""))
 
     @property
-    def has_exception(self) -> bool:
-        return bool(self.meta.get("admission", {}).get("exception"))
-
-    @property
-    def src_dir(self) -> Path:
-        return self.path / "src"
+    def has_risk(self) -> bool:
+        return bool(self.meta.get("risk_notes"))
 
     def stars(self) -> int:
         value = (self.meta.get("metrics") or {}).get("stars")
         return int(value) if isinstance(value, int) else -1
 
 
-def load_yaml(path: Path) -> dict[str, Any]:
-    """读取 YAML 文件，空文件返回空字典。"""
+def load_frontmatter(path: Path) -> dict[str, Any]:
+    """解析 SKILL.md 的 YAML frontmatter（--- 包裹），失败返回空字典。"""
     if not path.exists():
         return {}
     text = path.read_text(encoding="utf-8")
-    data = yaml.safe_load(text)
+    if not text.startswith("---"):
+        return {}
+    end = text.find("\n---", 3)
+    if end == -1:
+        return {}
+    try:
+        data = yaml.safe_load(text[3:end].strip())
+    except yaml.YAMLError:
+        return {}
     return data if isinstance(data, dict) else {}
 
 
 def discover_entries(root: Path = REPO_ROOT) -> list[Entry]:
-    """扫描 entries/ 下九大分类目录，收集所有含 meta.yml 的条目。
+    """扫描 entries/ 下九大分类目录，收集所有含 SKILL.md 的条目。
 
-    只扫描 entries/<分类>/<条目>/meta.yml 这一层，不递归——条目内部的 src/
-    可能包含上游自己的 yml 文件，递归会误伤。
+    只扫描 entries/<分类>/<id>/SKILL.md 这一层，不递归。
     """
     entries: list[Entry] = []
     for category in sorted(CATEGORIES):
@@ -167,66 +128,11 @@ def discover_entries(root: Path = REPO_ROOT) -> list[Entry]:
         if not category_dir.is_dir():
             continue
         for entry_dir in sorted(p for p in category_dir.iterdir() if p.is_dir()):
-            meta_path = entry_dir / "meta.yml"
-            if not meta_path.exists():
+            skill = entry_dir / ENTRY_FILE
+            if not skill.exists():
                 continue
-            entries.append(
-                Entry(
-                    path=entry_dir,
-                    meta=load_yaml(meta_path),
-                    lock=load_yaml(entry_dir / "upstream.lock"),
-                )
-            )
+            entries.append(Entry(path=entry_dir, meta=load_frontmatter(skill)))
     return entries
-
-
-def compute_content_hash(directory: Path) -> str:
-    """计算目录内全部文件的内容哈希。
-
-    按相对路径排序后逐个喂入，路径与内容都参与计算，
-    因此重命名文件也会导致哈希变化。以二进制读取，不做换行归一化——
-    .gitattributes 已强制 LF，若此处失配说明本地确实改动了文件。
-    """
-    digest = hashlib.sha256()
-    files = sorted(
-        (p for p in directory.rglob("*") if p.is_file()),
-        key=lambda p: p.relative_to(directory).as_posix(),
-    )
-    for file_path in files:
-        rel = file_path.relative_to(directory).as_posix()
-        digest.update(rel.encode("utf-8"))
-        digest.update(b"\0")
-        digest.update(file_path.read_bytes())
-        digest.update(b"\0")
-    return "sha256:" + digest.hexdigest()
-
-
-def dir_stats(directory: Path) -> tuple[int, int]:
-    """返回 (文件数, 总字节数)。"""
-    count = 0
-    total = 0
-    for file_path in directory.rglob("*"):
-        if file_path.is_file():
-            count += 1
-            total += file_path.stat().st_size
-    return count, total
-
-
-def is_template_unchanged(path: Path, template_name: str) -> bool:
-    """判断文件是否还是未经修改的模板原文。
-
-    用于 core 级条目的 NOTES.zh-CN.md 检查——照抄模板等于没写。
-    """
-    template_path = TEMPLATE_DIR / template_name
-    if not path.exists() or not template_path.exists():
-        return False
-    return _normalize(path.read_text(encoding="utf-8")) == _normalize(
-        template_path.read_text(encoding="utf-8")
-    )
-
-
-def _normalize(text: str) -> str:
-    return "\n".join(line.rstrip() for line in text.strip().splitlines())
 
 
 class Reporter:

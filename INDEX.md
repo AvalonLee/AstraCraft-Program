@@ -1,7 +1,7 @@
 <!--
   ⚠️ 本文件由 scripts/gen_index.py 自动生成，请勿手动编辑。
 
-  修改条目信息请编辑对应的 entries/<分类>/<条目>/meta.yml，然后执行：
+  修改条目信息请编辑对应的 entries/<分类>/<id>/SKILL.md（frontmatter），然后执行：
       python scripts/gen_index.py
 
   CI 会重新渲染并与本文件比对，不一致将导致构建失败。
@@ -13,7 +13,10 @@ SkillMall 全部收录条目的交叉检索表。六个视图对应六种找东�
 知道大概用途就看[分类](#二按分类)，有明确关键词就看[标签](#三按标签)，
 关心技术栈就看[语言](#四按语言)，在意合规就看[协议](#五按协议)。
 
-图例：📦 源码已收录 · 🔗 仅链接存根 · ★ 破例收录 · ⚠️ 有风险备注
+图例：★ 主推 · ⚠️ 有风险备注
+
+> 每个条目只有一个 `SKILL.md`（介绍 + 安装指令）。Agent 点链接读取该文件，
+> 即可快速定位并安装对应的 skill 项目；本仓库**不收录上游源码快照**。
 
 ---
 
@@ -23,10 +26,10 @@ SkillMall 全部收录条目的交叉检索表。六个视图对应六种找东�
 
 | | 名称 | 分类 | 类型 | 协议 | 评级 | 简介 |
 |---|---|---|---|---|---|---|
-| 📦 ⚠️ | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/) | Agent 基础设施 | 框架 | 🟢 MIT | 常规 | 腾讯云出品的 Agent 团队级记忆中心（Memory Hub）：把对话、文档与代码沉淀为 Chat Memory / Skill / LLM-Wiki / CodeGraph 四类可复用资产，支持治理、共享并跨 Agent 与框架装备，让经验在团队中流动。 |
-| 🔗 ⚠️ | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/) | 商业与办公 | 技能集 | 🔴 LicenseRef-Anthropic-Source-Available | 常规 | Anthropic 官方维护的文档处理技能集合——docx 生成编辑、pdf 读写合并、pptx 演示稿、xlsx 表格。生产级实现，但 source-available 非开源，本仓库仅链接不转载。 |
-| 🔗 | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/) | 技能工程 | 规范 | 🟢 CC-BY-4.0 | 常规 | Anthropic 发起、社区共建的开放智能体技能格式标准，定义 SKILL.md 结构与按需三级加载机制。本仓库仅链接官方规范，不冻结副本。 |
-| 📦 | [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/) | 技能工程 | 技能集 | 🟢 MIT | 主推 | 面向编码智能体的完整软件开发方法论，由 14 个可组合 skill 构成（TDD、并行子代理、系统化调试、代码评审等）。智能体在动手前先厘清需求、产出计划，再自驱执行。 |
+| ⚠️ | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) | Agent 基础设施 | 框架 | MIT | 常规 | 腾讯云出品的 Agent 团队级记忆中心（Memory Hub）：把对话、文档与代码沉淀为 Chat Memory / Skill / LLM-Wiki / CodeGraph 四类可复用资产，支持治理、共享并跨 Agent 与框架装备。 |
+| ⚠️ | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/SKILL.md) | 商业与办公 | 技能集 | LicenseRef-Anthropic-Source-Available | 常规 | Anthropic 官方维护的文档处理技能集合——docx 生成编辑、pdf 读写合并、pptx 演示稿、xlsx 表格。生产级实现，但 source-available 非开源，本仓库仅链接不转载。 |
+| ⚠️ | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/SKILL.md) | 技能工程 | 规范 | CC-BY-4.0 | 常规 | Anthropic 发起、社区共建的开放智能体技能格式标准，定义 SKILL.md 结构与按需三级加载机制。作为活的标准，本仓库始终指向官方最新版。 |
+| ★ | [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/SKILL.md) | 技能工程 | 技能集 | MIT | 主推 | 面向编码智能体的完整软件开发方法论，由 14 个可组合 skill 构成（TDD、并行子代理、系统化调试、代码评审等）。智能体在动手前先厘清需求、产出计划，再自驱执行。 |
 
 ---
 
@@ -50,7 +53,7 @@ SkillMall 全部收录条目的交叉检索表。六个视图对应六种找东�
 
 | | 名称 | 类型 | 协议 | 简介 |
 |---|---|---|---|---|
-| 🔗 ⚠️ | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/) | 技能集 | 🔴 LicenseRef-Anthropic-Source-Available | Anthropic 官方维护的文档处理技能集合——docx 生成编辑、pdf 读写合并、pptx 演示稿、xlsx 表格。生产级实现，但 source-available 非开源，本仓库仅链接不转载。 |
+| ⚠️ | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/SKILL.md) | 技能集 | LicenseRef-Anthropic-Source-Available | Anthropic 官方维护的文档处理技能集合——docx 生成编辑、pdf 读写合并、pptx 演示稿、xlsx 表格。生产级实现，但 source-available 非开源，本仓库仅链接不转载。 |
 
 ### Agent 基础设施
 
@@ -58,7 +61,7 @@ SkillMall 全部收录条目的交叉检索表。六个视图对应六种找东�
 
 | | 名称 | 类型 | 协议 | 简介 |
 |---|---|---|---|---|
-| 📦 ⚠️ | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/) | 框架 | 🟢 MIT | 腾讯云出品的 Agent 团队级记忆中心（Memory Hub）：把对话、文档与代码沉淀为 Chat Memory / Skill / LLM-Wiki / CodeGraph 四类可复用资产，支持治理、共享并跨 Agent 与框架装备，让经验在团队中流动。 |
+| ⚠️ | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) | 框架 | MIT | 腾讯云出品的 Agent 团队级记忆中心（Memory Hub）：把对话、文档与代码沉淀为 Chat Memory / Skill / LLM-Wiki / CodeGraph 四类可复用资产，支持治理、共享并跨 Agent 与框架装备。 |
 
 ### 技能工程
 
@@ -66,8 +69,8 @@ SkillMall 全部收录条目的交叉检索表。六个视图对应六种找东�
 
 | | 名称 | 类型 | 协议 | 简介 |
 |---|---|---|---|---|
-| 🔗 | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/) | 规范 | 🟢 CC-BY-4.0 | Anthropic 发起、社区共建的开放智能体技能格式标准，定义 SKILL.md 结构与按需三级加载机制。本仓库仅链接官方规范，不冻结副本。 |
-| 📦 | [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/) | 技能集 | 🟢 MIT | 面向编码智能体的完整软件开发方法论，由 14 个可组合 skill 构成（TDD、并行子代理、系统化调试、代码评审等）。智能体在动手前先厘清需求、产出计划，再自驱执行。 |
+| ⚠️ | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/SKILL.md) | 规范 | CC-BY-4.0 | Anthropic 发起、社区共建的开放智能体技能格式标准，定义 SKILL.md 结构与按需三级加载机制。作为活的标准，本仓库始终指向官方最新版。 |
+| ★ | [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/SKILL.md) | 技能集 | MIT | 面向编码智能体的完整软件开发方法论，由 14 个可组合 skill 构成（TDD、并行子代理、系统化调试、代码评审等）。智能体在动手前先厘清需求、产出计划，再自驱执行。 |
 
 ---
 
@@ -77,34 +80,34 @@ SkillMall 全部收录条目的交叉检索表。六个视图对应六种找东�
 
 | 标签 | 条目 |
 |---|---|
-| `claude-code` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/) · [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/) |
-| `agent` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/) |
-| `agent-methodology` | [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/) |
-| `agent-skills` | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/) |
-| `claude` | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/) |
-| `code-graph` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/) |
-| `code-review` | [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/) |
-| `document-generation` | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/) |
-| `docx` | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/) |
-| `git-worktree` | [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/) |
-| `interoperability` | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/) |
-| `llm-wiki` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/) |
-| `long-term-memory` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/) |
-| `memory` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/) |
-| `office` | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/) |
-| `openclaw` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/) |
-| `pdf` | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/) |
-| `pptx` | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/) |
-| `skill` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/) |
-| `skill-md` | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/) |
-| `software-engineering` | [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/) |
-| `spec` | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/) |
-| `standard` | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/) |
-| `subagent` | [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/) |
-| `tdd` | [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/) |
-| `tencent` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/) |
-| `vector-search` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/) |
-| `xlsx` | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/) |
+| `agent` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) |
+| `agent-methodology` | [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/SKILL.md) |
+| `agent-skills` | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/SKILL.md) |
+| `claude` | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/SKILL.md) |
+| `claude-code` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) · [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/SKILL.md) |
+| `code-graph` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) |
+| `code-review` | [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/SKILL.md) |
+| `document-generation` | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/SKILL.md) |
+| `docx` | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/SKILL.md) |
+| `git-worktree` | [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/SKILL.md) |
+| `interoperability` | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/SKILL.md) |
+| `llm-wiki` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) |
+| `long-term-memory` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) |
+| `memory` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) |
+| `office` | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/SKILL.md) |
+| `openclaw` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) |
+| `pdf` | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/SKILL.md) |
+| `pptx` | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/SKILL.md) |
+| `skill` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) |
+| `skill-md` | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/SKILL.md) |
+| `software-engineering` | [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/SKILL.md) |
+| `spec` | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/SKILL.md) |
+| `standard` | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/SKILL.md) |
+| `subagent` | [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/SKILL.md) |
+| `tdd` | [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/SKILL.md) |
+| `tencent` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) |
+| `vector-search` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) |
+| `xlsx` | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/SKILL.md) |
 
 ---
 
@@ -114,54 +117,45 @@ SkillMall 全部收录条目的交叉检索表。六个视图对应六种找东�
 
 | 语言 | 条目 |
 |---|---|
-| `markdown` | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/) · [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/) · [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/) |
-| `python` | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/) |
-| `typescript` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/) |
+| `markdown` | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/SKILL.md) · [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/SKILL.md) · [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/SKILL.md) |
+| `python` | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/SKILL.md) |
+| `typescript` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) |
 
 ---
 
 ## 五、按协议
 
-协议分级决定了源码能否收进本仓库。判定规则见 [许可证政策](docs/license-policy.md)。
+协议仅作为判断能否商用的参考（本仓库不转载源码，因此不承担再分发义务）。
 
-| 协议 | 分级 | 条目数 | 条目 |
-|---|---|---|---|
-| `CC-BY-4.0` | 🟢 A | 1 | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/) |
-| `LicenseRef-Anthropic-Source-Available` | 🔴 C | 1 | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/) |
-| `MIT` | 🟢 A | 2 | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/) · [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/) |
-
-### 🔗 仅链接存根
-
-以下 2 个条目**不包含任何上游源码**——其协议禁止再分发，或协议状态不明。本仓库仅提供导航、说明与评测，获取方式见各条目的 `GET-IT.md`。
-
-| 条目 | 协议 | 不收录源码的原因 |
+| 协议 | 条目数 | 条目 |
 |---|---|---|
-| [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/) | `LicenseRef-Anthropic-Source-Available` | 仅 docx/pdf/pptx/xlsx 四个技能为 source-available 不可转载；同仓库其他技能（如 skill-creator、algorithmic-art）多为 Apache-2.0，可另行收录。 |
-| [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/) | `CC-BY-4.0` | 协议限制再分发 |
+| `CC-BY-4.0` | 1 | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/SKILL.md) |
+| `LicenseRef-Anthropic-Source-Available` | 1 | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/SKILL.md) |
+| `MIT` | 2 | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) · [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/SKILL.md) |
 
 ---
 
 ## 六、排行
 
-star 数不参与收录判断（见[收录标准](docs/admission-criteria.md#为什么-star-不是硬门槛)），仅作为排序维度。指标由 `scripts/sync_metrics.py` 定期回写，`—` 表示尚未采集。
+star 数不参与收录判断，仅作为排序维度。`—` 表示尚未采集。
 
 ### 按 star
 
 | # | 条目 | star | 最近提交 |
 |---|---|---|---|
-| 1 | [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/) | 270037 | 2026-08-08T01:45:49Z |
-| 2 | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/) | 21060 | 2026-08-11T12:12:06Z |
-| 3 | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/) | — | — |
-| 4 | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/) | — | — |
+| 1 | [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/SKILL.md) | 270037 | 2026-08-08T01:45:49Z |
+| 2 | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) | 21060 | 2026-08-11T12:12:06Z |
+| 3 | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/SKILL.md) | — | — |
+| 4 | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/SKILL.md) | — | — |
 
 ### 最近加入
 
 | 条目 | 加入日期 | 最后更新 |
 |---|---|---|
-| [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/) | 2026-08-13 | 2026-08-13 |
-| [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/) | 2026-08-10 | 2026-08-10 |
-| [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/) | 2026-08-10 | 2026-08-10 |
-| [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/) | 2026-08-10 | 2026-08-10 |
+| [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) | 2026-08-13 | 2026-08-13 |
+| [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/SKILL.md) | 2026-08-10 | 2026-08-13 |
+| [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/SKILL.md) | 2026-08-10 | 2026-08-13 |
+| [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/SKILL.md) | 2026-08-10 | 2026-08-13 |
 
 ---
 

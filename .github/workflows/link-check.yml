@@ -25,7 +25,7 @@ jobs:
           # 默认扫描仓库内全部 .md；如需只看改动文件可在 args 里指定路径
           args: -c mlc_config.json
 
-  # 每周全量：基于 lychee 扫描（含 vendored src/，更严格）
+  # 每周全量：基于 lychee 扫描全部 Markdown
   weekly-full:
     if: github.event_name != 'pull_request'
     name: 每周全量死链扫描

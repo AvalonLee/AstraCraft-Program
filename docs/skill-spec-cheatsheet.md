@@ -90,8 +90,8 @@ skill-name/
 ```
 
 倒数第二条容易被忽略但很重要：**收录前扫一遍 `scripts/`**，见过上游脚本里残留
-测试用的 token 或 `/Users/someone/...` 路径的情况。发现了就在
-`NOTES.zh-CN.md` 里记下来提醒使用者，不要去改源码（零修改原则）。
+测试用的 token 或 `/Users/someone/...` 路径的情况。发现了就在条目
+`SKILL.md` 的「注意事项」里记下来提醒使用者。
 
 ---
 
@@ -101,27 +101,26 @@ skill-name/
 
 | 偏差 | 后果 | 本仓库处理 |
 |---|---|---|
-| `name` ≠ 目录名 | skill 加载失败 | H3 不通过，或在 NOTES 中标注需手动改名 |
-| `description` 只写功能不写触发场景 | Agent 不会主动加载 | H3 不通过 |
-| `version` / `author` 写在顶层 | 部分实现解析报错 | 记入 NOTES，不影响收录 |
+| `name` ≠ 目录名 | skill 加载失败 | 记入「注意事项」，提示手动改名 |
+| `description` 只写功能不写触发场景 | Agent 不会主动加载 | 记入「注意事项」 |
+| `version` / `author` 写在顶层 | 部分实现解析报错 | 记入「注意事项」，不影响收录 |
 | 完全没有 frontmatter | 不是合法 skill | 不收，或改按 `kind: cli-tool` 收录 |
-| `license` 与 LICENSE 文件冲突 | 权利状态不明 | **🔴 红灯**，做存根 |
-| 无 LICENSE 文件 | 默认保留所有权利 | **🔴 红灯**，做存根 |
+| `license` 与 LICENSE 文件冲突 | 权利状态不明 | 以 LICENSE 为准填 SPDX，并在 `risk_notes` 记录 |
+| 无 LICENSE 文件 | 默认保留所有权利 | `license` 填 `UNKNOWN`，提示谨慎使用 |
 
 ---
 
-## 与本仓库 meta.yml 的字段映射
+## 与本仓库条目 frontmatter 的字段映射
 
-收录时可以直接从上游 SKILL.md 抄过来的字段：
+收录时可以直接从上游 SKILL.md 抄过来的字段（写入本条目 `SKILL.md` 的 frontmatter）：
 
-| SKILL.md | → | meta.yml |
+| 上游 SKILL.md | → | 条目 SKILL.md frontmatter |
 |---|---|---|
 | `name` | → | `id`（若合法）、`name_en` |
-| `description` | → | `summary_en` 的素材（需精简到 200 字符内并翻译成 `summary_zh`） |
-| `license` | → | `license`（**仍需与 LICENSE 文件核对**） |
-| `metadata.author` | → | `copyright_holder` 的**线索**，最终以 LICENSE 文件为准 |
-| `compatibility` | → | README「怎么装」段落 |
+| `description` | → | `summary_en` 的素材（精简到 200 字符内并翻译成 `summary_zh`） |
+| `license` | → | `license`（与上游 LICENSE 文件交叉核对后填 SPDX，见 [license-policy.md](license-policy.md)） |
+| `metadata.author` | → | 上游归属线索（可选，可记入备注） |
+| `compatibility` | → | 「怎么安装」小节 |
 
-注意 `copyright_holder` 那一行：frontmatter 的 author 只是线索。
-著作权人以 LICENSE 文件里的 `Copyright (c) YYYY <名字>` 为准，两者不一致时
-以 LICENSE 为准并在 `risk_notes` 记录。
+> 本仓库不收录上游源码，因此不校验 copyright_holder。若上游 frontmatter 的
+> `license` 与目录内 LICENSE 冲突，以 LICENSE 为准，并在 `risk_notes` 记录。

@@ -7,11 +7,11 @@ Copyright (c) 2026 A.Lee
 下的工作流配置。
 
 本许可证不适用于：
-  - 本仓库的原创文档内容（README、docs/、各条目的 README.zh-CN.md
-    与 NOTES.zh-CN.md），这些内容适用根目录 LICENSE 中的 CC BY 4.0；
-  - 各收录条目 `src/` 目录下的第三方 vendored 代码，这些内容的著作权
-    归各自原作者所有，适用其自带的 LICENSE 文件，汇总见
-    THIRD_PARTY_NOTICES.md。
+  - 本仓库的原创文档内容（README、INDEX.md、docs/、各条目的 SKILL.md），
+    这些内容适用根目录 LICENSE 中的 CC BY 4.0；
+  - 各收录条目 `SKILL.md` 中链接指向的上游项目内容，这些内容的著作权
+    归各自原作者所有，适用其上游自带的 LICENSE 文件。
+    本仓库不收录任何上游源码。
 
 ---
 

@@ -1,12 +1,3 @@
-# ── link-only 存根条目的本地补齐目录 ────────────────────────────
-# 红灯协议条目禁止把源码提交进本仓库。用户执行 GET-IT.md 里的
-# clone 命令后会在条目下产生 src/，此处统一忽略。
-# vendored（绿灯/黄灯）条目的 src/ 必须入库，用 ! 白名单放行。
-# 新增 vendored 条目时，务必在下方补一条 ! 规则。
-**/src/
-!entries/meta-skillcraft/superpowers/src/
-!entries/meta-skillcraft/superpowers/src/**
-
 # ── Python ──────────────────────────────────────────────────
 __pycache__/
 *.py[cod]
@@ -30,6 +21,3 @@ Thumbs.db
 *.log
 tmp/
 .tmp/
-
-!entries/agent-infra/tencentdb-agent-memory/src/
-!entries/agent-infra/tencentdb-agent-memory/src/**

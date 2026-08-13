@@ -8,10 +8,9 @@ Copyright (c) 2026 A.Lee
 
 本许可证适用于 SkillMall 仓库中由本仓库作者原创编写的**文档内容**，包括：
 
-  - README.md、INDEX.md、CONTRIBUTING.md、CHANGELOG.md
-  - docs/ 目录下的全部文档
-  - 各收录条目下的 README.zh-CN.md、NOTES.zh-CN.md、GET-IT.md
-  - 各收录条目下的 meta.yml 中由本仓库编写的描述性字段
+  - README.md、INDEX.md
+  - docs/ 目录下的全部文档（CONTRIBUTING.md、CHANGELOG.md、收录标准等）
+  - 各收录条目下的 SKILL.md（由本仓库编写的介绍与安装指令，含 frontmatter 元数据）
   - 本仓库设计的分类体系与收录标准
 
 本许可证**不适用于**：
@@ -19,10 +18,10 @@ Copyright (c) 2026 A.Lee
   1. `scripts/` 目录与 `.github/workflows/` 下的原创代码
      → 适用 LICENSE-CODE 中的 MIT License
 
-  2. 各收录条目 `src/` 目录下的第三方 vendored 代码与文档
-     → 著作权归各自原作者所有，适用其目录内自带的 LICENSE 文件。
-       完整清单见 THIRD_PARTY_NOTICES.md。
-       本仓库对这些内容不主张任何权利，也不通过本许可证进行再授权。
+  2. 各收录条目 `SKILL.md` 中链接指向的上游项目内容
+     → 著作权归各自原作者所有，适用其上游仓库自带的 LICENSE 文件。
+       本仓库不收录任何上游源码，对这些内容不主张任何权利，
+       也不通过本许可证进行再授权。索引见 INDEX.md。
 
 ================================================================================
 许可证条款

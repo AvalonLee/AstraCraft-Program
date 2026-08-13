@@ -1,20 +1,17 @@
 #!/usr/bin/env python3
-"""从各条目的 meta.yml 聚合生成 INDEX.md。
+"""从各条目 SKILL.md 的 frontmatter 聚合生成 INDEX.md。
 
 生成六个视图：
   1. 全量总表
   2. 按分类分组
   3. 按标签倒排
   4. 按语言
-  5. 按协议（红灯存根单列）
+  5. 按协议
   6. 按 star 排序 + 最近更新
 
 用法：
     python scripts/gen_index.py            重新生成 INDEX.md
     python scripts/gen_index.py --check    只校验不写盘，与磁盘不一致则退出码 1
-
---check 是 CI 防脱节的关键：任何人改了 meta.yml 却忘了重新生成 INDEX，
-CI 会立刻发现。
 """
 
 from __future__ import annotations
@@ -29,6 +26,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from _common import (  # noqa: E402
     CATEGORIES,
+    ENTRY_FILE,
     INDEX_PATH,
     KIND_LABELS,
     TIER_LABELS,
@@ -39,7 +37,7 @@ from _common import (  # noqa: E402
 HEADER = """<!--
   ⚠️ 本文件由 scripts/gen_index.py 自动生成，请勿手动编辑。
 
-  修改条目信息请编辑对应的 entries/<分类>/<条目>/meta.yml，然后执行：
+  修改条目信息请编辑对应的 entries/<分类>/<id>/SKILL.md（frontmatter），然后执行：
       python scripts/gen_index.py
 
   CI 会重新渲染并与本文件比对，不一致将导致构建失败。
@@ -51,7 +49,10 @@ SkillMall 全部收录条目的交叉检索表。六个视图对应六种找东�
 知道大概用途就看[分类](#二按分类)，有明确关键词就看[标签](#三按标签)，
 关心技术栈就看[语言](#四按语言)，在意合规就看[协议](#五按协议)。
 
-图例：📦 源码已收录 · 🔗 仅链接存根 · ★ 破例收录 · ⚠️ 有风险备注
+图例：★ 主推 · ⚠️ 有风险备注
+
+> 每个条目只有一个 `SKILL.md`（介绍 + 安装指令）。Agent 点链接读取该文件，
+> 即可快速定位并安装对应的 skill 项目；本仓库**不收录上游源码快照**。
 """
 
 
@@ -61,22 +62,20 @@ def esc(text: object) -> str:
 
 
 def link(entry: Entry) -> str:
-    return f"[{esc(entry.meta.get('name_zh'))}]({entry.rel_path}/)"
+    return f"[{esc(entry.meta.get('name_zh'))}]({entry.rel_path}/{ENTRY_FILE})"
 
 
 def badges(entry: Entry) -> str:
-    marks = [entry.marker]
-    if entry.has_exception:
+    marks = []
+    if entry.tier == "core":
         marks.append("★")
-    if entry.meta.get("risk_notes"):
+    if entry.has_risk:
         marks.append("⚠️")
     return " ".join(marks)
 
 
 def license_cell(entry: Entry) -> str:
-    tier = entry.meta.get("license_tier", "?")
-    dot = {"A": "🟢", "B": "🟡", "C": "🔴"}.get(tier, "⚪")
-    return f"{dot} {esc(entry.meta.get('license'))}"
+    return esc(entry.meta.get("license"))
 
 
 def view_all(entries: list[Entry]) -> list[str]:
@@ -97,9 +96,7 @@ def view_all(entries: list[Entry]) -> list[str]:
                 cat=category_zh,
                 kind=KIND_LABELS.get(entry.meta.get("kind", ""), "?"),
                 lic=license_cell(entry),
-                tier=TIER_LABELS.get(
-                    entry.meta.get("admission", {}).get("tier", ""), "?"
-                ),
+                tier=TIER_LABELS.get(entry.tier, "?"),
                 summary=esc(entry.meta.get("summary_zh")),
             )
         )
@@ -156,13 +153,13 @@ def view_by_tag(entries: list[Entry]) -> list[str]:
     lines = [
         "## 三、按标签",
         "",
-        f"共 {len(grouped)} 个标签。标签是分类之外的交叉维度——"
-        "一个条目只能属于一个分类，但可以有多个标签。",
+        f"共 {len(grouped)} 个标签。标签是分类之外的交叉维度——一个条目只能属于一个分类，"
+        "但可以有多个标签。",
         "",
         "| 标签 | 条目 |",
         "|---|---|",
     ]
-    for tag in sorted(grouped, key=lambda t: (-len(grouped[t]), t)):
+    for tag in sorted(grouped):
         items = " · ".join(link(e) for e in grouped[tag])
         lines.append(f"| `{esc(tag)}` | {items} |")
     return lines
@@ -182,50 +179,29 @@ def view_by_language(entries: list[Entry]) -> list[str]:
         "| 语言 | 条目 |",
         "|---|---|",
     ]
-    for lang in sorted(grouped, key=lambda item: (-len(grouped[item]), item)):
+    for lang in sorted(grouped):
         items = " · ".join(link(e) for e in grouped[lang])
         lines.append(f"| `{esc(lang)}` | {items} |")
     return lines
 
 
 def view_by_license(entries: list[Entry]) -> list[str]:
-    lines = [
-        "## 五、按协议",
-        "",
-        "协议分级决定了源码能否收进本仓库。判定规则见 "
-        "[许可证政策](docs/license-policy.md)。",
-        "",
-    ]
-
     grouped: dict[str, list[Entry]] = defaultdict(list)
     for entry in entries:
         grouped[str(entry.meta.get("license"))].append(entry)
 
-    lines += ["| 协议 | 分级 | 条目数 | 条目 |", "|---|---|---|---|"]
+    lines = [
+        "## 五、按协议",
+        "",
+        "协议仅作为判断能否商用的参考（本仓库不转载源码，因此不承担再分发义务）。",
+        "",
+        "| 协议 | 条目数 | 条目 |",
+        "|---|---|---|",
+    ]
     for license_id in sorted(grouped):
         bucket = grouped[license_id]
-        tier = bucket[0].meta.get("license_tier", "?")
-        dot = {"A": "🟢 A", "B": "🟡 B", "C": "🔴 C"}.get(tier, "⚪ ?")
         items = " · ".join(link(e) for e in bucket)
-        lines.append(f"| `{esc(license_id)}` | {dot} | {len(bucket)} | {items} |")
-    lines.append("")
-
-    stubs = [e for e in entries if not e.is_vendored]
-    lines += [
-        "### 🔗 仅链接存根",
-        "",
-        f"以下 {len(stubs)} 个条目**不包含任何上游源码**——其协议禁止再分发，"
-        "或协议状态不明。本仓库仅提供导航、说明与评测，"
-        "获取方式见各条目的 `GET-IT.md`。",
-        "",
-    ]
-    if stubs:
-        lines += ["| 条目 | 协议 | 不收录源码的原因 |", "|---|---|---|"]
-        for entry in stubs:
-            reason = entry.meta.get("risk_notes") or "协议限制再分发"
-            lines.append(f"| {link(entry)} | `{esc(entry.meta.get('license'))}` | {esc(reason)} |")
-    else:
-        lines.append("暂无。")
+        lines.append(f"| `{esc(license_id)}` | {len(bucket)} | {items} |")
     return lines
 
 
@@ -233,9 +209,7 @@ def view_ranked(entries: list[Entry]) -> list[str]:
     lines = [
         "## 六、排行",
         "",
-        "star 数不参与收录判断（见[收录标准](docs/admission-criteria.md#为什么-star-不是硬门槛)），"
-        "仅作为排序维度。指标由 `scripts/sync_metrics.py` 定期回写，"
-        "`—` 表示尚未采集。",
+        "star 数不参与收录判断，仅作为排序维度。`—` 表示尚未采集。",
         "",
         "### 按 star",
         "",
@@ -308,10 +282,9 @@ def main() -> int:
             print("x INDEX.md 不存在。请执行：python scripts/gen_index.py")
             return 1
         current = INDEX_PATH.read_text(encoding="utf-8")
-        # 忽略生成日期戳那一行，否则每天都会失配
         if _strip_stamp(current) != _strip_stamp(rendered):
             print(
-                "x INDEX.md 与 meta.yml 已脱节。\n"
+                "x INDEX.md 与 SKILL.md 的 frontmatter 已脱节。\n"
                 "  请执行 python scripts/gen_index.py 重新生成，并把结果一并提交。"
             )
             return 1

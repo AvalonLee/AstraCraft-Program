@@ -7,8 +7,8 @@
 
 ## 变更类型
 
-- [ ] 新增条目（📦 vendored / 🔗 link-only）
-- [ ] 更新条目（上游同步 / 协议重判 / 评级变化）
+- [ ] 新增条目（SKILL.md）
+- [ ] 更新条目（内容 / 评级 / 链接）
 - [ ] 移除条目
 - [ ] 结构 / 文档 / 脚本 / CI 变更
 
@@ -18,17 +18,10 @@
 
 ## 收录条目自查（如适用）
 
-- [ ] 已从 `_template/` 复制脚手架并填好 `meta.yml`
-- [ ] 绿灯项目用 `scripts/vendor.py` 拉取快照，并在根 `.gitignore` 添加 `!.../src/` 白名单
-- [ ] 红灯项目只写了 `GET-IT.md`，**未**把源码拷进仓库
-- [ ] 已写中文 `README.zh-CN.md`；`core` 级条目还写了真实 `NOTES.zh-CN.md`
-- [ ] 已在 `docs/THIRD_PARTY_NOTICES.md` 补归属登记
+- [ ] 已从 `_template/SKILL.md` 复制并填好 frontmatter（id 等于目录名，category 等于一级目录名）
+- [ ] 正文含「怎么安装」小节，指令在代码块内、Agent 可执行
+- [ ] 未搬运上游源码，仅给链接与安装指令
 - [ ] 已跑 `python scripts/validate.py && python scripts/gen_index.py` 并提交 `INDEX.md`
-
-## 协议与合规
-
-- [ ] 协议分级（A/B/C）填写准确，与 `LICENSE` 全文一致
-- [ ] 不存在「红灯条目却含 `src/`」的情况
 
 ## 关联
 

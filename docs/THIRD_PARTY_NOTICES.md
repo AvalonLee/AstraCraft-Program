@@ -35,8 +35,8 @@
 | **著作权人** | Jesse Vincent |
 | **许可证** | MIT（SPDX: `MIT`） |
 | **协议分级** | 🟢 A |
-| **本仓库路径** | `meta-skillcraft/superpowers/src/` |
-| **许可证文件** | `meta-skillcraft/superpowers/src/LICENSE` |
+| **本仓库路径** | `entries/meta-skillcraft/superpowers/src/` |
+| **许可证文件** | `entries/meta-skillcraft/superpowers/src/LICENSE` |
 | **本地修改** | 无（零修改 vendoring） |
 
 ---

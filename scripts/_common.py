@@ -24,8 +24,8 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 SCHEMA_PATH = REPO_ROOT / "scripts" / "schema" / "meta.schema.json"
 TEMPLATE_DIR = REPO_ROOT / "_template"
 INDEX_PATH = REPO_ROOT / "INDEX.md"
-NOTICES_PATH = REPO_ROOT / "THIRD_PARTY_NOTICES.md"
-CHANGELOG_PATH = REPO_ROOT / "CHANGELOG.md"
+NOTICES_PATH = REPO_ROOT / "docs" / "THIRD_PARTY_NOTICES.md"
+CHANGELOG_PATH = REPO_ROOT / "docs" / "CHANGELOG.md"
 
 # 九大一级分类：目录名 -> (中文名, 定位)
 CATEGORIES: dict[str, tuple[str, str]] = {
@@ -156,14 +156,14 @@ def load_yaml(path: Path) -> dict[str, Any]:
 
 
 def discover_entries(root: Path = REPO_ROOT) -> list[Entry]:
-    """扫描九大分类目录，收集所有含 meta.yml 的条目。
+    """扫描 entries/ 下九大分类目录，收集所有含 meta.yml 的条目。
 
-    只扫描 <分类>/<条目>/meta.yml 这一层，不递归——条目内部的 src/
+    只扫描 entries/<分类>/<条目>/meta.yml 这一层，不递归——条目内部的 src/
     可能包含上游自己的 yml 文件，递归会误伤。
     """
     entries: list[Entry] = []
     for category in sorted(CATEGORIES):
-        category_dir = root / category
+        category_dir = root / "entries" / category
         if not category_dir.is_dir():
             continue
         for entry_dir in sorted(p for p in category_dir.iterdir() if p.is_dir()):

@@ -7,7 +7,7 @@ body:
     id: entry
     attributes:
       label: 相关条目 / 文件
-      description: 例如 meta-skillcraft/superpowers 或 docs/license-policy.md
+      description: 例如 entries/meta-skillcraft/superpowers 或 docs/license-policy.md
     validations:
       required: true
   - type: dropdown

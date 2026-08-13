@@ -6,8 +6,8 @@
 
 先读这两份文档，能省下很多来回：
 
-- [收录标准](docs/admission-criteria.md) —— 什么能收，什么不能收
-- [许可证政策](docs/license-policy.md) —— 三色分级与判定流程
+- [收录标准](admission-criteria.md) —— 什么能收，什么不能收
+- [许可证政策](license-policy.md) —— 三色分级与判定流程
 
 ---
 
@@ -42,7 +42,7 @@
 
 ### 第 1 步：先判协议（不通过就别往下走了）
 
-按 [许可证政策](docs/license-policy.md) 的五步流程判定分级：
+按 [许可证政策](license-policy.md) 的五步流程判定分级：
 
 | 分级 | 典型协议 | 能否拷代码 |
 |---|---|---|
@@ -68,7 +68,7 @@ LICENSE 文件是 Apache-2.0。**两者不一致一律按红灯处理**，不要
 
 ### 第 3 步：选分类，定 id
 
-九个一级分类见 [README 目录导航](README.md#目录导航)。选**最主要的用途**那一个，
+九个一级分类见 [README 目录导航](../README.md#目录导航)。选**最主要的用途**那一个，
 其余维度写进 `tags` 由 INDEX 做交叉检索——不要为了多露出而纠结分类。
 
 `id` 规则：小写字母、数字、连字符；**必须等于目录名**；全局唯一。
@@ -78,8 +78,9 @@ LICENSE 文件是 Apache-2.0。**两者不一致一律按红灯处理**，不要
 ### 第 4 步：拷贝模板
 
 ```bash
-cp -r _template/ <分类目录>/<你的id>/
-cd <分类目录>/<你的id>/
+# 在仓库根目录执行
+cp -r _template/ entries/<分类目录>/<你的id>/
+cd entries/<分类目录>/<你的id>/
 ```
 
 link-only 存根请保留 `GET-IT.md`；vendored 条目请删掉它。
@@ -90,10 +91,10 @@ link-only 存根请保留 `GET-IT.md`；vendored 条目请删掉它。
 
 ```bash
 python scripts/vendor.py --add https://github.com/owner/repo \
-    --into <分类目录>/<你的id>
+    --into entries/<分类目录>/<你的id>
 # 只取上游某个子目录：
 python scripts/vendor.py --add https://github.com/owner/repo \
-    --subpath skills/foo --into <分类目录>/<你的id>
+    --subpath skills/foo --into entries/<分类目录>/<你的id>
 ```
 
 拿到源码后：
@@ -105,8 +106,8 @@ python scripts/vendor.py --add https://github.com/owner/repo \
   `src/assets/FETCH.md` 里记下载地址 + SHA256
 - **在根 `.gitignore` 里加一条白名单**，否则 `**/src/` 规则会把它忽略掉：
   ```
-  !<分类目录>/<你的id>/src/
-  !<分类目录>/<你的id>/src/**
+  !entries/<分类目录>/<你的id>/src/
+  !entries/<分类目录>/<你的id>/src/**
   ```
 
 ### 第 6 步：填元数据与文档

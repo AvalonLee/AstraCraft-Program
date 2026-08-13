@@ -20,4 +20,4 @@ body:
   - type: markdown
     attributes:
       value: |
-        > 我们承诺 **7 日内处理**，删除相关内容并在 CHANGELOG 中记录。
+        > 我们承诺 **7 日内处理**，删除相关内容并在 docs/CHANGELOG.md 中记录。

@@ -7,11 +7,11 @@
 用法：
     # 收录整个上游仓库
     python scripts/vendor.py --add https://github.com/owner/repo \\
-        --into meta-skillcraft/my-entry
+        --into entries/meta-skillcraft/my-entry
 
     # 只收录上游的某个子目录
     python scripts/vendor.py --add https://github.com/owner/repo \\
-        --subpath skills/foo --into meta-skillcraft/my-entry
+        --subpath skills/foo --into entries/meta-skillcraft/my-entry
 
     # 覆盖已有的 src/（用于同步上游更新）
     python scripts/vendor.py --add <url> --into <dir> --force

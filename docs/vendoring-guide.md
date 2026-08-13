@@ -34,8 +34,8 @@ submodule 的致命问题：访客在 GitHub 网页上点进去只看到一个�
 ### 2. 建目录
 
 ```bash
-cp -r _template/ meta-skillcraft/my-entry/
-cd meta-skillcraft/my-entry/
+cp -r _template/ entries/meta-skillcraft/my-entry/
+cd entries/meta-skillcraft/my-entry/
 rm GET-IT.md          # vendored 条目不需要它
 ```
 
@@ -44,7 +44,7 @@ rm GET-IT.md          # vendored 条目不需要它
 ```bash
 # 回到仓库根目录执行
 python scripts/vendor.py --add https://github.com/owner/repo \
-    --into meta-skillcraft/my-entry
+    --into entries/meta-skillcraft/my-entry
 ```
 
 只要上游的某个子目录：
@@ -52,7 +52,7 @@ python scripts/vendor.py --add https://github.com/owner/repo \
 ```bash
 python scripts/vendor.py --add https://github.com/owner/repo \
     --subpath skills/brainstorming \
-    --into meta-skillcraft/my-entry
+    --into entries/meta-skillcraft/my-entry
 ```
 
 脚本会做这些事：
@@ -73,14 +73,14 @@ python scripts/vendor.py --add https://github.com/owner/repo \
 版本库：
 
 ```gitignore
-!meta-skillcraft/my-entry/src/
-!meta-skillcraft/my-entry/src/**
+!entries/meta-skillcraft/my-entry/src/
+!entries/meta-skillcraft/my-entry/src/**
 ```
 
 验证：
 
 ```bash
-git check-ignore -v meta-skillcraft/my-entry/src/SKILL.md
+git check-ignore -v entries/meta-skillcraft/my-entry/src/SKILL.md
 # 应该无输出（退出码 1）。有输出说明还在被忽略。
 ```
 
@@ -93,8 +93,8 @@ git check-ignore -v meta-skillcraft/my-entry/src/SKILL.md
 硬性限制：**单条目 ≤ 20 MB，单文件 ≤ 5 MB**。
 
 ```bash
-du -sh meta-skillcraft/my-entry/src/
-find meta-skillcraft/my-entry/src/ -type f -size +5M
+du -sh entries/meta-skillcraft/my-entry/src/
+find entries/meta-skillcraft/my-entry/src/ -type f -size +5M
 ```
 
 超限的处理：不拷大文件，改在 `src/assets/FETCH.md` 里记录下载地址 + SHA-256
@@ -102,7 +102,7 @@ find meta-skillcraft/my-entry/src/ -type f -size +5M
 
 ### 6. 填元数据、写文档、校验
 
-见 [贡献指南](../CONTRIBUTING.md#第-6-步填元数据与文档)。
+见 [贡献指南](CONTRIBUTING.md#第-6-步填元数据与文档)。
 
 ```bash
 python scripts/validate.py
@@ -114,8 +114,8 @@ python scripts/gen_index.py
 ## 新增一个 link-only 存根
 
 ```bash
-cp -r _template/ business-office/my-stub/
-cd business-office/my-stub/
+cp -r _template/ entries/business-office/my-stub/
+cd entries/business-office/my-stub/
 # 保留 GET-IT.md，填写不可转载原因与 clone 命令
 ```
 
@@ -184,8 +184,8 @@ python scripts/vendor.py --verify
 
 ```bash
 # 1. 删源码
-git rm -r --cached <条目>/src/
-rm -rf "E:/Download/SkillMall/<条目>/src"
+git rm -r --cached entries/<条目>/src/
+rm -rf "E:/Download/SkillMall/entries/<条目>/src"
 
 # 2. 从 .gitignore 移除白名单例外
 
@@ -211,7 +211,7 @@ python scripts/validate.py && python scripts/gen_index.py
 **vendored**：
 
 ```
-<分类>/<id>/
+entries/<分类>/<id>/
 ├─ meta.yml            人工维护
 ├─ upstream.lock       脚本写入，勿手改
 ├─ README.zh-CN.md     七段式
@@ -224,7 +224,7 @@ python scripts/validate.py && python scripts/gen_index.py
 **link-only**：
 
 ```
-<分类>/<id>/
+entries/<分类>/<id>/
 ├─ meta.yml            license_tier: C, mode: link-only
 ├─ upstream.lock       仅记录 url/ref/commit
 ├─ README.zh-CN.md     要写得更厚

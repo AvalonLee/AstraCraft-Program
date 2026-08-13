@@ -22,7 +22,7 @@
 - [ ] 绿灯项目用 `scripts/vendor.py` 拉取快照，并在根 `.gitignore` 添加 `!.../src/` 白名单
 - [ ] 红灯项目只写了 `GET-IT.md`，**未**把源码拷进仓库
 - [ ] 已写中文 `README.zh-CN.md`；`core` 级条目还写了真实 `NOTES.zh-CN.md`
-- [ ] 已在 `THIRD_PARTY_NOTICES.md` 补归属登记
+- [ ] 已在 `docs/THIRD_PARTY_NOTICES.md` 补归属登记
 - [ ] 已跑 `python scripts/validate.py && python scripts/gen_index.py` 并提交 `INDEX.md`
 
 ## 协议与合规

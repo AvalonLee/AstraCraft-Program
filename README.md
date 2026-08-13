@@ -68,47 +68,48 @@ SkillMall 是一个用于**收集、整理和归纳优质开源 Skill 及关联�
 
 ```
 SkillMall/
-├── README.md              # 你正在看的文件
+├── README.md              # 你正在看的文件（核心入口）
 ├── INDEX.md               # 自动生成的交叉检索索引（六视图）
-├── CONTRIBUTING.md        # 如何贡献新条目
-├── CODE_OF_CONDUCT.md     # 行为准则
-├── CHANGELOG.md           # 条目增减与结构变更
-├── THIRD_PARTY_NOTICES.md # 第三方内容归属与许可证声明
 ├── LICENSE                # 原创文档：CC BY 4.0
 ├── LICENSE-CODE           # 脚本代码：MIT
-├── _template/             # 新增条目脚手架（复制即用）
-├── docs/                  # 收录标准 / 协议政策 / vendoring 指南 / 规范速查
-│   ├── admission-criteria.md
-│   ├── license-policy.md
-│   ├── vendoring-guide.md
-│   └── skill-spec-cheatsheet.md
+├── entries/               # ★ 九大用途分类统一收纳（实际条目内容）
+│   └── <分类>/            # 九大分类之一，见下表
+│       └── <条目>/
+│           ├── meta.yml       # 条目元数据（人工维护）
+│           ├── upstream.lock  # 同步状态锁（脚本维护）
+│           ├── README.zh-CN.md
+│           ├── NOTES.zh-CN.md # 实测笔记（core 必填）
+│           ├── GET-IT.md      # 仅 link-only 存根有：本地补齐说明
+│           └── src/           # 仅 vendored 条目有：上游源码快照（白名单放行）
+├── docs/                  # ★ 全部文档统一收纳
+│   ├── CONTRIBUTING.md        # 如何贡献新条目
+│   ├── CODE_OF_CONDUCT.md     # 行为准则
+│   ├── CHANGELOG.md           # 条目增减与结构变更
+│   ├── THIRD_PARTY_NOTICES.md # 第三方内容归属与许可证声明
+│   ├── admission-criteria.md  # 收录标准
+│   ├── license-policy.md      # 协议政策
+│   ├── vendoring-guide.md     # vendoring 操作手册
+│   └── skill-spec-cheatsheet.md # Agent Skills 规范速查
 ├── scripts/               # 工具链（Python）
 │   ├── validate.py        # 元数据校验（CI 用）
 │   ├── gen_index.py       # 生成 INDEX.md
 │   └── vendor.py          # 快照式拷贝上游源码
-└── <分类>/                # 九大用途分类，每个分类下含若干条目目录
-    └── <条目>/
-        ├── meta.yml       # 条目元数据（人工维护）
-        ├── upstream.lock  # 同步状态锁（脚本维护）
-        ├── README.zh-CN.md
-        ├── NOTES.zh-CN.md # 实测笔记（core 必填）
-        ├── GET-IT.md      # 仅 link-only 存根有：本地补齐说明
-        └── src/           # 仅 vendored 条目有：上游源码快照（白名单放行）
+└── _template/             # 新增条目脚手架（复制即用）
 ```
 
 ### 九大分类
 
 | 目录 | 定位 |
 |---|---|
-| `writing-docs/` | 文案、报告、技术写作、文档生成 |
-| `dev-engineering/` | 编码、重构、测试、代码审查 |
-| `design-creative/` | UI/UX、视觉、品牌、素材生成 |
-| `data-analytics/` | 数据处理、可视化、表格、BI |
-| `research-intel/` | 检索、调研、信息聚合、竞品分析 |
-| `ops-automation/` | 部署、CI/CD、脚本、系统维护 |
-| `business-office/` | 办公文档、协作、流程、商务 |
-| `agent-infra/` | MCP server、框架、CLI 工具 |
-| `meta-skillcraft/` | 写 skill 的 skill、规范、模板、元技能 |
+| `entries/writing-docs/` | 文案、报告、技术写作、文档生成 |
+| `entries/dev-engineering/` | 编码、重构、测试、代码审查 |
+| `entries/design-creative/` | UI/UX、视觉、品牌、素材生成 |
+| `entries/data-analytics/` | 数据处理、可视化、表格、BI |
+| `entries/research-intel/` | 检索、调研、信息聚合、竞品分析 |
+| `entries/ops-automation/` | 部署、CI/CD、脚本、系统维护 |
+| `entries/business-office/` | 办公文档、协作、流程、商务 |
+| `entries/agent-infra/` | MCP server、框架、CLI 工具 |
+| `entries/meta-skillcraft/` | 写 skill 的 skill、规范、模板、元技能 |
 
 完整条目列表与交叉检索见 **[INDEX.md](INDEX.md)**。
 
@@ -122,7 +123,7 @@ SkillMall/
 
 ```bash
 # 把 superpowers 的整套技能拷到你的 agent skills 目录
-cp -r meta-skillcraft/superpowers/src/ ~/.claude/skills/superpowers/
+cp -r entries/meta-skillcraft/superpowers/src/ ~/.claude/skills/superpowers/
 ```
 
 **用 link-only（🔗）存根：** 本仓库**不含源码**，请按条目内 `GET-IT.md` 的指引在本地补齐
@@ -135,14 +136,14 @@ cp -r meta-skillcraft/superpowers/src/ ~/.claude/skills/superpowers/
 
 ## 六、贡献新条目
 
-欢迎 PR！流程与七步清单见 [CONTRIBUTING.md](CONTRIBUTING.md)。要点：
+欢迎 PR！流程与七步清单见 [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md)。要点：
 
 1. 从 `_template/` 复制出条目目录；
 2. 填 `meta.yml`（协议分级最关键，填错会被 CI 拦下）；
-3. 绿灯项目用 `scripts/vendor.py --add <url> --into <分类>/<id>` 拉快照；
+3. 绿灯项目用 `scripts/vendor.py --add <url> --into entries/<分类>/<id>` 拉快照；
 4. 红灯项目只写 `GET-IT.md`，不拷源码；
 5. 写中文 `README.zh-CN.md`，主推条目还须写 `NOTES.zh-CN.md`；
-6. 在 `THIRD_PARTY_NOTICES.md` 补归属登记；
+6. 在 `docs/THIRD_PARTY_NOTICES.md` 补归属登记；
 7. 跑 `python scripts/validate.py && python scripts/gen_index.py`，提交 PR。
 
 ---
@@ -181,7 +182,7 @@ PR 增量检查改用 `tcort/github-action-markdown-link-check`，全量死链�
   - 文档类 → **CC BY 4.0**（见 [LICENSE](LICENSE)）
   - 代码类（`scripts/`、`*.yml` 工作流）→ **MIT**（见 [LICENSE-CODE](LICENSE-CODE)）
 - **收录的第三方内容**：著作权归各自原作者，条目 `src/` 内保留上游原始 LICENSE，
-  其条款优先于本仓库声明。第三方归属汇总见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+  其条款优先于本仓库声明。第三方归属汇总见 [docs/THIRD_PARTY_NOTICES.md](docs/THIRD_PARTY_NOTICES.md)。
 
 > ⚠️ 本仓库的说明、评级与实测笔记均为整理者主观判断，**不构成法律建议**。
 > 任何再分发或商用，请以对应上游 LICENSE 全文为准。
@@ -196,7 +197,7 @@ PR 增量检查改用 `tcort/github-action-markdown-link-check`，全量死链�
 - 或发邮件至：avalonli@qq.com
 
 **承诺 7 日内处理，无需提供任何法律文书**，一句话说明身份和诉求即可。
-我们会删除相关内容并在 CHANGELOG 中记录。
+我们会删除相关内容并在 docs/CHANGELOG.md 中记录。
 
 ---
 

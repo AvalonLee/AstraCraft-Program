@@ -377,7 +377,7 @@ def check_quota(entries: list[Entry], rep: Reporter) -> None:
 
 def check_categories_exist(rep: Reporter) -> None:
     for category in CATEGORIES:
-        if not (REPO_ROOT / category).is_dir():
+        if not (REPO_ROOT / "entries" / category).is_dir():
             rep.error("全局", f"缺少分类目录：{category}/")
 
 

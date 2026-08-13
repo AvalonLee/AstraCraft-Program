@@ -39,7 +39,7 @@ from _common import (  # noqa: E402
 HEADER = """<!--
   ⚠️ 本文件由 scripts/gen_index.py 自动生成，请勿手动编辑。
 
-  修改条目信息请编辑对应的 <分类>/<条目>/meta.yml，然后执行：
+  修改条目信息请编辑对应的 entries/<分类>/<条目>/meta.yml，然后执行：
       python scripts/gen_index.py
 
   CI 会重新渲染并与本文件比对，不一致将导致构建失败。
@@ -128,7 +128,7 @@ def view_by_category(entries: list[Entry]) -> list[str]:
         lines += [
             f"### {name_zh}",
             "",
-            f"`{category}/` —— {desc}",
+            f"`entries/{category}/` —— {desc}",
             "",
             "| | 名称 | 类型 | 协议 | 简介 |",
             "|---|---|---|---|---|",

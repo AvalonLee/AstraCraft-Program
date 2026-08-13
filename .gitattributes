@@ -25,4 +25,4 @@
 INDEX.md linguist-generated=true
 
 # vendored 源码不计入仓库语言统计，也不参与 GitHub 代码搜索排序
-*/*/src/** linguist-vendored=true
+**/src/** linguist-vendored=true

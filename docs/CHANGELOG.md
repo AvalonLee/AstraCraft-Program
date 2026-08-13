@@ -16,6 +16,11 @@
 
 ### 结构
 
+- **仓库结构重组**：九大用途分类移入统一 `entries/` 大目录；文档类文件
+  （CONTRIBUTING / CODE_OF_CONDUCT / CHANGELOG / THIRD_PARTY_NOTICES）统一移入 `docs/`；
+  根目录仅保留 README / INDEX / LICENSE / LICENSE-CODE 等核心入口。脚本与 CI 同步适配
+  新路径（`_common.py` 的发现路径与常量、`gen_index.py` 的链接前缀、
+  `.gitignore` 白名单、`.gitattributes` linguist 规则）
 - 仓库初始化：确立九大用途分类、三色协议分级、快照式 vendoring 机制
 - 建立 `_template/` 条目脚手架（`meta.yml` / `upstream.lock` / `README.zh-CN.md` /
   `NOTES.zh-CN.md` / `GET-IT.md`）

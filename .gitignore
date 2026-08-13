@@ -4,8 +4,8 @@
 # vendored（绿灯/黄灯）条目的 src/ 必须入库，用 ! 白名单放行。
 # 新增 vendored 条目时，务必在下方补一条 ! 规则。
 **/src/
-!meta-skillcraft/superpowers/src/
-!meta-skillcraft/superpowers/src/**
+!entries/meta-skillcraft/superpowers/src/
+!entries/meta-skillcraft/superpowers/src/**
 
 # ── Python ──────────────────────────────────────────────────
 __pycache__/

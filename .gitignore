@@ -30,3 +30,6 @@ Thumbs.db
 *.log
 tmp/
 .tmp/
+
+!entries/agent-infra/tencentdb-agent-memory/src/
+!entries/agent-infra/tencentdb-agent-memory/src/**

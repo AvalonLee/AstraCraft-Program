@@ -1,0 +1,38 @@
+# ============================================================================
+# 上游同步状态锁文件
+# ----------------------------------------------------------------------------
+# ⚠️ 由 scripts/vendor.py 自动生成，请勿手动编辑。
+#    手改会导致 content_hash 校验失配。
+# ============================================================================
+
+source_url: "https://github.com/TencentCloud/TencentDB-Agent-Memory.git"
+source_type: "github"
+ref: "feat/server_team"
+commit: "4dca55c41bf11cb19b49728dbe495c8e05d25abb"
+commit_date: "2026-08-11T12:11:59Z"
+synced_at: "2026-08-13T14:28:09Z"
+synced_by: "scripts/vendor.py v1.0.0 (tarball snapshot)"
+subpath: "."
+file_count: 830
+total_bytes: 13025990
+content_hash: "sha256:93d0aee27ba0e862ad913939db73f28c04435e40c70d95ba6eda755d6ce87e16"
+
+excluded:
+  - ".git/"
+  - ".github/workflows/"
+  - "node_modules/"
+  - "__pycache__/"
+  - ".venv/"
+  - ".DS_Store"
+  # 体积策略裁剪（详见 src/assets/FETCH.md，含 SHA-256）：
+  - "assets/videos/"                      # 2 个演示视频，>5MB 单文件上限
+  - "assets/images/flowchart3.png"        # 2.70 MB
+  - "assets/images/flowchart3.cn.png"     # 1.26 MB
+  - "assets/images/flowchart4.png"        # 1.02 MB
+  - "assets/images/flowchart4.cn.png"     # 1.21 MB
+  - "assets/images/flowchart5.png"        # 1.08 MB
+  - "assets/images/flowchart5.cn.png"     # 1.27 MB
+
+# 必须保持为空。零修改 vendoring 可规避 Apache-2.0 的改动标注义务。
+# 体积裁剪（剔除大资源）不视为修改，详见 src/assets/FETCH.md 与 NOTES.zh-CN.md。
+local_patches: []

@@ -1,0 +1,19 @@
+/**
+ * LoginGate 登录表单样式补丁（右侧表单区域布局，视觉细节交给 Tea 组件本身）。
+ */
+
+._tdai-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+._tdai-login-hint {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--tea-color-text-tertiary);
+}
+
+._tdai-login-submit.tea-btn {
+  width: 100%;
+}

@@ -5,7 +5,7 @@
 
 [![license](https://img.shields.io/badge/docs-CC%20BY%204.0-blue.svg)](LICENSE)
 [![code license](https://img.shields.io/badge/code-MIT-green.svg)](LICENSE-CODE)
-[![entries](https://img.shields.io/badge/entries-3-blue.svg)](INDEX.md)
+[![entries](https://img.shields.io/badge/entries-4-blue.svg)](INDEX.md)
 [![CI: index-check](https://github.com/AvalonLee/SkillMall/actions/workflows/index-check.yml/badge.svg)](https://github.com/AvalonLee/SkillMall/actions/workflows/index-check.yml)
 [![CI: link-check](https://github.com/AvalonLee/SkillMall/actions/workflows/link-check.yml/badge.svg)](https://github.com/AvalonLee/SkillMall/actions/workflows/link-check.yml)
 

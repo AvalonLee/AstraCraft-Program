@@ -41,6 +41,8 @@
 
 ### 新增
 
+- `agent-infra/tencentdb-agent-memory` —— 腾讯云 Agent 团队级记忆中心（📦 vendored，
+  MIT，A 级，standard 评级，未实测）
 - `meta-skillcraft/agent-skills-spec` —— Agent Skills 开放规范（🔗 存根）
 - `meta-skillcraft/superpowers` —— obra/superpowers 技能集（📦 vendored，MIT）
 - `business-office/anthropics-office-skills` —— Anthropic Office 文档技能

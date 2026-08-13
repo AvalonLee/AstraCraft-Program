@@ -41,6 +41,20 @@
 
 ---
 
+### tencentdb-agent-memory
+
+| 项目 | 内容 |
+|---|---|
+| **上游地址** | https://github.com/TencentCloud/TencentDB-Agent-Memory |
+| **著作权人** | Tencent |
+| **许可证** | MIT（SPDX: `MIT`） |
+| **协议分级** | 🟢 A |
+| **本仓库路径** | `entries/agent-infra/tencentdb-agent-memory/src/` |
+| **许可证文件** | `entries/agent-infra/tencentdb-agent-memory/src/LICENSE` |
+| **本地修改** | 无（零修改 vendoring；9 个超大资源按体积策略剔除，见 `src/assets/FETCH.md`） |
+
+---
+
 ## 🔗 仅链接存根的条目（link-only）
 
 以下条目**未包含任何上游源码**，本仓库仅提供导航、说明与评测。

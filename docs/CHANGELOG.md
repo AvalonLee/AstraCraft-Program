@@ -1,6 +1,6 @@
 # 变更日志
 
-本文件记录 SkillMall 的条目增减与结构变更，按月倒序排列。
+本文件记录 AstraCraft Program（天工计划）的条目增减与结构变更，按月倒序排列。
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)。
 
 变更类型：
@@ -26,7 +26,7 @@
   `site/skills/<id>.html` 详情页）；新增 `site/`（首页搜索 + 分类 / 标签 / 评级 / 协议 筛选 +
   卡片网格、`assets/style.css`、`assets/app.js`）；新增 `.github/workflows/deploy.yml`
   （push main 时自动生成并发布到 GitHub Pages `gh-pages`，在线地址
-  https://avalonlee.github.io/SkillMall/）；README 改写为 awesome-list 风格（徽章、什么是
+  https://avalonlee.github.io/AstraCraft-Program/）；README 改写为 awesome-list 风格（徽章、什么是
   SKILL.md、每个 SKILL.md 里有什么、九大分类、在线预览入口），保留原有收录标准 / 协议 / 贡献 /
   下架等实质内容；`index-check.yml` 增加站点生成器校验任务。
 - **设定调整：从「快照式收录」改为「轻量索引」**：不再收录上游源码快照——删除所有

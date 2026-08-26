@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""SkillMall 条目校验。
+"""AstraCraft Program（天工计划）条目校验。
 
 检查项：
   1. SKILL.md 的 YAML frontmatter 符合 JSON Schema
@@ -167,7 +167,7 @@ def check_removed(entries: list[Entry], rep: Reporter) -> None:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="校验 SkillMall 条目")
+    parser = argparse.ArgumentParser(description="校验 AstraCraft Program 条目")
     parser.add_argument(
         "--quiet", action="store_true", help="只输出错误，不打印条目清单"
     )

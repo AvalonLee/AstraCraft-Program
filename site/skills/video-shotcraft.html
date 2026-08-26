@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Video Shotcraft 产品视频动态设计技能 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Video Shotcraft 产品视频动态设计技能</h1>
+      <p class="hero-subtitle">Video Shotcraft — Cinematic Product Video Skill</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>常规</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>技能包</span>
+    </div>
+    <p class="muted detail-meta">面向 Claude Code 与 Codex 的 AI 产品视频动态设计 skill：152 张镜头配方卡、209 种动态预览、一套可投产的 Remotion 模板，把 Agent 变成动态设计工作室，一键生成电影级产品宣传片。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/Vincentwei1021/video-shotcraft" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/Vincentwei1021/video-shotcraft" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Video Shotcraft 产品视频动态设计技能</h1>
+<blockquote>面向 Claude Code 与 Codex 的 AI 产品视频动态设计 skill。上游：<a href="https://github.com/Vincentwei1021/video-shotcraft" target="_blank" rel="noopener">Vincentwei1021/video-shotcraft</a> · 许可证：Apache-2.0</blockquote>
+<h2>这是什么</h2>
+<p>一份把 Claude Code 或 Codex 变成动态设计工作室的 Agent Skill：指向你的产品，它就能走完故事板、动画、音效设计的完整流程，产出电影级产品宣传片、发布视频或功能演示。核心是基于 Remotion 的 React 视频框架，配备 152 张镜头配方卡（含目的、节奏、参数、实现要点）、209 种动态预览，以及一套经过验证的 36.2 秒完整模板（Ink Press）。</p>
+<p>内建 2.5D 页面运镜、标题卡、转场、节拍同步剪辑和电影级 SFX 音效库（149 个 SFX，16 个场景/材质分类 + 5 首 BGM）。完成后可导出为可编辑的剪映项目文件。</p>
+<h2>怎么安装</h2>
+<pre><code class="lang-bash"># 方式一：直接让 Agent 安装
+# 在 Claude Code / Codex 中说：
+# &quot;Install this skill for me: https://github.com/Vincentwei1021/video-shotcraft&quot;
+
+# 方式二：skills CLI
+npx skills add Vincentwei1021/video-shotcraft
+
+# 方式三：手动软链
+git clone https://github.com/Vincentwei1021/video-shotcraft.git
+ln -s &quot;$(pwd)/video-shotcraft&quot; ~/.codex/skills/video-shotcraft  # Codex
+ln -s &quot;$(pwd)/video-shotcraft&quot; ~/.claude/skills/video-shotcraft  # Claude Code</code></pre>
+<h2>怎么用</h2>
+<p>在 Agent 中说「Use video-shotcraft to create a promo for my product」即可启动。可指定镜头配方卡（如 <code>deck-deal-flyin</code>、<code>spotlight-hero-card</code>），也可在在线 Gallery 中先浏览挑选。不指定则默认使用 Ink Press 模板（36.2 秒、1920×1080、30fps、10 个镜头）。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 Apache-2.0</strong>：可商用；镜头配方卡源自对知名产品官方影片的动效语言学习与从零实现，不含原片素材。</li><li><strong>Remotion 许可证</strong>：个人与小团队免费，公司需购买付费许可证。</li><li><strong>运行环境</strong>：需 Node ≥ 22 与 Chrome/Chromium headless shell。</li><li><strong>音频素材</strong>：来自 Mixkit 等免费商用源，详见 <code>assets/audio/ATTRIBUTION.md</code>。</li><li><strong>剪映导出</strong>：macOS 剪映专业版 11.2 验证通过，Windows 未测试。</li><li>维护活跃（2026-08 更新），在线 Gallery 自动部署到 GitHub Pages。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-08-26 · 更新于 2026-08-26 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

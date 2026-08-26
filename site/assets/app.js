@@ -1,4 +1,4 @@
-// SkillMall 预览站前端逻辑（视觉对齐 awesome-design-md-cn）。
+// AstraCraft Program（天工计划）预览站前端逻辑（视觉对齐 awesome-design-md-cn）。
 // 读 data/skills.json，渲染卡片并支持搜索 + chip 多维筛选。
 (function () {
   "use strict";

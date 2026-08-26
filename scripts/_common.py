@@ -1,8 +1,8 @@
-"""SkillMall 脚本共享工具。
+"""AstraCraft Program（天工计划）脚本共享工具。
 
 提供条目发现、SKILL.md frontmatter 加载与常量定义，供 validate.py / gen_index.py 复用。
 
-SkillMall 的收录形态：每个条目只保存一个 `SKILL.md`（介绍 + 安装指令），
+AstraCraft Program 的收录形态：每个条目只保存一个 `SKILL.md`（介绍 + 安装指令），
 不收录上游源码快照。Agent 通过该文件快速定位并安装对应 skill 项目。
 """
 

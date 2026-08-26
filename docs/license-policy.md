@@ -34,7 +34,7 @@
 
 任何著作权人都可以要求本仓库移除相关内容：
 
-- Issue：https://github.com/AvalonLee/SkillMall/issues
+- Issue：https://github.com/AvalonLee/AstraCraft-Program/issues
 - 邮件：avalonli@qq.com
 
 **7 日内处理，不要求提供任何法律文书。** 一句话说明身份和诉求即可。

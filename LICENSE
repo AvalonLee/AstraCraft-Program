@@ -1,4 +1,4 @@
-SkillMall 采用双重许可（dual license）
+AstraCraft Program（天工计划）采用双重许可（dual license）
 
 - 文档内容（README.md、INDEX.md、docs/ 目录下的全部文档、各收录条目下的
   SKILL.md、本仓库设计的分类体系与收录标准）采用 Creative Commons
@@ -20,7 +20,7 @@ Copyright (c) 2026 A.Lee
 适用范围
 --------------------------------------------------------------------------------
 
-本许可证适用于 SkillMall 仓库中由本仓库作者原创编写的**文档内容**，包括：
+本许可证适用于 AstraCraft Program（天工计划）仓库中由本仓库作者原创编写的**文档内容**，包括：
 
   - README.md、INDEX.md
   - docs/ 目录下的全部文档（CONTRIBUTING.md、CHANGELOG.md、收录标准等）
@@ -80,7 +80,7 @@ Copyright (c) 2026 A.Lee
 
 推荐的署名方式：
 
-  内容来自 SkillMall（https://github.com/AvalonLee/SkillMall），
+  内容来自 AstraCraft Program 天工计划（https://github.com/AvalonLee/AstraCraft-Program），
   作者 A.Lee，依据 CC BY 4.0 许可使用。
 
 ================================================================================
@@ -89,7 +89,7 @@ Copyright (c) 2026 A.Lee
 
 Copyright (c) 2026 A.Lee
 
-本许可证仅适用于 SkillMall 仓库中由本仓库作者原创编写的代码，
+本许可证仅适用于 AstraCraft Program（天工计划）仓库中由本仓库作者原创编写的代码，
 具体范围为 `scripts/` 目录下的全部文件，以及 `.github/workflows/`
 下的工作流配置。
 

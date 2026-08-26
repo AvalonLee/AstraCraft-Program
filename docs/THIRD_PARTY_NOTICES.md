@@ -25,7 +25,7 @@
 
 如果你是某项内容的著作权人，希望本仓库移除相关收录：
 
-- 开 Issue：https://github.com/AvalonLee/SkillMall/issues
+- 开 Issue：https://github.com/AvalonLee/AstraCraft-Program/issues
 - 或发邮件至：avalonli@qq.com
 
 **承诺 7 日内处理，无需提供任何法律文书**，一句话说明身份和诉求即可。

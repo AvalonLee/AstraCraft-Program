@@ -9,7 +9,7 @@ Agent 读完即可快速定位并安装对应的 skill 项目。不收录上游�
 
 [![entries](https://img.shields.io/badge/entries-4-blue.svg)](site/index.html)
 [![license](https://img.shields.io/badge/docs-CC%20BY%204.0-blue.svg)](LICENSE)
-[![code license](https://img.shields.io/badge/code-MIT-green.svg)](LICENSE-CODE)
+[![code license](https://img.shields.io/badge/code-MIT-green.svg)](LICENSE)
 [![CI: index-check](https://github.com/AvalonLee/SkillMall/actions/workflows/index-check.yml/badge.svg)](https://github.com/AvalonLee/SkillMall/actions/workflows/index-check.yml)
 [![CI: link-check](https://github.com/AvalonLee/SkillMall/actions/workflows/link-check.yml/badge.svg)](https://github.com/AvalonLee/SkillMall/actions/workflows/link-check.yml)
 
@@ -133,7 +133,7 @@ Agent 可直接据此判断装不装、能不能商用。
 
 - **本仓库的原创内容**（分类体系、导读、脚本、文档）：
   - 文档类 → **CC BY 4.0**（见 [LICENSE](LICENSE)）
-  - 代码类（`scripts/`、`*.yml` 工作流）→ **MIT**（见 [LICENSE-CODE](LICENSE-CODE)）
+  - 代码类（`scripts/`、`*.yml` 工作流）→ **MIT**（见 [LICENSE](LICENSE)）
 - **收录条目的内容**：著作权归各自作者，本仓库仅提供导航与说明，不含上游源码。
 
 ## 下架与联系

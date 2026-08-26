@@ -1,10 +1,24 @@
-Creative Commons Attribution 4.0 International (CC BY 4.0)
+SkillMall 采用双重许可（dual license）
+
+- 文档内容（README.md、INDEX.md、docs/ 目录下的全部文档、各收录条目下的
+  SKILL.md、本仓库设计的分类体系与收录标准）采用 Creative Commons
+  Attribution 4.0 International (CC BY 4.0)。
+- 代码（scripts/ 目录下的全部文件、.github/workflows/ 下的工作流配置）
+  采用 MIT License。
+
+两份许可的适用范围互不重叠。各收录条目 SKILL.md 中链接指向的上游项目内容，
+著作权归各自原作者所有，适用其上游仓库自带的 LICENSE 文件；本仓库不收录任何
+上游源码，对这些内容不主张任何权利，也不通过本许可证进行再授权。
+
+================================================================================
+文档许可：Creative Commons Attribution 4.0 International (CC BY 4.0)
+================================================================================
 
 Copyright (c) 2026 A.Lee
 
-================================================================================
+--------------------------------------------------------------------------------
 适用范围
-================================================================================
+--------------------------------------------------------------------------------
 
 本许可证适用于 SkillMall 仓库中由本仓库作者原创编写的**文档内容**，包括：
 
@@ -16,16 +30,16 @@ Copyright (c) 2026 A.Lee
 本许可证**不适用于**：
 
   1. `scripts/` 目录与 `.github/workflows/` 下的原创代码
-     → 适用 LICENSE-CODE 中的 MIT License
+     → 适用本文件下方「代码许可：MIT License」一节
 
   2. 各收录条目 `SKILL.md` 中链接指向的上游项目内容
      → 著作权归各自原作者所有，适用其上游仓库自带的 LICENSE 文件。
        本仓库不收录任何上游源码，对这些内容不主张任何权利，
        也不通过本许可证进行再授权。索引见 INDEX.md。
 
-================================================================================
+--------------------------------------------------------------------------------
 许可证条款
-================================================================================
+--------------------------------------------------------------------------------
 
 您可以自由地：
 
@@ -52,9 +66,9 @@ Copyright (c) 2026 A.Lee
   不提供担保。许可协议可能不会给与您意图使用的所必须的所有许可。例如，
   形象权、隐私权、精神权利等其他权利可能限制您如何使用作品。
 
-================================================================================
+--------------------------------------------------------------------------------
 完整法律条款
-================================================================================
+--------------------------------------------------------------------------------
 
 以上为便于阅读的许可协议摘要，不能替代许可协议本身。
 本作品适用的完整法律文本（legalcode）为：
@@ -68,3 +82,40 @@ Copyright (c) 2026 A.Lee
 
   内容来自 SkillMall（https://github.com/AvalonLee/SkillMall），
   作者 A.Lee，依据 CC BY 4.0 许可使用。
+
+================================================================================
+代码许可：MIT License
+================================================================================
+
+Copyright (c) 2026 A.Lee
+
+本许可证仅适用于 SkillMall 仓库中由本仓库作者原创编写的代码，
+具体范围为 `scripts/` 目录下的全部文件，以及 `.github/workflows/`
+下的工作流配置。
+
+本许可证不适用于：
+  - 本仓库的原创文档内容（README、INDEX.md、docs/、各条目的 SKILL.md），
+    这些内容适用本文件上方「文档许可：Creative Commons Attribution 4.0」一节；
+  - 各收录条目 `SKILL.md` 中链接指向的上游项目内容，这些内容的著作权
+    归各自原作者所有，适用其上游自带的 LICENSE 文件。
+    本仓库不收录任何上游源码。
+
+---
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

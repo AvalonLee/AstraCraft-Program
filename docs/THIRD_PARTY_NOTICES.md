@@ -7,7 +7,7 @@
 `SKILL.md` 中的链接与安装指令指向的仍是上游官方仓库，以其 LICENSE 为准。
 
 本仓库自身的原创内容（分类体系、导读、脚本、文档）另行授权，见
-[LICENSE](../LICENSE)（文档，CC BY 4.0）与 [LICENSE-CODE](../LICENSE-CODE)（代码，MIT）。
+[LICENSE](../LICENSE)（文档 CC BY 4.0 / 代码 MIT 双许可）。
 
 ---
 

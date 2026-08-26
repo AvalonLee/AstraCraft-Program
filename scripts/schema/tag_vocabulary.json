@@ -65,7 +65,12 @@
     "motion-design",
     "video-production",
     "remotion",
-    "product-video"
+    "product-video",
+    "self-hosted",
+    "docker",
+    "jianying",
+    "seedance",
+    "multilingual"
   ],
   "aliases": {
     "claude": "claude-code",

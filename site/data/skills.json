@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-26T11:46:36Z",
-  "count": 16,
+  "generated_at": "2026-08-26T13:00:38Z",
+  "count": 17,
   "categories": [
     {
       "dir": "writing-docs",
@@ -183,6 +183,49 @@
       "updated_at": "2026-08-13",
       "install": "bash\n# 仅克隆文档技能子目录（稀疏检出，体积小）\ngit clone --depth 1 --filter=blob:none --sparse https://github.com/anthropics/skills /tmp/office-skills\ncd /tmp/office-skills\ngit sparse-checkout set skills/document-skills\n\n# 然后将所需技能目录复制到你的 agent 的 skills 目录（仅本地使用）\ncp -r skills/document-skills/* ~/.claude/skills/",
       "detail_url": "skills/anthropics-office-skills.html"
+    },
+    {
+      "id": "arcreel",
+      "name_zh": "ArcReel AI 视频生产工作台",
+      "name_en": "ArcReel — Self-Hosted AI Video Production Workbench",
+      "summary_zh": "开源自托管的 AI 视频生产工作台：将小说、剧本或商品素材转化为角色一致、过程可控、成本可追踪的短视频，支持 Docker 一键部署、Agent 编排、剪映草稿导出。",
+      "summary_en": "Open-source self-hosted AI video workbench: turn novels, scripts, or products into short videos with consistent characters, cost tracking, and agent orchestration.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "video-production",
+        "cinematic",
+        "ai-agent",
+        "storyboard",
+        "self-hosted",
+        "docker",
+        "prompt-engineering",
+        "jianying"
+      ],
+      "languages": [
+        "python",
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "AGPL-3.0",
+      "license_bucket": "copyleft",
+      "homepage": "https://github.com/ArcReel/ArcReel",
+      "repo": "https://github.com/ArcReel/ArcReel",
+      "tier": "watch",
+      "tier_label": "观察",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "",
+      "added_at": "2026-08-26",
+      "updated_at": "2026-08-26",
+      "install": "bash\n# 前提：Docker + Docker Compose\ngit clone https://github.com/ArcReel/ArcReel.git\ncd ArcReel/deploy\n\ncp .env.example .env\ndocker compose up -d",
+      "detail_url": "skills/arcreel.html"
     },
     {
       "id": "awesome-design-md-cn",

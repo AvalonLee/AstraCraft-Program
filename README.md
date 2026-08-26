@@ -7,7 +7,7 @@
 一个轻量、中文为主的 Agent Skill 索引库：每个条目只存一份 `SKILL.md`（介绍 + 安装指令），
 Agent 读完即可快速定位并安装对应的 skill 项目。不收录上游源码快照。
 
-[![entries](https://img.shields.io/badge/entries-4-blue.svg)](site/index.html)
+[![entries](https://img.shields.io/badge/entries-11-blue.svg)](site/index.html)
 [![license](https://img.shields.io/badge/docs-CC%20BY%204.0-blue.svg)](LICENSE)
 [![code license](https://img.shields.io/badge/code-MIT-green.svg)](LICENSE)
 [![CI: index-check](https://github.com/AvalonLee/SkillMall/actions/workflows/index-check.yml/badge.svg)](https://github.com/AvalonLee/SkillMall/actions/workflows/index-check.yml)
@@ -61,7 +61,7 @@ frontmatter 关键字段含义：
 | `id` | 全局唯一标识，必须等于所在目录名 |
 | `name_zh` / `name_en` | 中文 / 英文名称 |
 | `summary_zh` | 它解决什么问题、适合谁用（≤200 字） |
-| `category` | 九大一级分类之一 |
+| `category` | 一级分类之一（见下「收录内容」） |
 | `tags` | 便于检索的标签 |
 | `license` | SPDX 标识符或 UNKNOWN，供判断是否可商用 |
 | `repo` / `homepage` | 上游仓库与主页链接 |
@@ -90,7 +90,7 @@ Agent 可直接据此判断装不装、能不能商用。
 
 ## 收录内容
 
-当前收录 **4** 个技能，按九大分类组织（目录名 → 定位）：
+当前收录 **11** 个技能，按十大分类组织（目录名 → 定位）：
 
 | 目录 | 定位 |
 |---|---|
@@ -102,6 +102,7 @@ Agent 可直接据此判断装不装、能不能商用。
 | `entries/ops-automation/` | 部署、CI/CD、脚本、系统维护 |
 | `entries/business-office/` | 办公文档、协作、流程、商务 |
 | `entries/agent-infra/` | MCP server、框架、CLI 工具 |
+| `entries/dsh/` | DeepSeek Harness 插件——模型/工具/界面/技能可插拔扩展 |
 | `entries/meta-skillcraft/` | 写 skill 的 skill、规范、模板、元技能 |
 
 完整条目列表与交叉检索见 **[INDEX.md](INDEX.md)**。

@@ -16,6 +16,11 @@
 
 ### 结构
 
+- **新增 DSH 一级分类（2026-08-26）**：为收录 DeepSeek Harness（DSH）社区插件，新增一级分类 `dsh`
+  （`entries/dsh/`，中文名「DSH 插件」）。同步更新 `scripts/schema/meta.schema.json` 的 `category`
+  枚举、`scripts/_common.py` 的 `CATEGORIES` 字典、`README.md` 与 `docs/writing-skill-md.md` 的
+  「九大分类」措辞（改为十大 / 一级分类）；`entries/dsh/README.md` 记录 DSH 定位、安装方式与 11 个
+  插件子类。该分类当前为空，待后续以 `category: dsh` 收录具体插件条目。
 - **新增在线预览静态站 + README 改版（2026-08-26）**：参照 awesome-design-md-cn 的项目形态，
   新增 `scripts/gen_site.py`（解析 `entries/**/SKILL.md` 自动生成 `site/data/skills.json` 与
   `site/skills/<id>.html` 详情页）；新增 `site/`（首页搜索 + 分类 / 标签 / 评级 / 协议 筛选 +
@@ -60,6 +65,20 @@
 - `meta-skillcraft/superpowers` —— obra/superpowers 技能集（📦 vendored，MIT）
 - `business-office/anthropics-office-skills` —— Anthropic Office 文档技能
   （🔗 存根，source-available 不可转载）
+- `design-creative/awesome-design-md-cn` —— 中文 DESIGN.md 设计资源集
+  （🔗 链接索引，基于 VoltAgent/awesome-design-md 中文本地化；上游未声明许可证，standard 评级）
+- `design-creative/character-casting-studio-skill` —— 人物角色 Casting 工作室 Skill
+  （🔗 链接索引，面向 Codex 的素材参考驱动写实人物角色生成；上游未声明许可证，standard 评级）
+- `design-creative/cinema-dna-21x9x3` —— Cinema DNA 21:9×3 电影画面生成 Skill
+  （🔗 链接索引，面向 Codex 的电影感三联叙事画面生成；上游未声明许可证，standard 评级）
+- `design-creative/fantasy-life-force-portrait-photography` —— Fantasy 生命感人像摄影 Skill
+  （🔗 链接索引，面向 Codex 的生命感人像摄影；上游未声明许可证，standard 评级）
+- `writing-docs/zenstory` —— ZenStory AI 小说写作工作台
+  （🔗 链接索引，React+FastAPI 多 Agent 小说写作工作台；MIT，standard 评级）
+- `writing-docs/oh-story-claudecode` —— OH-Story 网文/小说写作 Skill 包
+  （🔗 链接索引，Claude Code 网文写作 skill 包，13 个 skill；GitHub 识别 MIT，standard 评级）
+- `writing-docs/drama-skills` —— Drama Skills AI 短剧创作技能合集
+  （🔗 链接索引，Claude Code/Codex 短剧创作 skill 合集，10 个技能；MIT，standard 评级）
 
 ---
 

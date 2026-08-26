@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>中文 DESIGN.md 设计资源集 · SkillMall</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+      <div class="brand-name">SkillMall</div>
+      <div class="brand-sub">Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/SkillMall" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">中文 DESIGN.md 设计资源集</h1>
+      <p class="hero-subtitle">Awesome DESIGN.md CN</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>常规</span><span>UNKNOWN</span><span>技能集</span>
+    </div>
+    <p class="muted detail-meta">面向中文用户的 DESIGN.md 资源集合：整理 70+ 个真实网站的设计系统文档（Google Stitch 提出的纯文本设计语言），复制一份到项目即可让 AI Agent 生成风格一致的 UI。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/fchangjun/awesome-design-md-cn" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://fchangjun.github.io/awesome-design-md-cn/" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>中文 DESIGN.md 设计资源集</h1>
+<blockquote>面向中文用户的 DESIGN.md 资源集合，整理 70+ 个真实网站的设计系统文档。 上游：<a href="https://github.com/fchangjun/awesome-design-md-cn" target="_blank" rel="noopener">fchangjun/awesome-design-md-cn</a> · 许可证：未声明（UNKNOWN）</blockquote>
+<h2>这是什么</h2>
+<p>一份给 AI 设计 Agent / 编码 Agent 使用的<strong>设计系统文档集合</strong>，源自 Google Stitch 提出的 <code>DESIGN.md</code> 概念：用纯文本 Markdown 记录一个产品 / 网站的视觉语言（配色、字体、组件、间距、层级等），让 AI 生成风格一致的界面。</p>
+<p>本仓库在 <a href="https://github.com/VoltAgent/awesome-design-md" target="_blank" rel="noopener">VoltAgent/awesome-design-md</a>（MIT）基础上做了<strong>中文本地化与浏览增强</strong>：目前收录 74+ 个参考案例（Claude、Apple、Stripe、Notion、Figma、Tesla 等），每个案例含一份 <code>DESIGN.md</code> + 明暗双版本预览页（<code>preview.html</code> / <code>preview-dark.html</code>），并配有中文首页、搜索与分类筛选。</p>
+<p>它本质是「资源索引 + 资产库」，不是可加载的 skill 包——你复制其中一份 <code>DESIGN.md</code> 到自己的项目根目录，即可作为 AI 生成 UI 的视觉基准。</p>
+<h2>怎么安装</h2>
+<p>无需安装 skill 引擎。把目标站点的 <code>DESIGN.md</code> 复制到你项目根目录即可：</p>
+<pre><code class="lang-bash"># 1) 克隆仓库（含全部 70+ 站点 DESIGN.md 与预览页，约 1.2 MB）
+git clone --depth 1 https://github.com/fchangjun/awesome-design-md-cn.git /tmp/awesome-design-md-cn
+
+# 2) 复制某个站点的设计系统到你项目根目录（以 Apple 为例）
+cp /tmp/awesome-design-md-cn/design-md/apple/DESIGN.md ./DESIGN.md</code></pre>
+<h2>怎么用</h2>
+<p>复制完成后，在对话中告诉你的 AI 编码 Agent「按项目根目录的 DESIGN.md 生成界面」，它就会以该风格产出 UI。也可直接打开 <a href="https://fchangjun.github.io/awesome-design-md-cn/" target="_blank" rel="noopener">在线预览站</a> 浏览每个案例的配色、排版、按钮、卡片等视觉细节，挑选最贴近目标的风格再复制。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证未声明（风险）</strong>：上游 cn 仓库未包含 LICENSE 文件，其基于 MIT 的 VoltAgent/awesome-design-md 本地化，但本仓库未显式声明许可证；商用或再分发前请确认授权范围，具体以上游原始 LICENSE 为准。</li><li>资源为「只读参考」：本仓库仅做导航与说明，<strong>不收录上游源码</strong>，你复制 <code>DESIGN.md</code> 后请自行纳入版本管理。</li><li>案例持续同步上游新增站点（最近一次同步 2026-07-07），可作为 vibe design / AI 生成 UI 的风格速查表。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-08-26 · 更新于 2026-08-26 · SkillMall 轻量索引</p>
+</main>
+</body>
+</html>

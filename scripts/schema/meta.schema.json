@@ -38,7 +38,7 @@
       "enum": [
         "writing-docs", "dev-engineering", "design-creative", "data-analytics",
         "research-intel", "ops-automation", "business-office", "agent-infra",
-        "meta-skillcraft"
+        "dsh", "meta-skillcraft"
       ]
     },
     "kind": {

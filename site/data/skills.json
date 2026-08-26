@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-26T06:08:53Z",
-  "count": 4,
+  "generated_at": "2026-08-26T07:25:16Z",
+  "count": 11,
   "categories": [
     {
       "dir": "writing-docs",
@@ -41,6 +41,11 @@
       "dir": "agent-infra",
       "name": "Agent 基础设施",
       "desc": "MCP server、框架、CLI 工具"
+    },
+    {
+      "dir": "dsh",
+      "name": "DSH 插件",
+      "desc": "DeepSeek Harness 插件——「一切皆插件」，模型适配器、工具、界面、技能、Agent 均可插拔扩展"
     },
     {
       "dir": "meta-skillcraft",
@@ -137,6 +142,167 @@
       "detail_url": "skills/anthropics-office-skills.html"
     },
     {
+      "id": "awesome-design-md-cn",
+      "name_zh": "中文 DESIGN.md 设计资源集",
+      "name_en": "Awesome DESIGN.md CN",
+      "summary_zh": "面向中文用户的 DESIGN.md 资源集合：整理 70+ 个真实网站的设计系统文档（Google Stitch 提出的纯文本设计语言），复制一份到项目即可让 AI Agent 生成风格一致的 UI。",
+      "summary_en": "A Chinese-localized collection of 70+ DESIGN.md files (Google Stitch's plain-text design format); copy one into your project so AI agents build a consistent UI.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "skill-collection",
+      "kind_label": "技能集",
+      "tags": [
+        "design-system",
+        "design-md",
+        "ui-generation",
+        "google-stitch",
+        "awesome-list",
+        "cn-localization"
+      ],
+      "languages": [
+        "markdown",
+        "html"
+      ],
+      "doc_languages": [
+        "zh"
+      ],
+      "license": "UNKNOWN",
+      "homepage": "https://fchangjun.github.io/awesome-design-md-cn/",
+      "repo": "https://github.com/fchangjun/awesome-design-md-cn",
+      "tier": "standard",
+      "tier_label": "常规",
+      "related": [],
+      "aliases": [
+        "awesome-design-md-cn",
+        "design-md-cn"
+      ],
+      "risk_notes": "上游 cn 仓库未包含 LICENSE 文件（GitHub license 字段为 null）。它基于 MIT 许可的 VoltAgent/awesome-design-md 做中文本地化整理，但本仓库未显式声明许可证；商用或再分发前请确认授权范围。",
+      "added_at": "2026-08-26",
+      "updated_at": "2026-08-26",
+      "install": "bash\n# 1) 克隆仓库（含全部 70+ 站点 DESIGN.md 与预览页，约 1.2 MB）\ngit clone --depth 1 https://github.com/fchangjun/awesome-design-md-cn.git /tmp/awesome-design-md-cn\n\n# 2) 复制某个站点的设计系统到你项目根目录（以 Apple 为例）\ncp /tmp/awesome-design-md-cn/design-md/apple/DESIGN.md ./DESIGN.md",
+      "detail_url": "skills/awesome-design-md-cn.html"
+    },
+    {
+      "id": "character-casting-studio-skill",
+      "name_zh": "人物角色 Casting 工作室 Skill",
+      "name_en": "Character Casting Studio Skill",
+      "summary_zh": "面向 Codex 的素材参考驱动写实人物 casting Skill：为广告、影视、电影与时尚视觉生成原创、真实、可继续开发的人物形象，附蜡像感与网红脸硬规则。",
+      "summary_en": "Material-reference-driven photorealistic character casting skill for Codex; generate original, true-to-life people for ads, film, fashion, and casting visuals.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "skill",
+      "kind_label": "技能包",
+      "tags": [
+        "character-design",
+        "image-generation",
+        "photorealistic",
+        "casting",
+        "codex",
+        "fashion-visual"
+      ],
+      "languages": [
+        "markdown"
+      ],
+      "doc_languages": [
+        "zh"
+      ],
+      "license": "UNKNOWN",
+      "homepage": "https://github.com/dacnay816y62-hub/character-casting-studio-skill",
+      "repo": "https://github.com/dacnay816y62-hub/character-casting-studio-skill",
+      "tier": "standard",
+      "tier_label": "常规",
+      "related": [],
+      "aliases": [
+        "角色 casting",
+        "人物角色生成"
+      ],
+      "risk_notes": "上游仓库未包含 LICENSE 文件（GitHub 识别为 null），许可证 UNKNOWN，商用/再分发前请确认授权范围；示例图库（examples/）为原创视觉示例，使用人脸/肖像参考素材须确保已获授权。",
+      "added_at": "2026-08-26",
+      "updated_at": "2026-08-26",
+      "install": "bash\n# 克隆上游仓库到本地\ngit clone https://github.com/dacnay816y62-hub/character-casting-studio-skill.git\ncd character-casting-studio-skill\n\n# 在支持 skills 的 Agent（如 Codex）中，将本目录作为 skill 加载，\n# 即可读取其角色设计流程与硬规则。需要参考素材时请在本地运行环境提供，\n# 不要把私人照片或未授权素材提交进仓库。",
+      "detail_url": "skills/character-casting-studio-skill.html"
+    },
+    {
+      "id": "cinema-dna-21x9x3",
+      "name_zh": "Cinema DNA 21:9×3 电影画面生成 Skill",
+      "name_en": "Cinema DNA 21:9x3",
+      "summary_zh": "面向 Codex 的电影感画面生成 Skill：把题材或一句剧情转译为真实电影镜头的 21:9 三联叙事画面，支持片名与主题海报。",
+      "summary_en": "A Codex skill that turns a subject or one-line plot into cinematic 21:9 triptych frames with real film-language logic; optional title and theme poster.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "skill",
+      "kind_label": "技能包",
+      "tags": [
+        "cinematic",
+        "image-generation",
+        "film-language",
+        "triptych",
+        "codex",
+        "storyboard"
+      ],
+      "languages": [
+        "markdown"
+      ],
+      "doc_languages": [
+        "zh"
+      ],
+      "license": "UNKNOWN",
+      "homepage": "https://github.com/dacnay816y62-hub/cinema-dna-21x9x3",
+      "repo": "https://github.com/dacnay816y62-hub/cinema-dna-21x9x3",
+      "tier": "standard",
+      "tier_label": "常规",
+      "related": [],
+      "aliases": [
+        "电影感三联图",
+        "电影画面生成"
+      ],
+      "risk_notes": "上游仓库未包含 LICENSE 文件（GitHub 识别为 null），许可证 UNKNOWN，商用/再分发前请确认授权范围；示例图库为原创视觉示例，复制现成 IP 需注意。",
+      "added_at": "2026-08-26",
+      "updated_at": "2026-08-26",
+      "install": "bash\n# 克隆上游仓库到本地\ngit clone https://github.com/dacnay816y62-hub/cinema-dna-21x9x3.git\ncd cinema-dna-21x9x3\n\n# 复制到 Codex skills 目录（PowerShell 示例；CODEX_HOME 可自定义）\nCopy-Item -Recurse . \"$env:USERPROFILE\\.codex\\skills\\cinema-dna-21x9x3\"",
+      "detail_url": "skills/cinema-dna-21x9x3.html"
+    },
+    {
+      "id": "fantasy-life-force-portrait-photography",
+      "name_zh": "Fantasy 生命感人像摄影 Skill",
+      "name_en": "Fantasy Life-Force Portrait Photography",
+      "summary_zh": "面向 Codex 的生命感人像摄影 Skill：把普通照片/废片升级为鲜活高级人像，或从零生成原创生命感样片与摄影提示词，强调人物—事件—镜头—光色—质感的层级判断。",
+      "summary_en": "A Codex portrait photography skill that upgrades casual snapshots into vivid life-force portraits, or generates original samples and prompts from scratch.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "skill",
+      "kind_label": "技能包",
+      "tags": [
+        "portrait",
+        "image-generation",
+        "photography",
+        "life-force",
+        "codex",
+        "social-media"
+      ],
+      "languages": [
+        "markdown"
+      ],
+      "doc_languages": [
+        "zh"
+      ],
+      "license": "UNKNOWN",
+      "homepage": "https://github.com/dacnay816y62-hub/fantasy-life-force-portrait-photography",
+      "repo": "https://github.com/dacnay816y62-hub/fantasy-life-force-portrait-photography",
+      "tier": "standard",
+      "tier_label": "常规",
+      "related": [],
+      "aliases": [
+        "生命感人像",
+        "人像摄影"
+      ],
+      "risk_notes": "上游仓库未包含 LICENSE 文件（GitHub 识别为 null），许可证 UNKNOWN，商用/再分发前请确认授权范围；含示例图（assets/），涉及人像美化需注意肖像权与油腻审美边界。",
+      "added_at": "2026-08-26",
+      "updated_at": "2026-08-26",
+      "install": "bash\n# 克隆上游仓库到本地\ngit clone https://github.com/dacnay816y62-hub/fantasy-life-force-portrait-photography.git\ncd fantasy-life-force-portrait-photography\n\n# 将仓库目录放入你的 Codex skills 目录后，即可在对话中触发，例如：\n# 使用 Fantasy 生命感人像摄影 Skill，把这张普通生活照升级成更有生命感的人像。",
+      "detail_url": "skills/fantasy-life-force-portrait-photography.html"
+    },
+    {
       "id": "agent-skills-spec",
       "name_zh": "Agent Skills 规范",
       "name_en": "Agent Skills Specification",
@@ -218,6 +384,129 @@
       "updated_at": "2026-08-13",
       "install": "bash\n# 1) 克隆上游\ngit clone --depth 1 https://github.com/obra/superpowers.git /tmp/superpowers\n\n# 2) 把技能复制到你的 agent 的 skills 目录（以下以 Claude Code 为例）\nmkdir -p ~/.claude/skills\ncp -r /tmp/superpowers/skills/* ~/.claude/skills/\n\n# 若你的 agent 支持插件（plugin），也可按上游文档安装 .claude-plugin / .codex-plugin",
       "detail_url": "skills/superpowers.html"
+    },
+    {
+      "id": "drama-skills",
+      "name_zh": "Drama Skills AI 短剧创作技能合集",
+      "name_en": "Drama Skills",
+      "summary_zh": "面向 Claude Code 与 Codex 的 AI 短剧/漫剧创作 skill 合集：覆盖剧本、资产、分镜、图片/视频提示词到独立审查全链路，10 个技能协作，适配编剧与漫剧工作室。",
+      "summary_en": "An AI short-drama skill suite for Claude Code & Codex: scripts, assets, storyboards, image/video prompts, and independent review across 10 skills.",
+      "category_dir": "writing-docs",
+      "category_name": "写作与文档",
+      "kind": "skill-collection",
+      "kind_label": "技能集",
+      "tags": [
+        "short-drama",
+        "screenwriting",
+        "storyboard",
+        "claude-code",
+        "codex",
+        "prompt-engineering"
+      ],
+      "languages": [
+        "python"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "homepage": "https://github.com/zenstory-ai/drama-skills",
+      "repo": "https://github.com/zenstory-ai/drama-skills",
+      "tier": "standard",
+      "tier_label": "常规",
+      "related": [],
+      "aliases": [
+        "短剧创作",
+        "漫剧"
+      ],
+      "risk_notes": "MIT 可商用；需 Python 3.9+ 与 Agent 运行环境（Claude Code/Codex）；生产依赖外部 adapter（Seedance/GPT Image 2/MiniMax Music），供应商凭据不进入项目，需用户明确确认后才投产。",
+      "added_at": "2026-08-26",
+      "updated_at": "2026-08-26",
+      "install": "bash\n# 需要 Python 3.9+；告诉 Claude Code / Codex：安装这些技能 https://github.com/zenstory-ai/drama-skills\ngit clone https://github.com/zenstory-ai/drama-skills.git\ncd drama-skills\n\n# Claude Code\nmkdir -p \"$HOME/.claude/skills\"\nfor skill in skills/*; do ln -s \"$PWD/$skill\" \"$HOME/.claude/skills/$(basename \"$skill\")\"; done\n\n# Codex\nmkdir -p \"${CODEX_HOME:-$HOME/.codex}/skills\"\nfor skill in skills/*; do ln -s \"$PWD/$skill\" \"${CODEX_HOME:-$HOME/.codex}/skills/$(basename \"$skill\")\"; done",
+      "detail_url": "skills/drama-skills.html"
+    },
+    {
+      "id": "oh-story-claudecode",
+      "name_zh": "OH-Story 网文/小说写作 Skill 包",
+      "name_en": "OH-Story Claude Code Skill Pack",
+      "summary_zh": "面向 Claude Code 的网文/小说写作 skill 包：覆盖长篇与短篇网络小说的扫榜、拆文、写作、去AI味、封面图全流程，内置 13 个 skill，适配多 Agent 环境。",
+      "summary_en": "A Claude Code skill pack for web and novel writing: scan, analyze, write, de-slop, and cover generation across long/short fiction, with 13 bundled skills.",
+      "category_dir": "writing-docs",
+      "category_name": "写作与文档",
+      "kind": "skill-collection",
+      "kind_label": "技能集",
+      "tags": [
+        "novel-writing",
+        "web-fiction",
+        "claude-code",
+        "skill-pack",
+        "de-slop",
+        "cover-generation"
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "doc_languages": [
+        "zh"
+      ],
+      "license": "MIT",
+      "homepage": "https://github.com/zenstory-ai/oh-story-claudecode",
+      "repo": "https://github.com/zenstory-ai/oh-story-claudecode",
+      "tier": "standard",
+      "tier_label": "常规",
+      "related": [],
+      "aliases": [
+        "网文写作",
+        "去AI味"
+      ],
+      "risk_notes": "GitHub 识别为 MIT，但仓库 README 未显式附 LICENSE 文件，商用前确认；需 Claude Code 环境与 Node/npx；依赖外部大模型 API，封面图生成依赖图像模型。",
+      "added_at": "2026-08-26",
+      "updated_at": "2026-08-26",
+      "install": "bash\n# 方式一：对话安装（在 Claude Code 中）\n# 告诉 Claude Code：安装这个 skill https://github.com/zenstory-ai/oh-story-claudecode\n\n# 方式二：命令行（npx skills，-g 全局装到 ~/.claude/skills/；去掉 -g 装当前目录）\nnpx skills add zenstory-ai/oh-story-claudecode -y -g",
+      "detail_url": "skills/oh-story-claudecode.html"
+    },
+    {
+      "id": "zenstory",
+      "name_zh": "ZenStory AI 小说写作工作台",
+      "name_en": "ZenStory",
+      "summary_zh": "AI Agent 驱动的商业级小说写作工作台（React 前端 + FastAPI 后端 Monorepo）：对话即创作，多 Agent 协作、素材库拆解、13 个内置写作技能与 Agent API，支持长篇/短篇/短剧。",
+      "summary_en": "An AI-agent-driven novel-writing workbench (React + FastAPI monorepo): chat-to-create, multi-agent pipeline, material library, 13 built-in writing skills, and Agent API.",
+      "category_dir": "writing-docs",
+      "category_name": "写作与文档",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "novel-writing",
+        "ai-agent",
+        "multi-agent",
+        "writing-workbench",
+        "claude-code",
+        "openclaw"
+      ],
+      "languages": [
+        "python",
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "homepage": "https://zenstory.ai/",
+      "repo": "https://github.com/zenstory-ai/zenstory",
+      "tier": "standard",
+      "tier_label": "常规",
+      "related": [],
+      "aliases": [
+        "小说写作工作台",
+        "故事创作"
+      ],
+      "risk_notes": "MIT 可商用；需自备 DeepSeek API Key，依赖 Docker（或本地 dev）运行；含订阅/配额/积分等商业化运营模块，自部署时按需关闭。",
+      "added_at": "2026-08-26",
+      "updated_at": "2026-08-26",
+      "install": "bash\n# 一行命令启动（需 Docker，且自备 DeepSeek API Key）\nexport DEEPSEEK_API_KEY=your-key\ngit clone https://github.com/zenstory-ai/zenstory.git\ncd zenstory\ndocker compose up -d --build\n# 前端 http://localhost:5173 · API 文档 http://localhost:8000/docs",
+      "detail_url": "skills/zenstory.html"
     }
   ]
 }

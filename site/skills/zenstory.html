@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ZenStory AI 小说写作工作台 · SkillMall</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+      <div class="brand-name">SkillMall</div>
+      <div class="brand-sub">Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/SkillMall" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">ZenStory AI 小说写作工作台</h1>
+      <p class="hero-subtitle">ZenStory</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>写作与文档</span><span>常规</span><span>MIT</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">AI Agent 驱动的商业级小说写作工作台（React 前端 + FastAPI 后端 Monorepo）：对话即创作，多 Agent 协作、素材库拆解、13 个内置写作技能与 Agent API，支持长篇/短篇/短剧。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/zenstory-ai/zenstory" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://zenstory.ai/" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>ZenStory AI 小说写作工作台</h1>
+<blockquote>AI Agent 驱动的商业级小说写作工作台。上游：<a href="https://github.com/zenstory-ai/zenstory" target="_blank" rel="noopener">zenstory-ai/zenstory</a> · 许可证：MIT</blockquote>
+<h2>这是什么</h2>
+<p>它是一套 <strong>AI Agent 驱动的商业级小说写作工作台</strong>（Monorepo：React 前端 <code>apps/web</code> + FastAPI 后端 <code>apps/server</code>，AI Agent 系统在 <code>apps/server/agent</code>）。与传统「聊天框 + 复制粘贴」不同，ZenStory 让 AI 通过完整工具链<strong>直接操作你的创作文件</strong>——建角色卡、拆参考素材、规划大纲、逐章写作，全在一次对话里完成。</p>
+<p>核心能力：① 对话 × 文件系统（9 种 Agent 工具、Diff 审阅模式）；② 多 Agent 协作引擎（Router / Planner / Hook Designer / Writer / Quality Reviewer 五工作流）；③ 素材库 AI 拆解（8 类结构化元素 + 混合 RAG 检索）；④ 灵感库；⑤ 技能系统与市场（13 个内置写作技能，Markdown 定义、可自定义分享）；⑥ Agent API（Claude Code / OpenClaw 直连）；⑦ 专业编辑器（六种文件类型、版本快照）；⑧ 商业化运营（订阅 / 配额 / 积分 / 管理后台）。支持长篇、短篇、短剧三种创作路径。</p>
+<h2>怎么安装</h2>
+<pre><code class="lang-bash"># 一行命令启动（需 Docker，且自备 DeepSeek API Key）
+export DEEPSEEK_API_KEY=your-key
+git clone https://github.com/zenstory-ai/zenstory.git
+cd zenstory
+docker compose up -d --build
+# 前端 http://localhost:5173 · API 文档 http://localhost:8000/docs</code></pre>
+<h2>怎么用</h2>
+<p>启动后在 Web 工作台对话式创作；或生成 API Key 粘贴到 Claude Code / OpenClaw，让外部 Agent 直接读写你的小说项目（章节、角色、素材库）。内置 13 个写作技能覆盖继续写作、场景描写、对话、开头、冲突 / 悬念 / 反转设计、沉浸增强、角色 / 大纲 / 世界观构建。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 MIT</strong>：可商用、可自部署；但仓库内置订阅 / 配额 / 积分等商业化模块，自部署时按需裁剪。</li><li><strong>运行依赖</strong>：需 Docker 与 DeepSeek API Key（或其他后端兼容模型）；生产部署建议 PostgreSQL + Redis。</li><li><strong>数据本地化</strong>：创作文件在本地 / 自托管环境，注意备份与访问权限控制。</li><li>维护活跃（2026-08 更新），暂无已知重大缺陷。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-08-26 · 更新于 2026-08-26 · SkillMall 轻量索引</p>
+</main>
+</body>
+</html>

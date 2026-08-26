@@ -28,7 +28,7 @@ TEMPLATE_DIR = REPO_ROOT / "_template"
 INDEX_PATH = REPO_ROOT / "INDEX.md"
 CHANGELOG_PATH = REPO_ROOT / "docs" / "CHANGELOG.md"
 
-# 九大一级分类：目录名 -> (中文名, 定位)
+# 一级分类：目录名 -> (中文名, 定位)
 CATEGORIES: dict[str, tuple[str, str]] = {
     "writing-docs": ("写作与文档", "文案、报告、技术写作、文档生成"),
     "dev-engineering": ("研发与代码", "编码、重构、测试、代码审查"),
@@ -38,6 +38,7 @@ CATEGORIES: dict[str, tuple[str, str]] = {
     "ops-automation": ("运维与自动化", "部署、CI/CD、脚本、系统维护"),
     "business-office": ("商业与办公", "办公文档、协作、流程、商务"),
     "agent-infra": ("Agent 基础设施", "MCP server、框架、CLI 工具"),
+    "dsh": ("DSH 插件", "DeepSeek Harness 插件——「一切皆插件」，模型适配器、工具、界面、技能、Agent 均可插拔扩展"),
     "meta-skillcraft": ("技能工程", "写 skill 的 skill、规范、模板、元技能"),
 }
 
@@ -118,7 +119,7 @@ def load_frontmatter(path: Path) -> dict[str, Any]:
 
 
 def discover_entries(root: Path = REPO_ROOT) -> list[Entry]:
-    """扫描 entries/ 下九大分类目录，收集所有含 SKILL.md 的条目。
+    """扫描 entries/ 下各一级分类目录，收集所有含 SKILL.md 的条目。
 
     只扫描 entries/<分类>/<id>/SKILL.md 这一层，不递归。
     """

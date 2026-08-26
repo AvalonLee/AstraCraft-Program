@@ -34,7 +34,7 @@
 | `id` | ✅ | 小写字母/数字/连字符，**必须等于目录名**，全局唯一 |
 | `name_zh` / `name_en` | ✅ | 中英文名称 |
 | `summary_zh` / `summary_en` | ✅ | ≤200 字符的一句话简介，直接出现在 INDEX |
-| `category` | ✅ | 九大分类之一，**必须等于一级目录名** |
+| `category` | ✅ | 一级分类之一（含 `dsh`），**必须等于一级目录名** |
 | `kind` | ✅ | skill / skill-collection / mcp-server / cli-tool / framework / spec |
 | `tags` | ✅ | 3-6 个交叉检索标签 |
 | `languages` | ✅ | 实现语言（小写），纯文档填 `[markdown]` |

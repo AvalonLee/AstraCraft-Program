@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-26T13:00:38Z",
-  "count": 17,
+  "generated_at": "2026-08-26T13:45:46Z",
+  "count": 18,
   "categories": [
     {
       "dir": "writing-docs",
@@ -437,6 +437,53 @@
       "updated_at": "2026-08-26",
       "install": "bash\n# 克隆上游仓库到本地\ngit clone https://github.com/dacnay816y62-hub/fantasy-life-force-portrait-photography.git\ncd fantasy-life-force-portrait-photography\n\n# 将仓库目录放入你的 Codex skills 目录后，即可在对话中触发，例如：\n# 使用 Fantasy 生命感人像摄影 Skill，把这张普通生活照升级成更有生命感的人像。",
       "detail_url": "skills/fantasy-life-force-portrait-photography.html"
+    },
+    {
+      "id": "seedance-20",
+      "name_zh": "Seedance 2.0 Skill OS 视频执导技能包",
+      "name_en": "Seedance 2.0 Skill OS",
+      "summary_zh": "面向 Seedance 2.0 的模块化智能体技能包：先读场景、再写提示词，把抽象创意转成有镜头、光线、声音与参考素材的视频提示词，支持文生视频、图生视频、首尾帧、连续剧情与六语言流程，内置 33 个完整范例与安装器。",
+      "summary_en": "Modular skill package for Seedance 2.0 video: reads the scene first, then prompts camera, light, sound, and references; supports T2V/I2V/V2V/R2V, first/last frames, sequences, and six languages.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "skill-collection",
+      "kind_label": "技能集",
+      "tags": [
+        "video-production",
+        "cinematic",
+        "prompt-engineering",
+        "ai-agent",
+        "seedance",
+        "multilingual"
+      ],
+      "languages": [
+        "python"
+      ],
+      "doc_languages": [
+        "zh",
+        "en",
+        "ja",
+        "ko",
+        "es",
+        "ru"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/Emily2040/seedance-2.0",
+      "repo": "https://github.com/Emily2040/seedance-2.0",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "seedance-2",
+        "seedance-prompt-os"
+      ],
+      "risk_notes": "MIT 可商用；安装脚本需 Python 3；实际出片依赖 ByteDance Seedance 2.0 供应商账号与额度；参考标签需原样保留，受保护 IP 应改写为原创内容而非换语言隐藏。",
+      "added_at": "2026-08-26",
+      "updated_at": "2026-08-26",
+      "install": "bash\ngit clone https://github.com/Emily2040/seedance-2.0.git\ncd seedance-2.0\n\n# Codex（默认写入 ~/.codex/skills）\npython scripts/install_codex_skill.py\n\n# Claude Code 或其他 Agent\npython scripts/install_codex_skill.py --dest ~/.claude/skills",
+      "detail_url": "skills/seedance-20.html"
     },
     {
       "id": "video-shotcraft",

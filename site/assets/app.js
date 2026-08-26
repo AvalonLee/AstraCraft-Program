@@ -1,9 +1,16 @@
-// SkillMall 预览站前端逻辑：读 data/skills.json，渲染卡片并支持搜索/筛选/排序。
+// SkillMall 预览站前端逻辑（视觉对齐 awesome-design-md-cn）。
+// 读 data/skills.json，渲染卡片并支持搜索 + chip 多维筛选。
 (function () {
   "use strict";
 
   var DATA_URL = "data/skills.json";
-  var state = { skills: [], categories: [] };
+  var GROUPS = ["category", "tag", "tier", "license"];
+  var state = {
+    skills: [],
+    categories: [],
+    sel: { category: null, tag: null, tier: null, license: null },
+    q: "",
+  };
 
   function esc(s) {
     return String(s == null ? "" : s)
@@ -18,100 +25,120 @@
     arr.forEach(function (v) {
       if (v && !seen[v]) { seen[v] = 1; out.push(v); }
     });
-    return out.sort(function (a, b) { return a.localeCompare(b, "zh"); });
+    return out.sort(function (a, b) { return String(a).localeCompare(String(b), "zh"); });
   }
 
   function $(id) { return document.getElementById(id); }
 
-  function populateFilters() {
-    var cat = $("filter-category");
-    state.categories.forEach(function (c) {
-      var o = document.createElement("option");
-      o.value = c.dir; o.textContent = c.name;
-      cat.appendChild(o);
-    });
-    uniq(state.skills.map(function (s) { return s.license; })).forEach(function (v) {
-      var o = document.createElement("option"); o.value = v; o.textContent = v; $("filter-license").appendChild(o);
-    });
-    uniq(state.skills.map(function (s) { return s.tier_label; })).forEach(function (v) {
-      var o = document.createElement("option"); o.value = v; o.textContent = v; $("filter-tier").appendChild(o);
-    });
-    uniq([].concat.apply([], state.skills.map(function (s) { return s.tags || []; }))).forEach(function (v) {
-      var o = document.createElement("option"); o.value = v; o.textContent = v; $("filter-tag").appendChild(o);
-    });
-    $("stat-count").textContent = state.skills.length;
-    $("stat-cats").textContent = state.categories.length;
+  // ---- 构建 chip 筛选 ----
+  function buildChips() {
+    var cats = state.categories
+      .map(function (c) { return { value: c.dir, label: c.name }; });
+    var tags = uniq([].concat.apply([], state.skills.map(function (s) { return s.tags || []; })))
+      .map(function (t) { return { value: t, label: t }; });
+    var tiers = uniq(state.skills.map(function (s) { return s.tier_label; }))
+      .map(function (t) { return { value: t, label: t }; });
+    var licenses = uniq(state.skills.map(function (s) { return s.license; }))
+      .map(function (t) { return { value: t, label: t }; });
+
+    fillChips("category-chips", "category", cats);
+    fillChips("tag-chips", "tag", tags);
+    fillChips("tier-chips", "tier", tiers);
+    fillChips("license-chips", "license", licenses);
   }
 
-  function matches(s, q, cat, tag, tier, lic) {
-    if (cat && s.category_dir !== cat) return false;
-    if (tier && s.tier_label !== tier) return false;
-    if (lic && s.license !== lic) return false;
-    if (tag) {
-      var tags = s.tags || [];
-      if (tags.indexOf(tag) === -1) return false;
+  function fillChips(containerId, group, items) {
+    var box = $(containerId);
+    box.innerHTML = "";
+    items.forEach(function (it) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "chip";
+      b.textContent = it.label;
+      b.dataset.group = group;
+      b.dataset.value = it.value;
+      b.addEventListener("click", function () {
+        var cur = state.sel[group];
+        if (cur === it.value) {
+          state.sel[group] = null;
+          b.classList.remove("active");
+        } else {
+          // 同组单选：清掉其他 active
+          Array.prototype.forEach.call(box.querySelectorAll(".chip.active"), function (el) {
+            el.classList.remove("active");
+          });
+          state.sel[group] = it.value;
+          b.classList.add("active");
+        }
+        render();
+      });
+      box.appendChild(b);
+    });
+  }
+
+  // ---- 匹配逻辑 ----
+  function matches(s) {
+    var q = state.q;
+    if (state.sel.category && s.category_dir !== state.sel.category) return false;
+    if (state.sel.tier && s.tier_label !== state.sel.tier) return false;
+    if (state.sel.license && s.license !== state.sel.license) return false;
+    if (state.sel.tag) {
+      if ((s.tags || []).indexOf(state.sel.tag) === -1) return false;
     }
     if (q) {
-      var hay = [s.name_zh, s.name_en, s.summary_zh, s.summary_en, (s.tags || []).join(" "), s.category_name]
+      var hay = [s.name_zh, s.name_en, s.summary_zh, s.summary_en,
+        (s.tags || []).join(" "), s.category_name, s.kind_label]
         .join(" ").toLowerCase();
       if (hay.indexOf(q) === -1) return false;
     }
     return true;
   }
 
-  function sortSkills(list, mode) {
-    var m = mode || "updated";
-    return list.slice().sort(function (a, b) {
-      if (m === "name") return (a.name_zh || "").localeCompare(b.name_zh || "", "zh");
-      if (m === "added") return (b.added_at || "").localeCompare(a.added_at || "");
-      return (b.updated_at || "").localeCompare(a.updated_at || "");
-    });
-  }
-
+  // ---- 卡片渲染 ----
   function cardHtml(s) {
-    var tags = (s.tags || []).slice(0, 5).map(function (t) {
-      return '<span class="tag">' + esc(t) + "</span>";
-    }).join("");
+    var meta = [];
+    (s.tags || []).slice(0, 5).forEach(function (t) { meta.push("<span>" + esc(t) + "</span>"); });
+    if (s.tier_label) meta.push("<span>" + esc(s.tier_label) + "</span>");
+    if (s.license) meta.push("<span>" + esc(s.license) + "</span>");
+
+    var actions = '<a class="card-action card-action-primary" href="' + esc(s.detail_url) + '">查看详情</a>';
+    if (s.repo) {
+      actions += '<a class="card-action" href="' + esc(s.repo) + '" target="_blank" rel="noopener">查看源</a>';
+    }
+
     return (
-      '<a class="card" href="' + esc(s.detail_url) + '">' +
-        '<h3 class="card__title">' + esc(s.name_zh) + "</h3>" +
-        (s.name_en ? '<p class="card__en">' + esc(s.name_en) + "</p>" : "") +
-        '<div class="badges">' +
-          '<span class="badge badge--cat">' + esc(s.category_name) + "</span>" +
-          '<span class="badge badge--tier">' + esc(s.tier_label) + "</span>" +
-          '<span class="badge badge--license">' + esc(s.license) + "</span>" +
-        "</div>" +
-        '<p class="card__summary">' + esc(s.summary_zh) + "</p>" +
-        (tags ? '<div class="card__tags">' + tags + "</div>" : "") +
-        '<div class="card__foot"><span class="badge">' + esc(s.kind_label) + "</span>" +
-        '<span class="btn">查看详情</span></div>' +
-      "</a>"
+      '<div class="card">' +
+        '<p class="card-kicker">' + esc(s.category_name) + " · " + esc(s.kind_label) + "</p>" +
+        '<h3 class="card-title"><a href="' + esc(s.detail_url) + '">' + esc(s.name_zh) + "</a></h3>" +
+        (s.summary_zh ? '<p class="card-subtitle">' + esc(s.summary_zh) + "</p>" : "") +
+        (meta.length ? '<div class="card-meta">' + meta.join("") + "</div>" : "") +
+        '<div class="card-actions">' + actions + "</div>" +
+      "</div>"
     );
   }
 
   function render() {
-    var q = $("search").value.trim().toLowerCase();
-    var cat = $("filter-category").value;
-    var tag = $("filter-tag").value;
-    var tier = $("filter-tier").value;
-    var lic = $("filter-license").value;
-    var sortMode = $("sort").value;
-
-    var list = state.skills.filter(function (s) {
-      return matches(s, q, cat, tag, tier, lic);
-    });
-    list = sortSkills(list, sortMode);
-
+    var list = state.skills.filter(matches);
     var wrap = $("results");
-    wrap.innerHTML = list.map(cardHtml).join("");
-    $("result-count").textContent = "共 " + list.length + " 个技能" +
-      (list.length !== state.skills.length ? "（已从 " + state.skills.length + " 个中筛选）" : "");
-    $("empty").hidden = list.length !== 0;
+    if (!list.length) {
+      wrap.innerHTML = '<p class="muted" style="padding:8px 2px;">没有匹配的技能，试试其他关键词或筛选条件。</p>';
+    } else {
+      wrap.innerHTML = list.map(cardHtml).join("");
+    }
+    var total = state.skills.length;
+    $("result-count").textContent = list.length === total
+      ? "共 " + list.length + " 个技能"
+      : "共 " + list.length + " 个技能（已从 " + total + " 个中筛选）";
   }
 
-  function bind() {
-    ["search", "filter-category", "filter-tag", "filter-tier", "filter-license", "sort"]
-      .forEach(function (id) { $(id).addEventListener("input", render); $(id).addEventListener("change", render); });
+  function clearFilters() {
+    state.sel = { category: null, tag: null, tier: null, license: null };
+    state.q = "";
+    $("search-input").value = "";
+    Array.prototype.forEach.call(document.querySelectorAll(".chip.active"), function (el) {
+      el.classList.remove("active");
+    });
+    render();
   }
 
   function init() {
@@ -123,13 +150,24 @@
       .then(function (data) {
         state.skills = data.skills || [];
         state.categories = data.categories || [];
-        populateFilters();
-        bind();
+
+        $("meta-count").textContent = state.skills.length;
+        $("meta-cats").textContent = state.categories.length;
+        $("meta-tags").textContent = uniq(
+          [].concat.apply([], state.skills.map(function (s) { return s.tags || []; }))
+        ).length;
+
+        buildChips();
+        $("search-input").addEventListener("input", function (e) {
+          state.q = e.target.value.trim().toLowerCase();
+          render();
+        });
+        $("clear-filters").addEventListener("click", clearFilters);
         render();
       })
       .catch(function (err) {
-        $("result-count").textContent = "加载数据失败：" + err.message +
-          "。请通过本地/线上 HTTP 服务访问（而非 file:// 直接打开）。";
+        $("result-count").textContent =
+          "加载数据失败：" + err.message + "。请通过本地/线上 HTTP 服务访问（而非 file:// 直接打开）。";
       });
   }
 

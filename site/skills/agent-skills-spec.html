@@ -5,35 +5,60 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Agent Skills 规范 · SkillMall</title>
 <link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
 </head>
-<body>
-<header class="site-header">
-  <div class="container site-header__inner">
-    <a class="brand" href="../index.html">SkillMall</a>
-    <nav class="site-nav">
-      <a href="../index.html">浏览技能</a>
-      <a href="https://github.com/AvalonLee/SkillMall" target="_blank" rel="noopener">GitHub</a>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+      <div class="brand-name">SkillMall</div>
+      <div class="brand-sub">Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/SkillMall" target="_blank" rel="noopener">GitHub</a>
     </nav>
-  </div>
-</header>
-<main class="container detail">
-  <p class="breadcrumb"><a href="../index.html">首页</a> / 技能工程</p>
-  <div class="detail__head">
-    <h1>Agent Skills 规范</h1>
-    <p class="detail__en">Agent Skills Specification</p>
-    <div class="badges">
-      <span class="badge badge--cat">技能工程</span>
-      <span class="badge badge--tier">常规</span>
-      <span class="badge badge--license">CC-BY-4.0</span>
-      <span class="badge">规范</span>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Agent Skills 规范</h1>
+      <p class="hero-subtitle">Agent Skills Specification</p>
     </div>
-    <p class="detail__summary">Anthropic 发起、社区共建的开放智能体技能格式标准，定义 SKILL.md 结构与按需三级加载机制。作为活的标准，本仓库始终指向官方最新版。</p>
-    <div class="detail__links">
-      <a class="btn" href="https://github.com/anthropics/skills" target="_blank" rel="noopener">查看仓库 / 源码</a>
-      <a class="btn btn--ghost" href="https://agentskills.io/specification" target="_blank" rel="noopener">项目主页</a>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>技能工程</span><span>常规</span><span>CC-BY-4.0</span><span>规范</span>
+    </div>
+    <p class="muted detail-meta">Anthropic 发起、社区共建的开放智能体技能格式标准，定义 SKILL.md 结构与按需三级加载机制。作为活的标准，本仓库始终指向官方最新版。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/anthropics/skills" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://agentskills.io/specification" target="_blank" rel="noopener">项目主页</a>
     </div>
   </div>
-  <article class="detail__body">
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
 <h1>Agent Skills 规范</h1>
 <blockquote>一份让 AI 智能体"即插即用"新能力的开放格式标准。 官方规范：<a href="https://agentskills.io/specification" target="_blank" rel="noopener">agentskills.io/specification</a> · 许可证：CC-BY-4.0</blockquote>
 <h2>这是什么</h2>
@@ -52,10 +77,8 @@ git sparse-checkout set spec</code></pre>
 <h2>注意事项</h2>
 <ul><li>规范文本 CC-BY-4.0，可自由阅读、引用并注明出处；</li><li>本仓库刻意<strong>不冻结规范副本</strong>（它是活的标准），始终链接官方最新版；</li><li>description 必须同时写清「做什么」与「何时用」，否则 Agent 不知道何时加载。</li></ul>
   </article>
-  <footer class="detail__foot">
-    <p>收录于 2026-08-10 · 更新于 2026-08-13</p>
-    <p class="muted">SkillMall · 轻量索引 · 只存 SKILL.md · 中文为主</p>
-  </footer>
+
+  <p class="footer">收录于 2026-08-10 · 更新于 2026-08-13 · SkillMall 轻量索引</p>
 </main>
 </body>
 </html>

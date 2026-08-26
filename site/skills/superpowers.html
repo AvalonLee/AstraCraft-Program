@@ -5,35 +5,60 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Superpowers 开发方法论 · SkillMall</title>
 <link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
 </head>
-<body>
-<header class="site-header">
-  <div class="container site-header__inner">
-    <a class="brand" href="../index.html">SkillMall</a>
-    <nav class="site-nav">
-      <a href="../index.html">浏览技能</a>
-      <a href="https://github.com/AvalonLee/SkillMall" target="_blank" rel="noopener">GitHub</a>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+      <div class="brand-name">SkillMall</div>
+      <div class="brand-sub">Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/SkillMall" target="_blank" rel="noopener">GitHub</a>
     </nav>
-  </div>
-</header>
-<main class="container detail">
-  <p class="breadcrumb"><a href="../index.html">首页</a> / 技能工程</p>
-  <div class="detail__head">
-    <h1>Superpowers 开发方法论</h1>
-    <p class="detail__en">Superpowers</p>
-    <div class="badges">
-      <span class="badge badge--cat">技能工程</span>
-      <span class="badge badge--tier">主推</span>
-      <span class="badge badge--license">MIT</span>
-      <span class="badge">技能集</span>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Superpowers 开发方法论</h1>
+      <p class="hero-subtitle">Superpowers</p>
     </div>
-    <p class="detail__summary">面向编码智能体的完整软件开发方法论，由 14 个可组合 skill 构成（TDD、并行子代理、系统化调试、代码评审等）。智能体在动手前先厘清需求、产出计划，再自驱执行。</p>
-    <div class="detail__links">
-      <a class="btn" href="https://github.com/obra/superpowers" target="_blank" rel="noopener">查看仓库 / 源码</a>
-      <a class="btn btn--ghost" href="https://github.com/obra/superpowers" target="_blank" rel="noopener">项目主页</a>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>技能工程</span><span>主推</span><span>MIT</span><span>技能集</span>
+    </div>
+    <p class="muted detail-meta">面向编码智能体的完整软件开发方法论，由 14 个可组合 skill 构成（TDD、并行子代理、系统化调试、代码评审等）。智能体在动手前先厘清需求、产出计划，再自驱执行。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/obra/superpowers" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/obra/superpowers" target="_blank" rel="noopener">项目主页</a>
     </div>
   </div>
-  <article class="detail__body">
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
 <h1>Superpowers 开发方法论</h1>
 <blockquote>面向编码智能体的完整软件开发方法论，由 14 个可组合 skill 构成。 上游：<a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">obra/superpowers</a> · 许可证：MIT</blockquote>
 <h2>这是什么</h2>
@@ -53,10 +78,8 @@ cp -r /tmp/superpowers/skills/* ~/.claude/skills/
 <h2>注意事项</h2>
 <ul><li>上游仓库包含 <code>.claude-plugin</code> / <code>.codex-plugin</code> / <code>.cursor-plugin</code> / <code>.kimi-plugin</code> 等多客户端清单，跨平台适配好；</li><li>技能是英文撰写，中文用户可先读各 skill 的 SKILL.md 再决定是否启用；</li><li>MIT 许可，可自由使用与再分发；具体条款以上游 LICENSE 为准。</li></ul>
   </article>
-  <footer class="detail__foot">
-    <p>收录于 2026-08-10 · 更新于 2026-08-13</p>
-    <p class="muted">SkillMall · 轻量索引 · 只存 SKILL.md · 中文为主</p>
-  </footer>
+
+  <p class="footer">收录于 2026-08-10 · 更新于 2026-08-13 · SkillMall 轻量索引</p>
 </main>
 </body>
 </html>

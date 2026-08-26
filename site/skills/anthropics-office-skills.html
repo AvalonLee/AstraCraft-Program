@@ -5,35 +5,60 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Anthropic Office 文档技能 · SkillMall</title>
 <link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
 </head>
-<body>
-<header class="site-header">
-  <div class="container site-header__inner">
-    <a class="brand" href="../index.html">SkillMall</a>
-    <nav class="site-nav">
-      <a href="../index.html">浏览技能</a>
-      <a href="https://github.com/AvalonLee/SkillMall" target="_blank" rel="noopener">GitHub</a>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+      <div class="brand-name">SkillMall</div>
+      <div class="brand-sub">Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/SkillMall" target="_blank" rel="noopener">GitHub</a>
     </nav>
-  </div>
-</header>
-<main class="container detail">
-  <p class="breadcrumb"><a href="../index.html">首页</a> / 商业与办公</p>
-  <div class="detail__head">
-    <h1>Anthropic Office 文档技能</h1>
-    <p class="detail__en">Anthropic Office Document Skills</p>
-    <div class="badges">
-      <span class="badge badge--cat">商业与办公</span>
-      <span class="badge badge--tier">常规</span>
-      <span class="badge badge--license">LicenseRef-Anthropic-Source-Available</span>
-      <span class="badge">技能集</span>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Anthropic Office 文档技能</h1>
+      <p class="hero-subtitle">Anthropic Office Document Skills</p>
     </div>
-    <p class="detail__summary">Anthropic 官方维护的文档处理技能集合——docx 生成编辑、pdf 读写合并、pptx 演示稿、xlsx 表格。生产级实现，但 source-available 非开源，本仓库仅链接不转载。</p>
-    <div class="detail__links">
-      <a class="btn" href="https://github.com/anthropics/skills" target="_blank" rel="noopener">查看仓库 / 源码</a>
-      <a class="btn btn--ghost" href="https://github.com/anthropics/skills" target="_blank" rel="noopener">项目主页</a>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>商业与办公</span><span>常规</span><span>LicenseRef-Anthropic-Source-Available</span><span>技能集</span>
+    </div>
+    <p class="muted detail-meta">Anthropic 官方维护的文档处理技能集合——docx 生成编辑、pdf 读写合并、pptx 演示稿、xlsx 表格。生产级实现，但 source-available 非开源，本仓库仅链接不转载。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/anthropics/skills" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/anthropics/skills" target="_blank" rel="noopener">项目主页</a>
     </div>
   </div>
-  <article class="detail__body">
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
 <h1>Anthropic Office 文档技能</h1>
 <blockquote>Anthropic 官方维护的<strong>生产级文档处理技能集合</strong>：docx / pdf / pptx / xlsx。 上游：<a href="https://github.com/anthropics/skills" target="_blank" rel="noopener">anthropics/skills</a> · 许可证：source-available（非开源）</blockquote>
 <h2>这是什么</h2>
@@ -54,10 +79,8 @@ cp -r skills/document-skills/* ~/.claude/skills/</code></pre>
 <h2>注意事项</h2>
 <ul><li><strong>许可限制再分发</strong>：你可以在本地克隆、阅读并按其条款自用；<strong>不可以</strong>把源码提交进公开仓库 或未经许可转载。具体边界以上游 LICENSE 全文为准；</li><li>同仓库的其他技能（如 <code>skill-creator</code>、<code>algorithmic-art</code> 等）多为 Apache-2.0，可另建条目收录；</li><li>本仓库不包含该项目的任何源码，仅提供导航与安装指引。</li></ul>
   </article>
-  <footer class="detail__foot">
-    <p>收录于 2026-08-10 · 更新于 2026-08-13</p>
-    <p class="muted">SkillMall · 轻量索引 · 只存 SKILL.md · 中文为主</p>
-  </footer>
+
+  <p class="footer">收录于 2026-08-10 · 更新于 2026-08-13 · SkillMall 轻量索引</p>
 </main>
 </body>
 </html>

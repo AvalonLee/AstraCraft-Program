@@ -7,68 +7,100 @@
   <meta name="description" content="SkillMall —— 面向中文用户的 Agent Skill 轻量索引库，支持在线搜索、分类筛选与一键查看每个 skill 的安装方式。" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
-<body>
-  <header class="site-header">
-    <div class="container site-header__inner">
-      <a class="brand" href="index.html">SkillMall</a>
-      <nav class="site-nav">
-        <a href="https://github.com/AvalonLee/SkillMall" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://github.com/AvalonLee/SkillMall/blob/main/README.md" target="_blank" rel="noopener">README</a>
+<body class="page-home">
+  <main class="page-shell">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <div class="brand-name">SkillMall</div>
+        <div class="brand-sub">Agent Skill 中文索引集市</div>
+      </div>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">首页</a>
+        <a class="nav-link" href="https://github.com/AvalonLee/SkillMall" target="_blank" rel="noopener">GitHub</a>
+        <a class="nav-link" href="https://github.com/AvalonLee/SkillMall/blob/main/README.md" target="_blank" rel="noopener">README</a>
       </nav>
-    </div>
-  </header>
+    </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>SkillMall · Agent Skill 索引集市</h1>
-      <p class="hero__sub">
-        轻量、中文为主的 Agent Skill 索引库。每个条目只存一份 <code>SKILL.md</code>（介绍 + 安装指令），
-        在这里搜索、筛选，找到需要的技能后让 Agent 直接安装。
-      </p>
-      <div class="hero__stats">
-        <span id="stat-count">—</span> 个技能 ·
-        <span id="stat-cats">—</span> 个分类
+    <section class="hero-shell">
+      <div class="eyebrow">Agent Skill Library</div>
+      <div class="hero-grid hero-grid-single">
+        <div class="hero-copy hero-copy-compact">
+          <div class="hero-copy-block">
+            <h1 class="hero-title">先挑技能，再让 Agent 装上。</h1>
+            <p class="hero-subtitle">SkillMall 是中文为主的 Agent Skill 轻量索引。先浏览、筛选，找到合适的技能后让 Agent 直接安装。</p>
+          </div>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#browse">开始浏览</a>
+            <a class="button button-secondary" href="https://github.com/AvalonLee/SkillMall" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <main class="container">
-    <div class="controls">
-      <input id="search" class="control control--search" type="search"
-             placeholder="搜索技能名称、摘要或标签…" autocomplete="off" />
-      <div class="controls__row">
-        <select id="filter-category" class="control">
-          <option value="">全部分类</option>
-        </select>
-        <select id="filter-tag" class="control">
-          <option value="">全部标签</option>
-        </select>
-        <select id="filter-tier" class="control">
-          <option value="">全部评级</option>
-        </select>
-        <select id="filter-license" class="control">
-          <option value="">全部协议</option>
-        </select>
-        <select id="sort" class="control">
-          <option value="updated">按更新时间</option>
-          <option value="added">按收录时间</option>
-          <option value="name">按名称</option>
-        </select>
+    <section class="section browse-layout-section" id="browse">
+      <div class="browse-layout">
+        <aside class="browse-sidebar">
+          <div class="browse-tools">
+            <div class="browse-head">
+              <div>
+                <p class="panel-label">Browse</p>
+                <h2 class="browse-title">筛选技能</h2>
+                <p class="browse-copy">先缩小范围，再进入详情页查看对应的安装方式。</p>
+              </div>
+            </div>
+            <div class="browse-meta">
+              <span><strong id="meta-count">0</strong><em>技能</em></span>
+              <span><strong id="meta-cats">0</strong><em>分类</em></span>
+              <span><strong id="meta-tags">0</strong><em>标签</em></span>
+            </div>
+            <div class="sidebar-actions">
+              <button class="button button-ghost" type="button" id="clear-filters">清空筛选</button>
+            </div>
+            <div class="filter-stack">
+              <div class="filter-block browse-search">
+                <p class="panel-label">搜索</p>
+                <input id="search-input" class="search-input" type="search" placeholder="搜技能名、摘要、标签…" autocomplete="off" />
+              </div>
+              <div class="filter-block">
+                <p class="panel-label">分类</p>
+                <div class="chips" id="category-chips"></div>
+              </div>
+              <div class="filter-block">
+                <p class="panel-label">标签</p>
+                <div class="chips" id="tag-chips"></div>
+              </div>
+              <div class="filter-block">
+                <p class="panel-label">评级</p>
+                <div class="chips" id="tier-chips"></div>
+              </div>
+              <div class="filter-block">
+                <p class="panel-label">协议</p>
+                <div class="chips" id="license-chips"></div>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <div class="browse-content">
+          <section class="section section-tight content-panel content-panel-library">
+            <div class="section-head library-head">
+              <div>
+                <h2 class="section-title">技能库</h2>
+                <p class="section-copy" id="result-count">正在载入数据…</p>
+              </div>
+              <p class="library-note">适合直接横向比较，再进入详情页看完整说明与安装指令。</p>
+            </div>
+            <div class="card-grid" id="results"></div>
+          </section>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <p id="result-count" class="result-count"></p>
-    <div id="results" class="card-grid"></div>
-    <p id="empty" class="empty" hidden>没有匹配的技能，试试其他关键词或筛选条件。</p>
+    <p class="footer">
+      SkillMall · 轻量索引 · 只存 SKILL.md · 中文为主 · 可溯源。
+      预览站视觉与布局对齐 <a href="https://github.com/fchangjun/awesome-design-md-cn" target="_blank" rel="noreferrer">awesome-design-md-cn</a>。
+    </p>
   </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>SkillMall · 轻量索引 · 只存 SKILL.md · 中文为主 · 可溯源</p>
-      <p class="muted">静态预览站由 <code>scripts/gen_site.py</code> 自动生成，随条目更新。</p>
-    </div>
-  </footer>
-
   <script src="assets/app.js"></script>
 </body>
 </html>

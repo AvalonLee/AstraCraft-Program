@@ -76,6 +76,10 @@
       "enum": ["core", "standard", "watch"],
       "description": "core=主推（有实测或公认优质） standard=常规 watch=观察期"
     },
+    "featured": {
+      "type": "boolean",
+      "description": "是否入选首页「精选推荐」区。由维护者手工标注的少量高价值技能，与 tier 相互独立（观察期新条目也可被精选）。"
+    },
     "metrics": {
       "type": "object",
       "additionalProperties": false,

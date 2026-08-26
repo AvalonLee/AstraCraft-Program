@@ -382,6 +382,18 @@ textarea {
   color: var(--accent-strong);
 }
 
+.chip-hidden {
+  display: none;
+}
+
+.chip-more {
+  border-style: solid;
+  border-color: var(--border-strong);
+  background: #ffffff;
+  color: #000000;
+  font-weight: 500;
+}
+
 .featured-grid,
 .card-grid,
 .guide-grid,
@@ -786,9 +798,100 @@ textarea {
   text-transform: uppercase;
 }
 
+/* 协议板块：直观许可分类（完全开源 / 部分开源 / 商用授权 / 版权未声明） */
+.chip-lic {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.lic-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: none;
+}
+.chip-lic-open .lic-dot { background: #16a34a; }
+.chip-lic-copyleft .lic-dot { background: #d97706; }
+.chip-lic-commercial .lic-dot { background: #7c3aed; }
+.chip-lic-unknown .lic-dot { background: #9ca3af; }
+
+/* 卡片 / 详情页协议徽章（!important 以覆盖各主题下 span 默认色） */
+.lic-badge {
+  display: inline-flex !important;
+  align-items: center;
+  padding: 2px 10px !important;
+  border-radius: 999px !important;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+.lic-badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 6px;
+  background: currentColor;
+  opacity: 0.75;
+}
+.lic-badge.lic-open { background: rgba(22,163,74,0.14) !important; color: #15803d !important; }
+.lic-badge.lic-copyleft { background: rgba(217,119,6,0.16) !important; color: #b45309 !important; }
+.lic-badge.lic-commercial { background: rgba(124,58,237,0.14) !important; color: #6d28d9 !important; }
+.lic-badge.lic-unknown { background: rgba(100,116,139,0.16) !important; color: #475569 !important; }
+.page-detail .lic-badge.lic-open { background: rgba(34,197,94,0.2) !important; color: #86efac !important; }
+.page-detail .lic-badge.lic-copyleft { background: rgba(245,158,11,0.2) !important; color: #fcd34d !important; }
+.page-detail .lic-badge.lic-commercial { background: rgba(167,139,250,0.22) !important; color: #c4b5fd !important; }
+.page-detail .lic-badge.lic-unknown { background: rgba(148,163,184,0.22) !important; color: #cbd5e1 !important; }
+
+/* 评级筛选 chip 圆点 */
+.tier-dot {
+  width: 8px; height: 8px; border-radius: 50%; flex: none; margin-right: 6px;
+}
+.tier-dot-core { background: #d97706; }
+.tier-dot-standard { background: #94a3b8; }
+.tier-dot-watch { background: #2563eb; }
+
+/* 卡片 / 详情页评级徽章（!important 覆盖各主题 span 默认色） */
+.tier-badge {
+  display: inline-flex !important; align-items: center;
+  padding: 2px 10px !important; border-radius: 999px !important;
+  font-size: 12px; font-weight: 600; line-height: 1.7;
+}
+.tier-badge::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%;
+  margin-right: 6px; background: currentColor;
+}
+.tier-badge.tier-core { background: rgba(217,119,6,0.16) !important; color: #b45309 !important; }
+.tier-badge.tier-standard { background: rgba(100,116,139,0.14) !important; color: #475569 !important; }
+.tier-badge.tier-watch { background: rgba(37,99,235,0.14) !important; color: #1d4ed8 !important; }
+.page-detail .tier-badge.tier-core { background: rgba(245,158,11,0.2) !important; color: #fcd34d !important; }
+.page-detail .tier-badge.tier-standard { background: rgba(148,163,184,0.2) !important; color: #cbd5e1 !important; }
+.page-detail .tier-badge.tier-watch { background: rgba(96,165,250,0.2) !important; color: #93c5fd !important; }
+
+.panel-hint {
+  margin: 6px 0 0;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
 .card-meta span {
   color: var(--text);
   line-height: 1.7;
+}
+
+/* 卡片标签可点击 -> 联动分面筛选（cursor + hover 高亮） */
+.card-tag {
+  cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+.card-tag:hover {
+  color: var(--accent-strong);
+  background: var(--accent-soft);
+}
+.page-home .card-tag:hover {
+  color: var(--home-accent-strong);
+  background: rgba(75, 107, 255, 0.12);
 }
 
 @media (max-width: 1100px) {
@@ -1559,6 +1662,18 @@ textarea {
   border-color: var(--home-accent-strong);
   background: var(--home-accent-strong);
   color: #ffffff;
+}
+
+.page-home .chip-hidden {
+  display: none;
+}
+
+.page-home .chip-more {
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.18);
+  color: #000000;
+  background: #ffffff;
+  font-weight: 500;
 }
 
 .page-home .browse-meta {

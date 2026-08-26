@@ -105,11 +105,10 @@ SkillMall 全部收录条目的交叉检索表。六个视图对应六种找东�
 
 ## 三、按标签
 
-共 59 个标签。标签是分类之外的交叉维度——一个条目只能属于一个分类，但可以有多个标签。
+共 56 个标签。标签是分类之外的交叉维度——一个条目只能属于一个分类，但可以有多个标签。
 
 | 标签 | 条目 |
 |---|---|
-| `agent` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) |
 | `agent-methodology` | [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/SKILL.md) |
 | `agent-skills` | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/SKILL.md) |
 | `ai-agent` | [ZenStory AI 小说写作工作台](entries/writing-docs/zenstory/SKILL.md) |
@@ -117,8 +116,7 @@ SkillMall 全部收录条目的交叉检索表。六个视图对应六种找东�
 | `casting` | [人物角色 Casting 工作室 Skill](entries/design-creative/character-casting-studio-skill/SKILL.md) |
 | `character-design` | [人物角色 Casting 工作室 Skill](entries/design-creative/character-casting-studio-skill/SKILL.md) |
 | `cinematic` | [Cinema DNA 21:9×3 电影画面生成 Skill](entries/design-creative/cinema-dna-21x9x3/SKILL.md) |
-| `claude` | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/SKILL.md) |
-| `claude-code` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) · [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/SKILL.md) · [Drama Skills AI 短剧创作技能合集](entries/writing-docs/drama-skills/SKILL.md) · [OH-Story 网文/小说写作 Skill 包](entries/writing-docs/oh-story-claudecode/SKILL.md) · [ZenStory AI 小说写作工作台](entries/writing-docs/zenstory/SKILL.md) |
+| `claude-code` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) · [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/SKILL.md) · [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/SKILL.md) · [Drama Skills AI 短剧创作技能合集](entries/writing-docs/drama-skills/SKILL.md) · [OH-Story 网文/小说写作 Skill 包](entries/writing-docs/oh-story-claudecode/SKILL.md) · [ZenStory AI 小说写作工作台](entries/writing-docs/zenstory/SKILL.md) |
 | `cn-localization` | [中文 DESIGN.md 设计资源集](entries/design-creative/awesome-design-md-cn/SKILL.md) |
 | `code-graph` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) |
 | `code-review` | [Superpowers 开发方法论](entries/meta-skillcraft/superpowers/SKILL.md) |
@@ -151,7 +149,6 @@ SkillMall 全部收录条目的交叉检索表。六个视图对应六种找东�
 | `prompt-engineering` | [Drama Skills AI 短剧创作技能合集](entries/writing-docs/drama-skills/SKILL.md) |
 | `screenwriting` | [Drama Skills AI 短剧创作技能合集](entries/writing-docs/drama-skills/SKILL.md) |
 | `short-drama` | [Drama Skills AI 短剧创作技能合集](entries/writing-docs/drama-skills/SKILL.md) |
-| `skill` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) |
 | `skill-md` | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/SKILL.md) |
 | `skill-pack` | [OH-Story 网文/小说写作 Skill 包](entries/writing-docs/oh-story-claudecode/SKILL.md) |
 | `social-media` | [Fantasy 生命感人像摄影 Skill](entries/design-creative/fantasy-life-force-portrait-photography/SKILL.md) |

@@ -29,6 +29,7 @@ from _common import (  # noqa: E402
     REPO_ROOT,
     TIER_LABELS,
     discover_entries,
+    normalize_tags,
 )
 
 SITE_DIR = REPO_ROOT / "site"
@@ -256,7 +257,7 @@ DETAIL_TEMPLATE = """<!DOCTYPE html>
 
   <div class="card" style="margin-top:24px;">
     <div class="mini-tags">
-      <span>{cat_name}</span><span>{tier_label}</span><span>{license}</span><span>{kind_label}</span>
+      <span>{cat_name}</span><span>{tier_label}</span><span class="lic-badge lic-{license_bucket}" title="{license}">{license_bucket_label}</span><span>{kind_label}</span>
     </div>
     <p class="muted detail-meta">{summary_zh}</p>
     <div class="link-row" style="margin-top:14px;">
@@ -274,6 +275,40 @@ DETAIL_TEMPLATE = """<!DOCTYPE html>
 </body>
 </html>
 """
+
+# 协议直观分类（与 site/assets/app.js 的 LICENSE_BUCKETS / BUCKET_META 保持一致）
+LICENSE_BUCKETS = {
+    # 完全开源（宽松许可）：可商用、可闭源，仅需保留署名
+    "MIT": "open", "MIT-0": "open", "BSD-2-Clause": "open", "BSD-3-Clause": "open",
+    "Apache-2.0": "open", "ISC": "open", "Unlicense": "open", "0BSD": "open",
+    "Zlib": "open", "BSL-1.0": "open", "CC0-1.0": "open", "BlueOak-1.0.0": "open",
+    "Python-2.0": "open", "MS-PL": "open", "WTFPL": "open",
+    "CC-BY-4.0": "open", "CC-BY-3.0": "open",
+    # 部分开源（Copyleft / 衍生约束）
+    "GPL-2.0": "copyleft", "GPL-3.0": "copyleft", "AGPL-3.0": "copyleft",
+    "LGPL-2.1": "copyleft", "LGPL-3.0": "copyleft", "MPL-2.0": "copyleft",
+    "EPL-2.0": "copyleft", "EPL-1.0": "copyleft", "OSL-3.0": "copyleft",
+    "EUPL-1.2": "copyleft", "CDDL-1.0": "copyleft", "CeCILL-2.1": "copyleft",
+    # 商用授权（专有 / 源码可见但受限）
+    "LicenseRef-Anthropic-Source-Available": "commercial",
+    "Commercial": "commercial", "Proprietary": "commercial",
+    "CC-BY-NC-4.0": "commercial", "CC-BY-NC-SA-4.0": "commercial",
+    "BUSL-1.1": "commercial", "SSPL-1.0": "commercial",
+    # 版权未声明
+    "UNKNOWN": "unknown",
+}
+BUCKET_LABELS = {
+    "open": "完全开源",
+    "copyleft": "部分开源",
+    "commercial": "商用授权",
+    "unknown": "版权未声明",
+}
+
+
+def license_bucket(spdx) -> str:
+    if not spdx:
+        return "unknown"
+    return LICENSE_BUCKETS.get(str(spdx), "unknown")
 
 
 def build_detail(entry, cat_name: str, body_html: str) -> str:
@@ -298,6 +333,8 @@ def build_detail(entry, cat_name: str, body_html: str) -> str:
         "cat_name": html.escape(cat_name),
         "tier_label": html.escape(TIER_LABELS.get(entry.tier, entry.tier)),
         "license": html.escape(str(meta.get("license", "未知"))),
+        "license_bucket": license_bucket(meta.get("license")),
+        "license_bucket_label": BUCKET_LABELS[license_bucket(meta.get("license"))],
         "kind_label": html.escape(KIND_LABELS.get(str(meta.get("kind", "")), str(meta.get("kind", "")))),
         "summary_zh": html.escape(str(meta.get("summary_zh", ""))),
         "repo_link": repo_link,
@@ -348,14 +385,16 @@ def main() -> int:
                 "category_name": cat_name,
                 "kind": meta.get("kind", ""),
                 "kind_label": KIND_LABELS.get(str(meta.get("kind", "")), str(meta.get("kind", ""))),
-                "tags": meta.get("tags") or [],
+                "tags": normalize_tags(meta.get("tags"))[0],
                 "languages": meta.get("languages") or [],
                 "doc_languages": meta.get("doc_languages") or [],
                 "license": meta.get("license", "未知"),
+                "license_bucket": license_bucket(meta.get("license")),
                 "homepage": meta.get("homepage", ""),
                 "repo": meta.get("repo", ""),
                 "tier": entry.tier,
                 "tier_label": TIER_LABELS.get(entry.tier, entry.tier),
+                "featured": bool(meta.get("featured", False)),
                 "related": meta.get("related") or [],
                 "aliases": meta.get("aliases") or [],
                 "risk_notes": meta.get("risk_notes") or "",

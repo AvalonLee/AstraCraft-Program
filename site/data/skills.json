@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T07:25:16Z",
+  "generated_at": "2026-08-26T08:46:12Z",
   "count": 11,
   "categories": [
     {
@@ -66,9 +66,7 @@
       "kind_label": "框架",
       "tags": [
         "memory",
-        "agent",
         "long-term-memory",
-        "skill",
         "llm-wiki",
         "code-graph",
         "claude-code",
@@ -84,10 +82,12 @@
         "en"
       ],
       "license": "MIT",
+      "license_bucket": "open",
       "homepage": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
       "repo": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
       "tier": "standard",
       "tier_label": "常规",
+      "featured": false,
       "related": [],
       "aliases": [
         "TencentDB Agent Memory",
@@ -116,7 +116,7 @@
         "pdf",
         "pptx",
         "xlsx",
-        "claude"
+        "claude-code"
       ],
       "languages": [
         "markdown",
@@ -126,10 +126,12 @@
         "en"
       ],
       "license": "LicenseRef-Anthropic-Source-Available",
+      "license_bucket": "commercial",
       "homepage": "https://github.com/anthropics/skills",
       "repo": "https://github.com/anthropics/skills",
       "tier": "standard",
       "tier_label": "常规",
+      "featured": false,
       "related": [],
       "aliases": [
         "anthropics-office-skills",
@@ -167,10 +169,12 @@
         "zh"
       ],
       "license": "UNKNOWN",
+      "license_bucket": "unknown",
       "homepage": "https://fchangjun.github.io/awesome-design-md-cn/",
       "repo": "https://github.com/fchangjun/awesome-design-md-cn",
       "tier": "standard",
       "tier_label": "常规",
+      "featured": true,
       "related": [],
       "aliases": [
         "awesome-design-md-cn",
@@ -207,10 +211,12 @@
         "zh"
       ],
       "license": "UNKNOWN",
+      "license_bucket": "unknown",
       "homepage": "https://github.com/dacnay816y62-hub/character-casting-studio-skill",
       "repo": "https://github.com/dacnay816y62-hub/character-casting-studio-skill",
       "tier": "standard",
       "tier_label": "常规",
+      "featured": false,
       "related": [],
       "aliases": [
         "角色 casting",
@@ -247,10 +253,12 @@
         "zh"
       ],
       "license": "UNKNOWN",
+      "license_bucket": "unknown",
       "homepage": "https://github.com/dacnay816y62-hub/cinema-dna-21x9x3",
       "repo": "https://github.com/dacnay816y62-hub/cinema-dna-21x9x3",
       "tier": "standard",
       "tier_label": "常规",
+      "featured": true,
       "related": [],
       "aliases": [
         "电影感三联图",
@@ -287,10 +295,12 @@
         "zh"
       ],
       "license": "UNKNOWN",
+      "license_bucket": "unknown",
       "homepage": "https://github.com/dacnay816y62-hub/fantasy-life-force-portrait-photography",
       "repo": "https://github.com/dacnay816y62-hub/fantasy-life-force-portrait-photography",
       "tier": "standard",
       "tier_label": "常规",
+      "featured": false,
       "related": [],
       "aliases": [
         "生命感人像",
@@ -326,10 +336,12 @@
         "en"
       ],
       "license": "CC-BY-4.0",
+      "license_bucket": "open",
       "homepage": "https://agentskills.io/specification",
       "repo": "https://github.com/anthropics/skills",
       "tier": "standard",
       "tier_label": "常规",
+      "featured": false,
       "related": [
         "superpowers"
       ],
@@ -369,10 +381,12 @@
         "en"
       ],
       "license": "MIT",
+      "license_bucket": "open",
       "homepage": "https://github.com/obra/superpowers",
       "repo": "https://github.com/obra/superpowers",
       "tier": "core",
       "tier_label": "主推",
+      "featured": false,
       "related": [
         "agent-skills-spec"
       ],
@@ -411,10 +425,12 @@
         "en"
       ],
       "license": "MIT",
+      "license_bucket": "open",
       "homepage": "https://github.com/zenstory-ai/drama-skills",
       "repo": "https://github.com/zenstory-ai/drama-skills",
       "tier": "standard",
       "tier_label": "常规",
+      "featured": true,
       "related": [],
       "aliases": [
         "短剧创作",
@@ -451,10 +467,12 @@
         "zh"
       ],
       "license": "MIT",
+      "license_bucket": "open",
       "homepage": "https://github.com/zenstory-ai/oh-story-claudecode",
       "repo": "https://github.com/zenstory-ai/oh-story-claudecode",
       "tier": "standard",
       "tier_label": "常规",
+      "featured": false,
       "related": [],
       "aliases": [
         "网文写作",
@@ -493,10 +511,12 @@
         "en"
       ],
       "license": "MIT",
+      "license_bucket": "open",
       "homepage": "https://zenstory.ai/",
       "repo": "https://github.com/zenstory-ai/zenstory",
       "tier": "standard",
       "tier_label": "常规",
+      "featured": true,
       "related": [],
       "aliases": [
         "小说写作工作台",

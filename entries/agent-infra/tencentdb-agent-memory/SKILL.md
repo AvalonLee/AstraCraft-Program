@@ -6,7 +6,7 @@ summary_zh: 腾讯云出品的 Agent 团队级记忆中心（Memory Hub）：把
 summary_en: "Team memory hub for AI agents: turns conversations, docs and code into reusable assets (Chat Memory, Skill, LLM-Wiki, CodeGraph), shared across agents and frameworks."
 category: agent-infra
 kind: framework
-tags: [memory, agent, long-term-memory, skill, llm-wiki, code-graph, claude-code, openclaw, vector-search, tencent]
+tags: [memory, long-term-memory, llm-wiki, code-graph, claude-code, openclaw, vector-search, tencent]
 languages: [typescript]
 doc_languages: [zh, en]
 license: MIT

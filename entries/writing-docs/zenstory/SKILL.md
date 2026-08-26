@@ -13,6 +13,7 @@ license: MIT
 homepage: https://zenstory.ai/
 repo: https://github.com/zenstory-ai/zenstory
 tier: standard
+featured: true
 metrics:
   stars: 35
   pushed_at: "2026-08-25T11:21:09Z"

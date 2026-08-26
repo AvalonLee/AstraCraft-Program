@@ -29,9 +29,12 @@ from _common import (  # noqa: E402
     ENTRY_FILE,
     REPO_ROOT,
     SCHEMA_PATH,
+    TAG_CAP,
     Entry,
     Reporter,
     discover_entries,
+    load_tag_vocab,
+    normalize_tags,
 )
 
 try:
@@ -93,6 +96,41 @@ def check_categories_exist(rep: Reporter) -> None:
             rep.error("全局", f"缺少分类目录：entries/{category}/")
 
 
+def check_tags(entry: Entry, vocab: dict, rep: Reporter) -> None:
+    """标签治理检查（Phase 2）：
+
+    1. 别名归并使用告警：源文件若直接写了别名（如 `claude`/`agent`），
+       提示改用规范形态（claude-code / ai-agent），保持词表统一。
+    2. 标签数上限告警：规范后标签数 > TAG_CAP(8) 时提示精简。
+    3. 受控主标签复用建议：若没有任何标签命中白名单 primary，
+       提示从白名单挑选可复用的标签，避免发明一次性同义词。
+    """
+    raw = entry.meta.get("tags") or []
+    normalized, merged = normalize_tags(raw)
+
+    for original, canonical in merged.items():
+        rep.warn(
+            entry.rel_path,
+            f"标签 `{original}` 是 `{canonical}` 的别名，建议源文件直接写规范形态 `{canonical}`"
+            "（避免同义词分裂筛选）。",
+        )
+
+    if len(normalized) > vocab.get("cap", TAG_CAP):
+        rep.warn(
+            entry.rel_path,
+            f"标签数 {len(normalized)} 超过上限 {vocab.get('cap', TAG_CAP)}，"
+            "请精简为最有代表性的标签（强制挑最有代表性的）。",
+        )
+
+    primary = vocab.get("primary") or set()
+    if primary and not any(t in primary for t in normalized):
+        rep.warn(
+            entry.rel_path,
+            "未使用任何受控主标签（白名单），建议优先复用既有标签以打通筛选；"
+            "确需新概念时请先将其加入 scripts/schema/tag_vocabulary.json 的 primary。",
+        )
+
+
 def check_duplicates(entries: list[Entry], rep: Reporter) -> None:
     """id 与 aliases 全局唯一。"""
     seen: dict[str, str] = {}
@@ -140,6 +178,7 @@ def main() -> int:
 
     schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
     validator = Draft7Validator(schema)
+    vocab = load_tag_vocab()
 
     entries = discover_entries()
     if not args.quiet:
@@ -150,6 +189,7 @@ def main() -> int:
         check_schema(entry, validator, rep)
         check_identity(entry, rep)
         check_skill_doc(entry, rep)
+        check_tags(entry, vocab, rep)
 
     check_duplicates(entries, rep)
     check_removed(entries, rep)

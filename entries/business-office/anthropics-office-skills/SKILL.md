@@ -6,7 +6,7 @@ summary_zh: Anthropic 官方维护的文档处理技能集合——docx 生成�
 summary_en: "Anthropic's official document-processing skills: docx generation/editing, pdf read/merge, pptx slides, xlsx spreadsheets. Source-available, not open source — linked, not vendored."
 category: business-office
 kind: skill-collection
-tags: [document-generation, office, docx, pdf, pptx, xlsx, claude]
+tags: [document-generation, office, docx, pdf, pptx, xlsx, claude-code]
 languages: [markdown, python]
 doc_languages: [en]
 license: LicenseRef-Anthropic-Source-Available

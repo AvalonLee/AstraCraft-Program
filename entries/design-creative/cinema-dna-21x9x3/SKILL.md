@@ -13,6 +13,7 @@ license: UNKNOWN
 homepage: https://github.com/dacnay816y62-hub/cinema-dna-21x9x3
 repo: https://github.com/dacnay816y62-hub/cinema-dna-21x9x3
 tier: standard
+featured: true
 metrics:
   stars: 1113
   pushed_at: "2026-07-25T13:28:39Z"

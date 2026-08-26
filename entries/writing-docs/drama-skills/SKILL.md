@@ -13,6 +13,7 @@ license: MIT
 homepage: https://github.com/zenstory-ai/drama-skills
 repo: https://github.com/zenstory-ai/drama-skills
 tier: standard
+featured: true
 metrics:
   stars: 1201
   pushed_at: "2026-08-26T06:48:55Z"

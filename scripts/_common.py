@@ -8,6 +8,7 @@ SkillMall 的收录形态：每个条目只保存一个 `SKILL.md`（介绍 + �
 
 from __future__ import annotations
 
+import json
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -24,9 +25,13 @@ except ImportError:  # pragma: no cover
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SCHEMA_PATH = REPO_ROOT / "scripts" / "schema" / "meta.schema.json"
+TAG_VOCAB_PATH = REPO_ROOT / "scripts" / "schema" / "tag_vocabulary.json"
 TEMPLATE_DIR = REPO_ROOT / "_template"
 INDEX_PATH = REPO_ROOT / "INDEX.md"
 CHANGELOG_PATH = REPO_ROOT / "docs" / "CHANGELOG.md"
+
+# 每个条目标签数上限（Phase 2 标签治理：强制挑最有代表性的）
+TAG_CAP = 8
 
 # 一级分类：目录名 -> (中文名, 定位)
 CATEGORIES: dict[str, tuple[str, str]] = {
@@ -99,6 +104,56 @@ class Entry:
     def stars(self) -> int:
         value = (self.meta.get("metrics") or {}).get("stars")
         return int(value) if isinstance(value, int) else -1
+
+
+def load_tag_vocab() -> dict[str, Any]:
+    """读取标签治理词表（scripts/schema/tag_vocabulary.json）。
+
+    返回 {cap, primary(set), aliases(dict)}。文件缺失时回退到空别名、cap=8，
+    保证下游归一化 / 校验逻辑仍可运行。
+    """
+    default: dict[str, Any] = {
+        "cap": TAG_CAP,
+        "primary": set(),
+        "aliases": {},
+    }
+    if not TAG_VOCAB_PATH.exists():
+        return default
+    try:
+        data = json.loads(TAG_VOCAB_PATH.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return default
+    data["primary"] = set(data.get("primary", []))
+    data.setdefault("aliases", {})
+    data.setdefault("cap", TAG_CAP)
+    return data
+
+
+def normalize_tags(raw_tags: list[str] | None) -> tuple[list[str], dict[str, str]]:
+    """规范化标签列表。
+
+    处理：trim 空白、转小写、应用别名映射、去重（保留首次出现顺序）。
+    返回 (规范后列表, {原始值: 规范值} 的别名映射，仅含发生归并的项)。
+    """
+    vocab = load_tag_vocab()
+    aliases: dict[str, str] = vocab.get("aliases", {})
+    seen: set[str] = set()
+    result: list[str] = []
+    merged: dict[str, str] = {}
+    for tag in raw_tags or []:
+        if tag is None:
+            continue
+        t = str(tag).strip().lower()
+        if not t:
+            continue
+        canonical = aliases.get(t, t)
+        if canonical != t:
+            merged[t] = canonical
+        if canonical in seen:
+            continue
+        seen.add(canonical)
+        result.append(canonical)
+    return result, merged
 
 
 def load_frontmatter(path: Path) -> dict[str, Any]:

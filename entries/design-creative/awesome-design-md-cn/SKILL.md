@@ -13,6 +13,7 @@ license: UNKNOWN
 homepage: https://fchangjun.github.io/awesome-design-md-cn/
 repo: https://github.com/fchangjun/awesome-design-md-cn
 tier: standard
+featured: true
 metrics:
   stars: 140
   pushed_at: "2026-07-07T07:47:56Z"

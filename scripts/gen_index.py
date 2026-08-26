@@ -32,6 +32,7 @@ from _common import (  # noqa: E402
     TIER_LABELS,
     Entry,
     discover_entries,
+    normalize_tags,
 )
 
 HEADER = """<!--
@@ -147,7 +148,7 @@ def view_by_category(entries: list[Entry]) -> list[str]:
 def view_by_tag(entries: list[Entry]) -> list[str]:
     grouped: dict[str, list[Entry]] = defaultdict(list)
     for entry in entries:
-        for tag in entry.meta.get("tags") or []:
+        for tag in normalize_tags(entry.meta.get("tags"))[0]:
             grouped[str(tag)].append(entry)
 
     lines = [

@@ -1,5 +1,5 @@
 {
-  "_comment": "SkillMall 标签治理词表。由 scripts/_common.py 的 load_tag_vocab() 读取。",
+  "_comment": "AstraCraft Program（天工计划）标签治理词表。由 scripts/_common.py 的 load_tag_vocab() 读取。",
   "cap": 8,
   "primary": [
     "writing",
@@ -61,7 +61,11 @@
     "cli",
     "framework",
     "codex",
-    "claude-code"
+    "claude-code",
+    "motion-design",
+    "video-production",
+    "remotion",
+    "product-video"
   ],
   "aliases": {
     "claude": "claude-code",

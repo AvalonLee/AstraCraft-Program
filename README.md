@@ -1,17 +1,17 @@
 <div align="center">
 
-# Awesome SkillMall
+# AstraCraft Program 天工计划
 
 **面向中文用户的 Agent Skill 资源集合与在线预览版本。**
 
 一个轻量、中文为主的 Agent Skill 索引库：每个条目只存一份 `SKILL.md`（介绍 + 安装指令），
 Agent 读完即可快速定位并安装对应的 skill 项目。不收录上游源码快照。
 
-[![entries](https://img.shields.io/badge/entries-14-blue.svg)](site/index.html)
+[![entries](https://img.shields.io/badge/entries-16-blue.svg)](site/index.html)
 [![license](https://img.shields.io/badge/docs-CC%20BY%204.0-blue.svg)](LICENSE)
 [![code license](https://img.shields.io/badge/code-MIT-green.svg)](LICENSE)
-[![CI: index-check](https://github.com/AvalonLee/SkillMall/actions/workflows/index-check.yml/badge.svg)](https://github.com/AvalonLee/SkillMall/actions/workflows/index-check.yml)
-[![CI: link-check](https://github.com/AvalonLee/SkillMall/actions/workflows/link-check.yml/badge.svg)](https://github.com/AvalonLee/SkillMall/actions/workflows/link-check.yml)
+[![CI: index-check](https://github.com/AvalonLee/AstraCraft-Program/actions/workflows/index-check.yml/badge.svg)](https://github.com/AvalonLee/AstraCraft-Program/actions/workflows/index-check.yml)
+[![CI: link-check](https://github.com/AvalonLee/AstraCraft-Program/actions/workflows/link-check.yml/badge.svg)](https://github.com/AvalonLee/AstraCraft-Program/actions/workflows/link-check.yml)
 
 </div>
 
@@ -19,8 +19,8 @@ Agent 读完即可快速定位并安装对应的 skill 项目。不收录上游�
 
 ## 快速入口
 
-- **在线预览**：[avalonlee.github.io/SkillMall](https://avalonlee.github.io/SkillMall/) —— 搜索 / 分类筛选 / 点开看每个 skill 的安装方式
-- **推荐收录**：[建议收录新条目](https://github.com/AvalonLee/SkillMall/issues/new?template=new-entry.yml) —— 发现优质 Skill？一键提交收录建议
+- **在线预览**：[avalonlee.github.io/AstraCraft-Program](https://avalonlee.github.io/AstraCraft-Program/) —— 搜索 / 分类筛选 / 点开看每个 skill 的安装方式
+- **推荐收录**：[建议收录新条目](https://github.com/AvalonLee/AstraCraft-Program/issues/new?template=new-entry.yml) —— 发现优质 Skill？一键提交收录建议
 - 更新日志：[docs/CHANGELOG.md](docs/CHANGELOG.md)
 
 ## 什么是 SKILL.md？
@@ -73,7 +73,7 @@ frontmatter 关键字段含义：
 `SKILL.md`，按「怎么安装」小节执行即可。SKILL.md 的 frontmatter 已含 `repo`、`license`、`tier`，
 Agent 可直接据此判断装不装、能不能商用。
 
-**人工浏览：** 打开 [在线预览站](https://avalonlee.github.io/SkillMall/)，用搜索框与分类 / 标签 /
+**人工浏览：** 打开 [在线预览站](https://avalonlee.github.io/AstraCraft-Program/)，用搜索框与分类 / 标签 /
 评级 / 协议筛选，找到需要的技能后点开查看安装指令。
 
 **写自己的 skill：** 参考 [docs/skill-spec-cheatsheet.md](docs/skill-spec-cheatsheet.md)
@@ -90,7 +90,7 @@ Agent 可直接据此判断装不装、能不能商用。
 
 ## 收录内容
 
-当前收录 **14** 个技能，按十大分类组织（目录名 → 定位）：
+当前收录 **16** 个技能，按十大分类组织（目录名 → 定位）：
 
 | 目录 | 定位 |
 |---|---|
@@ -141,7 +141,7 @@ Agent 可直接据此判断装不装、能不能商用。
 
 如果你是某项内容的著作权人，希望本仓库移除相关收录：
 
-- 开 Issue：https://github.com/AvalonLee/SkillMall/issues
+- 开 Issue：https://github.com/AvalonLee/AstraCraft-Program/issues
 - 或发邮件至：avalonli@qq.com
 
 **承诺 7 日内处理，无需提供任何法律文书**，一句话说明身份和诉求即可。
@@ -150,5 +150,5 @@ Agent 可直接据此判断装不装、能不能商用。
 ---
 
 <p align="center">
-  <sub>SkillMall · 轻量索引 · 只存 SKILL.md · 中文为主 · 可溯源</sub>
+  <sub>AstraCraft Program 天工计划 · 轻量索引 · 只存 SKILL.md · 中文为主 · 可溯源</sub>
 </p>

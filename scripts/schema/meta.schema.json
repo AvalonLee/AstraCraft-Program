@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/AvalonLee/SkillMall/scripts/schema/meta.schema.json",
-  "title": "SkillMall SKILL.md Frontmatter",
-  "description": "SkillMall 条目的元数据结构。每个条目由单个 SKILL.md 描述，元数据放在文件开头的 YAML frontmatter 中。",
+  "$id": "https://github.com/AvalonLee/AstraCraft-Program/scripts/schema/meta.schema.json",
+  "title": "AstraCraft Program SKILL.md Frontmatter",
+  "description": "AstraCraft Program（天工计划）条目的元数据结构。每个条目由单个 SKILL.md 描述，元数据放在文件开头的 YAML frontmatter 中。",
   "type": "object",
   "additionalProperties": false,
   "required": [

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""SkillMall 静态预览站生成器。
+"""AstraCraft Program（天工计划）静态预览站生成器。
 
 扫描 entries/**/SKILL.md，生成纯静态、零依赖的在线预览站素材：
   - site/data/skills.json      全量条目元数据（首页前端筛选/搜索用）
@@ -211,7 +211,7 @@ DETAIL_TEMPLATE = """<!DOCTYPE html>
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>{title} · SkillMall</title>
+<title>{title} · AstraCraft Program</title>
 <link rel="stylesheet" href="../assets/style.css" />
 <style>
   /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
@@ -235,12 +235,12 @@ DETAIL_TEMPLATE = """<!DOCTYPE html>
 <main class="page-shell">
   <header class="topbar">
     <div class="brand-lockup">
-      <div class="brand-name">SkillMall</div>
-      <div class="brand-sub">Agent Skill 中文索引集市</div>
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
     </div>
     <nav class="nav-links">
       <a class="nav-link" href="../index.html">浏览技能</a>
-      <a class="nav-link" href="https://github.com/AvalonLee/SkillMall" target="_blank" rel="noopener">GitHub</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </header>
 
@@ -270,7 +270,7 @@ DETAIL_TEMPLATE = """<!DOCTYPE html>
 {body_html}
   </article>
 
-  <p class="footer">收录于 {added_at} · 更新于 {updated_at} · SkillMall 轻量索引</p>
+  <p class="footer">收录于 {added_at} · 更新于 {updated_at} · AstraCraft Program 轻量索引</p>
 </main>
 </body>
 </html>

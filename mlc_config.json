@@ -16,7 +16,7 @@
       "urls": ["https://github.com", "https://raw.githubusercontent.com"],
       "headers": {
         "Accept": "text/html",
-        "User-Agent": "Mozilla/5.0 (compatible; SkillMall-LinkCheck/1.0)"
+        "User-Agent": "Mozilla/5.0 (compatible; AstraCraftProgram-LinkCheck/1.0)"
       }
     }
   ],

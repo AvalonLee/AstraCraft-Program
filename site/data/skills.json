@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-26T09:05:17Z",
-  "count": 14,
+  "generated_at": "2026-08-26T11:46:36Z",
+  "count": 16,
   "categories": [
     {
       "dir": "writing-docs",
@@ -396,6 +396,52 @@
       "detail_url": "skills/fantasy-life-force-portrait-photography.html"
     },
     {
+      "id": "video-shotcraft",
+      "name_zh": "Video Shotcraft 产品视频动态设计技能",
+      "name_en": "Video Shotcraft — Cinematic Product Video Skill",
+      "summary_zh": "面向 Claude Code 与 Codex 的 AI 产品视频动态设计 skill：152 张镜头配方卡、209 种动态预览、一套可投产的 Remotion 模板，把 Agent 变成动态设计工作室，一键生成电影级产品宣传片。",
+      "summary_en": "An AI agent skill for crafting cinematic product videos: 152 shot recipe cards, 209 motion previews, and a production-ready Remotion template. Turns Claude Code or Codex into a motion-design studio.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "skill",
+      "kind_label": "技能包",
+      "tags": [
+        "cinematic",
+        "motion-design",
+        "video-production",
+        "remotion",
+        "claude-code",
+        "codex",
+        "prompt-engineering"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en",
+        "ja"
+      ],
+      "license": "Apache-2.0",
+      "license_bucket": "open",
+      "homepage": "https://github.com/Vincentwei1021/video-shotcraft",
+      "repo": "https://github.com/Vincentwei1021/video-shotcraft",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "shotcraft",
+        "remotion-video",
+        "product-video"
+      ],
+      "risk_notes": "Apache-2.0 可商用；需 Node ≥ 22 与 Remotion（个人/小团队免费，公司需付费许可证）；渲染依赖 Chrome/Chromium headless shell；音频素材来自 Mixkit 等免费商用源；镜头配方卡源自对 ClickUp/Perplexity/Slack/Notion 等官方产品影片的动效语言学习与从零实现，不含原片素材。",
+      "added_at": "2026-08-26",
+      "updated_at": "2026-08-26",
+      "install": "bash\n# 方式一：直接让 Agent 安装\n# 在 Claude Code / Codex 中说：\n# \"Install this skill for me: https://github.com/Vincentwei1021/video-shotcraft\"\n\n# 方式二：skills CLI\nnpx skills add Vincentwei1021/video-shotcraft\n\n# 方式三：手动软链\ngit clone https://github.com/Vincentwei1021/video-shotcraft.git\nln -s \"$(pwd)/video-shotcraft\" ~/.codex/skills/video-shotcraft  # Codex\nln -s \"$(pwd)/video-shotcraft\" ~/.claude/skills/video-shotcraft  # Claude Code",
+      "detail_url": "skills/video-shotcraft.html"
+    },
+    {
       "id": "agent-skills-spec",
       "name_zh": "Agent Skills 规范",
       "name_en": "Agent Skills Specification",
@@ -611,6 +657,56 @@
       "updated_at": "2026-08-26",
       "install": "bash\n# 方式一：对话安装（在 Claude Code 中）\n# 告诉 Claude Code：安装这个 skill https://github.com/zenstory-ai/oh-story-claudecode\n\n# 方式二：命令行（npx skills，-g 全局装到 ~/.claude/skills/；去掉 -g 装当前目录）\nnpx skills add zenstory-ai/oh-story-claudecode -y -g",
       "detail_url": "skills/oh-story-claudecode.html"
+    },
+    {
+      "id": "shuohao-skills",
+      "name_zh": "shuohao-skills AI 短剧制作技能合集",
+      "name_en": "shuohao-skills — AI Short-Drama Production Skill Suite",
+      "summary_zh": "面向 Claude Code 与 Codex 的 AI 短剧制作 skill 合集：从一本小说到直接喂生成管线的制作素材——拆角色、排大纲、出场景与道具设定、写剧本、切分镜。5 个技能线性协作，每段自带质量门脚本检查。",
+      "summary_en": "An AI short-drama production skill suite for Claude Code & Codex: novel-to-pipeline covering character bibles, art bibles, screenplays, and storyboards. 5 skills with built-in quality-gate scripts.",
+      "category_dir": "writing-docs",
+      "category_name": "写作与文档",
+      "kind": "skill-collection",
+      "kind_label": "技能集",
+      "tags": [
+        "short-drama",
+        "screenwriting",
+        "storyboard",
+        "claude-code",
+        "codex",
+        "novel-writing",
+        "character-design",
+        "ai-agent"
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "Apache-2.0",
+      "license_bucket": "open",
+      "homepage": "https://github.com/eternityspring/shuohao-skills",
+      "repo": "https://github.com/eternityspring/shuohao-skills",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "短剧制作",
+        "烁皓短剧",
+        "novel-outline",
+        "novel-characters",
+        "novel-art",
+        "novel-script",
+        "novel-storyboard"
+      ],
+      "risk_notes": "Apache-2.0 可商用；需 Node ≥ 18（脚本只用标准库，无 npm 依赖）；出图依赖 Codex CLI 内置 $imagegen；模型额度用当前会话的额度，无需额外 API key。",
+      "added_at": "2026-08-26",
+      "updated_at": "2026-08-26",
+      "install": "bash\n# 克隆仓库\ngit clone https://github.com/eternityspring/shuohao-skills.git\ncd shuohao-skills\n\n# 自动检测并安装到 Claude Code / Codex，或指定\n./scripts/install.sh              # 自动检测\n./scripts/install.sh --codex      # 仅装到 Codex\n./scripts/install.sh novel-characters  # 只装某一个\n\n# 手动软链\nln -s \"$PWD/skills/novel-characters\" ~/.codex/skills/novel-characters",
+      "detail_url": "skills/shuohao-skills.html"
     },
     {
       "id": "zenstory",

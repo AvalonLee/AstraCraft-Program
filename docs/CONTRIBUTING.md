@@ -1,6 +1,6 @@
 # 贡献指南
 
-SkillMall 是**轻量索引库**：每个条目只保存一个 `SKILL.md`（介绍 + 安装指令），
+AstraCraft Program（天工计划）是**轻量索引库**：每个条目只保存一个 `SKILL.md`（介绍 + 安装指令），
 不收录源码快照。因此贡献流程很简单，三条路径任选。
 
 先读这两份文档，能少走弯路：
@@ -110,4 +110,3 @@ Windows 用户建议在 Git Bash 下操作，`.gitattributes` 已强制 LF，不
   ```
 - 发布到 `main`：由维护者/用户下令后，将 `dev` 合并进 `main`（通常为 fast-forward）并推送。
   **不要**未经许可自行把 `dev` 合并进 `main`。
-

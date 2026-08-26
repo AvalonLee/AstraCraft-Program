@@ -98,14 +98,16 @@ Windows 用户建议在 Git Bash 下操作，`.gitattributes` 已强制 LF，不
 
 ## 分支与发布流程
 
-- `dev` 是**默认开发分支**（本地默认工作分支，也是 GitHub 仓库默认分支）：所有修改、
-  新增条目都推送到 `dev`。
-- `main` 是**稳定分支**：只有维护者明确下令后，才把 `dev` 合并进 `main` 并推送。
+- `main` 是**默认分支**（GitHub 仓库默认分支、稳定基线）：对外展示与克隆的入口，
+  一般不直接在此开发，仅通过 `dev` -> `main` 的合并更新。
+- `dev` 是**开发分支**：所有修改、新增条目都先推送到 `dev`。
 - 日常操作：
   ```bash
   git checkout dev            # 确保在 dev 上
   # ... 修改、写 SKILL.md ...
   git commit -m "..."
-  git push origin dev         # 只推 dev，不推 main
+  git push origin dev         # 日常只推 dev
   ```
-- **不要**未经许可把 `dev` 合并进 `main`。合并动作由维护者/用户下令后执行。
+- 发布到 `main`：由维护者/用户下令后，将 `dev` 合并进 `main`（通常为 fast-forward）并推送。
+  **不要**未经许可自行把 `dev` 合并进 `main`。
+

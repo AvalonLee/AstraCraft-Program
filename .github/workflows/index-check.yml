@@ -7,6 +7,7 @@ on:
     paths:
       - '**/SKILL.md'
       - 'scripts/**'
+      - 'site/**'
       - 'INDEX.md'
       - '.github/workflows/index-check.yml'
 
@@ -47,3 +48,20 @@ jobs:
 
       - name: 比对 INDEX.md
         run: python scripts/gen_index.py --check
+
+  site-gen:
+    name: 检查站点生成器
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: 安装依赖
+        run: python -m pip install -r scripts/requirements.txt
+
+      - name: 运行 gen_site.py
+        run: python scripts/gen_site.py --quiet

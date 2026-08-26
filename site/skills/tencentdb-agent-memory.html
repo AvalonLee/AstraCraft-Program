@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TencentDB Agent Memory · SkillMall</title>
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="../index.html">SkillMall</a>
+    <nav class="site-nav">
+      <a href="../index.html">浏览技能</a>
+      <a href="https://github.com/AvalonLee/SkillMall" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
+<main class="container detail">
+  <p class="breadcrumb"><a href="../index.html">首页</a> / Agent 基础设施</p>
+  <div class="detail__head">
+    <h1>TencentDB Agent Memory</h1>
+    <p class="detail__en">TencentDB Agent Memory</p>
+    <div class="badges">
+      <span class="badge badge--cat">Agent 基础设施</span>
+      <span class="badge badge--tier">常规</span>
+      <span class="badge badge--license">MIT</span>
+      <span class="badge">框架</span>
+    </div>
+    <p class="detail__summary">腾讯云出品的 Agent 团队级记忆中心（Memory Hub）：把对话、文档与代码沉淀为 Chat Memory / Skill / LLM-Wiki / CodeGraph 四类可复用资产，支持治理、共享并跨 Agent 与框架装备。</p>
+    <div class="detail__links">
+      <a class="btn" href="https://github.com/TencentCloud/TencentDB-Agent-Memory" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="btn btn--ghost" href="https://github.com/TencentCloud/TencentDB-Agent-Memory" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+  <article class="detail__body">
+<h1>TencentDB Agent Memory</h1>
+<blockquote>腾讯云出品的 <strong>Agent 团队级记忆中心（Memory Hub）</strong>：让经验在 Agent 之间沉淀、流动、继承。 上游：<a href="https://github.com/TencentCloud/TencentDB-Agent-Memory" target="_blank" rel="noopener">TencentCloud/TencentDB-Agent-Memory</a> · 许可证：MIT</blockquote>
+<h2>这是什么</h2>
+<p>面向 <strong>Agent 团队</strong>的长期记忆基础设施。把"对话、文档、代码"沉淀为四类可复用记忆资产： <strong>Chat Memory</strong>（L0 对话 → L1 原子 → L2 场景 → L3 人格逐层沉淀）、<strong>Skill</strong>（带版本/资源/ 触发边界的可复用技能）、<strong>LLM-Wiki</strong>（文档知识）、<strong>CodeGraph</strong>（代码图谱）。部署形态为 <code>memory-core + memory-hub + memory-proxy</code> 三件套 + SDK，接入 OpenClaw / Hermes / Claude Code / CodeBuddy 等。当前版本 v2.0.0。</p>
+<h2>怎么安装</h2>
+<pre><code class="lang-bash"># 1) 克隆上游（默认分支 feat/server_team，直接 clone 即得该版本）
+git clone https://github.com/TencentCloud/TencentDB-Agent-Memory.git /tmp/tdb
+cd /tmp/tdb/deploy/global-images
+
+# 2) 配置并一键启动（需两组 LLM 参数：memory 组 + proxy 组）
+cp .env.example .env
+# 用编辑器填入 .env 中的两组 LLM 参数
+./start-all.sh
+
+# 3) 打开控制台
+#    http://localhost:8125</code></pre>
+<p>环境要求：Node ≥ 22.16，以 Docker 部署为主。完整安装（Memory Hub 单独部署 / Claude Code / CodeBuddy / 停止清理 / 端口说明）见上游 <code>INSTALL_CN.md</code>。</p>
+<h2>怎么用</h2>
+<ul><li><strong>接入</strong>：按上游文档配置 OpenClaw / Hermes / Claude Code / CodeBuddy 或 SDK 接入；</li><li><strong>独立记忆</strong>：每个 Agent 创建时自动获得独立记忆，不用每次自我介绍；</li><li><strong>Skill 流转</strong>：个人 Skill 默认私有 → 审核分享给团队 → 配装给其他 Agent；</li><li><strong>冷启动</strong>：导入已有文档、代码库与对话 Session，团队从现有经验开始。</li></ul>
+<h2>注意事项</h2>
+<ul><li>默认分支是<strong>迭代中的 <code>feat/server_team</code></strong>，非主干命名；需要稳定版请核对上游 release/tag；</li><li>README 安装段把仓库写成 <code>Tencent/TencentDB-Agent-Memory</code>（无 Cloud），实际是 <code>TencentCloud/TencentDB-Agent-Memory</code>，clone 时注意；</li><li>Wiki / CodeGraph 异步构建，接入后需等待 ready；</li><li>CodeGraph 当前优先支持公开 HTTPS 仓库，私有仓库与 SSH 接入仍在完善；</li><li>MIT 许可；Benchmark：PersonaMem 48% → 76%（+59%）。</li></ul>
+  </article>
+  <footer class="detail__foot">
+    <p>收录于 2026-08-13 · 更新于 2026-08-13</p>
+    <p class="muted">SkillMall · 轻量索引 · 只存 SKILL.md · 中文为主</p>
+  </footer>
+</main>
+</body>
+</html>

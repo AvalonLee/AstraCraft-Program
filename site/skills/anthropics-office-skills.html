@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Anthropic Office 文档技能 · SkillMall</title>
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="../index.html">SkillMall</a>
+    <nav class="site-nav">
+      <a href="../index.html">浏览技能</a>
+      <a href="https://github.com/AvalonLee/SkillMall" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
+<main class="container detail">
+  <p class="breadcrumb"><a href="../index.html">首页</a> / 商业与办公</p>
+  <div class="detail__head">
+    <h1>Anthropic Office 文档技能</h1>
+    <p class="detail__en">Anthropic Office Document Skills</p>
+    <div class="badges">
+      <span class="badge badge--cat">商业与办公</span>
+      <span class="badge badge--tier">常规</span>
+      <span class="badge badge--license">LicenseRef-Anthropic-Source-Available</span>
+      <span class="badge">技能集</span>
+    </div>
+    <p class="detail__summary">Anthropic 官方维护的文档处理技能集合——docx 生成编辑、pdf 读写合并、pptx 演示稿、xlsx 表格。生产级实现，但 source-available 非开源，本仓库仅链接不转载。</p>
+    <div class="detail__links">
+      <a class="btn" href="https://github.com/anthropics/skills" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="btn btn--ghost" href="https://github.com/anthropics/skills" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+  <article class="detail__body">
+<h1>Anthropic Office 文档技能</h1>
+<blockquote>Anthropic 官方维护的<strong>生产级文档处理技能集合</strong>：docx / pdf / pptx / xlsx。 上游：<a href="https://github.com/anthropics/skills" target="_blank" rel="noopener">anthropics/skills</a> · 许可证：source-available（非开源）</blockquote>
+<h2>这是什么</h2>
+<p>来自 <code>anthropics/skills</code> 仓库的四个文档技能：</p>
+<ul><li><strong>docx</strong>：Word 文档的生成与编辑；</li><li><strong>pdf</strong>：PDF 的读取、合并、拆分；</li><li><strong>pptx</strong>：PowerPoint 演示稿生成；</li><li><strong>xlsx</strong>：Excel 表格处理。</li></ul>
+<p>均为生产级实现（<code>document-skills/</code> 子目录），由 Anthropic 官方维护，常用于 Claude.ai / Claude Code 等官方支持场景。</p>
+<h2>怎么安装</h2>
+<p>该技能集为 <strong>source-available（非开源）</strong>，禁止再分发——因此只在<strong>本地自用</strong>时获取：</p>
+<pre><code class="lang-bash"># 仅克隆文档技能子目录（稀疏检出，体积小）
+git clone --depth 1 --filter=blob:none --sparse https://github.com/anthropics/skills /tmp/office-skills
+cd /tmp/office-skills
+git sparse-checkout set skills/document-skills
+
+# 然后将所需技能目录复制到你的 agent 的 skills 目录（仅本地使用）
+cp -r skills/document-skills/* ~/.claude/skills/</code></pre>
+<h2>怎么用</h2>
+<p>装好后在对话中让 agent 使用对应技能即可，例如"用 docx 技能把这个大纲生成一份 Word 文档"、 "用 xlsx 技能把这份 CSV 整理成表格"。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可限制再分发</strong>：你可以在本地克隆、阅读并按其条款自用；<strong>不可以</strong>把源码提交进公开仓库 或未经许可转载。具体边界以上游 LICENSE 全文为准；</li><li>同仓库的其他技能（如 <code>skill-creator</code>、<code>algorithmic-art</code> 等）多为 Apache-2.0，可另建条目收录；</li><li>本仓库不包含该项目的任何源码，仅提供导航与安装指引。</li></ul>
+  </article>
+  <footer class="detail__foot">
+    <p>收录于 2026-08-10 · 更新于 2026-08-13</p>
+    <p class="muted">SkillMall · 轻量索引 · 只存 SKILL.md · 中文为主</p>
+  </footer>
+</main>
+</body>
+</html>

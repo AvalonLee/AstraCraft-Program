@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SkillMall · Agent Skill 中文索引与在线预览</title>
+  <meta name="description" content="SkillMall —— 面向中文用户的 Agent Skill 轻量索引库，支持在线搜索、分类筛选与一键查看每个 skill 的安装方式。" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">SkillMall</a>
+      <nav class="site-nav">
+        <a href="https://github.com/AvalonLee/SkillMall" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/AvalonLee/SkillMall/blob/main/README.md" target="_blank" rel="noopener">README</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>SkillMall · Agent Skill 索引集市</h1>
+      <p class="hero__sub">
+        轻量、中文为主的 Agent Skill 索引库。每个条目只存一份 <code>SKILL.md</code>（介绍 + 安装指令），
+        在这里搜索、筛选，找到需要的技能后让 Agent 直接安装。
+      </p>
+      <div class="hero__stats">
+        <span id="stat-count">—</span> 个技能 ·
+        <span id="stat-cats">—</span> 个分类
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="controls">
+      <input id="search" class="control control--search" type="search"
+             placeholder="搜索技能名称、摘要或标签…" autocomplete="off" />
+      <div class="controls__row">
+        <select id="filter-category" class="control">
+          <option value="">全部分类</option>
+        </select>
+        <select id="filter-tag" class="control">
+          <option value="">全部标签</option>
+        </select>
+        <select id="filter-tier" class="control">
+          <option value="">全部评级</option>
+        </select>
+        <select id="filter-license" class="control">
+          <option value="">全部协议</option>
+        </select>
+        <select id="sort" class="control">
+          <option value="updated">按更新时间</option>
+          <option value="added">按收录时间</option>
+          <option value="name">按名称</option>
+        </select>
+      </div>
+    </div>
+
+    <p id="result-count" class="result-count"></p>
+    <div id="results" class="card-grid"></div>
+    <p id="empty" class="empty" hidden>没有匹配的技能，试试其他关键词或筛选条件。</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>SkillMall · 轻量索引 · 只存 SKILL.md · 中文为主 · 可溯源</p>
+      <p class="muted">静态预览站由 <code>scripts/gen_site.py</code> 自动生成，随条目更新。</p>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

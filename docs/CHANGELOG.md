@@ -79,6 +79,12 @@
   （🔗 链接索引，Claude Code 网文写作 skill 包，13 个 skill；GitHub 识别 MIT，standard 评级）
 - `writing-docs/drama-skills` —— Drama Skills AI 短剧创作技能合集
   （🔗 链接索引，Claude Code/Codex 短剧创作 skill 合集，10 个技能；MIT，standard 评级）
+- `design-creative/awesome-gpt-image-2` —— GPT-Image2 工业级提示词引擎与模板库
+  （🔗 链接索引，面向 GPT-Image2 的 Prompt-as-Code 提示词/模板库，530+ 案例、20+ 模板、自带 Agent Skill；MIT，standard 评级）
+- `agent-infra/codex-taskboard` —— Codex Taskboard 本地任务看板
+  （🔗 链接索引，本地优先 issue 看板 + taskctl CLI + 随附 Codex Skill；Apache-2.0，standard 评级）
+- `writing-docs/dashi-ppt-skill` —— Dashi PPT Skill 大师 PPT
+  （🔗 链接索引，面向职场的可编辑 PPT 生成 Skill，npx 安装，导出 HTML/PDF/PPTX；AGPL-3.0，standard 评级）
 
 ---
 

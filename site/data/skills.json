@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-26T08:46:12Z",
-  "count": 11,
+  "generated_at": "2026-08-26T09:05:17Z",
+  "count": 14,
   "categories": [
     {
       "dir": "writing-docs",
@@ -54,6 +54,47 @@
     }
   ],
   "skills": [
+    {
+      "id": "codex-taskboard",
+      "name_zh": "Codex Taskboard 本地任务看板",
+      "name_en": "Codex Taskboard",
+      "summary_zh": "本地优先的 issue 看板，可在浏览器运行并通过 CDP 启动器或注入脚本嵌入 Codex；同一套 HTTP API 驱动 React UI 与随附 Codex Skill 使用的 taskctl CLI。",
+      "summary_en": "A local-first issue board that runs in the browser and embeds into Codex via CDP launcher or injection; one HTTP API powers the React UI and the taskctl CLI used by the bundled Codex Skill.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "codex",
+        "cli",
+        "framework",
+        "ai-agent"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "en",
+        "zh"
+      ],
+      "license": "Apache-2.0",
+      "license_bucket": "open",
+      "homepage": "https://github.com/chuspeeism/dashi-taskboard",
+      "repo": "https://github.com/chuspeeism/dashi-taskboard",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "dashi-taskboard",
+        "codex-task-board"
+      ],
+      "risk_notes": "Apache-2.0 宽松可商用；本地运行需 Node.js 22.5+（npm install / build / start 起本地服务 127.0.0.1:47823）；若构建 macOS/Windows 桌面版需 Rust 1.88+ 与 Xcode/VS Build Tools（Tauri）。随附 Codex Skill 通过软链到 ~/.agents/skills/ 安装。",
+      "added_at": "2026-08-26",
+      "updated_at": "2026-08-26",
+      "install": "bash\n# 1) 克隆并安装依赖\ngit clone --depth 1 https://github.com/chuspeeism/dashi-taskboard.git /tmp/codex-taskboard\ncd /tmp/codex-taskboard\nnpm install\nnpm run build\nnpm start\n# 打开 http://127.0.0.1:47823 ，SQLite 库位于 .data/taskboard.sqlite",
+      "detail_url": "skills/codex-taskboard.html"
+    },
     {
       "id": "tencentdb-agent-memory",
       "name_zh": "TencentDB Agent Memory",
@@ -185,6 +226,48 @@
       "updated_at": "2026-08-26",
       "install": "bash\n# 1) 克隆仓库（含全部 70+ 站点 DESIGN.md 与预览页，约 1.2 MB）\ngit clone --depth 1 https://github.com/fchangjun/awesome-design-md-cn.git /tmp/awesome-design-md-cn\n\n# 2) 复制某个站点的设计系统到你项目根目录（以 Apple 为例）\ncp /tmp/awesome-design-md-cn/design-md/apple/DESIGN.md ./DESIGN.md",
       "detail_url": "skills/awesome-design-md-cn.html"
+    },
+    {
+      "id": "awesome-gpt-image-2",
+      "name_zh": "GPT-Image2 工业级提示词引擎与模板库",
+      "name_en": "GPT-Image2 Prompt System (Prompt as Code)",
+      "summary_zh": "面向 GPT-Image2 的工业级提示词引擎与模板库：530+ 逆向工程案例、20+ 套结构化模板，把散文提示词压缩为可复用的 Prompt-as-Code 协议，便于 Agent 批量生图。",
+      "summary_en": "Industrial prompt engine & template library for GPT-Image2: 530+ reverse-engineered cases and 20+ structured templates turning prose prompts into reusable Prompt-as-Code.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "skill-collection",
+      "kind_label": "技能集",
+      "tags": [
+        "image-generation",
+        "prompt-engineering",
+        "awesome-list",
+        "claude-code"
+      ],
+      "languages": [
+        "markdown"
+      ],
+      "doc_languages": [
+        "en",
+        "zh"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://gpt-image2.canghe.ai",
+      "repo": "https://github.com/freestylefly/awesome-gpt-image-2",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "gpt-image2",
+        "prompt-as-code",
+        "gpt-image-2"
+      ],
+      "risk_notes": "MIT 可商用；本质是 Markdown 提示词/模板库（clone 即\"安装\"，无需构建）；自带的 GPT-Image2 Style Library Agent Skill 可直接装入 Claude Code / Cursor。案例与模板持续更新，生产生图依赖外部 GPT-Image-2 API（按量计费）。",
+      "added_at": "2026-08-26",
+      "updated_at": "2026-08-26",
+      "install": "bash\n# 1) 克隆仓库（含全部案例、模板与 Agent Skill）\ngit clone --depth 1 https://github.com/freestylefly/awesome-gpt-image-2.git /tmp/gpt-image2\n\n# 2) 直接使用：复制 docs/ 下的模板与案例提示词到你的生图工作流\n#    浏览式体验见在线站 https://gpt-image2.canghe.ai\n\n# 3) （可选）装入自带的 Agent Skill 到 Claude Code\nmkdir -p \"$HOME/.claude/skills\"\nln -s /tmp/gpt-image2/agents/skills/gpt-image-2-style-library \"$HOME/.claude/skills/gpt-image-2-style-library\"",
+      "detail_url": "skills/awesome-gpt-image-2.html"
     },
     {
       "id": "character-casting-studio-skill",
@@ -398,6 +481,51 @@
       "updated_at": "2026-08-13",
       "install": "bash\n# 1) 克隆上游\ngit clone --depth 1 https://github.com/obra/superpowers.git /tmp/superpowers\n\n# 2) 把技能复制到你的 agent 的 skills 目录（以下以 Claude Code 为例）\nmkdir -p ~/.claude/skills\ncp -r /tmp/superpowers/skills/* ~/.claude/skills/\n\n# 若你的 agent 支持插件（plugin），也可按上游文档安装 .claude-plugin / .codex-plugin",
       "detail_url": "skills/superpowers.html"
+    },
+    {
+      "id": "dashi-ppt-skill",
+      "name_zh": "Dashi PPT Skill 大师 PPT",
+      "name_en": "Dashi PPT Skill",
+      "summary_zh": "面向职场的可编辑 PPT 生成 Skill：把文档丢给 AI Agent，一键生成自带浏览器编辑控制台的演示文稿，支持 12 套视觉主题、1020 个版式，并可导出 HTML / PDF / 真实可编辑的 PPTX。",
+      "summary_en": "Editable PPT generation skill for the workplace: feed docs to your AI agent and get a presentation with an in-browser editing console; export to HTML / PDF / editable PPTX.",
+      "category_dir": "writing-docs",
+      "category_name": "写作与文档",
+      "kind": "skill",
+      "kind_label": "技能包",
+      "tags": [
+        "pptx",
+        "document-generation",
+        "ai-agent",
+        "claude-code",
+        "codex"
+      ],
+      "languages": [
+        "markdown",
+        "javascript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "AGPL-3.0",
+      "license_bucket": "copyleft",
+      "homepage": "https://github.com/chuspeeism/dashi-ppt-skill",
+      "repo": "https://github.com/chuspeeism/dashi-ppt-skill",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "dashi-ppt",
+        "大师ppt",
+        "大师PPT",
+        "dashippt"
+      ],
+      "risk_notes": "许可证 AGPL-3.0（强 Copyleft）：本仓库仅索引不转载源码，但如果你修改 dashi-ppt-skill 并再分发、或以网络服务形式（含 SaaS）提供，须按 AGPL-3.0 开源你的修改。导出 PPTX / PDF 需本机装有 Chrome / Chromium / Edge。支持 Claude Code、Codex、豆包、Marvis、Workbuddy、Dumate、Qclaw 等多平台。",
+      "added_at": "2026-08-26",
+      "updated_at": "2026-08-26",
+      "install": "bash\n# 国际网络\nnpx dashi-ppt-skill@latest\n\n# 国内网络\nnpx --registry=https://registry.npmmirror.com dashi-ppt-skill@latest",
+      "detail_url": "skills/dashi-ppt-skill.html"
     },
     {
       "id": "drama-skills",

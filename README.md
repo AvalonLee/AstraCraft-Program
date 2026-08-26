@@ -20,9 +20,7 @@ Agent 读完即可快速定位并安装对应的 skill 项目。不收录上游�
 ## 快速入口
 
 - **在线预览**：[avalonlee.github.io/SkillMall](https://avalonlee.github.io/SkillMall/) —— 搜索 / 分类筛选 / 点开看每个 skill 的安装方式
-- 本地预览：`python -m http.server` 进入 `site/` 目录后访问 `http://127.0.0.1:8000`
-- 收录索引：[INDEX.md](INDEX.md)（按分类 / 标签 / 语言 / 协议 / 排行 六视图交叉检索）
-- 贡献指南：[docs/CONTRIBUTING.md](docs/CONTRIBUTING.md)
+- **推荐收录**：[建议收录新条目](https://github.com/AvalonLee/SkillMall/issues/new?template=new-entry.yml) —— 发现优质 Skill？一键提交收录建议
 - 更新日志：[docs/CHANGELOG.md](docs/CHANGELOG.md)
 
 ## 什么是 SKILL.md？

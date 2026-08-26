@@ -15,7 +15,7 @@ SkillMall 是**轻量索引库**：每个条目只保存一个 `SKILL.md`（介�
 ### 路径一：推荐一个项目（最轻量）
 
 不确定它能不能收？先开 Issue，用
-[「推荐收录」模板](../../issues/new?template=submit-entry.yml)。
+[「推荐收录」模板](../../issues/new?template=new-entry.yml)。
 填仓库地址、你觉得它好在哪、大致属于哪个分类。维护者会做初筛。
 
 **适合**：你发现了好东西但没精力走完整流程。

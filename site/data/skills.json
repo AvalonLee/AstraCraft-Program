@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-26T13:45:46Z",
-  "count": 18,
+  "generated_at": "2026-08-26T14:14:41Z",
+  "count": 19,
   "categories": [
     {
       "dir": "writing-docs",
@@ -530,6 +530,48 @@
       "updated_at": "2026-08-26",
       "install": "bash\n# 方式一：直接让 Agent 安装\n# 在 Claude Code / Codex 中说：\n# \"Install this skill for me: https://github.com/Vincentwei1021/video-shotcraft\"\n\n# 方式二：skills CLI\nnpx skills add Vincentwei1021/video-shotcraft\n\n# 方式三：手动软链\ngit clone https://github.com/Vincentwei1021/video-shotcraft.git\nln -s \"$(pwd)/video-shotcraft\" ~/.codex/skills/video-shotcraft  # Codex\nln -s \"$(pwd)/video-shotcraft\" ~/.claude/skills/video-shotcraft  # Claude Code",
       "detail_url": "skills/video-shotcraft.html"
+    },
+    {
+      "id": "vimax",
+      "name_zh": "ViMax 智能体视频生成框架",
+      "name_en": "ViMax — Agentic Video Generation",
+      "summary_zh": "HKU Data Science 团队开源的智能体视频创作框架：输入一个概念，即可自动完成剧本、分镜、角色创建、图像/视频生成与最终合成；内置 Idea2Video、Script2Video、Novel2Video、AutoCameo 工作流，并支持 Agent Loop、TUI 与 Web UI。",
+      "summary_en": "HKUDS agentic video framework: turn a concept into story, script, storyboard, shots, and a finished video. Includes Idea2Video, Script2Video, Novel2Video, AutoCameo, Agent Loop, TUI, and Web UI.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "video-production",
+        "cinematic",
+        "ai-agent",
+        "storyboard",
+        "framework"
+      ],
+      "languages": [
+        "python"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/HKUDS/ViMax",
+      "repo": "https://github.com/HKUDS/ViMax",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "vimax",
+        "hku-vimax"
+      ],
+      "risk_notes": "MIT 可商用；需 Python 3.12 + uv，Web UI 需 Node.js 18+；实际出片依赖所配置的 LLM/图像/视频生成供应商 API（如 OpenRouter、Google Gemini/Veo、Seedance 2.0），密钥与费用由使用者自行承担。",
+      "added_at": "2026-08-26",
+      "updated_at": "2026-08-26",
+      "install": "bash\ngit clone https://github.com/HKUDS/ViMax.git\ncd ViMax\nuv sync",
+      "detail_url": "skills/vimax.html"
     },
     {
       "id": "agent-skills-spec",

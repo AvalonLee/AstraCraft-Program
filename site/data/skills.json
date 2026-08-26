@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-26T14:20:50Z",
-  "count": 20,
+  "generated_at": "2026-08-26T15:07:09Z",
+  "count": 22,
   "categories": [
     {
       "dir": "writing-docs",
@@ -437,6 +437,95 @@
       "updated_at": "2026-08-26",
       "install": "bash\n# 克隆上游仓库到本地\ngit clone https://github.com/dacnay816y62-hub/fantasy-life-force-portrait-photography.git\ncd fantasy-life-force-portrait-photography\n\n# 将仓库目录放入你的 Codex skills 目录后，即可在对话中触发，例如：\n# 使用 Fantasy 生命感人像摄影 Skill，把这张普通生活照升级成更有生命感的人像。",
       "detail_url": "skills/fantasy-life-force-portrait-photography.html"
+    },
+    {
+      "id": "money-printer-turbo",
+      "name_zh": "MoneyPrinterTurbo 一站式 AI 短视频生成工具",
+      "name_en": "MoneyPrinterTurbo — One-Stop AI Short Video Generator",
+      "summary_zh": "一站式 AI 短视频生成工具：输入主题或关键词，自动生成脚本、匹配高清素材、合成字幕与背景音乐并输出 9:16/16:9 短视频；提供 Agent、WebUI、API、CLI、批量生成与多平台发布。",
+      "summary_en": "One-stop AI short-video generator: turn a topic or keyword into script, footage, subtitles, music, and HD video through Agent, WebUI, API, CLI, or batch tasks.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "video-production",
+        "ai-agent",
+        "short-video",
+        "tts",
+        "docker",
+        "self-hosted",
+        "multilingual",
+        "social-media"
+      ],
+      "languages": [
+        "python"
+      ],
+      "doc_languages": [
+        "zh",
+        "en",
+        "ja"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "repo": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "moneyprinter"
+      ],
+      "risk_notes": "MIT 可商用；生成效果依赖外部服务：脚本需要 LLM API Key（Kimi/OpenAI/Claude/Gemini/DeepSeek 等），素材与出片依赖 Pexels/Pixabay/Coverr 或 WaveSpeed 账号与额度，默认 Edge TTS 免费；自动发布功能依赖 Upload-Post 配置；Whisper 字幕首次需下载约 3GB 模型，GPU 非必需；Windows 路径应避免中文、空格与特殊字符，ffmpeg 自动下载失败时可手动指定 ffmpeg_path。",
+      "added_at": "2026-08-26",
+      "updated_at": "2026-08-26",
+      "install": "bash\ngit clone https://github.com/harry0703/MoneyPrinterTurbo.git\ncd MoneyPrinterTurbo\nuv python install 3.11\nuv sync --frozen\ncp config.example.toml config.toml",
+      "detail_url": "skills/money-printer-turbo.html"
+    },
+    {
+      "id": "openmontage",
+      "name_zh": "OpenMontage 开源智能体视频制作系统",
+      "name_en": "OpenMontage — Agentic Video Production System",
+      "summary_zh": "首个开源智能体视频制作系统：把你的 AI 编程助手变成完整视频制作工作室；12 条生产流水线、100+ 注册工具与 700+ 个 skill 知识文件，覆盖真实素材剪辑、AI 生成、Remotion/HyperFrames 合成、预算治理与质量门禁。",
+      "summary_en": "The first open-source agentic video production system: 12 pipelines, 100+ tools, 700+ skill files, real-footage editing, quality gates, and budget governance.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "video-production",
+        "ai-agent",
+        "remotion",
+        "motion-design",
+        "screenwriting",
+        "storyboard",
+        "self-hosted"
+      ],
+      "languages": [
+        "python",
+        "typescript"
+      ],
+      "doc_languages": [
+        "en",
+        "zh"
+      ],
+      "license": "AGPL-3.0",
+      "license_bucket": "copyleft",
+      "homepage": "https://www.openmontage.video/",
+      "repo": "https://github.com/calesthio/OpenMontage",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "open-montage"
+      ],
+      "risk_notes": "AGPL-3.0 为强 Copyleft：本地自用无额外义务，对外提供网络服务时需以 AGPL 开源衍生，具体以上游 LICENSE 为准；零 API key 可通过 Piper 本地 TTS、开放档案素材与 Remotion/HyperFrames 出片，云生成能力随 FAL/Kling/Veo/OpenAI/ElevenLabs 等密钥增加且费用自担；默认总预算上限 $10、单笔超 $0.50 需审批。",
+      "added_at": "2026-08-26",
+      "updated_at": "2026-08-26",
+      "install": "bash\ngit clone https://github.com/calesthio/OpenMontage.git\ncd OpenMontage\nmake setup",
+      "detail_url": "skills/openmontage.html"
     },
     {
       "id": "seedance-20",

@@ -6,6 +6,7 @@
     "web-fiction",
     "screenwriting",
     "short-drama",
+    "short-video",
     "novel-writing",
     "image-generation",
     "portrait",
@@ -56,6 +57,7 @@
     "skill",
     "google-stitch",
     "tencent",
+    "tts",
     "document-generation",
     "mcp",
     "cli",
@@ -65,7 +67,12 @@
     "motion-design",
     "video-production",
     "remotion",
-    "product-video"
+    "product-video",
+    "self-hosted",
+    "docker",
+    "jianying",
+    "seedance",
+    "multilingual"
   ],
   "aliases": {
     "claude": "claude-code",

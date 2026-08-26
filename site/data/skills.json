@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-26T11:46:36Z",
-  "count": 16,
+  "generated_at": "2026-08-26T15:07:09Z",
+  "count": 22,
   "categories": [
     {
       "dir": "writing-docs",
@@ -183,6 +183,49 @@
       "updated_at": "2026-08-13",
       "install": "bash\n# 仅克隆文档技能子目录（稀疏检出，体积小）\ngit clone --depth 1 --filter=blob:none --sparse https://github.com/anthropics/skills /tmp/office-skills\ncd /tmp/office-skills\ngit sparse-checkout set skills/document-skills\n\n# 然后将所需技能目录复制到你的 agent 的 skills 目录（仅本地使用）\ncp -r skills/document-skills/* ~/.claude/skills/",
       "detail_url": "skills/anthropics-office-skills.html"
+    },
+    {
+      "id": "arcreel",
+      "name_zh": "ArcReel AI 视频生产工作台",
+      "name_en": "ArcReel — Self-Hosted AI Video Production Workbench",
+      "summary_zh": "开源自托管的 AI 视频生产工作台：将小说、剧本或商品素材转化为角色一致、过程可控、成本可追踪的短视频，支持 Docker 一键部署、Agent 编排、剪映草稿导出。",
+      "summary_en": "Open-source self-hosted AI video workbench: turn novels, scripts, or products into short videos with consistent characters, cost tracking, and agent orchestration.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "video-production",
+        "cinematic",
+        "ai-agent",
+        "storyboard",
+        "self-hosted",
+        "docker",
+        "prompt-engineering",
+        "jianying"
+      ],
+      "languages": [
+        "python",
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "AGPL-3.0",
+      "license_bucket": "copyleft",
+      "homepage": "https://github.com/ArcReel/ArcReel",
+      "repo": "https://github.com/ArcReel/ArcReel",
+      "tier": "watch",
+      "tier_label": "观察",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "",
+      "added_at": "2026-08-26",
+      "updated_at": "2026-08-26",
+      "install": "bash\n# 前提：Docker + Docker Compose\ngit clone https://github.com/ArcReel/ArcReel.git\ncd ArcReel/deploy\n\ncp .env.example .env\ndocker compose up -d",
+      "detail_url": "skills/arcreel.html"
     },
     {
       "id": "awesome-design-md-cn",
@@ -396,6 +439,191 @@
       "detail_url": "skills/fantasy-life-force-portrait-photography.html"
     },
     {
+      "id": "money-printer-turbo",
+      "name_zh": "MoneyPrinterTurbo 一站式 AI 短视频生成工具",
+      "name_en": "MoneyPrinterTurbo — One-Stop AI Short Video Generator",
+      "summary_zh": "一站式 AI 短视频生成工具：输入主题或关键词，自动生成脚本、匹配高清素材、合成字幕与背景音乐并输出 9:16/16:9 短视频；提供 Agent、WebUI、API、CLI、批量生成与多平台发布。",
+      "summary_en": "One-stop AI short-video generator: turn a topic or keyword into script, footage, subtitles, music, and HD video through Agent, WebUI, API, CLI, or batch tasks.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "video-production",
+        "ai-agent",
+        "short-video",
+        "tts",
+        "docker",
+        "self-hosted",
+        "multilingual",
+        "social-media"
+      ],
+      "languages": [
+        "python"
+      ],
+      "doc_languages": [
+        "zh",
+        "en",
+        "ja"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "repo": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "moneyprinter"
+      ],
+      "risk_notes": "MIT 可商用；生成效果依赖外部服务：脚本需要 LLM API Key（Kimi/OpenAI/Claude/Gemini/DeepSeek 等），素材与出片依赖 Pexels/Pixabay/Coverr 或 WaveSpeed 账号与额度，默认 Edge TTS 免费；自动发布功能依赖 Upload-Post 配置；Whisper 字幕首次需下载约 3GB 模型，GPU 非必需；Windows 路径应避免中文、空格与特殊字符，ffmpeg 自动下载失败时可手动指定 ffmpeg_path。",
+      "added_at": "2026-08-26",
+      "updated_at": "2026-08-26",
+      "install": "bash\ngit clone https://github.com/harry0703/MoneyPrinterTurbo.git\ncd MoneyPrinterTurbo\nuv python install 3.11\nuv sync --frozen\ncp config.example.toml config.toml",
+      "detail_url": "skills/money-printer-turbo.html"
+    },
+    {
+      "id": "openmontage",
+      "name_zh": "OpenMontage 开源智能体视频制作系统",
+      "name_en": "OpenMontage — Agentic Video Production System",
+      "summary_zh": "首个开源智能体视频制作系统：把你的 AI 编程助手变成完整视频制作工作室；12 条生产流水线、100+ 注册工具与 700+ 个 skill 知识文件，覆盖真实素材剪辑、AI 生成、Remotion/HyperFrames 合成、预算治理与质量门禁。",
+      "summary_en": "The first open-source agentic video production system: 12 pipelines, 100+ tools, 700+ skill files, real-footage editing, quality gates, and budget governance.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "video-production",
+        "ai-agent",
+        "remotion",
+        "motion-design",
+        "screenwriting",
+        "storyboard",
+        "self-hosted"
+      ],
+      "languages": [
+        "python",
+        "typescript"
+      ],
+      "doc_languages": [
+        "en",
+        "zh"
+      ],
+      "license": "AGPL-3.0",
+      "license_bucket": "copyleft",
+      "homepage": "https://www.openmontage.video/",
+      "repo": "https://github.com/calesthio/OpenMontage",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "open-montage"
+      ],
+      "risk_notes": "AGPL-3.0 为强 Copyleft：本地自用无额外义务，对外提供网络服务时需以 AGPL 开源衍生，具体以上游 LICENSE 为准；零 API key 可通过 Piper 本地 TTS、开放档案素材与 Remotion/HyperFrames 出片，云生成能力随 FAL/Kling/Veo/OpenAI/ElevenLabs 等密钥增加且费用自担；默认总预算上限 $10、单笔超 $0.50 需审批。",
+      "added_at": "2026-08-26",
+      "updated_at": "2026-08-26",
+      "install": "bash\ngit clone https://github.com/calesthio/OpenMontage.git\ncd OpenMontage\nmake setup",
+      "detail_url": "skills/openmontage.html"
+    },
+    {
+      "id": "seedance-20",
+      "name_zh": "Seedance 2.0 Skill OS 视频执导技能包",
+      "name_en": "Seedance 2.0 Skill OS",
+      "summary_zh": "面向 Seedance 2.0 的模块化智能体技能包：先读场景、再写提示词，把抽象创意转成有镜头、光线、声音与参考素材的视频提示词，支持文生视频、图生视频、首尾帧、连续剧情与六语言流程，内置 33 个完整范例与安装器。",
+      "summary_en": "Modular skill package for Seedance 2.0 video: reads the scene first, then prompts camera, light, sound, and references; supports T2V/I2V/V2V/R2V, first/last frames, sequences, and six languages.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "skill-collection",
+      "kind_label": "技能集",
+      "tags": [
+        "video-production",
+        "cinematic",
+        "prompt-engineering",
+        "ai-agent",
+        "seedance",
+        "multilingual"
+      ],
+      "languages": [
+        "python"
+      ],
+      "doc_languages": [
+        "zh",
+        "en",
+        "ja",
+        "ko",
+        "es",
+        "ru"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/Emily2040/seedance-2.0",
+      "repo": "https://github.com/Emily2040/seedance-2.0",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "seedance-2",
+        "seedance-prompt-os"
+      ],
+      "risk_notes": "MIT 可商用；安装脚本需 Python 3；实际出片依赖 ByteDance Seedance 2.0 供应商账号与额度；参考标签需原样保留，受保护 IP 应改写为原创内容而非换语言隐藏。",
+      "added_at": "2026-08-26",
+      "updated_at": "2026-08-26",
+      "install": "bash\ngit clone https://github.com/Emily2040/seedance-2.0.git\ncd seedance-2.0\n\n# Codex（默认写入 ~/.codex/skills）\npython scripts/install_codex_skill.py\n\n# Claude Code 或其他 Agent\npython scripts/install_codex_skill.py --dest ~/.claude/skills",
+      "detail_url": "skills/seedance-20.html"
+    },
+    {
+      "id": "toonflow",
+      "name_zh": "Toonflow 一站式 AI 短剧创作工具",
+      "name_en": "Toonflow — AI Short Drama Creation Workbench",
+      "summary_zh": "开源一站式 AI 短剧创作工作台：把小说或剧本转化为动画短剧，覆盖 AI 编剧、无限画布分镜、角色/素材/视频节点编排、三层 Agent 协作与持久化记忆；支持 Windows/Linux/macOS 桌面端、Docker 自部署与可编程供应商系统。",
+      "summary_en": "Open-source AI workbench that turns novels and scripts into animated short dramas, with AI scriptwriting, storyboarding, character/video generation, agent workflow, and Docker self-hosting.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "short-drama",
+        "screenwriting",
+        "storyboard",
+        "ai-agent",
+        "video-production",
+        "docker",
+        "self-hosted"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh",
+        "zh-tw",
+        "en",
+        "th",
+        "vi",
+        "ja",
+        "ru"
+      ],
+      "license": "Apache-2.0",
+      "license_bucket": "open",
+      "homepage": "https://toonflow.net",
+      "repo": "https://github.com/HBAI-Ltd/Toonflow-app",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "toonflow-app",
+        "toon-flow"
+      ],
+      "risk_notes": "Apache-2.0 可商用；核心能力依赖外部模型服务（LLM、视频/图像生成，如 Sora、豆包、Nano Banana Pro），需自行配置 API 与费用；Docker 部署默认账号 admin/admin123，首次登录后应尽快改密。",
+      "added_at": "2026-08-26",
+      "updated_at": "2026-08-26",
+      "install": "bash\ngit clone https://github.com/HBAI-Ltd/Toonflow-app.git\ncd Toonflow-app\n\n# 本地构建并启动\nyarn docker:local\n# 或手动构建\ndocker build -t toonflow .\ndocker run -d -p 10588:10588 -v /path/to/data:/app/data toonflow",
+      "detail_url": "skills/toonflow.html"
+    },
+    {
       "id": "video-shotcraft",
       "name_zh": "Video Shotcraft 产品视频动态设计技能",
       "name_en": "Video Shotcraft — Cinematic Product Video Skill",
@@ -440,6 +668,48 @@
       "updated_at": "2026-08-26",
       "install": "bash\n# 方式一：直接让 Agent 安装\n# 在 Claude Code / Codex 中说：\n# \"Install this skill for me: https://github.com/Vincentwei1021/video-shotcraft\"\n\n# 方式二：skills CLI\nnpx skills add Vincentwei1021/video-shotcraft\n\n# 方式三：手动软链\ngit clone https://github.com/Vincentwei1021/video-shotcraft.git\nln -s \"$(pwd)/video-shotcraft\" ~/.codex/skills/video-shotcraft  # Codex\nln -s \"$(pwd)/video-shotcraft\" ~/.claude/skills/video-shotcraft  # Claude Code",
       "detail_url": "skills/video-shotcraft.html"
+    },
+    {
+      "id": "vimax",
+      "name_zh": "ViMax 智能体视频生成框架",
+      "name_en": "ViMax — Agentic Video Generation",
+      "summary_zh": "HKU Data Science 团队开源的智能体视频创作框架：输入一个概念，即可自动完成剧本、分镜、角色创建、图像/视频生成与最终合成；内置 Idea2Video、Script2Video、Novel2Video、AutoCameo 工作流，并支持 Agent Loop、TUI 与 Web UI。",
+      "summary_en": "HKUDS agentic video framework: turn a concept into story, script, storyboard, shots, and a finished video. Includes Idea2Video, Script2Video, Novel2Video, AutoCameo, Agent Loop, TUI, and Web UI.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "video-production",
+        "cinematic",
+        "ai-agent",
+        "storyboard",
+        "framework"
+      ],
+      "languages": [
+        "python"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/HKUDS/ViMax",
+      "repo": "https://github.com/HKUDS/ViMax",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "vimax",
+        "hku-vimax"
+      ],
+      "risk_notes": "MIT 可商用；需 Python 3.12 + uv，Web UI 需 Node.js 18+；实际出片依赖所配置的 LLM/图像/视频生成供应商 API（如 OpenRouter、Google Gemini/Veo、Seedance 2.0），密钥与费用由使用者自行承担。",
+      "added_at": "2026-08-26",
+      "updated_at": "2026-08-26",
+      "install": "bash\ngit clone https://github.com/HKUDS/ViMax.git\ncd ViMax\nuv sync",
+      "detail_url": "skills/vimax.html"
     },
     {
       "id": "agent-skills-spec",

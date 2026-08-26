@@ -21,3 +21,7 @@ Thumbs.db
 *.log
 tmp/
 .tmp/
+
+# ── 本地 Agent 私有数据（不上传仓库）────────────────────
+.workbuddy/
+_template/

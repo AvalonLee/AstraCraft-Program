@@ -1,5 +1,5 @@
 name: 建议收录新条目
-description: 推荐一个你认为不错的优质开源 Skill 或关联项目
+description: 推荐一个你认为不错的 GitHub 公开开源 Skill 或关联项目（仅限 GitHub 开源，闭源/私有不予收录）
 title: "[收录] <项目名称>"
 labels: ["收录建议"]
 body:
@@ -13,8 +13,8 @@ body:
   - type: input
     id: url
     attributes:
-      label: 上游地址
-      description: GitHub 或其他开源托管平台的仓库 URL
+      label: GitHub 公开仓库地址
+      description: 仅接受 GitHub 公开开源仓库；不接受私有/闭源/其他平台
       placeholder: https://github.com/owner/repo
     validations:
       required: true
@@ -54,5 +54,5 @@ body:
     attributes:
       label: 自检
       options:
-        - label: 我确认该项目来源可溯、文档可用，且能写清安装指令
-          required: false
+        - label: 我确认这是 GitHub 公开开源仓库（非私有/闭源），来源可溯、文档可用，且能写清安装指令
+          required: true

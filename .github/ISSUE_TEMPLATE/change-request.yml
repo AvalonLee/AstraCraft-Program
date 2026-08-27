@@ -1,0 +1,41 @@
+name: 建议调整既有条目
+description: 对已被收录的条目提出调整（更名、改分类、修许可证、补安装指令、下架等）
+title: "[调整] <条目 id>"
+labels: ["调整建议"]
+body:
+  - type: input
+    id: entry_id
+    attributes:
+      label: 条目 id
+      description: entries/<分类>/<id> 中的 id，例如 skill-recommender
+      placeholder: skill-recommender
+    validations:
+      required: true
+  - type: dropdown
+    id: change_type
+    attributes:
+      label: 调整类型
+      options:
+        - 更名（中/英文名称）
+        - 改分类
+        - 修正许可证
+        - 补充/修正安装指令
+        - 修正标签或简介
+        - 下架（请改提「下架请求」模板）
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: 调整内容与理由
+      description: 期望改成什么、为什么；如有新值请直接给出（如新分类、新许可证标识）
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 自检
+      options:
+        - label: 我确认该调整不涉及非开源/私有内容引入
+          required: false

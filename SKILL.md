@@ -78,6 +78,18 @@ Agent 应按以下**数据检查 → 打分初筛 → 语义终审 → 标准化
 
 **1. 结构化打分（冷启动，保证不漏 relevant 条目）**
 
+优先调用仓库自带的确定性初筛器，并把项目画像写成 JSON：
+
+```bash
+python scripts/recommender.py \
+  --catalog <带 verification_status 与 health_score 的条目 JSON> \
+  --profile <项目画像 JSON> \
+  --limit 3
+```
+
+脚本会返回稳定排序、总分和逐项理由。只有 `verified` 条目能进入结果；同分时按健康分和 id 排序。
+若当前安装环境只有本 `SKILL.md`、没有仓库脚本，则按下表手工执行相同的初筛规则，再进入语义终审。
+
 | 信号 | 加分 | 说明 |
 | --- | --- | --- |
 | 分类命中 | +3 | 项目领域落在某条目的 `category` |

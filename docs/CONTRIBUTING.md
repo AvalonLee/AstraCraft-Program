@@ -40,12 +40,12 @@ AstraCraft Program（天工计划）是**轻量索引库**：每个条目只保�
 
 ## 新增条目三步
 
-### 第 1 步：拷贝模板
+### 第 1 步：创建条目文件
 
 ```bash
 # 在仓库根目录执行
 mkdir -p entries/<分类>/<你的id>
-mkdir -p entries/<分类>/<你的id>\ntouch entries/<分类>/<你的id>/SKILL.md
+touch entries/<分类>/<你的id>/SKILL.md
 ```
 
 `id` 规则：小写字母、数字、连字符；**必须等于目录名**；全局唯一。

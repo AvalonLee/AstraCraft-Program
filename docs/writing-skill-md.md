@@ -93,4 +93,4 @@
 
 ## 示例
 
-完整示例见 [installable-skill-format.md](installable-skill-format.md)。
+可安装 Skill 的格式要求见 [可安装技能格式](installable-skill-format.md)。

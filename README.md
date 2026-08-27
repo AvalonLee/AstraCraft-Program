@@ -95,8 +95,8 @@ Agent 可直接据此判断装不装、能不能商用。
 **人工浏览：** 打开 [在线预览站](https://avalonlee.github.io/AstraCraft-Program/)，用搜索框与分类 / 标签 /
 评级 / 协议筛选，找到需要的技能后点开查看安装指令。
 
-**写自己的 skill：** 参考 [docs/skill-spec-cheatsheet.md](docs/skill-spec-cheatsheet.md)
-（对齐 Agent Skills 规范）与 [目录条目格式规范](docs/catalog-format.md) 脚手架。
+**写自己的 skill：** 参考 [技能规范速查](docs/skill-spec-cheatsheet.md)
+（对齐 Agent Skills 规范）与 [可安装技能格式](docs/installable-skill-format.md)。
 
 ## 这个中文版本额外做了什么？
 
@@ -144,7 +144,7 @@ Agent 可直接据此判断装不装、能不能商用。
 
 欢迎 PR！完整流程见 [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md)。要点（三步）：
 
-1. 从 [目录条目格式规范](docs/catalog-format.md) 复制到 `entries/<分类>/<id>/SKILL.md`；
+1. 参照 [目录条目格式规范](docs/catalog-format.md) 创建 `entries/<分类>/<id>/SKILL.md`；
 2. 填 frontmatter（id 必须等于目录名），正文写「是什么 / 怎么安装 / 怎么用 / 注意事项」；
 3. 跑 `python scripts/validate.py && python scripts/gen_index.py && python scripts/gen_site.py`，提交 PR
    （`gen_index.py` 重新生成 INDEX.md、`gen_site.py` 重新生成在线预览站数据，记得一并提交 INDEX.md 与 `site/`）。

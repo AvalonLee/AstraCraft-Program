@@ -1,4 +1,5 @@
 ---
+record_type: entry-record
 id: awesome-design-md-cn
 name_zh: 中文 DESIGN.md 设计资源集
 name_en: Awesome DESIGN.md CN

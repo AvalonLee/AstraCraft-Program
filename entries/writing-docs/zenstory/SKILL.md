@@ -1,4 +1,5 @@
 ---
+record_type: entry-record
 id: zenstory
 name_zh: "ZenStory AI 小说写作工作台"
 name_en: "ZenStory"

@@ -36,6 +36,11 @@ from _common import (  # noqa: E402
     load_tag_vocab,
     normalize_tags,
 )
+from catalog_types import (  # noqa: E402
+    CatalogFormatError,
+    parse_catalog_document,
+    validate_document_boundary,
+)
 
 try:
     from jsonschema import Draft7Validator  # noqa: E402
@@ -88,6 +93,13 @@ def check_skill_doc(entry: Entry, rep: Reporter) -> None:
             entry.rel_path,
             f"{ENTRY_FILE} 的安装指令应包含一个可执行的代码块（``` 包裹）。",
         )
+
+
+def check_format_boundary(path: Path, rep: Reporter) -> None:
+    try:
+        validate_document_boundary(parse_catalog_document(path, REPO_ROOT))
+    except CatalogFormatError as error:
+        rep.error(path.relative_to(REPO_ROOT).as_posix(), f"{error.code}: {error.message}")
 
 
 def check_categories_exist(rep: Reporter) -> None:
@@ -181,12 +193,14 @@ def main() -> int:
     vocab = load_tag_vocab()
 
     entries = discover_entries()
+    check_format_boundary(REPO_ROOT / "SKILL.md", rep)
     if not args.quiet:
         print(f"发现 {len(entries)} 个条目")
     for entry in entries:
         if not args.quiet:
             print(f"  {entry.rel_path}")
         check_schema(entry, validator, rep)
+        check_format_boundary(entry.skill_file, rep)
         check_identity(entry, rep)
         check_skill_doc(entry, rep)
         check_tags(entry, vocab, rep)

@@ -1,4 +1,5 @@
 ---
+record_type: entry-record
 id: agent-skills-spec
 name_zh: Agent Skills 规范
 name_en: Agent Skills Specification

@@ -1,4 +1,5 @@
 ---
+record_type: entry-record
 id: money-printer-turbo
 name_zh: "MoneyPrinterTurbo 一站式 AI 短视频生成工具"
 name_en: "MoneyPrinterTurbo — One-Stop AI Short Video Generator"

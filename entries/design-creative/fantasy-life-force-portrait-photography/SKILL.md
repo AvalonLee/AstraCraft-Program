@@ -1,4 +1,5 @@
 ---
+record_type: entry-record
 id: fantasy-life-force-portrait-photography
 name_zh: "Fantasy 生命感人像摄影 Skill"
 name_en: "Fantasy Life-Force Portrait Photography"

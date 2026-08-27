@@ -1,4 +1,5 @@
 ---
+record_type: entry-record
 id: vimax
 name_zh: "ViMax 智能体视频生成框架"
 name_en: "ViMax — Agentic Video Generation"

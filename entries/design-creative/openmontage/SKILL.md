@@ -1,4 +1,5 @@
 ---
+record_type: entry-record
 id: openmontage
 name_zh: "OpenMontage 开源智能体视频制作系统"
 name_en: "OpenMontage — Agentic Video Production System"

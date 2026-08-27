@@ -1,4 +1,5 @@
 ---
+record_type: entry-record
 id: drama-skills
 name_zh: "Drama Skills AI 短剧创作技能合集"
 name_en: "Drama Skills"

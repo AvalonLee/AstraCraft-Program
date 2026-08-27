@@ -1,4 +1,7 @@
 ---
+record_type: installable-skill
+name: astracraft-recommender
+description: 根据项目画像从天工计划目录中筛选并解释最匹配的 Agent Skill 与工具。
 id: AstraCraft Recommender
 name_zh: 天工精选
 name_en: AstraCraft Recommender

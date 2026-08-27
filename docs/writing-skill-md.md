@@ -93,4 +93,4 @@
 
 ## 示例
 
-完整示例见 [../_template/SKILL.md](../_template/SKILL.md)。
+完整示例见 [../entries/_template/SKILL.md](../entries/_template/SKILL.md)。

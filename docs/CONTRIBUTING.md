@@ -17,7 +17,7 @@ AstraCraft Program（天工计划）是**轻量索引库**：每个条目只保�
 ### 路径一：推荐一个项目（最轻量）
 
 不确定它能不能收？先开 Issue，用
-[「推荐收录」模板](../../issues/new?template=new-entry.yml)。
+[「推荐收录」模板](https://github.com/AvalonLee/AstraCraft-Program/issues/new?template=new-entry.yml)。
 填仓库地址、你觉得它好在哪、大致属于哪个分类。维护者会做初筛。
 
 **适合**：你发现了好东西但没精力走完整流程。
@@ -31,7 +31,7 @@ AstraCraft Program（天工计划）是**轻量索引库**：每个条目只保�
 ### 路径三：报告问题
 
 链接失效、内容有误、上游删库——开 Issue 用
-[「报告问题」模板](../../issues/new?template=report-issue.yml)。
+[「报告问题」模板](https://github.com/AvalonLee/AstraCraft-Program/issues/new?template=report-issue.yml)。
 
 **权利人下架请求**：如果你是某个被收录项目的著作权人，希望本仓库移除相关内容，
 请开 Issue 或发邮件至 avalonli@qq.com。我们承诺 **7 日内处理**，无需法律文书，一句话说明即可。

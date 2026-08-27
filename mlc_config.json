@@ -5,6 +5,15 @@
     { "pattern": "^https://github\\.com/OWNER/REPO" },
     { "pattern": "^mailto:" }
   ],
+  "ignoreUrls": [
+    "localhost",
+    "127.0.0.1",
+    "github.com/OWNER/REPO",
+    "example.com",
+    "example.org",
+    "example.net",
+    "mailto:"
+  ],
   "replacementPatterns": [
     {
       "pattern": "^/",

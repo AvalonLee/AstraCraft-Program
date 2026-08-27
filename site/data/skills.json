@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-27T04:10:51Z",
-  "count": 23,
+  "generated_at": "2026-08-27T04:37:04Z",
+  "count": 22,
   "categories": [
     {
       "dir": "writing-docs",
@@ -753,50 +753,6 @@
       "updated_at": "2026-08-13",
       "install": "bash\n# 在线阅读（推荐，始终最新）：\n#   https://agentskills.io/specification\n\n# 如需本地离线快照（个人阅读用，勿回传本仓库）：\ngit clone --depth 1 --filter=blob:none --sparse https://github.com/anthropics/skills /tmp/agent-skills-spec\ncd /tmp/agent-skills-spec\ngit sparse-checkout set spec",
       "detail_url": "skills/agent-skills-spec.html"
-    },
-    {
-      "id": "skill-recommender",
-      "name_zh": "天工精选",
-      "name_en": "AstraCraft Recommender",
-      "summary_zh": "天工计划配套推荐技能：AI Agent 安装后，依据用户项目的描述与实际运行情况，在本计划的 skill 库中筛选并给出最匹配的技能与安装指引（中文优先）。",
-      "summary_en": "A companion recommender for the AstraCraft Program: an AI agent screens this skill library against a project description and running context, then returns the best-matching skills and install steps.",
-      "category_dir": "meta-skillcraft",
-      "category_name": "技能工程",
-      "kind": "skill",
-      "kind_label": "技能包",
-      "tags": [
-        "agent-methodology",
-        "ai-agent",
-        "skill",
-        "cn-localization"
-      ],
-      "languages": [
-        "markdown"
-      ],
-      "doc_languages": [
-        "zh",
-        "en"
-      ],
-      "license": "CC-BY-4.0",
-      "license_bucket": "open",
-      "homepage": "https://github.com/AvalonLee/AstraCraft-Program",
-      "repo": "https://github.com/AvalonLee/AstraCraft-Program",
-      "tier": "standard",
-      "tier_label": "常规",
-      "featured": false,
-      "related": [
-        "agent-skills-spec",
-        "superpowers"
-      ],
-      "aliases": [
-        "AstraCraft Recommender",
-        "天工精选"
-      ],
-      "risk_notes": "推荐基于 LLM 对条目元数据的语义推理，非确定性召回；需克隆全量仓库以读取最新条目，不自动安装任何技能；推荐新项目仅限 GitHub 公开开源，经 Issue 模板提交、由维护者人工核验。",
-      "added_at": "2026-08-27",
-      "updated_at": "2026-08-27",
-      "install": "bash\n# 1) 克隆天工计划全量仓库（用于读取最新 skill 库）\ngit clone --depth 1 https://github.com/AvalonLee/AstraCraft-Program /tmp/astracraft\n\n# 2) 把「天工精选」技能复制到你的 agent 的 skills 目录\n#    以 Claude Code 为例：\nmkdir -p ~/.claude/skills\ncp -r /tmp/astracraft/entries/meta-skillcraft/skill-recommender ~/.claude/skills/\n\n# 其他 agent 请替换为对应 skills 目录，例如：\n#   Codex:      ~/.codex/skills/\n#   Cursor:     <项目>/.cursor/skills/\n#   WorkBuddy:  ~/.workbuddy/skills/",
-      "detail_url": "skills/skill-recommender.html"
     },
     {
       "id": "superpowers",

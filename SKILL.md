@@ -24,6 +24,8 @@ updated_at: "2026-08-27"
 
 > 天工计划（AstraCraft Program）的配套推荐技能：让 AI Agent 按你的项目实况，从本计划的 skill 库里挑出最该装的技能。
 > 上游：[AvalonLee/AstraCraft-Program](https://github.com/AvalonLee/AstraCraft-Program) · 许可证：CC-BY-4.0
+>
+> 本文件即「天工精选」技能本体，位于仓库根目录，方便 Agent 直接抓取安装。
 
 ## 这是什么
 
@@ -36,21 +38,21 @@ updated_at: "2026-08-27"
 
 ## 怎么安装
 
-天工精选依赖本计划的**全量条目元数据**做匹配，因此先克隆仓库（取最新数据），再把本技能复制到 Agent 的 skills 目录：
+天工精选依赖本计划的**全量条目元数据**做匹配，因此先克隆仓库（取最新数据），再把本技能（仓库根目录 `SKILL.md`）复制到 Agent 的 skills 目录：
 
 ```bash
 # 1) 克隆天工计划全量仓库（用于读取最新 skill 库）
 git clone --depth 1 https://github.com/AvalonLee/AstraCraft-Program /tmp/astracraft
 
-# 2) 把「天工精选」技能复制到你的 agent 的 skills 目录
+# 2) 把仓库根目录的 SKILL.md（即「天工精选」技能）复制到你的 agent 的 skills 目录
 #    以 Claude Code 为例：
-mkdir -p ~/.claude/skills
-cp -r /tmp/astracraft/entries/meta-skillcraft/skill-recommender ~/.claude/skills/
+mkdir -p ~/.claude/skills/astracraft-recommender
+cp /tmp/astracraft/SKILL.md ~/.claude/skills/astracraft-recommender/SKILL.md
 
 # 其他 agent 请替换为对应 skills 目录，例如：
-#   Codex:      ~/.codex/skills/
-#   Cursor:     <项目>/.cursor/skills/
-#   WorkBuddy:  ~/.workbuddy/skills/
+#   Codex:      ~/.codex/skills/astracraft-recommender/
+#   Cursor:     <项目>/.cursor/skills/astracraft-recommender/
+#   WorkBuddy:  ~/.workbuddy/skills/astracraft-recommender/
 ```
 
 > 数据源始终是 `entries/<category>/<id>/SKILL.md` 的 frontmatter（id / 分类 / 标签 / 层级 / 许可证 / 简介）。

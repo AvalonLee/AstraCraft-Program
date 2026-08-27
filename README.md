@@ -7,7 +7,7 @@
 一个轻量、中文为主的 Agent Skill 索引库：每个条目只存一份 `SKILL.md`（介绍 + 安装指令），
 Agent 读完即可快速定位并安装对应的 skill 项目。不收录上游源码快照。
 
-[![entries](https://img.shields.io/badge/entries-23-blue.svg)](site/index.html)
+[![entries](https://img.shields.io/badge/entries-22-blue.svg)](site/index.html)
 [![license](https://img.shields.io/badge/docs-CC%20BY%204.0-blue.svg)](LICENSE)
 [![code license](https://img.shields.io/badge/code-MIT-green.svg)](LICENSE)
 [![CI: index-check](https://github.com/AvalonLee/AstraCraft-Program/actions/workflows/index-check.yml/badge.svg)](https://github.com/AvalonLee/AstraCraft-Program/actions/workflows/index-check.yml)
@@ -32,7 +32,7 @@ Agent 读完即可快速定位并安装对应的 skill 项目。不收录上游�
 ```
 
 > 天工精选（AstraCraft Recommender）是本计划的配套推荐技能：装好后，你描述项目实况，它从本库里挑出最该装的几个技能并给出安装指引。
-> 详见 [entries/meta-skillcraft/skill-recommender](entries/meta-skillcraft/skill-recommender/SKILL.md)。在线预览站首页顶部也有同款「一键复制」安装条。
+> 技能本体即仓库根目录 [SKILL.md](SKILL.md)，Agent 克隆仓库后即可直接抓取安装。在线预览站首页顶部也有同款「一键复制」安装条。
 
 ## 什么是 SKILL.md？
 
@@ -101,7 +101,7 @@ Agent 可直接据此判断装不装、能不能商用。
 
 ## 收录内容
 
-当前收录 **23** 个技能，按十大分类组织（目录名 → 定位）：
+当前收录 **22** 个技能，按十大分类组织（目录名 → 定位）：
 
 | 目录 | 定位 |
 |---|---|

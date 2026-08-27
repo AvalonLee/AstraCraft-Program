@@ -20,7 +20,7 @@ jobs:
     name: 离线测试
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
@@ -31,7 +31,7 @@ jobs:
     name: 校验元数据
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: 设置 Python
         uses: actions/setup-python@v5
@@ -48,7 +48,7 @@ jobs:
     name: 检查 INDEX.md 是否脱节
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: 设置 Python
         uses: actions/setup-python@v5
@@ -65,7 +65,7 @@ jobs:
     name: 检查站点生成器
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: 设置 Python
         uses: actions/setup-python@v5

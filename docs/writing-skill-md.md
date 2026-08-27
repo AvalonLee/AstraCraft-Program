@@ -93,4 +93,4 @@
 
 ## 示例
 
-完整示例见 [../entries/_template/SKILL.md](../entries/_template/SKILL.md)。
+完整示例见 [installable-skill-format.md](installable-skill-format.md)。

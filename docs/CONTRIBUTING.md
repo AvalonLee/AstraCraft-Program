@@ -45,7 +45,7 @@ AstraCraft Program（天工计划）是**轻量索引库**：每个条目只保�
 ```bash
 # 在仓库根目录执行
 mkdir -p entries/<分类>/<你的id>
-cp _template/SKILL.md entries/<分类>/<你的id>/SKILL.md
+mkdir -p entries/<分类>/<你的id>\ntouch entries/<分类>/<你的id>/SKILL.md
 ```
 
 `id` 规则：小写字母、数字、连字符；**必须等于目录名**；全局唯一。
@@ -54,7 +54,7 @@ cp _template/SKILL.md entries/<分类>/<你的id>/SKILL.md
 
 ### 第 2 步：填内容
 
-- **frontmatter**：必填字段见 `_template/SKILL.md` 与 [writing-skill-md.md](writing-skill-md.md)。
+- **frontmatter**：必填字段见 [目录条目格式规范](catalog-format.md) 与 [writing-skill-md.md](writing-skill-md.md)。
   最容易错的三处：`id` ≠ 目录名、`category` ≠ 一级目录名、`license` 留空。
 - **正文**：固定四节「是什么 / 怎么安装 / 怎么用 / 注意事项」。
   「怎么安装」必须给 Agent 可执行的代码块指令——这是本仓库的核心价值，别糊弄。

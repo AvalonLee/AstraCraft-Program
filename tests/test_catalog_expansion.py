@@ -3,6 +3,7 @@ from pathlib import Path
 
 import pytest
 
+from scripts._common import discover_entries
 from scripts.select_candidates import CandidateCapacityError, select_candidates
 
 
@@ -54,3 +55,31 @@ def test_selector_fails_when_category_has_insufficient_capacity() -> None:
         select_candidates({"dsh": data["dsh"]}, statuses, per_category=5)
 
     assert exc.value.code == "E_CATEGORY_CAPACITY"
+
+
+def test_selector_matches_normalized_repository_urls() -> None:
+    data = {"research-intel": [{"category":"research-intel","repo":"https://github.com/Future-House/paper-qa","priority":"primary","coverage_code":"research-1"}]}
+    with pytest.raises(CandidateCapacityError):
+        select_candidates(data, {"https://github.com/future-house/paper-qa": "blocked"}, per_category=1)
+
+
+def test_expanded_categories_have_five_entries_each() -> None:
+    counts = {category: 0 for category in TARGETS}
+    for entry in discover_entries():
+        if entry.category_dir in counts:
+            counts[entry.category_dir] += 1
+    assert counts == {category: 5 for category in TARGETS}
+
+
+def test_expanded_entries_match_selected_upstream_snapshot() -> None:
+    snapshot = json.loads((ROOT / "verification/upstream-snapshot.json").read_text(encoding="utf-8"))["entries"]
+    entries = [entry for entry in discover_entries() if entry.category_dir in TARGETS]
+    repos = [entry.meta["repo"].lower() for entry in entries]
+    assert len(repos) == len(set(repos)) == 25
+    by_repo = {value["repo"].lower(): value for value in snapshot.values()}
+    for entry in entries:
+        upstream = by_repo[entry.meta["repo"].lower()]
+        assert upstream["status"] != "blocked"
+        assert entry.meta["license"] == upstream["license"]
+        if upstream["status"] == "needs-review":
+            assert entry.tier == "watch"

@@ -1,4 +1,339 @@
 {
-  "generated_at": "2026-08-27T00:00:00Z",
-  "entries": {}
+  "generated_at": "2026-08-27T06:56:12Z",
+  "entries": {
+    "addyosmani-agent-skills": {
+      "repo": "https://github.com/addyosmani/agent-skills",
+      "head_sha": "5a5ea45e806f82273549fd85e60adb95d55f510d",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "MIT",
+      "pushed_at": "2026-08-21T18:15:04Z",
+      "stars": 90112
+    },
+    "astronomer-agents": {
+      "repo": "https://github.com/astronomer/agents",
+      "head_sha": "dbd9bb79c4f7b7ac9c1cdd2b4b75213c81f423e5",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "Apache-2.0",
+      "pushed_at": "2026-08-17T19:09:23Z",
+      "stars": 428
+    },
+    "alirezarezvani-claude-skills": {
+      "repo": "https://github.com/alirezarezvani/claude-skills",
+      "head_sha": "19392f7a08264ed00486a251f5b2098321771f94",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "MIT",
+      "pushed_at": "2026-08-26T15:12:59Z",
+      "stars": 25049
+    },
+    "github-awesome-copilot": {
+      "repo": "https://github.com/github/awesome-copilot",
+      "head_sha": "634b92f887487fc61cddc2f61d77830e09e8f589",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "MIT",
+      "pushed_at": "2026-08-27T06:41:27Z",
+      "stars": 38294
+    },
+    "sickn33-antigravity-awesome-skills": {
+      "repo": "https://github.com/sickn33/antigravity-awesome-skills",
+      "head_sha": "5cf4dfeb13ea966daa1e117897689cd7991e3f44",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "MIT",
+      "pushed_at": "2026-08-27T04:51:10Z",
+      "stars": 45499
+    },
+    "pymc-labs-python-analytics-skills": {
+      "repo": "https://github.com/pymc-labs/python-analytics-skills",
+      "head_sha": "a69c19530dfa2e3d89b4aba154b5abac0abe755e",
+      "status": "needs-review",
+      "health_score": 75,
+      "max_tier": "standard",
+      "issues": [
+        "E_LICENSE_UNKNOWN"
+      ],
+      "archived": false,
+      "license": "UNKNOWN",
+      "pushed_at": "2026-06-22T15:05:49Z",
+      "stars": 78
+    },
+    "nimrodfisher-data-analytics-skills": {
+      "repo": "https://github.com/nimrodfisher/data-analytics-skills",
+      "head_sha": "88498848c174ef162eba31fe5b6071faf02f8dc2",
+      "status": "needs-review",
+      "health_score": 75,
+      "max_tier": "standard",
+      "issues": [
+        "E_LICENSE_UNKNOWN"
+      ],
+      "archived": false,
+      "license": "UNKNOWN",
+      "pushed_at": "2026-04-29T03:21:17Z",
+      "stars": 395
+    },
+    "marimo-team-marimo": {
+      "repo": "https://github.com/marimo-team/marimo",
+      "head_sha": "59ef0a9b6939db13f2d27950479e9e722eef405d",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "Apache-2.0",
+      "pushed_at": "2026-08-27T04:39:03Z",
+      "stars": 22503
+    },
+    "evidence-dev-evidence": {
+      "repo": "https://github.com/evidence-dev/evidence",
+      "head_sha": "cbbd22cc9982157d50881d118812f33b612e2dc1",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "MIT",
+      "pushed_at": "2026-08-26T20:45:13Z",
+      "stars": 6884
+    },
+    "k-dense-ai-scientific-agent-skills": {
+      "repo": "https://github.com/k-dense-ai/scientific-agent-skills",
+      "head_sha": "36d8f13a1e754618794bf42f417884940077b4ae",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "MIT",
+      "pushed_at": "2026-08-24T09:22:55Z",
+      "stars": 34870
+    },
+    "assafelovic-gpt-researcher": {
+      "repo": "https://github.com/assafelovic/gpt-researcher",
+      "head_sha": "6f998577d547b1e54ec662dac63583aa11e3b84b",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "Apache-2.0",
+      "pushed_at": "2026-08-24T06:58:46Z",
+      "stars": 29162
+    },
+    "langchain-ai-open_deep_research": {
+      "repo": "https://github.com/langchain-ai/open_deep_research",
+      "head_sha": "1b7d2e80db9faa586165c60e09096dbbfd483a64",
+      "status": "blocked",
+      "health_score": 30,
+      "max_tier": "blocked",
+      "issues": [
+        "E_REPO_ARCHIVED",
+        "E_LICENSE_CONFLICT"
+      ],
+      "archived": true,
+      "license": "MIT",
+      "pushed_at": "2026-08-10T18:13:37Z",
+      "stars": 12673
+    },
+    "future-house-paper-qa": {
+      "repo": "https://github.com/future-house/paper-qa",
+      "head_sha": "57e89f7223b0960d5ee5ea048c69e3c47e088572",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "Apache-2.0",
+      "pushed_at": "2026-08-26T11:53:52Z",
+      "stars": 9106
+    },
+    "stanford-oval-storm": {
+      "repo": "https://github.com/stanford-oval/storm",
+      "head_sha": "fb951af7744dab086e34962e9bc6fe878e145f83",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "MIT",
+      "pushed_at": "2025-09-30T18:07:21Z",
+      "stars": 31137
+    },
+    "ansible-ansible": {
+      "repo": "https://github.com/ansible/ansible",
+      "head_sha": "deecfd6e8c030c7fe23c4fd9bc6b94cd0422132c",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "GPL-3.0",
+      "pushed_at": "2026-08-26T21:11:29Z",
+      "stars": 70476
+    },
+    "pulumi-pulumi": {
+      "repo": "https://github.com/pulumi/pulumi",
+      "head_sha": "17883265b6a197039cfb595707e8bef985a1470d",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "Apache-2.0",
+      "pushed_at": "2026-08-27T06:29:42Z",
+      "stars": 25613
+    },
+    "localstack-localstack": {
+      "repo": "https://github.com/localstack/localstack",
+      "head_sha": "8b9a79f05846835cf4dff63ab7eefdde9df83783",
+      "status": "blocked",
+      "health_score": 5,
+      "max_tier": "blocked",
+      "issues": [
+        "E_REPO_ARCHIVED",
+        "E_LICENSE_UNKNOWN"
+      ],
+      "archived": true,
+      "license": "NOASSERTION",
+      "pushed_at": "2026-03-23T08:52:01Z",
+      "stars": 65144
+    },
+    "dagu-org-dagu": {
+      "repo": "https://github.com/dagu-org/dagu",
+      "head_sha": "2b0f91d7e32606c29112f4fff5a0abbb5fda022f",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "GPL-3.0",
+      "pushed_at": "2026-08-27T06:24:57Z",
+      "stars": 3808
+    },
+    "kestra-io-kestra": {
+      "repo": "https://github.com/kestra-io/kestra",
+      "head_sha": "a895dc7ac5c2bf817f3a62dfebed5c484d85dfa9",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "Apache-2.0",
+      "pushed_at": "2026-08-27T06:47:49Z",
+      "stars": 27933
+    },
+    "deepseek-ai-deepseek-harness": {
+      "repo": "https://github.com/deepseek-ai/deepseek-harness",
+      "head_sha": "b150a551b8d465e31e418e1b2eaf5e79bbb7d28e",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "MIT",
+      "pushed_at": "2026-08-21T12:35:08Z",
+      "stars": 198706
+    },
+    "dsh-market-dsh-market": {
+      "repo": "https://github.com/dsh-market/dsh-market",
+      "head_sha": "2877a1b1cddb9b33a129f33897f647f2ef6a92eb",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "MIT",
+      "pushed_at": "2026-08-27T06:39:22Z",
+      "stars": 2540
+    },
+    "awesome-dsh-plugin-dsh-find-plugin": {
+      "repo": "https://github.com/awesome-dsh-plugin/dsh-find-plugin",
+      "head_sha": "e7a27eb01606e6deccdaacccb8e0cfd992c0bcdc",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "MIT",
+      "pushed_at": "2026-08-19T05:24:43Z",
+      "stars": 102
+    },
+    "ccch1mneyyy-dsh-tui": {
+      "repo": "https://github.com/ccch1mneyyy/dsh-tui",
+      "head_sha": "4c1d09f1259690352b8854062119f47d04f66523",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "MIT",
+      "pushed_at": "2026-08-27T05:55:35Z",
+      "stars": 2606
+    },
+    "0xsline-awesome-deepseek-harness": {
+      "repo": "https://github.com/0xsline/awesome-deepseek-harness",
+      "head_sha": "f4ebb279be6d2c36b1163a2459b962291df174e9",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "CC0-1.0",
+      "pushed_at": "2026-08-27T06:49:44Z",
+      "stars": 915
+    },
+    "wshobson-agents": {
+      "repo": "https://github.com/wshobson/agents",
+      "head_sha": "38e19c20d2b154510b0e624a2e3e186b19b5c527",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "MIT",
+      "pushed_at": "2026-08-26T12:14:16Z",
+      "stars": 39173
+    },
+    "microsoft-rd-agent": {
+      "repo": "https://github.com/microsoft/rd-agent",
+      "head_sha": "6762f84f9bc0f5c6486c50a00e128a57ac6c3683",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "MIT",
+      "pushed_at": "2026-08-04T11:50:56Z",
+      "stars": 14343
+    },
+    "prefecthq-prefect": {
+      "repo": "https://github.com/prefecthq/prefect",
+      "head_sha": "38041e65c47f7e3c350fce8f7e5c64de3bc1e103",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "Apache-2.0",
+      "pushed_at": "2026-08-26T23:21:59Z",
+      "stars": 23695
+    }
+  }
 }

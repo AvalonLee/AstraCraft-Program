@@ -125,7 +125,11 @@ def verify_entry(entry: dict, facts: UpstreamFacts) -> VerificationResult:
         issues.append(
             VerificationIssue("E_LICENSE_UNKNOWN", "review", "upstream license is not machine-readable")
         )
-    if facts.api_license not in {"UNKNOWN", "NOASSERTION", ""} and declared != facts.api_license:
+    if (
+        declared not in {"UNKNOWN", "NOASSERTION", ""}
+        and facts.api_license not in {"UNKNOWN", "NOASSERTION", ""}
+        and declared != facts.api_license
+    ):
         issues.append(
             VerificationIssue("E_LICENSE_CONFLICT", "review", "entry and upstream license disagree")
         )

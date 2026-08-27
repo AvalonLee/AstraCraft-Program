@@ -109,3 +109,9 @@ def test_healthy_repository_is_verified() -> None:
     assert result.status == "verified"
     assert result.health_score >= 60
     assert result.max_tier in {"standard", "core"}
+
+
+def test_unknown_candidate_license_accepts_machine_detected_license() -> None:
+    result = verify_entry(entry(license="UNKNOWN"), facts(api_license="MIT", text_license="MIT"))
+    assert result.status == "verified"
+    assert "E_LICENSE_CONFLICT" not in result.issue_codes

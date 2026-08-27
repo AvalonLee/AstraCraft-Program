@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 
 from scripts import verify_upstreams
-from scripts.verify_upstreams import build_snapshot, main, write_snapshot_atomic
+from scripts.verify_upstreams import build_snapshot, candidate_entries, main, merge_snapshots, reconcile_placeholder_conflicts, write_snapshot_atomic
 
 
 def healthy_payload() -> dict:
@@ -110,13 +110,12 @@ def test_refresh_mode_writes_snapshot(tmp_path: Path) -> None:
 
 
 def test_github_fetcher_records_head_commit_sha(monkeypatch) -> None:
+    calls = []
+
     def fake_request(url: str) -> dict:
-        if url.endswith("/license"):
-            return {"license": {"spdx_id": "MIT"}}
+        calls.append(url)
         if url.endswith("/readme"):
             return {"path": "README.md"}
-        if url.endswith("/commits/main"):
-            return {"sha": "deadbeef"}
         return {
             "default_branch": "main",
             "archived": False,
@@ -124,10 +123,65 @@ def test_github_fetcher_records_head_commit_sha(monkeypatch) -> None:
             "pushed_at": "2026-08-20T00:00:00Z",
             "topics": [],
             "description": "tool",
+            "license": {"spdx_id": "MIT"},
         }
 
     monkeypatch.setattr(verify_upstreams, "_request_json", fake_request)
+    monkeypatch.setattr(verify_upstreams, "_git_head_sha", lambda _: "deadbeef")
 
     result = verify_upstreams.fetch_github_facts("https://github.com/example/tool")
 
     assert result["head_sha"] == "deadbeef"
+    assert len(calls) == 2
+
+
+def test_candidate_entries_build_auditable_catalog_records() -> None:
+    candidates = {
+        "dsh": [
+            {"category": "dsh", "repo": "https://github.com/deepseek-ai/deepseek-harness", "priority": "primary", "coverage_code": "dsh-1"},
+            {"category": "dsh", "repo": "https://github.com/example/fallback", "priority": "fallback", "coverage_code": "dsh-2"},
+        ]
+    }
+
+    records = candidate_entries(candidates, priority="primary")
+
+    assert records == [{
+        "id": "deepseek-ai-deepseek-harness",
+        "category": "dsh",
+        "tags": ["dsh", "deepseek-harness", "plugin"],
+        "repo": "https://github.com/deepseek-ai/deepseek-harness",
+        "license": "UNKNOWN",
+        "tier": "watch",
+        "risk_notes": "安装第三方项目会写入本地环境，执行前需复核上游说明。",
+        "install_text": "git clone https://github.com/deepseek-ai/deepseek-harness",
+    }]
+
+
+def test_candidate_ids_include_owner_to_avoid_repo_name_collisions() -> None:
+    candidates = {
+        "dev-engineering": [{"category":"dev-engineering","repo":"https://github.com/wshobson/agents","priority":"primary","coverage_code":"dev-1"}],
+        "data-analytics": [{"category":"data-analytics","repo":"https://github.com/astronomer/agents","priority":"primary","coverage_code":"data-1"}],
+    }
+    records = candidate_entries(candidates)
+    assert [item["id"] for item in records] == ["wshobson-agents", "astronomer-agents"]
+
+
+def test_snapshot_merge_canonicalizes_old_repo_name_ids() -> None:
+    old = {"generated_at":"old", "entries":{"agents":{"repo":"https://github.com/astronomer/agents","status":"verified"}}}
+    fresh = {"generated_at":"new", "entries":{"wshobson-agents":{"repo":"https://github.com/wshobson/agents","status":"verified"}}}
+
+    merged = merge_snapshots(old, fresh)
+
+    assert set(merged["entries"]) == {"astronomer-agents", "wshobson-agents"}
+    assert merged["generated_at"] == "new"
+
+
+def test_reconcile_removes_only_obsolete_unknown_placeholder_conflict() -> None:
+    snapshot = {"generated_at":"now", "entries":{
+        "ok":{"repo":"https://github.com/example/ok","license":"MIT","status":"needs-review","issues":["E_LICENSE_CONFLICT"]},
+        "real-conflict":{"repo":"https://github.com/example/bad","license":"MIT","status":"needs-review","issues":["E_LICENSE_CONFLICT","E_CATEGORY_LOW_CONFIDENCE"]}
+    }}
+    repaired = reconcile_placeholder_conflicts(snapshot)
+    assert repaired["entries"]["ok"]["status"] == "verified"
+    assert repaired["entries"]["ok"]["issues"] == []
+    assert repaired["entries"]["real-conflict"]["status"] == "needs-review"

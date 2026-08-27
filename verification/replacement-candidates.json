@@ -1,0 +1,11 @@
+{
+  "dev-engineering": [
+    {"category":"dev-engineering","repo":"https://github.com/wshobson/agents","priority":"primary","coverage_code":"dev-2"}
+  ],
+  "research-intel": [
+    {"category":"research-intel","repo":"https://github.com/microsoft/RD-Agent","priority":"primary","coverage_code":"research-6"}
+  ],
+  "ops-automation": [
+    {"category":"ops-automation","repo":"https://github.com/PrefectHQ/prefect","priority":"primary","coverage_code":"ops-6"}
+  ]
+}

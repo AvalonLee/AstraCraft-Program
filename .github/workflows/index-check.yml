@@ -16,6 +16,17 @@ permissions:
   contents: read
 
 jobs:
+  tests:
+    name: 离线测试
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install -r scripts/requirements.txt
+      - run: pytest -q
+
   validate:
     name: 校验元数据
     runs-on: ubuntu-latest
@@ -65,4 +76,4 @@ jobs:
         run: python -m pip install -r scripts/requirements.txt
 
       - name: 运行 gen_site.py
-        run: python scripts/gen_site.py --quiet
+        run: python scripts/gen_site.py --check --quiet

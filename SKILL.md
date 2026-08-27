@@ -15,7 +15,7 @@ repo: https://github.com/AvalonLee/AstraCraft-Program
 tier: standard
 related: [agent-skills-spec, superpowers]
 aliases: [AstraCraft Recommender, 天工精选]
-risk_notes: 推荐基于 LLM 对条目元数据的语义推理，非确定性召回；需克隆全量仓库以读取最新条目，不自动安装任何技能；推荐新项目仅限 GitHub 公开开源，经 Issue 模板提交、由维护者人工核验。
+risk_notes: 推荐基于 LLM 对条目元数据的语义推理，非确定性召回；库条目数据按需拉取到独立缓存目录（非 skills 目录），不克隆进 skills；不自动安装任何技能；推荐新项目仅限 GitHub 公开开源，经 Issue 模板提交、由维护者人工核验。
 added_at: "2026-08-27"
 updated_at: "2026-08-27"
 ---
@@ -38,25 +38,24 @@ updated_at: "2026-08-27"
 
 ## 怎么安装
 
-天工精选依赖本计划的**全量条目元数据**做匹配，因此先克隆仓库（取最新数据），再把本技能（仓库根目录 `SKILL.md`）复制到 Agent 的 skills 目录：
+本技能就是仓库根目录这一份 `SKILL.md`。**安装 = 只把这一份文件放进你的 skills 目录**，不需要克隆整个仓库，也**绝不要把 `entries/` 目录当作技能注册**。
+
+> ⚠️ **关键提醒**：本仓库 `entries/` 下还有 22 份「库条目」`SKILL.md`（写作 / 研发 / 设计……各分类的入口说明）。它们**是推荐用的「数据」，不是可独立安装的技能**。
+> 安装时**只复制根目录这一份 `SKILL.md`**；不要把整个仓库克隆进 skills 目录，否则这 22 份会被 Agent 的技能扫描一并识别成 22 个技能。
 
 ```bash
-# 1) 克隆天工计划全量仓库（用于读取最新 skill 库）
-git clone --depth 1 https://github.com/AvalonLee/AstraCraft-Program /tmp/astracraft
+# 1) 建目录（以 WorkBuddy 为例；其他 agent 见下方替换）
+mkdir -p ~/.workbuddy/skills/astracraft-recommender
 
-# 2) 把仓库根目录的 SKILL.md（即「天工精选」技能）复制到你的 agent 的 skills 目录
-#    以 Claude Code 为例：
-mkdir -p ~/.claude/skills/astracraft-recommender
-cp /tmp/astracraft/SKILL.md ~/.claude/skills/astracraft-recommender/SKILL.md
-
-# 其他 agent 请替换为对应 skills 目录，例如：
-#   Codex:      ~/.codex/skills/astracraft-recommender/
-#   Cursor:     <项目>/.cursor/skills/astracraft-recommender/
-#   WorkBuddy:  ~/.workbuddy/skills/astracraft-recommender/
+# 2) 只下载根目录这一份 SKILL.md（不克隆仓库、不碰 entries/）
+curl -fsSL https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/SKILL.md \
+  -o ~/.workbuddy/skills/astracraft-recommender/SKILL.md
 ```
 
-> 数据源始终是 `entries/<category>/<id>/SKILL.md` 的 frontmatter（id / 分类 / 标签 / 层级 / 许可证 / 简介）。
-> 不与上游源码耦合——本计划只收录「入口说明」，不转载源码，所以匹配时只读元数据即可。
+- 其他 agent 把 `~/.workbuddy/skills` 换成对应目录即可：`~/.claude/skills`、`~/.codex/skills`、`<项目>/.cursor/skills`。
+- 若你此前误把整个仓库克隆进了 skills 目录，请删除 `skills/` 下除 `astracraft-recommender/` 以外的全部子目录（它们不是本技能）。
+
+> 库条目数据（`entries/` 的 frontmatter）与「技能本体」是分离的：技能本体只此一份；库数据在推荐时按「数据更新机制」拉到**独立缓存目录**（非 skills 目录），因此永远不会被注册成技能。
 
 ## 怎么用
 
@@ -69,10 +68,10 @@ Agent 应按以下**数据检查 → 打分初筛 → 语义终审 → 标准化
 
 **0. 数据新鲜度检查（每轮调用先做）**
 
-读取仓库根目录 `data-version.json` 的 `updated_at`；若距今天数 > 7，先询问用户：
+读取本地缓存目录（默认 `~/.cache/astracraft-entries/`，Windows：`%LOCALAPPDATA%/astracraft-entries/`）中 `data-version.json` 的 `updated_at`；若缓存不存在或距今天数 > 7，先询问用户：
 
 > 「本地数据已 N 天未更新（当前版本 `260827`），是否联网拉取最新数据？」
-> 仅当用户确认后才执行 `git pull`（见「数据更新机制」），**不擅自联网**。
+> 仅当用户确认后才拉取（见「数据更新机制」），**不擅自联网**。若本地缓存尚无数据，则提示「尚未拉取库数据，是否现在拉取？」。
 
 **1. 结构化打分（冷启动，保证不漏 relevant 条目）**
 
@@ -112,16 +111,20 @@ Agent 应按以下**数据检查 → 打分初筛 → 语义终审 → 标准化
 
 ## 数据更新机制
 
-本技能的推荐质量依赖 `entries/` 的当前内容。仓库根目录 `data-version.json` 记录数据集版本与更新日期：
+本技能的推荐质量依赖 `entries/` 的当前内容，但**库数据存放在与 skills 完全隔离的缓存目录**，不会被注册成技能。仓库根目录 `data-version.json` 记录数据集版本与更新日期：
 
 ```json
 { "version": "260827", "updated_at": "2026-08-27", "source": "https://github.com/AvalonLee/AstraCraft-Program" }
 ```
 
-- **过期自动提示**：每次调用本技能时，先读 `data-version.json` 的 `updated_at`；若距今天数 > 7，主动询问用户「本地数据已 N 天未更新，是否联网拉取最新数据？」，由用户决定（绝不擅自联网）。
-- **联网更新**：用户同意后，`git pull`（或重新 `git clone`）上游仓库获取最新 `entries/` 与 `data-version.json`；版本号随维护者刷新而递进（格式 `YYMMDD`，如 `260827`）。
-- **用户主动更新**：用户也可随时说"更新数据"，流程同上。
-- 不联网时仍可基于本地 `entries/` 继续推荐，仅时效性下降。
+- **存放位置（隔离）**：拉取到 `~/.cache/astracraft-entries/`（Windows：`%LOCALAPPDATA%/astracraft-entries/`）。**此目录不是 skills 目录**，Agent 不会把它识别为技能。
+- **首次 / 过期拉取**：用户同意后，把仓库浅克隆（或 `gh api` 取树）到上述缓存目录，只读 `entries/` 与 `data-version.json`：
+  ```bash
+  git clone --depth 1 https://github.com/AvalonLee/AstraCraft-Program "$HOME/.cache/astracraft-entries"
+  ```
+- **过期自动提示**：每次调用本技能时，先读缓存目录中 `data-version.json` 的 `updated_at`；若缓存不存在或距今天数 > 7，主动询问用户「本地数据已 N 天未更新，是否联网拉取最新数据？」，由用户决定（绝不擅自联网）。
+- **用户主动更新**：用户也可随时说"更新数据"，重拉缓存目录即可（先删旧缓存再 clone）。
+- 不联网时仍可基于本地缓存的 `entries/` 继续推荐，仅时效性下降。
 
 ## 推荐新项目（仅限 GitHub 开源）
 
@@ -138,5 +141,6 @@ Agent 应按以下**数据检查 → 打分初筛 → 语义终审 → 标准化
 - **数据时效**：匹配质量依赖 `entries/` 的当前内容；本地数据超过 7 天会提示更新，详见「数据更新机制」。
 - **非确定性召回**：匹配是 LLM 语义推理，不是精确检索，结果可能随表述微调；若用户补充项目细节，可重新跑一轮。
 - **数据源仅元数据**：本计划每个条目只有一份 `SKILL.md`（入口说明），不收录上游源码；安装命令指向条目声明的上游仓库。
+- **误装清理**：若安装时把整个仓库克隆进了 skills 目录，导致 `entries/` 下 22 份库条目被识别为技能，请仅保留 `skills/astracraft-recommender/`，删除其余从仓库带入的子目录（它们不是本技能，也不应被注册）。
 - **许可证可读**：`license` 字段仅作"能否商用"的快速提示，最终以各条目上游 LICENSE 为准；标注 `UNKNOWN` 的需用户自行核实。
 - CC-BY-4.0 许可，可自由阅读、引用并注明出处。

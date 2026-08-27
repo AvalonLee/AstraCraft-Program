@@ -86,6 +86,7 @@
 - `writing-docs/dashi-ppt-skill` —— Dashi PPT Skill 大师 PPT
   （🔗 链接索引，面向职场的可编辑 PPT 生成 Skill，npx 安装，导出 HTML/PDF/PPTX；AGPL-3.0，standard 评级）
 - `SKILL.md`（仓库根目录）—— 天工精选（AstraCraft Recommender）：本计划配套推荐技能，Agent 安装后依据项目描述与运行情况在本库做语义匹配并给出安装指引；每轮推荐 3 个标准化格式、本地数据超 7 天主动提示更新、推荐新项目仅限 GitHub 公开开源（CC-BY-4.0，standard 评级）。该技能作为仓库根目录**独立配套技能**存在，不纳入库目录条目计数（当前库目录 22 个），便于 Agent 直接抓取安装；2026-08-27 新增。配套地，README 与在线预览站首页同步增加「一句话装到你的 Agent」快捷安装指令（复制引导句发给 AI Agent 即可完成安装）。
+- **安装机制修复（2026-08-27）**：根 `SKILL.md` 原「怎么安装」让 Agent `git clone` 整个仓库，导致 Agent 的技能扫描把 `entries/` 下 22 份库条目 `SKILL.md` 一并注册成 22 个技能（误装）。已改为「只下载根目录这一份 `SKILL.md` 单文件」安装，库数据拉取到与 skills 隔离的缓存目录（`~/.cache/astracraft-entries/`），并新增显式警告与「误装清理」指引；README / 首页安装引导句同步强调「只装根目录那一份」。
 
 ---
 

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>天工甄选 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">天工甄选</h1>
+      <p class="hero-subtitle">AstraCraft Recommender</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>技能工程</span><span>常规</span><span class="lic-badge lic-open" title="CC-BY-4.0">完全开源</span><span>技能包</span>
+    </div>
+    <p class="muted detail-meta">天工计划配套推荐技能：AI Agent 安装后，依据用户项目的描述与实际运行情况，在本计划的 skill 库中筛选并给出最匹配的技能与安装指引（中文优先）。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>天工甄选（AstraCraft Recommender）</h1>
+<blockquote>天工计划（AstraCraft Program）的配套推荐技能：让 AI Agent 按你的项目实况，从本计划的 skill 库里挑出最该装的技能。 上游：<a href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">AvalonLee/AstraCraft-Program</a> · 许可证：CC-BY-4.0</blockquote>
+<h2>这是什么</h2>
+<p>天工甄选是天工计划（AstraCraft Program）的<strong>配套推荐技能</strong>，本身是一份 <code>SKILL.md</code>， 不是一个独立产品。它的职责是：AI Agent 安装它之后，根据你给出的<strong>项目描述与实际运行情况</strong>， 在本计划的 skill 库（<code>entries/</code> 下按分类组织的各条目）中做语义匹配，返回<strong>最匹配的若干技能及其安装指引</strong>。</p>
+<p>它解决的核心问题是：天工计划已收录几十个技能，用户往往不知道"我这个场景该装哪一个"。 天工甄选把"按需挑选"这件事交给 Agent 完成——你描述项目，它给清单。</p>
+<h2>怎么安装</h2>
+<p>天工甄选依赖本计划的<strong>全量条目元数据</strong>做匹配，因此先克隆仓库（取最新数据），再把本技能复制到 Agent 的 skills 目录：</p>
+<pre><code class="lang-bash"># 1) 克隆天工计划全量仓库（用于读取最新 skill 库）
+git clone --depth 1 https://github.com/AvalonLee/AstraCraft-Program /tmp/astracraft
+
+# 2) 把「天工甄选」技能复制到你的 agent 的 skills 目录
+#    以 Claude Code 为例：
+mkdir -p ~/.claude/skills
+cp -r /tmp/astracraft/entries/meta-skillcraft/skill-recommender ~/.claude/skills/
+
+# 其他 agent 请替换为对应 skills 目录，例如：
+#   Codex:      ~/.codex/skills/
+#   Cursor:     &lt;项目&gt;/.cursor/skills/
+#   WorkBuddy:  ~/.workbuddy/skills/</code></pre>
+<blockquote>数据源始终是 <code>entries/&lt;category&gt;/&lt;id&gt;/SKILL.md</code> 的 frontmatter（id / 分类 / 标签 / 层级 / 许可证 / 简介）。 不与上游源码耦合——本计划只收录「入口说明」，不转载源码，所以匹配时只读元数据即可。</blockquote>
+<h2>怎么用</h2>
+<p>把"项目画像"交给 Agent（装了本技能后它会自动按下面流程推理），例如：</p>
+<blockquote>我在一个 Windows 内网单机环境做产品看板系统，技术栈 Vue3 + FastAPI + SQLite， 需要定时把看板导出成 PDF 报表、做运维账号双角色鉴权，团队用中文协作。</blockquote>
+<p>Agent 应按以下<strong>打分初筛 + 语义终审</strong>的流程产出推荐：</p>
+<p><strong>1. 结构化打分（冷启动，保证不漏 relevant 条目）</strong></p>
+<p>| 信号 | 加分 | 说明 | | --- | --- | --- | | 分类命中 | +3 | 项目领域落在某条目的 <code>category</code> | | 标签命中 | 每个 +2 | 项目关键词命中条目 <code>tags</code>（含 <code>primary</code> 受控标签） | | 类型匹配 | +1 | <code>kind</code>（skill / mcp-server / cli-tool / framework / spec）契合需求形态 | | 层级加权 | core +2 / standard +1 / watch 0 | 来自 <code>tier</code>，优先推已实测或公认优质的 | | 许可证契合 | 命中 +1 / 商用受限且项目需商用则 −2 | <code>license</code> 为 <code>UNKNOWN</code> 或被标注不可商用时整体降权 |</p>
+<p><strong>2. LLM 语义终审（去噪，保证相关而非堆砌）</strong></p>
+<p>对打分进入前列的候选用语言模型判断"是否真能解决用户的具体问题"，剔除仅字面命中的条目； 同时结合 <code>risk_notes</code> / <code>doc_languages</code> / <code>languages</code> 等字段判断可用性（如中文团队优先 <code>cn-localization</code>、需要离线则看是否 <code>self-hosted</code>）。</p>
+<p><strong>3. 产出推荐</strong></p>
+<p>按匹配度从高到低列出 3–5 个技能，每个给出：</p>
+<ul><li>条目中文名 + 英文名 + 一句话定位（取自 <code>summary_zh</code>）；</li><li>为什么匹配（命中了哪些分类/标签/层级）；</li><li><strong>安装指引</strong>：直接复读该条目 <code>SKILL.md</code> 的「怎么安装」代码块，<strong>不要替用户执行安装</strong>。</li></ul>
+<h2>注意事项</h2>
+<ul><li><strong>只推荐、不自动安装</strong>：本技能产出清单与安装命令，是否执行由用户决定（避免未经确认改动用户环境）。</li><li><strong>需最新数据</strong>：匹配质量依赖 <code>entries/</code> 的当前内容；上游新增条目后请重新 <code>git clone</code> 拉取，本技能不联网实时查询。</li><li><strong>非确定性召回</strong>：匹配是 LLM 语义推理，不是精确检索，结果可能随表述微调；若用户补充项目细节，可重新跑一轮。</li><li><strong>数据源仅元数据</strong>：本计划每个条目只有一份 <code>SKILL.md</code>（入口说明），不收录上游源码；安装命令指向条目声明的上游仓库。</li><li><strong>许可证可读</strong>：<code>license</code> 字段仅作"能否商用"的快速提示，最终以各条目上游 LICENSE 为准；标注 <code>UNKNOWN</code> 的需用户自行核实。</li><li>CC-BY-4.0 许可，可自由阅读、引用并注明出处。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-08-27 · 更新于 2026-08-27 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

@@ -1,5 +1,5 @@
 ---
-id: skill-recommender
+id: AstraCraft Recommender
 name_zh: 天工精选
 name_en: AstraCraft Recommender
 summary_zh: "天工计划配套推荐技能：AI Agent 安装后，依据用户项目的描述与实际运行情况，在本计划的 skill 库中筛选并给出最匹配的技能与安装指引（中文优先）。"

@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["generated_at", "entries"],
+  "properties": {
+    "generated_at": {"type": "string", "format": "date-time"},
+    "entries": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["repo", "head_sha", "status", "health_score", "max_tier", "issues"],
+        "properties": {
+          "repo": {"type": "string"},
+          "head_sha": {"type": "string"},
+          "status": {"enum": ["verified", "needs-review", "blocked"]},
+          "health_score": {"type": "integer", "minimum": 0, "maximum": 100},
+          "max_tier": {"enum": ["core", "standard", "watch", "blocked"]},
+          "issues": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}

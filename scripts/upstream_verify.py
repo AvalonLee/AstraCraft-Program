@@ -121,6 +121,10 @@ def verify_entry(entry: dict, facts: UpstreamFacts) -> VerificationResult:
             VerificationIssue("E_LICENSE_CONFLICT", "review", "GitHub and LICENSE text disagree")
         )
     declared = str(entry.get("license", "UNKNOWN"))
+    if facts.api_license in {"", "UNKNOWN", "NOASSERTION"}:
+        issues.append(
+            VerificationIssue("E_LICENSE_UNKNOWN", "review", "upstream license is not machine-readable")
+        )
     if facts.api_license not in {"UNKNOWN", "NOASSERTION", ""} and declared != facts.api_license:
         issues.append(
             VerificationIssue("E_LICENSE_CONFLICT", "review", "entry and upstream license disagree")

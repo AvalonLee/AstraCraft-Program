@@ -28,7 +28,7 @@ Agent 读完即可快速定位并安装对应的 skill 项目。不收录上游�
 不想翻库、不想手敲？把下面这句直接发给你的 AI Agent，它会自动克隆并把「天工精选」技能装好：
 
 ```
-请安装天工精选技能（AstraCraft Recommender）。
+请安装天工计划的天工精选技能（AstraCraft Recommender）：https://github.com/AvalonLee/AstraCraft-Program
 ```
 
 > 天工精选（AstraCraft Recommender）是本计划的配套推荐技能：装好后，你描述项目实况，它从本库里挑出最该装的几个技能并给出安装指引。

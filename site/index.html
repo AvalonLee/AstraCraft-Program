@@ -33,6 +33,16 @@
             <a class="button button-primary" href="#browse">开始浏览</a>
             <a class="button button-secondary" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
           </div>
+          <div class="install-strip">
+            <div class="install-strip-head">
+              <span class="install-label">一键把本计划技能装进你的 Agent</span>
+              <span class="install-hint">复制下面这句，直接发给你的 AI Agent 即可完成安装</span>
+            </div>
+            <div class="install-cmd">
+              <code id="install-cmd-text">请帮我安装天工计划的天工精选技能（AstraCraft Recommender）：克隆 https://github.com/AvalonLee/AstraCraft-Program 并把 entries/meta-skillcraft/skill-recommender/SKILL.md 复制到你的 skills 目录，然后加载它。</code>
+              <button class="install-copy" type="button" id="install-copy" data-copy-target="install-cmd-text">复制</button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -116,5 +126,47 @@
     </p>
   </main>
   <script src="assets/app.js"></script>
+  <div class="toast" id="toast"></div>
+  <script>
+    (function () {
+      "use strict";
+      var btn = document.getElementById("install-copy");
+      if (!btn) return;
+      btn.addEventListener("click", function () {
+        var target = document.getElementById(btn.getAttribute("data-copy-target"));
+        if (!target) return;
+        var text = (target.textContent || "").trim();
+        var toast = document.getElementById("toast");
+        var showToast = function (msg) {
+          if (!toast) return;
+          toast.textContent = msg;
+          toast.classList.add("visible");
+          setTimeout(function () { toast.classList.remove("visible"); }, 2200);
+        };
+        var mark = function () {
+          var old = btn.textContent;
+          btn.textContent = "已复制 ✓";
+          btn.classList.add("copied");
+          showToast("已复制到剪贴板，发给你的 AI Agent 即可安装");
+          setTimeout(function () { btn.textContent = old; btn.classList.remove("copied"); }, 1800);
+        };
+        var fallback = function () {
+          var ta = document.createElement("textarea");
+          ta.value = text;
+          ta.style.position = "fixed";
+          ta.style.opacity = "0";
+          document.body.appendChild(ta);
+          ta.focus(); ta.select();
+          try { document.execCommand("copy"); mark(); } catch (e) {}
+          document.body.removeChild(ta);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(mark).catch(fallback);
+        } else {
+          fallback();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

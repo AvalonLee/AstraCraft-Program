@@ -2101,3 +2101,96 @@ textarea {
     gap: 12px;
   }
 }
+
+/* 首页顶部：一键安装指令条（深色 hero 内） */
+.install-strip {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 16px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.install-strip-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 12px;
+}
+
+.install-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+
+.install-hint {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.install-cmd {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  padding: 4px 4px 4px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  background: rgba(8, 12, 22, 0.5);
+}
+
+.install-cmd code {
+  flex: 1;
+  min-width: 0;
+  align-self: center;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: "SF Mono", "JetBrains Mono", "IBM Plex Mono", Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #e8edf7;
+}
+
+.install-copy {
+  flex: none;
+  min-height: 40px;
+  padding: 0 18px;
+  border: 1px solid rgba(75, 107, 255, 0.45);
+  border-radius: 10px;
+  background: linear-gradient(180deg, #4b6bff, #2f52f5);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease, background 0.2s ease;
+}
+
+.install-copy:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+}
+
+.install-copy:focus-visible {
+  outline: 2px dashed #ffffff;
+  outline-offset: 3px;
+}
+
+.install-copy.copied {
+  background: linear-gradient(180deg, #16a34a, #15803d);
+  border-color: rgba(22, 163, 74, 0.5);
+}
+
+@media (max-width: 720px) {
+  .install-cmd {
+    flex-direction: column;
+  }
+
+  .install-copy {
+    width: 100%;
+  }
+}

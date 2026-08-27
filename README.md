@@ -7,7 +7,7 @@
 一个轻量、中文为主的 Agent Skill 索引库：每个条目只存一份 `SKILL.md`（介绍 + 安装指令），
 Agent 读完即可快速定位并安装对应的 skill 项目。不收录上游源码快照。
 
-[![entries](https://img.shields.io/badge/entries-22-blue.svg)](site/index.html)
+[![entries](https://img.shields.io/badge/entries-23-blue.svg)](site/index.html)
 [![license](https://img.shields.io/badge/docs-CC%20BY%204.0-blue.svg)](LICENSE)
 [![code license](https://img.shields.io/badge/code-MIT-green.svg)](LICENSE)
 [![CI: index-check](https://github.com/AvalonLee/AstraCraft-Program/actions/workflows/index-check.yml/badge.svg)](https://github.com/AvalonLee/AstraCraft-Program/actions/workflows/index-check.yml)
@@ -22,6 +22,17 @@ Agent 读完即可快速定位并安装对应的 skill 项目。不收录上游�
 - **在线预览**：[avalonlee.github.io/AstraCraft-Program](https://avalonlee.github.io/AstraCraft-Program/) —— 搜索 / 分类筛选 / 点开看每个 skill 的安装方式
 - **推荐收录**：[建议收录新条目](https://github.com/AvalonLee/AstraCraft-Program/issues/new?template=new-entry.yml) —— 发现优质 Skill？一键提交收录建议
 - 更新日志：[docs/CHANGELOG.md](docs/CHANGELOG.md)
+
+## 一句话装到你的 Agent
+
+不想翻库、不想手敲？把下面这句直接发给你的 AI Agent，它会自动克隆并把「天工精选」技能装好：
+
+```
+请帮我安装天工计划的天工精选技能（AstraCraft Recommender）：克隆 https://github.com/AvalonLee/AstraCraft-Program 并把 entries/meta-skillcraft/skill-recommender/SKILL.md 复制到你的 skills 目录，然后加载它。
+```
+
+> 天工精选（AstraCraft Recommender）是本计划的配套推荐技能：装好后，你描述项目实况，它从本库里挑出最该装的几个技能并给出安装指引。
+> 详见 [entries/meta-skillcraft/skill-recommender](entries/meta-skillcraft/skill-recommender/SKILL.md)。在线预览站首页顶部也有同款「一键复制」安装条。
 
 ## 什么是 SKILL.md？
 
@@ -90,7 +101,7 @@ Agent 可直接据此判断装不装、能不能商用。
 
 ## 收录内容
 
-当前收录 **22** 个技能，按十大分类组织（目录名 → 定位）：
+当前收录 **23** 个技能，按十大分类组织（目录名 → 定位）：
 
 | 目录 | 定位 |
 |---|---|
@@ -127,8 +138,8 @@ Agent 可直接据此判断装不装、能不能商用。
 
 1. 从 `_template/SKILL.md` 复制到 `entries/<分类>/<id>/SKILL.md`；
 2. 填 frontmatter（id 必须等于目录名），正文写「是什么 / 怎么安装 / 怎么用 / 注意事项」；
-3. 跑 `python scripts/validate.py && python scripts/gen_site.py`，提交 PR
-   （`gen_site.py` 会重新生成在线预览站数据，记得一并提交 `site/`）。
+3. 跑 `python scripts/validate.py && python scripts/gen_index.py && python scripts/gen_site.py`，提交 PR
+   （`gen_index.py` 重新生成 INDEX.md、`gen_site.py` 重新生成在线预览站数据，记得一并提交 INDEX.md 与 `site/`）。
 
 ## 协议与合规
 

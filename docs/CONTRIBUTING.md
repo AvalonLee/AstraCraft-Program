@@ -3,6 +3,8 @@
 AstraCraft Program（天工计划）是**轻量索引库**：每个条目只保存一个 `SKILL.md`（介绍 + 安装指令），
 不收录源码快照。因此贡献流程很简单，三条路径任选。
 
+所有新增条目必须在 frontmatter 声明 `record_type: entry-record`。该文件是目录数据，不是可安装 Skill；本项目不收录上游源码，也禁止把条目自身作为安装目标。格式边界见 [catalog-format.md](catalog-format.md)。
+
 先读这两份文档，能少走弯路：
 
 - [收录标准](admission-criteria.md) —— 什么能收，什么不能收

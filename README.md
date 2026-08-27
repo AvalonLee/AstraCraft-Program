@@ -34,6 +34,14 @@ Agent 读完即可快速定位并安装对应的 skill 项目。不收录上游�
 > 天工精选（AstraCraft Recommender）是本计划的配套推荐技能：装好后，你描述项目实况，它从本库里挑出最该装的几个技能并给出安装指引。
 > 技能本体即仓库根目录 [SKILL.md](SKILL.md) 这一份文件，Agent 只抓取它即可安装（**不要克隆整库进 skills 目录**，`entries/` 下 22 份是推荐用的「数据」，不是可安装技能）。在线预览站首页顶部也有同款「一键复制」安装条。
 
+## 两种同名文件的机器边界
+
+- 根目录 `SKILL.md` 声明 `record_type: installable-skill`，是本仓库唯一可安装技能。
+- `entries/**/SKILL.md` 声明 `record_type: entry-record`，只是索引和推荐数据。
+- **禁止把 `entries/` 下的文件复制进 Agent 的 skills 目录。** 应读取条目并安装它指向的上游项目。
+
+详见 [目录条目格式](docs/catalog-format.md) 与 [可安装技能格式](docs/installable-skill-format.md)。
+
 ## 什么是 SKILL.md？
 
 [SKILL.md](https://agentskills.io/specification) 是 Anthropic 发起、社区共建的开放智能体技能格式：

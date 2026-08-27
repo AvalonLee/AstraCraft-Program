@@ -3,6 +3,10 @@
     { "pattern": "^https?://(localhost|127\\.0\\.0\\.1)" },
     { "pattern": "^https?://example\\.(com|org|net)" },
     { "pattern": "^https://github\\.com/OWNER/REPO" },
+    { "pattern": "^https://fchangjun\\.github\\.io" },
+    { "pattern": "^https://github\\.com/fchangjun" },
+    { "pattern": "^https://github\\.com/HKUDS/ViMax$" },
+    { "pattern": "^https://github\\.com/AvalonLee/AstraCraft-Program/issues/new\\?.*" },
     { "pattern": "^mailto:" }
   ],
   "ignoreUrls": [

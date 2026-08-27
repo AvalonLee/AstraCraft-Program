@@ -1,4 +1,5 @@
 ---
+record_type: entry-record
 id: cinema-dna-21x9x3
 name_zh: "Cinema DNA 21:9×3 电影画面生成 Skill"
 name_en: "Cinema DNA 21:9x3"

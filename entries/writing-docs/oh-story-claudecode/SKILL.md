@@ -1,4 +1,5 @@
 ---
+record_type: entry-record
 id: oh-story-claudecode
 name_zh: "OH-Story 网文/小说写作 Skill 包"
 name_en: "OH-Story Claude Code Skill Pack"

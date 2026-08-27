@@ -1,0 +1,8 @@
+{
+  "categories": ["dev-engineering"],
+  "tags": ["testing", "python"],
+  "desired_kinds": ["skill"],
+  "commercial": true,
+  "offline": false,
+  "doc_languages": ["zh"]
+}

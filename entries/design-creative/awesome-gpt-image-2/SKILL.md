@@ -1,4 +1,5 @@
 ---
+record_type: entry-record
 id: awesome-gpt-image-2
 name_zh: GPT-Image2 工业级提示词引擎与模板库
 name_en: GPT-Image2 Prompt System (Prompt as Code)

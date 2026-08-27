@@ -74,7 +74,7 @@
 ### 文件完整性
 - [ ] SKILL.md 的 id 等于目录名，category 等于一级分类目录名
 - [ ] 正文包含「怎么安装」小节，且指令在 ``` 代码块内
-- [ ] frontmatter 必填字段齐全（见 _template/SKILL.md）
+- [ ] frontmatter 必填字段齐全（见 `docs/catalog-format.md`）
 
 ### 本地校验
 - [ ] python scripts/validate.py 通过

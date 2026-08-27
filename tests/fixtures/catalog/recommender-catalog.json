@@ -1,0 +1,50 @@
+[
+  {
+    "id": "testing-pro",
+    "category": "dev-engineering",
+    "tags": ["testing", "python"],
+    "kind": "skill",
+    "tier": "standard",
+    "license": "MIT",
+    "doc_languages": ["zh", "en"],
+    "risk_notes": "",
+    "verification_status": "verified",
+    "health_score": 90
+  },
+  {
+    "id": "testing-unknown",
+    "category": "dev-engineering",
+    "tags": ["testing"],
+    "kind": "skill",
+    "tier": "core",
+    "license": "UNKNOWN",
+    "doc_languages": ["en"],
+    "risk_notes": "commercial license unknown",
+    "verification_status": "verified",
+    "health_score": 70
+  },
+  {
+    "id": "blocked-best-match",
+    "category": "dev-engineering",
+    "tags": ["testing", "python"],
+    "kind": "skill",
+    "tier": "core",
+    "license": "MIT",
+    "doc_languages": ["zh"],
+    "risk_notes": "",
+    "verification_status": "blocked",
+    "health_score": 99
+  },
+  {
+    "id": "data-tool",
+    "category": "data-analytics",
+    "tags": ["python"],
+    "kind": "framework",
+    "tier": "standard",
+    "license": "Apache-2.0",
+    "doc_languages": ["en"],
+    "risk_notes": "",
+    "verification_status": "verified",
+    "health_score": 85
+  }
+]

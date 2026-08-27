@@ -1,4 +1,5 @@
 ---
+record_type: entry-record
 id: anthropics-office-skills
 name_zh: Anthropic Office 文档技能
 name_en: Anthropic Office Document Skills

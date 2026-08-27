@@ -93,4 +93,4 @@
 
 ## 示例
 
-完整示例见 [../_template/SKILL.md](../_template/SKILL.md)。
+可安装 Skill 的格式要求见 [可安装技能格式](installable-skill-format.md)。

@@ -1,0 +1,29 @@
+name: upstream-refresh
+
+on:
+  schedule:
+    - cron: '30 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install -r scripts/requirements.txt
+      - name: 刷新上游状态
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/verify_upstreams.py --refresh --catalog verification/catalog.json --snapshot verification/upstream-snapshot.json
+      - name: 上传漂移报告
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: upstream-snapshot
+          path: verification/upstream-snapshot.json

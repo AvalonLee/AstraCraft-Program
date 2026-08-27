@@ -1,4 +1,5 @@
 ---
+record_type: entry-record
 id: arcreel
 name_zh: "ArcReel AI 视频生产工作台"
 name_en: "ArcReel — Self-Hosted AI Video Production Workbench"

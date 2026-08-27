@@ -15,6 +15,7 @@ index.html / assets/style.css / assets/app.js 为静态文件，由仓库直接�
 
 from __future__ import annotations
 
+import argparse
 import html
 import json
 import sys
@@ -349,15 +350,40 @@ def build_detail(entry, cat_name: str, body_html: str) -> str:
     return out
 
 
-def main() -> int:
-    quiet = "--quiet" in sys.argv
+def outputs_match(payload: dict, details: dict[str, str], data_dir: Path, skills_dir: Path) -> bool:
+    data_file = data_dir / "skills.json"
+    if not data_file.exists():
+        return False
+    try:
+        current = json.loads(data_file.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return False
+    current.pop("generated_at", None)
+    expected = dict(payload)
+    expected.pop("generated_at", None)
+    if current != expected:
+        return False
+    current_files = {path.name for path in skills_dir.glob("*.html")} if skills_dir.exists() else set()
+    if current_files != set(details):
+        return False
+    return all(
+        (skills_dir / name).read_text(encoding="utf-8") == content
+        for name, content in details.items()
+    )
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="生成 AstraCraft 静态预览站")
+    parser.add_argument("--quiet", action="store_true")
+    parser.add_argument("--check", action="store_true", help="检查生成产物是否漂移，不写盘")
+    args = parser.parse_args(argv)
+    quiet = args.quiet
     entries = discover_entries()
     if not quiet:
         print(f"发现 {len(entries)} 个条目")
 
     skills: list[dict] = []
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
-    SKILLS_DIR.mkdir(parents=True, exist_ok=True)
+    details: dict[str, str] = {}
 
     for entry in entries:
         meta = entry.meta
@@ -372,7 +398,7 @@ def main() -> int:
         install = extract_install(body)
 
         detail_html = build_detail(entry, cat_name, body_html)
-        (SKILLS_DIR / f"{entry.id}.html").write_text(detail_html, encoding="utf-8")
+        details[f"{entry.id}.html"] = detail_html
 
         skills.append(
             {
@@ -416,6 +442,20 @@ def main() -> int:
         "categories": categories,
         "skills": skills,
     }
+    if args.check:
+        if outputs_match(payload, details, DATA_DIR, SKILLS_DIR):
+            print(f"√ 站点产物与 {len(skills)} 个条目一致")
+            return 0
+        print("x 站点产物与条目数据已脱节。请执行 python scripts/gen_site.py")
+        return 1
+
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    SKILLS_DIR.mkdir(parents=True, exist_ok=True)
+    for name, content in details.items():
+        (SKILLS_DIR / name).write_text(content, encoding="utf-8")
+    for stale in SKILLS_DIR.glob("*.html"):
+        if stale.name not in details:
+            stale.unlink()
     (DATA_DIR / "skills.json").write_text(
         json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8"
     )

@@ -1,0 +1,12 @@
+{
+  "repo": "https://github.com/example/tool",
+  "head_sha": "0123456789abcdef",
+  "archived": false,
+  "stars": 500,
+  "pushed_at": "2026-08-20T00:00:00Z",
+  "has_readme": true,
+  "api_license": "MIT",
+  "text_license": "MIT",
+  "topics": ["testing", "developer-tools"],
+  "description": "Testing workflows for software engineers"
+}

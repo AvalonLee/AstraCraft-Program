@@ -1,4 +1,5 @@
 ---
+record_type: entry-record
 id: toonflow
 name_zh: "Toonflow 一站式 AI 短剧创作工具"
 name_en: "Toonflow — AI Short Drama Creation Workbench"

@@ -21,6 +21,9 @@ Thumbs.db
 *.log
 tmp/
 .tmp/
+.worktrees/
+pip-*/
+pytest-of-root/
 
 # ── 本地 Agent 私有数据（不上传仓库）────────────────────
 .workbuddy/

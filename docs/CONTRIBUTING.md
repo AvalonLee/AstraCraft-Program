@@ -3,6 +3,8 @@
 AstraCraft Program（天工计划）是**轻量索引库**：每个条目只保存一个 `SKILL.md`（介绍 + 安装指令），
 不收录源码快照。因此贡献流程很简单，三条路径任选。
 
+所有新增条目必须在 frontmatter 声明 `record_type: entry-record`。该文件是目录数据，不是可安装 Skill；本项目不收录上游源码，也禁止把条目自身作为安装目标。格式边界见 [catalog-format.md](catalog-format.md)。
+
 先读这两份文档，能少走弯路：
 
 - [收录标准](admission-criteria.md) —— 什么能收，什么不能收
@@ -15,7 +17,7 @@ AstraCraft Program（天工计划）是**轻量索引库**：每个条目只保�
 ### 路径一：推荐一个项目（最轻量）
 
 不确定它能不能收？先开 Issue，用
-[「推荐收录」模板](../../issues/new?template=new-entry.yml)。
+[「推荐收录」模板](https://github.com/AvalonLee/AstraCraft-Program/issues/new?template=new-entry.yml)。
 填仓库地址、你觉得它好在哪、大致属于哪个分类。维护者会做初筛。
 
 **适合**：你发现了好东西但没精力走完整流程。
@@ -29,7 +31,7 @@ AstraCraft Program（天工计划）是**轻量索引库**：每个条目只保�
 ### 路径三：报告问题
 
 链接失效、内容有误、上游删库——开 Issue 用
-[「报告问题」模板](../../issues/new?template=report-issue.yml)。
+[「报告问题」模板](https://github.com/AvalonLee/AstraCraft-Program/issues/new?template=report-issue.yml)。
 
 **权利人下架请求**：如果你是某个被收录项目的著作权人，希望本仓库移除相关内容，
 请开 Issue 或发邮件至 avalonli@qq.com。我们承诺 **7 日内处理**，无需法律文书，一句话说明即可。
@@ -38,12 +40,12 @@ AstraCraft Program（天工计划）是**轻量索引库**：每个条目只保�
 
 ## 新增条目三步
 
-### 第 1 步：拷贝模板
+### 第 1 步：创建条目文件
 
 ```bash
 # 在仓库根目录执行
 mkdir -p entries/<分类>/<你的id>
-cp _template/SKILL.md entries/<分类>/<你的id>/SKILL.md
+touch entries/<分类>/<你的id>/SKILL.md
 ```
 
 `id` 规则：小写字母、数字、连字符；**必须等于目录名**；全局唯一。
@@ -52,7 +54,7 @@ cp _template/SKILL.md entries/<分类>/<你的id>/SKILL.md
 
 ### 第 2 步：填内容
 
-- **frontmatter**：必填字段见 `_template/SKILL.md` 与 [writing-skill-md.md](writing-skill-md.md)。
+- **frontmatter**：必填字段见 [目录条目格式规范](catalog-format.md) 与 [writing-skill-md.md](writing-skill-md.md)。
   最容易错的三处：`id` ≠ 目录名、`category` ≠ 一级目录名、`license` 留空。
 - **正文**：固定四节「是什么 / 怎么安装 / 怎么用 / 注意事项」。
   「怎么安装」必须给 Agent 可执行的代码块指令——这是本仓库的核心价值，别糊弄。

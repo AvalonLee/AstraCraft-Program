@@ -1,4 +1,5 @@
 ---
+record_type: entry-record
 id: seedance-20
 name_zh: "Seedance 2.0 Skill OS 视频执导技能包"
 name_en: "Seedance 2.0 Skill OS"

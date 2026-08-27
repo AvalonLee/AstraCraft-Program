@@ -1,4 +1,5 @@
 ---
+record_type: entry-record
 id: tencentdb-agent-memory
 name_zh: TencentDB Agent Memory
 name_en: TencentDB Agent Memory

@@ -1,4 +1,5 @@
 ---
+record_type: entry-record
 id: dashi-ppt-skill
 name_zh: Dashi PPT Skill 大师 PPT
 name_en: Dashi PPT Skill

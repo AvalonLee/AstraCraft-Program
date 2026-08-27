@@ -1,4 +1,5 @@
 ---
+record_type: entry-record
 id: character-casting-studio-skill
 name_zh: 人物角色 Casting 工作室 Skill
 name_en: Character Casting Studio Skill

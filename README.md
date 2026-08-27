@@ -7,7 +7,7 @@
 一个轻量、中文为主的 Agent Skill 索引库：每个条目只存一份 `SKILL.md`（介绍 + 安装指令），
 Agent 读完即可快速定位并安装对应的 skill 项目。不收录上游源码快照。
 
-[![entries](https://img.shields.io/badge/entries-22-blue.svg)](site/index.html)
+[![entries](https://img.shields.io/badge/entries-47-blue.svg)](site/index.html)
 [![license](https://img.shields.io/badge/docs-CC%20BY%204.0-blue.svg)](LICENSE)
 [![code license](https://img.shields.io/badge/code-MIT-green.svg)](LICENSE)
 [![CI: index-check](https://github.com/AvalonLee/AstraCraft-Program/actions/workflows/index-check.yml/badge.svg)](https://github.com/AvalonLee/AstraCraft-Program/actions/workflows/index-check.yml)
@@ -25,14 +25,22 @@ Agent 读完即可快速定位并安装对应的 skill 项目。不收录上游�
 
 ## 一句话装到你的 Agent
 
-不想翻库、不想手敲？把下面这句直接发给你的 AI Agent，它会只安装「天工精选」这**一份**技能（仓库根目录的 `SKILL.md` 单文件），不会把库里 22 个条目注册成技能：
+不想翻库、不想手敲？把下面这句直接发给你的 AI Agent，它会只安装「天工精选」这**一份**技能（仓库根目录的 `SKILL.md` 单文件），不会把库里 47 个条目注册成技能：
 
 ```
 请安装天工计划的天工精选技能（AstraCraft Recommender，只装根目录 SKILL.md 这一份）：https://github.com/AvalonLee/AstraCraft-Program
 ```
 
 > 天工精选（AstraCraft Recommender）是本计划的配套推荐技能：装好后，你描述项目实况，它从本库里挑出最该装的几个技能并给出安装指引。
-> 技能本体即仓库根目录 [SKILL.md](SKILL.md) 这一份文件，Agent 只抓取它即可安装（**不要克隆整库进 skills 目录**，`entries/` 下 22 份是推荐用的「数据」，不是可安装技能）。在线预览站首页顶部也有同款「一键复制」安装条。
+> 技能本体即仓库根目录 [SKILL.md](SKILL.md) 这一份文件，Agent 只抓取它即可安装（**不要克隆整库进 skills 目录**，`entries/` 下 47 份是推荐用的「数据」，不是可安装技能）。在线预览站首页顶部也有同款「一键复制」安装条。
+
+## 两种同名文件的机器边界
+
+- 根目录 `SKILL.md` 声明 `record_type: installable-skill`，是本仓库唯一可安装技能。
+- `entries/**/SKILL.md` 声明 `record_type: entry-record`，只是索引和推荐数据。
+- **禁止把 `entries/` 下的文件复制进 Agent 的 skills 目录。** 应读取条目并安装它指向的上游项目。
+
+详见 [目录条目格式](docs/catalog-format.md) 与 [可安装技能格式](docs/installable-skill-format.md)。
 
 ## 什么是 SKILL.md？
 
@@ -87,8 +95,8 @@ Agent 可直接据此判断装不装、能不能商用。
 **人工浏览：** 打开 [在线预览站](https://avalonlee.github.io/AstraCraft-Program/)，用搜索框与分类 / 标签 /
 评级 / 协议筛选，找到需要的技能后点开查看安装指令。
 
-**写自己的 skill：** 参考 [docs/skill-spec-cheatsheet.md](docs/skill-spec-cheatsheet.md)
-（对齐 Agent Skills 规范）与 `_template/SKILL.md` 脚手架。
+**写自己的 skill：** 参考 [技能规范速查](docs/skill-spec-cheatsheet.md)
+（对齐 Agent Skills 规范）与 [可安装技能格式](docs/installable-skill-format.md)。
 
 ## 这个中文版本额外做了什么？
 
@@ -101,7 +109,7 @@ Agent 可直接据此判断装不装、能不能商用。
 
 ## 收录内容
 
-当前收录 **22** 个技能，按十大分类组织（目录名 → 定位）：
+当前收录 **47** 个条目，按十大分类组织（目录名 → 定位）：
 
 | 目录 | 定位 |
 |---|---|
@@ -136,7 +144,7 @@ Agent 可直接据此判断装不装、能不能商用。
 
 欢迎 PR！完整流程见 [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md)。要点（三步）：
 
-1. 从 `_template/SKILL.md` 复制到 `entries/<分类>/<id>/SKILL.md`；
+1. 参照 [目录条目格式规范](docs/catalog-format.md) 创建 `entries/<分类>/<id>/SKILL.md`；
 2. 填 frontmatter（id 必须等于目录名），正文写「是什么 / 怎么安装 / 怎么用 / 注意事项」；
 3. 跑 `python scripts/validate.py && python scripts/gen_index.py && python scripts/gen_site.py`，提交 PR
    （`gen_index.py` 重新生成 INDEX.md、`gen_site.py` 重新生成在线预览站数据，记得一并提交 INDEX.md 与 `site/`）。

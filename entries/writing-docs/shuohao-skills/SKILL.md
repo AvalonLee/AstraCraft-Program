@@ -1,4 +1,5 @@
 ---
+record_type: entry-record
 id: shuohao-skills
 name_zh: shuohao-skills AI 短剧制作技能合集
 name_en: shuohao-skills — AI Short-Drama Production Skill Suite

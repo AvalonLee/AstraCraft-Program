@@ -1,0 +1,140 @@
+{
+  "generated_at": "2026-08-27T06:56:12Z",
+  "categories": {
+    "dev-engineering": [
+      {
+        "repo": "https://github.com/addyosmani/agent-skills",
+        "coverage_code": "dev-1",
+        "status": "verified"
+      },
+      {
+        "repo": "https://github.com/wshobson/agents",
+        "coverage_code": "dev-2",
+        "status": "verified"
+      },
+      {
+        "repo": "https://github.com/alirezarezvani/claude-skills",
+        "coverage_code": "dev-3",
+        "status": "verified"
+      },
+      {
+        "repo": "https://github.com/github/awesome-copilot",
+        "coverage_code": "dev-4",
+        "status": "verified"
+      },
+      {
+        "repo": "https://github.com/sickn33/antigravity-awesome-skills",
+        "coverage_code": "dev-5",
+        "status": "verified"
+      }
+    ],
+    "data-analytics": [
+      {
+        "repo": "https://github.com/pymc-labs/python-analytics-skills",
+        "coverage_code": "data-1",
+        "status": "needs-review"
+      },
+      {
+        "repo": "https://github.com/nimrodfisher/data-analytics-skills",
+        "coverage_code": "data-2",
+        "status": "needs-review"
+      },
+      {
+        "repo": "https://github.com/astronomer/agents",
+        "coverage_code": "data-3",
+        "status": "verified"
+      },
+      {
+        "repo": "https://github.com/marimo-team/marimo",
+        "coverage_code": "data-4",
+        "status": "verified"
+      },
+      {
+        "repo": "https://github.com/evidence-dev/evidence",
+        "coverage_code": "data-5",
+        "status": "verified"
+      }
+    ],
+    "research-intel": [
+      {
+        "repo": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "coverage_code": "research-1",
+        "status": "verified"
+      },
+      {
+        "repo": "https://github.com/assafelovic/gpt-researcher",
+        "coverage_code": "research-2",
+        "status": "verified"
+      },
+      {
+        "repo": "https://github.com/Future-House/paper-qa",
+        "coverage_code": "research-4",
+        "status": "verified"
+      },
+      {
+        "repo": "https://github.com/stanford-oval/storm",
+        "coverage_code": "research-5",
+        "status": "verified"
+      },
+      {
+        "repo": "https://github.com/microsoft/RD-Agent",
+        "coverage_code": "research-6",
+        "status": "verified"
+      }
+    ],
+    "ops-automation": [
+      {
+        "repo": "https://github.com/ansible/ansible",
+        "coverage_code": "ops-1",
+        "status": "verified"
+      },
+      {
+        "repo": "https://github.com/pulumi/pulumi",
+        "coverage_code": "ops-2",
+        "status": "verified"
+      },
+      {
+        "repo": "https://github.com/dagu-org/dagu",
+        "coverage_code": "ops-4",
+        "status": "verified"
+      },
+      {
+        "repo": "https://github.com/kestra-io/kestra",
+        "coverage_code": "ops-5",
+        "status": "verified"
+      },
+      {
+        "repo": "https://github.com/PrefectHQ/prefect",
+        "coverage_code": "ops-6",
+        "status": "verified"
+      }
+    ],
+    "dsh": [
+      {
+        "repo": "https://github.com/deepseek-ai/deepseek-harness",
+        "coverage_code": "dsh-1",
+        "status": "verified"
+      },
+      {
+        "repo": "https://github.com/dsh-market/dsh-market",
+        "coverage_code": "dsh-2",
+        "status": "verified"
+      },
+      {
+        "repo": "https://github.com/awesome-dsh-plugin/dsh-find-plugin",
+        "coverage_code": "dsh-3",
+        "status": "verified"
+      },
+      {
+        "repo": "https://github.com/ccch1mneyyy/dsh-TUI",
+        "coverage_code": "dsh-4",
+        "status": "verified"
+      },
+      {
+        "repo": "https://github.com/0xsline/awesome-deepseek-harness",
+        "coverage_code": "dsh-5",
+        "status": "verified"
+      }
+    ]
+  }
+}

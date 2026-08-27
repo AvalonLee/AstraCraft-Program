@@ -1,4 +1,5 @@
 ---
+record_type: entry-record
 id: superpowers
 name_zh: Superpowers 开发方法论
 name_en: Superpowers

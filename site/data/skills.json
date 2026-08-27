@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-27T04:37:04Z",
-  "count": 22,
+  "generated_at": "2026-08-27T07:04:27Z",
+  "count": 47,
   "categories": [
     {
       "dir": "writing-docs",
@@ -183,6 +183,200 @@
       "updated_at": "2026-08-13",
       "install": "bash\n# 仅克隆文档技能子目录（稀疏检出，体积小）\ngit clone --depth 1 --filter=blob:none --sparse https://github.com/anthropics/skills /tmp/office-skills\ncd /tmp/office-skills\ngit sparse-checkout set skills/document-skills\n\n# 然后将所需技能目录复制到你的 agent 的 skills 目录（仅本地使用）\ncp -r skills/document-skills/* ~/.claude/skills/",
       "detail_url": "skills/anthropics-office-skills.html"
+    },
+    {
+      "id": "astronomer-agents",
+      "name_zh": "Astronomer 数据工程 Agent",
+      "name_en": "Astronomer Agents",
+      "summary_zh": "面向 Airflow 与数据仓库的 Agent 工具集，结合 MCP、Jupyter 与技能执行数据工程和分析任务。",
+      "summary_en": "Agent tooling for Airflow and data warehouses combining MCP, Jupyter, and skills for engineering and analysis.",
+      "category_dir": "data-analytics",
+      "category_name": "数据与分析",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "data-analytics",
+        "mcp",
+        "python",
+        "ai-agent"
+      ],
+      "languages": [
+        "python",
+        "markdown"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "Apache-2.0",
+      "license_bucket": "open",
+      "homepage": "https://github.com/astronomer/agents",
+      "repo": "https://github.com/astronomer/agents",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "install": "bash\ngit clone --depth 1 https://github.com/astronomer/agents.git\ncd agents",
+      "detail_url": "skills/astronomer-agents.html"
+    },
+    {
+      "id": "evidence-dev-evidence",
+      "name_zh": "Evidence 数据产品框架",
+      "name_en": "Evidence",
+      "summary_zh": "以代码和 SQL 构建数据报告与交互式数据产品的开源框架，适合版本化分析交付。",
+      "summary_en": "An open-source framework for building versioned data reports and interactive data products with code and SQL.",
+      "category_dir": "data-analytics",
+      "category_name": "数据与分析",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "data-analytics",
+        "visualization",
+        "sql",
+        "self-hosted"
+      ],
+      "languages": [
+        "typescript",
+        "javascript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/evidence-dev/evidence",
+      "repo": "https://github.com/evidence-dev/evidence",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "install": "bash\ngit clone --depth 1 https://github.com/evidence-dev/evidence.git\ncd evidence",
+      "detail_url": "skills/evidence-dev-evidence.html"
+    },
+    {
+      "id": "marimo-team-marimo",
+      "name_zh": "marimo 响应式 Notebook",
+      "name_en": "marimo",
+      "summary_zh": "Git 友好的响应式 Python Notebook，支持可复现执行、交互应用、SQL 与数据分析工作流。",
+      "summary_en": "A Git-friendly reactive Python notebook for reproducible execution, interactive apps, SQL, and analytics workflows.",
+      "category_dir": "data-analytics",
+      "category_name": "数据与分析",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "data-analytics",
+        "python",
+        "notebook",
+        "self-hosted"
+      ],
+      "languages": [
+        "python",
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "Apache-2.0",
+      "license_bucket": "open",
+      "homepage": "https://github.com/marimo-team/marimo",
+      "repo": "https://github.com/marimo-team/marimo",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "install": "bash\ngit clone --depth 1 https://github.com/marimo-team/marimo.git\ncd marimo",
+      "detail_url": "skills/marimo-team-marimo.html"
+    },
+    {
+      "id": "nimrodfisher-data-analytics-skills",
+      "name_zh": "数据分析技能集",
+      "name_en": "Data Analytics Skills",
+      "summary_zh": "面向通用商业数据分析的便携技能集合，覆盖清洗、探索、指标、洞察和报告输出。",
+      "summary_en": "A portable data analytics skill collection covering cleaning, exploration, metrics, insights, and reporting.",
+      "category_dir": "data-analytics",
+      "category_name": "数据与分析",
+      "kind": "skill-collection",
+      "kind_label": "技能集",
+      "tags": [
+        "data-analytics",
+        "analytics",
+        "skill-pack",
+        "document-generation"
+      ],
+      "languages": [
+        "markdown"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "UNKNOWN",
+      "license_bucket": "unknown",
+      "homepage": "https://github.com/nimrodfisher/data-analytics-skills",
+      "repo": "https://github.com/nimrodfisher/data-analytics-skills",
+      "tier": "watch",
+      "tier_label": "观察",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "上游未提供可机器识别的许可证，默认保留全部权利；使用或商用前需取得作者许可并复核安装依赖。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "install": "bash\ngit clone --depth 1 https://github.com/nimrodfisher/data-analytics-skills.git\ncd data-analytics-skills",
+      "detail_url": "skills/nimrodfisher-data-analytics-skills.html"
+    },
+    {
+      "id": "pymc-labs-python-analytics-skills",
+      "name_zh": "Python 分析技能",
+      "name_en": "Python Analytics Skills",
+      "summary_zh": "为 PyMC 与 marimo 工作流提供贝叶斯建模、统计分析和响应式 Notebook 的 Agent Skills。",
+      "summary_en": "Agent Skills for Bayesian modeling, statistical analysis, PyMC, and reactive marimo notebook workflows.",
+      "category_dir": "data-analytics",
+      "category_name": "数据与分析",
+      "kind": "skill-collection",
+      "kind_label": "技能集",
+      "tags": [
+        "data-analytics",
+        "statistics",
+        "python",
+        "skill-pack"
+      ],
+      "languages": [
+        "markdown",
+        "python"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "UNKNOWN",
+      "license_bucket": "unknown",
+      "homepage": "https://github.com/pymc-labs/python-analytics-skills",
+      "repo": "https://github.com/pymc-labs/python-analytics-skills",
+      "tier": "watch",
+      "tier_label": "观察",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "上游未提供可机器识别的许可证，默认保留全部权利；使用或商用前需取得作者许可并复核安装依赖。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "install": "bash\ngit clone --depth 1 https://github.com/pymc-labs/python-analytics-skills.git\ncd python-analytics-skills",
+      "detail_url": "skills/pymc-labs-python-analytics-skills.html"
     },
     {
       "id": "arcreel",
@@ -712,6 +906,391 @@
       "detail_url": "skills/vimax.html"
     },
     {
+      "id": "addyosmani-agent-skills",
+      "name_zh": "生产级工程技能集",
+      "name_en": "Production Engineering Agent Skills",
+      "summary_zh": "面向编码 Agent 的工程工作流技能集，覆盖规格、前端、测试、性能、安全审查与发布纪律。",
+      "summary_en": "A production engineering skill collection covering specifications, frontend work, testing, performance, security review, and release discipline.",
+      "category_dir": "dev-engineering",
+      "category_name": "研发与代码",
+      "kind": "skill-collection",
+      "kind_label": "技能集",
+      "tags": [
+        "software-engineering",
+        "code-review",
+        "tdd",
+        "agent-skills"
+      ],
+      "languages": [
+        "markdown"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/addyosmani/agent-skills",
+      "repo": "https://github.com/addyosmani/agent-skills",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "install": "bash\ngit clone --depth 1 https://github.com/addyosmani/agent-skills.git\ncd agent-skills",
+      "detail_url": "skills/addyosmani-agent-skills.html"
+    },
+    {
+      "id": "alirezarezvani-claude-skills",
+      "name_zh": "Claude 工程技能库",
+      "name_en": "Claude Engineering Skills",
+      "summary_zh": "面向 Claude Code 等编码 Agent 的技能库，提供研发、测试、文档和业务工作流及配套脚本。",
+      "summary_en": "A skill library for coding agents with engineering, testing, documentation, business workflows, and supporting scripts.",
+      "category_dir": "dev-engineering",
+      "category_name": "研发与代码",
+      "kind": "skill-collection",
+      "kind_label": "技能集",
+      "tags": [
+        "claude-code",
+        "software-engineering",
+        "skill-pack",
+        "testing"
+      ],
+      "languages": [
+        "markdown",
+        "python"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/alirezarezvani/claude-skills",
+      "repo": "https://github.com/alirezarezvani/claude-skills",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "install": "bash\ngit clone --depth 1 https://github.com/alirezarezvani/claude-skills.git\ncd claude-skills",
+      "detail_url": "skills/alirezarezvani-claude-skills.html"
+    },
+    {
+      "id": "github-awesome-copilot",
+      "name_zh": "GitHub Copilot 社区资源库",
+      "name_en": "Awesome GitHub Copilot",
+      "summary_zh": "GitHub 官方维护的 Copilot 指令、提示词、Agent、技能与配置示例集合，适合复用工程实践。",
+      "summary_en": "GitHub's official collection of Copilot instructions, prompts, agents, skills, and reusable engineering configurations.",
+      "category_dir": "dev-engineering",
+      "category_name": "研发与代码",
+      "kind": "skill-collection",
+      "kind_label": "技能集",
+      "tags": [
+        "software-engineering",
+        "github-copilot",
+        "agent-skills",
+        "prompt-engineering"
+      ],
+      "languages": [
+        "markdown"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/github/awesome-copilot",
+      "repo": "https://github.com/github/awesome-copilot",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "install": "bash\ngit clone --depth 1 https://github.com/github/awesome-copilot.git\ncd awesome-copilot",
+      "detail_url": "skills/github-awesome-copilot.html"
+    },
+    {
+      "id": "sickn33-antigravity-awesome-skills",
+      "name_zh": "Antigravity 综合技能集",
+      "name_en": "Antigravity Awesome Skills",
+      "summary_zh": "覆盖研发、安全、云平台、数据与 Agent 工作流的大型技能集合，可用于多种编码助手。",
+      "summary_en": "A broad skill collection for coding assistants covering engineering, security, cloud platforms, data, and agent workflows.",
+      "category_dir": "dev-engineering",
+      "category_name": "研发与代码",
+      "kind": "skill-collection",
+      "kind_label": "技能集",
+      "tags": [
+        "software-engineering",
+        "agent-skills",
+        "security",
+        "skill-pack"
+      ],
+      "languages": [
+        "markdown",
+        "python"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/sickn33/antigravity-awesome-skills",
+      "repo": "https://github.com/sickn33/antigravity-awesome-skills",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "install": "bash\ngit clone --depth 1 https://github.com/sickn33/antigravity-awesome-skills.git\ncd antigravity-awesome-skills",
+      "detail_url": "skills/sickn33-antigravity-awesome-skills.html"
+    },
+    {
+      "id": "wshobson-agents",
+      "name_zh": "工程 Agent 与插件集合",
+      "name_en": "Engineering Agents and Plugins",
+      "summary_zh": "大型工程 Agent、插件与技能集合，按研发阶段覆盖架构、测试、调试、安全和交付协作。",
+      "summary_en": "A large collection of engineering agents, plugins, and skills spanning architecture, testing, debugging, security, and delivery.",
+      "category_dir": "dev-engineering",
+      "category_name": "研发与代码",
+      "kind": "skill-collection",
+      "kind_label": "技能集",
+      "tags": [
+        "software-engineering",
+        "multi-agent",
+        "code-review",
+        "testing"
+      ],
+      "languages": [
+        "markdown",
+        "python"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/wshobson/agents",
+      "repo": "https://github.com/wshobson/agents",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "install": "bash\ngit clone --depth 1 https://github.com/wshobson/agents.git\ncd agents",
+      "detail_url": "skills/wshobson-agents.html"
+    },
+    {
+      "id": "0xsline-awesome-deepseek-harness",
+      "name_zh": "DeepSeek Harness Ultimate",
+      "name_en": "Awesome DeepSeek Harness",
+      "summary_zh": "社区维护的 DSH 可复现配置与插件组合，覆盖编码、工作流、可靠性和生产力场景。",
+      "summary_en": "A community-maintained reproducible DSH profile and plugin bundle for coding, workflows, reliability, and productivity.",
+      "category_dir": "dsh",
+      "category_name": "DSH 插件",
+      "kind": "skill-collection",
+      "kind_label": "技能集",
+      "tags": [
+        "dsh",
+        "plugin",
+        "awesome-list",
+        "automation"
+      ],
+      "languages": [
+        "markdown",
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "CC0-1.0",
+      "license_bucket": "open",
+      "homepage": "https://github.com/0xsline/awesome-deepseek-harness",
+      "repo": "https://github.com/0xsline/awesome-deepseek-harness",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "install": "bash\ngit clone --depth 1 https://github.com/0xsline/awesome-deepseek-harness.git\ncd awesome-deepseek-harness",
+      "detail_url": "skills/0xsline-awesome-deepseek-harness.html"
+    },
+    {
+      "id": "awesome-dsh-plugin-dsh-find-plugin",
+      "name_zh": "DSH 插件发现助手",
+      "name_en": "DSH Find Plugin",
+      "summary_zh": "通过自然语言需求在 DeepSeek Harness 插件目录中检索并推荐合适插件的发现工具。",
+      "summary_en": "A discovery tool that searches and recommends DeepSeek Harness plugins from natural-language requirements.",
+      "category_dir": "dsh",
+      "category_name": "DSH 插件",
+      "kind": "skill",
+      "kind_label": "技能包",
+      "tags": [
+        "dsh",
+        "plugin",
+        "search",
+        "ai-agent"
+      ],
+      "languages": [
+        "typescript",
+        "markdown"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/awesome-dsh-plugin/dsh-find-plugin",
+      "repo": "https://github.com/awesome-dsh-plugin/dsh-find-plugin",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "install": "bash\ngit clone --depth 1 https://github.com/awesome-dsh-plugin/dsh-find-plugin.git\ncd dsh-find-plugin",
+      "detail_url": "skills/awesome-dsh-plugin-dsh-find-plugin.html"
+    },
+    {
+      "id": "ccch1mneyyy-dsh-tui",
+      "name_zh": "DSH 终端界面",
+      "name_en": "DSH TUI",
+      "summary_zh": "为 DeepSeek Harness 提供键盘优先的全屏终端界面，展示流式输出、状态、上下文和会话控制。",
+      "summary_en": "A keyboard-first full-screen terminal interface for DeepSeek Harness with streaming output, status, context, and session controls.",
+      "category_dir": "dsh",
+      "category_name": "DSH 插件",
+      "kind": "cli-tool",
+      "kind_label": "CLI 工具",
+      "tags": [
+        "dsh",
+        "cli",
+        "plugin",
+        "ai-agent"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/ccch1mneyyy/dsh-TUI",
+      "repo": "https://github.com/ccch1mneyyy/dsh-TUI",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "install": "bash\ngit clone --depth 1 https://github.com/ccch1mneyyy/dsh-TUI.git\ncd dsh-TUI",
+      "detail_url": "skills/ccch1mneyyy-dsh-tui.html"
+    },
+    {
+      "id": "deepseek-ai-deepseek-harness",
+      "name_zh": "DeepSeek Harness",
+      "name_en": "DeepSeek Harness",
+      "summary_zh": "DeepSeek 官方开源 Agent Harness，以 Cordis 为基础提供一切皆插件的模型、工具、界面与技能运行时。",
+      "summary_en": "DeepSeek's official open agent harness, built on Cordis with plugin-based models, tools, interfaces, and skills.",
+      "category_dir": "dsh",
+      "category_name": "DSH 插件",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "dsh",
+        "ai-agent",
+        "framework",
+        "plugin"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/deepseek-ai/deepseek-harness",
+      "repo": "https://github.com/deepseek-ai/deepseek-harness",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "install": "bash\ngit clone --depth 1 https://github.com/deepseek-ai/deepseek-harness.git\ncd deepseek-harness",
+      "detail_url": "skills/deepseek-ai-deepseek-harness.html"
+    },
+    {
+      "id": "dsh-market-dsh-market",
+      "name_zh": "DSH 插件市场",
+      "name_en": "DSH Market",
+      "summary_zh": "嵌入 DeepSeek Harness 的插件市场，用于浏览、安装、更新、启停和备份社区插件。",
+      "summary_en": "A plugin marketplace embedded in DeepSeek Harness for discovering, installing, updating, enabling, and backing up plugins.",
+      "category_dir": "dsh",
+      "category_name": "DSH 插件",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "dsh",
+        "plugin",
+        "marketplace",
+        "self-hosted"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/dsh-market/dsh-market",
+      "repo": "https://github.com/dsh-market/dsh-market",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "install": "bash\ngit clone --depth 1 https://github.com/dsh-market/dsh-market.git\ncd dsh-market",
+      "detail_url": "skills/dsh-market-dsh-market.html"
+    },
+    {
       "id": "agent-skills-spec",
       "name_zh": "Agent Skills 规范",
       "name_en": "Agent Skills Specification",
@@ -797,6 +1376,393 @@
       "updated_at": "2026-08-13",
       "install": "bash\n# 1) 克隆上游\ngit clone --depth 1 https://github.com/obra/superpowers.git /tmp/superpowers\n\n# 2) 把技能复制到你的 agent 的 skills 目录（以下以 Claude Code 为例）\nmkdir -p ~/.claude/skills\ncp -r /tmp/superpowers/skills/* ~/.claude/skills/\n\n# 若你的 agent 支持插件（plugin），也可按上游文档安装 .claude-plugin / .codex-plugin",
       "detail_url": "skills/superpowers.html"
+    },
+    {
+      "id": "ansible-ansible",
+      "name_zh": "Ansible 自动化引擎",
+      "name_en": "Ansible",
+      "summary_zh": "以声明式 Playbook 执行配置管理、应用部署和跨主机运维自动化的成熟开源引擎。",
+      "summary_en": "A mature open-source engine for configuration management, application deployment, and multi-host automation.",
+      "category_dir": "ops-automation",
+      "category_name": "运维与自动化",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "ops-automation",
+        "automation",
+        "deployment",
+        "self-hosted"
+      ],
+      "languages": [
+        "python"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "GPL-3.0",
+      "license_bucket": "copyleft",
+      "homepage": "https://github.com/ansible/ansible",
+      "repo": "https://github.com/ansible/ansible",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "install": "bash\ngit clone --depth 1 https://github.com/ansible/ansible.git\ncd ansible",
+      "detail_url": "skills/ansible-ansible.html"
+    },
+    {
+      "id": "dagu-org-dagu",
+      "name_zh": "Dagu 工作流调度器",
+      "name_en": "Dagu",
+      "summary_zh": "单二进制、自托管的 DAG 工作流引擎，可通过 YAML 编排批处理、计划任务与运维作业。",
+      "summary_en": "A self-hosted single-binary DAG workflow engine for YAML-defined batch jobs, schedules, and operations automation.",
+      "category_dir": "ops-automation",
+      "category_name": "运维与自动化",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "ops-automation",
+        "automation",
+        "self-hosted",
+        "workflow"
+      ],
+      "languages": [
+        "go",
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "GPL-3.0",
+      "license_bucket": "copyleft",
+      "homepage": "https://github.com/dagu-org/dagu",
+      "repo": "https://github.com/dagu-org/dagu",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "install": "bash\ngit clone --depth 1 https://github.com/dagu-org/dagu.git\ncd dagu",
+      "detail_url": "skills/dagu-org-dagu.html"
+    },
+    {
+      "id": "kestra-io-kestra",
+      "name_zh": "Kestra 工作流编排",
+      "name_en": "Kestra",
+      "summary_zh": "事件驱动的开源工作流编排平台，适合数据管道、基础设施任务和跨系统自动化。",
+      "summary_en": "An event-driven open-source orchestration platform for data pipelines, infrastructure tasks, and cross-system automation.",
+      "category_dir": "ops-automation",
+      "category_name": "运维与自动化",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "ops-automation",
+        "automation",
+        "workflow",
+        "self-hosted"
+      ],
+      "languages": [
+        "java",
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "Apache-2.0",
+      "license_bucket": "open",
+      "homepage": "https://github.com/kestra-io/kestra",
+      "repo": "https://github.com/kestra-io/kestra",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "install": "bash\ngit clone --depth 1 https://github.com/kestra-io/kestra.git\ncd kestra",
+      "detail_url": "skills/kestra-io-kestra.html"
+    },
+    {
+      "id": "prefecthq-prefect",
+      "name_zh": "Prefect 工作流编排",
+      "name_en": "Prefect",
+      "summary_zh": "以 Python 构建、调度和观察数据及运维工作流的开源编排平台，支持本地与服务化部署。",
+      "summary_en": "An open-source Python orchestration platform for building, scheduling, and observing data and operations workflows.",
+      "category_dir": "ops-automation",
+      "category_name": "运维与自动化",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "ops-automation",
+        "python",
+        "workflow",
+        "self-hosted"
+      ],
+      "languages": [
+        "python",
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "Apache-2.0",
+      "license_bucket": "open",
+      "homepage": "https://github.com/PrefectHQ/prefect",
+      "repo": "https://github.com/PrefectHQ/prefect",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "install": "bash\ngit clone --depth 1 https://github.com/PrefectHQ/prefect.git\ncd prefect",
+      "detail_url": "skills/prefecthq-prefect.html"
+    },
+    {
+      "id": "pulumi-pulumi",
+      "name_zh": "Pulumi 基础设施即代码",
+      "name_en": "Pulumi",
+      "summary_zh": "使用常见编程语言定义、部署和管理云基础设施的开源 IaC 平台与自动化引擎。",
+      "summary_en": "An open-source infrastructure-as-code platform for defining, deploying, and managing cloud resources with general-purpose languages.",
+      "category_dir": "ops-automation",
+      "category_name": "运维与自动化",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "ops-automation",
+        "deployment",
+        "cloud",
+        "automation",
+        "framework"
+      ],
+      "languages": [
+        "go",
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "Apache-2.0",
+      "license_bucket": "open",
+      "homepage": "https://github.com/pulumi/pulumi",
+      "repo": "https://github.com/pulumi/pulumi",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "install": "bash\ngit clone --depth 1 https://github.com/pulumi/pulumi.git\ncd pulumi",
+      "detail_url": "skills/pulumi-pulumi.html"
+    },
+    {
+      "id": "assafelovic-gpt-researcher",
+      "name_zh": "GPT Researcher 深度研究框架",
+      "name_en": "GPT Researcher",
+      "summary_zh": "自动规划检索、汇总来源并生成带引用研究报告的开源深度研究 Agent 框架。",
+      "summary_en": "An open-source deep-research agent framework that plans searches, synthesizes sources, and produces cited reports.",
+      "category_dir": "research-intel",
+      "category_name": "研究与信息获取",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "research",
+        "search",
+        "ai-agent",
+        "self-hosted"
+      ],
+      "languages": [
+        "python",
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "Apache-2.0",
+      "license_bucket": "open",
+      "homepage": "https://github.com/assafelovic/gpt-researcher",
+      "repo": "https://github.com/assafelovic/gpt-researcher",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "install": "bash\ngit clone --depth 1 https://github.com/assafelovic/gpt-researcher.git\ncd gpt-researcher",
+      "detail_url": "skills/assafelovic-gpt-researcher.html"
+    },
+    {
+      "id": "future-house-paper-qa",
+      "name_zh": "PaperQA 文献问答",
+      "name_en": "PaperQA",
+      "summary_zh": "面向科学论文的检索增强问答与文献综述工具，强调来源定位、证据引用和研究可追溯性。",
+      "summary_en": "A retrieval-augmented scientific literature QA tool focused on source grounding, citations, and traceable research.",
+      "category_dir": "research-intel",
+      "category_name": "研究与信息获取",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "research",
+        "science",
+        "python",
+        "vector-search"
+      ],
+      "languages": [
+        "python"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "Apache-2.0",
+      "license_bucket": "open",
+      "homepage": "https://github.com/Future-House/paper-qa",
+      "repo": "https://github.com/Future-House/paper-qa",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "install": "bash\ngit clone --depth 1 https://github.com/Future-House/paper-qa.git\ncd paper-qa",
+      "detail_url": "skills/future-house-paper-qa.html"
+    },
+    {
+      "id": "k-dense-ai-scientific-agent-skills",
+      "name_zh": "科学研究 Agent Skills",
+      "name_en": "Scientific Agent Skills",
+      "summary_zh": "覆盖生物、化学、医学和科研数据库的科学 Agent 技能库，用于文献、分析与研究工作流。",
+      "summary_en": "A scientific agent skill library for literature, analysis, research workflows, and scientific databases.",
+      "category_dir": "research-intel",
+      "category_name": "研究与信息获取",
+      "kind": "skill-collection",
+      "kind_label": "技能集",
+      "tags": [
+        "research",
+        "science",
+        "agent-skills",
+        "skill-pack"
+      ],
+      "languages": [
+        "markdown",
+        "python"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "repo": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "install": "bash\ngit clone --depth 1 https://github.com/K-Dense-AI/scientific-agent-skills.git\ncd scientific-agent-skills",
+      "detail_url": "skills/k-dense-ai-scientific-agent-skills.html"
+    },
+    {
+      "id": "microsoft-rd-agent",
+      "name_zh": "RD-Agent 研发自动化",
+      "name_en": "RD-Agent",
+      "summary_zh": "微软开源的研究与开发自动化 Agent 框架，支持数据驱动实验、模型迭代与研究流程编排。",
+      "summary_en": "Microsoft's research-and-development automation agent framework for data-driven experiments and iterative modeling.",
+      "category_dir": "research-intel",
+      "category_name": "研究与信息获取",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "research",
+        "multi-agent",
+        "python",
+        "ai-agent"
+      ],
+      "languages": [
+        "python"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/microsoft/RD-Agent",
+      "repo": "https://github.com/microsoft/RD-Agent",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "install": "bash\ngit clone --depth 1 https://github.com/microsoft/RD-Agent.git\ncd RD-Agent",
+      "detail_url": "skills/microsoft-rd-agent.html"
+    },
+    {
+      "id": "stanford-oval-storm",
+      "name_zh": "STORM 知识研究系统",
+      "name_en": "STORM",
+      "summary_zh": "斯坦福开源的主题研究与长篇知识文章生成系统，通过多视角检索组织有引用的内容。",
+      "summary_en": "Stanford's open system for topic research and long-form knowledge writing using multi-perspective retrieval and citations.",
+      "category_dir": "research-intel",
+      "category_name": "研究与信息获取",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "research",
+        "search",
+        "multi-agent",
+        "writing"
+      ],
+      "languages": [
+        "python"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/stanford-oval/storm",
+      "repo": "https://github.com/stanford-oval/storm",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "install": "bash\ngit clone --depth 1 https://github.com/stanford-oval/storm.git\ncd storm",
+      "detail_url": "skills/stanford-oval-storm.html"
     },
     {
       "id": "dashi-ppt-skill",

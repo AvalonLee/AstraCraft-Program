@@ -18,7 +18,7 @@
 
 ## 收录条目自查（如适用）
 
-- [ ] 已从 `_template/SKILL.md` 复制并填好 frontmatter（id 等于目录名，category 等于一级目录名）
+- [ ] 已参照 [目录条目格式规范](../docs/catalog-format.md) 创建文件并填好 frontmatter（id 等于目录名，category 等于一级目录名）
 - [ ] 正文含「怎么安装」小节，指令在代码块内、Agent 可执行
 - [ ] 未搬运上游源码，仅给链接与安装指令
 - [ ] 已跑 `python scripts/validate.py && python scripts/gen_index.py` 并提交 `INDEX.md`

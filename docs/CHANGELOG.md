@@ -16,6 +16,8 @@
 
 ### 结构
 
+- **目录格式与自动审核边界（2026-08-27）**：新增 `entry-record` 与 `installable-skill` 两种机器可校验格式；根目录推荐器是唯一可安装 Skill，`entries/**/SKILL.md` 仅作为目录数据。新增上游仓库、许可证、安装来源、分类置信度与健康分审核，确定性推荐初筛、离线回归测试和每周漂移报告。
+
 - **新增 DSH 一级分类（2026-08-26）**：为收录 DeepSeek Harness（DSH）社区插件，新增一级分类 `dsh`
   （`entries/dsh/`，中文名「DSH 插件」）。同步更新 `scripts/schema/meta.schema.json` 的 `category`
   枚举、`scripts/_common.py` 的 `CATEGORIES` 字典、`README.md` 与 `docs/writing-skill-md.md` 的
@@ -26,7 +28,7 @@
   `site/skills/<id>.html` 详情页）；新增 `site/`（首页搜索 + 分类 / 标签 / 评级 / 协议 筛选 +
   卡片网格、`assets/style.css`、`assets/app.js`）；新增 `.github/workflows/deploy.yml`
   （push main 时自动生成并发布到 GitHub Pages `gh-pages`，在线地址
-  https://avalonlee.github.io/AstraCraft-Program/）；README 改写为 awesome-list 风格（徽章、什么是
+  https://avalonlee.github.io/AstraCraft-Program/ 改写为 awesome-list 风格（徽章、什么是
   SKILL.md、每个 SKILL.md 里有什么、九大分类、在线预览入口），保留原有收录标准 / 协议 / 贡献 /
   下架等实质内容；`index-check.yml` 增加站点生成器校验任务。
 - **设定调整：从「快照式收录」改为「轻量索引」**：不再收录上游源码快照——删除所有
@@ -58,6 +60,8 @@
   里与之相反的错误说明。
 
 ### 新增
+
+- **补齐五个空分类（2026-08-27）**：研发与代码、数据与分析、研究与信息获取、运维与自动化、DSH 插件各新增 5 个经自动核验的真实 GitHub 项目，目录总数由 22 增至 47。两个已归档首选项目由同分类后备 `microsoft/RD-Agent` 与 `PrefectHQ/prefect` 替换；两个无法机器识别许可证的数据技能条目降为 `watch`。
 
 - `agent-infra/tencentdb-agent-memory` —— 腾讯云 Agent 团队级记忆中心（📦 vendored，
   MIT，A 级，standard 评级，未实测）

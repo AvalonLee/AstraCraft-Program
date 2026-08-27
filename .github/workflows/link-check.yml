@@ -17,7 +17,7 @@ jobs:
     name: PR Markdown 死链检查
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Markdown Link Check
         uses: tcort/github-action-markdown-link-check@v1
         with:
@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true   # 全量扫描对瞬断网络容忍，结果仅供参考
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Lychee link checker
         uses: lycheeverse/lychee-action@v2
         with:

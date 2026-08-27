@@ -1,4 +1,5 @@
 ---
+record_type: entry-record
 id: codex-taskboard
 name_zh: Codex Taskboard 本地任务看板
 name_en: Codex Taskboard

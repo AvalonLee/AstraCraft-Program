@@ -1,0 +1,47 @@
+{
+  "dev-engineering": [
+    {"category":"dev-engineering","repo":"https://github.com/addyosmani/agent-skills","priority":"primary","coverage_code":"dev-1"},
+    {"category":"dev-engineering","repo":"https://github.com/wshobson/agents","priority":"primary","coverage_code":"dev-2"},
+    {"category":"dev-engineering","repo":"https://github.com/alirezarezvani/claude-skills","priority":"primary","coverage_code":"dev-3"},
+    {"category":"dev-engineering","repo":"https://github.com/github/awesome-copilot","priority":"primary","coverage_code":"dev-4"},
+    {"category":"dev-engineering","repo":"https://github.com/sickn33/antigravity-awesome-skills","priority":"primary","coverage_code":"dev-5"},
+    {"category":"dev-engineering","repo":"https://github.com/VoltAgent/awesome-agent-skills","priority":"fallback","coverage_code":"dev-6"},
+    {"category":"dev-engineering","repo":"https://github.com/heilcheng/awesome-agent-skills","priority":"fallback","coverage_code":"dev-7"}
+  ],
+  "data-analytics": [
+    {"category":"data-analytics","repo":"https://github.com/pymc-labs/python-analytics-skills","priority":"primary","coverage_code":"data-1"},
+    {"category":"data-analytics","repo":"https://github.com/nimrodfisher/data-analytics-skills","priority":"primary","coverage_code":"data-2"},
+    {"category":"data-analytics","repo":"https://github.com/astronomer/agents","priority":"primary","coverage_code":"data-3"},
+    {"category":"data-analytics","repo":"https://github.com/marimo-team/marimo","priority":"primary","coverage_code":"data-4"},
+    {"category":"data-analytics","repo":"https://github.com/evidence-dev/evidence","priority":"primary","coverage_code":"data-5"},
+    {"category":"data-analytics","repo":"https://github.com/duckdb/duckdb","priority":"fallback","coverage_code":"data-6"},
+    {"category":"data-analytics","repo":"https://github.com/dbt-labs/dbt-core","priority":"fallback","coverage_code":"data-7"}
+  ],
+  "research-intel": [
+    {"category":"research-intel","repo":"https://github.com/K-Dense-AI/scientific-agent-skills","priority":"primary","coverage_code":"research-1"},
+    {"category":"research-intel","repo":"https://github.com/assafelovic/gpt-researcher","priority":"primary","coverage_code":"research-2"},
+    {"category":"research-intel","repo":"https://github.com/langchain-ai/open_deep_research","priority":"primary","coverage_code":"research-3"},
+    {"category":"research-intel","repo":"https://github.com/Future-House/paper-qa","priority":"primary","coverage_code":"research-4"},
+    {"category":"research-intel","repo":"https://github.com/stanford-oval/storm","priority":"primary","coverage_code":"research-5"},
+    {"category":"research-intel","repo":"https://github.com/microsoft/RD-Agent","priority":"fallback","coverage_code":"research-6"},
+    {"category":"research-intel","repo":"https://github.com/microsoft/graphrag","priority":"fallback","coverage_code":"research-7"}
+  ],
+  "ops-automation": [
+    {"category":"ops-automation","repo":"https://github.com/ansible/ansible","priority":"primary","coverage_code":"ops-1"},
+    {"category":"ops-automation","repo":"https://github.com/pulumi/pulumi","priority":"primary","coverage_code":"ops-2"},
+    {"category":"ops-automation","repo":"https://github.com/localstack/localstack","priority":"primary","coverage_code":"ops-3"},
+    {"category":"ops-automation","repo":"https://github.com/dagu-org/dagu","priority":"primary","coverage_code":"ops-4"},
+    {"category":"ops-automation","repo":"https://github.com/kestra-io/kestra","priority":"primary","coverage_code":"ops-5"},
+    {"category":"ops-automation","repo":"https://github.com/PrefectHQ/prefect","priority":"fallback","coverage_code":"ops-6"},
+    {"category":"ops-automation","repo":"https://github.com/windmill-labs/windmill","priority":"fallback","coverage_code":"ops-7"}
+  ],
+  "dsh": [
+    {"category":"dsh","repo":"https://github.com/deepseek-ai/deepseek-harness","priority":"primary","coverage_code":"dsh-1"},
+    {"category":"dsh","repo":"https://github.com/dsh-market/dsh-market","priority":"primary","coverage_code":"dsh-2"},
+    {"category":"dsh","repo":"https://github.com/awesome-dsh-plugin/dsh-find-plugin","priority":"primary","coverage_code":"dsh-3"},
+    {"category":"dsh","repo":"https://github.com/ccch1mneyyy/dsh-TUI","priority":"primary","coverage_code":"dsh-4"},
+    {"category":"dsh","repo":"https://github.com/0xsline/awesome-deepseek-harness","priority":"primary","coverage_code":"dsh-5"},
+    {"category":"dsh","repo":"https://github.com/awesome-dsh-plugin/awesome-dsh-plugin","priority":"fallback","coverage_code":"dsh-6"},
+    {"category":"dsh","repo":"https://github.com/dataelement/dsh-desktop","priority":"fallback","coverage_code":"dsh-7"}
+  ]
+}

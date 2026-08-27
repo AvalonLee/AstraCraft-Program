@@ -1,4 +1,5 @@
 ---
+record_type: entry-record
 id: video-shotcraft
 name_zh: "Video Shotcraft 产品视频动态设计技能"
 name_en: "Video Shotcraft — Cinematic Product Video Skill"

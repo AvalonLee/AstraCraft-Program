@@ -6,6 +6,7 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
+    "record_type",
     "id",
     "name_zh",
     "name_en",
@@ -23,6 +24,7 @@
     "updated_at"
   ],
   "properties": {
+    "record_type": { "const": "entry-record" },
     "id": {
       "type": "string",
       "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",

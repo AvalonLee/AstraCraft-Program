@@ -165,6 +165,22 @@ def _load_catalog(path: Path) -> list[dict]:
     return data
 
 
+def _offline_check(entries: list[dict], snapshot: dict) -> int:
+    by_repo = {
+        normalize_github_repo(str(value["repo"])): value
+        for value in (snapshot.get("entries") or {}).values()
+    }
+    for entry in entries:
+        value = by_repo.get(normalize_github_repo(str(entry["repo"])))
+        if not value or value.get("status") == "blocked":
+            return 1
+        declared = str(entry.get("license", "UNKNOWN"))
+        detected = str(value.get("license", declared))
+        if declared not in {"UNKNOWN", "NOASSERTION", ""} and detected != declared:
+            return 1
+    return 0
+
+
 def main(argv: list[str] | None = None, fetcher: Fetcher | None = None) -> int:
     parser = argparse.ArgumentParser(description="核验 AstraCraft 上游元数据")
     mode = parser.add_mutually_exclusive_group(required=True)
@@ -184,6 +200,12 @@ def main(argv: list[str] | None = None, fetcher: Fetcher | None = None) -> int:
         entries = candidate_entries(raw_candidates, args.candidate_priority)
     else:
         entries = _load_catalog(args.catalog)
+    if args.check and fetcher is None:
+        if not args.snapshot.exists():
+            return 1
+        current = json.loads(args.snapshot.read_text(encoding="utf-8"))
+        return _offline_check(entries, current)
+
     fresh, blocked = build_snapshot(entries, fetcher or fetch_github_facts, generated_at)
     if args.refresh:
         if args.merge and args.snapshot.exists():

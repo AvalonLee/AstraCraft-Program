@@ -95,6 +95,19 @@ def test_check_mode_does_not_write_snapshot(tmp_path: Path) -> None:
     assert json.loads(snapshot.read_text(encoding="utf-8"))["generated_at"] == "old"
 
 
+def test_default_check_is_offline_when_snapshot_matches(tmp_path: Path, monkeypatch) -> None:
+    catalog = tmp_path / "catalog.json"
+    snapshot = tmp_path / "snapshot.json"
+    catalog.write_text(json.dumps([catalog_entry()]), encoding="utf-8")
+    snapshot.write_text(json.dumps({"generated_at":"now","entries":{"tool":{
+        "repo":"https://github.com/example/tool","head_sha":"abc","status":"verified",
+        "health_score":100,"max_tier":"core","issues":[]
+    }}}), encoding="utf-8")
+    monkeypatch.setattr(verify_upstreams, "fetch_github_facts", lambda _: (_ for _ in ()).throw(AssertionError("network used")))
+
+    assert main(["--check", "--catalog", str(catalog), "--snapshot", str(snapshot)]) == 0
+
+
 def test_refresh_mode_writes_snapshot(tmp_path: Path) -> None:
     catalog = tmp_path / "catalog.json"
     snapshot = tmp_path / "snapshot.json"

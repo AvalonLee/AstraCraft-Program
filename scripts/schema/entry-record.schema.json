@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["record_type", "id", "category", "kind", "repo", "license", "tier"],
+  "properties": {
+    "record_type": {"const": "entry-record"},
+    "id": {"type": "string", "minLength": 1},
+    "category": {"type": "string", "minLength": 1},
+    "kind": {"type": "string", "minLength": 1},
+    "repo": {"type": "string", "pattern": "^https://github\\.com/[^/]+/[^/]+/?$"},
+    "license": {"type": "string", "minLength": 1},
+    "tier": {"enum": ["core", "standard", "watch"]}
+  }
+}

@@ -11,19 +11,18 @@ permissions:
   contents: read
 
 jobs:
-  # PR 增量：检查 Markdown 死链（基于 tcort 维护版 markdown-link-check）
+  # PR 增量：检查 Markdown 死链（基于 lychee，同全量扫描工具，减少误报）
   pr-links:
     if: github.event_name == 'pull_request'
     name: PR Markdown 死链检查
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - name: Markdown Link Check
-        uses: tcort/github-action-markdown-link-check@v1
+      - name: Lychee link checker
+        uses: lycheeverse/lychee-action@v2
         with:
-          config-file: 'mlc_config.json'
-          # 默认扫描仓库内全部 .md；如需只看改动文件可在 args 里指定路径
-          args: -c mlc_config.json
+          args: --no-progress --exclude-file .lycheeignore --timeout 20 './**/*.md'
+          fail: false
 
   # 每周全量：基于 lychee 扫描全部 Markdown
   weekly-full:

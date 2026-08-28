@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Dagu 工作流调度器 · AstraCraft Program</title>
+<title>AIMangaStudio 漫画创作 · AstraCraft Program</title>
 <link rel="stylesheet" href="../assets/style.css" />
 <style>
   /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
@@ -39,8 +39,8 @@
   <section class="hero-shell">
     <div class="eyebrow">Agent Skill</div>
     <div class="hero-copy-block">
-      <h1 class="hero-title">Dagu 工作流调度器</h1>
-      <p class="hero-subtitle">Dagu</p>
+      <h1 class="hero-title">AIMangaStudio 漫画创作</h1>
+      <p class="hero-subtitle">AIMangaStudio</p>
     </div>
     <div class="hero-actions">
       <a class="button button-primary" href="#body">阅读说明</a>
@@ -49,27 +49,34 @@
 
   <div class="card" style="margin-top:24px;">
     <div class="mini-tags">
-      <span>运维与自动化</span><span>常规</span><span class="lic-badge lic-copyleft" title="GPL-3.0">部分开源</span><span>框架</span>
+      <span>设计与创意</span><span>观察</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>框架</span>
     </div>
-    <p class="muted detail-meta">单二进制、自托管的 DAG 工作流引擎，可通过 YAML 编排批处理、计划任务与运维作业。</p>
+    <p class="muted detail-meta">利用 AI 制作漫画的工具，覆盖脚本创作、分镜设计与角色风格控制，集成剧情生成、分镜布局、角色设定与页间连续性分析，支持多页漫画导出为 PNG/PDF。</p>
     <div class="link-row" style="margin-top:14px;">
-      <a class="button button-secondary" href="https://github.com/dagu-org/dagu" target="_blank" rel="noopener">查看仓库 / 源码</a>
-      <a class="button button-ghost" href="https://github.com/dagu-org/dagu" target="_blank" rel="noopener">项目主页</a>
+      <a class="button button-secondary" href="https://github.com/morsoli/aimangastudio" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/morsoli/aimangastudio" target="_blank" rel="noopener">项目主页</a>
     </div>
   </div>
 
   <article id="body" class="content-panel detail-body" style="margin-top:24px;">
-<h1>Dagu 工作流调度器（Dagu）</h1>
+<h1>AIMangaStudio</h1>
+<blockquote>利用 AI 制作漫画的工具，支持脚本创作、分镜设计与角色风格控制。上游：<a href="https://github.com/morsoli/aimangastudio" target="_blank" rel="noopener">morsoli/aimangastudio</a> · 许可证：MIT</blockquote>
 <h2>这是什么</h2>
-<p>单二进制、自托管的 DAG 工作流引擎，可通过 YAML 编排批处理、计划任务与运维作业。 本条目是天工计划的目录记录，不包含或再分发上游源码。</p>
+<p>AIMangaStudio 旨在为独立创作者与工作室提供一条端到端的漫画创作流水线，简化从脚本到漫画页面的制作流程。技术栈为 React + Vite + TypeScript，AI 能力通过 Google GenAI（<code>@google/genai</code>）接入。</p>
+<p>主要功能：自然语言生成漫画脚本（剧情、对白、旁白）；角色与风格设定（支持多种绘画风格）；AI 分镜自动排版（对话框、镜头切换）；多页漫画导出（PNG、PDF）。</p>
 <h2>怎么安装</h2>
-<p>先获取上游仓库，再严格按照其 README 选择与你环境匹配的安装方式：</p>
-<pre><code class="lang-bash">git clone --depth 1 https://github.com/dagu-org/dagu.git
-cd dagu</code></pre>
+<pre><code class="lang-bash">git clone https://github.com/morsoli/aimangastudio.git
+cd aimangastudio
+npm install</code></pre>
 <h2>怎么用</h2>
-<p>从上游 README 的快速开始、依赖和配置章节入手；涉及服务、云资源、模型或凭据时，先在隔离环境验证最小示例。</p>
+<pre><code class="lang-bash"># 本地开发
+npm run dev
+
+# 构建与预览
+npm run build
+npm run preview</code></pre>
 <h2>注意事项</h2>
-<ul><li>本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。</li><li>本条目的许可证标注来自自动上游核验，最终以上游 LICENSE 全文为准。</li></ul>
+<ul><li><strong>早期形态</strong>：项目仅有少量提交、无正式 release，功能以雏形为主，需自行评估是否满足制作需求。</li><li><strong>依赖外部 AI</strong>：AI 生成经 Google GenAI 服务，需要相应 API 凭据，并注意数据与用量。</li><li>目标用户为独立创作者、漫画爱好者与内容工作室。</li></ul>
   </article>
 
   <p class="footer">收录于 2026-08-27 · 更新于 2026-08-27 · AstraCraft Program 轻量索引</p>

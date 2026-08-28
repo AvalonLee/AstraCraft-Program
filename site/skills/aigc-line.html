@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AIGC CANVAS 短剧生产工作台 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">AIGC CANVAS 短剧生产工作台</h1>
+      <p class="hero-subtitle">AIGC Canvas — AI Short-Drama Production Workbench</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">面向完整 AI 短剧生产闭环的 Harness Engineering 桌面工作台：从剧本解析、角色一致性底图、场景图与分镜到多模态视频生成与分析，Agent 通过内置 Skill 与 MCP 画布工具持续操作同一张无限画布。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/zhangtuo723/aigc_line" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/zhangtuo723/aigc_line" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>AIGC CANVAS 短剧生产工作台</h1>
+<blockquote>面向完整 AI 短剧生产闭环的 Harness Engineering 桌面工作台。上游：<a href="https://github.com/zhangtuo723/aigc_line" target="_blank" rel="noopener">zhangtuo723/aigc_line</a> · 许可证：MIT</blockquote>
+<h2>这是什么</h2>
+<p>AIGC CANVAS 输入剧本后，Agent 会为每个角色先生成唯一四联身份底图，再通过图生图派生不同场景/服装版本，同时生成无人俯视全景场景图，组织多模态参考并调用 ComfyUI 生成视频；需要时可分析实际视频。它基于 Electron 分层架构，React 渲染进程承载 Agent 对话、无限画布、自由画板与 3D 导演台，主进程连接本地 ComfyUI 与云端 AI 服务。</p>
+<p>核心能力：剧本到 AI 短剧闭环、角色与场景一致性资产、Agent 项目助手、内置 Agent Skill 与 Skill 斜杠菜单、旁白配视频工作流、视频放大、3D 导演台、节点化生产流水线，以及多模型生成（ComfyUI、MiniMax H3、Seedance 2.0 等）。</p>
+<h2>怎么安装</h2>
+<pre><code class="lang-bash">git clone https://github.com/zhangtuo723/aigc_line.git
+cd aigc_line
+npm install</code></pre>
+<p>这是一个 Electron + Vite 桌面应用，具体启动/构建脚本以上游 <code>package.json</code> 的 scripts 为准（<code>README.en.md</code> 亦提供英文说明）。</p>
+<h2>怎么用</h2>
+<p>1. 在系统配置中连接 ComfyUI 与所需的 AI 云服务（Google AI、火山方舟 Seedream/Seedance、Qwen 等） 2. 输入剧本或创意，由 Agent 生成角色身份底图、场景图与分镜 3. 在无限画布上组织镜头、参考图片、生成视频与放大结果，右侧对话可直接读写画布节点 4. 通过内置 Skill（输入 <code>/</code> 搜索）与 MCP 画布工具实现端到端生产并沉淀项目资产</p>
+<h2>注意事项</h2>
+<ul><li><strong>桌面应用</strong>：基于 Electron，依赖本地 ComfyUI 与云端服务；系统级工具涉及本机 AI 服务配置。</li><li><strong>凭据与费用</strong>：Google/Qwen 密钥使用系统安全存储，方舟 Key 明文保存在本机设置；AI 生成消耗配额并可能产生费用。</li><li><strong>依赖服务</strong>：ComfyUI、火山方舟、Google AI、Qwen 等外部服务下线或限流会影响可用性。</li><li><strong>3D 导演台模型</strong>：UE 白模来自第三方并采用独立的 Sketchfab Standard License，分发时需保留原始许可文件。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-08-27 · 更新于 2026-08-27 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

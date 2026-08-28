@@ -85,6 +85,7 @@ def test_real_catalog_recalls_each_expanded_category(category: str, tags: list[s
             continue
         catalog.append({
             **entry.meta,
+            "category_dir": entry.category_dir,
             "verification_status": upstream["status"],
             "health_score": upstream["health_score"],
         })
@@ -96,6 +97,10 @@ def test_real_catalog_recalls_each_expanded_category(category: str, tags: list[s
         "offline": False,
         "doc_languages": ["zh"],
     })
+
+    category_entries = [c for c in catalog if c["category_dir"] == category]
+    if len(category_entries) < 2:
+        pytest.skip(f"分类 {category} 可用于召回验收的条目不足（{len(category_entries)}<2），跳过")
 
     results = recommend(catalog, profile, limit=3)
 

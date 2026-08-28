@@ -14,6 +14,20 @@
 
 ## 2026-08
 
+### 新增
+
+- **Open Storyboard Canvas 开源画布（2026-08-27）**：收录 `design-creative/open-storyboard-canvas`（MIT）。面向 AI 图片、视频与分镜创作的本地节点画布，含画布 Agent、导演台与多供应商管理。评级：常规。
+- **AIMangaStudio（2026-08-27）**：收录 `design-creative/aimangastudio`（MIT）。利用 AI 制作漫画的工具，覆盖脚本创作、分镜设计与角色风格控制，导出 PNG/PDF。早期项目，评级：观察。
+- **AIGC CANVAS 短剧生产工作台（2026-08-27）**：收录 `design-creative/aigc-line`（MIT）。面向完整 AI 短剧生产闭环的 Harness Engineering 桌面工作台。评级：常规。
+- **影策 Open AI Canvas 影视创作工作台（2026-08-27）**：收录 `design-creative/open-ai-canvas`（MIT）。开源 AI 影视与短剧创作工作台，支持自部署与 Codex MCP。评级：常规。
+- **Depth Studio 深度视频生成（2026-08-27）**：收录 `design-creative/depth-studio`（MIT）。把参考视频转换为时空一致的灰度深度视频，为 AI 视频工具提供空间引导（换角色、加角色、保持动作）。早期项目，评级：观察。
+- **Karpathy 编码指南（2026-08-28）**：收录 `dev-engineering/andrej-karpathy-skills`（MIT）。将 Andrej Karpathy 关于 LLM 编码通病的观察提炼为「先思考、简洁优先、外科手术式改动、目标驱动执行」四条编码准则，支持 CLAUDE.md、Claude Code 插件与 Cursor 规则。评级：常规。
+- 本次共新增 6 个条目，目录总数由 47 增至 53。
+
+### 移除
+
+- **人工筛选中剔除 15 个条目（2026-08-28）**：维护者人工复核后下架 15 个方向不符或分类重叠/协议受限的条目，目录总数由 53 减至 **38**。其中 `data-analytics` 与 `ops-automation` 两个分类因此整体清空，`meta-skillcraft` 的 core 主推 `superpowers` 一并下架。明细见文末「已移除条目存档」。
+
 ### 结构
 
 - **目录格式与自动审核边界（2026-08-27）**：新增 `entry-record` 与 `installable-skill` 两种机器可校验格式；根目录推荐器是唯一可安装 Skill，`entries/**/SKILL.md` 仅作为目录数据。新增上游仓库、许可证、安装来源、分类置信度与健康分审核，确定性推荐初筛、离线回归测试和每周漂移报告。
@@ -96,7 +110,18 @@
 
 ## 已移除条目存档
 
-尚无。
-
-条目被移除时，此处保留：条目 id、原上游地址、移除日期、移除原因。
-保留记录是为了避免同一个已排除的项目被重复提交收录。
+- **nimrodfisher-data-analytics-skills** — <https://github.com/nimrodfisher/data-analytics-skills> — 2026-08-28 — 人工筛选剔除
+- **pymc-labs-python-analytics-skills** — <https://github.com/pymc-labs/python-analytics-skills> — 2026-08-28 — 人工筛选剔除
+- **astronomer-agents** — <https://github.com/astronomer/agents> — 2026-08-28 — 人工筛选剔除
+- **evidence-dev-evidence** — <https://github.com/evidence-dev/evidence> — 2026-08-28 — 人工筛选剔除
+- **marimo-team-marimo** — <https://github.com/marimo-team/marimo> — 2026-08-28 — 人工筛选剔除
+- **addyosmani-agent-skills** — <https://github.com/addyosmani/agent-skills> — 2026-08-28 — 人工筛选剔除
+- **alirezarezvani-claude-skills** — <https://github.com/alirezarezvani/claude-skills> — 2026-08-28 — 人工筛选剔除
+- **sickn33-antigravity-awesome-skills** — <https://github.com/sickn33/antigravity-awesome-skills> — 2026-08-28 — 人工筛选剔除
+- **github-awesome-copilot** — <https://github.com/github/awesome-copilot> — 2026-08-28 — 人工筛选剔除
+- **superpowers** — <https://github.com/obra/superpowers> — 2026-08-28 — 人工筛选剔除
+- **ansible-ansible** — <https://github.com/ansible/ansible> — 2026-08-28 — 人工筛选剔除
+- **dagu-org-dagu** — <https://github.com/dagu-org/dagu> — 2026-08-28 — 人工筛选剔除
+- **kestra-io-kestra** — <https://github.com/kestra-io/kestra> — 2026-08-28 — 人工筛选剔除
+- **prefecthq-prefect** — <https://github.com/PrefectHQ/prefect> — 2026-08-28 — 人工筛选剔除
+- **pulumi-pulumi** — <https://github.com/pulumi/pulumi> — 2026-08-28 — 人工筛选剔除

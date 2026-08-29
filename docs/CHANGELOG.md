@@ -16,6 +16,7 @@
 
 ### 新增
 
+- **Remotion 官方 Agent Skills（2026-08-29）**：收录 `design-creative/remotion-skills`（协议未标注，UNKNOWN），评级：主推（core）。Remotion（React 写视频的事实标准框架）官方维护的约 12 个 Agent Skills：建项目、标记最佳实践、Studio 预览、渲染、地图动画、字幕、SaaS 架构、文档检索与升级等，`npx skills add remotion-dev/skills` 一键安装。目录总数由 40 增至 **41**。
 - **花叔设计 HTML 原生设计系统（2026-08-29）**：收录 `design-creative/huashu-design`（MIT），评级：**主推（core）并入选首页精选**。花叔旗舰设计技能（★23.6k，库内热度第一）：Agent 内一句话产出高保真原型、可编辑 PPTX 幻灯片、MP4/GIF 时间轴动画与印刷级信息图，内置三套逻辑设计顾问、60 种纯 CSS 风格库、品牌资产协议与 5 维专家评审，核心链路 100% 本地运行，跨 Claude Code/Codex/Cursor 等通用。目录总数由 39 增至 **40**。
 - **花叔开源 Skills 总目录（2026-08-29）**：收录 `writing-docs/huashu-skills`（协议未标注，UNKNOWN）。花叔（alchaincyf）全部开源 Agent Skills 的总目录，52 个标准 SKILL.md 技能分三层：16 旗舰独立仓库 + 14 人物视角 + 22 内置轻量创作技能，覆盖选题/写作/审校/配图/分发流水线，附 AI Agent 安装协议与机器可读 skills.json。评级：常规。目录总数由 38 增至 **39**。
 - **Open Storyboard Canvas 开源画布（2026-08-27）**：收录 `design-creative/open-storyboard-canvas`（MIT）。面向 AI 图片、视频与分镜创作的本地节点画布，含画布 Agent、导演台与多供应商管理。评级：常规。

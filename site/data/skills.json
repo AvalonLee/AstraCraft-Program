@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-29T03:31:31Z",
-  "count": 40,
+  "generated_at": "2026-08-29T08:58:43Z",
+  "count": 41,
   "categories": [
     {
       "dir": "writing-docs",
@@ -785,6 +785,48 @@
       "updated_at": "2026-08-26",
       "install": "bash\ngit clone https://github.com/calesthio/OpenMontage.git\ncd OpenMontage\nmake setup",
       "detail_url": "skills/openmontage.html"
+    },
+    {
+      "id": "remotion-skills",
+      "name_zh": "Remotion 官方 Agent Skills",
+      "name_en": "Remotion Agent Skills — Official Skills for Remotion Projects",
+      "summary_zh": "Remotion 官方维护的 Agent Skills 合集：约 12 个技能覆盖用 React 写视频的最佳实践——建项目/合成、标记与动画、Studio 预览、渲染导出、地图动画、字幕、SaaS 架构、Studio 交互、文档检索、升级与 Mediabunny 多媒体处理。",
+      "summary_en": "Official Agent Skills maintained by Remotion: ~12 skills for writing videos in React — project creation, markup, Studio, rendering, maps, captions, SaaS, docs search and upgrades.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "skill-collection",
+      "kind_label": "技能集",
+      "tags": [
+        "remotion",
+        "video-production",
+        "motion-design",
+        "product-video",
+        "skill-pack",
+        "agent-skills"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "UNKNOWN",
+      "license_bucket": "unknown",
+      "homepage": "https://www.remotion.dev/docs/ai/skills",
+      "repo": "https://github.com/remotion-dev/skills",
+      "tier": "core",
+      "tier_label": "主推",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "Remotion Skills",
+        "Remotion Agent Skills"
+      ],
+      "risk_notes": "skills 仓库未附 LICENSE 文件且 package.json 未声明协议（UNKNOWN），商用前需确认；依赖 Remotion 生态——Remotion 框架本体采用 Remotion License（个人与小团队免费，达规模的公司需购买公司许可），商用渲染前需自查；渲染消耗本地或云端算力；技能内容为英文。",
+      "added_at": "2026-08-29",
+      "updated_at": "2026-08-29",
+      "install": "bash\nnpx skills add remotion-dev/skills",
+      "detail_url": "skills/remotion-skills.html"
     },
     {
       "id": "seedance-20",

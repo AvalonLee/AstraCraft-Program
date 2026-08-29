@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-28T08:21:46Z",
-  "count": 38,
+  "generated_at": "2026-08-29T03:23:48Z",
+  "count": 39,
   "categories": [
     {
       "dir": "writing-docs",
@@ -1518,6 +1518,55 @@
       "updated_at": "2026-08-26",
       "install": "bash\n# 需要 Python 3.9+；告诉 Claude Code / Codex：安装这些技能 https://github.com/zenstory-ai/drama-skills\ngit clone https://github.com/zenstory-ai/drama-skills.git\ncd drama-skills\n\n# Claude Code\nmkdir -p \"$HOME/.claude/skills\"\nfor skill in skills/*; do ln -s \"$PWD/$skill\" \"$HOME/.claude/skills/$(basename \"$skill\")\"; done\n\n# Codex\nmkdir -p \"${CODEX_HOME:-$HOME/.codex}/skills\"\nfor skill in skills/*; do ln -s \"$PWD/$skill\" \"${CODEX_HOME:-$HOME/.codex}/skills/$(basename \"$skill\")\"; done",
       "detail_url": "skills/drama-skills.html"
+    },
+    {
+      "id": "huashu-skills",
+      "name_zh": "花叔开源 Skills 总目录",
+      "name_en": "huashu-skills — Huashu's Open-Source Agent Skills Master Index",
+      "summary_zh": "花叔全部开源 Agent Skills 的总目录：16 个旗舰 + 14 个人物视角 + 22 个内置共 52 个标准 SKILL.md 技能，覆盖公众号/短视频/小红书从选题、写作、审校、配图到分发的创作流水线，附 AI Agent 安装协议与机器可读 skills.json。",
+      "summary_en": "Master index of Huashu's 52 Agent Skills in three tiers: 16 flagship repos, 14 persona skills, and 22 built-in content-creation skills for topic generation, writing, proofreading and publishing.",
+      "category_dir": "writing-docs",
+      "category_name": "写作与文档",
+      "kind": "skill-collection",
+      "kind_label": "技能集",
+      "tags": [
+        "writing",
+        "social-media",
+        "short-video",
+        "image-generation",
+        "agent-skills",
+        "claude-code",
+        "skill-collection",
+        "cn-localization"
+      ],
+      "languages": [
+        "python",
+        "markdown"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "UNKNOWN",
+      "license_bucket": "unknown",
+      "homepage": "https://github.com/alchaincyf/huashu-skills",
+      "repo": "https://github.com/alchaincyf/huashu-skills",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "shuohao-skills"
+      ],
+      "aliases": [
+        "花叔技能",
+        "花叔 Skills 总目录",
+        "huashu"
+      ],
+      "risk_notes": "仓库未提供 LICENSE 文件，协议不明，商用前需与作者确认；内置 22 个 skill 需克隆后复制子目录安装；huashu-design 有独立仓库完整版与内置轻量版同名冲突，两者不能装进同一目录；部分 skill 依赖豆包/Codex 环境内置 image_gen 或外部 AI 服务，费用与可用性随平台变化。",
+      "added_at": "2026-08-29",
+      "updated_at": "2026-08-29",
+      "install": "读 https://github.com/alchaincyf/huashu-skills 的 README 和 skills.json，帮我按需求推荐并安装对应 skill",
+      "detail_url": "skills/huashu-skills.html"
     },
     {
       "id": "oh-story-claudecode",

@@ -16,6 +16,7 @@
 
 ### 新增
 
+- **花叔开源 Skills 总目录（2026-08-29）**：收录 `writing-docs/huashu-skills`（协议未标注，UNKNOWN）。花叔（alchaincyf）全部开源 Agent Skills 的总目录，52 个标准 SKILL.md 技能分三层：16 旗舰独立仓库 + 14 人物视角 + 22 内置轻量创作技能，覆盖选题/写作/审校/配图/分发流水线，附 AI Agent 安装协议与机器可读 skills.json。评级：常规。目录总数由 38 增至 **39**。
 - **Open Storyboard Canvas 开源画布（2026-08-27）**：收录 `design-creative/open-storyboard-canvas`（MIT）。面向 AI 图片、视频与分镜创作的本地节点画布，含画布 Agent、导演台与多供应商管理。评级：常规。
 - **AIMangaStudio（2026-08-27）**：收录 `design-creative/aimangastudio`（MIT）。利用 AI 制作漫画的工具，覆盖脚本创作、分镜设计与角色风格控制，导出 PNG/PDF。早期项目，评级：观察。
 - **AIGC CANVAS 短剧生产工作台（2026-08-27）**：收录 `design-creative/aigc-line`（MIT）。面向完整 AI 短剧生产闭环的 Harness Engineering 桌面工作台。评级：常规。

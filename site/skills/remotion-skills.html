@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Remotion 官方 Agent Skills · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Remotion 官方 Agent Skills</h1>
+      <p class="hero-subtitle">Remotion Agent Skills — Official Skills for Remotion Projects</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>主推</span><span class="lic-badge lic-unknown" title="UNKNOWN">版权未声明</span><span>技能集</span>
+    </div>
+    <p class="muted detail-meta">Remotion 官方维护的 Agent Skills 合集：约 12 个技能覆盖用 React 写视频的最佳实践——建项目/合成、标记与动画、Studio 预览、渲染导出、地图动画、字幕、SaaS 架构、Studio 交互、文档检索、升级与 Mediabunny 多媒体处理。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/remotion-dev/skills" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://www.remotion.dev/docs/ai/skills" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Remotion 官方 Agent Skills</h1>
+<blockquote>Remotion 官方维护的 Agent Skills 合集，定义在 Remotion 项目中工作的最佳实践。上游：<a href="https://github.com/remotion-dev/skills" target="_blank" rel="noopener">remotion-dev/skills</a> · 许可证：未标注（UNKNOWN）</blockquote>
+<h2>这是什么</h2>
+<p>Remotion（用 React 写视频的事实标准框架）官方出品的 Agent Skills 合集，供 Claude Code、Codex、Kimi Code、Cursor 等支持 Agent Skills 格式的 Agent 使用。技能按职责拆分，按需加载：</p>
+<ul><li><strong>总纲</strong>：<code>/remotion-best-practices</code> 涵盖其余所有技能，不确定用哪个时的默认选择。</li><li><strong>建与写</strong>：<code>/remotion-create</code>（新建项目/合成）、<code>/remotion-markup</code>（合成、动画、布局、排版、媒体元素、音频、字体、时序的标记最佳实践）、<code>/remotion-interactivity</code>（让元素在 Studio 中可选中/可编辑）。</li><li><strong>看与出片</strong>：<code>/remotion-studio</code>（启动 Studio 预览）、<code>/remotion-render</code>（渲染视频或静帧）。</li><li><strong>专项</strong>：<code>/remotion-maps</code>（静态地图、动态路线与标记、地理科普动画，Mapbox/MapLibre/MapTiler/GeoJSON，CesiumJS 3D 飞越）、<code>/remotion-captions</code>（字幕）、<code>/remotion-multimedia</code>（基于 Mediabunny 的浏览器端音视频元数据处理）。</li><li><strong>工程化</strong>：<code>/remotion-saas</code>（Remotion 驱动的应用与产品集成架构）、<code>/remotion-docs</code>（检索 Remotion 文档并抓取任意页面为 Markdown）、<code>/remotion-upgrade</code>（升级 Remotion、相关包与已装技能）。</li></ul>
+<p>新建 Remotion 项目（<code>bun create video</code>）时也会主动询问是否安装这套技能。</p>
+<h2>怎么安装</h2>
+<pre><code class="lang-bash">npx skills add remotion-dev/skills</code></pre>
+<p>或在新项目中创建时按提示安装：<code>bun create video</code>。技能文档见上游 <a href="https://www.remotion.dev/docs/ai/skills" target="_blank" rel="noopener">Remotion Agent Skills 文档</a>。</p>
+<h2>怎么用</h2>
+<p>安装后重启 Agent 会话，用斜杠命令按需调用：</p>
+<pre><code>/remotion-create Make a promo video for a record store
+/remotion-markup Create an animated title card using Inter.
+/remotion-maps Animate a route from Los Angeles to New York and make the camera follow it.
+/remotion-docs How to set up Remotion Lambda?</code></pre>
+<p>不确定用哪个时直接喊 <code>/remotion-best-practices</code>；做完整项目时典型链路是 create → markup → studio（预览）→ render（出片），做产品化再补 saas 与 interactivity。</p>
+<h2>注意事项</h2>
+<ul><li><strong>协议不明</strong>：skills 仓库未附 LICENSE 文件，frontmatter 标注 <code>UNKNOWN</code>；另注意 Remotion <strong>框架本体</strong>采用 Remotion License（个人与小团队免费，达到规模的公司渲染需购买公司许可），把产出商用前请自查上游条款。</li><li><strong>生态依赖</strong>：技能只提供知识与实践规则，实际渲染依赖 Remotion 框架与 Node/bun 工具链；渲染（尤其 Lambda 云渲染）消耗算力与费用。</li><li><strong>语言</strong>：技能内容与文档为英文。</li><li><strong>更新</strong>：上游随 Remotion 版本快速迭代，可用 <code>/remotion-upgrade</code> 或重跑安装命令保持最新。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-08-29 · 更新于 2026-08-29 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

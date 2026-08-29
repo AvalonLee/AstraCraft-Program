@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-28T08:21:46Z",
-  "count": 38,
+  "generated_at": "2026-08-29T08:58:43Z",
+  "count": 41,
   "categories": [
     {
       "dir": "writing-docs",
@@ -562,6 +562,54 @@
       "detail_url": "skills/fantasy-life-force-portrait-photography.html"
     },
     {
+      "id": "huashu-design",
+      "name_zh": "花叔设计 HTML 原生设计系统",
+      "name_en": "Huashu Design — HTML-Native Design Skill",
+      "summary_zh": "在 Agent 里一句话拿回可交付设计的 HTML 原生设计技能：高保真原型、演讲幻灯片（导出可编辑 PPTX）、时间轴动画（导出 MP4/GIF）、印刷级信息图，内置三套逻辑设计顾问、60 种风格库、品牌资产协议与 5 维专家评审。",
+      "summary_en": "HTML-native design skill for agents: hi-fi prototypes, editable-PPTX slide decks, MP4/GIF timeline animations, print-grade infographics, 60-style library and 5-dimension expert review.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "skill",
+      "kind_label": "技能包",
+      "tags": [
+        "design-system",
+        "ui-generation",
+        "motion-design",
+        "video-production",
+        "pptx",
+        "pdf",
+        "de-slop",
+        "agent-skills"
+      ],
+      "languages": [
+        "html",
+        "javascript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/alchaincyf/huashu-design",
+      "repo": "https://github.com/alchaincyf/huashu-design",
+      "tier": "core",
+      "tier_label": "主推",
+      "featured": true,
+      "related": [
+        "huashu-skills"
+      ],
+      "aliases": [
+        "Huashu Design",
+        "花叔设计"
+      ],
+      "risk_notes": "MIT 可商用（2026-05-14 起，此前商用授权条款已作废）；视频/PDF/PPTX 导出依赖本地 Node + Playwright/ffmpeg 工具链；云能力（豆包 TTS 配音、AI 看片评审）隔离在 scripts/cloud/，需自备 key 并 --yes 显式确认；不支持图层级可编辑 PPTX 回灌 Figma、3D/物理/粒子级复杂动画；空白品牌从零设计质量有限，建议提供品牌资产。",
+      "added_at": "2026-08-29",
+      "updated_at": "2026-08-29",
+      "install": "bash\nnpx skills add alchaincyf/huashu-design",
+      "detail_url": "skills/huashu-design.html"
+    },
+    {
       "id": "money-printer-turbo",
       "name_zh": "MoneyPrinterTurbo 一站式 AI 短视频生成工具",
       "name_en": "MoneyPrinterTurbo — One-Stop AI Short Video Generator",
@@ -737,6 +785,48 @@
       "updated_at": "2026-08-26",
       "install": "bash\ngit clone https://github.com/calesthio/OpenMontage.git\ncd OpenMontage\nmake setup",
       "detail_url": "skills/openmontage.html"
+    },
+    {
+      "id": "remotion-skills",
+      "name_zh": "Remotion 官方 Agent Skills",
+      "name_en": "Remotion Agent Skills — Official Skills for Remotion Projects",
+      "summary_zh": "Remotion 官方维护的 Agent Skills 合集：约 12 个技能覆盖用 React 写视频的最佳实践——建项目/合成、标记与动画、Studio 预览、渲染导出、地图动画、字幕、SaaS 架构、Studio 交互、文档检索、升级与 Mediabunny 多媒体处理。",
+      "summary_en": "Official Agent Skills maintained by Remotion: ~12 skills for writing videos in React — project creation, markup, Studio, rendering, maps, captions, SaaS, docs search and upgrades.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "skill-collection",
+      "kind_label": "技能集",
+      "tags": [
+        "remotion",
+        "video-production",
+        "motion-design",
+        "product-video",
+        "skill-pack",
+        "agent-skills"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "UNKNOWN",
+      "license_bucket": "unknown",
+      "homepage": "https://www.remotion.dev/docs/ai/skills",
+      "repo": "https://github.com/remotion-dev/skills",
+      "tier": "core",
+      "tier_label": "主推",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "Remotion Skills",
+        "Remotion Agent Skills"
+      ],
+      "risk_notes": "skills 仓库未附 LICENSE 文件且 package.json 未声明协议（UNKNOWN），商用前需确认；依赖 Remotion 生态——Remotion 框架本体采用 Remotion License（个人与小团队免费，达规模的公司需购买公司许可），商用渲染前需自查；渲染消耗本地或云端算力；技能内容为英文。",
+      "added_at": "2026-08-29",
+      "updated_at": "2026-08-29",
+      "install": "bash\nnpx skills add remotion-dev/skills",
+      "detail_url": "skills/remotion-skills.html"
     },
     {
       "id": "seedance-20",
@@ -1518,6 +1608,56 @@
       "updated_at": "2026-08-26",
       "install": "bash\n# 需要 Python 3.9+；告诉 Claude Code / Codex：安装这些技能 https://github.com/zenstory-ai/drama-skills\ngit clone https://github.com/zenstory-ai/drama-skills.git\ncd drama-skills\n\n# Claude Code\nmkdir -p \"$HOME/.claude/skills\"\nfor skill in skills/*; do ln -s \"$PWD/$skill\" \"$HOME/.claude/skills/$(basename \"$skill\")\"; done\n\n# Codex\nmkdir -p \"${CODEX_HOME:-$HOME/.codex}/skills\"\nfor skill in skills/*; do ln -s \"$PWD/$skill\" \"${CODEX_HOME:-$HOME/.codex}/skills/$(basename \"$skill\")\"; done",
       "detail_url": "skills/drama-skills.html"
+    },
+    {
+      "id": "huashu-skills",
+      "name_zh": "花叔开源 Skills 总目录",
+      "name_en": "huashu-skills — Huashu's Open-Source Agent Skills Master Index",
+      "summary_zh": "花叔全部开源 Agent Skills 的总目录：16 个旗舰 + 14 个人物视角 + 22 个内置共 52 个标准 SKILL.md 技能，覆盖公众号/短视频/小红书从选题、写作、审校、配图到分发的创作流水线，附 AI Agent 安装协议与机器可读 skills.json。",
+      "summary_en": "Master index of Huashu's 52 Agent Skills in three tiers: 16 flagship repos, 14 persona skills, and 22 built-in content-creation skills for topic generation, writing, proofreading and publishing.",
+      "category_dir": "writing-docs",
+      "category_name": "写作与文档",
+      "kind": "skill-collection",
+      "kind_label": "技能集",
+      "tags": [
+        "writing",
+        "social-media",
+        "short-video",
+        "image-generation",
+        "agent-skills",
+        "claude-code",
+        "skill-collection",
+        "cn-localization"
+      ],
+      "languages": [
+        "python",
+        "markdown"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "UNKNOWN",
+      "license_bucket": "unknown",
+      "homepage": "https://github.com/alchaincyf/huashu-skills",
+      "repo": "https://github.com/alchaincyf/huashu-skills",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "huashu-design",
+        "shuohao-skills"
+      ],
+      "aliases": [
+        "花叔技能",
+        "花叔 Skills 总目录",
+        "huashu"
+      ],
+      "risk_notes": "仓库未提供 LICENSE 文件，协议不明，商用前需与作者确认；内置 22 个 skill 需克隆后复制子目录安装；huashu-design 有独立仓库完整版与内置轻量版同名冲突，两者不能装进同一目录；部分 skill 依赖豆包/Codex 环境内置 image_gen 或外部 AI 服务，费用与可用性随平台变化。",
+      "added_at": "2026-08-29",
+      "updated_at": "2026-08-29",
+      "install": "读 https://github.com/alchaincyf/huashu-skills 的 README 和 skills.json，帮我按需求推荐并安装对应 skill",
+      "detail_url": "skills/huashu-skills.html"
     },
     {
       "id": "oh-story-claudecode",

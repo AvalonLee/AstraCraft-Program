@@ -7,7 +7,7 @@
 一个轻量、中文为主的 Agent Skill 索引库：每个条目只存一份 `SKILL.md`（介绍 + 安装指令），
 Agent 读完即可快速定位并安装对应的 skill 项目。不收录上游源码快照。
 
-[![entries](https://img.shields.io/badge/entries-38-blue.svg)](site/index.html)
+[![entries](https://img.shields.io/badge/entries-41-blue.svg)](site/index.html)
 [![license](https://img.shields.io/badge/docs-CC%20BY%204.0-blue.svg)](LICENSE)
 [![code license](https://img.shields.io/badge/code-MIT-green.svg)](LICENSE)
 [![CI: index-check](https://github.com/AvalonLee/AstraCraft-Program/actions/workflows/index-check.yml/badge.svg)](https://github.com/AvalonLee/AstraCraft-Program/actions/workflows/index-check.yml)
@@ -25,14 +25,14 @@ Agent 读完即可快速定位并安装对应的 skill 项目。不收录上游�
 
 ## 一句话装到你的 Agent
 
-不想翻库、不想手敲？把下面这句直接发给你的 AI Agent，它会只安装「天工精选」这**一份**技能（仓库根目录的 `SKILL.md` 单文件），不会把库里 38 个条目注册成技能：
+不想翻库、不想手敲？把下面这句直接发给你的 AI Agent，它会只安装「天工精选」这**一份**技能（仓库根目录的 `SKILL.md` 单文件），不会把库里 41 个条目注册成技能：
 
 ```
 请安装天工计划的天工精选技能（AstraCraft Recommender，只装根目录 SKILL.md 这一份）：https://github.com/AvalonLee/AstraCraft-Program
 ```
 
 > 天工精选（AstraCraft Recommender）是本计划的配套推荐技能：装好后，你描述项目实况，它从本库里挑出最该装的几个技能并给出安装指引。
-> 技能本体即仓库根目录 [SKILL.md](SKILL.md) 这一份文件，Agent 只抓取它即可安装（**不要克隆整库进 skills 目录**，`entries/` 下 38 份是推荐用的「数据」，不是可安装技能）。在线预览站首页顶部也有同款「一键复制」安装条。
+> 技能本体即仓库根目录 [SKILL.md](SKILL.md) 这一份文件，Agent 只抓取它即可安装（**不要克隆整库进 skills 目录**，`entries/` 下 41 份是推荐用的「数据」，不是可安装技能）。在线预览站首页顶部也有同款「一键复制」安装条。
 
 ## 两种同名文件的机器边界
 
@@ -109,7 +109,7 @@ Agent 可直接据此判断装不装、能不能商用。
 
 ## 收录内容
 
-当前收录 **38** 个条目，按十大分类组织（目录名 → 定位）：
+当前收录 **41** 个条目，按十大分类组织（目录名 → 定位）：
 
 | 目录 | 定位 |
 |---|---|

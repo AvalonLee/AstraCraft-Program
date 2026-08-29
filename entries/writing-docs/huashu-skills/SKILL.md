@@ -19,7 +19,7 @@ metrics:
   pushed_at: "2026-08-25"
   checked_at: "2026-08-29"
   archived: false
-related: [shuohao-skills]
+related: [huashu-design, shuohao-skills]
 aliases: [花叔技能, 花叔 Skills 总目录, huashu]
 risk_notes: 仓库未提供 LICENSE 文件，协议不明，商用前需与作者确认；内置 22 个 skill 需克隆后复制子目录安装；huashu-design 有独立仓库完整版与内置轻量版同名冲突，两者不能装进同一目录；部分 skill 依赖豆包/Codex 环境内置 image_gen 或外部 AI 服务，费用与可用性随平台变化。
 added_at: "2026-08-29"

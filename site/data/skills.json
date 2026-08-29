@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-29T03:23:48Z",
-  "count": 39,
+  "generated_at": "2026-08-29T03:31:31Z",
+  "count": 40,
   "categories": [
     {
       "dir": "writing-docs",
@@ -560,6 +560,54 @@
       "updated_at": "2026-08-26",
       "install": "bash\n# 克隆上游仓库到本地\ngit clone https://github.com/dacnay816y62-hub/fantasy-life-force-portrait-photography.git\ncd fantasy-life-force-portrait-photography\n\n# 将仓库目录放入你的 Codex skills 目录后，即可在对话中触发，例如：\n# 使用 Fantasy 生命感人像摄影 Skill，把这张普通生活照升级成更有生命感的人像。",
       "detail_url": "skills/fantasy-life-force-portrait-photography.html"
+    },
+    {
+      "id": "huashu-design",
+      "name_zh": "花叔设计 HTML 原生设计系统",
+      "name_en": "Huashu Design — HTML-Native Design Skill",
+      "summary_zh": "在 Agent 里一句话拿回可交付设计的 HTML 原生设计技能：高保真原型、演讲幻灯片（导出可编辑 PPTX）、时间轴动画（导出 MP4/GIF）、印刷级信息图，内置三套逻辑设计顾问、60 种风格库、品牌资产协议与 5 维专家评审。",
+      "summary_en": "HTML-native design skill for agents: hi-fi prototypes, editable-PPTX slide decks, MP4/GIF timeline animations, print-grade infographics, 60-style library and 5-dimension expert review.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "skill",
+      "kind_label": "技能包",
+      "tags": [
+        "design-system",
+        "ui-generation",
+        "motion-design",
+        "video-production",
+        "pptx",
+        "pdf",
+        "de-slop",
+        "agent-skills"
+      ],
+      "languages": [
+        "html",
+        "javascript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/alchaincyf/huashu-design",
+      "repo": "https://github.com/alchaincyf/huashu-design",
+      "tier": "core",
+      "tier_label": "主推",
+      "featured": true,
+      "related": [
+        "huashu-skills"
+      ],
+      "aliases": [
+        "Huashu Design",
+        "花叔设计"
+      ],
+      "risk_notes": "MIT 可商用（2026-05-14 起，此前商用授权条款已作废）；视频/PDF/PPTX 导出依赖本地 Node + Playwright/ffmpeg 工具链；云能力（豆包 TTS 配音、AI 看片评审）隔离在 scripts/cloud/，需自备 key 并 --yes 显式确认；不支持图层级可编辑 PPTX 回灌 Figma、3D/物理/粒子级复杂动画；空白品牌从零设计质量有限，建议提供品牌资产。",
+      "added_at": "2026-08-29",
+      "updated_at": "2026-08-29",
+      "install": "bash\nnpx skills add alchaincyf/huashu-design",
+      "detail_url": "skills/huashu-design.html"
     },
     {
       "id": "money-printer-turbo",
@@ -1555,6 +1603,7 @@
       "tier_label": "常规",
       "featured": false,
       "related": [
+        "huashu-design",
         "shuohao-skills"
       ],
       "aliases": [

@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-29T08:58:43Z",
-  "count": 41,
+  "generated_at": "2026-08-30T10:44:41Z",
+  "count": 43,
   "categories": [
     {
       "dir": "writing-docs",
@@ -610,6 +610,54 @@
       "detail_url": "skills/huashu-design.html"
     },
     {
+      "id": "manju-laoli-skill",
+      "name_zh": "漫剧老李 AIGC 全流程 Skill",
+      "name_en": "Manju Laoli Skill — Short-Drama Director Suite",
+      "summary_zh": "面向抖音 & 红果爆款短剧/漫剧的工业化编剧与视听导演系统：五阶门控剧本、七维台词诊断、资产三视图锁、文武双模分镜、15 秒打戏 PREVIS、Seedance 三层解耦提示词与 P0~P2 质检门禁，一条龙贯穿小说分析到独立质检。",
+      "summary_en": "Industrial screenwriting & directing system for viral short dramas: gated script engine, dialogue diagnosis, asset locking, dual-mode storyboards, action PREVIS, Seedance prompts and QC gates.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "skill",
+      "kind_label": "技能包",
+      "tags": [
+        "short-drama",
+        "screenwriting",
+        "storyboard",
+        "seedance",
+        "openclaw",
+        "ai-agent",
+        "character-design"
+      ],
+      "languages": [
+        "markdown"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/AvalonLee/manju-laoli-skill",
+      "repo": "https://github.com/AvalonLee/manju-laoli-skill",
+      "tier": "watch",
+      "tier_label": "观察",
+      "featured": false,
+      "related": [
+        "shuohao-skills",
+        "huashu-skills"
+      ],
+      "aliases": [
+        "漫剧老李",
+        "Short-Drama Director Suite",
+        "short-drama-director"
+      ],
+      "risk_notes": "MIT 可商用；项目自述为测试版，由开源内容二次修改整合而成，尚无社区实测背书（star 数极低）；渲染依赖 Seedance 2.0/即梦/可灵等外部视频模型，消耗额度；内置平台合规转译词典但不构成内容合规保证，发布前仍需人工过审；安装目标以 OpenClaw 为主，其他 Agent 需手动复制目录。",
+      "added_at": "2026-08-30",
+      "updated_at": "2026-08-30",
+      "install": "bash\nmkdir -p ~/.claude/skills\ngit clone --depth 1 https://github.com/AvalonLee/manju-laoli-skill.git /tmp/manju-laoli\ncp -r /tmp/manju-laoli/short-drama-director ~/.claude/skills/",
+      "detail_url": "skills/manju-laoli-skill.html"
+    },
+    {
       "id": "money-printer-turbo",
       "name_zh": "MoneyPrinterTurbo 一站式 AI 短视频生成工具",
       "name_en": "MoneyPrinterTurbo — One-Stop AI Short Video Generator",
@@ -969,6 +1017,53 @@
       "updated_at": "2026-08-26",
       "install": "bash\n# 方式一：直接让 Agent 安装\n# 在 Claude Code / Codex 中说：\n# \"Install this skill for me: https://github.com/Vincentwei1021/video-shotcraft\"\n\n# 方式二：skills CLI\nnpx skills add Vincentwei1021/video-shotcraft\n\n# 方式三：手动软链\ngit clone https://github.com/Vincentwei1021/video-shotcraft.git\nln -s \"$(pwd)/video-shotcraft\" ~/.codex/skills/video-shotcraft  # Codex\nln -s \"$(pwd)/video-shotcraft\" ~/.claude/skills/video-shotcraft  # Claude Code",
       "detail_url": "skills/video-shotcraft.html"
+    },
+    {
+      "id": "video-talkcraft",
+      "name_zh": "口播视频动效工作室",
+      "name_en": "video-talkcraft — Voiceover-Driven Explainer Video Skill",
+      "summary_zh": "把 Claude Code / Codex 变成口播视频动效工作室的 agent skill：字级配音同步、78 张动效配方卡、七层反 PPT 镜头系统、三重验收，用 Remotion 渲出动态字卡、证据截图、运镜与音效全部锁在人声上的解说成片。",
+      "summary_en": "Agent skill turning Claude Code / Codex into a motion studio for voiceover-driven explainer videos: word-level voiceover sync, 78 motion recipes, anti-slideshow camera, Remotion rendering.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "skill",
+      "kind_label": "技能包",
+      "tags": [
+        "video-production",
+        "motion-design",
+        "remotion",
+        "claude-code",
+        "codex",
+        "skill"
+      ],
+      "languages": [
+        "typescript",
+        "python"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_bucket": "unknown",
+      "homepage": "https://github.com/Vincentwei1021/video-talkcraft",
+      "repo": "https://github.com/Vincentwei1021/video-talkcraft",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "video-shotcraft",
+        "remotion-skills"
+      ],
+      "aliases": [
+        "口播视频动效工作室",
+        "talkcraft"
+      ],
+      "risk_notes": "PolyForm Noncommercial 1.0.0 仅限非商业用途（产出的视频归创作者所有，但工具链本身不可商用）；字级时间戳管线首次使用需下载 767MB 的 FireRedASR2-CTC 模型（可改 whisper 后端免手动下载）；依赖 Node 18+、Python 3.10+、ffmpeg 与 Remotion 渲染工具链，环境由 agent 按需配置。",
+      "added_at": "2026-08-30",
+      "updated_at": "2026-08-30",
+      "install": "text\n帮我安装这个 skill：https://github.com/Vincentwei1021/video-talkcraft",
+      "detail_url": "skills/video-talkcraft.html"
     },
     {
       "id": "vimax",

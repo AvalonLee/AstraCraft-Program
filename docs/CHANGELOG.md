@@ -16,6 +16,8 @@
 
 ### 新增
 
+- **漫剧老李 AIGC 全流程 Skill（2026-08-30）**：收录 `design-creative/manju-laoli-skill`（MIT）。面向抖音 & 红果短剧/漫剧的工业化编剧与视听导演系统：五阶门控剧本、七维台词诊断、资产三视图锁、文武双模分镜、15 秒打戏 PREVIS、Seedance 三层解耦提示词与 P0~P2 质检门禁。测试版，评级：观察。目录总数由 42 增至 **43**。
+- **口播视频动效工作室（2026-08-30）**：收录 `design-creative/video-talkcraft`（PolyForm Noncommercial 1.0.0）。video-shotcraft 系列口播篇：字级配音同步、78 张动效配方卡、七层反 PPT 镜头系统、三重验收，Remotion 渲染解说成片。评级：常规。目录总数由 41 增至 **42**。
 - **Remotion 官方 Agent Skills（2026-08-29）**：收录 `design-creative/remotion-skills`（协议未标注，UNKNOWN），评级：主推（core）。Remotion（React 写视频的事实标准框架）官方维护的约 12 个 Agent Skills：建项目、标记最佳实践、Studio 预览、渲染、地图动画、字幕、SaaS 架构、文档检索与升级等，`npx skills add remotion-dev/skills` 一键安装。目录总数由 40 增至 **41**。
 - **花叔设计 HTML 原生设计系统（2026-08-29）**：收录 `design-creative/huashu-design`（MIT），评级：**主推（core）并入选首页精选**。花叔旗舰设计技能（★23.6k，库内热度第一）：Agent 内一句话产出高保真原型、可编辑 PPTX 幻灯片、MP4/GIF 时间轴动画与印刷级信息图，内置三套逻辑设计顾问、60 种纯 CSS 风格库、品牌资产协议与 5 维专家评审，核心链路 100% 本地运行，跨 Claude Code/Codex/Cursor 等通用。目录总数由 39 增至 **40**。
 - **花叔开源 Skills 总目录（2026-08-29）**：收录 `writing-docs/huashu-skills`（协议未标注，UNKNOWN）。花叔（alchaincyf）全部开源 Agent Skills 的总目录，52 个标准 SKILL.md 技能分三层：16 旗舰独立仓库 + 14 人物视角 + 22 内置轻量创作技能，覆盖选题/写作/审校/配图/分发流水线，附 AI Agent 安装协议与机器可读 skills.json。评级：常规。目录总数由 38 增至 **39**。

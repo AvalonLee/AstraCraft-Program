@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>漫剧老李 AIGC 全流程 Skill · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">漫剧老李 AIGC 全流程 Skill</h1>
+      <p class="hero-subtitle">Manju Laoli Skill — Short-Drama Director Suite</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>观察</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>技能包</span>
+    </div>
+    <p class="muted detail-meta">面向抖音 &amp; 红果爆款短剧/漫剧的工业化编剧与视听导演系统：五阶门控剧本、七维台词诊断、资产三视图锁、文武双模分镜、15 秒打戏 PREVIS、Seedance 三层解耦提示词与 P0~P2 质检门禁，一条龙贯穿小说分析到独立质检。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/AvalonLee/manju-laoli-skill" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/AvalonLee/manju-laoli-skill" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>漫剧老李 AIGC 全流程 Skill</h1>
+<blockquote>面向抖音 &amp; 红果爆款短剧/漫剧的工业化编剧与视听导演超级系统。上游：<a href="https://github.com/AvalonLee/manju-laoli-skill" target="_blank" rel="noopener">AvalonLee/manju-laoli-skill</a> · 许可证：MIT（见 <code>short-drama-director/LICENSE</code>）</blockquote>
+<h2>这是什么</h2>
+<p>一条龙贯穿「小说分析 → 门控编剧 → 台词诊断 → 资产与空间锁定 → 文武双模分镜动力学 → 视频模型精准提示词渲染 → 独立质检审查」的短剧/漫剧生产管线，供 AI 助手 / LLM 直接调用。主包 <code>short-drama-director</code> 为一个路由式 SKILL.md + 18 份专业规则手册（references/）+ 静态校验脚本（<code>check_package.py</code>）。核心模块：</p>
+<ul><li><strong>剧本</strong>：五阶门控引擎（Premise → Structure → Beat → Entity → Page），拒绝无大纲直奔台词。</li><li><strong>台词</strong>：七维全量诊断，杜绝播音腔与反向灌输设定，强制语速自检（3.5~5 字/秒）。</li><li><strong>资产</strong>：16 项资产锁定（A/B/C 分级）+ 三栏无头三视图参考图 + 3D 空间快照与 180° 轴线锁。</li><li><strong>分镜</strong>：文武双模——文戏微表情生理递进，武戏 15 秒 PREVIS 动力学（R1/R2/R3 三档）；11 环动力链、防守三态、终结技三幕、大招运镜 11 模式与全门派武学库。</li><li><strong>渲染</strong>：Seedance 2.0 / 即梦 / 可灵三层解耦提示词，单组 ≤15s 独立投喂。</li><li><strong>质检与合规</strong>：P0/P1/P2 三级独立门禁 + 声音三层相对电平；平台安全合规转译词典（安全默认 / 强动作非血腥 / 成人级草案）。</li></ul>
+<h2>怎么安装</h2>
+<pre><code class="lang-bash">mkdir -p ~/.claude/skills
+git clone --depth 1 https://github.com/AvalonLee/manju-laoli-skill.git /tmp/manju-laoli
+cp -r /tmp/manju-laoli/short-drama-director ~/.claude/skills/</code></pre>
+<p>OpenClaw 环境可直接：</p>
+<pre><code class="lang-bash">openclaw skills install ./short-drama-director --as short-drama-director</code></pre>
+<p>其他支持 Agent Skills 格式的 Agent 把 <code>short-drama-director/</code> 目录复制进各自 skills 目录即可。完整规则与指令见包内 <code>SKILL.md</code>。</p>
+<h2>怎么用</h2>
+<p>1. 装完重启 Agent 会话，直接说需求，例如「用 short-drama-director 把这本小说前十章改编成 30 集短剧大纲」或「按文武双模给第 3 集出分镜与 Seedance 提示词」。 2. 管线按五阶门控推进：先小说分析与大纲，再逐阶过门进入台词与分镜，每阶由门控规则拦住不合格产出。 3. 修改或二次整合包内容后，运行 <code>python scripts/check_package.py</code> 做静态校验，确认引用与结构完整。 4. 旧版 V5.0.2 与空间导演 V3 在独立仓库 <a href="https://github.com/lixiaoxiao9888-create/manju-laoli-skill-legacy" target="_blank" rel="noopener">manju-laoli-skill-legacy</a> 归档。</p>
+<h2>注意事项</h2>
+<ul><li><strong>测试版</strong>：V6.0 为测试版，由开源内容二次修改整合而成，暂无社区实测背书（评级：观察期）；关键生产用途建议先小样验证。</li><li><strong>外部模型依赖</strong>：出片依赖 Seedance 2.0 / 即梦 / 可灵等外部视频模型，按组投喂消耗额度；提示词管线不含本地渲染。</li><li><strong>合规责任</strong>：内置的合规转译词典（安全默认 / 强动作非血腥 / 成人级草案）只做转译提示，不构成内容合规保证，平台发布前仍需人工过审。</li><li><strong>同类对比</strong>：<code>writing-docs/shuohao-skills</code> 走「小说 → 短剧制作素材」的线性管线并带质量门脚本；本条目胜在武戏 PREVIS、资产锁定与视频模型提示词的深度，两者可按需组合。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-08-30 · 更新于 2026-08-30 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

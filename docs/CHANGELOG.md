@@ -16,6 +16,7 @@
 
 ### 新增
 
+- **ChatGPT Shortcut 提示词快捷指令库（2026-08-30）**：收录 `business-office/chatgpt-shortcut`（MIT）。★8.7k 的可检索提示词库网站（AiShort）：按职业/场景分类的现成提示词卡片，支持搜索、筛选与个人收藏库，配浏览器扩展与 Docker 自托管。注意其为网站形态、非 SKILL.md 项目，仅作提示词参考库收录。评级：常规。目录总数由 43 增至 **44**。
 - **漫剧老李 AIGC 全流程 Skill（2026-08-30）**：收录 `design-creative/manju-laoli-skill`（MIT）。面向抖音 & 红果短剧/漫剧的工业化编剧与视听导演系统：五阶门控剧本、七维台词诊断、资产三视图锁、文武双模分镜、15 秒打戏 PREVIS、Seedance 三层解耦提示词与 P0~P2 质检门禁。测试版，评级：观察。目录总数由 42 增至 **43**。
 - **口播视频动效工作室（2026-08-30）**：收录 `design-creative/video-talkcraft`（PolyForm Noncommercial 1.0.0）。video-shotcraft 系列口播篇：字级配音同步、78 张动效配方卡、七层反 PPT 镜头系统、三重验收，Remotion 渲染解说成片。评级：常规。目录总数由 41 增至 **42**。
 - **Remotion 官方 Agent Skills（2026-08-29）**：收录 `design-creative/remotion-skills`（协议未标注，UNKNOWN），评级：主推（core）。Remotion（React 写视频的事实标准框架）官方维护的约 12 个 Agent Skills：建项目、标记最佳实践、Studio 预览、渲染、地图动画、字幕、SaaS 架构、文档检索与升级等，`npx skills add remotion-dev/skills` 一键安装。目录总数由 40 增至 **41**。

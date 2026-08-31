@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-30T10:44:41Z",
-  "count": 43,
+  "generated_at": "2026-08-30T13:40:20Z",
+  "count": 44,
   "categories": [
     {
       "dir": "writing-docs",
@@ -183,6 +183,51 @@
       "updated_at": "2026-08-13",
       "install": "bash\n# 仅克隆文档技能子目录（稀疏检出，体积小）\ngit clone --depth 1 --filter=blob:none --sparse https://github.com/anthropics/skills /tmp/office-skills\ncd /tmp/office-skills\ngit sparse-checkout set skills/document-skills\n\n# 然后将所需技能目录复制到你的 agent 的 skills 目录（仅本地使用）\ncp -r skills/document-skills/* ~/.claude/skills/",
       "detail_url": "skills/anthropics-office-skills.html"
+    },
+    {
+      "id": "chatgpt-shortcut",
+      "name_zh": "ChatGPT Shortcut 提示词快捷指令库",
+      "name_en": "ChatGPT Shortcut (AiShort)",
+      "summary_zh": "面向普通用户的可检索提示词库——按职业与场景分类的现成提示词卡片，拿来就用，支持搜索、筛选、收藏自己的常用库，覆盖文案、办公、营销、编程等场景，配浏览器扩展与 Docker 自托管方案。注意：非 SKILL.md 形态，作为提示词参考库使用而非可安装技能。",
+      "summary_en": "A searchable prompt library for ChatGPT, Claude, Gemini and Cursor: ready-to-use prompt cards by role and scenario, with browser extension and Docker self-hosting.",
+      "category_dir": "business-office",
+      "category_name": "商业与办公",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "prompt-engineering",
+        "writing",
+        "social-media",
+        "self-hosted",
+        "docker",
+        "multilingual"
+      ],
+      "languages": [
+        "typescript",
+        "markdown"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://www.aishort.top",
+      "repo": "https://github.com/rockbenben/ChatGPT-Shortcut",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "chatgpt-shortcut",
+        "aishort",
+        "ai-short"
+      ],
+      "risk_notes": "非 SKILL.md 项目：主体是提示词库网站与浏览器扩展，不能作为 Agent 技能安装；提示词面向通用对话模型且由社区贡献，质量参差，实际使用前需自行校准。",
+      "added_at": "2026-08-30",
+      "updated_at": "2026-08-30",
+      "install": "bash\n# 方式一：无需安装，直接使用在线站\n#   https://www.aishort.top\n\n# 方式二：Docker 自托管（数据完全本地）\ngit clone --depth 1 https://github.com/rockbenben/ChatGPT-Shortcut.git\ncd ChatGPT-Shortcut\ndocker compose up -d\n# 浏览器访问 http://localhost:3000",
+      "detail_url": "skills/chatgpt-shortcut.html"
     },
     {
       "id": "aigc-line",

@@ -7,6 +7,7 @@
   var GROUPS = ["category", "tag", "tier", "license"];
   var TAG_LIMIT = 20;     // 标签折叠态兜底上限：有效标签过多时仍只显示前 N 个
   var TAG_MIN_COUNT = 2;  // 折叠态仅展示被 >=2 个条目使用的「有效标签」，单例标签默认折叠
+  var RANDOM_PICK_COUNT = 4;
 
   // 评级（tier）视觉分类：tier_label -> 配色档（与 style.css .tier-* 对应）
   var TIER_CLASS = { "主推": "core", "常规": "standard", "观察": "watch" };
@@ -309,14 +310,22 @@
       : "共 " + list.length + " 个技能（已从 " + total + " 个中筛选）";
   }
 
-  // ---- 首页精选区（featured）渲染 ----
-  function renderFeatured() {
+  function pickRandomSkills(count) {
+    var pool = state.skills.slice();
+    for (var i = pool.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = pool[i];
+      pool[i] = pool[j];
+      pool[j] = temp;
+    }
+    return pool.slice(0, count);
+  }
+
+  // ---- 首页随机推荐区渲染 ----
+  function renderRandomPicks() {
     var box = $("featured-results");
     if (!box) return;
-    var list = state.skills.filter(function (s) { return s.featured; });
-    box.innerHTML = list.length
-      ? list.map(cardHtml).join("")
-      : '<p class="muted">暂无精选条目。在条目 SKILL.md 的 frontmatter 设置 featured: true 即可入选。</p>';
+    box.innerHTML = pickRandomSkills(RANDOM_PICK_COUNT).map(cardHtml).join("");
   }
 
   // 卡片标签点击 -> 联动 sidebar 的 tag 分面筛选
@@ -367,7 +376,7 @@
         });
         $("clear-filters").addEventListener("click", clearFilters);
         render();
-        renderFeatured();
+        renderRandomPicks();
 
         // 卡片上的标签可点击 -> 联动分面筛选（事件委托，覆盖主库与精选区）
         document.addEventListener("click", function (e) {

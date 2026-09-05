@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Browser Use 浏览器 Agent · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Browser Use 浏览器 Agent</h1>
+      <p class="hero-subtitle">Browser Use — AI Browser Agent</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>Agent 基础设施</span><span>主推</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">让 AI Agent 像人一样操作浏览器的开源框架：打开页面、点击、输入、填表和提取结构化数据；可作为 Python 库嵌入自动化流程，也可通过 CLI/技能接入 Claude Code、Codex、Cursor 等编码 Agent，并支持自定义工具与多种 LLM。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/browser-use/browser-use" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://browser-use.com" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Browser Use 浏览器 Agent</h1>
+<blockquote>让 AI Agent 像人一样打开网页、点击、输入和提取数据。上游：<a href="https://github.com/browser-use/browser-use" target="_blank" rel="noopener">browser-use/browser-use</a> · 许可证：MIT</blockquote>
+<h2>这是什么</h2>
+<p>Browser Use 是把浏览器操作能力交给 AI Agent 的开源框架。它不只在页面上“截图问答”，而是让模型按任务驱动真实浏览器：打开链接、点击按钮、填写表单、等待结果、抓取页面内容并输出结构化数据。</p>
+<p>项目有两条主要使用路径：</p>
+<ul><li><strong>Python 库</strong>：用于自己的自动化产品或脚本，可选择任意支持的 LLM、定义自定义工具、结构化输出和细粒度浏览器控制。</li><li><strong>CLI / Agent 技能</strong>：安装后接入 Claude Code、Codex、Cursor、Hermes、OpenClaw 等 Agent，由 Agent 直接下发一次性浏览器任务。</li></ul>
+<p>核心能力覆盖表单填写、数据提取、多步任务编排、认证会话管理、自定义工具、远程/云浏览器、代理轮换和 MCP/云 API 集成。</p>
+<h2>怎么安装</h2>
+<p>Python 环境为 3.11+。用 uv 安装并注册 Agent 技能：</p>
+<pre><code class="lang-bash">uv add browser-use
+browser-use skill install</code></pre>
+<p>或用 pip：</p>
+<pre><code class="lang-bash">pip install browser-use</code></pre>
+<p>如果只是给 Claude Code、Codex、Cursor 等 Agent 用，可直接让 Agent 执行官方 Quickstart 中的安装提示词，它会安装稳定版并连接本地浏览器。</p>
+<h2>怎么用</h2>
+<p>先在 <code>.env</code> 配置 LLM 或 Browser Use Cloud Key：</p>
+<pre><code class="lang-env">BROWSER_USE_API_KEY=your-key
+# GOOGLE_API_KEY=your-key
+# ANTHROPIC_API_KEY=your-key</code></pre>
+<p>最小 Agent 示例：</p>
+<pre><code class="lang-python">import asyncio
+
+from browser_use import Agent, ChatBrowserUse
+
+async def main():
+    agent = Agent(
+        task=&quot;Find the number of stars of the browser-use repo&quot;,
+        llm=ChatBrowserUse(model=&quot;openai/gpt-5.5&quot;),
+    )
+    history = await agent.run()
+
+asyncio.run(main())</code></pre>
+<p>也可以用 <code>Tools()</code> 注册自定义动作，让 Agent 在浏览器任务中调用自己的内部 API 或本地命令。</p>
+<h2>注意事项</h2>
+<ul><li><strong>真实副作用</strong>：Agent 会操作真实网页和账号。不要把高风险操作完全交给无人值守任务，建议设置人工确认、白名单和最小权限会话。</li><li><strong>网站条款与隐私</strong>：自动化访问、抓取和登录可能受目标网站条款约束；处理个人信息时需要另行评估隐私与合规要求。</li><li><strong>成本依赖</strong>：LLM、云浏览器、代理、验证码处理和 Cloud API 都可能产生费用。</li><li><strong>部署规模</strong>：本地 Chrome 并行任务会占用大量内存；生产环境建议使用远程浏览器基础设施和资源管理。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

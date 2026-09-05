@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-05T07:46:05Z",
-  "count": 48,
+  "generated_at": "2026-09-05T08:22:41Z",
+  "count": 52,
   "categories": [
     {
       "dir": "writing-docs",
@@ -54,6 +54,102 @@
     }
   ],
   "skills": [
+    {
+      "id": "aitoearn",
+      "name_zh": "AiToEarn AI 内容营销智能体",
+      "name_en": "AiToEarn — AI Content Marketing Agent",
+      "summary_zh": "面向一人公司与创作者的 AI 内容营销平台：用 Agent 批量生成视频/图文，排期分发到抖音、小红书、TikTok、YouTube、X 等平台，并支持自动化互动、评论转化信号识别与 CPS/CPE/CPM 内容变现。",
+      "summary_en": "AI content marketing platform for creators and one-person companies: batch media generation, cross-platform publishing, automated engagement, and monetization.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "aitoearn",
+        "content-marketing",
+        "ai-agent",
+        "mcp",
+        "social-media",
+        "monetization",
+        "self-hosted",
+        "docker"
+      ],
+      "languages": [
+        "typescript",
+        "javascript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en",
+        "ja"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://aitoearn.ai/",
+      "repo": "https://github.com/yikart/AiToEarn",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "money-printer-turbo",
+        "staffdeck"
+      ],
+      "aliases": [
+        "AiToEarn",
+        "aitoearn-ai"
+      ],
+      "risk_notes": "MIT 许可，但平台会操作真实社媒账号并调用第三方模型/平台接口；使用前需确认各平台服务条款与账号策略，配置最小权限 API Key，并注意模型调用与内容分发费用。中国版与国际版 Key 和 API 环境必须匹配，否则会返回 401。自动化互动和批量发布应控制频率，避免触发平台风控。",
+      "added_at": "2026-09-05",
+      "updated_at": "2026-09-05",
+      "install": "bash\ngit clone https://github.com/yikart/AiToEarn.git\ncd AiToEarn\ndocker compose up -d",
+      "detail_url": "skills/aitoearn.html"
+    },
+    {
+      "id": "browser-use",
+      "name_zh": "Browser Use 浏览器 Agent",
+      "name_en": "Browser Use — AI Browser Agent",
+      "summary_zh": "让 AI Agent 像人一样操作浏览器的开源框架：打开页面、点击、输入、填表和提取结构化数据；可作为 Python 库嵌入自动化流程，也可通过 CLI/技能接入 Claude Code、Codex、Cursor 等编码 Agent，并支持自定义工具与多种 LLM。",
+      "summary_en": "Open-source browser agent framework for web navigation, form filling, extraction and custom tools, usable as a Python library or CLI skill with Claude Code, Codex and Cursor.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "browser-use",
+        "browser-automation",
+        "ai-agent",
+        "mcp",
+        "python",
+        "playwright",
+        "self-hosted"
+      ],
+      "languages": [
+        "python"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://browser-use.com",
+      "repo": "https://github.com/browser-use/browser-use",
+      "tier": "core",
+      "tier_label": "主推",
+      "featured": false,
+      "related": [
+        "mcp",
+        "ai-agent"
+      ],
+      "aliases": [
+        "Browser Use",
+        "browseruse"
+      ],
+      "risk_notes": "MIT 许可，但开源库默认会向浏览器执行真实点击、输入、上传与数据读取；使用前必须确认目标网站条款、账号策略与隐私影响，为敏感站点配置人工审批或最小权限。生产规模建议使用远程浏览器与代理管理；LLM 与云服务调用会产生费用，且仓库另有 Cloud 服务条款。",
+      "added_at": "2026-09-05",
+      "updated_at": "2026-09-05",
+      "install": "bash\nuv add browser-use\nbrowser-use skill install",
+      "detail_url": "skills/browser-use.html"
+    },
     {
       "id": "codex-taskboard",
       "name_zh": "Codex Taskboard 本地任务看板",
@@ -406,6 +502,52 @@
       "detail_url": "skills/aimangastudio.html"
     },
     {
+      "id": "animejs",
+      "name_zh": "Anime.js 动画引擎",
+      "name_en": "Anime.js — JavaScript Animation Engine",
+      "summary_zh": "轻量多用途 JavaScript 动画引擎：用统一 API 驱动 CSS、SVG、DOM 属性与 JavaScript 对象；V4 提供模块化时间轴、弹簧缓动、滚动、拖拽、文本拆分、WAAPI 与 Three.js 适配，适合界面、图表和创意页面动效。",
+      "summary_en": "A lightweight JavaScript animation engine for CSS, SVG, DOM attributes, JavaScript objects and optional Three.js scenes, with modular timelines, springs, scrolling, dragging and WAAPI support.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "animejs",
+        "animation",
+        "web-animation",
+        "motion-design",
+        "frontend",
+        "framework"
+      ],
+      "languages": [
+        "javascript",
+        "typescript"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://animejs.com",
+      "repo": "https://github.com/juliangarnier/anime",
+      "tier": "core",
+      "tier_label": "主推",
+      "featured": false,
+      "related": [
+        "gsap",
+        "remotion-skills"
+      ],
+      "aliases": [
+        "Anime.js",
+        "animejs"
+      ],
+      "risk_notes": "MIT 许可，主体免费可商用；V4 采用 ES 模块和函数式 API，与 V3 的默认导入写法差异较大，升级项目需先读迁移指南。Three.js 适配为可选 peer dependency，复杂 DOM/SVG/WebGL 动画仍需关注性能与浏览器兼容。",
+      "added_at": "2026-09-05",
+      "updated_at": "2026-09-05",
+      "install": "bash\nnpm install animejs",
+      "detail_url": "skills/animejs.html"
+    },
+    {
       "id": "arcreel",
       "name_zh": "ArcReel AI 视频生产工作台",
       "name_en": "ArcReel — Self-Hosted AI Video Production Workbench",
@@ -698,6 +840,51 @@
       "updated_at": "2026-08-26",
       "install": "bash\n# 克隆上游仓库到本地\ngit clone https://github.com/dacnay816y62-hub/fantasy-life-force-portrait-photography.git\ncd fantasy-life-force-portrait-photography\n\n# 将仓库目录放入你的 Codex skills 目录后，即可在对话中触发，例如：\n# 使用 Fantasy 生命感人像摄影 Skill，把这张普通生活照升级成更有生命感的人像。",
       "detail_url": "skills/fantasy-life-force-portrait-photography.html"
+    },
+    {
+      "id": "gsap",
+      "name_zh": "GSAP 动画平台",
+      "name_en": "GSAP — GreenSock Animation Platform",
+      "summary_zh": "高性能 JavaScript 动画库：统一驱动 CSS、SVG、Canvas、WebGL 与通用对象的时间轴动画，内置 ScrollTrigger、Flip、MotionPath 等插件，适合交互页面、数据可视化和产品演示的动效实现。",
+      "summary_en": "A high-performance JavaScript animation library for CSS, SVG, Canvas, WebGL and generic objects, with a timeline API and plugins such as ScrollTrigger, Flip and MotionPath.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "gsap",
+        "motion-design",
+        "animation",
+        "web-animation",
+        "frontend",
+        "framework"
+      ],
+      "languages": [
+        "javascript",
+        "typescript"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "LicenseRef-GSAP-Standard-No-Charge",
+      "license_bucket": "unknown",
+      "homepage": "https://gsap.com",
+      "repo": "https://github.com/greensock/GSAP",
+      "tier": "core",
+      "tier_label": "主推",
+      "featured": false,
+      "related": [
+        "remotion-skills"
+      ],
+      "aliases": [
+        "GreenSock Animation Platform",
+        "GreenSock"
+      ],
+      "risk_notes": "上游仓库无根 LICENSE 文件，package.json 标注 Standard 'no charge' license（https://gsap.com/standard-license），非 OSI 开源协议；使用或商用前需复核许可全文。安装会引入第三方运行时代码；官方文档以英文为主。",
+      "added_at": "2026-09-05",
+      "updated_at": "2026-09-05",
+      "install": "bash\nnpm install gsap",
+      "detail_url": "skills/gsap.html"
     },
     {
       "id": "huashu-design",

@@ -16,6 +16,10 @@
 
 ### 新增
 
+- **Browser Use 浏览器 Agent（2026-09-05）**：收录 `agent-infra/browser-use`（MIT）。让 AI Agent 像人一样操作浏览器的开源框架：支持页面导航、表单填写、数据提取、自定义工具与多种 LLM，可作为 Python 库嵌入自动化流程，也可通过 CLI/技能接入 Claude Code、Codex、Cursor 等编码 Agent。评级：主推。目录总数由 51 增至 **52**。
+- **Anime.js 动画引擎（2026-09-05）**：收录 `design-creative/animejs`（MIT）。Julian Garnier 维护的轻量 JavaScript 动画引擎：统一驱动 CSS、SVG、DOM 属性与 JavaScript 对象，V4 提供模块化时间轴、弹簧缓动、滚动、拖拽、文本拆分、WAAPI 与可选 Three.js 适配。评级：主推。目录总数由 50 增至 **51**。
+- **AiToEarn AI 内容营销智能体（2026-09-05）**：收录 `agent-infra/aitoearn`（MIT）。面向一人公司与创作者的 AI 内容营销平台：Agent 批量生成视频/图文，排期分发到抖音、小红书、TikTok、YouTube、X 等平台，并支持自动化互动、转化信号识别与 CPS/CPE/CPM 变现；提供 Web、MCP、OpenClaw 插件、Docker 自部署与 Electron 客户端。评级：常规。目录总数由 49 增至 **50**。
+- **GSAP 动画平台（2026-09-05）**：收录 `design-creative/gsap`（Standard “no charge” license，LicenseRef 标注）。GreenSock 维护的高性能 JavaScript 动画框架：统一驱动 CSS、SVG、Canvas、WebGL 与通用对象的时间轴动画，内置 ScrollTrigger、Flip、MotionPath 等插件。评级：主推。目录总数由 48 增至 **49**。
 - **StaffDeck 企业数字员工平台（2026-09-05）**：收录 `agent-infra/staffdeck`（AGPL-3.0）。OpenBMB 开源的企业数字员工平台：把业务经验、SOP、决策标准与知识库沉淀为可持续运行的数字员工，支持状态机流程、文档感知检索、MCP/HTTP 工具执行、长期记忆与审计。评级：常规。目录总数由 47 增至 **48**。
 - **Skill Recorder 屏幕工作录制转技能（2026-09-05）**：收录 `meta-skillcraft/skill-recorder`（MIT）。微软开源的桌面应用：录制屏幕工作过程，用 GitHub Copilot CLI 重建为意图与有序步骤，再生成可复用 Skill 或定时 Automation，供 Scout / Copilot Cowork / Copilot Studio 使用。评级：常规。目录总数由 46 增至 **47**。
 - **WeKnora 开源 LLM 知识平台（2026-09-05）**：收录 `agent-infra/weknora`（MIT）。腾讯开源的企业级 LLM 知识平台：把文档转成可检索 RAG、自主推理 Agent 与自维护 Wiki，支持多源知识库、MCP Server、DSH 插件、Agent Skills、Web/API/CLI/IM 渠道与私有化部署。评级：常规。目录总数由 45 增至 **46**。

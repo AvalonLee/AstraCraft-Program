@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>StaffDeck 企业数字员工平台 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">StaffDeck 企业数字员工平台</h1>
+      <p class="hero-subtitle">StaffDeck — Enterprise Digital Employee Platform</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>Agent 基础设施</span><span>常规</span><span class="lic-badge lic-copyleft" title="AGPL-3.0">部分开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">OpenBMB 开源的企业数字员工平台：把业务经验、SOP、决策标准与知识库沉淀为可持续运行的数字员工，支持状态机流程、文档感知检索、MCP/HTTP 工具执行、长期记忆与审计。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/OpenBMB/StaffDeck" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://staffdeck.openbmb.cn/" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>StaffDeck 企业数字员工平台</h1>
+<blockquote>把个人经验与业务流程变成可治理、可复用、可审计的数字员工。上游：<a href="https://github.com/OpenBMB/StaffDeck" target="_blank" rel="noopener">OpenBMB/StaffDeck</a> · 许可证：AGPL-3.0</blockquote>
+<h2>这是什么</h2>
+<p>StaffDeck 是 OpenBMB / ModelBest / THUNLP 等联合开发的企业数字员工平台。它不只是包装一个聊天模型，而是把岗位、能力、知识库、SOP、工具、记忆与审计记录组织成一个持续工作的「员工」体系：</p>
+<ul><li><strong>数字员工管理</strong>：定义职位、工号、能力画像、访问边界、发布范围与工作记录；支持能力成长、权限隔离和复用。</li><li><strong>状态机 SOP</strong>：把自然语言业务流程转成结构化 SOP，用状态机执行复杂流程；支持多流程切换、上下文保持、可视化编辑、版本管理与分支演化。</li><li><strong>文档感知检索</strong>：按文档、章节、页码、摘要等层级建索引，先估计信息可能所在位置，再逐步定位原文；支持知识桶、定向检索、来源引用与检索调试。</li><li><strong>真实执行与改进闭环</strong>：通过 HTTP API、MCP 与定时任务执行业务动作，配合长期记忆、执行轨迹、人工接管、用户反馈和反馈分析持续优化。</li></ul>
+<p>平台还提供 Web 工作台、多数字员工市场、权限管理、执行记录、微信 / 企业微信渠道接入等企业化能力。</p>
+<h2>怎么安装</h2>
+<p>桌面版可直接从官方站点或 GitHub Releases 下载；源码部署推荐先准备 Python 3.11+ 和 Node.js 20+：</p>
+<pre><code class="lang-bash">git clone https://github.com/OpenBMB/StaffDeck.git
+cd StaffDeck
+python3 -m venv backend/.venv
+backend/.venv/bin/python -m pip install -e &quot;backend[dev]&quot;
+npm --prefix frontend-enterprise ci
+cp backend/.env.example backend/.env
+scripts/dev_up.sh --detach</code></pre>
+<p>Windows PowerShell：</p>
+<pre><code class="lang-powershell">git clone https://github.com/OpenBMB/StaffDeck.git
+cd StaffDeck
+py -3 -m venv backend\.venv
+.\backend\.venv\Scripts\python.exe -m pip install -e &quot;backend[dev]&quot;
+npm --prefix frontend-enterprise ci
+Copy-Item backend\.env.example backend\.env
+.\scripts\dev_up.ps1 --detach</code></pre>
+<p>源码部署启动后访问：</p>
+<pre><code class="lang-text">http://127.0.0.1:5173/workspace/gallery</code></pre>
+<p>健康检查：</p>
+<pre><code class="lang-bash">curl http://127.0.0.1:5173/api/health</code></pre>
+<p>预期返回 <code>{"status":"ok"}</code>。</p>
+<h2>怎么用</h2>
+<p>1. 在 <code>backend/.env</code> 配置 <code>APP_SECRET</code>、OpenAI 兼容模型地址、模型名和 API Key。 2. 打开工作台，创建数字员工并定义职位、角色边界、服务风格和访问范围。 3. 为员工挂载知识库、通用技能、SOP 和工具；市场资源可复制后再定制，不直接改原始模板。 4. 在会话中下任务，查看流式意图、检索、技能、工具、审核与回复事件。 5. 需要时人工接管、取消运行或处理待确认结果；通过记忆、反馈与定时任务持续运营。</p>
+<h2>注意事项</h2>
+<ul><li><strong>AGPL-3.0</strong>：强 Copyleft。若以网络服务对外提供 StaffDeck 或其衍生版本，需仔细评估开源义务；企业商用前应先做许可与合规评估。</li><li><strong>真实副作用</strong>：HTTP API、MCP 和定时任务会触发真实业务动作。生产使用建议最小权限凭证、白名单、审计日志，并为高风险操作配置人工审批。</li><li><strong>默认凭据</strong>：源码部署初始管理员是 <code>admin/admin</code>，首次登录必须立即修改；<code>APP_SECRET</code> 要用长随机值，且不要提交 <code>.env</code>。</li><li><strong>模型与数据</strong>：平台本身不要求本地 GPU，但响应质量和检索效果取决于模型、文档质量、索引与权限设计；敏感数据需做好隔离和授权。</li><li><strong>受监管场景</strong>：法律、医疗、金融、安全等场景不能把数字员工当作专业审查替代品；重要决策需要人工监督和授权。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

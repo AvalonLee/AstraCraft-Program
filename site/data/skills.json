@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-05T07:01:26Z",
-  "count": 45,
+  "generated_at": "2026-09-05T07:28:25Z",
+  "count": 46,
   "categories": [
     {
       "dir": "writing-docs",
@@ -139,6 +139,54 @@
       "updated_at": "2026-08-13",
       "install": "bash\n# 1) 克隆上游（默认分支 feat/server_team，直接 clone 即得该版本）\ngit clone https://github.com/TencentCloud/TencentDB-Agent-Memory.git /tmp/tdb\ncd /tmp/tdb/deploy/global-images\n\n# 2) 配置并一键启动（需两组 LLM 参数：memory 组 + proxy 组）\ncp .env.example .env\n# 用编辑器填入 .env 中的两组 LLM 参数\n./start-all.sh\n\n# 3) 打开控制台\n#    http://localhost:8125",
       "detail_url": "skills/tencentdb-agent-memory.html"
+    },
+    {
+      "id": "weknora",
+      "name_zh": "WeKnora 开源 LLM 知识平台",
+      "name_en": "WeKnora — LLM Knowledge Platform",
+      "summary_zh": "腾讯开源的企业级 LLM 知识平台：把文档转成可检索 RAG、自主推理 Agent 与自维护 Wiki；支持多源知识库、MCP Server、DSH 插件、Agent Skills、Web/API/CLI/IM 渠道与私有化部署。",
+      "summary_en": "Tencent's open-source LLM knowledge platform for RAG, autonomous agents, and self-maintaining Wikis, with MCP, DSH plugin, CLI, API, IM, and self-hosted deployment options.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "rag",
+        "knowledge-management",
+        "ai-agent",
+        "mcp",
+        "dsh",
+        "self-hosted",
+        "docker"
+      ],
+      "languages": [
+        "go",
+        "typescript",
+        "python"
+      ],
+      "doc_languages": [
+        "zh",
+        "en",
+        "ja",
+        "ko"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://weknora.weixin.qq.com",
+      "repo": "https://github.com/Tencent/WeKnora",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "weknora",
+        "tencent-weknora"
+      ],
+      "risk_notes": "整体采用 MIT License，但仓库 LICENSE 中另列 Apache-2.0 等第三方组件条款，商用需按上游 LICENSE 全文与第三方许可复核；部署需 Docker，实际 RAG/Agent 效果依赖所配置 LLM、嵌入与向量库服务；生产环境建议置于内网并配置访问控制。",
+      "added_at": "2026-09-05",
+      "updated_at": "2026-09-05",
+      "install": "bash\ngit clone https://github.com/Tencent/WeKnora.git\ncd WeKnora\ncp .env.example .env   # 按需修改模型、存储与端口配置\ndocker compose pull\ndocker compose up -d",
+      "detail_url": "skills/weknora.html"
     },
     {
       "id": "anthropics-office-skills",

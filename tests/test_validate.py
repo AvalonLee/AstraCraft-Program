@@ -17,6 +17,6 @@ def test_root_is_the_only_installable_skill() -> None:
 def test_all_current_entries_pass_the_format_boundary() -> None:
     entries = discover_entries()
 
-    assert len(entries) == 44
+    assert len(entries) == 45
     for entry in entries:
         validate_document_boundary(parse_catalog_document(entry.skill_file, REPO_ROOT))

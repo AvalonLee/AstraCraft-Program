@@ -12,6 +12,14 @@
 
 ---
 
+## 2026-09
+
+### 新增
+
+- **Visual Skills AI 影像导演技能集（2026-09-05）**：收录 `design-creative/visual-skills`（CC BY 4.0）。面向 Agent 的电影级 AI 影像导演技能集，`video` 负责先做戏剧结构再生成 Seedance / Kling / Veo 提示词，`image` 负责 Nano Banana / GPT Image 的分镜与关键帧。评级：常规。目录总数由 44 增至 **45**。
+
+---
+
 ## 2026-08
 
 ### 新增

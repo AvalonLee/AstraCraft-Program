@@ -72,7 +72,19 @@
     "docker",
     "jianying",
     "seedance",
-    "multilingual"
+    "multilingual",
+    "job-search",
+    "career",
+    "cv",
+    "cover-letter",
+    "interview-prep",
+    "digital-employee",
+    "audiobook",
+    "travel",
+    "video-dubbing",
+    "web-crawler",
+    "canvas",
+    "voice"
   ],
   "aliases": {
     "claude": "claude-code",

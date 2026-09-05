@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cangjie Skill 内容蒸馏为 Agent Skill · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Cangjie Skill 内容蒸馏为 Agent Skill</h1>
+      <p class="hero-subtitle">Cangjie Skill</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>技能工程</span><span>主推</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>技能包</span>
+    </div>
+    <p class="muted detail-meta">把书、长视频、播客、课程等高价值内容蒸馏成可独立调用的 Agent Skills：RIA-TV++ 七阶段流水线（Adler 分析阅读 → 5 专项提取器并行 → 三重验证 + 晋级门 → RIA++ 能力卡 → Zettelkasten 链接 → 压力测试 → 确定性编译），支持 OpenClaw / Claude Code / DeepSeek Harness 三平台，附 20+ 已蒸馏示例。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/kangarooking/cangjie-skill" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://cangjie-skill.com" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Cangjie Skill 内容蒸馏为 Agent Skill</h1>
+<blockquote>Finish reading, watching, or listening—and leave with a methodology you can invoke.上游：<a href="https://github.com/kangarooking/cangjie-skill" target="_blank" rel="noopener">kangarooking/cangjie-skill</a> · 许可证：MIT · 9.5k stars · <a href="https://cangjie-skill.com" target="_blank" rel="noopener">官网</a></blockquote>
+<h2>这是什么</h2>
+<p>不只是把书做成摘要——Cangjie Skill（仓颉 Skill）把书籍、长视频（B 站 / YouTube）、播客、访谈、课程、长文里的<strong>可执行方法论</strong>蒸馏成一套独立可调用、可组合、可压力测试的 Agent Skills。与 nuwa-skill（蒸馏人）、darwin-skill（技能进化）互补：nuwa 蒸馏人，cangjie 蒸馏书，darwin 让它们进化。</p>
+<p>核心理念：知识不该停留在"看过/听过/收藏过"，应该变成 agent 在真实决策中可以调用的工具。高价值长视频时效性强、内容长、往往不在 AI 训练数据里——蒸馏成 skill 后，agent 在场景中即用即取。</p>
+<p><strong>RIA-TV++ 七阶段流水线</strong>：</p>
+<p>| 阶段 | 做什么 | |------|--------| | 1. Adler 分析 | 结构 / 解释 / 批判 / 应用四步整书拆解 → <code>BOOK_OVERVIEW.md</code> | | 2. 并行提取 | 5 个专项提取器（框架 / 原则 / 案例 / 反例 / 术语）同时跑 | | 3. 三重验证 + 晋级门 | 证据检验通过才入围；使用价值足以覆盖路由成本才晋级为独立入口 | | 4. RIA++ 能力卡 | R（阅读）/ I（解释）/ A1（联系自身）/ A2（行动）/ E（执行）/ B（边界）写入 <code>.cangjie/capabilities/</code> | | 5. Zettelkasten 链接 | 依赖、对比、组合编码进能力图谱和共享术语表 | | 6. 压力测试 | 每个技能设计诱饵问题和跨技能混淆测试；失败回炉重建 | | 7. 确定性编译 | 同一 Bundle 编译为 <code>single</code>（单路由）或 <code>pack</code>（路由 + 晋级独立 skill），附 <code>DIGEST.md</code> |</p>
+<p><strong>v2.5.0 亮点</strong>：Capability Bundle 作为单一真源（先出能力卡再编译产物）；统一本地工具链 <code>scripts/cangjie.py</code>（诊断 / 编译 / 增量更新 / 修复 / 回滚 / 评测）；内容寻址预处理 + 事务性补丁 + 快照回滚。</p>
+<p><strong>已蒸馏 20+ 示例</strong>：《穷查理宝典》（12 skills）、巴菲特股东信（20 skills）、《影响力》（12 skills）、《1000 True Fans》（13 skills）、《毛选》（25 skills）、《黄帝内经》（22 skills）、Andrew Ng《AI for Everyone》视频课程（25 skills）等，覆盖商业、投资、心理学、写作、组织、中医、数学。</p>
+<h2>怎么安装</h2>
+<p><strong>OpenClaw / Claude Code（直接用）：</strong></p>
+<p>对 Agent 说：</p>
+<pre><code class="lang-text">请用 cangjie-skill 把这本书蒸馏成一组可执行的 Agent Skills：&lt;文件路径&gt;</code></pre>
+<p>Agent 会读取仓库根目录的 <code>SKILL.md</code>（完整执行规格）并按 RIA-TV++ 流水线执行。</p>
+<p><strong>DeepSeek Harness 插件：</strong></p>
+<pre><code class="lang-bash">mkdir -p ~/.dsh/packages
+curl -fL &quot;https://github.com/kangarooking/cangjie-skill/releases/download/v2.5.0/dsh-cangjie-skill-2.5.0.tgz&quot; -o ~/.dsh/packages/dsh-cangjie-skill-2.5.0.tgz
+curl -fL &quot;https://github.com/kangarooking/cangjie-skill/releases/download/v2.5.0/dsh-cangjie-skill-2.5.0.tgz.sha256&quot; -o ~/.dsh/packages/dsh-cangjie-skill-2.5.0.tgz.sha256
+(cd ~/.dsh/packages &amp;&amp; shasum -a 256 -c dsh-cangjie-skill-2.5.0.tgz.sha256)
+dsh plugin --profile web add ~/.dsh/packages/dsh-cangjie-skill-2.5.0.tgz
+dsh web</code></pre>
+<h2>怎么用</h2>
+<p>1. 准备源材料：PDF / EPUB / 字幕 / 转写文本（视频可先用 <a href="https://github.com/kangarooking/kangarooking-skills/tree/main/video-downloader" target="_blank" rel="noopener">video-downloader</a> skill 提取字幕） 2. 对 Agent 说 <code>请用 cangjie-skill 蒸馏这份内容：&lt;路径&gt;</code> 3. Agent 按七阶段执行，产出多 skill 仓库（<code>INDEX.md</code> + <code>DIGEST.md</code> + <code>GLOSSARY.md</code> + 多个独立 <code>SKILL.md</code>） 4. 把产出的 skill 装进你的 agent skills 目录，即可在任意场景调用</p>
+<p>不适合蒸馏的内容：方法论密度低的叙事性内容、纯娱乐视频——pipeline 的晋级门会筛选，但源太薄产出也会薄。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 MIT</strong>：可自由使用、修改与分发。</li><li><strong>蒸馏质量取决于源</strong>：methodology 密度低的内容产出可能偏薄，建议先读 <code>SKILL.md</code> 的筛选标准。</li><li><strong>三平台支持</strong>：OpenClaw（原生）、Claude Code（SKILL.md 直接读）、DeepSeek Harness（v2.5.0 Release 插件包 + SHA256 校验）。</li><li><strong>生态互补</strong>：<a href="https://github.com/alchaincyf/nuwa-skill" target="_blank" rel="noopener">nuwa-skill</a>（蒸馏人）+ cangjie-skill（蒸馏书）+ <a href="https://github.com/alchaincyf/darwin-skill" target="_blank" rel="noopener">darwin-skill</a>（技能进化）三件套。</li><li><strong>维护活跃</strong>（2026-09-04 更新，9.5k stars），提供中文 / 英文 / 日文三语 README 与官方网站。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

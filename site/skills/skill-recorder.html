@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Skill Recorder 屏幕工作录制转技能 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Skill Recorder 屏幕工作录制转技能</h1>
+      <p class="hero-subtitle">Skill Recorder</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>技能工程</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">微软开源的桌面应用：录制屏幕工作过程，用 GitHub Copilot CLI 重建为意图与有序步骤，再生成可复用 Skill 或定时 Automation，供 Scout / Copilot Cowork / Copilot Studio 使用。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/microsoft/skill-recorder" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/microsoft/skill-recorder" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Skill Recorder 屏幕工作录制转技能</h1>
+<blockquote>记录一次真实工作过程，让 Agent 以后能重复它。上游：<a href="https://github.com/microsoft/skill-recorder" target="_blank" rel="noopener">microsoft/skill-recorder</a> · 许可证：MIT</blockquote>
+<h2>这是什么</h2>
+<p>Skill Recorder 是微软开源的桌面应用：你正常完成一次任务，它在本地捕获屏幕、窗口切换、访问的页面和可选语音叙述，然后调用 <strong>GitHub Copilot CLI</strong> 把这次操作重建成清晰的「意图 + 有序步骤」，再一键生成：</p>
+<ul><li><strong>Skill</strong>：一份 <code>SKILL.md</code> 过程，Agent 可按需调用；</li><li><strong>Automation</strong>：同一过程绑定定时器或触发器自动执行。</li></ul>
+<p>它偏向让 Agent 优先使用原生工具（如 <code>gh</code> CLI、<code>web_fetch</code>），而不是机械重放 UI 点击；并且能从单个示例泛化，比如录一次「提交表单」，教会 Agent 提交同类表单。</p>
+<h2>怎么安装</h2>
+<p>推荐从上游 Releases 页复制你平台的官方一键安装命令。macOS / Ubuntu 通用格式：</p>
+<pre><code class="lang-bash">commit=&quot;&lt;40-character-release-commit&gt;&quot;; curl -fsSL &quot;https://raw.githubusercontent.com/microsoft/skill-recorder/$commit/install.sh&quot; | SKILL_RECORDER_COMMIT=&quot;$commit&quot; bash</code></pre>
+<p>Windows PowerShell：</p>
+<pre><code class="lang-powershell">$commit=&quot;&lt;40-character-release-commit&gt;&quot;; $env:SKILL_RECORDER_COMMIT=$commit; irm &quot;https://raw.githubusercontent.com/microsoft/skill-recorder/$commit/install.ps1&quot; | iex</code></pre>
+<p>这两个命令会下载固定 commit 的源码并在本机构建，最后注册一个 <strong>Skill Recorder (Source)</strong> 应用；不会全局安装。需要 GitHub Copilot 访问权限。</p>
+<h2>怎么用</h2>
+<p>1. 启动 Skill Recorder，授予权限后按录制键（macOS <code>⌥⌘R</code> / Windows <code>Ctrl+Shift+R</code>）。 2. 正常执行你的任务；需要时打开叙述开关补充说明。 3. 完成后点击 <strong>Analyze</strong>，Copilot 会重建意图与步骤。 4. 审阅并修正步骤，再选择生成 <strong>Skill</strong> 或 <strong>Automation</strong>。</p>
+<p>典型提示词：</p>
+<pre><code class="lang-text">录一遍我把新 issue 分派给负责人的流程，生成一个可复用的 Skill。</code></pre>
+<h2>注意事项</h2>
+<ul><li><strong>敏感信息</strong>：分析阶段会把窗口标题、URL、剪贴板预览、截图和叙述文本发送到 GitHub 云端给 Copilot 处理；录制前务必关闭或避开密码、令牌、API Key、客户数据等。</li><li><strong>平台支持</strong>：macOS 是主目标，Windows 11 x64 / ARM64 也支持；Linux 只有 Ubuntu。</li><li><strong>依赖</strong>：需要 GitHub Copilot 访问权限，首次分析需登录；叙述转录首次使用会下载约 252 MB 的 Whisper 模型（本地执行）。</li><li><strong>许可证</strong>：MIT 可商用，但微软商标和品牌使用需遵守上游商标政策。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

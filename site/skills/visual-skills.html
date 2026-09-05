@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Visual Skills AI 影像导演技能集 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Visual Skills AI 影像导演技能集</h1>
+      <p class="hero-subtitle">Visual Skills — AI Film Director Skills</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>常规</span><span class="lic-badge lic-open" title="CC-BY-4.0">完全开源</span><span>技能集</span>
+    </div>
+    <p class="muted detail-meta">面向 Agent 的电影级 AI 影像导演技能集：`video` 子技能先定场景欲望、障碍、镜头几何与剪辑节奏，再生成 Seedance / Kling / Veo 提示词；`image` 子技能负责 Nano Banana 与 GPT Image 的分镜与关键帧。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/smixs/visual-skills" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/smixs/visual-skills" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Visual Skills AI 影像导演技能集</h1>
+<blockquote>把 Agent 变成一支能写镜头、能定节奏、能按模型语法出提示词的影像小组。上游：<a href="https://github.com/smixs/visual-skills" target="_blank" rel="noopener">smixs/visual-skills</a> · 许可证：CC BY 4.0</blockquote>
+<h2>这是什么</h2>
+<p>Visual Skills 是一组两个子技能的技能集：</p>
+<ul><li><strong><code>video</code></strong>：按导演、编剧和剪辑师的顺序工作，先把欲望、障碍、镜头几何、视线与节奏写清楚，再落到 Seedance / Kling / Veo 等模型的精确语法上，输出单镜头提示词、连续多镜头脚本、分镜表或提示词审计。</li><li><strong><code>image</code></strong>：按美术指导的方式处理静态画面，覆盖编辑与产品摄影、海报、UI、信息图、硬约束编辑、角色连续性和分镜关键帧，自动在 Nano Banana 与 GPT Image 之间按任务选择合适语法。</li></ul>
+<p>它的核心不是模型词表，而是可执行的戏剧结构：场景公式、三细节定律、Walter Murch 的 Rule of Six、镜头三职责、调度与蒙太奇节奏，最后再用六点戏剧结构和三细节审计做出口校验。也就是说，它先保证一个镜头值得被生成，再决定该怎么写提示词。</p>
+<h2>怎么安装</h2>
+<p>推荐使用 skills CLI 安装两个子技能：</p>
+<pre><code class="lang-bash">npx skills add smixs/visual-skills</code></pre>
+<p>也可以只装其中一个：</p>
+<pre><code class="lang-bash">npx skills add smixs/visual-skills@video
+npx skills add smixs/visual-skills@image</code></pre>
+<p>Codex 用户可以显式指定 agent：</p>
+<pre><code class="lang-bash">npx skills add smixs/visual-skills -g -a codex</code></pre>
+<h2>怎么用</h2>
+<p>安装后直接描述镜头意图、时长与目标模型，例如：</p>
+<pre><code class="lang-text">用 video 写一条 5 秒的 Seedance 多镜头提示词：深夜厨房里，一个人打开空冰箱，只有冰箱灯落在脸上。</code></pre>
+<p>或让两个子技能接力：</p>
+<pre><code class="lang-text">用 image 先做一组 15 秒产品片的关键帧，再用 Kling 把每个关键帧变成视频提示词。</code></pre>
+<p>需要检查已有提示词时，可以把文本交给 <code>video</code> 做审计；需要分镜或导演阐述时，也可以让它输出带时长、镜头功能、剪辑逻辑与声音锚点的表格。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可与署名</strong>：CC BY 4.0 允许商用，但复制、派生或由 Agent 重组的技能内容都必须保留作者署名；上游 <code>NOTICE</code> 也要求署名。</li><li><strong>只写提示词</strong>：技能本身不渲染视频或图像，实际生成依赖 Seedance / Kling / Veo / Nano Banana / GPT Image 等模型渠道，费用与配额自担。</li><li><strong>模型演进快</strong>：上游针对 2026 年中的 Seedance 2.5、Kling 3.0、Veo 3.1、Nano Banana 2 和 GPT Image 2 提供专用参考；模型更新后仍应以供应商最新文档为准。</li><li><strong>语言</strong>：README 与技能内容以英文为主，另有俄文说明；中文用户可直接使用，但提示词语法和参考字段通常需按模型要求保留原文。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

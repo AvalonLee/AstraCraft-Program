@@ -11,6 +11,7 @@ on:
       - 'site/**'
       - 'INDEX.md'
       - '.github/workflows/index-check.yml'
+      - '.github/workflows/upstream-refresh.yml'
 
 permissions:
   contents: read

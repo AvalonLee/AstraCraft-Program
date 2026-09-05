@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ChatGPT Shortcut 提示词快捷指令库 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">ChatGPT Shortcut 提示词快捷指令库</h1>
+      <p class="hero-subtitle">ChatGPT Shortcut (AiShort)</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>商业与办公</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">面向普通用户的可检索提示词库——按职业与场景分类的现成提示词卡片，拿来就用，支持搜索、筛选、收藏自己的常用库，覆盖文案、办公、营销、编程等场景，配浏览器扩展与 Docker 自托管方案。注意：非 SKILL.md 形态，作为提示词参考库使用而非可安装技能。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/rockbenben/ChatGPT-Shortcut" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://www.aishort.top" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>ChatGPT Shortcut 提示词快捷指令库</h1>
+<blockquote>别再从头写提示词——按职业/场景分类的现成提示词卡片库，搜索即用。 上游：<a href="https://github.com/rockbenben/ChatGPT-Shortcut" target="_blank" rel="noopener">rockbenben/ChatGPT-Shortcut</a> · 许可证：MIT</blockquote>
+<h2>这是什么</h2>
+<p>ChatGPT Shortcut（AiShort，<a href="https://www.aishort.top" target="_blank" rel="noopener">aishort.top</a>）是一个 <strong>可检索的提示词库网站</strong>：将经过整理的提示词做成一张张「卡片」，按文案、办公、 营销、编程、教育等职业/场景分类，支持关键词搜索、标签筛选、点赞排序，登录后 可把好用的提示词收进自己的收藏库。面向 ChatGPT / Claude / Gemini / Cursor 等 通用对话模型，提供包括中文在内的十余种语言界面。</p>
+<p>仓库本体是 TypeScript + Docusaurus 的站点源码，另有 Chrome/Edge 浏览器扩展。 提示词数据以 JSON 卡片形式存放在上游 <code>src/data/cards/</code> 目录，可被程序直接读取。 <strong>注意：它不是 SKILL.md 形态的项目</strong>，不能作为 Agent 技能安装；收录价值在于 当作「提示词参考库」——人或 Agent 需要现成提示词模板时来此检索。</p>
+<h2>怎么安装</h2>
+<p>三种获取方式，按需选择：</p>
+<pre><code class="lang-bash"># 方式一：无需安装，直接使用在线站
+#   https://www.aishort.top
+
+# 方式二：Docker 自托管（数据完全本地）
+git clone --depth 1 https://github.com/rockbenben/ChatGPT-Shortcut.git
+cd ChatGPT-Shortcut
+docker compose up -d
+# 浏览器访问 http://localhost:3000</code></pre>
+<p>方式三：浏览器扩展——在上游 README 或发布页获取 Chrome/Edge 扩展安装包， 随时在侧边栏唤起提示词库。</p>
+<h2>怎么用</h2>
+<ul><li>打开网站或扩展，按分类浏览或搜索关键词（如「周报」「小红书」「SQL」）， 复制卡片中的提示词直接粘到任意对话模型中使用；</li><li>登录后可点赞、收藏，沉淀自己的常用提示词库；</li><li>Agent 场景：需要提示词模板时，可让 Agent 检索上游 <code>src/data/cards/zh.json</code> 等语言卡片文件，按场景挑选后改写使用。</li></ul>
+<h2>注意事项</h2>
+<ul><li><strong>非技能形态</strong>：仓库中没有 SKILL.md，不能放进 Agent 技能目录，也不要把本 条目文件误当技能安装；</li><li><strong>内容质量参差</strong>：提示词由社区整理贡献，面向通用对话模型，直接使用前建议 结合自己的实际场景校准；提示词文本的转载授权以上游仓库说明为准（仓库整体 为 MIT，但部分文案可能有额外署名要求）；</li><li>本仓库不包含该项目任何源码，仅提供导航与获取指引。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-08-30 · 更新于 2026-08-30 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

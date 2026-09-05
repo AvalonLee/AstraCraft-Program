@@ -12,10 +12,26 @@
 
 ---
 
+## 2026-09
+
+### 新增
+
+- **Browser Use 浏览器 Agent（2026-09-05）**：收录 `agent-infra/browser-use`（MIT）。让 AI Agent 像人一样操作浏览器的开源框架：支持页面导航、表单填写、数据提取、自定义工具与多种 LLM，可作为 Python 库嵌入自动化流程，也可通过 CLI/技能接入 Claude Code、Codex、Cursor 等编码 Agent。评级：主推。目录总数由 51 增至 **52**。
+- **Anime.js 动画引擎（2026-09-05）**：收录 `design-creative/animejs`（MIT）。Julian Garnier 维护的轻量 JavaScript 动画引擎：统一驱动 CSS、SVG、DOM 属性与 JavaScript 对象，V4 提供模块化时间轴、弹簧缓动、滚动、拖拽、文本拆分、WAAPI 与可选 Three.js 适配。评级：主推。目录总数由 50 增至 **51**。
+- **AiToEarn AI 内容营销智能体（2026-09-05）**：收录 `agent-infra/aitoearn`（MIT）。面向一人公司与创作者的 AI 内容营销平台：Agent 批量生成视频/图文，排期分发到抖音、小红书、TikTok、YouTube、X 等平台，并支持自动化互动、转化信号识别与 CPS/CPE/CPM 变现；提供 Web、MCP、OpenClaw 插件、Docker 自部署与 Electron 客户端。评级：常规。目录总数由 49 增至 **50**。
+- **GSAP 动画平台（2026-09-05）**：收录 `design-creative/gsap`（Standard “no charge” license，LicenseRef 标注）。GreenSock 维护的高性能 JavaScript 动画框架：统一驱动 CSS、SVG、Canvas、WebGL 与通用对象的时间轴动画，内置 ScrollTrigger、Flip、MotionPath 等插件。评级：主推。目录总数由 48 增至 **49**。
+- **StaffDeck 企业数字员工平台（2026-09-05）**：收录 `agent-infra/staffdeck`（AGPL-3.0）。OpenBMB 开源的企业数字员工平台：把业务经验、SOP、决策标准与知识库沉淀为可持续运行的数字员工，支持状态机流程、文档感知检索、MCP/HTTP 工具执行、长期记忆与审计。评级：常规。目录总数由 47 增至 **48**。
+- **Skill Recorder 屏幕工作录制转技能（2026-09-05）**：收录 `meta-skillcraft/skill-recorder`（MIT）。微软开源的桌面应用：录制屏幕工作过程，用 GitHub Copilot CLI 重建为意图与有序步骤，再生成可复用 Skill 或定时 Automation，供 Scout / Copilot Cowork / Copilot Studio 使用。评级：常规。目录总数由 46 增至 **47**。
+- **WeKnora 开源 LLM 知识平台（2026-09-05）**：收录 `agent-infra/weknora`（MIT）。腾讯开源的企业级 LLM 知识平台：把文档转成可检索 RAG、自主推理 Agent 与自维护 Wiki，支持多源知识库、MCP Server、DSH 插件、Agent Skills、Web/API/CLI/IM 渠道与私有化部署。评级：常规。目录总数由 45 增至 **46**。
+- **Visual Skills AI 影像导演技能集（2026-09-05）**：收录 `design-creative/visual-skills`（CC BY 4.0）。面向 Agent 的电影级 AI 影像导演技能集，`video` 负责先做戏剧结构再生成 Seedance / Kling / Veo 提示词，`image` 负责 Nano Banana / GPT Image 的分镜与关键帧。评级：常规。目录总数由 44 增至 **45**。
+
+---
+
 ## 2026-08
 
 ### 新增
 
+- **ChatGPT Shortcut 提示词快捷指令库（2026-08-30）**：收录 `business-office/chatgpt-shortcut`（MIT）。★8.7k 的可检索提示词库网站（AiShort）：按职业/场景分类的现成提示词卡片，支持搜索、筛选与个人收藏库，配浏览器扩展与 Docker 自托管。注意其为网站形态、非 SKILL.md 项目，仅作提示词参考库收录。评级：常规。目录总数由 43 增至 **44**。
 - **漫剧老李 AIGC 全流程 Skill（2026-08-30）**：收录 `design-creative/manju-laoli-skill`（MIT）。面向抖音 & 红果短剧/漫剧的工业化编剧与视听导演系统：五阶门控剧本、七维台词诊断、资产三视图锁、文武双模分镜、15 秒打戏 PREVIS、Seedance 三层解耦提示词与 P0~P2 质检门禁。测试版，评级：观察。目录总数由 42 增至 **43**。
 - **口播视频动效工作室（2026-08-30）**：收录 `design-creative/video-talkcraft`（PolyForm Noncommercial 1.0.0）。video-shotcraft 系列口播篇：字级配音同步、78 张动效配方卡、七层反 PPT 镜头系统、三重验收，Remotion 渲染解说成片。评级：常规。目录总数由 41 增至 **42**。
 - **Remotion 官方 Agent Skills（2026-08-29）**：收录 `design-creative/remotion-skills`（协议未标注，UNKNOWN），评级：主推（core）。Remotion（React 写视频的事实标准框架）官方维护的约 12 个 Agent Skills：建项目、标记最佳实践、Studio 预览、渲染、地图动画、字幕、SaaS 架构、文档检索与升级等，`npx skills add remotion-dev/skills` 一键安装。目录总数由 40 增至 **41**。

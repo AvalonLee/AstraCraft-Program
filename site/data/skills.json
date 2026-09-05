@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-30T10:44:41Z",
-  "count": 43,
+  "generated_at": "2026-09-05T08:22:41Z",
+  "count": 52,
   "categories": [
     {
       "dir": "writing-docs",
@@ -55,6 +55,102 @@
   ],
   "skills": [
     {
+      "id": "aitoearn",
+      "name_zh": "AiToEarn AI 内容营销智能体",
+      "name_en": "AiToEarn — AI Content Marketing Agent",
+      "summary_zh": "面向一人公司与创作者的 AI 内容营销平台：用 Agent 批量生成视频/图文，排期分发到抖音、小红书、TikTok、YouTube、X 等平台，并支持自动化互动、评论转化信号识别与 CPS/CPE/CPM 内容变现。",
+      "summary_en": "AI content marketing platform for creators and one-person companies: batch media generation, cross-platform publishing, automated engagement, and monetization.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "aitoearn",
+        "content-marketing",
+        "ai-agent",
+        "mcp",
+        "social-media",
+        "monetization",
+        "self-hosted",
+        "docker"
+      ],
+      "languages": [
+        "typescript",
+        "javascript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en",
+        "ja"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://aitoearn.ai/",
+      "repo": "https://github.com/yikart/AiToEarn",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "money-printer-turbo",
+        "staffdeck"
+      ],
+      "aliases": [
+        "AiToEarn",
+        "aitoearn-ai"
+      ],
+      "risk_notes": "MIT 许可，但平台会操作真实社媒账号并调用第三方模型/平台接口；使用前需确认各平台服务条款与账号策略，配置最小权限 API Key，并注意模型调用与内容分发费用。中国版与国际版 Key 和 API 环境必须匹配，否则会返回 401。自动化互动和批量发布应控制频率，避免触发平台风控。",
+      "added_at": "2026-09-05",
+      "updated_at": "2026-09-05",
+      "install": "bash\ngit clone https://github.com/yikart/AiToEarn.git\ncd AiToEarn\ndocker compose up -d",
+      "detail_url": "skills/aitoearn.html"
+    },
+    {
+      "id": "browser-use",
+      "name_zh": "Browser Use 浏览器 Agent",
+      "name_en": "Browser Use — AI Browser Agent",
+      "summary_zh": "让 AI Agent 像人一样操作浏览器的开源框架：打开页面、点击、输入、填表和提取结构化数据；可作为 Python 库嵌入自动化流程，也可通过 CLI/技能接入 Claude Code、Codex、Cursor 等编码 Agent，并支持自定义工具与多种 LLM。",
+      "summary_en": "Open-source browser agent framework for web navigation, form filling, extraction and custom tools, usable as a Python library or CLI skill with Claude Code, Codex and Cursor.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "browser-use",
+        "browser-automation",
+        "ai-agent",
+        "mcp",
+        "python",
+        "playwright",
+        "self-hosted"
+      ],
+      "languages": [
+        "python"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://browser-use.com",
+      "repo": "https://github.com/browser-use/browser-use",
+      "tier": "core",
+      "tier_label": "主推",
+      "featured": false,
+      "related": [
+        "mcp",
+        "ai-agent"
+      ],
+      "aliases": [
+        "Browser Use",
+        "browseruse"
+      ],
+      "risk_notes": "MIT 许可，但开源库默认会向浏览器执行真实点击、输入、上传与数据读取；使用前必须确认目标网站条款、账号策略与隐私影响，为敏感站点配置人工审批或最小权限。生产规模建议使用远程浏览器与代理管理；LLM 与云服务调用会产生费用，且仓库另有 Cloud 服务条款。",
+      "added_at": "2026-09-05",
+      "updated_at": "2026-09-05",
+      "install": "bash\nuv add browser-use\nbrowser-use skill install",
+      "detail_url": "skills/browser-use.html"
+    },
+    {
       "id": "codex-taskboard",
       "name_zh": "Codex Taskboard 本地任务看板",
       "name_en": "Codex Taskboard",
@@ -94,6 +190,51 @@
       "updated_at": "2026-08-26",
       "install": "bash\n# 1) 克隆并安装依赖\ngit clone --depth 1 https://github.com/chuspeeism/dashi-taskboard.git /tmp/codex-taskboard\ncd /tmp/codex-taskboard\nnpm install\nnpm run build\nnpm start\n# 打开 http://127.0.0.1:47823 ，SQLite 库位于 .data/taskboard.sqlite",
       "detail_url": "skills/codex-taskboard.html"
+    },
+    {
+      "id": "staffdeck",
+      "name_zh": "StaffDeck 企业数字员工平台",
+      "name_en": "StaffDeck — Enterprise Digital Employee Platform",
+      "summary_zh": "OpenBMB 开源的企业数字员工平台：把业务经验、SOP、决策标准与知识库沉淀为可持续运行的数字员工，支持状态机流程、文档感知检索、MCP/HTTP 工具执行、长期记忆与审计。",
+      "summary_en": "OpenBMB's enterprise platform for governed digital employees: state-machine SOPs, document-aware retrieval, audited tool execution, and long-term memory.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "digital-employee",
+        "ai-agent",
+        "enterprise",
+        "sop",
+        "knowledge-management",
+        "mcp",
+        "self-hosted"
+      ],
+      "languages": [
+        "python",
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "AGPL-3.0",
+      "license_bucket": "copyleft",
+      "homepage": "https://staffdeck.openbmb.cn/",
+      "repo": "https://github.com/OpenBMB/StaffDeck",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "staffdeck",
+        "digital-employee-platform"
+      ],
+      "risk_notes": "AGPL-3.0 有强 Copyleft：对外提供网络服务需满足开源义务，商用前请评估；平台可执行 HTTP/MCP/定时任务等真实操作，应配置最小权限凭证与高风险操作审批；源码部署默认管理员 admin/admin，首次登录必须改密；法律、医疗、金融、安全等受监管场景不得替代专业审查。",
+      "added_at": "2026-09-05",
+      "updated_at": "2026-09-05",
+      "install": "bash\ngit clone https://github.com/OpenBMB/StaffDeck.git\ncd StaffDeck\npython3 -m venv backend/.venv\nbackend/.venv/bin/python -m pip install -e \"backend[dev]\"\nnpm --prefix frontend-enterprise ci\ncp backend/.env.example backend/.env\nscripts/dev_up.sh --detach",
+      "detail_url": "skills/staffdeck.html"
     },
     {
       "id": "tencentdb-agent-memory",
@@ -141,6 +282,54 @@
       "detail_url": "skills/tencentdb-agent-memory.html"
     },
     {
+      "id": "weknora",
+      "name_zh": "WeKnora 开源 LLM 知识平台",
+      "name_en": "WeKnora — LLM Knowledge Platform",
+      "summary_zh": "腾讯开源的企业级 LLM 知识平台：把文档转成可检索 RAG、自主推理 Agent 与自维护 Wiki；支持多源知识库、MCP Server、DSH 插件、Agent Skills、Web/API/CLI/IM 渠道与私有化部署。",
+      "summary_en": "Tencent's open-source LLM knowledge platform for RAG, autonomous agents, and self-maintaining Wikis, with MCP, DSH plugin, CLI, API, IM, and self-hosted deployment options.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "rag",
+        "knowledge-management",
+        "ai-agent",
+        "mcp",
+        "dsh",
+        "self-hosted",
+        "docker"
+      ],
+      "languages": [
+        "go",
+        "typescript",
+        "python"
+      ],
+      "doc_languages": [
+        "zh",
+        "en",
+        "ja",
+        "ko"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://weknora.weixin.qq.com",
+      "repo": "https://github.com/Tencent/WeKnora",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "weknora",
+        "tencent-weknora"
+      ],
+      "risk_notes": "整体采用 MIT License，但仓库 LICENSE 中另列 Apache-2.0 等第三方组件条款，商用需按上游 LICENSE 全文与第三方许可复核；部署需 Docker，实际 RAG/Agent 效果依赖所配置 LLM、嵌入与向量库服务；生产环境建议置于内网并配置访问控制。",
+      "added_at": "2026-09-05",
+      "updated_at": "2026-09-05",
+      "install": "bash\ngit clone https://github.com/Tencent/WeKnora.git\ncd WeKnora\ncp .env.example .env   # 按需修改模型、存储与端口配置\ndocker compose pull\ndocker compose up -d",
+      "detail_url": "skills/weknora.html"
+    },
+    {
       "id": "anthropics-office-skills",
       "name_zh": "Anthropic Office 文档技能",
       "name_en": "Anthropic Office Document Skills",
@@ -183,6 +372,51 @@
       "updated_at": "2026-08-13",
       "install": "bash\n# 仅克隆文档技能子目录（稀疏检出，体积小）\ngit clone --depth 1 --filter=blob:none --sparse https://github.com/anthropics/skills /tmp/office-skills\ncd /tmp/office-skills\ngit sparse-checkout set skills/document-skills\n\n# 然后将所需技能目录复制到你的 agent 的 skills 目录（仅本地使用）\ncp -r skills/document-skills/* ~/.claude/skills/",
       "detail_url": "skills/anthropics-office-skills.html"
+    },
+    {
+      "id": "chatgpt-shortcut",
+      "name_zh": "ChatGPT Shortcut 提示词快捷指令库",
+      "name_en": "ChatGPT Shortcut (AiShort)",
+      "summary_zh": "面向普通用户的可检索提示词库——按职业与场景分类的现成提示词卡片，拿来就用，支持搜索、筛选、收藏自己的常用库，覆盖文案、办公、营销、编程等场景，配浏览器扩展与 Docker 自托管方案。注意：非 SKILL.md 形态，作为提示词参考库使用而非可安装技能。",
+      "summary_en": "A searchable prompt library for ChatGPT, Claude, Gemini and Cursor: ready-to-use prompt cards by role and scenario, with browser extension and Docker self-hosting.",
+      "category_dir": "business-office",
+      "category_name": "商业与办公",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "prompt-engineering",
+        "writing",
+        "social-media",
+        "self-hosted",
+        "docker",
+        "multilingual"
+      ],
+      "languages": [
+        "typescript",
+        "markdown"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://www.aishort.top",
+      "repo": "https://github.com/rockbenben/ChatGPT-Shortcut",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "chatgpt-shortcut",
+        "aishort",
+        "ai-short"
+      ],
+      "risk_notes": "非 SKILL.md 项目：主体是提示词库网站与浏览器扩展，不能作为 Agent 技能安装；提示词面向通用对话模型且由社区贡献，质量参差，实际使用前需自行校准。",
+      "added_at": "2026-08-30",
+      "updated_at": "2026-08-30",
+      "install": "bash\n# 方式一：无需安装，直接使用在线站\n#   https://www.aishort.top\n\n# 方式二：Docker 自托管（数据完全本地）\ngit clone --depth 1 https://github.com/rockbenben/ChatGPT-Shortcut.git\ncd ChatGPT-Shortcut\ndocker compose up -d\n# 浏览器访问 http://localhost:3000",
+      "detail_url": "skills/chatgpt-shortcut.html"
     },
     {
       "id": "aigc-line",
@@ -266,6 +500,52 @@
       "updated_at": "2026-08-27",
       "install": "bash\ngit clone https://github.com/morsoli/aimangastudio.git\ncd aimangastudio\nnpm install",
       "detail_url": "skills/aimangastudio.html"
+    },
+    {
+      "id": "animejs",
+      "name_zh": "Anime.js 动画引擎",
+      "name_en": "Anime.js — JavaScript Animation Engine",
+      "summary_zh": "轻量多用途 JavaScript 动画引擎：用统一 API 驱动 CSS、SVG、DOM 属性与 JavaScript 对象；V4 提供模块化时间轴、弹簧缓动、滚动、拖拽、文本拆分、WAAPI 与 Three.js 适配，适合界面、图表和创意页面动效。",
+      "summary_en": "A lightweight JavaScript animation engine for CSS, SVG, DOM attributes, JavaScript objects and optional Three.js scenes, with modular timelines, springs, scrolling, dragging and WAAPI support.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "animejs",
+        "animation",
+        "web-animation",
+        "motion-design",
+        "frontend",
+        "framework"
+      ],
+      "languages": [
+        "javascript",
+        "typescript"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://animejs.com",
+      "repo": "https://github.com/juliangarnier/anime",
+      "tier": "core",
+      "tier_label": "主推",
+      "featured": false,
+      "related": [
+        "gsap",
+        "remotion-skills"
+      ],
+      "aliases": [
+        "Anime.js",
+        "animejs"
+      ],
+      "risk_notes": "MIT 许可，主体免费可商用；V4 采用 ES 模块和函数式 API，与 V3 的默认导入写法差异较大，升级项目需先读迁移指南。Three.js 适配为可选 peer dependency，复杂 DOM/SVG/WebGL 动画仍需关注性能与浏览器兼容。",
+      "added_at": "2026-09-05",
+      "updated_at": "2026-09-05",
+      "install": "bash\nnpm install animejs",
+      "detail_url": "skills/animejs.html"
     },
     {
       "id": "arcreel",
@@ -560,6 +840,51 @@
       "updated_at": "2026-08-26",
       "install": "bash\n# 克隆上游仓库到本地\ngit clone https://github.com/dacnay816y62-hub/fantasy-life-force-portrait-photography.git\ncd fantasy-life-force-portrait-photography\n\n# 将仓库目录放入你的 Codex skills 目录后，即可在对话中触发，例如：\n# 使用 Fantasy 生命感人像摄影 Skill，把这张普通生活照升级成更有生命感的人像。",
       "detail_url": "skills/fantasy-life-force-portrait-photography.html"
+    },
+    {
+      "id": "gsap",
+      "name_zh": "GSAP 动画平台",
+      "name_en": "GSAP — GreenSock Animation Platform",
+      "summary_zh": "高性能 JavaScript 动画库：统一驱动 CSS、SVG、Canvas、WebGL 与通用对象的时间轴动画，内置 ScrollTrigger、Flip、MotionPath 等插件，适合交互页面、数据可视化和产品演示的动效实现。",
+      "summary_en": "A high-performance JavaScript animation library for CSS, SVG, Canvas, WebGL and generic objects, with a timeline API and plugins such as ScrollTrigger, Flip and MotionPath.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "gsap",
+        "motion-design",
+        "animation",
+        "web-animation",
+        "frontend",
+        "framework"
+      ],
+      "languages": [
+        "javascript",
+        "typescript"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "LicenseRef-GSAP-Standard-No-Charge",
+      "license_bucket": "unknown",
+      "homepage": "https://gsap.com",
+      "repo": "https://github.com/greensock/GSAP",
+      "tier": "core",
+      "tier_label": "主推",
+      "featured": false,
+      "related": [
+        "remotion-skills"
+      ],
+      "aliases": [
+        "GreenSock Animation Platform",
+        "GreenSock"
+      ],
+      "risk_notes": "上游仓库无根 LICENSE 文件，package.json 标注 Standard 'no charge' license（https://gsap.com/standard-license），非 OSI 开源协议；使用或商用前需复核许可全文。安装会引入第三方运行时代码；官方文档以英文为主。",
+      "added_at": "2026-09-05",
+      "updated_at": "2026-09-05",
+      "install": "bash\nnpm install gsap",
+      "detail_url": "skills/gsap.html"
     },
     {
       "id": "huashu-design",
@@ -1108,6 +1433,52 @@
       "detail_url": "skills/vimax.html"
     },
     {
+      "id": "visual-skills",
+      "name_zh": "Visual Skills AI 影像导演技能集",
+      "name_en": "Visual Skills — AI Film Director Skills",
+      "summary_zh": "面向 Agent 的电影级 AI 影像导演技能集：`video` 子技能先定场景欲望、障碍、镜头几何与剪辑节奏，再生成 Seedance / Kling / Veo 提示词；`image` 子技能负责 Nano Banana 与 GPT Image 的分镜与关键帧。",
+      "summary_en": "Agent skills that direct AI video and image generation: cinematic dramaturgy, exact Seedance/Kling/Veo syntax, and Nano Banana / GPT Image prompt routing for keyframes and edits.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "skill-collection",
+      "kind_label": "技能集",
+      "tags": [
+        "prompt-engineering",
+        "video-production",
+        "image-generation",
+        "cinematic",
+        "storyboard",
+        "agent-skills"
+      ],
+      "languages": [
+        "markdown"
+      ],
+      "doc_languages": [
+        "en",
+        "ru"
+      ],
+      "license": "CC-BY-4.0",
+      "license_bucket": "open",
+      "homepage": "https://github.com/smixs/visual-skills",
+      "repo": "https://github.com/smixs/visual-skills",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "seedance-20",
+        "awesome-gpt-image-2"
+      ],
+      "aliases": [
+        "visual-skills-smixs",
+        "ai-film-director"
+      ],
+      "risk_notes": "CC BY 4.0 可商用，但需保留作者署名；技能只生成提示词，不生成成片，实际生成依赖 Seedance / Kling / Veo / Nano Banana / GPT Image 等模型渠道；部分模型语法和参考文档为英文，使用前需按供应商最新文档核对。",
+      "added_at": "2026-09-05",
+      "updated_at": "2026-09-05",
+      "install": "bash\nnpx skills add smixs/visual-skills",
+      "detail_url": "skills/visual-skills.html"
+    },
+    {
       "id": "andrej-karpathy-skills",
       "name_zh": "Karpathy 编码指南",
       "name_en": "Karpathy-Inspired Claude Code Guidelines",
@@ -1423,6 +1794,50 @@
       "updated_at": "2026-08-13",
       "install": "bash\n# 在线阅读（推荐，始终最新）：\n#   https://agentskills.io/specification\n\n# 如需本地离线快照（个人阅读用，勿回传本仓库）：\ngit clone --depth 1 --filter=blob:none --sparse https://github.com/anthropics/skills /tmp/agent-skills-spec\ncd /tmp/agent-skills-spec\ngit sparse-checkout set spec",
       "detail_url": "skills/agent-skills-spec.html"
+    },
+    {
+      "id": "skill-recorder",
+      "name_zh": "Skill Recorder 屏幕工作录制转技能",
+      "name_en": "Skill Recorder",
+      "summary_zh": "微软开源的桌面应用：录制屏幕工作过程，用 GitHub Copilot CLI 重建为意图与有序步骤，再生成可复用 Skill 或定时 Automation，供 Scout / Copilot Cowork / Copilot Studio 使用。",
+      "summary_en": "Microsoft desktop app that records on-screen work, reconstructs it with GitHub Copilot CLI into intent and steps, and turns it into reusable Skills or scheduled Automations.",
+      "category_dir": "meta-skillcraft",
+      "category_name": "技能工程",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "skill-generation",
+        "screen-recording",
+        "automation",
+        "ai-agent",
+        "copilot"
+      ],
+      "languages": [
+        "typescript",
+        "javascript",
+        "powershell",
+        "shell"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/microsoft/skill-recorder",
+      "repo": "https://github.com/microsoft/skill-recorder",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "skill-recorder",
+        "microsoft-skill-recorder"
+      ],
+      "risk_notes": "MIT 可商用；分析阶段会把屏幕截图、窗口/URL/剪贴板预览与叙述文本发送到 GitHub Copilot 云端处理，录制前必须避免密码、令牌、API Key 等敏感信息；需要 GitHub Copilot 访问权限；macOS 与 Windows 11 为主，Linux 仅支持 Ubuntu。",
+      "added_at": "2026-09-05",
+      "updated_at": "2026-09-05",
+      "install": "bash\ncommit=\"<40-character-release-commit>\"; curl -fsSL \"https://raw.githubusercontent.com/microsoft/skill-recorder/$commit/install.sh\" | SKILL_RECORDER_COMMIT=\"$commit\" bash",
+      "detail_url": "skills/skill-recorder.html"
     },
     {
       "id": "assafelovic-gpt-researcher",

@@ -22,7 +22,7 @@ AstraCraft Program（天工计划）全部收录条目的交叉检索表。六�
 
 ## 一、全量总表
 
-共 46 个条目，按分类与名称排序。
+共 47 个条目，按分类与名称排序。
 
 | | 名称 | 分类 | 类型 | 协议 | 评级 | 简介 |
 |---|---|---|---|---|---|---|
@@ -61,6 +61,7 @@ AstraCraft Program（天工计划）全部收录条目的交叉检索表。六�
 | ⚠️ | [DeepSeek Harness](entries/dsh/deepseek-ai-deepseek-harness/SKILL.md) | DSH 插件 | 框架 | MIT | 常规 | DeepSeek 官方开源 Agent Harness，以 Cordis 为基础提供一切皆插件的模型、工具、界面与技能运行时。 |
 | ⚠️ | [DSH 插件市场](entries/dsh/dsh-market-dsh-market/SKILL.md) | DSH 插件 | 框架 | MIT | 常规 | 嵌入 DeepSeek Harness 的插件市场，用于浏览、安装、更新、启停和备份社区插件。 |
 | ⚠️ | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/SKILL.md) | 技能工程 | 规范 | CC-BY-4.0 | 常规 | Anthropic 发起、社区共建的开放智能体技能格式标准，定义 SKILL.md 结构与按需三级加载机制。作为活的标准，本仓库始终指向官方最新版。 |
+| ⚠️ | [Skill Recorder 屏幕工作录制转技能](entries/meta-skillcraft/skill-recorder/SKILL.md) | 技能工程 | 框架 | MIT | 常规 | 微软开源的桌面应用：录制屏幕工作过程，用 GitHub Copilot CLI 重建为意图与有序步骤，再生成可复用 Skill 或定时 Automation，供 Scout / Copilot Cowork / Copilot Studio 使用。 |
 | ⚠️ | [GPT Researcher 深度研究框架](entries/research-intel/assafelovic-gpt-researcher/SKILL.md) | 研究与信息获取 | 框架 | Apache-2.0 | 常规 | 自动规划检索、汇总来源并生成带引用研究报告的开源深度研究 Agent 框架。 |
 | ⚠️ | [PaperQA 文献问答](entries/research-intel/future-house-paper-qa/SKILL.md) | 研究与信息获取 | 框架 | Apache-2.0 | 常规 | 面向科学论文的检索增强问答与文献综述工具，强调来源定位、证据引用和研究可追溯性。 |
 | ⚠️ | [科学研究 Agent Skills](entries/research-intel/k-dense-ai-scientific-agent-skills/SKILL.md) | 研究与信息获取 | 技能集 | MIT | 常规 | 覆盖生物、化学、医学和科研数据库的科学 Agent 技能库，用于文献、分析与研究工作流。 |
@@ -88,7 +89,7 @@ AstraCraft Program（天工计划）全部收录条目的交叉检索表。六�
 | [商业与办公](#商业与办公) | 办公文档、协作、流程、商务 | 2 |
 | [Agent 基础设施](#Agent 基础设施) | MCP server、框架、CLI 工具 | 3 |
 | [DSH 插件](#DSH 插件) | DeepSeek Harness 插件——「一切皆插件」，模型适配器、工具、界面、技能、Agent 均可插拔扩展 | 5 |
-| [技能工程](#技能工程) | 写 skill 的 skill、规范、模板、元技能 | 1 |
+| [技能工程](#技能工程) | 写 skill 的 skill、规范、模板、元技能 | 2 |
 
 ### 写作与文档
 
@@ -191,19 +192,20 @@ AstraCraft Program（天工计划）全部收录条目的交叉检索表。六�
 | | 名称 | 类型 | 协议 | 简介 |
 |---|---|---|---|---|
 | ⚠️ | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/SKILL.md) | 规范 | CC-BY-4.0 | Anthropic 发起、社区共建的开放智能体技能格式标准，定义 SKILL.md 结构与按需三级加载机制。作为活的标准，本仓库始终指向官方最新版。 |
+| ⚠️ | [Skill Recorder 屏幕工作录制转技能](entries/meta-skillcraft/skill-recorder/SKILL.md) | 框架 | MIT | 微软开源的桌面应用：录制屏幕工作过程，用 GitHub Copilot CLI 重建为意图与有序步骤，再生成可复用 Skill 或定时 Automation，供 Scout / Copilot Cowork / Copilot Studio 使用。 |
 
 ---
 
 ## 三、按标签
 
-共 81 个标签。标签是分类之外的交叉维度——一个条目只能属于一个分类，但可以有多个标签。
+共 84 个标签。标签是分类之外的交叉维度——一个条目只能属于一个分类，但可以有多个标签。
 
 | 标签 | 条目 |
 |---|---|
 | `agent-methodology` | [Karpathy 编码指南](entries/dev-engineering/andrej-karpathy-skills/SKILL.md) |
 | `agent-skills` | [花叔设计 HTML 原生设计系统](entries/design-creative/huashu-design/SKILL.md) · [Remotion 官方 Agent Skills](entries/design-creative/remotion-skills/SKILL.md) · [Visual Skills AI 影像导演技能集](entries/design-creative/visual-skills/SKILL.md) · [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/SKILL.md) · [科学研究 Agent Skills](entries/research-intel/k-dense-ai-scientific-agent-skills/SKILL.md) · [花叔开源 Skills 总目录](entries/writing-docs/huashu-skills/SKILL.md) |
-| `ai-agent` | [Codex Taskboard 本地任务看板](entries/agent-infra/codex-taskboard/SKILL.md) · [WeKnora 开源 LLM 知识平台](entries/agent-infra/weknora/SKILL.md) · [AIGC CANVAS 短剧生产工作台](entries/design-creative/aigc-line/SKILL.md) · [ArcReel AI 视频生产工作台](entries/design-creative/arcreel/SKILL.md) · [Depth Studio 深度视频生成](entries/design-creative/depth-studio/SKILL.md) · [漫剧老李 AIGC 全流程 Skill](entries/design-creative/manju-laoli-skill/SKILL.md) · [MoneyPrinterTurbo 一站式 AI 短视频生成工具](entries/design-creative/money-printer-turbo/SKILL.md) · [影策 Open AI Canvas 影视创作工作台](entries/design-creative/open-ai-canvas/SKILL.md) · [Open Storyboard Canvas 开源画布](entries/design-creative/open-storyboard-canvas/SKILL.md) · [OpenMontage 开源智能体视频制作系统](entries/design-creative/openmontage/SKILL.md) · [Seedance 2.0 Skill OS 视频执导技能包](entries/design-creative/seedance-20/SKILL.md) · [Toonflow 一站式 AI 短剧创作工具](entries/design-creative/toonflow/SKILL.md) · [ViMax 智能体视频生成框架](entries/design-creative/vimax/SKILL.md) · [DSH 插件发现助手](entries/dsh/awesome-dsh-plugin-dsh-find-plugin/SKILL.md) · [DSH 终端界面](entries/dsh/ccch1mneyyy-dsh-tui/SKILL.md) · [DeepSeek Harness](entries/dsh/deepseek-ai-deepseek-harness/SKILL.md) · [GPT Researcher 深度研究框架](entries/research-intel/assafelovic-gpt-researcher/SKILL.md) · [RD-Agent 研发自动化](entries/research-intel/microsoft-rd-agent/SKILL.md) · [Dashi PPT Skill 大师 PPT](entries/writing-docs/dashi-ppt-skill/SKILL.md) · [shuohao-skills AI 短剧制作技能合集](entries/writing-docs/shuohao-skills/SKILL.md) · [ZenStory AI 小说写作工作台](entries/writing-docs/zenstory/SKILL.md) |
-| `automation` | [DeepSeek Harness Ultimate](entries/dsh/0xsline-awesome-deepseek-harness/SKILL.md) |
+| `ai-agent` | [Codex Taskboard 本地任务看板](entries/agent-infra/codex-taskboard/SKILL.md) · [WeKnora 开源 LLM 知识平台](entries/agent-infra/weknora/SKILL.md) · [AIGC CANVAS 短剧生产工作台](entries/design-creative/aigc-line/SKILL.md) · [ArcReel AI 视频生产工作台](entries/design-creative/arcreel/SKILL.md) · [Depth Studio 深度视频生成](entries/design-creative/depth-studio/SKILL.md) · [漫剧老李 AIGC 全流程 Skill](entries/design-creative/manju-laoli-skill/SKILL.md) · [MoneyPrinterTurbo 一站式 AI 短视频生成工具](entries/design-creative/money-printer-turbo/SKILL.md) · [影策 Open AI Canvas 影视创作工作台](entries/design-creative/open-ai-canvas/SKILL.md) · [Open Storyboard Canvas 开源画布](entries/design-creative/open-storyboard-canvas/SKILL.md) · [OpenMontage 开源智能体视频制作系统](entries/design-creative/openmontage/SKILL.md) · [Seedance 2.0 Skill OS 视频执导技能包](entries/design-creative/seedance-20/SKILL.md) · [Toonflow 一站式 AI 短剧创作工具](entries/design-creative/toonflow/SKILL.md) · [ViMax 智能体视频生成框架](entries/design-creative/vimax/SKILL.md) · [DSH 插件发现助手](entries/dsh/awesome-dsh-plugin-dsh-find-plugin/SKILL.md) · [DSH 终端界面](entries/dsh/ccch1mneyyy-dsh-tui/SKILL.md) · [DeepSeek Harness](entries/dsh/deepseek-ai-deepseek-harness/SKILL.md) · [Skill Recorder 屏幕工作录制转技能](entries/meta-skillcraft/skill-recorder/SKILL.md) · [GPT Researcher 深度研究框架](entries/research-intel/assafelovic-gpt-researcher/SKILL.md) · [RD-Agent 研发自动化](entries/research-intel/microsoft-rd-agent/SKILL.md) · [Dashi PPT Skill 大师 PPT](entries/writing-docs/dashi-ppt-skill/SKILL.md) · [shuohao-skills AI 短剧制作技能合集](entries/writing-docs/shuohao-skills/SKILL.md) · [ZenStory AI 小说写作工作台](entries/writing-docs/zenstory/SKILL.md) |
+| `automation` | [DeepSeek Harness Ultimate](entries/dsh/0xsline-awesome-deepseek-harness/SKILL.md) · [Skill Recorder 屏幕工作录制转技能](entries/meta-skillcraft/skill-recorder/SKILL.md) |
 | `awesome-list` | [中文 DESIGN.md 设计资源集](entries/design-creative/awesome-design-md-cn/SKILL.md) · [GPT-Image2 工业级提示词引擎与模板库](entries/design-creative/awesome-gpt-image-2/SKILL.md) · [DeepSeek Harness Ultimate](entries/dsh/0xsline-awesome-deepseek-harness/SKILL.md) |
 | `casting` | [人物角色 Casting 工作室 Skill](entries/design-creative/character-casting-studio-skill/SKILL.md) |
 | `character-design` | [AIMangaStudio 漫画创作](entries/design-creative/aimangastudio/SKILL.md) · [人物角色 Casting 工作室 Skill](entries/design-creative/character-casting-studio-skill/SKILL.md) · [漫剧老李 AIGC 全流程 Skill](entries/design-creative/manju-laoli-skill/SKILL.md) · [shuohao-skills AI 短剧制作技能合集](entries/writing-docs/shuohao-skills/SKILL.md) |
@@ -214,6 +216,7 @@ AstraCraft Program（天工计划）全部收录条目的交叉检索表。六�
 | `code-graph` | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) |
 | `code-review` | [Karpathy 编码指南](entries/dev-engineering/andrej-karpathy-skills/SKILL.md) · [工程 Agent 与插件集合](entries/dev-engineering/wshobson-agents/SKILL.md) |
 | `codex` | [Codex Taskboard 本地任务看板](entries/agent-infra/codex-taskboard/SKILL.md) · [人物角色 Casting 工作室 Skill](entries/design-creative/character-casting-studio-skill/SKILL.md) · [Cinema DNA 21:9×3 电影画面生成 Skill](entries/design-creative/cinema-dna-21x9x3/SKILL.md) · [Fantasy 生命感人像摄影 Skill](entries/design-creative/fantasy-life-force-portrait-photography/SKILL.md) · [Video Shotcraft 产品视频动态设计技能](entries/design-creative/video-shotcraft/SKILL.md) · [口播视频动效工作室](entries/design-creative/video-talkcraft/SKILL.md) · [Dashi PPT Skill 大师 PPT](entries/writing-docs/dashi-ppt-skill/SKILL.md) · [Drama Skills AI 短剧创作技能合集](entries/writing-docs/drama-skills/SKILL.md) · [shuohao-skills AI 短剧制作技能合集](entries/writing-docs/shuohao-skills/SKILL.md) |
+| `copilot` | [Skill Recorder 屏幕工作录制转技能](entries/meta-skillcraft/skill-recorder/SKILL.md) |
 | `cover-generation` | [OH-Story 网文/小说写作 Skill 包](entries/writing-docs/oh-story-claudecode/SKILL.md) |
 | `de-slop` | [花叔设计 HTML 原生设计系统](entries/design-creative/huashu-design/SKILL.md) · [Karpathy 编码指南](entries/dev-engineering/andrej-karpathy-skills/SKILL.md) · [OH-Story 网文/小说写作 Skill 包](entries/writing-docs/oh-story-claudecode/SKILL.md) |
 | `design-md` | [中文 DESIGN.md 设计资源集](entries/design-creative/awesome-design-md-cn/SKILL.md) |
@@ -255,6 +258,7 @@ AstraCraft Program（天工计划）全部收录条目的交叉检索表。六�
 | `remotion` | [OpenMontage 开源智能体视频制作系统](entries/design-creative/openmontage/SKILL.md) · [Remotion 官方 Agent Skills](entries/design-creative/remotion-skills/SKILL.md) · [Video Shotcraft 产品视频动态设计技能](entries/design-creative/video-shotcraft/SKILL.md) · [口播视频动效工作室](entries/design-creative/video-talkcraft/SKILL.md) |
 | `research` | [GPT Researcher 深度研究框架](entries/research-intel/assafelovic-gpt-researcher/SKILL.md) · [PaperQA 文献问答](entries/research-intel/future-house-paper-qa/SKILL.md) · [科学研究 Agent Skills](entries/research-intel/k-dense-ai-scientific-agent-skills/SKILL.md) · [RD-Agent 研发自动化](entries/research-intel/microsoft-rd-agent/SKILL.md) · [STORM 知识研究系统](entries/research-intel/stanford-oval-storm/SKILL.md) |
 | `science` | [PaperQA 文献问答](entries/research-intel/future-house-paper-qa/SKILL.md) · [科学研究 Agent Skills](entries/research-intel/k-dense-ai-scientific-agent-skills/SKILL.md) |
+| `screen-recording` | [Skill Recorder 屏幕工作录制转技能](entries/meta-skillcraft/skill-recorder/SKILL.md) |
 | `screenwriting` | [漫剧老李 AIGC 全流程 Skill](entries/design-creative/manju-laoli-skill/SKILL.md) · [OpenMontage 开源智能体视频制作系统](entries/design-creative/openmontage/SKILL.md) · [Toonflow 一站式 AI 短剧创作工具](entries/design-creative/toonflow/SKILL.md) · [Drama Skills AI 短剧创作技能合集](entries/writing-docs/drama-skills/SKILL.md) · [shuohao-skills AI 短剧制作技能合集](entries/writing-docs/shuohao-skills/SKILL.md) |
 | `search` | [DSH 插件发现助手](entries/dsh/awesome-dsh-plugin-dsh-find-plugin/SKILL.md) · [GPT Researcher 深度研究框架](entries/research-intel/assafelovic-gpt-researcher/SKILL.md) · [STORM 知识研究系统](entries/research-intel/stanford-oval-storm/SKILL.md) |
 | `seedance` | [AIGC CANVAS 短剧生产工作台](entries/design-creative/aigc-line/SKILL.md) · [漫剧老李 AIGC 全流程 Skill](entries/design-creative/manju-laoli-skill/SKILL.md) · [Seedance 2.0 Skill OS 视频执导技能包](entries/design-creative/seedance-20/SKILL.md) |
@@ -263,6 +267,7 @@ AstraCraft Program（天工计划）全部收录条目的交叉检索表。六�
 | `short-video` | [MoneyPrinterTurbo 一站式 AI 短视频生成工具](entries/design-creative/money-printer-turbo/SKILL.md) · [花叔开源 Skills 总目录](entries/writing-docs/huashu-skills/SKILL.md) |
 | `skill` | [口播视频动效工作室](entries/design-creative/video-talkcraft/SKILL.md) · [Karpathy 编码指南](entries/dev-engineering/andrej-karpathy-skills/SKILL.md) |
 | `skill-collection` | [花叔开源 Skills 总目录](entries/writing-docs/huashu-skills/SKILL.md) |
+| `skill-generation` | [Skill Recorder 屏幕工作录制转技能](entries/meta-skillcraft/skill-recorder/SKILL.md) |
 | `skill-md` | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/SKILL.md) |
 | `skill-pack` | [Remotion 官方 Agent Skills](entries/design-creative/remotion-skills/SKILL.md) · [科学研究 Agent Skills](entries/research-intel/k-dense-ai-scientific-agent-skills/SKILL.md) · [OH-Story 网文/小说写作 Skill 包](entries/writing-docs/oh-story-claudecode/SKILL.md) |
 | `social-media` | [ChatGPT Shortcut 提示词快捷指令库](entries/business-office/chatgpt-shortcut/SKILL.md) · [Fantasy 生命感人像摄影 Skill](entries/design-creative/fantasy-life-force-portrait-photography/SKILL.md) · [MoneyPrinterTurbo 一站式 AI 短视频生成工具](entries/design-creative/money-printer-turbo/SKILL.md) · [花叔开源 Skills 总目录](entries/writing-docs/huashu-skills/SKILL.md) |
@@ -292,11 +297,13 @@ AstraCraft Program（天工计划）全部收录条目的交叉检索表。六�
 |---|---|
 | `go` | [WeKnora 开源 LLM 知识平台](entries/agent-infra/weknora/SKILL.md) · [影策 Open AI Canvas 影视创作工作台](entries/design-creative/open-ai-canvas/SKILL.md) |
 | `html` | [中文 DESIGN.md 设计资源集](entries/design-creative/awesome-design-md-cn/SKILL.md) · [花叔设计 HTML 原生设计系统](entries/design-creative/huashu-design/SKILL.md) |
-| `javascript` | [Depth Studio 深度视频生成](entries/design-creative/depth-studio/SKILL.md) · [花叔设计 HTML 原生设计系统](entries/design-creative/huashu-design/SKILL.md) · [Dashi PPT Skill 大师 PPT](entries/writing-docs/dashi-ppt-skill/SKILL.md) · [OH-Story 网文/小说写作 Skill 包](entries/writing-docs/oh-story-claudecode/SKILL.md) · [shuohao-skills AI 短剧制作技能合集](entries/writing-docs/shuohao-skills/SKILL.md) |
+| `javascript` | [Depth Studio 深度视频生成](entries/design-creative/depth-studio/SKILL.md) · [花叔设计 HTML 原生设计系统](entries/design-creative/huashu-design/SKILL.md) · [Skill Recorder 屏幕工作录制转技能](entries/meta-skillcraft/skill-recorder/SKILL.md) · [Dashi PPT Skill 大师 PPT](entries/writing-docs/dashi-ppt-skill/SKILL.md) · [OH-Story 网文/小说写作 Skill 包](entries/writing-docs/oh-story-claudecode/SKILL.md) · [shuohao-skills AI 短剧制作技能合集](entries/writing-docs/shuohao-skills/SKILL.md) |
 | `markdown` | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/SKILL.md) · [ChatGPT Shortcut 提示词快捷指令库](entries/business-office/chatgpt-shortcut/SKILL.md) · [中文 DESIGN.md 设计资源集](entries/design-creative/awesome-design-md-cn/SKILL.md) · [GPT-Image2 工业级提示词引擎与模板库](entries/design-creative/awesome-gpt-image-2/SKILL.md) · [人物角色 Casting 工作室 Skill](entries/design-creative/character-casting-studio-skill/SKILL.md) · [Cinema DNA 21:9×3 电影画面生成 Skill](entries/design-creative/cinema-dna-21x9x3/SKILL.md) · [Fantasy 生命感人像摄影 Skill](entries/design-creative/fantasy-life-force-portrait-photography/SKILL.md) · [漫剧老李 AIGC 全流程 Skill](entries/design-creative/manju-laoli-skill/SKILL.md) · [Visual Skills AI 影像导演技能集](entries/design-creative/visual-skills/SKILL.md) · [Karpathy 编码指南](entries/dev-engineering/andrej-karpathy-skills/SKILL.md) · [工程 Agent 与插件集合](entries/dev-engineering/wshobson-agents/SKILL.md) · [DeepSeek Harness Ultimate](entries/dsh/0xsline-awesome-deepseek-harness/SKILL.md) · [DSH 插件发现助手](entries/dsh/awesome-dsh-plugin-dsh-find-plugin/SKILL.md) · [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/SKILL.md) · [科学研究 Agent Skills](entries/research-intel/k-dense-ai-scientific-agent-skills/SKILL.md) · [Dashi PPT Skill 大师 PPT](entries/writing-docs/dashi-ppt-skill/SKILL.md) · [花叔开源 Skills 总目录](entries/writing-docs/huashu-skills/SKILL.md) |
+| `powershell` | [Skill Recorder 屏幕工作录制转技能](entries/meta-skillcraft/skill-recorder/SKILL.md) |
 | `python` | [WeKnora 开源 LLM 知识平台](entries/agent-infra/weknora/SKILL.md) · [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/SKILL.md) · [ArcReel AI 视频生产工作台](entries/design-creative/arcreel/SKILL.md) · [Depth Studio 深度视频生成](entries/design-creative/depth-studio/SKILL.md) · [MoneyPrinterTurbo 一站式 AI 短视频生成工具](entries/design-creative/money-printer-turbo/SKILL.md) · [OpenMontage 开源智能体视频制作系统](entries/design-creative/openmontage/SKILL.md) · [Seedance 2.0 Skill OS 视频执导技能包](entries/design-creative/seedance-20/SKILL.md) · [口播视频动效工作室](entries/design-creative/video-talkcraft/SKILL.md) · [ViMax 智能体视频生成框架](entries/design-creative/vimax/SKILL.md) · [工程 Agent 与插件集合](entries/dev-engineering/wshobson-agents/SKILL.md) · [GPT Researcher 深度研究框架](entries/research-intel/assafelovic-gpt-researcher/SKILL.md) · [PaperQA 文献问答](entries/research-intel/future-house-paper-qa/SKILL.md) · [科学研究 Agent Skills](entries/research-intel/k-dense-ai-scientific-agent-skills/SKILL.md) · [RD-Agent 研发自动化](entries/research-intel/microsoft-rd-agent/SKILL.md) · [STORM 知识研究系统](entries/research-intel/stanford-oval-storm/SKILL.md) · [Drama Skills AI 短剧创作技能合集](entries/writing-docs/drama-skills/SKILL.md) · [花叔开源 Skills 总目录](entries/writing-docs/huashu-skills/SKILL.md) · [ZenStory AI 小说写作工作台](entries/writing-docs/zenstory/SKILL.md) |
 | `rust` | [Open Storyboard Canvas 开源画布](entries/design-creative/open-storyboard-canvas/SKILL.md) |
-| `typescript` | [Codex Taskboard 本地任务看板](entries/agent-infra/codex-taskboard/SKILL.md) · [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) · [WeKnora 开源 LLM 知识平台](entries/agent-infra/weknora/SKILL.md) · [ChatGPT Shortcut 提示词快捷指令库](entries/business-office/chatgpt-shortcut/SKILL.md) · [AIGC CANVAS 短剧生产工作台](entries/design-creative/aigc-line/SKILL.md) · [AIMangaStudio 漫画创作](entries/design-creative/aimangastudio/SKILL.md) · [ArcReel AI 视频生产工作台](entries/design-creative/arcreel/SKILL.md) · [影策 Open AI Canvas 影视创作工作台](entries/design-creative/open-ai-canvas/SKILL.md) · [Open Storyboard Canvas 开源画布](entries/design-creative/open-storyboard-canvas/SKILL.md) · [OpenMontage 开源智能体视频制作系统](entries/design-creative/openmontage/SKILL.md) · [Remotion 官方 Agent Skills](entries/design-creative/remotion-skills/SKILL.md) · [Toonflow 一站式 AI 短剧创作工具](entries/design-creative/toonflow/SKILL.md) · [Video Shotcraft 产品视频动态设计技能](entries/design-creative/video-shotcraft/SKILL.md) · [口播视频动效工作室](entries/design-creative/video-talkcraft/SKILL.md) · [DeepSeek Harness Ultimate](entries/dsh/0xsline-awesome-deepseek-harness/SKILL.md) · [DSH 插件发现助手](entries/dsh/awesome-dsh-plugin-dsh-find-plugin/SKILL.md) · [DSH 终端界面](entries/dsh/ccch1mneyyy-dsh-tui/SKILL.md) · [DeepSeek Harness](entries/dsh/deepseek-ai-deepseek-harness/SKILL.md) · [DSH 插件市场](entries/dsh/dsh-market-dsh-market/SKILL.md) · [GPT Researcher 深度研究框架](entries/research-intel/assafelovic-gpt-researcher/SKILL.md) · [ZenStory AI 小说写作工作台](entries/writing-docs/zenstory/SKILL.md) |
+| `shell` | [Skill Recorder 屏幕工作录制转技能](entries/meta-skillcraft/skill-recorder/SKILL.md) |
+| `typescript` | [Codex Taskboard 本地任务看板](entries/agent-infra/codex-taskboard/SKILL.md) · [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) · [WeKnora 开源 LLM 知识平台](entries/agent-infra/weknora/SKILL.md) · [ChatGPT Shortcut 提示词快捷指令库](entries/business-office/chatgpt-shortcut/SKILL.md) · [AIGC CANVAS 短剧生产工作台](entries/design-creative/aigc-line/SKILL.md) · [AIMangaStudio 漫画创作](entries/design-creative/aimangastudio/SKILL.md) · [ArcReel AI 视频生产工作台](entries/design-creative/arcreel/SKILL.md) · [影策 Open AI Canvas 影视创作工作台](entries/design-creative/open-ai-canvas/SKILL.md) · [Open Storyboard Canvas 开源画布](entries/design-creative/open-storyboard-canvas/SKILL.md) · [OpenMontage 开源智能体视频制作系统](entries/design-creative/openmontage/SKILL.md) · [Remotion 官方 Agent Skills](entries/design-creative/remotion-skills/SKILL.md) · [Toonflow 一站式 AI 短剧创作工具](entries/design-creative/toonflow/SKILL.md) · [Video Shotcraft 产品视频动态设计技能](entries/design-creative/video-shotcraft/SKILL.md) · [口播视频动效工作室](entries/design-creative/video-talkcraft/SKILL.md) · [DeepSeek Harness Ultimate](entries/dsh/0xsline-awesome-deepseek-harness/SKILL.md) · [DSH 插件发现助手](entries/dsh/awesome-dsh-plugin-dsh-find-plugin/SKILL.md) · [DSH 终端界面](entries/dsh/ccch1mneyyy-dsh-tui/SKILL.md) · [DeepSeek Harness](entries/dsh/deepseek-ai-deepseek-harness/SKILL.md) · [DSH 插件市场](entries/dsh/dsh-market-dsh-market/SKILL.md) · [Skill Recorder 屏幕工作录制转技能](entries/meta-skillcraft/skill-recorder/SKILL.md) · [GPT Researcher 深度研究框架](entries/research-intel/assafelovic-gpt-researcher/SKILL.md) · [ZenStory AI 小说写作工作台](entries/writing-docs/zenstory/SKILL.md) |
 
 ---
 
@@ -311,7 +318,7 @@ AstraCraft Program（天工计划）全部收录条目的交叉检索表。六�
 | `CC-BY-4.0` | 2 | [Visual Skills AI 影像导演技能集](entries/design-creative/visual-skills/SKILL.md) · [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/SKILL.md) |
 | `CC0-1.0` | 1 | [DeepSeek Harness Ultimate](entries/dsh/0xsline-awesome-deepseek-harness/SKILL.md) |
 | `LicenseRef-Anthropic-Source-Available` | 1 | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/SKILL.md) |
-| `MIT` | 26 | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) · [WeKnora 开源 LLM 知识平台](entries/agent-infra/weknora/SKILL.md) · [ChatGPT Shortcut 提示词快捷指令库](entries/business-office/chatgpt-shortcut/SKILL.md) · [AIGC CANVAS 短剧生产工作台](entries/design-creative/aigc-line/SKILL.md) · [AIMangaStudio 漫画创作](entries/design-creative/aimangastudio/SKILL.md) · [GPT-Image2 工业级提示词引擎与模板库](entries/design-creative/awesome-gpt-image-2/SKILL.md) · [Depth Studio 深度视频生成](entries/design-creative/depth-studio/SKILL.md) · [花叔设计 HTML 原生设计系统](entries/design-creative/huashu-design/SKILL.md) · [漫剧老李 AIGC 全流程 Skill](entries/design-creative/manju-laoli-skill/SKILL.md) · [MoneyPrinterTurbo 一站式 AI 短视频生成工具](entries/design-creative/money-printer-turbo/SKILL.md) · [影策 Open AI Canvas 影视创作工作台](entries/design-creative/open-ai-canvas/SKILL.md) · [Open Storyboard Canvas 开源画布](entries/design-creative/open-storyboard-canvas/SKILL.md) · [Seedance 2.0 Skill OS 视频执导技能包](entries/design-creative/seedance-20/SKILL.md) · [ViMax 智能体视频生成框架](entries/design-creative/vimax/SKILL.md) · [Karpathy 编码指南](entries/dev-engineering/andrej-karpathy-skills/SKILL.md) · [工程 Agent 与插件集合](entries/dev-engineering/wshobson-agents/SKILL.md) · [DSH 插件发现助手](entries/dsh/awesome-dsh-plugin-dsh-find-plugin/SKILL.md) · [DSH 终端界面](entries/dsh/ccch1mneyyy-dsh-tui/SKILL.md) · [DeepSeek Harness](entries/dsh/deepseek-ai-deepseek-harness/SKILL.md) · [DSH 插件市场](entries/dsh/dsh-market-dsh-market/SKILL.md) · [科学研究 Agent Skills](entries/research-intel/k-dense-ai-scientific-agent-skills/SKILL.md) · [RD-Agent 研发自动化](entries/research-intel/microsoft-rd-agent/SKILL.md) · [STORM 知识研究系统](entries/research-intel/stanford-oval-storm/SKILL.md) · [Drama Skills AI 短剧创作技能合集](entries/writing-docs/drama-skills/SKILL.md) · [OH-Story 网文/小说写作 Skill 包](entries/writing-docs/oh-story-claudecode/SKILL.md) · [ZenStory AI 小说写作工作台](entries/writing-docs/zenstory/SKILL.md) |
+| `MIT` | 27 | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) · [WeKnora 开源 LLM 知识平台](entries/agent-infra/weknora/SKILL.md) · [ChatGPT Shortcut 提示词快捷指令库](entries/business-office/chatgpt-shortcut/SKILL.md) · [AIGC CANVAS 短剧生产工作台](entries/design-creative/aigc-line/SKILL.md) · [AIMangaStudio 漫画创作](entries/design-creative/aimangastudio/SKILL.md) · [GPT-Image2 工业级提示词引擎与模板库](entries/design-creative/awesome-gpt-image-2/SKILL.md) · [Depth Studio 深度视频生成](entries/design-creative/depth-studio/SKILL.md) · [花叔设计 HTML 原生设计系统](entries/design-creative/huashu-design/SKILL.md) · [漫剧老李 AIGC 全流程 Skill](entries/design-creative/manju-laoli-skill/SKILL.md) · [MoneyPrinterTurbo 一站式 AI 短视频生成工具](entries/design-creative/money-printer-turbo/SKILL.md) · [影策 Open AI Canvas 影视创作工作台](entries/design-creative/open-ai-canvas/SKILL.md) · [Open Storyboard Canvas 开源画布](entries/design-creative/open-storyboard-canvas/SKILL.md) · [Seedance 2.0 Skill OS 视频执导技能包](entries/design-creative/seedance-20/SKILL.md) · [ViMax 智能体视频生成框架](entries/design-creative/vimax/SKILL.md) · [Karpathy 编码指南](entries/dev-engineering/andrej-karpathy-skills/SKILL.md) · [工程 Agent 与插件集合](entries/dev-engineering/wshobson-agents/SKILL.md) · [DSH 插件发现助手](entries/dsh/awesome-dsh-plugin-dsh-find-plugin/SKILL.md) · [DSH 终端界面](entries/dsh/ccch1mneyyy-dsh-tui/SKILL.md) · [DeepSeek Harness](entries/dsh/deepseek-ai-deepseek-harness/SKILL.md) · [DSH 插件市场](entries/dsh/dsh-market-dsh-market/SKILL.md) · [Skill Recorder 屏幕工作录制转技能](entries/meta-skillcraft/skill-recorder/SKILL.md) · [科学研究 Agent Skills](entries/research-intel/k-dense-ai-scientific-agent-skills/SKILL.md) · [RD-Agent 研发自动化](entries/research-intel/microsoft-rd-agent/SKILL.md) · [STORM 知识研究系统](entries/research-intel/stanford-oval-storm/SKILL.md) · [Drama Skills AI 短剧创作技能合集](entries/writing-docs/drama-skills/SKILL.md) · [OH-Story 网文/小说写作 Skill 包](entries/writing-docs/oh-story-claudecode/SKILL.md) · [ZenStory AI 小说写作工作台](entries/writing-docs/zenstory/SKILL.md) |
 | `PolyForm-Noncommercial-1.0.0` | 1 | [口播视频动效工作室](entries/design-creative/video-talkcraft/SKILL.md) |
 | `UNKNOWN` | 6 | [中文 DESIGN.md 设计资源集](entries/design-creative/awesome-design-md-cn/SKILL.md) · [人物角色 Casting 工作室 Skill](entries/design-creative/character-casting-studio-skill/SKILL.md) · [Cinema DNA 21:9×3 电影画面生成 Skill](entries/design-creative/cinema-dna-21x9x3/SKILL.md) · [Fantasy 生命感人像摄影 Skill](entries/design-creative/fantasy-life-force-portrait-photography/SKILL.md) · [Remotion 官方 Agent Skills](entries/design-creative/remotion-skills/SKILL.md) · [花叔开源 Skills 总目录](entries/writing-docs/huashu-skills/SKILL.md) |
 
@@ -338,23 +345,23 @@ star 数不参与收录判断，仅作为排序维度。`—` 表示尚未采集
 | 11 | [Video Shotcraft 产品视频动态设计技能](entries/design-creative/video-shotcraft/SKILL.md) | 6400 | 2026-08-26 |
 | 12 | [OH-Story 网文/小说写作 Skill 包](entries/writing-docs/oh-story-claudecode/SKILL.md) | 6086 | 2026-08-26T05:28:29Z |
 | 13 | [Remotion 官方 Agent Skills](entries/design-creative/remotion-skills/SKILL.md) | 4430 | 2026-08-26 |
-| 14 | [Codex Taskboard 本地任务看板](entries/agent-infra/codex-taskboard/SKILL.md) | 2611 | 2026-08-26T08:54:06Z |
-| 15 | [shuohao-skills AI 短剧制作技能合集](entries/writing-docs/shuohao-skills/SKILL.md) | 2100 | 2026-08-26 |
-| 16 | [花叔开源 Skills 总目录](entries/writing-docs/huashu-skills/SKILL.md) | 1425 | 2026-08-25 |
-| 17 | [Drama Skills AI 短剧创作技能合集](entries/writing-docs/drama-skills/SKILL.md) | 1201 | 2026-08-26T06:48:55Z |
-| 18 | [Cinema DNA 21:9×3 电影画面生成 Skill](entries/design-creative/cinema-dna-21x9x3/SKILL.md) | 1113 | 2026-07-25T13:28:39Z |
-| 19 | [Visual Skills AI 影像导演技能集](entries/design-creative/visual-skills/SKILL.md) | 292 | 2026-08-08T00:40:19Z |
-| 20 | [Fantasy 生命感人像摄影 Skill](entries/design-creative/fantasy-life-force-portrait-photography/SKILL.md) | 287 | 2026-07-19T09:05:19Z |
-| 21 | [中文 DESIGN.md 设计资源集](entries/design-creative/awesome-design-md-cn/SKILL.md) | 140 | 2026-07-07T07:47:56Z |
-| 22 | [口播视频动效工作室](entries/design-creative/video-talkcraft/SKILL.md) | 113 | 2026-08-30 |
-| 23 | [人物角色 Casting 工作室 Skill](entries/design-creative/character-casting-studio-skill/SKILL.md) | 67 | 2026-08-19T05:20:41Z |
-| 24 | [ZenStory AI 小说写作工作台](entries/writing-docs/zenstory/SKILL.md) | 35 | 2026-08-25T11:21:09Z |
-| 25 | [漫剧老李 AIGC 全流程 Skill](entries/design-creative/manju-laoli-skill/SKILL.md) | 0 | 2026-08-28 |
-| 26 | [DeepSeek Harness Ultimate](entries/dsh/0xsline-awesome-deepseek-harness/SKILL.md) | — | — |
-| 27 | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/SKILL.md) | — | — |
-| 28 | [AIGC CANVAS 短剧生产工作台](entries/design-creative/aigc-line/SKILL.md) | — | — |
-| 29 | [AIMangaStudio 漫画创作](entries/design-creative/aimangastudio/SKILL.md) | — | — |
-| 30 | [Karpathy 编码指南](entries/dev-engineering/andrej-karpathy-skills/SKILL.md) | — | — |
+| 14 | [Skill Recorder 屏幕工作录制转技能](entries/meta-skillcraft/skill-recorder/SKILL.md) | 3837 | 2026-09-03T12:03:38Z |
+| 15 | [Codex Taskboard 本地任务看板](entries/agent-infra/codex-taskboard/SKILL.md) | 2611 | 2026-08-26T08:54:06Z |
+| 16 | [shuohao-skills AI 短剧制作技能合集](entries/writing-docs/shuohao-skills/SKILL.md) | 2100 | 2026-08-26 |
+| 17 | [花叔开源 Skills 总目录](entries/writing-docs/huashu-skills/SKILL.md) | 1425 | 2026-08-25 |
+| 18 | [Drama Skills AI 短剧创作技能合集](entries/writing-docs/drama-skills/SKILL.md) | 1201 | 2026-08-26T06:48:55Z |
+| 19 | [Cinema DNA 21:9×3 电影画面生成 Skill](entries/design-creative/cinema-dna-21x9x3/SKILL.md) | 1113 | 2026-07-25T13:28:39Z |
+| 20 | [Visual Skills AI 影像导演技能集](entries/design-creative/visual-skills/SKILL.md) | 292 | 2026-08-08T00:40:19Z |
+| 21 | [Fantasy 生命感人像摄影 Skill](entries/design-creative/fantasy-life-force-portrait-photography/SKILL.md) | 287 | 2026-07-19T09:05:19Z |
+| 22 | [中文 DESIGN.md 设计资源集](entries/design-creative/awesome-design-md-cn/SKILL.md) | 140 | 2026-07-07T07:47:56Z |
+| 23 | [口播视频动效工作室](entries/design-creative/video-talkcraft/SKILL.md) | 113 | 2026-08-30 |
+| 24 | [人物角色 Casting 工作室 Skill](entries/design-creative/character-casting-studio-skill/SKILL.md) | 67 | 2026-08-19T05:20:41Z |
+| 25 | [ZenStory AI 小说写作工作台](entries/writing-docs/zenstory/SKILL.md) | 35 | 2026-08-25T11:21:09Z |
+| 26 | [漫剧老李 AIGC 全流程 Skill](entries/design-creative/manju-laoli-skill/SKILL.md) | 0 | 2026-08-28 |
+| 27 | [DeepSeek Harness Ultimate](entries/dsh/0xsline-awesome-deepseek-harness/SKILL.md) | — | — |
+| 28 | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/SKILL.md) | — | — |
+| 29 | [AIGC CANVAS 短剧生产工作台](entries/design-creative/aigc-line/SKILL.md) | — | — |
+| 30 | [AIMangaStudio 漫画创作](entries/design-creative/aimangastudio/SKILL.md) | — | — |
 
 ### 最近加入
 
@@ -362,6 +369,7 @@ star 数不参与收录判断，仅作为排序维度。`—` 表示尚未采集
 |---|---|---|
 | [WeKnora 开源 LLM 知识平台](entries/agent-infra/weknora/SKILL.md) | 2026-09-05 | 2026-09-05 |
 | [Visual Skills AI 影像导演技能集](entries/design-creative/visual-skills/SKILL.md) | 2026-09-05 | 2026-09-05 |
+| [Skill Recorder 屏幕工作录制转技能](entries/meta-skillcraft/skill-recorder/SKILL.md) | 2026-09-05 | 2026-09-05 |
 | [ChatGPT Shortcut 提示词快捷指令库](entries/business-office/chatgpt-shortcut/SKILL.md) | 2026-08-30 | 2026-08-30 |
 | [漫剧老李 AIGC 全流程 Skill](entries/design-creative/manju-laoli-skill/SKILL.md) | 2026-08-30 | 2026-08-30 |
 | [口播视频动效工作室](entries/design-creative/video-talkcraft/SKILL.md) | 2026-08-30 | 2026-08-30 |
@@ -379,10 +387,9 @@ star 数不参与收录判断，仅作为排序维度。`—` 表示尚未采集
 | [DSH 插件发现助手](entries/dsh/awesome-dsh-plugin-dsh-find-plugin/SKILL.md) | 2026-08-27 | 2026-08-27 |
 | [DSH 终端界面](entries/dsh/ccch1mneyyy-dsh-tui/SKILL.md) | 2026-08-27 | 2026-08-27 |
 | [DeepSeek Harness](entries/dsh/deepseek-ai-deepseek-harness/SKILL.md) | 2026-08-27 | 2026-08-27 |
-| [DSH 插件市场](entries/dsh/dsh-market-dsh-market/SKILL.md) | 2026-08-27 | 2026-08-27 |
 
 ---
 
 ---
 
-由 `scripts/gen_index.py` 生成 · 最后更新 2026-09-05 · 共 46 个条目
+由 `scripts/gen_index.py` 生成 · 最后更新 2026-09-05 · 共 47 个条目

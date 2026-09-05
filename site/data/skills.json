@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-05T07:28:25Z",
-  "count": 46,
+  "generated_at": "2026-09-05T07:38:59Z",
+  "count": 47,
   "categories": [
     {
       "dir": "writing-docs",
@@ -1562,6 +1562,50 @@
       "updated_at": "2026-08-13",
       "install": "bash\n# 在线阅读（推荐，始终最新）：\n#   https://agentskills.io/specification\n\n# 如需本地离线快照（个人阅读用，勿回传本仓库）：\ngit clone --depth 1 --filter=blob:none --sparse https://github.com/anthropics/skills /tmp/agent-skills-spec\ncd /tmp/agent-skills-spec\ngit sparse-checkout set spec",
       "detail_url": "skills/agent-skills-spec.html"
+    },
+    {
+      "id": "skill-recorder",
+      "name_zh": "Skill Recorder 屏幕工作录制转技能",
+      "name_en": "Skill Recorder",
+      "summary_zh": "微软开源的桌面应用：录制屏幕工作过程，用 GitHub Copilot CLI 重建为意图与有序步骤，再生成可复用 Skill 或定时 Automation，供 Scout / Copilot Cowork / Copilot Studio 使用。",
+      "summary_en": "Microsoft desktop app that records on-screen work, reconstructs it with GitHub Copilot CLI into intent and steps, and turns it into reusable Skills or scheduled Automations.",
+      "category_dir": "meta-skillcraft",
+      "category_name": "技能工程",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "skill-generation",
+        "screen-recording",
+        "automation",
+        "ai-agent",
+        "copilot"
+      ],
+      "languages": [
+        "typescript",
+        "javascript",
+        "powershell",
+        "shell"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/microsoft/skill-recorder",
+      "repo": "https://github.com/microsoft/skill-recorder",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "skill-recorder",
+        "microsoft-skill-recorder"
+      ],
+      "risk_notes": "MIT 可商用；分析阶段会把屏幕截图、窗口/URL/剪贴板预览与叙述文本发送到 GitHub Copilot 云端处理，录制前必须避免密码、令牌、API Key 等敏感信息；需要 GitHub Copilot 访问权限；macOS 与 Windows 11 为主，Linux 仅支持 Ubuntu。",
+      "added_at": "2026-09-05",
+      "updated_at": "2026-09-05",
+      "install": "bash\ncommit=\"<40-character-release-commit>\"; curl -fsSL \"https://raw.githubusercontent.com/microsoft/skill-recorder/$commit/install.sh\" | SKILL_RECORDER_COMMIT=\"$commit\" bash",
+      "detail_url": "skills/skill-recorder.html"
     },
     {
       "id": "assafelovic-gpt-researcher",

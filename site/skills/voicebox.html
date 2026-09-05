@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Voicebox 本地 AI 语音工作室 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Voicebox 本地 AI 语音工作室</h1>
+      <p class="hero-subtitle">Voicebox</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>主推</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">开源本地 AI 语音工作室（ElevenLabs + WisprFlow 替代）：零样本声音克隆、7 个 TTS 引擎 23 语言、全局热键听写、Stories 多轨编辑；内置 MCP server 让任何 Agent 一行调用开口说话；Tauri (Rust) 原生、100% 本地。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/jamiepine/voicebox" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://voicebox.sh" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Voicebox 本地 AI 语音工作室</h1>
+<blockquote>The open-source AI voice studio. Clone, dictate, create.上游：<a href="https://github.com/jamiepine/voicebox" target="_blank" rel="noopener">jamiepine/voicebox</a> · 许可证：MIT · 52.4k stars · <a href="https://voicebox.sh" target="_blank" rel="noopener">voicebox.sh</a> · <a href="https://docs.voicebox.sh" target="_blank" rel="noopener">文档</a></blockquote>
+<h2>这是什么</h2>
+<p>Voicebox 是一个本地优先的 AI 语音工作室——ElevenLabs（输出侧）和 WisprFlow（输入侧）的免费开源替代，合并在一个应用里：从几秒音频零样本克隆声音、7 个 TTS 引擎跨 23 种语言生成语音、全局热键听写到任意文本框，以及让任何 MCP-aware AI agent（Claude Code、Cursor、Cline）用你克隆的声音开口说话。云端产品各占语音 I/O 一半，Voicebox 全做并桥接（内置本地 LLM 精炼 + 每音色 persona），全程 100% 本地。</p>
+<p><strong>7 个 TTS 引擎</strong>：Qwen3-TTS、Qwen CustomVoice、LuxTTS、Chatterbox Multilingual、Chatterbox Turbo、HumeAI TADA、Kokoro。</p>
+<p><strong>核心特性</strong>：</p>
+<ul><li><strong>声音克隆</strong>：零样本克隆（几秒参考音频）+ 50+ 精选预设音色（Kokoro / Qwen CustomVoice）</li><li><strong>23 种语言</strong>：英语到阿拉伯语、日语、印地语、斯瓦希里语等</li><li><strong>情感标签</strong>：<code>[laugh]</code> / <code>[sigh]</code> / <code>[gasp]</code> 等副语言标签（Chatterbox Turbo）；自然语言情感控制（Qwen CustomVoice）</li><li><strong>后处理效果</strong>：pitch shift、混响、delay、chorus、compression、filters</li><li><strong>无限长度</strong>：自动分块 + crossfade，支持脚本、文章、章节</li><li><strong>Stories 编辑器</strong>：多轨时间线，适合对话、播客、叙事</li><li><strong>语音输入</strong>：全局热键听写（push-to-talk / toggle 模式）、macOS accessibility 验证的自动粘贴、每个文本框的 in-app mic、Whisper STT</li><li><strong>Agent 语音输出</strong>：一行 <code>voicebox.speak</code> MCP 工具调用，任何 MCP agent 即可用你的声音说话</li><li><strong>语音 persona</strong>：给任何音色 profile 附自由文本 persona，Compose / Rewrite / Respond 三种模式（agent 也可通过 MCP 调用）</li><li><strong>API-first</strong>：REST API + 内置 MCP server</li><li><strong>原生性能</strong>：Tauri (Rust) 而非 Electron</li></ul>
+<h2>怎么安装</h2>
+<p>| 平台 | 下载 | |------|------| | macOS (Apple Silicon) | <a href="https://voicebox.sh/download/mac-arm" target="_blank" rel="noopener">DMG</a> | | macOS (Intel) | <a href="https://voicebox.sh/download/mac-intel" target="_blank" rel="noopener">DMG</a> | | Windows | <a href="https://voicebox.sh/download/windows" target="_blank" rel="noopener">MSI</a> | | Docker | <code>docker compose up</code> |</p>
+<p>Linux 暂无预构建二进制，见 <a href="https://voicebox.sh/linux-install" target="_blank" rel="noopener">voicebox.sh/linux-install</a> 源码构建指南。</p>
+<h2>怎么用</h2>
+<h3>声音克隆 + TTS</h3>
+<p>打开 Voicebox → 上传参考音频（几秒即可）→ 命名保存 → 输入文本 → Generate。支持自动分块（无限长度）+ 后处理效果链。</p>
+<h3>全局听写</h3>
+<p>设置全局热键（默认 push-to-talk），在任意应用中按热键 → 说话 → Whisper STT 转写 → 自动粘贴到当前文本框。</p>
+<h3>Agent 语音输出（MCP）</h3>
+<p>Voicebox 内置 MCP server，Claude Code / Cursor / Cline 等 agent 一行接入后，agent 在对话中说"把这段读给我听"即可用你克隆的声音朗读——agent 的语音输出从此可控。</p>
+<h3>REST API</h3>
+<pre><code class="lang-bash"># TTS
+curl -X POST http://localhost:8250/api/tts \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#x27;{&quot;text&quot;:&quot;Hello world&quot;,&quot;voice_id&quot;:&quot;your-cloned-voice&quot;}&#x27; \
+  --output speech.wav</code></pre>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 MIT</strong>：可自由商用。</li><li><strong>100% 本地隐私</strong>：模型、语音数据、录音不离开本机；TTS 引擎首次从 Hugging Face 下载数 GB 模型。</li><li><strong>GPU 加速</strong>：macOS MLX/Metal、Windows CUDA、Linux AMD ROCm / Intel Arc 均支持，但推理速度因硬件而异。</li><li><strong>克隆合规</strong>：克隆他人声音必须获得授权。</li><li><strong>维护活跃</strong>（2026-08 更新，52.4k stars，Trendshift 徽章），提供 DeepWiki、详细文档和 Troubleshooting Guide。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

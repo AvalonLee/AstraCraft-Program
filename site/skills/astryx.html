@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Astryx 设计系统 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Astryx 设计系统</h1>
+      <p class="hero-subtitle">Astryx Design System</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>主推</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">Meta 八年打磨的开源 React 19 设计系统：150+ 可访问组件、7 主题、agent-ready CLI（能力清单 + typed JSON + 稳定错误码），`astryx init` 自动写入 AGENTS.md；内置 StyleX 但不锁定样式，Tailwind / CSS 原生覆盖。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/facebook/astryx" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://astryx.atmeta.com" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Astryx 设计系统</h1>
+<blockquote>Meta 内部打磨八年、13,000+ apps 在用的设计系统，现在开源了。上游：<a href="https://github.com/facebook/astryx" target="_blank" rel="noopener">facebook/astryx</a> · 许可证：MIT · 12.8k stars · <a href="https://astryx.atmeta.com" target="_blank" rel="noopener">文档</a> · <a href="https://facebook.github.io/astryx/storybook/" target="_blank" rel="noopener">Storybook</a></blockquote>
+<h2>这是什么</h2>
+<p>Astryx 是 Meta 开源的 React 19 设计系统，在公司内部使用八年后成为 Meta 最常用的设计系统（13,000+ 应用），现在以 MIT 协议向公众开放。它提供 150+ 可访问的 TypeScript 组件、7 个可完全定制的主题、深色模式、页面模板和一套面向 AI Agent 的 CLI 工具链。</p>
+<p><strong>对 Agent 的设计</strong>——这不是 marketing 话术，而是系统级架构：</p>
+<ul><li><strong><code>astryx init</code></strong>：一行命令把组件索引、设计 token、模板清单写入你的 <code>AGENTS.md</code> / <code>CLAUDE.md</code> / <code>.cursorrules</code>，Agent 打开项目即刻知道可用组件和用法，不用猜测。</li><li><strong>CLI 即 Agent 接口</strong>：<code>astryx search</code>（跨组件/hook/文档/模板统一搜索）、<code>astryx component Button</code>（完整 props + 示例 + 最佳实践）、<code>astryx template dashboard</code>（生成整页源码）、<code>astryx theme build</code>（主题 CSS 构建）——人类和 Agent 用同一套 CLI 完成同样的工作。</li><li><strong>Capability manifest</strong>：<code>astryx manifest --json</code> 返回自描述清单（每条命令、参数、类型、choices、defaults、response type），相当于 CLI 的 OpenAPI spec，Agent 不用爬 <code>--help</code>。</li><li><strong>Typed JSON 输出</strong>：所有命令支持 <code>--json</code>，统一 <code>{type, data}</code> envelope；错误返回稳定机器可读 <code>code</code>（append-only，永不变更）+ suggestions，Agent 可按 code 分支处理而不是正则猜测。</li><li><strong>稳定错误码</strong>：42+ 个 <code>ERR_*</code> 常量，从 <code>ERR_UNKNOWN_COMPONENT</code> 到 <code>ERR_PATH_TRAVERSAL</code>，附带建议替代项。</li></ul>
+<p><strong>对人类的设计</strong>——Agent 友好的每一处也是人类友好的：</p>
+<ul><li><strong>开放内部结构</strong>：组件的构建积木直接导出，<code>astryx swizzle Button</code> 可 eject 组件源码到你的项目中自由修改。</li><li><strong>无样式锁定</strong>：内部用 StyleX 但对消费者不可见，<code>className</code> 用 Tailwind / CSS modules / 原生 CSS 随便覆盖。</li><li><strong>主题即 CSS 变量</strong>：一个主题就是一组 CSS custom property 覆盖，设计师不 fork 组件就能让 Astryx 变成自己的品牌。</li><li><strong>预构建 CSS + typed 组件</strong>：import 三份样式表（reset → 组件 → 主题）+ ThemeProvider 即可运行，无需 build plugin、PostCSS、Babel。</li></ul>
+<p><strong>7 个主题</strong>：neutral（默认）、butter、chocolate、matcha、stone、gothic、y2k——全部可深度定制。</p>
+<h2>怎么安装</h2>
+<p>前置条件：React 19+。</p>
+<pre><code class="lang-bash"># npm
+npm install @astryxdesign/core @astryxdesign/theme-neutral @stylexjs/stylex
+npm install -D @astryxdesign/cli</code></pre>
+<p>最简 Next.js 设置（无 build plugin / PostCSS / Babel）：</p>
+<pre><code class="lang-css">/* globals.css —— 顺序即层叠：reset → 组件 → 主题 */
+@import &#x27;@astryxdesign/core/reset.css&#x27;;
+@import &#x27;@astryxdesign/core/astryx.css&#x27;;
+@import &#x27;@astryxdesign/theme-neutral/theme.css&#x27;;</code></pre>
+<pre><code class="lang-tsx">// providers.tsx
+import {Theme} from &#x27;@astryxdesign/core/theme&#x27;;
+// &lt;Theme theme={...}&gt; 包裹你的 app</code></pre>
+<p><strong>Agent 项目初始化（一键）：</strong></p>
+<pre><code class="lang-bash">npx astryx init    # 写入 AGENTS.md / CLAUDE.md，Agent 即刻可用</code></pre>
+<h2>怎么用</h2>
+<pre><code class="lang-bash"># Agent 搜索：跨组件/hook/文档/模板统一搜索
+npx @astryxdesign/cli search button
+
+# 组件文档
+npx @astryxdesign/cli component Button       # 完整 props + 示例
+npx @astryxdesign/cli component --list       # 全部组件
+
+# 页面模板
+npx @astryxdesign/cli template --list        # 浏览全部模板
+npx @astryxdesign/cli template dashboard     # 生成整页源码
+
+# 设计 token
+npx @astryxdesign/cli docs tokens            # 间距/颜色/圆角/字体
+
+# 自定义
+npx @astryxdesign/cli swizzle Button         # eject 组件源码
+npx @astryxdesign/cli theme build            # 构建主题 CSS
+
+# 升级 codemod
+npx @astryxdesign/cli upgrade --apply        # 版本迁移
+
+# 诊断
+npx @astryxdesign/cli doctor                 # 环境检查 + 修复建议</code></pre>
+<p>Agent 可用 <code>--json</code> 获取 typed 输出，用 <code>--zh</code> 获取中文文档，用 <code>--dense</code> 获取压缩格式（省 token）。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 MIT</strong>：可自由商用。</li><li><strong>Beta 状态</strong>：API 可能变动，建议关注 GitHub Releases 或用 <code>astryx upgrade</code> 做 codemod 迁移。</li><li><strong>React 19+ 必需</strong>：<code>react</code> 和 <code>react-dom</code> &gt;= 19.0.0 是 peer dependency。</li><li><strong>样式覆盖</strong>：内部 StyleX 对消费者不可见，用 <code>className</code> + Tailwind / CSS modules / 原生 CSS 覆盖即可。</li><li><strong>Agent 文档更新</strong>：新组件发布后需重新运行 <code>astryx init</code> 或手动更新 <code>AGENTS.md</code> 中的 Astryx 区块。</li><li><strong>维护极其活跃</strong>（Meta 出品，2026-09-05 当天仍有提交，12.8k stars），Node 22+ / pnpm 11 构建，提供 Storybook / Sandbox / Discord 社区。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

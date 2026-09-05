@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MediaCrawler 自媒体爬虫 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">MediaCrawler 自媒体爬虫</h1>
+      <p class="hero-subtitle">MediaCrawler</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>研究与信息获取</span><span>常规</span><span class="lic-badge lic-unknown" title="LicenseRef-NC-Learning">版权未声明</span><span>CLI 工具</span>
+    </div>
+    <p class="muted detail-meta">多平台自媒体数据采集工具：小红书 / 抖音 / 快手 / B 站 / 微博 / 贴吧 / 知乎的关键词搜索、帖子详情、二级评论、创作者主页全支持；基于 Playwright 浏览器自动化保留登录态（无需 JS 逆向），CDP 模式复用已有 Chrome 降低风控风险；支持 IP 代理池、登录态缓存、评论词云图。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/NanmiCoder/MediaCrawler" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/NanmiCoder/MediaCrawler" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>MediaCrawler 自媒体爬虫</h1>
+<blockquote>多平台自媒体数据采集工具。上游：<a href="https://github.com/NanmiCoder/MediaCrawler" target="_blank" rel="noopener">NanmiCoder/MediaCrawler</a> · 许可证：NON-COMMERCIAL LEARNING LICENSE 1.1（仅限学习） · 64.5k stars</blockquote>
+<h2>这是什么</h2>
+<p>MediaCrawler 是一个功能强大的多平台自媒体数据采集工具，支持 7 大平台（小红书、抖音、快手、B 站、微博、贴吧、知乎）的关键词搜索、帖子详情、二级评论和创作者主页爬取。核心思路：<strong>用 Playwright 浏览器自动化保留登录态，通过 JS 表达式获取签名参数</strong>——无需逆向复杂加密算法，大幅降低技术门槛。</p>
+<p><strong>平台 × 能力矩阵</strong>（全平台支持）：</p>
+<p>| 能力 | 小红书 | 抖音 | 快手 | B 站 | 微博 | 贴吧 | 知乎 | |------|--------|------|------|------|------|------|------| | 关键词搜索 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | 指定帖子 ID 爬取 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | 二级评论 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | 指定创作者主页 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | 登录态缓存 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | IP 代理池 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | 评论词云图 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |</p>
+<p><strong>两种浏览器模式</strong>：</p>
+<p>| 模式 | 说明 | |------|------| | <strong>CDP 模式（推荐）</strong> | 连接已有 Chrome（需开启远程调试），复用已有登录态 / Cookie / 扩展，大幅降低风控检测风险 | | <strong>Playwright 标准模式</strong> | 启动新浏览器实例 + 扫码登录；需安装浏览器驱动 |</p>
+<h2>怎么安装</h2>
+<p>前置依赖：uv（Python 包管理）、Node.js &gt;= 16、Chrome &gt;= 144（CDP 模式）。</p>
+<pre><code class="lang-bash">cd MediaCrawler
+uv sync
+
+# 仅 Playwright 标准模式需要
+uv run playwright install</code></pre>
+<p>Chrome 开启远程调试：地址栏输入 <code>chrome://inspect/#remote-debugging</code> → 勾选 Allow remote debugging → 看到 <code>Server running at: 127.0.0.1:9222</code> 即就绪。</p>
+<h2>怎么用</h2>
+<pre><code class="lang-bash"># 关键词搜索爬取帖子 + 评论（小红书）
+uv run main.py --platform xhs --lt qrcode --type search
+
+# 指定帖子 ID 爬取
+uv run main.py --platform xhs --lt qrcode --type detail
+
+# 打开对应 APP 扫二维码登录
+
+# 换平台
+uv run main.py --platform dy --lt qrcode --type search   # 抖音
+uv run main.py --platform bili --lt qrcode --type search  # B 站
+uv run main.py --platform wb --lt qrcode --type search    # 微博
+uv run main.py --platform tieba --lt qrcode --type search # 贴吧
+uv run main.py --platform zhihu --lt qrcode --type search # 知乎
+
+# 查看帮助
+uv run main.py --help</code></pre>
+<p>配置项在 <code>config/base_config.py</code>（中文注释齐全）：关键词列表、爬取数量、评论层级、IP 代理池、输出格式（CSV / JSON / DB）。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 NON-COMMERCIAL LEARNING LICENSE 1.1</strong>：仅限学习研究，<strong>禁止商用</strong>；使用前阅读上游免责声明和<a href="https://github.com/HiddenStrawberry/Crawler_Illegal_Cases_In_China" target="_blank" rel="noopener">中国爬虫违法案例库</a>。</li><li><strong>法律合规</strong>：不得用于对平台进行大规模爬虫或其他非法行为；遵守 robots.txt 和平台服务条款。</li><li><strong>MediaCrawlerPro</strong>：付费闭源版本（断点续爬 / 多账号 / 去除 Playwright / Linux 完整支持 / AI Agent Skill 一键安装），本条目只覆盖开源版。</li><li><strong>维护活跃</strong>（2026-08 更新，64.5k stars），提供中 / 英 / 西三语 README 和 WebUI 可视化操作界面。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

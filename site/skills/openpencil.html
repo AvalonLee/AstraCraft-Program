@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OpenPencil AI 原生矢量设计工具 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">OpenPencil AI 原生矢量设计工具</h1>
+      <p class="hero-subtitle">OpenPencil</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>主推</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">首个开源 AI 原生矢量设计工具：Prompt → Canvas、并发 Agent Teams 并行作画、Design-as-Code（.op 文件 JSON 可 diff）、MCP Server 一键接入 Claude Code / Codex、多模型智能适配、10+ 平台代码导出（React / Vue / SwiftUI / Flutter 等）。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/ZSeven-W/openpencil" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/ZSeven-W/openpencil" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>OpenPencil AI 原生矢量设计工具</h1>
+<blockquote>The world's first open-source AI-native vector design tool。上游：<a href="https://github.com/ZSeven-W/openpencil" target="_blank" rel="noopener">ZSeven-W/openpencil</a> · 许可证：MIT · 5.8k stars</blockquote>
+<h2>这是什么</h2>
+<p>OpenPencil 是第一个开源的 AI 原生矢量设计工具：不是给传统设计工具加一个 AI 插件，而是从内核开始把 AI 作为一等公民。Rust 核心 + GPU-Skia 渲染（无浏览器引擎）+ 前端（React），单二进制跨 macOS / Windows / Linux 桌面 + Web。</p>
+<p><strong>核心特性</strong>：</p>
+<ul><li><strong>Prompt → Canvas</strong>：自然语言描述 UI，实时流式呈现在无限画布上；选中元素后继续 chat 修改。</li><li><strong>并发 Agent Teams</strong>：orchestrator 把复杂页面分解为空间子任务（hero / features / footer），多个 AI agent 并行工作、各自流式输出、每个成员有独立的画布指示器——不是排队而是同时画。</li><li><strong>Multi-Model Intelligence</strong>：自动适配每个模型的能力——Claude 给完整 prompt + thinking、GPT-4o / Gemini 关闭 thinking、小模型（MiniMax / Qwen / Llama）简化 prompt 保输出可靠性。</li><li><strong>Design-as-Code</strong>：<code>.op</code> 文件是 JSON——人类可读、Git 友好、可 diff；设计变量自动生成 CSS custom properties。</li><li><strong>MCP Server</strong>：一键安装到 Claude Code / Codex / OpenCode / Kiro / Copilot CLI——从终端读、创建、修改 <code>.op</code> 设计文件。</li><li><strong>CLI（<code>op</code>）</strong>：<code>op design</code> / <code>op insert</code> 批量设计 DSL、节点操作、文件管道输入。</li><li><strong>Style Guides</strong>：内置风格指南库（glassmorphism、brutalist、retro 等），tag 模糊匹配应用到 AI 生成的设计。</li><li><strong>多平台代码导出</strong>：React + Tailwind / HTML + CSS / Vue / Svelte / Flutter / SwiftUI / Jetpack Compose / React Native——从一个 <code>.op</code> 文件导出全部。</li><li><strong>Embeddable SDK</strong>：<code>op-web-sdk</code>（vanilla / React / Vue adapter）在你的 app 里嵌入 <code>.op</code> 查看器。</li><li><strong>Design System Kit</strong>：管理可复用 UIKits（风格切换 + 组件组合），导入/导出 <code>.pen</code> 文件。</li><li><strong>实时协作</strong>：认证 P2P 会话 + 公共 relay，多人同时设计。</li><li><strong>14 语 README</strong>：英文 / 简中 / 繁中 / 日 / 韩 / 法 / 西 / 德 / 葡 / 俄 / 印地 / 土耳其 / 泰 / 越南 / 印尼。</li></ul>
+<h2>怎么安装</h2>
+<p><strong>macOS（Homebrew）：</strong></p>
+<pre><code class="lang-bash">brew tap zseven-w/openpencil
+brew install --cask openpencil</code></pre>
+<p><strong>Windows（Scoop）：</strong></p>
+<pre><code class="lang-powershell">scoop bucket add openpencil https://github.com/zseven-w/scoop-openpencil
+scoop install openpencil</code></pre>
+<p><strong>Linux / 直接下载</strong>：<a href="https://github.com/ZSeven-W/openpencil/releases" target="_blank" rel="noopener">GitHub Releases</a>（<code>.AppImage</code> / <code>.deb</code> / <code>.exe</code>）。</p>
+<p><strong>CLI（<code>op</code>）：</strong></p>
+<pre><code class="lang-bash">brew install zseven-w/openpencil/op
+# 或
+curl -fsSL https://raw.githubusercontent.com/ZSeven-W/openpencil/main/scripts/install-op.sh | bash</code></pre>
+<p><strong>MCP 安装到 Agent：</strong></p>
+<p>在 OpenPencil 桌面端或 Web 端一键安装（支持 Claude Code / Codex / OpenCode / Kiro / Copilot CLI）。</p>
+<h2>怎么用</h2>
+<p><strong>桌面端 / Web 端</strong>：打开 OpenPencil，在 composer 里描述你想要的 UI（<code>"设计一个深色 SaaS 仪表盘，左侧导航 + 主区域图表 + 右侧面板"</code>），Agent Teams 并行生成各区域。选中元素继续 chat 修改。右上角导出 React + Tailwind。</p>
+<p><strong>终端（<code>op</code> CLI）：</strong></p>
+<pre><code class="lang-bash"># 从文件批量创建
+op design --input layout.op.dsl
+
+# 插入节点
+op insert /root &quot;Button&quot; --props &#x27;{&quot;text&quot;:&quot;Submit&quot;,&quot;variant&quot;:&quot;primary&quot;}&#x27;
+
+# 管道输入
+cat my-design.op.dsl | op design --stdin</code></pre>
+<p><strong>MCP（Claude Code 内）：</strong></p>
+<p>安装后在对话中说 <code>打开 /path/to/my-design.op，把按钮改成圆角</code>——agent 通过 MCP 工具直接修改设计文件。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 MIT</strong>：可自由商用。</li><li><strong>Rust 核心 + 3 submodule</strong>：从源码构建需 <code>git clone --recurse-submodules</code>（vendor/jian、vendor/casement、vendor/agent-rs）。</li><li><strong>Windows 杀毒误报</strong>：新发布低普及度触发启发式误报，官方提供<a href="https://github.com/ZSeven-W/openpencil/blob/main/docs/security/antivirus-false-positives.md" target="_blank" rel="noopener">验证文档</a>。</li><li><strong>Web 版凭据</strong>：默认存浏览器 localStorage（同源隔离）；服务端持久化需 <code>OPENPENCIL_PERSIST_WEB_CREDENTIALS_SERVER=true</code>，仅限可信 HTTPS 部署。</li><li><strong>维护极其活跃</strong>（2026-09-05 当天仍有提交，5.8k stars），提供 14 语 README、Discord 社区和 Trendshift 徽章。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

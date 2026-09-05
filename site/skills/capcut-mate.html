@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CapCut Mate 剪映自动化 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">CapCut Mate 剪映自动化</h1>
+      <p class="hero-subtitle">CapCut Mate API</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>常规</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">开源剪映草稿自动化助手（FastAPI）：让大模型具备剪映基础剪辑能力——创建草稿、添加视频/音频/图片/贴纸/字幕/特效/蒙版、关键帧控制、文本样式与动画；支持独立部署、Coze/n8n 工作流集成、剪映云渲染直接生成成片，提供 Coze 插件一键导入。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/Hommy-master/capcut-mate" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/Hommy-master/capcut-mate" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>CapCut Mate 剪映自动化</h1>
+<blockquote>开源剪映小助手：让大模型具备剪映剪辑能力。上游：<a href="https://github.com/Hommy-master/capcut-mate" target="_blank" rel="noopener">Hommy-master/capcut-mate</a> · 许可证：Apache 2.0 · 1.7k stars</blockquote>
+<h2>这是什么</h2>
+<p>CapCut Mate API 是一个完全开源免费的剪映草稿自动化助手，基于 FastAPI 构建，支持独立部署。它把剪映的核心功能（创建草稿、添加素材、设置效果、保存草稿）封装为 RESTful API，让大模型或自动化工作流直接调用——普通用户不用学剪映也能快速出片。</p>
+<p><strong>核心能力</strong>：</p>
+<p>| 类别 | 接口 | |------|------| | 草稿管理 | <code>create_draft</code>（设置画布尺寸）、<code>save_draft</code>、<code>get_draft</code> | | 视频素材 | <code>add_videos</code>（裁剪/缩放/特效）、<code>add_images</code>（动画/转场）、<code>add_sticker</code> | | 音频处理 | <code>add_audios</code>（音量/淡入淡出）、<code>get_audio_duration</code> | | 文本字幕 | <code>add_texts</code>、<code>add_captions</code>（字幕识别） | | 高级功能 | 关键帧控制、文本样式、动画效果、特效、蒙版 | | 导出 | 剪映云渲染直接生成最终视频 |</p>
+<p><strong>部署方式</strong>：</p>
+<ul><li><strong>独立部署</strong>：Docker / uv 本地跑 FastAPI 服务</li><li><strong>Coze 工作流</strong>：上传 <code>openapi.yaml</code> 一键导入 Coze 插件</li><li><strong>n8n 工作流</strong>：REST API 通用接入</li><li><strong>Agent Skill</strong>：内置 <code>SKILL.md</code>，AI Agent 读完即可调用</li></ul>
+<h2>怎么安装</h2>
+<p><strong>Docker（推荐）：</strong></p>
+<pre><code class="lang-bash">git clone https://github.com/Hommy-master/capcut-mate.git
+cd capcut-mate
+docker-compose pull &amp;&amp; docker-compose up -d</code></pre>
+<p>访问 <code>http://localhost:30000/docs</code> 查看交互式 API 文档。</p>
+<p><strong>uv 本地部署：</strong></p>
+<pre><code class="lang-bash">git clone https://github.com/Hommy-master/capcut-mate.git
+cd capcut-mate
+uv sync
+# Windows 额外执行
+uv pip install -e &quot;.[windows]&quot;
+uv run main.py</code></pre>
+<h2>怎么用</h2>
+<p><strong>对 Agent 说：</strong></p>
+<pre><code class="lang-text">帮我用 CapCut Mate 创建一个剪映草稿：1080x1920 竖版，
+加入 3 段视频素材（各自裁剪到 3 秒），加一句字幕&quot;Hello World&quot;，
+背景音乐用 bgm.mp3 音量 30%，保存草稿。</code></pre>
+<p><strong>Coze / n8n 工作流：</strong> 上传 <code>openapi.yaml</code> 到 Coze 平台导入插件，或在 n8n 中用 HTTP Request 节点调用 REST API。</p>
+<p><strong>Coze 插件一键导入：</strong> 打开 Coze 平台 → 添加插件 → 导入 → 上传项目目录下的 <code>openapi.yaml</code> → 启用。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 Apache 2.0</strong>：可自由商用。</li><li><strong>草稿非成片</strong>：生成的剪映草稿文件需要剪映客户端打开做最终导出（或走云渲染）；草稿格式随剪映版本可能变化。</li><li><strong>Python 3.11+</strong>：需要 Python 3.11 或更高版本。</li><li><strong>维护活跃</strong>（2026-09 更新），提供中文/英文双语 README 和详细 API 文档，Coze 插件已上架。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

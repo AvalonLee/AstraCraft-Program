@@ -1,0 +1,78 @@
+---
+record_type: entry-record
+id: promptcard-agentcanvas
+name_zh: "PMAgent-Canvas 本地创作画布"
+name_en: "PMAgent-Canvas"
+summary_zh: "面向 AIGC 创作者的本地桌面创作上下文环境：参考素材、Prompt、分镜、Agent 对话、生成结果和复盘经验以可携带的项目资产沉淀在同一画布；Seedream 5.0 Pro 图片生成与编辑、Doubao Seed 2.0 Agent 协作、全能参考式提示词编辑（一目标多参考 @ 节点）、Prompt 库与媒体库、分镜切割与标注。"
+summary_en: "A local desktop creation canvas for AIGC creators: prompts, storyboards, references, and generation results persist as portable project assets with Seedream image generation and agent collaboration."
+category: design-creative
+kind: framework
+tags: [canvas, image-generation, ai-agent, prompt-engineering, storyboard]
+languages: [typescript]
+doc_languages: [zh]
+license: Apache-2.0
+homepage: https://github.com/Aoye-3/PromptCard-AgentCanvas
+repo: https://github.com/Aoye-3/PromptCard-AgentCanvas
+tier: standard
+metrics:
+  stars: 163
+  pushed_at: "2026-09-01T13:39:13Z"
+  checked_at: "2026-09-05"
+  archived: false
+aliases: [PMAgent-Canvas, PromptCard]
+risk_notes: "当前 main 为开发版本（不稳定，处于功能测试中），稳定基线请用 Git tag stable-2026-08-25；目前提供 Windows 桌面开发预览（start-desktop.vbs，非签名安装包）；核心模型依赖火山引擎（Seedream 5.0 Pro / Doubao Seed 2.0），调用按 API 计费；项目尚处早期（163 stars）。"
+added_at: "2026-09-05"
+updated_at: "2026-09-05"
+---
+
+# PMAgent-Canvas 本地创作画布
+
+> 连接 Agent、Prompt、参考素材和图像创作的本地桌面画布。上游：[Aoye-3/PromptCard-AgentCanvas](https://github.com/Aoye-3/PromptCard-AgentCanvas) · 许可证：Apache 2.0
+
+## 这是什么
+
+PMAgent-Canvas 是面向 AIGC 创作者的本地桌面创作上下文环境。核心理念：**画布是人和 Agent 共同操作项目上下文的工作台**——参考素材、Prompt、剧本与分镜、Agent 对话、生成结果、修改决策和复盘经验以可携带的项目资产持续沉淀，而不是散落在聊天记录、生成平台和临时文件夹里。
+
+不试图替代每个生成 / 剪辑 / 3D 平台，也不做模型聚合；专注生成前后的生产资料（参考图、分镜、Prompt、模型参数、生成结果、修改方向、复盘经验），让人和外部 Agent 能精确读取、审阅、复用和交付。
+
+**核心功能**：
+
+- **图片生成与项目素材库**：Seedream 5.0 Pro 文生图 / 参考图生成 / 图片编辑；生成结果进入项目媒体库，可继续绑定参考关系或参与下一轮生成
+- **Prompt 库与媒体管理**：Prompt 按主体 / 动作 / 场景 / 风格 / 镜头 / 灯光分类，与参考媒体深度绑定；Agent 在用户确认的提案边界内读取和新增
+- **图片编辑与标注**：局部修改、多角度生成、扩图、消除、场景图推导；按辅助线切割分镜板；文字 / 箭头 / 区域标注
+- **快捷消息节点**：可沉淀、可编辑的提示词模板，Agent 在规则范围内补全和改写
+- **全能参考式提示词编辑**：一个目标节点（可写）+ 最多 10 个参考节点（只读），`@节点` 原子化引用表达"以 @目标 为修改对象，参考 @风格 和 @镜头"等关系；补全模式在目标内部穿插 / 重写模式生成派生节点并排比较；先预览差异提案再写入，节点变化时旧提案自动拒绝
+
+**当前模型**：Seedream 5.0 Pro（图片生成 / 编辑）+ Doubao Seed 2.0（Agent 对话 / 媒体提示词倒推 / Prompt 补全）。
+
+**使用场景**：AIGC 分镜头指令图制作、3D 效果图与初版拆分设计、提示词模板化与灵感积累。
+
+## 怎么安装
+
+当前为 Windows 桌面开发预览：
+
+```bash
+git clone https://github.com/Aoye-3/PromptCard-AgentCanvas.git
+cd PromptCard-AgentCanvas
+# 双击 start-desktop.vbs 启动桌面壳
+```
+
+需要稳定基线时使用 Git tag `stable-2026-08-25`。
+
+## 怎么用
+
+启动后进入三栏画布：左侧项目与素材管理、中间画布（文本 / 分镜 / 参考图 / 生成结果）、右侧 Agent / 图片生成 / Prompt 库面板。
+
+1. 导入参考素材到项目
+2. 画布创建文本节点（剧本 / 分镜）+ 图片节点（参考图）
+3. 用全能参考模式：选中目标节点 → `@` 挂载参考 → Agent 补全或重写 prompt
+4. 调用 Seedream 生成图片 → 结果进媒体库 → 按需标注修改
+5. 把确定的镜头 / 参考图 / 执行说明带到外部创作工具，结果回挂到原项目继续审阅
+
+## 注意事项
+
+- **许可证 Apache 2.0**。
+- **开发预览**：main 分支不稳定，生产用 `stable-2026-08-25` tag。
+- **平台**：目前 Windows 桌面开发预览（`start-desktop.vbs` 非签名包）；macOS / Linux 尚未提供。
+- **模型费用**：Seedream 5.0 Pro 和 Doubao Seed 2.0 走火山引擎 API，按调用计费。
+- **早期项目**（163 stars），README 装修中、演示视频待上架，迭代速度快。

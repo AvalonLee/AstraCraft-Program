@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TREK 自托管旅行规划 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">TREK 自托管旅行规划</h1>
+      <p class="hero-subtitle">TREK Travel Planner</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>运维与自动化</span><span>常规</span><span class="lic-badge lic-copyleft" title="AGPL-3.0">部分开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">自托管实时协作旅行规划器：日计划拖拽排线（OSRM 路由 + 2-opt 优化）、Leaflet/Mapbox/MapLibre 地图、16 种预订类型（航班/火车多段 + 4,045 内置机场时区）、费用分摊与多币种、打包清单、旅行日志、GPX/KML 导入导出、PWA 支持、SSO/Passkey/TOTP MFA，内置 AI 解析与 MCP addon。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/liketrek/TREK" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://demo.liketrek.com" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>TREK 自托管旅行规划</h1>
+<blockquote>your trip. your plan. 自托管实时协作旅行规划器。上游：<a href="https://github.com/liketrek/TREK" target="_blank" rel="noopener">liketrek/TREK</a> · 许可证：AGPL-3.0 · 13.2k stars · <a href="https://demo.liketrek.com" target="_blank" rel="noopener">Demo</a></blockquote>
+<h2>这是什么</h2>
+<p>TREK 是一个功能极其完整的自托管旅行规划器——不只是"存一下行程"，而是一套把计划、预订、地图、费用、协作、日志和 AI 全部打通的实时协作平台。核心卖点是<strong>每一步都自托管</strong>：数据在自己服务器上，地图和天气用免费开放源（OpenStreetMap / Open-Meteo），配 key 就增强、不配也能跑。</p>
+<p><strong>核心模块</strong>（admin 逐项开关）：</p>
+<p>| 模块 | 能力 | |------|------| | <strong>Planning</strong> | 日计划拖拽排序 + undo、地点/预订/备注跨日拖拽、地图 marker 直落日计划 | | <strong>Maps</strong> | Leaflet / Mapbox GL / MapLibre GL（OpenFreeMap 无 token），聚类、照片 marker、路线线段、3D 建筑（Mapbox only） | | <strong>Place</strong> | Google Places（有 key 时含照片/评分/营业时间）或 OpenStreetMap（无 key）；Wikipedia/Wikidata/Wikimedia 补充描述 | | <strong>Routes</strong> | OSRM 路由（驾车/步行/骑行）、最近邻 + 2-opt 自动排序（锁定酒店锚点不动）、Transitous 公交门到门 | | <strong>Bookings</strong> | 16 种预订类型（航班/火车多段、酒店、租车……），4,045 内置机场数据免 key 解析时区 | | <strong>Costs</strong> | 整数分币种、多付款人、均分/自定义分摊、结算建议 + 结算日志、汇率冻结（Frankfurter 免 key） | | <strong>Packing</strong> | 分类打包清单、模板、多人实时勾选 | | <strong>Journal</strong> | 旅行日志（markdown），照片集成 | | <strong>Collab</strong> | WebSocket 实时协作，多人同时编辑无冲突 | | <strong>AI + MCP</strong> | 内置 AI 解析 addon（识别预订邮件/PDF）、MCP addon（agent 可通过 MCP 工具读写行程） | | <strong>Vacay / Atlas</strong> | 度假村/目的地灵感板、地图 atlas |</p>
+<p><strong>技术栈</strong>：NestJS 11 + React 19 + Vite + SQLite + WebSocket（ws）+ Zustand + Tailwind；JWT + OAuth 2.1 + OIDC + Passkeys (WebAuthn) + TOTP MFA。</p>
+<p><strong>部署</strong>：Docker / Docker Compose / Helm (Kubernetes) / PWA。</p>
+<h2>怎么安装</h2>
+<p><strong>Docker 一行：</strong></p>
+<pre><code class="lang-bash">docker run -d -p 3000:3000 \
+  -e ENCRYPTION_KEY=$ENCRYPTION_KEY \
+  -v ./data:/app/data -v ./uploads:/app/uploads \
+  mauriceboe/trek</code></pre>
+<p>首次启动自动创建管理员账号：设了 <code>ADMIN_EMAIL</code> / <code>ADMIN_PASSWORD</code> 就用你设的，否则打印在容器日志里（<code>docker logs trek</code>）。</p>
+<p><strong>Docker Compose（生产推荐）：</strong></p>
+<pre><code class="lang-bash">curl -fsSL https://raw.githubusercontent.com/liketrek/TREK/main/docker-compose.yml -o docker-compose.yml
+docker compose up -d</code></pre>
+<p><strong>Helm (Kubernetes)：</strong></p>
+<pre><code class="lang-bash">helm repo add trek https://chart.liketrek.com
+helm repo update
+helm install trek trek/trek</code></pre>
+<h2>怎么用</h2>
+<p>打开 <code>http://localhost:3000</code>，PWA 安装到手机主屏（iOS Safari 分享 → 添加到主屏）。创建 Trip 后：</p>
+<p>1. <strong>加地点</strong>：搜索（Google Places / OSM）或导入 GPX / KML / KMZ / Google Maps 列表 2. <strong>排日计划</strong>：拖拽排序或一键 auto-sort（OSRM 路由 + 2-opt 优化） 3. <strong>录预订</strong>：航班/火车/酒店，自动关联天气和日计划 4. <strong>算费用</strong>：多币种分摊，汇率自动冻结 5. <strong>共享</strong>：邀请协作者实时同步，或导出 GPX / ICS</p>
+<p>AI addon 开启后可自动解析预订邮件（EML / PDF / PKPass / HTML / TXT）为预订条目。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 AGPL-3.0</strong>：强 Copyleft——自用和内部部署无额外义务；对外提供网络服务需以 AGPL 开源衍生，具体以上游 LICENSE 为准。</li><li><strong>反向代理</strong>：生产部署需 TLS 终结的反向代理，WebSocket 升级（<code>/ws</code>）必须支持；MCP addon 需透传 <code>Mcp-Session-Id</code> 头。</li><li><strong>免费开放源</strong>：地图 OpenFreeMap / OpenStreetMap / Open-Meteo 均无 key；Google Places / Mapbox / Frankfurter（汇率）配 key 后增强但费用自担。</li><li><strong>备份</strong>：SQLite 数据库 + uploads 目录需自行备份；encryption key 丢失无法恢复。</li><li><strong>维护极其活跃</strong>（2026-09-04 仍有提交，13.2k stars），提供 Wiki（安装 / 更新 / 反向代理）、Sonar Quality Gate 和 Discord 社区。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

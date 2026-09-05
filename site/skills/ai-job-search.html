@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Job Search 求职申请框架 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">AI Job Search 求职申请框架</h1>
+      <p class="hero-subtitle">AI Job Search</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>商业与办公</span><span>主推</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">基于 Claude Code 的开源求职申请框架：建档、职位抓取与批量评分、fit 评估、drafter-reviewer 流水线生成 LaTeX 定制 CV 与求职信（PDF 排版 + ATS 文本层双重校验）、面试准备与模拟，共 13 个斜杠命令；作者实测 69 份申请拿到 offer。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/MadsLorentzen/ai-job-search" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/MadsLorentzen/ai-job-search" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>AI Job Search 求职申请框架</h1>
+<blockquote>The job search that runs on your machine：把 Claude Code 变成全栈求职申请助手。上游：<a href="https://github.com/MadsLorentzen/ai-job-search" target="_blank" rel="noopener">MadsLorentzen/ai-job-search</a> · 许可证：MIT · 40.8k stars</blockquote>
+<h2>这是什么</h2>
+<p>AI Job Search 是一个建在 <a href="https://claude.com/claude-code" target="_blank" rel="noopener">Claude Code</a> 上的开源求职申请框架：fork 填入个人档案，让 Claude 评估职位匹配度、定制 CV、写求职信、准备面试。作者是地球物理学家出身，2025 年底被裁后用这个框架跑自己的求职——69 份定制申请、20 场初面、1 份签约合同，2026 年 6 月入职 AI 工程师。项目随后开源并登上 GitHub Trending，40.8k stars。</p>
+<p>核心工作流（建档 → 职位抓取 → fit 评估 → 起草-审校申请）是语言与国家无关的；职位门户搜索技能内置丹麦市场（Jobindex、Jobnet 等）+ LinkedIn + freehire.me，<code>/add-portal</code> 可为自己的本地门户生成同构搜索技能。</p>
+<p><strong>13 个斜杠命令</strong>：</p>
+<ul><li><strong>核心三步</strong>：<code>/setup</code>（三种建档路径：documents 文件夹 / 粘贴 CV / 采访式问答）、<code>/scrape</code>（多门户抓取 + 去重 + fit 排序）、<code>/apply &lt;url&gt;</code>（完整申请流水线）</li><li><strong>批量评分</strong>：<code>/rank</code> 对所有抓取职位并行打分，产出带优势/差距说明的排序清单，deal-breaker 一票否决</li><li><strong>面试与结果</strong>：<code>/interview</code> 从申请档案生成阶段化面试准备包 + STAR 示例映射 + 模拟面试、<code>/outcome</code> 记录结果并归档、<code>/gmail-sync</code> 从 Gmail 读取状态信号（批量审批制）</li><li><strong>档案增强</strong>：<code>/expand</code> 扫描 GitHub/Kaggle/Scholar 等公开链接补充能力标签</li><li><strong>职业规划</strong>：<code>/upskill</code> 分析技能差距，产出优先级热力图 + 学习计划</li><li><strong>可视化与同步</strong>：<code>/html-report</code> 离线 HTML 仪表盘、<code>/notion-sync</code> 只读 Notion 视图</li><li><strong>扩展机制</strong>：<code>/add-template</code> 注册自定义 CV/求职信模板（LaTeX、Typst 等）、<code>/add-portal</code> 为本地门户生成搜索技能、<code>/reset</code> 清空档案</li></ul>
+<p><strong><code>/apply</code> 流水线的关键设计</strong>：</p>
+<p>1. <strong>Drafter-reviewer 分离</strong>：起草 agent 写初稿，另一个全新上下文的 reviewer agent 调研公司并批判，起草方修订后定稿 2. <strong>PDF 编译-检查循环</strong>：lualatex（CV）+ xelatex（求职信）编译后，Claude 逐页目检——CV 精确 2 页无孤行标题、求职信精确 1 页签名可见，自动修复排版 3. <strong>ATS 文本层校验</strong>：用 <code>pdftotext</code> 提取 PDF 文本层，按 ATS 解析器视角验证联系方式、阅读顺序与关键词覆盖；真实缺口标注出来而非硬塞 4. <strong>相关性加权裁剪</strong>：CV 超 2 页时按目标职位相关性 + 文档独特性评分裁剪，非机械从最老段落删起 5. <strong>真实性规则</strong>：所有声称均对照档案验证，绝不虚构技能或经历</p>
+<h2>怎么安装</h2>
+<p>前置条件：<a href="https://claude.com/claude-code" target="_blank" rel="noopener">Claude Code</a> CLI（用 Codex/Gemini CLI 等可从 <a href="https://github.com/MadsLorentzen/ai-job-search/blob/master/AGENTS.md" target="_blank" rel="noopener">AGENTS.md</a> 起步）、Python 3.10+、<a href="https://bun.sh" target="_blank" rel="noopener">Bun</a>、LaTeX 发行版（含 <code>lualatex</code> 与 <code>xelatex</code>）。</p>
+<blockquote><strong>重要：不要直接 fork。</strong> GitHub 公开仓库的 fork 必定公开，而 <code>/setup</code> 会把个人数据写入 tracked 文件。用于自己的求职时，应建<strong>私有仓库</strong>并把本仓库设为 <code>upstream</code>（两分钟教程见上游 SETUP.md 第 8 节）。fork 仅用于贡献代码。</blockquote>
+<pre><code class="lang-bash"># 私有仓库方式（推荐个人使用）
+gh repo create my-job-search --private --clone
+cd my-job-search
+git remote add upstream https://github.com/MadsLorentzen/ai-job-search.git
+git fetch upstream master
+git merge upstream/master
+
+# 安装门户搜索 CLI 工具（PowerShell）
+$tools = @(&quot;jobbank-search&quot;,&quot;jobdanmark-search&quot;,&quot;jobindex-search&quot;,&quot;jobnet-search&quot;,&quot;linkedin-search&quot;,&quot;freehire-search&quot;)
+foreach ($tool in $tools) { Push-Location &quot;.agents/skills/$tool/cli&quot;; bun install; Pop-Location }</code></pre>
+<p>可选依赖：<code>pip install pypdf</code>（<code>/apply</code> 的 ATS 校验）；薪酬基准工具需自带数据（工会统计、Glassdoor 导出等）。</p>
+<h2>怎么用</h2>
+<p>在 Claude Code 中打开项目目录：</p>
+<pre><code class="lang-bash">claude</code></pre>
+<p>然后依次执行：</p>
+<pre><code>/setup          # 建档（documents 文件夹 / 粘贴 CV / 采访式问答，自动检测）
+/scrape         # 搜索职位门户，按 fit 排序展示
+/rank           # 批量评分所有抓取职位，产出排序清单（可选）
+/apply &lt;url&gt;    # 对选定职位跑完整申请流水线
+/interview      # 面试准备包 + 模拟面试
+/outcome        # 记录结果、归档材料、跟进提醒</code></pre>
+<p>门户搜索换成自己的市场：<code>/add-portal</code> 给本地求职网站 URL，自动调查门户结构并生成同构搜索技能（auth 墙门户拒绝生成）。CV/求职信模板可换成自己的：<code>/add-template</code> 指向源文件（LaTeX、Typst 等），测试编译通过后接管 <code>/apply</code>。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 MIT</strong>：可自由使用、修改与分发。</li><li><strong>隐私与 fork</strong>：公开 fork + tracked 个人数据 = 泄露。务必用私有仓库 + upstream 模式（见上文安装说明）。</li><li><strong>LinkedIn ToS</strong>：<code>linkedin-search</code> 走公开未认证接口，自动化访问违反 LinkedIn 服务条款，仅限个人低量使用，风险自担。</li><li><strong>门户抓取合规</strong>：各门户技能内置 robots.txt 检查与访问规则；<code>/add-portal</code> 拒绝 auth 墙门户并对限制性条款门户标注"仅限个人使用"。</li><li><strong>安全边界</strong>：职位描述按不可信输入处理（不执行其中指令、不抓取正文链接），但这是 instruction-level 防护而非沙箱——对陌生门户的产出，投递前人工过一眼。</li><li><strong>维护活跃</strong>（2026-09 更新，40.8k stars），README 详尽，提供 tagged release + 上游更新 triage 工具。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

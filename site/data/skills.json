@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-05T07:38:59Z",
-  "count": 47,
+  "generated_at": "2026-09-05T07:46:05Z",
+  "count": 48,
   "categories": [
     {
       "dir": "writing-docs",
@@ -94,6 +94,51 @@
       "updated_at": "2026-08-26",
       "install": "bash\n# 1) 克隆并安装依赖\ngit clone --depth 1 https://github.com/chuspeeism/dashi-taskboard.git /tmp/codex-taskboard\ncd /tmp/codex-taskboard\nnpm install\nnpm run build\nnpm start\n# 打开 http://127.0.0.1:47823 ，SQLite 库位于 .data/taskboard.sqlite",
       "detail_url": "skills/codex-taskboard.html"
+    },
+    {
+      "id": "staffdeck",
+      "name_zh": "StaffDeck 企业数字员工平台",
+      "name_en": "StaffDeck — Enterprise Digital Employee Platform",
+      "summary_zh": "OpenBMB 开源的企业数字员工平台：把业务经验、SOP、决策标准与知识库沉淀为可持续运行的数字员工，支持状态机流程、文档感知检索、MCP/HTTP 工具执行、长期记忆与审计。",
+      "summary_en": "OpenBMB's enterprise platform for governed digital employees: state-machine SOPs, document-aware retrieval, audited tool execution, and long-term memory.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "digital-employee",
+        "ai-agent",
+        "enterprise",
+        "sop",
+        "knowledge-management",
+        "mcp",
+        "self-hosted"
+      ],
+      "languages": [
+        "python",
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "AGPL-3.0",
+      "license_bucket": "copyleft",
+      "homepage": "https://staffdeck.openbmb.cn/",
+      "repo": "https://github.com/OpenBMB/StaffDeck",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "staffdeck",
+        "digital-employee-platform"
+      ],
+      "risk_notes": "AGPL-3.0 有强 Copyleft：对外提供网络服务需满足开源义务，商用前请评估；平台可执行 HTTP/MCP/定时任务等真实操作，应配置最小权限凭证与高风险操作审批；源码部署默认管理员 admin/admin，首次登录必须改密；法律、医疗、金融、安全等受监管场景不得替代专业审查。",
+      "added_at": "2026-09-05",
+      "updated_at": "2026-09-05",
+      "install": "bash\ngit clone https://github.com/OpenBMB/StaffDeck.git\ncd StaffDeck\npython3 -m venv backend/.venv\nbackend/.venv/bin/python -m pip install -e \"backend[dev]\"\nnpm --prefix frontend-enterprise ci\ncp backend/.env.example backend/.env\nscripts/dev_up.sh --detach",
+      "detail_url": "skills/staffdeck.html"
     },
     {
       "id": "tencentdb-agent-memory",

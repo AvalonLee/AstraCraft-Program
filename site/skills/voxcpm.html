@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>VoxCPM2 无 Tokenizer TTS · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">VoxCPM2 无 Tokenizer TTS</h1>
+      <p class="hero-subtitle">VoxCPM2</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>主推</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">OpenBMB 出品的 2B 参数 tokenizer-free TTS：扩散自回归架构直接生成连续语音表征，支持 30 语言（含 9 种中文方言）、自然语言 voice design、可控声音克隆与终极克隆（参考音频+转写续写）、48kHz 工作室级输出，RTF 低至 0.3（4090）或 0.13（vLLM-Omni 加速），Apache 2.0 商用可用。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/OpenBMB/VoxCPM" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/OpenBMB/VoxCPM" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>VoxCPM2 无 Tokenizer TTS</h1>
+<blockquote>Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning。上游：<a href="https://github.com/OpenBMB/VoxCPM" target="_blank" rel="noopener">OpenBMB/VoxCPM</a> · 许可证：Apache 2.0 · 36.7k stars · <a href="https://voxcpm.readthedocs.io/en/latest/" target="_blank" rel="noopener">文档</a> · <a href="https://huggingface.co/spaces/OpenBMB/VoxCPM-Demo" target="_blank" rel="noopener">Demo</a></blockquote>
+<h2>这是什么</h2>
+<p>VoxCPM 是 OpenBMB（面壁智能 / 清华）开源的 tokenizer-free Text-to-Speech 系统：不经过离散 tokenization，用扩散自回归架构直接生成连续语音表征，实现高度自然和富有表现力的合成。<strong>VoxCPM2</strong> 是最新大版本：2B 参数（MiniCPM-4 骨干）、200 万小时多语言数据训练、30 语言、48kHz 输出。</p>
+<p><strong>四种生成模式</strong>：</p>
+<p>| 模式 | 输入 | 说明 | |------|------|------| | <strong>Text-to-Speech</strong> | 文本 | 直接合成，自动推断韵律和情感 | | <strong>Voice Design</strong> | 文本 + 自然语言描述 | <code>(A young woman, gentle voice)Hello</code> —— 无需参考音频 | | <strong>Controllable Cloning</strong> | 参考音频 + 可选风格指令 | 克隆音色，同时可用指令调整速度 / 情感 / 风格 | | <strong>Ultimate Cloning</strong> | 参考音频 + 其转写 | 基于音频续写的终极克隆：音色、节奏、情感、风格全部保留 |</p>
+<p><strong>核心特性</strong>：</p>
+<ul><li><strong>30 语言</strong>：阿拉伯语、缅甸语、中文、丹麦语、荷兰语、英语、芬兰语、法语、德语、希腊语、希伯来语、印地语、印尼语、意大利语、日语、高棉语、韩语、老挝语、马来语、挪威语、波兰语、葡萄牙语、俄语、西班牙语、斯瓦希里语、瑞典语、他加禄语、泰语、土耳其语、越南语——输入不需语言标签</li><li><strong>9 种中文方言</strong>：四川话、粤语、吴语、东北话、河南话、陕西话、山东话、天津话、闽南话</li><li><strong>48kHz 工作室级</strong>：AudioVAE V2 非对称编解码（16kHz 参考音频进、48kHz 出），内置超分辨率无需外部 upsampler</li><li><strong>实时流式</strong>：RTF ~0.3（RTX 4090）；Nano-vLLM / vLLM-Omni 加速至 ~0.13（PagedAttention + OpenAI-compatible API）</li><li><strong>Context-Aware</strong>：从文本内容自动推断合适的韵律和表现力</li><li><strong>SFT / LoRA 微调</strong>：VoxCPM1.5 及以上支持</li></ul>
+<h2>怎么安装</h2>
+<p>前置条件：Python &gt;= 3.10（&lt;3.13）、PyTorch &gt;= 2.5.0、CUDA &gt;= 12.0。</p>
+<pre><code class="lang-bash">pip install voxcpm</code></pre>
+<p>模型权重从 <a href="https://huggingface.co/openbmb/VoxCPM2" target="_blank" rel="noopener">Hugging Face</a>（或 <a href="https://modelscope.cn/models/OpenBMB/VoxCPM2" target="_blank" rel="noopener">ModelScope</a>）自动下载。</p>
+<h2>怎么用</h2>
+<h3>Python API</h3>
+<pre><code class="lang-python">from voxcpm import VoxCPM
+import soundfile as sf
+
+model = VoxCPM.from_pretrained(&quot;openbmb/VoxCPM2&quot;, load_denoiser=False)
+
+# Text-to-Speech
+wav = model.generate(text=&quot;VoxCPM2 带来工作室级多语言语音合成。&quot;, cfg_value=2.0, inference_timesteps=10)
+sf.write(&quot;demo.wav&quot;, wav, model.tts_model.sample_rate)
+
+# Voice Design（自然语言描述，无需参考音频）
+wav = model.generate(text=&quot;(A young woman, gentle and sweet voice)Hello, welcome to VoxCPM2!&quot;)
+
+# Controllable Cloning
+wav = model.generate(text=&quot;This is a cloned voice.&quot;, reference_wav_path=&quot;voice.wav&quot;)
+
+# Ultimate Cloning（参考音频 + 转写 = 最大相似度）
+wav = model.generate(
+    text=&quot;This is an ultimate cloning demo.&quot;,
+    prompt_wav_path=&quot;voice.wav&quot;,
+    prompt_text=&quot;The transcript of the reference audio.&quot;,
+    reference_wav_path=&quot;voice.wav&quot;,
+)
+
+# Streaming
+for chunk in model.generate_streaming(text=&quot;Streaming is easy with VoxCPM!&quot;):
+    ...</code></pre>
+<h3>CLI</h3>
+<pre><code class="lang-bash"># Voice design
+voxcpm design --text &quot;VoxCPM2 带来工作室级多语言语音合成。&quot; --output out.wav
+
+# Controllable clone with style
+voxcpm design --text &quot;...&quot; --control &quot;Young female voice, warm and gentle&quot; --seed 42 --output out.wav
+
+# Clone from reference
+voxcpm clone --text &quot;...&quot; --reference-audio voice.wav --output out.wav</code></pre>
+<h3>生产部署</h3>
+<ul><li><strong>vLLM-Omni</strong>（官方）：PagedAttention + OpenAI-compatible API，RTF ~0.13</li><li><strong>Nano-vLLM</strong>：社区加速方案</li><li><strong>llama.cpp-omni</strong>：端侧推理</li></ul>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 Apache 2.0</strong>：权重和代码均可免费商用。</li><li><strong>GPU 需求</strong>：2B 模型需要较高显存；CPU 推理极慢不适合实际使用；vLLM 部署推荐 A100/H100。</li><li><strong>声音克隆合规</strong>：克隆他人声音必须获得授权；合成内容需遵守当地关于深度合成和语音伪造的法规。</li><li><strong>模型演进</strong>：VoxCPM-0.5B（2025-09，HuggingFace Trending #1）→ VoxCPM1.5（2025-12，GitHub Trending #1，SFT/LoRA）→ VoxCPM2（2026-04，2B、30 语言、Voice Design、48kHz）。</li><li><strong>维护极其活跃</strong>（2026-09 更新，36.7k stars），提供中英文 README、ReadTheDocs、HuggingFace Playground 和音频样本页。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

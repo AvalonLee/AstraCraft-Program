@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OfficeCLI AI Office 套件 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">OfficeCLI AI Office 套件</h1>
+      <p class="hero-subtitle">OfficeCLI</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>商业与办公</span><span>主推</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>CLI 工具</span>
+    </div>
+    <p class="muted detail-meta">专为 AI Agent 设计的 Office 套件 CLI：单二进制无需安装 Office，读写编辑 Word / Excel / PowerPoint；内置渲染引擎（HTML / PNG / watch 实时预览）、350+ Excel 函数求值、原生数据透视表、模板合并与 round-trip dump，MCP server 一键接入主流 Agent。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/iOfficeAI/OfficeCLI" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://officecli.ai" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>OfficeCLI AI Office 套件</h1>
+<blockquote>The world's first and the best Office suite designed for AI agents。上游：<a href="https://github.com/iOfficeAI/OfficeCLI" target="_blank" rel="noopener">iOfficeAI/OfficeCLI</a> · 许可证：Apache 2.0 · 29.9k stars · <a href="https://officecli.ai" target="_blank" rel="noopener">officecli.ai</a></blockquote>
+<h2>这是什么</h2>
+<p>OfficeCLI 是第一个专为 AI Agent 设计的 Office 套件 CLI：单二进制（内嵌 .NET 运行时）、零依赖、无需安装 Microsoft Office，跨 Windows / macOS / Linux 全平台。给任何 AI Agent 一行命令就能读写编辑 Word（.docx）、Excel（.xlsx）、PowerPoint（.pptx）。</p>
+<p><strong>核心设计</strong>：</p>
+<ul><li><strong>内置渲染引擎（"给 AI 一双眼睛"）</strong>：从零实现的高保真 HTML 渲染，覆盖 shapes、charts（趋势线 / 误差线 / 瀑布图 / K线 / sparklines）、公式（OMML → KaTeX）、3D .glb 模型（Three.js）、morph 切换、slide zoom、shape effects。<code>view html</code> 输出独立 HTML、<code>view screenshot</code> 输出逐页 PNG（供多模态 agent 阅读）、<code>watch</code> 本地实时预览（每次 add / set / remove 即刻刷新浏览器）。Agent 在 CI、Docker、无显示器服务器上都能<strong>看到</strong>自己生成的东西再修——不是从 DOM 猜。</li><li><strong>三层架构（L1 → L2 → L3）</strong>：L1 语义视图（<code>view</code> outline / text / annotated / stats / issues / html / screenshot）→ L2 结构化元素操作（<code>get</code> / <code>query</code> / <code>set</code> / <code>add</code> / <code>remove</code> / <code>move</code> / <code>swap</code>）→ L3 原始 XML（<code>raw</code> / <code>raw-set</code> / XPath）。Agent 从高层开始，只在需要时下沉，最小化 token 消耗。</li><li><strong>路径寻址</strong>：每个元素有稳定路径（<code>/slide[1]/shape[2]</code>），agent 不需要理解 XML 命名空间。1-based 索引、元素本地名（非 XPath 语法）。</li><li><strong>确定性 JSON 输出</strong>：所有命令支持 <code>--json</code>，统一 schema；错误返回结构化 error code + suggestion + 有效范围，agent 可自纠正。</li><li><strong>350+ Excel 函数自动求值</strong>：写入 <code>=SUM(A1:A2)</code> 立即出值，无需经 Office 回算；支持 spilling 动态数组（FILTER / SORT / UNIQUE / SEQUENCE / LET / LAMBDA / MAP）、财务债券（XIRR / PRICE / YIELD / DURATION）、统计回归（LINEST）。</li><li><strong>OOXML 原生数据透视表</strong>：一条命令从源范围生成多字段 pivot table（10 种聚合、showDataAs、日期分组、计算字段、top-N、布局），Excel 打开即见结果。</li><li><strong>模板合并</strong>：agent 设计一次排版（贵），生产代码用 JSON 填充 <code>{{key}}</code> N 次（便宜、确定、零 token 消耗），避免 agent 每次从零重新生成导致 N 份报告风格不一致。</li><li><strong>Round-trip dump</strong>：<code>dump</code> 把任意 .docx / .pptx / .xlsx（含子树）序列化为可回放的 batch JSON，agent 读懂结构化规格后 <code>batch</code> 回放——桥接"我有一个模板"和"生成 100 个变体"。</li></ul>
+<p><strong>Agent 集成</strong>：</p>
+<ul><li><strong>MCP Server</strong>：<code>officecli mcp claude</code> / <code>cursor</code> / <code>vscode</code> / <code>lmstudio</code> 一行注册，暴露全部文档操作为 JSON-RPC 工具。</li><li><strong>自动安装</strong>：<code>officecli install</code> 检测 Claude Code / Cursor / Windsurf / GitHub Copilot 等 agent 的配置目录，自动部署 skill 文件，无需手动配置。</li><li><strong>Self-healing 工作流</strong>：<code>validate</code>（OpenXML schema 校验）+ <code>view issues</code>（排版溢出 / 缺 alt text / 公式错误）+ 结构化错误码 + 属性名自动纠错——agent 无需人工干预即可自修。</li></ul>
+<h2>怎么安装</h2>
+<p><strong>一行安装：</strong></p>
+<pre><code class="lang-bash"># macOS / Linux
+curl -fsSL https://raw.githubusercontent.com/iOfficeAI/OfficeCLI/main/install.sh | bash
+
+# Windows PowerShell
+irm https://raw.githubusercontent.com/iOfficeAI/OfficeCLI/main/install.ps1 | iex</code></pre>
+<p><strong>或包管理器：</strong></p>
+<pre><code class="lang-bash">brew install officecli      # macOS / Linux
+scoop install officecli     # Windows
+npm install -g @officecli/officecli  # 全平台</code></pre>
+<p><strong>或从 <a href="https://github.com/iOfficeAI/OfficeCLI/releases" target="_blank" rel="noopener">GitHub Releases</a> 下载单文件二进制</strong>（macOS arm64/x64、Linux x64/arm64、Windows x64/arm64），运行 <code>officecli install</code> 部署到 PATH 并自动配置 agent。</p>
+<h2>怎么用</h2>
+<h3>30 秒上手</h3>
+<pre><code class="lang-bash"># 1. 创建空白 PowerPoint
+officecli create deck.pptx
+
+# 2. 开启实时预览（浏览器 http://localhost:26315）
+officecli watch deck.pptx
+
+# 3. 另一个终端加内容，浏览器即时刷新
+officecli add deck.pptx / --type slide --prop title=&quot;Q4 Report&quot; --prop background=1A1A2E
+officecli add deck.pptx &#x27;/slide[1]&#x27; --type shape \
+  --prop text=&quot;Revenue grew 25%&quot; --prop x=2cm --prop y=5cm \
+  --prop font=Arial --prop size=24 --prop color=FFFFFF</code></pre>
+<h3>三层渐进</h3>
+<pre><code class="lang-bash"># L1 — 语义视图
+officecli view report.docx annotated
+officecli view budget.xlsx text --cols A,B,C --max-lines 50
+
+# L2 — 元素操作
+officecli query report.docx &quot;run:contains(TODO)&quot;
+officecli add budget.xlsx / --type sheet --prop name=&quot;Q2 Report&quot;
+officecli move report.docx /body/p[5] --to /body --index 1
+
+# L3 — 原始 XML 兜底
+officecli raw deck.pptx &#x27;/slide[1]&#x27;
+officecli raw-set report.docx document --xpath &quot;//w:p[1]&quot; --action append --xml &#x27;&lt;w:r&gt;&lt;w:t&gt;Injected&lt;/w:t&gt;&lt;/w:r&gt;&#x27;</code></pre>
+<h3>Agent 自修工作流</h3>
+<pre><code class="lang-bash"># 1. 创建 + 填充
+officecli create report.pptx
+officecli add report.pptx / --type slide --prop title=&quot;Q4 Results&quot;
+
+# 2. 校验
+officecli validate report.pptx
+officecli view report.pptx issues --json
+
+# 3. 根据错误建议修复
+officecli set report.pptx &#x27;/slide[1]/shape[1]&#x27; --prop font=Arial</code></pre>
+<h3>模板合并与批量</h3>
+<pre><code class="lang-bash"># Agent 设计一次模板，代码填充 N 份
+officecli merge invoice-template.docx out-001.docx --data &#x27;{&quot;client&quot;:&quot;Acme&quot;,&quot;total&quot;:&quot;$5,200&quot;}&#x27;
+
+# 批量操作（默认原子：任一失败全部回滚）
+officecli batch deck.pptx --input updates.json --json
+officecli batch deck.pptx --input updates.json --best-effort --json  # 允许部分成功</code></pre>
+<h3>MCP 注册</h3>
+<pre><code class="lang-bash">officecli mcp claude    # Claude Code
+officecli mcp cursor    # Cursor
+officecli mcp vscode    # VS Code / Copilot
+officecli mcp list      # 查看注册状态</code></pre>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 Apache 2.0</strong>：可自由商用。</li><li><strong>单二进制</strong>：内嵌 .NET 运行时，无需安装 .NET 或 Office；源码构建需 .NET 10 SDK（仅编译用）。</li><li><strong>resident 模式磁盘刷新</strong>：resident 会话延迟磁盘写入，其他程序（python-docx / openpyxl / Microsoft Word）读取前需 <code>officecli save</code> 或 <code>officecli close</code> 刷新，或设 <code>OFFICECLI_RESIDENT_FLUSH=each</code> 让每次变更即时落盘。</li><li><strong>自动更新</strong>：后台自动检查新版本（<code>officecli config autoUpdate false</code> 关闭），配置存于 <code>~/.officecli/config.json</code>。</li><li><strong>维护活跃</strong>（2026-09 更新，29.9k stars），提供英文/中文/日文/韩文四语 README、完整 Wiki 文档与 runnable examples，iOfficeAI 团队出品。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

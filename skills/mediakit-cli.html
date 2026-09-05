@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI MediaKit CLI · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">AI MediaKit CLI</h1>
+      <p class="hero-subtitle">AI MediaKit CLI</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>CLI 工具</span>
+    </div>
+    <p class="muted detail-meta">火山引擎 MediaKit 官方 CLI：兼容 FFmpeg 命令面，本地跑裁剪/拼接/字幕等剪辑操作，一键切云端调用画质增强、字幕擦除、ASR、OCR、剧情线分析等 AI 能力，覆盖视频/图像/音频 80+ 原子能力和 5 个 Agent Skill。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/volcengine/mediakit-cli" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/volcengine/mediakit-cli" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>AI MediaKit CLI</h1>
+<blockquote>火山引擎 MediaKit 官方 CLI：兼容 FFmpeg 的命令面，同一条命令在本地跑 FFmpeg 剪辑、加 <code>--cloud</code> 切到云端 AI 能力。上游：<a href="https://github.com/volcengine/mediakit-cli" target="_blank" rel="noopener">volcengine/mediakit-cli</a> · 许可证：MIT</blockquote>
+<h2>这是什么</h2>
+<p>AI MediaKit CLI 是火山引擎 MediaKit 的官方命令行工具，设计目标是用同一条命令面覆盖「本地 FFmpeg 剪辑」和「云端 AI 处理」两种模式：</p>
+<ul><li><strong>本地模式（<code>--local</code>）</strong>：基于本机 <code>ffmpeg</code> / <code>ffprobe</code>，零成本完成裁剪、拼接、加字幕、混音、提取音频、翻转、淡入淡出、绿幕抠图、元信息探测等 23 项剪辑操作，与 FFmpeg 命令直觉对齐。</li><li><strong>云端模式（<code>--cloud</code>）</strong>：调用火山引擎弹性算力，覆盖 FFmpeg 做不到的 AI 能力——画质增强、字幕擦除、ASR、OCR、高光智剪（短剧/小游戏/影视拆条）、剧情故事线分析、场景切分、人像抠图等 55+ 智能视频能力，另有 21 项图像 AI 与 4 项音频能力。</li><li><strong><code>--local</code> / <code>--cloud</code> 逐命令切换</strong>：共用同一份参数与 <code>--schema</code>，Agent / 脚本零改造切换；默认 <code>cloud-first</code>。</li><li><strong>官方 Agent Skills</strong>：仓库内置 5 个 skill（shared / editing / audio / image / video），覆盖全部能力域，通过 <code>npx skills add</code> 安装到 AI Agent。</li></ul>
+<p>上游 README 标注未来预计提供 100+ 音视频原子能力（视频翻译、解说生成、漫剧转绘等陆续上线）。</p>
+<h2>怎么安装</h2>
+<p>前置条件：Node.js &gt;= 18；本地模式另需本机 FFmpeg 5.1.x（<code>ffmpeg</code> + <code>ffprobe</code>）；源码构建需 Go 1.22+。</p>
+<p><strong>一键安装（推荐）：</strong></p>
+<pre><code class="lang-bash">npx @volcengine/mediakit-cli install -y</code></pre>
+<p><strong>从源码构建：</strong></p>
+<pre><code class="lang-bash">git clone https://github.com/volcengine/mediakit-cli.git
+cd mediakit-cli
+make build</code></pre>
+<p><strong>安装 Agent Skills（源码构建时必需）：</strong></p>
+<pre><code class="lang-bash">cd mediakit-cli
+npx -y skills add ./skills -g -y</code></pre>
+<h2>怎么用</h2>
+<h3>初始化与验证</h3>
+<pre><code class="lang-bash"># 交互式初始化
+mediakit-cli init
+
+# Agent 非交互式初始化（API Key 从火山引擎控制台获取）
+mediakit-cli init --mode cloud-first --api-key &lt;your-api-key&gt; --yes
+
+# 环境自检：云端连通性、本地依赖、安装建议
+mediakit-cli doctor
+mediakit-cli version</code></pre>
+<h3>本地剪辑（无需 API Key）</h3>
+<pre><code class="lang-bash"># 视频裁剪：本机 FFmpeg，同步完成
+mediakit-cli --local editing trim-video --video-url ./in.mp4 --start-time 3 --end-time 8</code></pre>
+<h3>云端 AI 能力</h3>
+<pre><code class="lang-bash"># 云端画质增强（异步返回 task_id）
+mediakit-cli --cloud video enhance-video --video-url &lt;url&gt; --resolution 1080p
+
+# 轮询任务至终态
+mediakit-cli shared query-task --task-id &lt;task_id&gt; --poll-complete</code></pre>
+<h3>Agent 能力自省</h3>
+<p>每个能力命令支持 <code>--schema</code>，输出输入/输出 JSON Schema、Mode 与 Async 元信息，供 Agent 动态发现工具能力：</p>
+<pre><code class="lang-bash">mediakit-cli video enhance-video --schema
+mediakit-cli --local editing trim-video --schema</code></pre>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 MIT</strong>：CLI 本体可免费商用；但云端 AI 能力走火山引擎 API，按调用量计费，使用前请阅读<a href="https://www.volcengine.com/docs/6448/79646?lang=zh" target="_blank" rel="noopener">视频云服务专有条款</a>与<a href="https://www.volcengine.com/docs/6448/104992?lang=zh" target="_blank" rel="noopener">智能处理服务计费规则</a>。</li><li><strong>本地依赖</strong>：本地模式需本机安装 FFmpeg 5.1.x（含 <code>ffprobe</code>），输出默认落盘 <code>~/.mediakit/temp</code>（<code>--output-path</code> 或 <code>MEDIAKIT_OUTPUT_PATH</code> 可覆盖）。</li><li><strong>鉴权</strong>：仅需一个 API Key，无需 OAuth / STS / IAM；支持 <code>init --credential-store config</code> 持久化或 <code>MEDIAKIT_API_KEY</code> 环境变量临时注入。</li><li><strong>Agent 安装</strong>：<code>npx @volcengine/mediakit-cli install -y</code> 会下载并执行 npm 包与 Skill 文件，Agent 在无人值守场景应先复核上游 README 与许可证全文。</li><li><strong>维护活跃</strong>（2026-09 更新），提供中英文 README，官方出品。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

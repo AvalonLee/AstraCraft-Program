@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Codex Taskboard 本地任务看板 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Codex Taskboard 本地任务看板</h1>
+      <p class="hero-subtitle">Codex Taskboard</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>Agent 基础设施</span><span>常规</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">本地优先的 issue 看板，可在浏览器运行并通过 CDP 启动器或注入脚本嵌入 Codex；同一套 HTTP API 驱动 React UI 与随附 Codex Skill 使用的 taskctl CLI。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/chuspeeism/dashi-taskboard" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/chuspeeism/dashi-taskboard" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Codex Taskboard 本地任务看板</h1>
+<blockquote>本地优先的 issue 看板，可嵌入 Codex。上游：<a href="https://github.com/chuspeeism/dashi-taskboard" target="_blank" rel="noopener">chuspeeism/dashi-taskboard</a> · 许可证：Apache-2.0</blockquote>
+<h2>这是什么</h2>
+<p>一个<strong>本地优先（local-first）的任务看板</strong>：在浏览器中运行，既可以通过独立的 CDP 启动器、也可以通过注入脚本嵌入 Codex 使用。同一套 HTTP API 同时驱动 React Web UI 和随附 Codex Skill 使用的 <code>taskctl</code> CLI，形成一个"看板 + CLI + Agent 技能"一体的任务管理底座。</p>
+<p>它让 Agent（Codex）拥有持久化的项目 / issue 视图与命令行操作能力，适合把长任务拆成可跟踪的 issue 并交给 Agent 推进。</p>
+<h2>怎么安装</h2>
+<pre><code class="lang-bash"># 1) 克隆并安装依赖
+git clone --depth 1 https://github.com/chuspeeism/dashi-taskboard.git /tmp/codex-taskboard
+cd /tmp/codex-taskboard
+npm install
+npm run build
+npm start
+# 打开 http://127.0.0.1:47823 ，SQLite 库位于 .data/taskboard.sqlite</code></pre>
+<p>把随附的 Codex Skill 接入 Codex：</p>
+<pre><code class="lang-bash">ln -s /absolute/path/to/codex-taskboard/skills/manage-taskboard \
+  ~/.agents/skills/manage-taskboard</code></pre>
+<p>CLI 走 <code>npm run taskctl -- &lt;subcommand&gt;</code>（如 <code>project create</code> / <code>issue create</code>），也可用 <code>npm link</code> 把 <code>taskctl</code> 放到 PATH；用 <code>CODEX_TASKBOARD_URL</code> 指向其他本地 / 局域网服务。</p>
+<h2>怎么用</h2>
+<ul><li><strong>看板</strong>：浏览器打开本地服务，创建项目与 issue，按状态 / 优先级 / 标签跟踪；</li><li><strong>CLI</strong>：<code>npm run taskctl -- issue create --project &lt;id&gt; --title "..." --status todo --priority high</code>；</li><li><strong>Codex 集成</strong>：装好 manage-taskboard 技能后，在新的 Codex 任务里即可让 Agent 直接读写看板。</li></ul>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 Apache-2.0</strong>：宽松可商用。</li><li><strong>运行环境</strong>：本地运行需 Node.js 22.5+；构建 macOS App / Windows NSIS 桌面版额外需要 Rust 1.88+ 与 Xcode Command Line Tools / Visual Studio Build Tools（Tauri），纯本地 Web 运行无需这些。</li><li>云端部署通过 <strong>loopback companion</strong>（设备本地的 loopback 鉴权与路径映射服务，非聊天人格）配置 <code>taskctl cloud login</code>。</li><li>维护活跃（2026-08 持续更新），当前 2,611 stars。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-08-26 · 更新于 2026-08-26 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

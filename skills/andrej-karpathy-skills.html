@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Karpathy 编码指南 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Karpathy 编码指南</h1>
+      <p class="hero-subtitle">Karpathy-Inspired Claude Code Guidelines</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>研发与代码</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>技能包</span>
+    </div>
+    <p class="muted detail-meta">把 Andrej Karpathy 关于 LLM 编码通病的观察提炼成一份行为指南，用「先思考、简洁优先、外科手术式改动、目标驱动执行」四条原则改善 Agent 编码行为，支持注入 CLAUDE.md、Claude Code 插件与 Cursor 规则。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/multica-ai/andrej-karpathy-skills" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/multica-ai/andrej-karpathy-skills" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Karpathy 编码指南</h1>
+<blockquote>一份 Claude Code 行为指南，衍生自 Andrej Karpathy 关于 LLM 编码通病的观察。上游：<a href="https://github.com/multica-ai/andrej-karpathy-skills" target="_blank" rel="noopener">multica-ai/andrej-karpathy-skills</a> · 许可证：MIT</blockquote>
+<h2>这是什么</h2>
+<p>这个项目把 Karpathy 观察到的 LLM 编码通病归纳为可注入 Agent 的四条原则，帮助模型「先思考再动手、把代码写得尽量简单、只做最小改动、以可验证的目标推进」：</p>
+<ul><li><strong>先思考（Think Before Coding）</strong>：显式陈述假设、遇到歧义不擅自解读、恰当时提出更简方案、困惑就停下来澄清。</li><li><strong>简洁优先（Simplicity First）</strong>：只做被要求的功能，不写投机代码与无谓抽象，200 行能写成 50 行就重写。</li><li><strong>外科手术式改动（Surgical Changes）</strong>：只动必须动的代码，不改动相邻未破坏的代码与注释，不为「顺手优化」而重构。</li><li><strong>目标驱动执行（Goal-Driven Execution）</strong>：把「加校验」「修 bug」「重构 X」转化为可验证的测试目标，围绕成功判据循环直至通过，减少反复澄清。</li></ul>
+<p>它不修改你项目内的任何逻辑代码，只以一份规则（CLAUDE.md）+ 技能包（Skill）+ 插件/Cursor 规则的形式注入 Agent 的行为约束。</p>
+<h2>怎么安装</h2>
+<p>方式一：作为 Claude Code 插件（全项目生效）——在 Claude Code 内依次执行：</p>
+<pre><code>/plugin marketplace add multica-ai/andrej-karpathy-skills
+/plugin install andrej-karpathy-skills@karpathy-skills</code></pre>
+<p>方式二：注入到 <code>CLAUDE.md</code>（按项目）</p>
+<p>新项目：</p>
+<pre><code class="lang-bash">curl -o CLAUDE.md https://raw.githubusercontent.com/multica-ai/andrej-karpathy-skills/main/CLAUDE.md</code></pre>
+<p>追加到已有项目：</p>
+<pre><code class="lang-bash">echo &quot;&quot; &gt;&gt; CLAUDE.md
+curl https://raw.githubusercontent.com/multica-ai/andrej-karpathy-skills/main/CLAUDE.md &gt;&gt; CLAUDE.md</code></pre>
+<p>方式三：Cursor —— 仓库自带项目规则 <code>.cursor/rules/karpathy-guidelines.mdc</code>，可直接在 Cursor 中启用，见仓库 <code>CURSOR.md</code> 的跨项目配置说明。</p>
+<p>具体插件/市场 id 请以仓库当前 README 为准，不同 Agent 的插件市场机制可能不同。</p>
+<h2>怎么用</h2>
+<p>安装后即可生效，无需额外操作。用于评估是否生效的观察信号：</p>
+<ul><li>diff 中只出现被要求的改动，罕见无关修改；</li><li>代码第一次就写得简单，很少因过度设计被重写；</li><li>澄清性问题出现在实现之前，而不是出错之后；</li><li>PR 干净、最小，没有顺手重构或「顺手改进」。</li></ul>
+<p>它也支持与项目特定规则合并：在 <code>CLAUDE.md</code> 中追加「## Project-Specific Guidelines」小节，补充如「API 端点必须有测试」「遵循现有错误处理模式」等约定。</p>
+<h2>注意事项</h2>
+<ul><li><strong>只改行为、不改代码</strong>：本技能不触达仓库源码，安装后需确认你的 Agent 正确加载了对应规则文件。</li><li><strong>Agent 适配</strong>：规则文本以 Claude Code / Cursor 为主，其他 Agent 需将规则内容放入其对应的项目上下文文件。</li><li><strong>与项目规范共存</strong>：<code>CLAUDE.md</code> 会与项目既有说明叠加，推荐合并追加而非覆盖，避免冲突。</li><li><strong>权衡定位</strong>：这套规则偏向「谨慎优于速度」，对简单任务（如一个明显的单行修复）建议按需取舍，不必事事套足四个环节。</li><li><strong>MIT 许可证</strong>：可自由用于个人或项目内，商用项目请自行确认上游许可条款。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-08-28 · 更新于 2026-08-28 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Drama Skills AI 短剧创作技能合集 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Drama Skills AI 短剧创作技能合集</h1>
+      <p class="hero-subtitle">Drama Skills</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>写作与文档</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>技能集</span>
+    </div>
+    <p class="muted detail-meta">面向 Claude Code 与 Codex 的 AI 短剧/漫剧创作 skill 合集：覆盖剧本、资产、分镜、图片/视频提示词到独立审查全链路，10 个技能协作，适配编剧与漫剧工作室。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/zenstory-ai/drama-skills" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/zenstory-ai/drama-skills" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Drama Skills AI 短剧创作技能合集</h1>
+<blockquote>面向 Claude Code 与 Codex 的 AI 短剧创作技能合集。上游：<a href="https://github.com/zenstory-ai/drama-skills" target="_blank" rel="noopener">zenstory-ai/drama-skills</a> · 许可证：MIT</blockquote>
+<h2>这是什么</h2>
+<p>它是一套面向 <strong>Claude Code 与 Codex</strong> 的 <strong>AI 短剧/漫剧创作 skill 合集</strong>，来自真实漫剧工作室产线（累计上千个 AI 短剧 / 漫剧项目蒸馏而成）。十个技能把一个点子或一部长篇材料，一路做成分集剧本、资产设定、图片提示词、分镜关键帧和视频提示词，用清晰的所有权与连续性衔接。</p>
+<p>十个技能：<code>short-drama</code>（入口路由 / 初始化 / Dashboard / Look Development）、<code>short-drama-novel-analyze</code>（原著快评）、<code>short-drama-develop</code>（故事开发 / 分集地图）、<code>short-drama-write</code>（分集剧本）、<code>short-drama-assets</code>（人物 / 场景 / 道具资产）、<code>short-drama-image-prompts</code>（图片提示词）、<code>short-drama-storyboard</code>（分镜 / 冻结关键帧）、<code>short-drama-video-prompts</code>（视频提示词）、<code>short-drama-produce</code>（确认后生产）、<code>short-drama-review</code>（独立审查）。新项目每集默认只维护五份 Markdown：剧本 / 视觉设定 / 分镜 / 图片提示词 / 视频提示词。</p>
+<h2>怎么安装</h2>
+<pre><code class="lang-bash"># 需要 Python 3.9+；告诉 Claude Code / Codex：安装这些技能 https://github.com/zenstory-ai/drama-skills
+git clone https://github.com/zenstory-ai/drama-skills.git
+cd drama-skills
+
+# Claude Code
+mkdir -p &quot;$HOME/.claude/skills&quot;
+for skill in skills/*; do ln -s &quot;$PWD/$skill&quot; &quot;$HOME/.claude/skills/$(basename &quot;$skill&quot;)&quot;; done
+
+# Codex
+mkdir -p &quot;${CODEX_HOME:-$HOME/.codex}/skills&quot;
+for skill in skills/*; do ln -s &quot;$PWD/$skill&quot; &quot;${CODEX_HOME:-$HOME/.codex}/skills/$(basename &quot;$skill&quot;)&quot;; done</code></pre>
+<h2>怎么用</h2>
+<p>在 Claude Code 用 <code>/short-drama</code>、Codex 用 <code>$short-drama</code> 调用（也可纯自然语言）。示例流程：初始化项目 → 写第 1 集 → 拆资产 → 写图片 / 视频提示词与分镜 → 明确确认后由 <code>short-drama-produce</code> 通过外部 adapter 投产 → 需要时审查。每个技能是独立安装单元，可只链接所需能力。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 MIT</strong>：可商用；供应商凭据不进入项目，生产前需用户明确确认。</li><li><strong>运行环境</strong>：需 Python 3.9+ 与支持 Agent Skill 规范的运行环境（Claude Code / Codex）。</li><li><strong>生产依赖外部 adapter</strong>：图片 / 视频 / TTS / 音乐生产可选 Seedance、GPT Image 2、MiniMax Music 等 adapter，需自行配置且确认后才执行；本地创作台 macOS / Linux / WSL / Windows 原生可运行。</li><li>维护活跃（2026-08 更新），暂无已知重大缺陷。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-08-26 · 更新于 2026-08-26 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

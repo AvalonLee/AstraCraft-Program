@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Depth Studio 深度视频生成 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Depth Studio 深度视频生成</h1>
+      <p class="hero-subtitle">Depth Studio</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>观察</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">把一段普通参考视频转换成时空一致的灰度深度视频，为 AI 视频工具提供角色姿态、动作、轮廓与相机距离的空间引导，辅助换角色、加角色或保持动作一致。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/Toolsai/Depth-Studio" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/Toolsai/Depth-Studio" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Depth Studio</h1>
+<blockquote>把普通参考视频转换为时空一致的灰度深度视频，作为 AI 视频创作的空间引导。上游：<a href="https://github.com/Toolsai/Depth-Studio" target="_blank" rel="noopener">Toolsai/Depth-Studio</a> · 许可证：MIT</blockquote>
+<h2>这是什么</h2>
+<p>Depth Studio 把一段参考视频转换为灰度深度视频：近处亮、远处暗，且整段视频共用同一亮度范围，避免逐帧亮度闪烁失真。兼容的 AI 视频工具可用这份深度引导更准确地理解角色姿态、动作、轮廓与镜头距离，从而支撑「换角色」「新增一个跟随相同动作的角色」「保持动作与场景间距贴近参考」等用法。</p>
+<p>深度支持与否取决于你后续所用的 AI 视频工具或模型；本项目只负责生成深度视频，并不生成最终的角色视频。</p>
+<h2>怎么安装</h2>
+<p>方式一：交给 AI agent 安装</p>
+<pre><code>请帮我安装并启动这个项目：
+https://github.com/Toolsai/Depth-Studio</code></pre>
+<p>方式二：Agent Skills CLI（需 Node.js 与 npx）</p>
+<pre><code class="lang-bash">npx skills add Toolsai/Depth-Studio</code></pre>
+<p>方式三：手动克隆或复制</p>
+<pre><code class="lang-bash">git clone https://github.com/Toolsai/Depth-Studio.git</code></pre>
+<p>方式四：不用 agent——在 GitHub 点 <strong>Code → Download ZIP</strong> 并解压（勿在 ZIP 内直接运行）：</p>
+<ul><li>macOS：双击 <code>install-and-launch.command</code></li><li>Windows：双击 <code>install-and-launch.bat</code></li></ul>
+<p>启动器会检查 Python、在项目目录内安装依赖、启动本地应用并打开默认浏览器；缺少 Python 时会提示官方下载地址。</p>
+<h2>怎么用</h2>
+<p>1. 点 <strong>Browse</strong> 选择一段参考视频 2. <strong>Split</strong> 保持 <code>0</code> 输出单个完整 MP4，或设为秒数按片段下载 3. 仅当你的下一个工具期望相反深度方向时才开启 <strong>Invert depth</strong> 4. 点 <strong>Generate depth</strong> 等待进度条完成 5. 并排对比原片与深度片，下载 MP4 或分段 ZIP</p>
+<p>默认输出为「近处白、远处黑」。使用完点右上角 <strong>Close app</strong>；再次使用可重新运行启动器或让 agent 启动该 Skill。</p>
+<h2>注意事项</h2>
+<ul><li><strong>首次运行需联网</strong>：会下载官方 Small 模型（约 116 MB）与 Python 依赖；无需 Hugging Face / GitHub / 模型账号登录。推荐配置：Windows 10/11 64 位、16 GB 内存、10 GB 磁盘；Apple Silicon M1+；Python 3.10–3.12；现代 Chrome/Edge。</li><li><strong>完全本地运行</strong>：本项目不会把视频上传到云服务，临时作业文件在完成或失败后会被清理。</li><li><strong>仅生成深度视频</strong>：最终角色/画面效果取决于后续所用的 AI 视频工具是否支持 depth guide。</li><li><strong>模型来源</strong>：使用官方 Video-Depth-Anything Small 相对深度模型，模型与上游源代码保留 Apache 2.0 条款。</li><li><strong>早期项目</strong>：仅少量提交、单维护者、无正式 release，功能与稳定性以实测为准。</li><li>简单可用：无需 AI 供应商或 API Key，纯本地 CPU 或 NVIDIA GPU 处理（GPU 显著提速、无 GPU 可回退 CPU）。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-08-27 · 更新于 2026-08-27 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

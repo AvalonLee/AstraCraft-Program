@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CC Switch 多 Agent 供应商切换器 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">CC Switch 多 Agent 供应商切换器</h1>
+      <p class="hero-subtitle">CC Switch</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>Agent 基础设施</span><span>主推</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">跨平台桌面应用，统一管理 Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw、Grok Build 与 Hermes 等 8 款 AI 编程工具的供应商切换、MCP/Skills/Prompts 同步、本地代理故障转移与用量统计。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/farion1231/cc-switch" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://ccswitch.io" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>CC Switch 多 Agent 供应商切换器</h1>
+<blockquote>一款桌面应用统一管理 8 款 AI 编程工具的供应商与配置。上游：<a href="https://github.com/farion1231/cc-switch" target="_blank" rel="noopener">farion1231/cc-switch</a> · 许可证：MIT</blockquote>
+<h2>这是什么</h2>
+<p>CC Switch 解决的核心问题是：Claude Code、Codex、Gemini CLI 等工具各有自己的配置格式，切换 API 供应商需要手动编辑 JSON/TOML/.env 文件，MCP 和 Skills 也无法跨工具统一管理。</p>
+<p>它提供一个 Tauri 2 桌面应用（Windows / macOS / Linux），把供应商管理、MCP/Prompts/Skills 同步、本地代理故障转移和用量统计放在同一个界面里，50+ 内置供应商预设一键导入，支持系统托盘快捷切换和云端同步。数据库使用 SQLite 原子写入保护配置不被损坏。</p>
+<h2>怎么安装</h2>
+<pre><code class="lang-bash"># macOS（Homebrew，代码签名公证）
+brew install --cask cc-switch
+
+# Arch Linux（paru）
+paru -S cc-switch-bin</code></pre>
+<p>Windows / Linux 从 <a href="https://github.com/farion1231/cc-switch/releases" target="_blank" rel="noopener">GitHub Releases</a> 下载：</p>
+<ul><li>Windows：<code>CC-Switch-v{version}-Windows.msi</code> 或便携版 <code>.zip</code></li><li>Linux：<code>.deb</code>（Debian/Ubuntu）、<code>.rpm</code>（Fedora/RHEL）、<code>.AppImage</code>（通用）</li></ul>
+<h2>怎么用</h2>
+<p>1. <strong>添加供应商</strong>：点击"Add Provider"，从 50+ 内置预设选择或自定义配置，粘贴 API Key 一键导入 2. <strong>切换供应商</strong>：主界面选中供应商点"Enable"，或从系统托盘直接点击切换；切换后重启终端生效（Claude Code 支持热切换） 3. <strong>统一 MCP</strong>：点击"MCP"面板，通过模板或自定义配置添加 MCP Server，按工具逐个同步开关 4. <strong>Skills 管理</strong>：点击"Skills"，从 GitHub 仓库或 ZIP 一键安装技能到支持的 AI 工具 5. <strong>用量看板</strong>：查看花费、请求数和 Token 消耗趋势图表</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 MIT</strong>：宽松可商用。</li><li><strong>系统要求</strong>：Windows 10+、macOS 12+、Ubuntu 22.04+ / Debian 11+ / Fedora 34+。</li><li><strong>最小侵入设计</strong>：即使卸载 CC Switch，各 CLI 工具仍正常工作；系统始终保留一个活跃配置以防工具不可用。</li><li><strong>数据位置</strong>：配置数据库在 <code>~/.cc-switch/cc-switch.db</code>，自动备份保留最近 10 份；Skills 软链到 <code>~/.cc-switch/skills/</code>。</li><li><strong>Wayland 兼容</strong>：AppImage 默认强制 <code>GDK_BACKEND=x11</code>（XWayland），Wayland + NVIDIA 环境如遇黑屏可用 <code>CC_SWITCH_GDK_BACKEND=wayland</code> 回退原生 Wayland。</li><li>维护非常活跃（2026-09 持续更新），当前 131,268 stars。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-06 · 更新于 2026-09-06 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

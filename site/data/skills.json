@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-05T10:18:27Z",
-  "count": 76,
+  "generated_at": "2026-09-08T13:22:04Z",
+  "count": 81,
   "categories": [
     {
       "dir": "writing-docs",
@@ -151,6 +151,56 @@
       "detail_url": "skills/browser-use.html"
     },
     {
+      "id": "cc-switch",
+      "name_zh": "CC Switch 多 Agent 供应商切换器",
+      "name_en": "CC Switch",
+      "summary_zh": "跨平台桌面应用，统一管理 Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw、Grok Build 与 Hermes 等 8 款 AI 编程工具的供应商切换、MCP/Skills/Prompts 同步、本地代理故障转移与用量统计。",
+      "summary_en": "Cross-platform desktop app that unifies provider switching, MCP/Skills/Prompts sync, proxy failover and usage tracking across Claude Code, Codex, Gemini CLI, OpenCode, OpenClaw, Grok Build and Hermes.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "provider-switching",
+        "mcp",
+        "skills-management",
+        "claude-code",
+        "codex",
+        "gemini-cli",
+        "tauri",
+        "desktop-app"
+      ],
+      "languages": [
+        "rust",
+        "typescript"
+      ],
+      "doc_languages": [
+        "en",
+        "zh",
+        "ja",
+        "de"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://ccswitch.io",
+      "repo": "https://github.com/farion1231/cc-switch",
+      "tier": "core",
+      "tier_label": "主推",
+      "featured": false,
+      "related": [
+        "codexplusplus"
+      ],
+      "aliases": [
+        "CCSwitch",
+        "cc-switch"
+      ],
+      "risk_notes": "MIT 许可可商用；切换供应商后大多数 CLI 工具需重启终端（Claude Code 除外）；API Key 保存在本机 SQLite，切换操作会写入各工具的配置文件，建议定期备份 ~/.cc-switch 目录；首次启动可导入现有配置作为默认供应商，系统始终保留一个活跃配置以防工具不可用。",
+      "added_at": "2026-09-06",
+      "updated_at": "2026-09-06",
+      "install": "bash\n# macOS（Homebrew，代码签名公证）\nbrew install --cask cc-switch\n\n# Arch Linux（paru）\nparu -S cc-switch-bin",
+      "detail_url": "skills/cc-switch.html"
+    },
+    {
       "id": "codex-taskboard",
       "name_zh": "Codex Taskboard 本地任务看板",
       "name_en": "Codex Taskboard",
@@ -190,6 +240,94 @@
       "updated_at": "2026-08-26",
       "install": "bash\n# 1) 克隆并安装依赖\ngit clone --depth 1 https://github.com/chuspeeism/dashi-taskboard.git /tmp/codex-taskboard\ncd /tmp/codex-taskboard\nnpm install\nnpm run build\nnpm start\n# 打开 http://127.0.0.1:47823 ，SQLite 库位于 .data/taskboard.sqlite",
       "detail_url": "skills/codex-taskboard.html"
+    },
+    {
+      "id": "codexplusplus",
+      "name_zh": "Codex++ Codex 桌面增强器",
+      "name_en": "Codex++ (CodexPlusPlus)",
+      "summary_zh": "面向 OpenAI Codex / ChatGPT 桌面应用的外部启动器与管理工具，通过 CDP 注入提供供应商切换、协议转换、会话管理与界面增强，不修改官方应用文件。",
+      "summary_en": "An external launcher and manager for the OpenAI Codex desktop app with provider switching, protocol conversion, session management and UI enhancement via CDP injection.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "codex",
+        "provider-switching",
+        "desktop-app",
+        "tauri",
+        "rust",
+        "session-management",
+        "cdp-injection"
+      ],
+      "languages": [
+        "rust",
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "AGPL-3.0-only",
+      "license_bucket": "unknown",
+      "homepage": "https://codexpp.cc/",
+      "repo": "https://github.com/BigPizzaV3/CodexPlusPlus",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "cc-switch"
+      ],
+      "aliases": [
+        "CodexPlusPlus",
+        "Codex++"
+      ],
+      "risk_notes": "AGPL-3.0-only 要求修改分发或网络服务时开放源码；通过 CDP 注入依赖官方桌面应用页面结构，官方更新后部分功能可能需适配；修改供应商配置和本地会话数据前应保留备份；macOS 安装包未签名时需手动解除 Gatekeeper 隔离。",
+      "added_at": "2026-09-06",
+      "updated_at": "2026-09-06",
+      "install": "bash\n# Windows：CodexPlusPlus-*-windows-x64-setup.exe\n# macOS Intel：CodexPlusPlus-*-macos-x64.dmg\n# macOS Apple Silicon：CodexPlusPlus-*-macos-arm64.dmg",
+      "detail_url": "skills/codexplusplus.html"
+    },
+    {
+      "id": "kaneo",
+      "name_zh": "Kaneo 开源极简项目管理平台",
+      "name_en": "Kaneo",
+      "summary_zh": "极简开放式项目管理平台：看板、Issue、项目与标签一体管理，支持自托管，每个实例内置 HTTP MCP 端点并发布官方 @kaneo/mcp，Claude、Cursor 等 MCP 客户端可直接在对话中创建与推进任务。",
+      "summary_en": "Minimal open-source self-hosted project management with built-in MCP: Claude, Cursor and other clients manage issues, projects and labels via the official @kaneo/mcp.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "mcp",
+        "self-hosted",
+        "docker",
+        "ai-agent",
+        "project-management",
+        "kanban"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://kaneo.app/",
+      "repo": "https://github.com/usekaneo/kaneo",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "codex-taskboard"
+      ],
+      "aliases": [],
+      "risk_notes": "MIT 许可可商用；自托管数据自持，依赖 PostgreSQL 16；部署前需配置 POSTGRES_PASSWORD、AUTH_SECRET 与 KANEO_CLIENT_URL，KANEO_API_URL 默认由 KANEO_CLIENT_URL 推导；MCP stdio 通过 npx 拉取 @kaneo/mcp，客户端需 Node.js 与 npm 网络。",
+      "added_at": "2026-09-08",
+      "updated_at": "2026-09-08",
+      "install": "bash\n# 1) 自托管 Kaneo（仓库自带 compose.yml / .env.sample）\ngit clone https://github.com/usekaneo/kaneo.git\ncd kaneo\ncp .env.sample .env   # 设置 POSTGRES_PASSWORD、AUTH_SECRET、KANEO_CLIENT_URL=http://localhost:5173\ndocker compose up -d\n# 打开 http://localhost:5173\n\n# 2) 给 AI 工具接入官方 MCP（stdio 方式）\n# 在 Claude Code / Cursor / Codex 等 MCP 客户端添加：\n#   command: npx\n#   args: [\"-y\", \"@kaneo/mcp\"]\n# 自托管实例的 HTTP MCP endpoint：<你的实例地址>/api/mcp",
+      "detail_url": "skills/kaneo.html"
     },
     {
       "id": "openopc",
@@ -1076,6 +1214,44 @@
       "detail_url": "skills/cowart.html"
     },
     {
+      "id": "dembrandt",
+      "name_zh": "Dembrandt 网站设计系统提取器",
+      "name_en": "Dembrandt",
+      "summary_zh": "一条命令把任意网站的设计系统提取成设计 token：Logo、颜色、字体、间距、圆角、阴影、动效与组件样式，支持 W3C DTCG 导出、DESIGN.md、Tailwind v4 @theme 与 WCAG 对比度审计，内置 MCP 服务可被 Claude、Cursor 等直接调用。",
+      "summary_en": "Extract any website's design system into tokens: colors, typography, spacing, borders, shadows, motion and components, with DTCG, DESIGN.md and Tailwind exports, WCAG audit and a built-in MCP server.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "cli-tool",
+      "kind_label": "CLI 工具",
+      "tags": [
+        "cli",
+        "mcp",
+        "design-system",
+        "design-md",
+        "design-tokens"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://dembrandt.com/",
+      "repo": "https://github.com/dembrandt/dembrandt",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "MIT 许可可商用；首次使用必须运行 install-browser 安装 Playwright Chromium，否则报 browser engine not available；通过读取公开页面 DOM 计算样式工作，Canvas/WebGL 站点无法分析，暗色模式需显式 --dark-mode；默认仅终端输出，需 --save-output 才落盘。",
+      "added_at": "2026-09-08",
+      "updated_at": "2026-09-08",
+      "install": "bash\n# CLI（Node.js 18+）\nnpm install -g dembrandt\ndembrandt install-browser        # 一次性：安装匹配的 Chromium\ndembrandt dembrandt.com          # 提取目标站点\n\n# 或免全局安装\nnpx dembrandt dembrandt.com      # 同样需先 npx dembrandt install-browser\n\n# MCP 接入（Claude Code 示例）\nclaude mcp add --transport stdio dembrandt -- npx -y --package dembrandt dembrandt-mcp",
+      "detail_url": "skills/dembrandt.html"
+    },
+    {
       "id": "depth-studio",
       "name_zh": "Depth Studio 深度视频生成",
       "name_en": "Depth Studio",
@@ -1114,6 +1290,46 @@
       "updated_at": "2026-08-27",
       "install": "请帮我安装并启动这个项目：\nhttps://github.com/Toolsai/Depth-Studio",
       "detail_url": "skills/depth-studio.html"
+    },
+    {
+      "id": "emilkowalski-skills",
+      "name_zh": "Emil Kowalski 设计与动效技能集",
+      "name_en": "Emil Kowalski Skills",
+      "summary_zh": "面向设计师与工程师的 UI 与动效技能集，12 个技能覆盖动画实现与审查、动效机会挖掘、动画词汇、Apple 设计原则、Swift 编写、UI 库选型与原型切换，基于作者在 Vercel 与 Linear 的多年实战经验，一条 npx 命令即可装进 Agent。",
+      "summary_en": "A skill pack for designers and engineers: 12 skills for animation building, review, opportunities, vocabulary, Apple design principles, Swift and prototyping; installs with one npx command.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "skill-collection",
+      "kind_label": "技能集",
+      "tags": [
+        "skill-pack",
+        "motion-design",
+        "ui-generation",
+        "design-system",
+        "ai-agent"
+      ],
+      "languages": [
+        "markdown"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://emilkowal.ski/skill",
+      "repo": "https://github.com/emilkowalski/skills",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "emil-skills"
+      ],
+      "risk_notes": "MIT 许可可商用；技能以英文编写，通过 skills.sh CLI（npx skills@latest add）安装到支持的 Agent；内容为作者个人经验沉淀，动画建议偏 Web/React 与 React Native（animate-expo），非通用设计规范。",
+      "added_at": "2026-09-08",
+      "updated_at": "2026-09-08",
+      "install": "bash\nnpx skills@latest add emilkowalski/skills",
+      "detail_url": "skills/emilkowalski-skills.html"
     },
     {
       "id": "fantasy-life-force-portrait-photography",

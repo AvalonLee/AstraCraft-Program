@@ -1,3 +1,5 @@
+import json
+
 from scripts._common import REPO_ROOT, discover_entries
 from scripts.catalog_types import RecordType, parse_catalog_document, validate_document_boundary
 
@@ -17,6 +19,7 @@ def test_root_is_the_only_installable_skill() -> None:
 def test_all_current_entries_pass_the_format_boundary() -> None:
     entries = discover_entries()
 
-    assert len(entries) == 76
+    version = json.loads((REPO_ROOT / "data-version.json").read_text(encoding="utf-8"))
+    assert len(entries) == version["entry_count"]
     for entry in entries:
         validate_document_boundary(parse_catalog_document(entry.skill_file, REPO_ROOT))

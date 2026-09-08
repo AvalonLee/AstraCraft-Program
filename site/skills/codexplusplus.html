@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Codex++ Codex 桌面增强器 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Codex++ Codex 桌面增强器</h1>
+      <p class="hero-subtitle">Codex++ (CodexPlusPlus)</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>Agent 基础设施</span><span>常规</span><span class="lic-badge lic-unknown" title="AGPL-3.0-only">版权未声明</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">面向 OpenAI Codex / ChatGPT 桌面应用的外部启动器与管理工具，通过 CDP 注入提供供应商切换、协议转换、会话管理与界面增强，不修改官方应用文件。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/BigPizzaV3/CodexPlusPlus" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://codexpp.cc/" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Codex++ Codex 桌面增强器</h1>
+<blockquote>OpenAI Codex / ChatGPT 桌面应用的外部启动器与管理工具。上游：<a href="https://github.com/BigPizzaV3/CodexPlusPlus" target="_blank" rel="noopener">BigPizzaV3/CodexPlusPlus</a> · 许可证：AGPL-3.0-only</blockquote>
+<h2>这是什么</h2>
+<p>Codex++ 是一个不侵入官方应用的增强工具：它通过 Chromium DevTools Protocol 和本地辅助服务为 Codex 桌面版提供供应商切换、协议转换（Chat Completions 转 Responses）、会话管理（批量删除、Markdown 导出、Token 用量历史）和界面增强（中文界面、插件市场、会话宽度恢复等）。不修改 <code>app.asar</code>，不向安装目录写补丁。</p>
+<p>供应商管理是它的强项：支持官方登录、官方登录混入 API、纯 API 和聚合供应商（故障转移、按会话/请求/权重轮转）四种模式，每供应商可配置 Responses 或 Chat Completions 协议、模型列表、上下文窗口和自动压缩阈值，还可按供应商启用不同的 MCP Server、Skill 和 Plugin。</p>
+<h2>怎么安装</h2>
+<p>从 <a href="https://github.com/BigPizzaV3/CodexPlusPlus/releases" target="_blank" rel="noopener">GitHub Releases</a> 下载最新安装包：</p>
+<pre><code class="lang-bash"># Windows：CodexPlusPlus-*-windows-x64-setup.exe
+# macOS Intel：CodexPlusPlus-*-macos-x64.dmg
+# macOS Apple Silicon：CodexPlusPlus-*-macos-arm64.dmg</code></pre>
+<p>安装后有两个入口：<code>Codex++</code> 用于静默启动官方应用，<code>Codex++ 管理工具</code> 用于配置供应商、模型和增强功能。</p>
+<p>macOS 如遇 Gatekeeper 拦截（"已损坏，无法打开"），执行：</p>
+<pre><code class="lang-bash">sudo xattr -rd com.apple.quarantine /Applications/Codex++\ 管理工具.app
+sudo xattr -rd com.apple.quarantine /Applications/Codex++.app</code></pre>
+<h2>怎么用</h2>
+<p>1. 首次使用先打开 <strong>管理工具</strong>，确认应用路径和运行状态 2. 配置供应商：选择模式（官方登录 / 混入 API / 纯 API / 聚合供应商），填入 Base URL 和 Key，用模型测试验证连通性 3. 从 <strong>Codex++</strong> 入口启动官方应用，增强功能和供应商配置自动生效 4. 在管理工具中管理会话（批量删除 / 导出 / Token 统计）、MCP/Skill/Plugin 白名单和用户脚本</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 AGPL-3.0-only</strong>：修改并分发本项目或通过网络提供修改后版本时，需按 AGPLv3 开放源码；许可证不覆盖 OpenAI、ChatGPT、Codex 的商标和应用资源。</li><li><strong>兼容性</strong>：依赖官方桌面应用的页面结构、CDP 和本地数据格式，官方更新后部分注入功能可能需要跟随适配。</li><li><strong>数据备份</strong>：修改供应商配置或本地会话数据前应保留备份；配置在 <code>~/.codex/config.toml</code>，登录状态在 <code>~/.codex/auth.json</code>。</li><li><strong>macOS 未签名</strong>：安装包未签名/未公证时，Gatekeeper 会拦截，需手动解除隔离。</li><li>维护活跃（2026-09 持续更新），当前 30,281 stars。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-06 · 更新于 2026-09-06 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

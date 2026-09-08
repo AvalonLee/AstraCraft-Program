@@ -16,6 +16,11 @@
 
 ### 新增
 
+- **Emil Kowalski 设计与动效技能集（2026-09-08）**：收录 `design-creative/emilkowalski-skills`（MIT）。★36.2k 的面向设计师与工程师技能合集（12 个 SKILL.md）：动画构建（Web / React Native）、严格动画审查、全库审计、动效机会挖掘、动画词汇、Apple 设计原则转译、现代 Swift、UI 库选型、多版本原型切换与 Sonner toast 指南；`npx skills@latest add emilkowalski/skills` 一键安装。评级：常规。
+- **Dembrandt 网站设计系统提取器（2026-09-08）**：收录 `design-creative/dembrandt`（MIT）。★3.4k 的 TypeScript CLI（Node 18+）：Playwright 渲染并读取 DOM 计算样式，一条命令提取任意网站的设计 token（颜色 / 字体 / 间距 / 圆角 / 阴影 / 动效 / 组件 / 断点），支持 W3C DTCG、DESIGN.md、Tailwind v4 `@theme`、WCAG 审计、GitHub Action 漂移门禁与内置 MCP（`dembrandt-mcp`）。评级：常规。目录总数由 79 增至 **81**（两条同批）。
+- **Kaneo 开源极简项目管理平台（2026-09-08）**：收录 `agent-infra/kaneo`（MIT）。★9.0k 的极简自托管项目管理平台（TypeScript / React + Hono）：看板、Issue、项目与标签一体，官方反对"功能堆叠"；每个实例内置 HTTP MCP 端点 `/api/mcp` 并发布官方 `@kaneo/mcp`（npm stdio），Claude、Cursor 等 MCP 客户端可在对话中直接管理任务、项目与标签；支持 Docker Compose / Coolify / Helm 自托管。评级：常规。目录总数由 78 增至 **79**。
+- **CC Switch 多 Agent 供应商切换器（2026-09-06）**：收录 `agent-infra/cc-switch`（MIT）。★131.3k 的跨平台桌面应用（Tauri 2）：统一管理 Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw、Grok Build 与 Hermes 等 8 款 AI 编程工具的供应商切换、MCP/Skills/Prompts 同步、本地代理故障转移与用量统计；50+ 内置供应商预设一键导入，SQLite 原子写入。评级：主推（core）。目录总数由 76 增至 **78**。
+- **Codex++ Codex 桌面增强器（2026-09-06）**：收录 `agent-infra/codexplusplus`（AGPL-3.0-only）。★30.3k 的 OpenAI Codex / ChatGPT 桌面应用外部启动器与管理工具（Tauri 2 / Rust）：通过 CDP 注入提供供应商切换（官方登录 / 混入 API / 纯 API / 聚合轮转）、协议转换、会话管理（批量删除 / Markdown 导出 / Token 统计）与界面增强（中文 / 插件市场 / 滚动恢复），不修改 app.asar。评级：常规。目录总数由 76 增至 **77**（与 CC Switch 同批合计增至 **78**）。
 - **Hell Grind AIGC Skill（2026-09-05）**：收录 `design-creative/hell-grind-aigc-skill`（MIT）。受 Higgsfield《Hell Grind》95 分钟 AI 故事片生产结构启发的模型无关 AIGC 视频生产管理器：七层提示词架构、22 个按需加载方法模块、14 张 schema v2 项目表、六大失败分类稳定错误码、本地确定性提示词审计器和只读项目校验器（0 网络请求 0 数据库操作）。评级：常规。目录总数由 75 增至 **76**。
 - **Crawl4AI LLM 友好爬虫（2026-09-05）**：收录 `research-intel/crawl4ai`（Apache 2.0）。★81.4k 的 GitHub 最多 star 开源 LLM 友好爬虫：网页 → 干净 LLM-ready Markdown（Fit Markdown 去噪），异步浏览器池、深度爬取 + 崩溃恢复 + prefetch、CLI + Docker 部署；爬取零 API Key。评级：主推（core）。目录总数由 74 增至 **75**。
 - **MediaCrawler 自媒体爬虫（2026-09-05）**：收录 `research-intel/mediacrawler`（NON-COMMERCIAL LEARNING LICENSE，仅限学习）。★64.5k 的多平台自媒体采集工具：小红书 / 抖音 / 快手 / B 站 / 微博 / 贴吧 / 知乎的关键词搜索、帖子详情、二级评论、创作者主页全支持；Playwright 保留登录态免 JS 逆向，CDP 模式降低风控风险。评级：常规。目录总数由 73 增至 **74**。

@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-08T13:22:04Z",
-  "count": 81,
+  "generated_at": "2026-09-09T15:38:27Z",
+  "count": 82,
   "categories": [
     {
       "dir": "writing-docs",
@@ -149,6 +149,48 @@
       "updated_at": "2026-09-05",
       "install": "bash\nuv add browser-use\nbrowser-use skill install",
       "detail_url": "skills/browser-use.html"
+    },
+    {
+      "id": "caveman",
+      "name_zh": "Caveman Agent 省 Token 工具集",
+      "name_en": "Caveman",
+      "summary_zh": "让 AI 编码 Agent 说更少、读更省的组合工具：MIT 技能让输出 token 省 65%（30+ Agent 可装），本地 Go 代理压缩输入流（Claude Code 基准 -33.2%、18/18 正确性通过），原内容本地备份可恢复，/caveman 分级模式含 wenyan 文言文风。",
+      "summary_en": "A token-saving toolkit for AI coding agents: an MIT skill that cuts 65% of output tokens across 30+ agents, plus a local Go proxy that shrinks what agents read with byte-exact local recovery.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "prompt-engineering",
+        "claude-code",
+        "codex",
+        "ai-agent",
+        "cli",
+        "token-optimization"
+      ],
+      "languages": [
+        "go",
+        "markdown"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "MIT AND BSL-1.1",
+      "license_bucket": "unknown",
+      "homepage": "https://docs.caveman.so/docs/quickstart",
+      "repo": "https://github.com/JuliusBrussee/caveman",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "caveman-ai"
+      ],
+      "risk_notes": "拆分许可证：skill/CLI/SDK 为 MIT，Engine/Proxy/Browse/MCP server 等 Go 运行时为 BSL-1.1（源可用非 OSI，自托管第一方流量含生产免费，第三方托管需商业授权，2030-06-21 或发布四年后转 Apache-2.0）；skill 只省输出，每轮固定多花约 1-1.5k input token，本就简洁的任务可能亏损；CLI 默认匿名遥测（caveman telemetry off 或 DO_NOT_TRACK=1 关闭）；所有压缩本地可恢复。",
+      "added_at": "2026-09-09",
+      "updated_at": "2026-09-09",
+      "install": "bash\n# 小石头：skill（30+ Agent，MIT）\nnpx skills add JuliusBrussee/caveman\n\n# 大石头：本地代理（Node.js 22.13+，MIT CLI + BSL-1.1 引擎）\nnpm install -g @caveman-ai/cli && caveman setup --install\ncaveman claude        # 或 codex · gemini · aider · kilo · qwen · opencode · hermes · openclaw · pi",
+      "detail_url": "skills/caveman.html"
     },
     {
       "id": "cc-switch",

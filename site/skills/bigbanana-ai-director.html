@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BigBanana AI 漫剧导演工场 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">BigBanana AI 漫剧导演工场</h1>
+      <p class="hero-subtitle">BigBanana AI Director</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>常规</span><span class="lic-badge lic-commercial" title="CC-BY-NC-SA-4.0">商用授权</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">面向短剧与漫剧的一站式 AI 导演平台：导入小说或创意后生成结构化剧本，沉淀角色/场景/道具一致性资产，再用首尾帧或九宫格分镜驱动镜头生成，最后完成预览、粗剪与成片交付。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/shuyu-labs/BigBanana-AI-Director" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://director.tree456.com/" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>BigBanana AI 漫剧导演工场</h1>
+<blockquote>AI 一站式短剧/漫剧生成平台。上游：<a href="https://github.com/shuyu-labs/BigBanana-AI-Director" target="_blank" rel="noopener">shuyu-labs/BigBanana-AI-Director</a> · 许可证：CC BY-NC-SA 4.0 · 约 2.1k stars</blockquote>
+<h2>这是什么</h2>
+<p>BigBanana 用“Script → Asset → Keyframe → Shot → Cut”的工业化流程替代纯抽卡式生成：</p>
+<ul><li><strong>项目级工作区</strong>：按“项目 → 季 → 集”组织内容，支持导入整篇小说自动拆分多集草稿、世界观锚点、资产库和整库备份。</li><li><strong>叙事规划</strong>：从大纲、小说片段或创意生成角色、场景、道具、镜头等结构化剧本，可配置语言、时长、视觉风格与模型组合。</li><li><strong>一致性资产</strong>：为角色生成标准定妆照并维护衣橱系统，为场景、道具建立参考图与提示词，支持跨项目资产复用和批量补齐。</li><li><strong>镜头制作</strong>：在网格化镜头工作台中管理上下文，使用首帧/尾帧、九宫格分镜和视频插值生成镜头。</li><li><strong>成片交付</strong>：提供预览、粗剪、导出与备份；提示词集中管理便于统一修正生成质量。</li></ul>
+<h2>怎么安装</h2>
+<pre><code class="lang-bash">git clone https://github.com/shuyu-labs/BigBanana-AI-Director.git
+cd BigBanana-AI-Director
+docker-compose up -d</code></pre>
+<p>首次启动会拉取并启动官方镜像；浏览器打开 <code>http://localhost:3005</code>。查看日志用 <code>docker-compose logs -f</code>，停止用 <code>docker-compose down</code>。</p>
+<h2>怎么用</h2>
+<p>1. 首次进入时在新手引导、账号中心或模型配置中填入 AntSK API Key / Token。 2. 在项目中心新建项目，或在项目概览中导入整篇小说。 3. 先补充角色、场景、道具与世界观资源。 4. 进入 Phase 01 生成结构化剧本，并校对角色、动作、台词与提示词。 5. 进入 Phase 02/03 补齐一致性资产，生成首尾帧、九宫格分镜和视频片段。 6. 进入 Phase 04/05 预览、粗剪、导出与备份。</p>
+<h2>注意事项</h2>
+<ul><li>上游声明 <strong>CC BY-NC-SA 4.0</strong>：允许个人学习与非商业二次创作，禁止商业用途；商业源码与授权需联系作者。</li><li>因抄袭/搬运问题，后续版本仅通过官方 Docker 镜像发布，仓库保留说明与历史参考。</li><li>生成依赖外部模型能力，例如 LLM、图像模型与视频模型；官方镜像预置工作流仍需配置对应 API/模型，费用自担。</li><li>若不满足“长期免费”预期，上游明确提示可选官方大模型产品或商业版适配。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-10 · 更新于 2026-09-10 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

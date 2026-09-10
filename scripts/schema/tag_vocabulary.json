@@ -84,7 +84,9 @@
     "video-dubbing",
     "web-crawler",
     "canvas",
-    "voice"
+    "voice",
+    "comfyui",
+    "image-generation"
   ],
   "aliases": {
     "claude": "claude-code",

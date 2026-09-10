@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Caveman Agent 省 Token 工具集 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Caveman Agent 省 Token 工具集</h1>
+      <p class="hero-subtitle">Caveman</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>Agent 基础设施</span><span>常规</span><span class="lic-badge lic-unknown" title="MIT AND BSL-1.1">版权未声明</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">让 AI 编码 Agent 说更少、读更省的组合工具：MIT 技能让输出 token 省 65%（30+ Agent 可装），本地 Go 代理压缩输入流（Claude Code 基准 -33.2%、18/18 正确性通过），原内容本地备份可恢复，/caveman 分级模式含 wenyan 文言文风。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/JuliusBrussee/caveman" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://docs.caveman.so/docs/quickstart" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Caveman Agent 省 Token 工具集</h1>
+<blockquote>"why use many token when few token do trick"——让 AI 编码 Agent 说更少、读更省。上游：<a href="https://github.com/JuliusBrussee/caveman" target="_blank" rel="noopener">JuliusBrussee/caveman</a> · 许可证：MIT（skill/CLI）+ BSL-1.1（引擎运行时）</blockquote>
+<h2>这是什么</h2>
+<p>Caveman 是 meme 外壳、严肃内核的 token 优化工具集，两个组件可叠加：</p>
+<p><strong>小石头（skill）</strong>：一个规则文件，把 Agent 的"口水话"压短——代码、命令、路径、错误信息原样保留，只压缩说明性文字。30+ Agent 可装，<code>/caveman lite|full|ultra</code> 控强度，另有 wenyan 文言模式；附 <code>/caveman-commit</code>（极简 Conventional Commit）、<code>/caveman-review</code>（一行式审查发现）、<code>cavecrew-*</code> 压缩子代理预设和 <code>investigate-first</code> 等省 token 工作模式。</p>
+<p><strong>大石头（proxy）</strong>：本地 Go 进程位于 Agent 与 provider 之间，<code>detect()</code> 按 payload 类型（json / log / code / diff / search-result / text）压缩 Agent 读取的上下文，原内容存本地 SQLite 并返回 recovery handle，Agent 可随时 <code>caveman_retrieve</code> 拉回原文。无 Caveman 服务器在链路中，Claude Pro/Max 登录直通。</p>
+<p>上游自报基准：skill 十条真实 Claude API 提示平均输出 1214 → 294 tokens（-65%）；proxy 54-run Claude Code 基准输入 -33.2%（885,793 → 591,673），18/18 精确答案检查通过；网页浏览压缩 129.8 倍。维护者公开保留反例（无压缩变换的 HTML 案例 +9.9%）并维护 <a href="https://github.com/JuliusBrussee/caveman/blob/main/docs/HONEST-NUMBERS.md" target="_blank" rel="noopener">HONEST-NUMBERS.md</a> 全账本。</p>
+<h2>怎么安装</h2>
+<pre><code class="lang-bash"># 小石头：skill（30+ Agent，MIT）
+npx skills add JuliusBrussee/caveman
+
+# 大石头：本地代理（Node.js 22.13+，MIT CLI + BSL-1.1 引擎）
+npm install -g @caveman-ai/cli &amp;&amp; caveman setup --install
+caveman claude        # 或 codex · gemini · aider · kilo · qwen · opencode · hermes · openclaw · pi</code></pre>
+<p>一次性安装 Claude Code hooks 与状态栏徽章：</p>
+<pre><code class="lang-bash">curl -fsSL https://raw.githubusercontent.com/JuliusBrussee/caveman/v2.6.0/install.sh | bash
+# Windows PowerShell 5.1+：irm https://raw.githubusercontent.com/JuliusBrussee/caveman/v2.6.0/install.ps1 | iex</code></pre>
+<h2>怎么用</h2>
+<ul><li>装好 skill 后 <code>/caveman</code> 唤醒，<code>off</code> 关闭；<code>caveman &lt;agent&gt;</code> 常驻代理并启动 Agent，<code>caveman wrap &lt;agent&gt;</code> 单次会话不留痕、不改配置文件。</li><li>不在列表的 Agent / 框架（Vercel AI SDK、LangChain、LiteLLM 等）把 baseURL 指向本地代理即可；MCP 宿主可用 5 个工具：<code>caveman_compress</code> / <code>caveman_retrieve</code> / <code>caveman_stats</code> / <code>caveman_toon_encode</code> / <code>caveman_toon_decode</code>。</li><li><code>caveman learn</code> 本地只读分析历史会话的 token 去向并按最差排序列出修复项，<code>learn implement</code> 逐 diff 应用（不降 token 自动回滚）；<code>caveman trial -- claude</code> 做真实 A/B 后再决定常驻。</li><li>其他动词：<code>caveman shrink -- pnpm test</code>（压缩命令输出，字节级可恢复）、<code>caveman browse</code>（压缩 a11y 树的本地浏览）、<code>caveman mem</code>（跨会话记忆）、<code>caveman convert</code>（pixel 模式把 skill 渲染成图片省 token）。</li></ul>
+<h2>注意事项</h2>
+<ul><li><strong>拆分许可证</strong>：MIT 覆盖 skill、CLI、Agent SDK、client SDK、contracts；BSL-1.1 覆盖 Engine、Proxy、Cache Engine、rewriter、Browse、MCP server 等 Go 运行时——自托管第一方流量（含生产）免费，为第三方托管需商业授权，每版本 2030-06-21 或发布四年后转 Apache-2.0。</li><li><strong>诚实数字</strong>：skill 只省输出，规则本身每轮多花约 1-1.5k input token；整账单节省低于基准表，本就简洁的任务可能亏钱，先用 <code>caveman trial</code> 实测自己的工作负载。</li><li><strong>隐私</strong>：全部本地运行、无需账号；CLI 默认匿名遥测（仅命令名与 token 计数），<code>caveman telemetry off</code> 或 <code>DO_NOT_TRACK=1</code> 永久关闭。</li><li><strong>可恢复</strong>：所有压缩都留本地备份（SQLite recovery handle / <code>SKILL.orig.md</code>），pixel 模式转换失败时字节级还原；Codex 暂跳过 shrink hook（上游 runtime 限制）。</li><li>维护非常活跃（2026-09-09 当天仍有推送），截至 2026-09-09 核验约 104,494 stars。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-09 · 更新于 2026-09-09 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

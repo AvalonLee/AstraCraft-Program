@@ -16,6 +16,7 @@
 
 ### 新增
 
+- **Caveman Agent 省 Token 工具集（2026-09-09）**：收录 `agent-infra/caveman`（MIT + BSL-1.1 拆分）。★104.5k 的 meme 外壳、严肃内核 token 优化工具集（Go + Markdown）：MIT skill 压缩 Agent 输出（10 条真实 Claude API 基准平均 -65%，代码/命令/路径/错误信息不压缩，30+ Agent 可装，含 wenyan 文言模式）；本地 Go proxy 压缩 Agent 读取的输入流（54-run Claude Code 基准 -33.2%，18/18 精确答案通过，原内容本地 SQLite 备份可恢复）；配套 learn / trial / shrink / browse / mem / convert 等 CLI 动词与 5 个 MCP 工具。评级：常规。目录总数由 81 增至 **82**。
 - **Emil Kowalski 设计与动效技能集（2026-09-08）**：收录 `design-creative/emilkowalski-skills`（MIT）。★36.2k 的面向设计师与工程师技能合集（12 个 SKILL.md）：动画构建（Web / React Native）、严格动画审查、全库审计、动效机会挖掘、动画词汇、Apple 设计原则转译、现代 Swift、UI 库选型、多版本原型切换与 Sonner toast 指南；`npx skills@latest add emilkowalski/skills` 一键安装。评级：常规。
 - **Dembrandt 网站设计系统提取器（2026-09-08）**：收录 `design-creative/dembrandt`（MIT）。★3.4k 的 TypeScript CLI（Node 18+）：Playwright 渲染并读取 DOM 计算样式，一条命令提取任意网站的设计 token（颜色 / 字体 / 间距 / 圆角 / 阴影 / 动效 / 组件 / 断点），支持 W3C DTCG、DESIGN.md、Tailwind v4 `@theme`、WCAG 审计、GitHub Action 漂移门禁与内置 MCP（`dembrandt-mcp`）。评级：常规。目录总数由 79 增至 **81**（两条同批）。
 - **Kaneo 开源极简项目管理平台（2026-09-08）**：收录 `agent-infra/kaneo`（MIT）。★9.0k 的极简自托管项目管理平台（TypeScript / React + Hono）：看板、Issue、项目与标签一体，官方反对"功能堆叠"；每个实例内置 HTTP MCP 端点 `/api/mcp` 并发布官方 `@kaneo/mcp`（npm stdio），Claude、Cursor 等 MCP 客户端可在对话中直接管理任务、项目与标签；支持 Docker Compose / Coolify / Helm 自托管。评级：常规。目录总数由 78 增至 **79**。

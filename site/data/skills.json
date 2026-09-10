@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-09T15:38:27Z",
-  "count": 82,
+  "generated_at": "2026-09-10T15:18:37Z",
+  "count": 87,
   "categories": [
     {
       "dir": "writing-docs",
@@ -1085,6 +1085,52 @@
       "detail_url": "skills/awesome-gpt-image-2.html"
     },
     {
+      "id": "bigbanana-ai-director",
+      "name_zh": "BigBanana AI 漫剧导演工场",
+      "name_en": "BigBanana AI Director",
+      "summary_zh": "面向短剧与漫剧的一站式 AI 导演平台：导入小说或创意后生成结构化剧本，沉淀角色/场景/道具一致性资产，再用首尾帧或九宫格分镜驱动镜头生成，最后完成预览、粗剪与成片交付。",
+      "summary_en": "An AI short drama and motion comic platform that turns scripts into consistent assets, keyframes and shots, then delivers edited video through a project-level production workflow.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "short-drama",
+        "storyboard",
+        "image-generation",
+        "video-production",
+        "character-design",
+        "cinematic",
+        "ai-agent",
+        "docker"
+      ],
+      "languages": [
+        "docker"
+      ],
+      "doc_languages": [
+        "zh",
+        "en",
+        "ja"
+      ],
+      "license": "CC-BY-NC-SA-4.0",
+      "license_bucket": "commercial",
+      "homepage": "https://director.tree456.com/",
+      "repo": "https://github.com/shuyu-labs/BigBanana-AI-Director",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "BigBanana AI Director",
+        "AI 漫剧工场"
+      ],
+      "risk_notes": "官方声明采用 CC BY-NC-SA 4.0，仅限非商业用途；后续版本只通过官方 Docker 镜像发布，商业源码需授权；部署后需配置 AntSK API Key，并使用外部 LLM、图像与视频模型，费用自担。",
+      "added_at": "2026-09-10",
+      "updated_at": "2026-09-10",
+      "install": "bash\ngit clone https://github.com/shuyu-labs/BigBanana-AI-Director.git\ncd BigBanana-AI-Director\ndocker-compose up -d",
+      "detail_url": "skills/bigbanana-ai-director.html"
+    },
+    {
       "id": "capcut-mate",
       "name_zh": "CapCut Mate 剪映自动化",
       "name_en": "CapCut Mate API",
@@ -1213,6 +1259,86 @@
       "detail_url": "skills/cinema-dna-21x9x3.html"
     },
     {
+      "id": "comfyui-minimax-h3-studio",
+      "name_zh": "MiniMax H3 Studio ComfyUI 图像工作流",
+      "name_en": "ComfyUI MiniMax H3 Studio",
+      "summary_zh": "把 MiniMax H3 封装成 ComfyUI 图像生产工作流：支持文生图、图生图、最多 9 张参考图、角色化提示词、LightX/PDD 加速路径、TAEH3 预览、Face Refine 与基准矩阵测试，免去手工搭建复杂图。",
+      "summary_en": "A ComfyUI custom node suite that turns MiniMax H3 into image workflows with text-to-image, editing, up to nine references, fast paths, previews, face refinement, and benchmarking.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "comfyui",
+        "image-generation",
+        "prompt-engineering",
+        "character-design",
+        "framework"
+      ],
+      "languages": [
+        "python"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/thaakeno/ComfyUI-MiniMax-H3-Studio",
+      "repo": "https://github.com/thaakeno/ComfyUI-MiniMax-H3-Studio",
+      "tier": "watch",
+      "tier_label": "观察",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "H3 Studio",
+        "MiniMax H3 Studio"
+      ],
+      "risk_notes": "项目仍为 alpha，把音频-视频模型 H3 改用于图像生成，高分辨率/加速/后处理路径实验性强；暂不支持 ComfyUI Nodes 2.0；不自动下载核心 H3 模型，模型与显存要求较高。",
+      "added_at": "2026-09-10",
+      "updated_at": "2026-09-10",
+      "install": "bash\ncd /path/to/ComfyUI/custom_nodes\ngit clone https://github.com/thaakeno/ComfyUI-MiniMax-H3-Studio.git\ncd ComfyUI-MiniMax-H3-Studio\npython -m pip install -r requirements.txt",
+      "detail_url": "skills/comfyui-minimax-h3-studio.html"
+    },
+    {
+      "id": "comfyui-vnccs-utils",
+      "name_zh": "VNCCS Utils ComfyUI 创作工具箱",
+      "name_en": "ComfyUI VNCCS Utils",
+      "summary_zh": "为 ComfyUI 提供图生 3D 高斯场景、无限画布图像编辑、3D 姿态与关键帧生成、视觉相机控制和模型管理等节点，把图像生成、局部编辑、姿态控制与模型管理收进同一套工作流。",
+      "summary_en": "A ComfyUI utility collection for image-to-3D Gaussian scenes, infinite-canvas editing, 3D pose and keyframe generation, visual camera control, and model management.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "comfyui",
+        "image-generation",
+        "canvas",
+        "video-production",
+        "model-manager"
+      ],
+      "languages": [
+        "javascript",
+        "python"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/AHEKOT/ComfyUI_VNCCS_Utils",
+      "repo": "https://github.com/AHEKOT/ComfyUI_VNCCS_Utils",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "VNCCS 3D Factory 依赖本地 TripoSplat 推理与模型权重下载，实际效果受 GPU/显存和模型选择影响；新增节点或依赖后需重启 ComfyUI。",
+      "added_at": "2026-09-10",
+      "updated_at": "2026-09-10",
+      "install": "bash\ncd /path/to/ComfyUI/custom_nodes\ngit clone https://github.com/AHEKOT/ComfyUI_VNCCS_Utils.git\ncd ComfyUI_VNCCS_Utils\npip install -r requirements.txt",
+      "detail_url": "skills/comfyui-vnccs-utils.html"
+    },
+    {
       "id": "cowart",
       "name_zh": "Cowart Codex 无限画布",
       "name_en": "Cowart",
@@ -1332,6 +1458,51 @@
       "updated_at": "2026-08-27",
       "install": "请帮我安装并启动这个项目：\nhttps://github.com/Toolsai/Depth-Studio",
       "detail_url": "skills/depth-studio.html"
+    },
+    {
+      "id": "directors-console",
+      "name_zh": "Director's Console AI 影视工作台",
+      "name_en": "Director's Console",
+      "summary_zh": "把电影化提示词工程、分镜画布、素材库和多 ComfyUI 渲染编排放进统一工作流：用真实相机、镜头、胶片与灯光约束生成提示词，在无限画布管理分镜，并并行调度本地或远程 ComfyUI。",
+      "summary_en": "A unified AI VFX production console with cinema prompt engineering, storyboard canvas, media gallery, and distributed multi-node ComfyUI rendering for images and videos.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "comfyui",
+        "storyboard",
+        "image-generation",
+        "video-production",
+        "cinematic",
+        "film-language",
+        "prompt-engineering",
+        "ai-agent"
+      ],
+      "languages": [
+        "python",
+        "typescript"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "LicenseRef-Proprietary-All-Rights-Reserved",
+      "license_bucket": "unknown",
+      "homepage": "https://github.com/NickPittas/DirectorsConsole",
+      "repo": "https://github.com/NickPittas/DirectorsConsole",
+      "tier": "watch",
+      "tier_label": "观察",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "DirectorsConsole",
+        "Director Console"
+      ],
+      "risk_notes": "README 明确 proprietary software, all rights reserved，不可默认商用或再分发；需同时准备 Python、Node.js、Git 和至少一个 ComfyUI 实例；仓库最近更新距 2026-09-10 较久。",
+      "added_at": "2026-09-10",
+      "updated_at": "2026-09-10",
+      "install": "bash\ngit clone https://github.com/NickPittas/DirectorsConsole.git\ncd DirectorsConsole\npython start.py --setup",
+      "detail_url": "skills/directors-console.html"
     },
     {
       "id": "emilkowalski-skills",
@@ -1597,6 +1768,47 @@
       "updated_at": "2026-08-29",
       "install": "bash\nnpx skills add alchaincyf/huashu-design",
       "detail_url": "skills/huashu-design.html"
+    },
+    {
+      "id": "huobao-canvas",
+      "name_zh": "AI Canvas 可视化创作画布",
+      "name_en": "AI Canvas",
+      "summary_zh": "基于 Vue Flow 的节点式 AI 创作画布：在无限画布中连接文本、文生图、图片、视频生成与视频节点，支持 AI 提示词润色、分镜自动编排、图生视频、撤销重做和本地多项目存储。",
+      "summary_en": "A Vue Flow based visual AI canvas for text-to-image, image-to-video and storyboard workflows, with prompt polish, automatic orchestration, undo/redo, and local projects.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "canvas",
+        "image-generation",
+        "video-production",
+        "prompt-engineering",
+        "ai-agent"
+      ],
+      "languages": [
+        "vue",
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://marketing.chatfire.site/huobao-canvas/",
+      "repo": "https://github.com/chatfire-AI/huobao-canvas",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "AI Canvas"
+      ],
+      "risk_notes": "需要自备 OpenAI 兼容 API Base URL、Key 与模型；自动执行质量取决于模型能力；本地项目数据持久化在浏览器/本地存储中，生产使用请自行备份。",
+      "added_at": "2026-09-10",
+      "updated_at": "2026-09-10",
+      "install": "bash\ngit clone https://github.com/chatfire-AI/huobao-canvas.git\ncd huobao-canvas\nnpm install\nnpm run dev",
+      "detail_url": "skills/huobao-canvas.html"
     },
     {
       "id": "hyperframes",

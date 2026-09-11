@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DeepSeek++ 浏览器 Agent 工作台 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">DeepSeek++ 浏览器 Agent 工作台</h1>
+      <p class="hero-subtitle">DeepSeek++</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>Agent 基础设施</span><span>常规</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">把 DeepSeek 网页版扩展成浏览器内 AI Agent 工作台：支持 MCP 工具、长期记忆、Skills、多模态媒体分析、网页控制、保存项、产物下载、对话导出与定时自动化。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/zhu1090093659/deepseek-pp" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/zhu1090093659/deepseek-pp" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>DeepSeek++ 浏览器 Agent 工作台</h1>
+<blockquote>把 DeepSeek 网页版升级为浏览器内 Agent 工作台。上游：<a href="https://github.com/zhu1090093659/deepseek-pp" target="_blank" rel="noopener">zhu1090093659/deepseek-pp</a> · 许可证：Apache-2.0</blockquote>
+<h2>这是什么</h2>
+<p>DeepSeek++ 是一个开源浏览器扩展，支持 Chrome、Edge 和 Firefox。它在 DeepSeek 网页版旁边提供 Agent 工作台：侧边栏对话、MCP 服务与工具权限、长期记忆、内置/自定义 Skill、网页读取与控制、图片和视频分析、保存项、产物下载、对话导出与定时自动化。</p>
+<p>它适合已经使用 DeepSeek Web、但需要工具调用、可复用上下文、结构化产物和自动化流程的用户。项目提供简体中文与英文界面，核心数据保存在浏览器本地，支持从应用商店安装或从源码构建。</p>
+<h2>怎么安装</h2>
+<pre><code class="lang-bash"># 源码构建（需要 Node.js 与 npm）
+git clone https://github.com/zhu1090093659/deepseek-pp.git
+cd deepseek-pp
+npm install
+npm run build</code></pre>
+<p>构建后按浏览器加载：</p>
+<ul><li>Chrome：<code>chrome://extensions/</code> → 开启开发者模式 → 加载已解压的扩展程序 → 选择 <code>dist/chrome-mv3/</code></li><li>Edge：<code>edge://extensions/</code> → 加载解压缩的扩展 → 选择 <code>dist/edge-mv3/</code></li><li>Firefox：<code>about:debugging#/runtime/this-firefox</code> → 临时载入附加组件 → 选择 <code>dist/firefox-mv3/manifest.json</code></li></ul>
+<p>也可以直接从 <a href="https://chromewebstore.google.com/detail/deepseek++/kdmpkkahkhdmdhfkdihkopikgcocbpbf?hl=zh-CN" target="_blank" rel="noopener">Chrome Web Store</a> 安装。</p>
+<h2>怎么用</h2>
+<p>1. 安装后打开 <a href="https://chat.deepseek.com" target="_blank" rel="noopener">DeepSeek 网页版</a>，在侧边栏启用记忆、Skill、MCP、联网工具、对话导出或自动化。 2. 在 <code>MCP</code> 页添加远程或本机服务，按服务或工具切换自动/手动执行，并测试连接。 3. 需要处理图片、视频或本机 Office 文档时，按侧边栏提示安装对应的 Native Host，再在设置页配置模型与权限。 4. 使用 <code>/skill</code> 快速切换任务模板，或导入/创建自定义 Skill。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 Apache-2.0</strong>：宽松可商用。</li><li><strong>浏览器支持</strong>：当前面向桌面端 Chrome、Edge 和 Firefox，不提供移动端安装包。</li><li><strong>站点依赖</strong>：扩展围绕 DeepSeek 网页版工作，站点改版可能造成部分功能需要等待上游适配。</li><li><strong>权限边界</strong>：MCP、浏览器控制、Shell Native Host 都是有实际副作用的本地能力；建议只连接可信服务，按需开启手动确认。</li><li><strong>维护状态</strong>：截至 2026-09-11 核验约 1,841 stars，上游最近推送为 2026-08-13。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-11 · 更新于 2026-09-11 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

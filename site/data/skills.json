@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-10T15:18:37Z",
-  "count": 87,
+  "generated_at": "2026-09-11T11:25:50Z",
+  "count": 89,
   "categories": [
     {
       "dir": "writing-docs",
@@ -193,6 +193,52 @@
       "detail_url": "skills/caveman.html"
     },
     {
+      "id": "cc-haha",
+      "name_zh": "Claude Code Haha 桌面工作台",
+      "name_en": "Claude Code Haha",
+      "summary_zh": "本地优先的跨平台桌面端 Claude Code / Agent 工作台：多会话与 Worktree、Diff 审阅、模型与 MCP 管理、SubAgent 与 Workflow 编排、Computer Use、技能市场、H5 与 IM 接入。",
+      "summary_en": "Local-first cross-platform desktop workspace for Claude Code and agents: sessions, worktrees, diff review, MCP, subagents, workflows and remote access.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "ai-agent",
+        "multi-agent",
+        "desktop-app",
+        "claude-code",
+        "mcp",
+        "skills-management"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://cchaha.ai",
+      "repo": "https://github.com/NanmiCoder/cc-haha",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "cc-switch",
+        "codexplusplus"
+      ],
+      "aliases": [
+        "cc-haha",
+        "Claude Code Haha"
+      ],
+      "risk_notes": "MIT 许可可商用；桌面端发布包可能存在签名/公证差异，安装时需按系统提示确认来源；模型 API Key、会话与本地配置存于本机；Computer Use、权限模式与工作流可执行真实系统操作，应在受控环境逐步授权；调试 CLI 需要 Bun 运行时。",
+      "added_at": "2026-09-11",
+      "updated_at": "2026-09-11",
+      "install": "bash\n# 从 GitHub Releases 下载桌面端安装包\n# macOS / Windows / Linux：https://github.com/NanmiCoder/cc-haha/releases",
+      "detail_url": "skills/cc-haha.html"
+    },
+    {
       "id": "cc-switch",
       "name_zh": "CC Switch 多 Agent 供应商切换器",
       "name_en": "CC Switch",
@@ -329,6 +375,51 @@
       "updated_at": "2026-09-06",
       "install": "bash\n# Windows：CodexPlusPlus-*-windows-x64-setup.exe\n# macOS Intel：CodexPlusPlus-*-macos-x64.dmg\n# macOS Apple Silicon：CodexPlusPlus-*-macos-arm64.dmg",
       "detail_url": "skills/codexplusplus.html"
+    },
+    {
+      "id": "deepseek-pp",
+      "name_zh": "DeepSeek++ 浏览器 Agent 工作台",
+      "name_en": "DeepSeek++",
+      "summary_zh": "把 DeepSeek 网页版扩展成浏览器内 AI Agent 工作台：支持 MCP 工具、长期记忆、Skills、多模态媒体分析、网页控制、保存项、产物下载、对话导出与定时自动化。",
+      "summary_en": "Browser extension that turns DeepSeek Web into an AI agent workspace with MCP, memory, Skills, media analysis, web control and automation.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "ai-agent",
+        "mcp",
+        "memory",
+        "skill",
+        "skills-management",
+        "cn-localization"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "Apache-2.0",
+      "license_bucket": "open",
+      "homepage": "https://github.com/zhu1090093659/deepseek-pp",
+      "repo": "https://github.com/zhu1090093659/deepseek-pp",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "officecli"
+      ],
+      "aliases": [
+        "DeepSeek++",
+        "deepseek-pp"
+      ],
+      "risk_notes": "Apache-2.0 可商用；依赖 DeepSeek 网页版界面，上游 DOM 或站点策略变化可能影响扩展功能；MCP/浏览器控制/Shell 能力需按需授权，Shell MCP 会获得本机命令执行能力，安装前应确认来源并限制权限；多模态 API Key 与配置保存在浏览器本地。",
+      "added_at": "2026-09-11",
+      "updated_at": "2026-09-11",
+      "install": "bash\n# 源码构建（需要 Node.js 与 npm）\ngit clone https://github.com/zhu1090093659/deepseek-pp.git\ncd deepseek-pp\nnpm install\nnpm run build",
+      "detail_url": "skills/deepseek-pp.html"
     },
     {
       "id": "kaneo",

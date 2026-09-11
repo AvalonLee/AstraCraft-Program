@@ -15,6 +15,8 @@
 ## 2026-09
 
 ### 新增
+- **Claude Code Haha 桌面工作台（2026-09-11）**：收录 `agent-infra/cc-haha`（MIT）。★14.3k 的本地优先跨平台桌面端 Claude Code / Agent 工作台（TypeScript + Electron + React + Bun）：多会话、分支/Worktree、Diff 审阅、内置浏览器预览、权限审批、模型自选、MCP 管理、SubAgent 与动态 Workflow 编排、Computer Use、技能市场、H5 远程访问与多 IM 接入。评级：常规。目录总数由 87 增至 **88**。
+- **DeepSeek++ 浏览器 Agent 工作台（2026-09-11）**：收录 `agent-infra/deepseek-pp`（Apache-2.0）。★1.8k 的 DeepSeek 网页版浏览器扩展（Chrome / Edge / Firefox，TypeScript）：侧边栏 Agent 工作台，支持 MCP 工具、长期记忆、Skills、多模态媒体分析、网页控制、保存项、产物下载、对话导出与定时自动化。评级：常规。目录总数由 88 增至 **89**（两条同批）。
 
 - **Caveman Agent 省 Token 工具集（2026-09-09）**：收录 `agent-infra/caveman`（MIT + BSL-1.1 拆分）。★104.5k 的 meme 外壳、严肃内核 token 优化工具集（Go + Markdown）：MIT skill 压缩 Agent 输出（10 条真实 Claude API 基准平均 -65%，代码/命令/路径/错误信息不压缩，30+ Agent 可装，含 wenyan 文言模式）；本地 Go proxy 压缩 Agent 读取的输入流（54-run Claude Code 基准 -33.2%，18/18 精确答案通过，原内容本地 SQLite 备份可恢复）；配套 learn / trial / shrink / browse / mem / convert 等 CLI 动词与 5 个 MCP 工具。评级：常规。目录总数由 81 增至 **82**。
 - **Emil Kowalski 设计与动效技能集（2026-09-08）**：收录 `design-creative/emilkowalski-skills`（MIT）。★36.2k 的面向设计师与工程师技能合集（12 个 SKILL.md）：动画构建（Web / React Native）、严格动画审查、全库审计、动效机会挖掘、动画词汇、Apple 设计原则转译、现代 Swift、UI 库选型、多版本原型切换与 Sonner toast 指南；`npx skills@latest add emilkowalski/skills` 一键安装。评级：常规。

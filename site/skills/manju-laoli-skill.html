@@ -53,20 +53,20 @@
     </div>
     <p class="muted detail-meta">面向抖音 &amp; 红果爆款短剧/漫剧的工业化编剧与视听导演系统：五阶门控剧本、七维台词诊断、资产三视图锁、文武双模分镜、15 秒打戏 PREVIS、Seedance 三层解耦提示词与 P0~P2 质检门禁，一条龙贯穿小说分析到独立质检。</p>
     <div class="link-row" style="margin-top:14px;">
-      <a class="button button-secondary" href="https://github.com/AvalonLee/manju-laoli-skill" target="_blank" rel="noopener">查看仓库 / 源码</a>
-      <a class="button button-ghost" href="https://github.com/AvalonLee/manju-laoli-skill" target="_blank" rel="noopener">项目主页</a>
+      <a class="button button-secondary" href="https://github.com/lixiaoxiao9888-create/manju-laoli-skill" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/lixiaoxiao9888-create/manju-laoli-skill" target="_blank" rel="noopener">项目主页</a>
     </div>
   </div>
 
   <article id="body" class="content-panel detail-body" style="margin-top:24px;">
 <h1>漫剧老李 AIGC 全流程 Skill</h1>
-<blockquote>面向抖音 &amp; 红果爆款短剧/漫剧的工业化编剧与视听导演超级系统。上游：<a href="https://github.com/AvalonLee/manju-laoli-skill" target="_blank" rel="noopener">AvalonLee/manju-laoli-skill</a> · 许可证：MIT（见 <code>short-drama-director/LICENSE</code>）</blockquote>
+<blockquote>面向抖音 &amp; 红果爆款短剧/漫剧的工业化编剧与视听导演超级系统。上游：<a href="https://github.com/lixiaoxiao9888-create/manju-laoli-skill" target="_blank" rel="noopener">lixiaoxiao9888-create/manju-laoli-skill</a> · 许可证：MIT（见 <code>short-drama-director/LICENSE</code>）</blockquote>
 <h2>这是什么</h2>
 <p>一条龙贯穿「小说分析 → 门控编剧 → 台词诊断 → 资产与空间锁定 → 文武双模分镜动力学 → 视频模型精准提示词渲染 → 独立质检审查」的短剧/漫剧生产管线，供 AI 助手 / LLM 直接调用。主包 <code>short-drama-director</code> 为一个路由式 SKILL.md + 18 份专业规则手册（references/）+ 静态校验脚本（<code>check_package.py</code>）。核心模块：</p>
 <ul><li><strong>剧本</strong>：五阶门控引擎（Premise → Structure → Beat → Entity → Page），拒绝无大纲直奔台词。</li><li><strong>台词</strong>：七维全量诊断，杜绝播音腔与反向灌输设定，强制语速自检（3.5~5 字/秒）。</li><li><strong>资产</strong>：16 项资产锁定（A/B/C 分级）+ 三栏无头三视图参考图 + 3D 空间快照与 180° 轴线锁。</li><li><strong>分镜</strong>：文武双模——文戏微表情生理递进，武戏 15 秒 PREVIS 动力学（R1/R2/R3 三档）；11 环动力链、防守三态、终结技三幕、大招运镜 11 模式与全门派武学库。</li><li><strong>渲染</strong>：Seedance 2.0 / 即梦 / 可灵三层解耦提示词，单组 ≤15s 独立投喂。</li><li><strong>质检与合规</strong>：P0/P1/P2 三级独立门禁 + 声音三层相对电平；平台安全合规转译词典（安全默认 / 强动作非血腥 / 成人级草案）。</li></ul>
 <h2>怎么安装</h2>
 <pre><code class="lang-bash">mkdir -p ~/.claude/skills
-git clone --depth 1 https://github.com/AvalonLee/manju-laoli-skill.git /tmp/manju-laoli
+git clone --depth 1 https://github.com/lixiaoxiao9888-create/manju-laoli-skill.git /tmp/manju-laoli
 cp -r /tmp/manju-laoli/short-drama-director ~/.claude/skills/</code></pre>
 <p>OpenClaw 环境可直接：</p>
 <pre><code class="lang-bash">openclaw skills install ./short-drama-director --as short-drama-director</code></pre>
@@ -77,7 +77,7 @@ cp -r /tmp/manju-laoli/short-drama-director ~/.claude/skills/</code></pre>
 <ul><li><strong>测试版</strong>：V6.0 为测试版，由开源内容二次修改整合而成，暂无社区实测背书（评级：观察期）；关键生产用途建议先小样验证。</li><li><strong>外部模型依赖</strong>：出片依赖 Seedance 2.0 / 即梦 / 可灵等外部视频模型，按组投喂消耗额度；提示词管线不含本地渲染。</li><li><strong>合规责任</strong>：内置的合规转译词典（安全默认 / 强动作非血腥 / 成人级草案）只做转译提示，不构成内容合规保证，平台发布前仍需人工过审。</li><li><strong>同类对比</strong>：<code>writing-docs/shuohao-skills</code> 走「小说 → 短剧制作素材」的线性管线并带质量门脚本；本条目胜在武戏 PREVIS、资产锁定与视频模型提示词的深度，两者可按需组合。</li></ul>
   </article>
 
-  <p class="footer">收录于 2026-08-30 · 更新于 2026-08-30 · AstraCraft Program 轻量索引</p>
+  <p class="footer">收录于 2026-08-30 · 更新于 2026-09-15 · AstraCraft Program 轻量索引</p>
 </main>
 </body>
 </html>

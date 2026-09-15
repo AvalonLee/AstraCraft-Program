@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-11T11:25:50Z",
+  "generated_at": "2026-09-15T15:21:23Z",
   "count": 89,
   "categories": [
     {
@@ -2014,8 +2014,8 @@
       ],
       "license": "MIT",
       "license_bucket": "open",
-      "homepage": "https://github.com/AvalonLee/manju-laoli-skill",
-      "repo": "https://github.com/AvalonLee/manju-laoli-skill",
+      "homepage": "https://github.com/lixiaoxiao9888-create/manju-laoli-skill",
+      "repo": "https://github.com/lixiaoxiao9888-create/manju-laoli-skill",
       "tier": "watch",
       "tier_label": "观察",
       "featured": false,
@@ -2030,8 +2030,8 @@
       ],
       "risk_notes": "MIT 可商用；项目自述为测试版，由开源内容二次修改整合而成，尚无社区实测背书（star 数极低）；渲染依赖 Seedance 2.0/即梦/可灵等外部视频模型，消耗额度；内置平台合规转译词典但不构成内容合规保证，发布前仍需人工过审；安装目标以 OpenClaw 为主，其他 Agent 需手动复制目录。",
       "added_at": "2026-08-30",
-      "updated_at": "2026-08-30",
-      "install": "bash\nmkdir -p ~/.claude/skills\ngit clone --depth 1 https://github.com/AvalonLee/manju-laoli-skill.git /tmp/manju-laoli\ncp -r /tmp/manju-laoli/short-drama-director ~/.claude/skills/",
+      "updated_at": "2026-09-15",
+      "install": "bash\nmkdir -p ~/.claude/skills\ngit clone --depth 1 https://github.com/lixiaoxiao9888-create/manju-laoli-skill.git /tmp/manju-laoli\ncp -r /tmp/manju-laoli/short-drama-director ~/.claude/skills/",
       "detail_url": "skills/manju-laoli-skill.html"
     },
     {

@@ -11,8 +11,8 @@ tags: [short-drama, screenwriting, storyboard, seedance, openclaw, ai-agent, cha
 languages: [markdown]
 doc_languages: [zh, en]
 license: MIT
-homepage: https://github.com/AvalonLee/manju-laoli-skill
-repo: https://github.com/AvalonLee/manju-laoli-skill
+homepage: https://github.com/lixiaoxiao9888-create/manju-laoli-skill
+repo: https://github.com/lixiaoxiao9888-create/manju-laoli-skill
 tier: watch
 metrics:
   stars: 0
@@ -23,12 +23,12 @@ related: [shuohao-skills, huashu-skills]
 aliases: [漫剧老李, Short-Drama Director Suite, short-drama-director]
 risk_notes: MIT 可商用；项目自述为测试版，由开源内容二次修改整合而成，尚无社区实测背书（star 数极低）；渲染依赖 Seedance 2.0/即梦/可灵等外部视频模型，消耗额度；内置平台合规转译词典但不构成内容合规保证，发布前仍需人工过审；安装目标以 OpenClaw 为主，其他 Agent 需手动复制目录。
 added_at: "2026-08-30"
-updated_at: "2026-08-30"
+updated_at: "2026-09-15"
 ---
 
 # 漫剧老李 AIGC 全流程 Skill
 
-> 面向抖音 & 红果爆款短剧/漫剧的工业化编剧与视听导演超级系统。上游：[AvalonLee/manju-laoli-skill](https://github.com/AvalonLee/manju-laoli-skill) · 许可证：MIT（见 `short-drama-director/LICENSE`）
+> 面向抖音 & 红果爆款短剧/漫剧的工业化编剧与视听导演超级系统。上游：[lixiaoxiao9888-create/manju-laoli-skill](https://github.com/lixiaoxiao9888-create/manju-laoli-skill) · 许可证：MIT（见 `short-drama-director/LICENSE`）
 
 ## 这是什么
 
@@ -45,7 +45,7 @@ updated_at: "2026-08-30"
 
 ```bash
 mkdir -p ~/.claude/skills
-git clone --depth 1 https://github.com/AvalonLee/manju-laoli-skill.git /tmp/manju-laoli
+git clone --depth 1 https://github.com/lixiaoxiao9888-create/manju-laoli-skill.git /tmp/manju-laoli
 cp -r /tmp/manju-laoli/short-drama-director ~/.claude/skills/
 ```
 

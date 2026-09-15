@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>花叔开源 Skills 总目录 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">花叔开源 Skills 总目录</h1>
+      <p class="hero-subtitle">huashu-skills — Huashu&#x27;s Open-Source Agent Skills Master Index</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>写作与文档</span><span>常规</span><span class="lic-badge lic-unknown" title="UNKNOWN">版权未声明</span><span>技能集</span>
+    </div>
+    <p class="muted detail-meta">花叔全部开源 Agent Skills 的总目录：16 个旗舰 + 14 个人物视角 + 22 个内置共 52 个标准 SKILL.md 技能，覆盖公众号/短视频/小红书从选题、写作、审校、配图到分发的创作流水线，附 AI Agent 安装协议与机器可读 skills.json。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/alchaincyf/huashu-skills" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/alchaincyf/huashu-skills" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>花叔开源 Skills 总目录</h1>
+<blockquote>花叔（alchaincyf）全部开源 Agent Skills 的总目录，52 个标准 <code>SKILL.md</code> 技能分三层收录。上游：<a href="https://github.com/alchaincyf/huashu-skills" target="_blank" rel="noopener">alchaincyf/huashu-skills</a> · 许可证：未标注（UNKNOWN）</blockquote>
+<h2>这是什么</h2>
+<p>花叔（AI Native Coder · 独立开发者，代表作「小猫补光灯」）在 GitHub 上全部开源 Skill 的总目录，全部采用标准 Agent Skills 格式，Claude Code / Codex / Kimi Code 等支持该格式的 Agent 通用。三层结构：</p>
+<ul><li><strong>旗舰 Skills（16 个，独立仓库）</strong>：各深耕一个领域的完整系统，如 <code>huashu-design</code>（HTML 原生设计系统：原型/幻灯片/动画）、<code>huashu-gpt-image</code>（AI 生图 prompt 方法论）、<code>huashu-excel</code>（数据分析全流程）、<code>huashu-md-html</code>（万物转 Markdown、Markdown 出出版级 HTML/DOCX）、<code>nuwa-skill</code>（把人的思维方式蒸馏成 skill）、<code>darwin-skill</code>（让 skill 迭代进化）等。</li><li><strong>人物视角 Skills（14 个，独立仓库）</strong>：由女娲 skill 蒸馏生成的可运行思维框架（心智模型 + 决策启发式 + 表达 DNA），如乔布斯、芒格、费曼、Karpathy、Paul Graham 等视角。</li><li><strong>内置 Skills（22 个，本仓库子目录）</strong>：轻量内容创作技能，覆盖公众号/视频/小红书工作流——选题（<code>huashu-topic-gen</code>）、调研（<code>huashu-research</code>）、三遍审校降 AI 味（<code>huashu-proofreading</code>）、文章编辑、长文转社交媒体、抖音脚本、视频大纲、封面检查、公众号/小红书配图、Markdown 转 PDF、演讲教练、多 Agent 蜂群模式，以及跨仓库更新检查器 <code>huashu-skill-updater</code>。</li></ul>
+<p>仓库根目录提供机器可读的 <code>skills.json</code> 与一份「给 AI Agent 的协议」，Agent 可据此精确定位、安装并留痕。</p>
+<h2>怎么安装</h2>
+<p>方式一：最省事——把这句话发给你的 AI Agent：</p>
+<pre><code>读 https://github.com/alchaincyf/huashu-skills 的 README 和 skills.json，帮我按需求推荐并安装对应 skill</code></pre>
+<p>方式二：安装独立仓库的旗舰/人物 skill（一条命令）：</p>
+<pre><code class="lang-bash">git clone https://github.com/alchaincyf/huashu-design.git ~/.claude/skills/huashu-design</code></pre>
+<p>方式三：安装本仓库内置的轻量 skill（克隆后复制子目录）：</p>
+<pre><code class="lang-bash">mkdir -p ~/.claude/skills
+git clone --depth 1 https://github.com/alchaincyf/huashu-skills.git /tmp/huashu-skills
+cp -r /tmp/huashu-skills/huashu-slides ~/.claude/skills/</code></pre>
+<p>装完重启 Agent 会话即生效；只给某个项目用的话，把 <code>~/.claude/skills/</code> 换成项目内的 <code>.claude/skills/</code>。Codex、Kimi Code 等其他 Agent 把 skill 文件夹放进各自的 skills 目录即可。</p>
+<h2>怎么用</h2>
+<p>1. 需求明确时直接装对应 skill；需求模糊时先查 README 的「按需求找 Skill」路由表，或读 <code>skills.json</code> 按关键词定位。 2. 内置 skill 复制安装后按各自 <code>SKILL.md</code> 的说明使用，例如 <code>huashu-topic-gen</code> 给出 3-4 个选题方案（标题、大纲、优劣分析、工作量评估），<code>huashu-proofreading</code> 按「内容 → 6 大类 AI 腔改写 → 节奏打磨」三遍审校。 3. 装上 <code>huashu-skill-updater</code> 后可一键扫描全部已装花叔系 skill 是否落后于远程仓库：每个 skill 目录留有 <code>.huashu-skill-meta.json</code> 安装留痕，30 天内检查过则静默跳过。 4. 注意上游协议中的两个坑：<code>huashu-design</code> 有独立仓库完整版与内置轻量版同名冲突，都要装时需把内置版目录改名；人物 skill 只装独立仓库那份，不要从 <code>nuwa-skill/examples/</code> 重复安装。</p>
+<h2>注意事项</h2>
+<ul><li><strong>协议不明</strong>：仓库未附 LICENSE 文件，frontmatter 标注 <code>UNKNOWN</code>；个人使用一般无碍，商用或再分发前建议向作者确认授权。</li><li><strong>同名冲突</strong>：<code>huashu-design</code> 独立仓库（完整设计系统）与本仓库内置版（轻量设计哲学顾问）目录名相同，不能同时装在 <code>~/.claude/skills/huashu-design/</code>。</li><li><strong>平台依赖</strong>：部分 skill（如 <code>huashu-icon-set</code>、<code>huashu-slide-doubao</code>）依赖豆包/Codex 环境内置的 image_gen，部分需调用外部 AI 服务，可能产生费用。</li><li><strong>非 Skill 仓库</strong>：上游生态里 <code>huashu-doubao-search</code> 是 MCP server、<code>fanbox</code> 是桌面 App、橙皮书系列是电子书，按上游说明区分，不要装进 skills 目录。</li><li><strong>同域条目</strong>：<code>writing-docs/shuohao-skills</code>（eternityspring）同样面向 AI 短剧/内容创作管线，两者定位互补：花叔目录胜在覆盖面广（设计、数据、文档、人物视角），shuohao 胜在短剧管线的深度质量门。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-08-29 · 更新于 2026-08-29 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

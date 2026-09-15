@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Crawl4AI LLM 友好爬虫 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Crawl4AI LLM 友好爬虫</h1>
+      <p class="hero-subtitle">Crawl4AI</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>研究与信息获取</span><span>主推</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">GitHub 最多 star 的开源 LLM 友好爬虫：网页 → 干净的 LLM-ready Markdown（Fit Markdown 启发式去噪）；异步浏览器池、深度爬取 + 崩溃恢复 + prefetch 加速；CLI + Docker 部署、爬取零 API Key。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/unclecode/crawl4ai" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://crawl4ai.com" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Crawl4AI LLM 友好爬虫</h1>
+<blockquote>🚀🤖 Open-source LLM Friendly Web Crawler &amp; Scraper。上游：<a href="https://github.com/unclecode/crawl4ai" target="_blank" rel="noopener">unclecode/crawl4ai</a> · 许可证：Apache 2.0 · 81.4k stars</blockquote>
+<h2>这是什么</h2>
+<p>Crawl4AI 是 GitHub 上最多 star 的开源 LLM 友好爬虫：把网页变成干净的、LLM-ready 的 Markdown——结构化标题、表格、代码块、引用提示，供 RAG、Agent 和数据管道直接消费。Fit Markdown 启发式过滤去掉广告、导航、弹窗等噪声，只留正文。</p>
+<p><strong>为什么开发者选 Crawl4AI</strong>：</p>
+<ul><li><strong>LLM-ready 输出</strong>：智能 Markdown（标题 / 表格 / 代码 / 引用提示 / 链接编号引用列表）</li><li><strong>快</strong>：异步浏览器池 + 缓存 + 最少跳转</li><li><strong>全控制</strong>：会话 / 代理 / Cookie / 用户脚本 / hooks</li><li><strong>自适应智能</strong>：学习网站模式，只探索有价值的内容</li><li><strong>部署自由</strong>：零 API Key（爬取本身）、CLI + Docker、云友好</li></ul>
+<p><strong>关键版本</strong>：</p>
+<p>| 版本 | 亮点 | |------|------| | v0.9.3（当前） | 安全修复：关闭任意文件写入 / SSRF / DoS / XSS + 33 个 bug | | v0.9.0 | Docker API server 安全加固：默认认证 + loopback + untrusted trust boundary | | v0.8.0 | 深度爬取崩溃恢复（<code>resume_state</code>）+ prefetch 模式（URL 发现提速 5-10 倍） |</p>
+<h2>怎么安装</h2>
+<pre><code class="lang-bash">pip install -U crawl4ai
+
+# 运行安装后设置（浏览器配置）
+crawl4ai-setup
+
+# 验证安装
+crawl4ai-doctor
+
+# 浏览器问题手动安装
+python -m playwright install --with-deps chromium</code></pre>
+<h2>怎么用</h2>
+<h3>Python</h3>
+<pre><code class="lang-python">import asyncio
+from crawl4ai import *
+
+async def main():
+    async with AsyncWebCrawler() as crawler:
+        result = await crawler.arun(url=&quot;https://www.nbcnews.com/business&quot;)
+        print(result.markdown)
+
+asyncio.run(main())</code></pre>
+<h3>CLI</h3>
+<pre><code class="lang-bash"># 基础爬取 Markdown 输出
+crwl https://www.nbcnews.com/business -o markdown
+
+# 深度爬取（BFS 最多 10 页）
+crwl https://docs.crawl4ai.com --deep-crawl bfs --max-pages 10
+
+# LLM 提取（需要配置 API Key）
+crwl https://www.example.com/products -q &quot;Extract all product prices&quot;</code></pre>
+<h3>Docker 部署</h3>
+<pre><code class="lang-bash">docker pull unclecode/crawl4ai:latest
+docker run -d -p 11235:11235 unclecode/crawl4ai:latest</code></pre>
+<p>v0.9.0 起 Docker API server 默认开启认证并绑定 loopback，公网部署需配置 token + 反向代理。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 Apache 2.0</strong>：可自由商用。</li><li><strong>安全版本</strong>：始终使用最新版（v0.9.3 关闭了多个协调披露安全公告）；Docker 部署不要裸露公网。</li><li><strong>爬取零 Key / 提取需 Key</strong>：爬取和 Markdown 生成完全本地免费；LLM 提取（<code>-q</code> 参数）需要配置 LLM API Key。</li><li><strong>合规</strong>：遵守目标网站 robots.txt 和服务条款；大规模爬取建议配置代理池和速率限制。</li><li><strong>维护极其活跃</strong>（2026-09 更新，81.4k stars，GitHub 最受关注的爬虫项目），提供 Discord 社区和详细文档。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

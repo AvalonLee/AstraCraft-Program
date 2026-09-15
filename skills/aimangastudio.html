@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AIMangaStudio 漫画创作 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">AIMangaStudio 漫画创作</h1>
+      <p class="hero-subtitle">AIMangaStudio</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>观察</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">利用 AI 制作漫画的工具，覆盖脚本创作、分镜设计与角色风格控制，集成剧情生成、分镜布局、角色设定与页间连续性分析，支持多页漫画导出为 PNG/PDF。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/morsoli/aimangastudio" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/morsoli/aimangastudio" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>AIMangaStudio</h1>
+<blockquote>利用 AI 制作漫画的工具，支持脚本创作、分镜设计与角色风格控制。上游：<a href="https://github.com/morsoli/aimangastudio" target="_blank" rel="noopener">morsoli/aimangastudio</a> · 许可证：MIT</blockquote>
+<h2>这是什么</h2>
+<p>AIMangaStudio 旨在为独立创作者与工作室提供一条端到端的漫画创作流水线，简化从脚本到漫画页面的制作流程。技术栈为 React + Vite + TypeScript，AI 能力通过 Google GenAI（<code>@google/genai</code>）接入。</p>
+<p>主要功能：自然语言生成漫画脚本（剧情、对白、旁白）；角色与风格设定（支持多种绘画风格）；AI 分镜自动排版（对话框、镜头切换）；多页漫画导出（PNG、PDF）。</p>
+<h2>怎么安装</h2>
+<pre><code class="lang-bash">git clone https://github.com/morsoli/aimangastudio.git
+cd aimangastudio
+npm install</code></pre>
+<h2>怎么用</h2>
+<pre><code class="lang-bash"># 本地开发
+npm run dev
+
+# 构建与预览
+npm run build
+npm run preview</code></pre>
+<h2>注意事项</h2>
+<ul><li><strong>早期形态</strong>：项目仅有少量提交、无正式 release，功能以雏形为主，需自行评估是否满足制作需求。</li><li><strong>依赖外部 AI</strong>：AI 生成经 Google GenAI 服务，需要相应 API 凭据，并注意数据与用量。</li><li>目标用户为独立创作者、漫画爱好者与内容工作室。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-08-27 · 更新于 2026-08-27 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

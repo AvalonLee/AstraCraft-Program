@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ArcReel AI 视频生产工作台 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">ArcReel AI 视频生产工作台</h1>
+      <p class="hero-subtitle">ArcReel — Self-Hosted AI Video Production Workbench</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>观察</span><span class="lic-badge lic-copyleft" title="AGPL-3.0">部分开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">开源自托管的 AI 视频生产工作台：将小说、剧本或商品素材转化为角色一致、过程可控、成本可追踪的短视频，支持 Docker 一键部署、Agent 编排、剪映草稿导出。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/ArcReel/ArcReel" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/ArcReel/ArcReel" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>ArcReel AI 视频生产工作台</h1>
+<blockquote>开源、自托管的 AI 视频生产工作台。上游：<a href="https://github.com/ArcReel/ArcReel" target="_blank" rel="noopener">ArcReel/ArcReel</a> · 许可证：AGPL-3.0 · 文档：<a href="https://docs.arc-reel.com/" target="_blank" rel="noopener">docs.arc-reel.com</a></blockquote>
+<h2>这是什么</h2>
+<p>ArcReel 是面向 AI 漫剧与小说改编、旁白/解说短视频、广告与带货短片的开源自托管工作台。它把内容分析、资产管理、分镜、媒体生成、费用追踪和导出组织成一条可审核、可中断恢复的生产流水线。</p>
+<p>核心能力：小说或成品剧本逐步转化为角色/场景/道具资产 → 分集结构化剧本 → 分镜图/多宫格分镜 → 视频片段/旁白音轨 → 成片合成。每个阶段可由 Agent 智能体编排，也可在工作台中人工审核、调整或重新生成。支持统一配置文本、图像、视频和 TTS 能力，生成前后查看费用与实际用量，并可直接导出为剪映草稿继续编辑。</p>
+<h2>怎么安装</h2>
+<pre><code class="lang-bash"># 前提：Docker + Docker Compose
+git clone https://github.com/ArcReel/ArcReel.git
+cd ArcReel/deploy
+
+cp .env.example .env
+docker compose up -d</code></pre>
+<p>访问 <code>http://localhost:1241</code>，默认用户名 <code>admin</code>。<code>AUTH_PASSWORD</code> 留空时首次启动自动生成密码并回写到 <code>deploy/.env</code>。</p>
+<p>登录后在「设置」页面配置 ArcReel Agent 以及文本、图像、视频等生成能力，再创建项目开始制作。</p>
+<h2>怎么用</h2>
+<p>1. 部署后登录工作台，配置 AI 供应商（Agent/文本/图像/视频/TTS） 2. 创建项目，导入小说、成品剧本或商品素材 3. 按流水线逐步推进：内容分析 → 资产管理 → 分镜 → 视频生成 → 合成导出 4. 可导出为 MP4 视频或剪映草稿（面向中国大陆版剪映）</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 AGPL-3.0</strong>：用于网络服务需开源衍生代码；无法接受 AGPL 的组织可联系 support@arc-reel.com 获取商业授权。</li><li><strong>运行环境</strong>：需 Docker 与 Docker Compose；默认将 1241 端口发布到宿主机所有网络接口，请勿直接暴露到公网。</li><li><strong>剪映导出</strong>：面向中国大陆版剪映，CapCut 兼容性尚未验证。</li><li><strong>维护活跃</strong>：2026 年持续更新，有完整文档站和飞书社区。</li><li>内置 Agent 编排能力，支持多模型供应商统一配置与费用追踪。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-08-26 · 更新于 2026-08-26 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

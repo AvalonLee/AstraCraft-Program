@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Palmier Pro AI 视频剪辑 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Palmier Pro AI 视频剪辑</h1>
+      <p class="hero-subtitle">Palmier Pro</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>常规</span><span class="lic-badge lic-copyleft" title="GPL-3.0">部分开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">为 AI 打造的 macOS 原生视频剪辑器（Swift 从零构建，北极星对标 Premiere Pro）：内置 SOTA 生成模型（Seedance / Kling / Nano Banana Pro）在时间线上直接生成视频和图片；通过 MCP 让 Claude / Codex / Cursor 直接在时间线上创建和编辑，或用内置 Agent 协作。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/palmier-io/palmier-pro" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/palmier-io/palmier-pro" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Palmier Pro AI 视频剪辑</h1>
+<blockquote>The video editor built for AI.上游：<a href="https://github.com/palmier-io/palmier-pro" target="_blank" rel="noopener">palmier-io/palmier-pro</a> · 历史 GPL v3（≤v0.7.6）/ 当前二进制专有 · 14.3k stars · YC S24</blockquote>
+<h2>这是什么</h2>
+<p>Palmier Pro 是一个从零用 Swift 构建的 macOS 原生视频编辑器，北极星是对标 Premiere Pro——但把 AI 作为一等公民融入剪辑工作流：在时间线上直接调用 SOTA 生成模型出视频和图片，或者把 Claude / Codex / Cursor 通过 MCP 接进来，让 agent 直接在时间线上创建和编辑。</p>
+<p><strong>核心特性</strong>：</p>
+<ul><li><strong>Swift 原生性能</strong>：不是 Electron 壳——从零构建的 macOS 原生应用，Apple Silicon 优化</li><li><strong>内置生成式 AI</strong>：Seedance / Kling / Nano Banana Pro 等 SOTA 模型直接在时间线上生成视频和图片</li><li><strong>MCP 集成</strong>：应用打开时暴露 MCP server（<code>http://127.0.0.1:19789/mcp</code>），Claude Code / Codex / Cursor / Claude Desktop 一行命令接入——agent 在对话中说"把这段视频调暗"就能直接操作时间线</li><li><strong>内置 Agent</strong>：应用内的 agent 模式，和外部 agent 可协作编辑同一项目</li></ul>
+<h2>怎么安装</h2>
+<p>从 <a href="https://github.com/palmier-io/palmier-pro/releases/latest" target="_blank" rel="noopener">Releases</a> 下载 <code>PalmierPro.dmg</code>，要求 <strong>macOS 26 (Tahoe) + Apple Silicon (M 系列)</strong>。</p>
+<h2>怎么用</h2>
+<h3>MCP 接入 Claude Code</h3>
+<pre><code class="lang-bash">claude mcp add --transport http palmier-pro http://127.0.0.1:19789/mcp</code></pre>
+<h3>MCP 接入 Codex</h3>
+<pre><code class="lang-bash">codex mcp add palmier-pro --url http://127.0.0.1:19789/mcp</code></pre>
+<h3>MCP 接入 Cursor</h3>
+<p>应用内 Help → MCP Instructions → Install in Cursor，或手动添加到 <code>~/.cursor/mcp.json</code>：</p>
+<pre><code class="lang-json">{
+  &quot;mcpServers&quot;: {
+    &quot;palmier-pro&quot;: {
+      &quot;type&quot;: &quot;http&quot;,
+      &quot;url&quot;: &quot;http://127.0.0.1:19789/mcp&quot;
+    }
+  }
+}</code></pre>
+<h3>MCP 接入 Claude Desktop</h3>
+<p>应用内置 mcpb bundle：Help → MCP Instructions → Install in Claude Desktop 一键安装。</p>
+<p>接入后在 agent 对话中直接描述剪辑操作（<code>"在 0:05 加一个转场"</code>、<code>"生成一段 5 秒的 B-roll 插到第二轨道"</code>），agent 通过 MCP 工具操作时间线。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证</strong>：v0.7.6 及之前源码为 <strong>GPLv3</strong>（<code>last-gpl-source</code> 分支可查）；v0.7.6 之后二进制版本为<strong>专有许可</strong>（源码未发布），使用前需阅读 BINARY_LICENSE.md。</li><li><strong>平台限制</strong>：仅 macOS 26 (Tahoe) + Apple Silicon。</li><li><strong>不接受代码贡献</strong>：仓库保留历史源码和二进制发布，不再接受 PR。</li><li><strong>生成模型费用</strong>：内置 Seedance / Kling / Nano Banana Pro 生成调用按 API 计费。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

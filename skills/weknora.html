@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WeKnora 开源 LLM 知识平台 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">WeKnora 开源 LLM 知识平台</h1>
+      <p class="hero-subtitle">WeKnora — LLM Knowledge Platform</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>Agent 基础设施</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">腾讯开源的企业级 LLM 知识平台：把文档转成可检索 RAG、自主推理 Agent 与自维护 Wiki；支持多源知识库、MCP Server、DSH 插件、Agent Skills、Web/API/CLI/IM 渠道与私有化部署。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/Tencent/WeKnora" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://weknora.weixin.qq.com" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>WeKnora 开源 LLM 知识平台</h1>
+<blockquote>把散落文档变成可检索、可推理、可持续维护的知识资产。上游：<a href="https://github.com/Tencent/WeKnora" target="_blank" rel="noopener">Tencent/WeKnora</a> · 许可证：MIT</blockquote>
+<h2>这是什么</h2>
+<p>WeKnora 是腾讯开源、面向企业文档理解、语义检索与自主推理的 LLM 知识平台。它围绕三类核心能力组织：</p>
+<ul><li><strong>RAG 问答</strong>：上传 PDF / Word / Markdown / Excel / PPT / 图片 / XMinD 等格式，自动解析、分块、嵌入，并支持向量 + 关键词混合检索、父子分块、GraphRAG、跨知识库检索与批量管理。</li><li><strong>ReAct Agent</strong>：自主编排检索、MCP 工具、租户技能目录与 Web 搜索，处理多步任务；技能在 Docker / E2B / Kube 沙箱中运行，并支持跨会话长期记忆。</li><li><strong>Wiki 模式</strong>：把原始文档提炼成互相链接的 Markdown 知识库，附带知识图谱、手动编辑、版本历史和一键回滚，让知识库能持续生长。</li></ul>
+<p>平台还提供多工作空间 RBAC、多源同步（飞书 / GitLab / Tencent IM / Notion / Yuque / RSS 等）、Web / REST API / CLI / IM / 浏览器扩展 / 网站嵌入等入口，并内置 MCP Server 与 DSH 插件。</p>
+<h2>怎么安装</h2>
+<p>标准 Docker Compose 部署：</p>
+<pre><code class="lang-bash">git clone https://github.com/Tencent/WeKnora.git
+cd WeKnora
+cp .env.example .env   # 按需修改模型、存储与端口配置
+docker compose pull
+docker compose up -d</code></pre>
+<p>启动后访问 Web UI：</p>
+<pre><code class="lang-text">http://localhost</code></pre>
+<p>也可在 <code>docker compose</code> 中启用 <code>full</code>、<code>neo4j</code>、<code>minio</code>、<code>langfuse</code> 等 profile 扩展完整功能。</p>
+<h2>怎么用</h2>
+<p>部署后在 Web UI 里创建知识库、上传文档或配置数据源，选择 LLM / 嵌入模型即可开始问答。要接 Agent 或 CLI 时：</p>
+<ul><li><strong>DSH 插件</strong>：<code>dsh plugin --profile web add @wxg-prc-cpg/dsh-weknora</code>，让编码 Agent 获得知识库搜索、读取与问答工具。</li><li><strong>Claude Skill</strong>：从 Claphub 安装 WeKnora Skill，用 Agent 完成文档导入、混合检索与知识条目管理。</li><li><strong>CLI / MCP</strong>：<code>weknora</code> CLI 支持 <code>profile add</code>、<code>auth login</code>、<code>kb list</code>、<code>doc upload</code>、<code>chat</code> 等命令，也可用 <code>weknora mcp serve</code> 暴露 MCP 工具。</li></ul>
+<p>典型流程：配置模型与存储 → 创建知识库 → 导入文档或同步外部源 → 配置检索策略 → 通过 Web / API / CLI / IM / Agent 调用。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证</strong>：主体 MIT 可商用，但上游 LICENSE 明确列出 Apache-2.0 等第三方组件条款；商用前请按 LICENSE 全文和实际依赖复核。</li><li><strong>部署依赖</strong>：需要 Docker 与 Docker Compose；实际效果取决于所配置 LLM、嵌入、向量库与对象存储，云服务和模型调用费用自担。</li><li><strong>安全建议</strong>：上游建议生产部署放在内网或私有网络，避免直接暴露公网，并配置防火墙、访问控制与定期升级。</li><li><strong>中文生态适配好</strong>：官方提供中 / 英 / 日 / 韩文档，支持飞书、腾讯 IM、微信等渠道，适合中文企业知识库场景。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

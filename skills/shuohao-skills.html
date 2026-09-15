@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>shuohao-skills AI 短剧制作技能合集 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">shuohao-skills AI 短剧制作技能合集</h1>
+      <p class="hero-subtitle">shuohao-skills — AI Short-Drama Production Skill Suite</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>写作与文档</span><span>常规</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>技能集</span>
+    </div>
+    <p class="muted detail-meta">面向 Claude Code 与 Codex 的 AI 短剧制作 skill 合集：从一本小说到直接喂生成管线的制作素材——拆角色、排大纲、出场景与道具设定、写剧本、切分镜。5 个技能线性协作，每段自带质量门脚本检查。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/eternityspring/shuohao-skills" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/eternityspring/shuohao-skills" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>shuohao-skills AI 短剧制作技能合集</h1>
+<blockquote>面向 Claude Code 与 Codex 的 AI 短剧制作 skill 集合。上游：<a href="https://github.com/eternityspring/shuohao-skills" target="_blank" rel="noopener">eternityspring/shuohao-skills</a> · 许可证：Apache-2.0</blockquote>
+<h2>这是什么</h2>
+<p>一套从小说到短剧制作素材的线性管线 skill 集合：把一本小说拆成改编大纲（人物表、爽点表、分集梗概、资产清单）、角色设定集（人物画像、形象/音色提示词、设定图）、美术设定集（场景与叙事道具的一致性锚点）、剧本（场次+节拍流、逐集时长按语速确定折算）、分镜（段→分镜→分镜图，MiniMax H3 提示词对齐）。五个 skill 的输出可合成一张单页 HTML 报告，左侧导航切换。</p>
+<p>五个 skill：<code>novel-outline</code>（14 道质量门）、<code>novel-characters</code>、<code>novel-art</code>（11 道质量门）、<code>novel-script</code>（10 道质量门）、<code>novel-storyboard</code>（17 道质量门）。每个 skill 自包含、可单独拷走，报告支持中英双语界面。</p>
+<h2>怎么安装</h2>
+<pre><code class="lang-bash"># 克隆仓库
+git clone https://github.com/eternityspring/shuohao-skills.git
+cd shuohao-skills
+
+# 自动检测并安装到 Claude Code / Codex，或指定
+./scripts/install.sh              # 自动检测
+./scripts/install.sh --codex      # 仅装到 Codex
+./scripts/install.sh novel-characters  # 只装某一个
+
+# 手动软链
+ln -s &quot;$PWD/skills/novel-characters&quot; ~/.codex/skills/novel-characters</code></pre>
+<h2>怎么用</h2>
+<p>在 Claude Code 或 Codex 中，Agent 读取对应 skill 的 <code>SKILL.md</code> 后即可按线性管线执行：丢一本小说进去，依次产出大纲 → 角色设定集 → 美术设定集 → 剧本 → 分镜。每段完成后可运行 <code>node scripts/selftest.mjs</code> 自测（不调用模型、不花额度）。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 Apache-2.0</strong>：可商用。</li><li><strong>运行环境</strong>：需 Node ≥ 18，脚本只用标准库，无 npm 依赖。</li><li><strong>出图依赖</strong>：角色设定图与分镜图依赖 Codex CLI 内置 <code>$imagegen</code>，没有则跳过出图，其余产出照常。</li><li><strong>模型额度</strong>：使用当前会话的额度，无需额外 API key。</li><li>维护活跃（2026-08 更新），作者独立运营，有付费交流群（微信 <code>hao_dev</code>）。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-08-26 · 更新于 2026-08-26 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

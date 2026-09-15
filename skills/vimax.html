@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ViMax 智能体视频生成框架 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">ViMax 智能体视频生成框架</h1>
+      <p class="hero-subtitle">ViMax — Agentic Video Generation</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">HKU Data Science 团队开源的智能体视频创作框架：输入一个概念，即可自动完成剧本、分镜、角色创建、图像/视频生成与最终合成；内置 Idea2Video、Script2Video、Novel2Video、AutoCameo 工作流，并支持 Agent Loop、TUI 与 Web UI。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/HKUDS/ViMax" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/HKUDS/ViMax" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>ViMax 智能体视频生成框架</h1>
+<blockquote>端到端智能体视频创作框架。上游：<a href="https://github.com/HKUDS/ViMax" target="_blank" rel="noopener">HKUDS/ViMax</a> · 许可证：MIT · 论文：<a href="https://arxiv.org/abs/2606.07649" target="_blank" rel="noopener">arXiv 2606.07649</a></blockquote>
+<h2>这是什么</h2>
+<p>ViMax 是香港大学 HKU Data Science 团队开源的智能体视频创作框架，把叙事规划、视觉一致性、图像生成、视频生成与成片合成连成一条可扩展流水线。输入一个想法，框架自动完成剧本、分镜、角色创建、参考图管理与最终渲染；提供 Idea2Video（概念到成片）、Script2Video（剧本到成片）、Novel2Video（小说到分集视频）、AutoCameo（人物/宠物照片入镜）等工作流，并支持 Agent Loop + TUI 与 Web UI 两种交互界面。</p>
+<h2>怎么安装</h2>
+<pre><code class="lang-bash">git clone https://github.com/HKUDS/ViMax.git
+cd ViMax
+uv sync</code></pre>
+<p>需要 Python 3.12 与 <a href="https://docs.astral.sh/uv/getting-started/installation/" target="_blank" rel="noopener">uv</a>。Web UI 另需 Node.js 18+。</p>
+<h2>怎么用</h2>
+<p>先用上游仓库根目录的配置模板创建本地配置：</p>
+<pre><code class="lang-bash">cp configs/agent.example.yaml configs/agent.local.yaml</code></pre>
+<p>填入 LLM、图像生成、视频生成的模型与 API key 后，即可：</p>
+<pre><code class="lang-bash">vimax tui new        # 启动 Agent Loop TUI 新会话
+vimax tui resume     # 恢复已有会话</code></pre>
+<p>需要浏览器界面时进入 <code>web/</code> 目录执行 <code>npm install &amp;&amp; npm run dev</code>，打开 <code>http://127.0.0.1:4173</code>；也可以直接使用 <code>main_idea2video.py</code> / <code>main_script2video.py</code> 等直连流水线入口。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 MIT</strong>：可商用，需保留版权声明；实际生成依赖配置的模型供应商 API（OpenAI 兼容接口、Google Gemini/Veo、Seedance 2.0 等），会产生对应费用。</li><li><strong>运行环境</strong>：需要 Python 3.12 + uv；Web UI 需要 Node.js 18+。</li><li><strong>研究级实现</strong>：模型/供应商配置、角色一致性与成片质量建议先自测再投入生产。</li><li>维护活跃（v1.2.0，2026-07 更新），提供英文与中文 README、TUI/Web UI 与配套技术报告。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-08-26 · 更新于 2026-08-26 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

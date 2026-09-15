@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Meetily 隐私优先 AI 会议助手 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Meetily 隐私优先 AI 会议助手</h1>
+      <p class="hero-subtitle">Meetily</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>运维与自动化</span><span>主推</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">隐私优先的 AI 会议助手：完全本地运行——Parakeet / Whisper 实时转写（4 倍速）、说话人分离、Ollama 本地摘要，零云端依赖；支持自定义 OpenAI 兼容端点、多会议平台、导入已有音频并重转写；macOS / Windows 桌面应用，数据 100% 不离开本机。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/Zackriya-Solutions/meetily" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://meetily.ai" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Meetily 隐私优先 AI 会议助手</h1>
+<blockquote>Privacy-First AI Meeting Assistant。上游：<a href="https://github.com/Zackriya-Solutions/meetily" target="_blank" rel="noopener">Zackriya-Solutions/meetily</a> · 许可证：MIT · 30.4k stars · <a href="https://meetily.ai" target="_blank" rel="noopener">官网</a></blockquote>
+<h2>这是什么</h2>
+<p>Meetily 是一个隐私优先的 AI 会议助手，完全运行在本地：捕获会议音频 → Parakeet / Whisper 实时转写 → Ollama（或其他 LLM）生成摘要——<strong>全程零云端依赖</strong>。适合对数据主权和合规有要求的团队（企业、律师、医疗、国防咨询等）。</p>
+<p><strong>为什么选 Meetily</strong>：</p>
+<p>| 对比项 | 云端会议 AI | Meetily | |--------|------------|---------| | 数据存储 | 不明第三方服务器 | 100% 本地磁盘 | | 合规风险 | GDPR 罚款 / 泄露 | 无数据离开设备 | | 离线使用 | 不支持 | 转写 + 摘要全离线 | | AI 费用 | 按调用计费 | Ollama 本地免费 |</p>
+<p><strong>核心特性</strong>：</p>
+<ul><li><strong>实时转写</strong>：Parakeet 或 Whisper 模型本地推理，比传统方案快 4 倍；实时逐句显示</li><li><strong>说话人分离</strong>：区分谁在说话</li><li><strong>AI 摘要</strong>：Ollama（本地、推荐）/ Claude / Groq / OpenRouter / 自定义 OpenAI 端点</li><li><strong>导入与增强</strong>：导入已有音频文件生成转写，或用不同模型/语言重转写（Beta）</li><li><strong>专业音频混合</strong>：麦克风 + 系统音频混合录制</li><li><strong>自定义 OpenAI 端点</strong>：支持企业内部 AI 基础设施</li><li><strong>多会议平台</strong>：Zoom / Teams / Meet / 线下会议通用</li><li><strong>macOS / Windows</strong> 桌面应用（Linux 需源码构建）</li></ul>
+<h2>怎么安装</h2>
+<p><strong>macOS：</strong></p>
+<p>从 <a href="https://github.com/Zackriya-Solutions/meetily/releases/latest" target="_blank" rel="noopener">Releases</a> 下载 <code>.dmg</code> → 拖入 Applications → 打开。</p>
+<p><strong>Windows：</strong></p>
+<p>从 <a href="https://github.com/Zackriya-Solutions/meetily/releases/latest" target="_blank" rel="noopener">Releases</a> 下载 <code>x64-setup.exe</code> → 运行安装器。</p>
+<p><strong>Linux（源码构建）：</strong></p>
+<pre><code class="lang-bash">git clone https://github.com/Zackriya-Solutions/meetily.git
+cd meetily/frontend
+pnpm install
+./build-gpu.sh</code></pre>
+<h2>怎么用</h2>
+<p>1. 打开 Meetily → 点 Start Meeting 2. 选择转写模型（Parakeet 推荐速度更快 / Whisper 更准） 3. 选择摘要 provider：Ollama（本地）/ Claude / Groq / OpenAI / 自定义端点 4. 会议结束后自动生成结构化摘要（决策、行动项、讨论要点） 5. 编辑、导出、搜索历史会议</p>
+<p>导入已有音频：从设置页拖入音频文件 → 选模型转写 → 生成摘要。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 MIT</strong>：社区版完全开源免费；PRO 版（付费订阅）提供增强精度、高级导出、团队功能。</li><li><strong>本地 LLM 摘要</strong>：Ollama 推荐但需要较好硬件（8GB+ RAM 模型运行）；也可接云端 API 获得更强摘要但失去"零云端"优势。</li><li><strong>首次模型下载</strong>：Parakeet / Whisper 模型需网络下载，之后离线可用。</li><li><strong>说话人分离</strong>：社区版已内置，PRO 版计划增强。</li><li><strong>维护极其活跃</strong>（2026-09-05 当天仍有提交，30.4k stars），提供 Trendshift 徽章、Discord / Reddit 社区和详细文档。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

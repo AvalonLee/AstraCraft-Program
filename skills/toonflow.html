@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Toonflow 一站式 AI 短剧创作工具 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Toonflow 一站式 AI 短剧创作工具</h1>
+      <p class="hero-subtitle">Toonflow — AI Short Drama Creation Workbench</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>常规</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">开源一站式 AI 短剧创作工作台：把小说或剧本转化为动画短剧，覆盖 AI 编剧、无限画布分镜、角色/素材/视频节点编排、三层 Agent 协作与持久化记忆；支持 Windows/Linux/macOS 桌面端、Docker 自部署与可编程供应商系统。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/HBAI-Ltd/Toonflow-app" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://toonflow.net" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Toonflow 一站式 AI 短剧创作工具</h1>
+<blockquote>开源一站式 AI 短剧创作工具。上游：<a href="https://github.com/HBAI-Ltd/Toonflow-app" target="_blank" rel="noopener">HBAI-Ltd/Toonflow-app</a> · 许可证：Apache-2.0 · 官网：<a href="https://toonflow.net" target="_blank" rel="noopener">toonflow.net</a></blockquote>
+<h2>这是什么</h2>
+<p>Toonflow 是面向短剧生产的 AI 工作台，把「策划 → 编剧 → 分镜 → 出片」串成完整闭环：导入小说或剧本后，可完成章节事件提取、AI 编剧、无限画布分镜、角色/素材/视频节点编排与成片导出。它内置三层 Agent 协作体系（决策层/执行层/监督层）、基于本地 ONNX 向量检索的持久化 Agent 记忆，以及支持在线编写 TypeScript 逻辑的可编程供应商系统；ScriptAgent 与 ProductionAgent 的核心提示词外化为 Markdown Skill 文件，便于直接调优。</p>
+<h2>怎么安装</h2>
+<h3>桌面端</h3>
+<p>直接从 <a href="https://github.com/HBAI-Ltd/Toonflow-app/releases" target="_blank" rel="noopener">GitHub Releases</a> 下载 Windows、Linux 或 macOS 安装包，安装后启动即可。</p>
+<h3>Docker 自部署</h3>
+<pre><code class="lang-bash">git clone https://github.com/HBAI-Ltd/Toonflow-app.git
+cd Toonflow-app
+
+# 本地构建并启动
+yarn docker:local
+# 或手动构建
+docker build -t toonflow .
+docker run -d -p 10588:10588 -v /path/to/data:/app/data toonflow</code></pre>
+<p>启动后访问 <code>http://localhost:10588/web/index.html</code>。</p>
+<h2>怎么用</h2>
+<p>1. 首次登录使用默认账号 <code>admin</code> / <code>admin123</code>； 2. 在设置中心配置文本/图像/视频模型供应商； 3. 新建项目并导入原著，执行章节事件提取； 4. 用 ScriptAgent 生成故事骨架、改编策略与结构化剧本； 5. 切换到 ProductionAgent，在无限画布中组织分镜、素材与视频节点； 6. 节点化精调分镜图后回流工作台，完成视频拼接与导出。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 Apache-2.0</strong>：可商用，需保留版权声明；核心生成能力依赖外部模型服务（如 Sora、豆包、Nano Banana Pro），需自备接口与密钥并承担费用。</li><li><strong>Docker 部署</strong>：默认账号 <code>admin</code> / <code>admin123</code>，首次登录后请尽快修改；默认服务端口 <code>10588</code>。</li><li><strong>运行环境</strong>：桌面端支持 Windows/Linux/macOS；Docker 部署需 Docker 20.10+，云端部署需 Node.js 24（最低 23.11.1）。</li><li>软件界面提供简体中文、繁體中文、English、ไทย、Tiếng Việt、日本語、Русский 多语言支持。</li><li>维护活跃（2026-08 更新），同时提供 GitHub、Gitee、AtomGit 分发渠道。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-08-26 · 更新于 2026-08-26 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

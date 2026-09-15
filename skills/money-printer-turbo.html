@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MoneyPrinterTurbo 一站式 AI 短视频生成工具 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">MoneyPrinterTurbo 一站式 AI 短视频生成工具</h1>
+      <p class="hero-subtitle">MoneyPrinterTurbo — One-Stop AI Short Video Generator</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">一站式 AI 短视频生成工具：输入主题或关键词，自动生成脚本、匹配高清素材、合成字幕与背景音乐并输出 9:16/16:9 短视频；提供 Agent、WebUI、API、CLI、批量生成与多平台发布。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>MoneyPrinterTurbo 一站式 AI 短视频生成工具</h1>
+<blockquote>一站式 AI 短视频生成工具。上游：<a href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank" rel="noopener">harry0703/MoneyPrinterTurbo</a> · 许可证：MIT</blockquote>
+<h2>这是什么</h2>
+<p>MoneyPrinterTurbo 是目前 AI 短视频生成领域最具代表性的开源项目之一（11.6 万+ star）：给定一个主题或关键词，它会调用大模型生成视频脚本，从 Pexels / Pixabay / Coverr 挑选高清素材（也可用本地素材或 WaveSpeed 按脚本生成画面），再合成 TTS 配音、字幕、背景音乐和转场，输出竖屏 9:16 或横屏 16:9 成品视频。仓库同时提供 AI Agent Skill、WebUI、API、CLI 四种使用方式，支持批量生成、多语言脚本、预设导入导出，并可一键发布到 TikTok、Instagram 与 YouTube Shorts。</p>
+<h2>怎么安装</h2>
+<p>推荐用 <code>uv</code> 本地部署（Python 3.11+），或直接跑 Docker 预构建镜像：</p>
+<pre><code class="lang-bash">git clone https://github.com/harry0703/MoneyPrinterTurbo.git
+cd MoneyPrinterTurbo
+uv python install 3.11
+uv sync --frozen
+cp config.example.toml config.toml</code></pre>
+<p>Docker 方式：</p>
+<pre><code class="lang-bash">cd MoneyPrinterTurbo
+cp config.example.toml config.toml
+docker compose -f docker-compose.release.yml up</code></pre>
+<h2>怎么用</h2>
+<ul><li>WebUI：Windows 执行 <code>webui.bat</code>，macOS/Linux 执行 <code>sh webui.sh</code>，默认访问 <code>http://127.0.0.1:8501</code>；在「基础设置」里配置 LLM Provider 与 API Key。</li><li>命令行：<code>uv run python cli.py --video-subject "人工智能如何改变日常生活"</code>，也可用 <code>--batch-file</code> 批量生成。</li><li>API：<code>uv run python main.py</code> 启动，API 文档在 <code>http://127.0.0.1:8080/docs</code>。</li><li>Agent：可直接读取仓库内置的 <a href="https://github.com/harry0703/MoneyPrinterTurbo/blob/main/docs/skill/SKILL.md" target="_blank" rel="noopener">docs/skill/SKILL.md</a>，让 Agent 自动完成安装、配置与生成流程。</li></ul>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 MIT</strong>：可商用；生成内容与素材版权由使用者自行负责。</li><li><strong>外部依赖</strong>：大模型脚本需要对应 Provider 的 API Key；云端 TTS、Pexels/Pixabay/Coverr 素材、WaveSpeed 文生视频均按平台规则使用与计费，默认 Edge TTS 免费。</li><li><strong>资源占用</strong>：Whisper 字幕模式首次使用需下载约 3 GB 模型（可换约 1.6 GB 的 <code>large-v3-turbo</code>）；GPU 非必需，faster-whisper 和批量生成时建议配置显卡。</li><li><strong>平台细节</strong>：Windows 一键启动包和目录路径应避免中文、空格与特殊字符；<code>ffmpeg</code> 自动下载失败时报 <code>No ffmpeg exe could be found</code>，可在 <code>config.toml</code> 手动指定 <code>ffmpeg_path</code>。</li><li><strong>发布功能</strong>：跨平台发布需注册 Upload-Post 并在 <code>config.toml</code> 填写 API Key 与目标平台。</li><li>维护十分活跃（2026-08 仍持续更新），官方提供多语言 README、一键启动包与 Docker 镜像。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-08-26 · 更新于 2026-08-26 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

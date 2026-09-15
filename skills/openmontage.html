@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OpenMontage 开源智能体视频制作系统 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">OpenMontage 开源智能体视频制作系统</h1>
+      <p class="hero-subtitle">OpenMontage — Agentic Video Production System</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>常规</span><span class="lic-badge lic-copyleft" title="AGPL-3.0">部分开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">首个开源智能体视频制作系统：把你的 AI 编程助手变成完整视频制作工作室；12 条生产流水线、100+ 注册工具与 700+ 个 skill 知识文件，覆盖真实素材剪辑、AI 生成、Remotion/HyperFrames 合成、预算治理与质量门禁。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/calesthio/OpenMontage" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://www.openmontage.video/" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>OpenMontage 开源智能体视频制作系统</h1>
+<blockquote>首个开源智能体视频制作系统。上游：<a href="https://github.com/calesthio/OpenMontage" target="_blank" rel="noopener">calesthio/OpenMontage</a> · 许可证：AGPL-3.0 · 官网：<a href="https://www.openmontage.video/" target="_blank" rel="noopener">openmontage.video</a></blockquote>
+<h2>这是什么</h2>
+<p>OpenMontage 是首个开源、agent-first 的视频制作系统：没有代码编排器，你的 AI 编程助手（Claude Code、Cursor、Copilot、Windsurf、Codex）就是编排器。仓库提供 12 条生产流水线（动画、电影感、解说片、纪实蒙太奇、数字人口播、屏幕演示等）、100+ 个注册工具（视频/图像/语音/音乐/字幕/后期）与 700+ 个 skill 与生产知识文件，把「调研 → 剧本 → 分镜 → 素材 → 合成 → 渲染 → 自查」串成有质量门禁和预算治理的完整工作流。它既可以调用 Kling、Veo、Seedance 等生成视频，也能从 Archive.org、NASA、Wikimedia Commons 检索真实动态素材剪辑成片。</p>
+<h2>怎么安装</h2>
+<p>前置条件：Python 3.10+、FFmpeg、Node.js 18+。先克隆并初始化：</p>
+<pre><code class="lang-bash">git clone https://github.com/calesthio/OpenMontage.git
+cd OpenMontage
+make setup</code></pre>
+<p>没有 <code>make</code> 的 Windows PowerShell 备选：</p>
+<pre><code class="lang-powershell">py -3 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+cd remotion-composer
+npm install
+cd ..
+python -m pip install piper-tts
+Copy-Item .env.example .env</code></pre>
+<p>若 <code>npm install</code> 报 <code>ERR_INVALID_ARG_TYPE</code>，改用 <code>npx --yes npm install</code>。所有 API key 均可选，在 <code>.env</code> 中按需填入。</p>
+<h2>怎么用</h2>
+<p>在 AI 编程助手中打开项目目录，直接描述需求，例如：</p>
+<pre><code class="lang-text">Make a 60-second animated explainer about how neural networks learn</code></pre>
+<p>需要真实素材时可明确要求：<code>"Make a 75-second documentary montage about city life in the rain. Use real footage only."</code> Agent 会按 <code>AGENT_GUIDE.md</code> 先选流水线、读 pipeline manifest 与对应 stage director skill，逐阶段执行并等待你的审批；可用 <code>python -m backlot open</code> 打开 Backlot 可视化制作台查看进度、分镜与成本。常用测试入口还可运行 <code>make test-contracts</code>。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 AGPL-3.0</strong>：可免费使用、修改与自托管；强 Copyleft，向网络用户提供服务时需开源衍生，具体以上游 LICENSE 为准。</li><li><strong>零 key 可用</strong>：Piper 本地 TTS、开放档案素材、Remotion/HyperFrames 本地合成与 FFmpeg 后期即可出片；配置 FAL、Kling、Veo、Seedance、Runway、OpenAI、ElevenLabs、Suno 等密钥后能力增强，费用自担。</li><li><strong>预算与门禁</strong>：默认总预算上限 $10，单笔超过 $0.50 暂停审批；渲染前有 slideshow 风险评估，渲染后自动跑 ffprobe/抽帧/音频检查，失败不会交付。</li><li><strong>本地 GPU 可选</strong>：<code>make install-gpu</code> 可启用 WAN 2.1/2.2、Hunyuan、CogVideo、LTX-Video 等本地视频生成。</li><li>维护活跃（2026-08 更新，5 万+ star），提供中英文 README，并为各主流 AI 编程助手内置了适配指令文件。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-08-26 · 更新于 2026-08-26 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

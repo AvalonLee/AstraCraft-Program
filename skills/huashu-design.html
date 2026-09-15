@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>花叔设计 HTML 原生设计系统 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">花叔设计 HTML 原生设计系统</h1>
+      <p class="hero-subtitle">Huashu Design — HTML-Native Design Skill</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>主推</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>技能包</span>
+    </div>
+    <p class="muted detail-meta">在 Agent 里一句话拿回可交付设计的 HTML 原生设计技能：高保真原型、演讲幻灯片（导出可编辑 PPTX）、时间轴动画（导出 MP4/GIF）、印刷级信息图，内置三套逻辑设计顾问、60 种风格库、品牌资产协议与 5 维专家评审。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/alchaincyf/huashu-design" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/alchaincyf/huashu-design" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>花叔设计 HTML 原生设计系统</h1>
+<blockquote>在 Agent 里打一句话，拿回一份能交付的设计。上游：<a href="https://github.com/alchaincyf/huashu-design" target="_blank" rel="noopener">alchaincyf/huashu-design</a> · 许可证：MIT</blockquote>
+<h2>这是什么</h2>
+<p>花叔（alchaincyf）的旗舰设计技能，把「高保真设计」蒸馏成一份 Agent 可执行的 SKILL.md：不用打开 Figma 或 AE，在 Claude Code、Codex、Cursor 等任意支持 skills 的 Agent 里直接说话，3-30 分钟拿到能交付的成品。核心能力：</p>
+<ul><li><strong>交互原型</strong>：单文件 HTML，真 iPhone 15 Pro 机身（灵动岛/状态栏/Home Indicator），状态驱动多屏切换，Playwright 自动点击测试。</li><li><strong>演讲幻灯片</strong>：HTML deck 浏览器演讲 + <code>html2pptx.js</code> 导出<strong>真文本框可编辑</strong>的 PPTX。</li><li><strong>时间轴动画</strong>：Stage + Sprite 时间片段模型（<code>useTime</code>/<code>useSprite</code>/<code>interpolate</code>/<code>Easing</code> 四 API），导出 MP4（25/60fps 插帧）、GIF、带 BGM 成片。</li><li><strong>信息图/可视化</strong>：杂志级排版、CSS Grid 分栏、可导 PDF 矢量/PNG 300dpi/SVG。</li><li><strong>设计方向顾问</strong>：需求模糊时三套逻辑并行各出一版真实视觉（秒数轮盘打破惯性 + 获奖站现实参照 + 顶级工作室哲学），底层是 60 种纯 CSS 原生风格库（网页/PPT/信息图各 20）。</li><li><strong>品牌资产协议</strong>：涉及具体品牌时强制 5 步（问 → 搜官方品牌页 → 下载资产 → grep 色值 → 固化 <code>brand-spec.md</code>），绝不凭记忆猜品牌色；A/B 测试显示稳定性方差比无协议版低 5 倍。</li><li><strong>5 维专家评审 + 反 AI slop</strong>：哲学一致性/视觉层级/细节执行/功能性/创新性雷达图评分，输出 Keep/Fix/Quick Wins 清单；规则化规避紫渐变、emoji 图标等 AI 视觉最大公约数。</li></ul>
+<p>核心设计→渲染→导出链路 100% 本地运行、零网络零 key，无 telemetry；云能力全部隔离在 <code>scripts/cloud/</code> 完全可选。</p>
+<h2>怎么安装</h2>
+<pre><code class="lang-bash">npx skills add alchaincyf/huashu-design</code></pre>
+<p>跨 Agent 通用（Claude Code、Cursor、Codex、OpenClaw、Hermes 等）。装完先自检：<code>references/</code>、<code>assets/</code>、<code>scripts/</code>、<code>demos/</code> 四个子目录必须齐全（99 处被引用的配方、脚本与素材），若只有 SKILL.md 说明 skills CLI 版本过旧（≤1.5.15 有单文件同步 bug，1.5.19 已修复），先 <code>npm i -g skills@latest</code> 再重装。</p>
+<p>CLI 异常时用 git clone 兜底：</p>
+<pre><code class="lang-bash">git clone https://github.com/alchaincyf/huashu-design.git ~/.claude/skills/huashu-design</code></pre>
+<h2>怎么用</h2>
+<p>装完重启 Agent 会话，直接说话即可：</p>
+<pre><code>「做一份 AI 心理学的演讲 PPT，推荐 3 个风格方向让我选」
+「做个 AI 番茄钟 iOS 原型，4 个核心屏幕要真能点击」
+「把这段逻辑做成 60 秒动画，导出 MP4 和 GIF」
+「帮我对这个设计做一个 5 维度评审」</code></pre>
+<p>建议用法：涉及具体品牌时主动提供 logo、色板或 UI 截图（skill 会按品牌资产协议抓取并固化色值）；需求模糊时让它跑设计方向顾问，三版真实视觉摆出来看着选，不要盲选风格；上游还提供花叔亲录的<a href="https://www.youtube.com/watch?v=m-_BlUdcIvw" target="_blank" rel="noopener">新手教程</a>。</p>
+<h2>注意事项</h2>
+<ul><li><strong>能力边界</strong>：产出 HTML，可截图/录屏/导出，但不支持图层级可编辑 PPTX 回灌 Figma/Keynote；Framer Motion 级的 3D、物理模拟、粒子动画超出边界；完全空白品牌从零设计质量会降到 60-65 分（上游自评「80 分的 skill」）。</li><li><strong>本地依赖</strong>：视频/PDF/PPTX 导出依赖本地 Node 工具链（Playwright、ffmpeg 等），缺依赖时对应导出能力不可用。</li><li><strong>云能力可选</strong>：豆包 TTS 配音、AI 看片评审需自备 API key，首次调用需 <code>--yes</code> 显式确认；核心链路完全本地，出站域名穷举声明见上游 SECURITY.md。</li><li><strong>协议</strong>：MIT，个人与商用均免费（2026-05-14 起取代旧的商用授权条款）。</li><li><strong>同名辨析</strong>：<code>huashu-skills</code> 总目录里的内置轻量版 <code>huashu-design</code> 只是设计哲学顾问，与本仓库完整设计系统同名不同物，两者目录名冲突不能同时装在 <code>~/.claude/skills/huashu-design/</code>。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-08-29 · 更新于 2026-08-29 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MiniMax H3 Studio ComfyUI 图像工作流 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">MiniMax H3 Studio ComfyUI 图像工作流</h1>
+      <p class="hero-subtitle">ComfyUI MiniMax H3 Studio</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>观察</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">把 MiniMax H3 封装成 ComfyUI 图像生产工作流：支持文生图、图生图、最多 9 张参考图、角色化提示词、LightX/PDD 加速路径、TAEH3 预览、Face Refine 与基准矩阵测试，免去手工搭建复杂图。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/thaakeno/ComfyUI-MiniMax-H3-Studio" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/thaakeno/ComfyUI-MiniMax-H3-Studio" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>MiniMax H3 Studio ComfyUI 图像工作流</h1>
+<blockquote>Turn MiniMax H3 into an actual image workflow for ComfyUI。上游：<a href="https://github.com/thaakeno/ComfyUI-MiniMax-H3-Studio" target="_blank" rel="noopener">thaakeno/ComfyUI-MiniMax-H3-Studio</a> · 许可证：MIT · 约 0.1k stars</blockquote>
+<h2>这是什么</h2>
+<p>H3 Studio 把 MiniMax H3 图像工作流所需的模型路由、参考条件、采样配置、帧选择、VAE 处理和提示词工具收进一个维护型节点套件：</p>
+<ul><li><strong>One Image Director</strong>：文生图、图生图和参考编辑共用一个界面，可选择比例/精确尺寸、采样配置、种子、运行时行为与帧策略。</li><li><strong>多参考控制</strong>：最多加入 9 张有序参考图，用 <code>@Image1</code>～<code>@Image9</code> 分别指定身份、姿态、服装、风格、构图、光线或环境等责任。</li><li><strong>快速路径</strong>：提供 Base 采样与 LightX/PDD 加速配置；主要快速 FL2VA 路径为 LightX v1.0 8-step，另有 4-step 与 REF2VA PDD 路径。</li><li><strong>Face Refine</strong>：先选择成品，再检测合格人脸，裁剪真实源区域走 H3 原生图像条件路径重绘，并用羽化/可选 SAM 掩膜融合回原图。</li><li><strong>提示词分层</strong>：区分像素分析、参考责任、生成指令与提示词编译，能把友好的 <code>@ImageN</code> 转成 H3 面向模型的 <code>&lt;Picture N&gt;</code>。</li><li><strong>Benchmark Lab</strong>：用受保护矩阵测试 Profile、分辨率和重复次数，执行前报告生成数量并阻止过大的矩阵。</li></ul>
+<h2>怎么安装</h2>
+<pre><code class="lang-bash">cd /path/to/ComfyUI/custom_nodes
+git clone https://github.com/thaakeno/ComfyUI-MiniMax-H3-Studio.git
+cd ComfyUI-MiniMax-H3-Studio
+python -m pip install -r requirements.txt</code></pre>
+<p>重启 ComfyUI、硬刷新前端后，打开 <code>example_workflows/H3_Studio_Unified_Image.json</code>。需要锁定当前发布版时可改用：</p>
+<pre><code class="lang-bash">git clone --branch v0.1.0-alpha.20 --depth 1 https://github.com/thaakeno/ComfyUI-MiniMax-H3-Studio.git</code></pre>
+<h2>怎么用</h2>
+<p>1. 在工作流中选择 H3 FL2VA / REF2VA 模型、32B 文本编码器和 H3 VAE。 2. 在 <strong>H3 Studio Director</strong> 中写提示词。 3. 需要参考时添加参考卡，并为每张图指定单一职责。 4. 选择采样配置、分辨率模式、帧配置和种子行为。 5. Queue 运行；可选开启 TAEH3 预览，或在 Face Refine 中选择 Auto/Strong。</p>
+<h2>注意事项</h2>
+<ul><li><strong>核心模型不自动下载</strong>：需从上游表格给出的 HuggingFace/官方来源手动放置 diffusion models、text encoders 和 VAE。</li><li><strong>实验性</strong>：H3 原本是音频-视频模型，这里被社区改用于图像；高分辨率、T=1 VAE、LightX/PDD 与后处理路径可能变化。</li><li><strong>ComfyUI Nodes 2.0 暂不支持</strong>，当前 Director/Benchmark 界面面向 classic Nodes 1.0。</li><li>PDD 需另行安装 <code>ComfyUI-MiniMaxH3-PDD-Mamad8</code>；Face Refine 的 YOLO/SAM 依赖可选。</li><li>代码为 MIT，但适配文件、外部模型与可选自定义节点保留各自许可证；<code>H3STUDIO_TELEMETRY=0</code> 可关闭计数遥测。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-10 · 更新于 2026-09-10 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

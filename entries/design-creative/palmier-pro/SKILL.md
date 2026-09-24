@@ -15,9 +15,9 @@ homepage: https://github.com/palmier-io/palmier-pro
 repo: https://github.com/palmier-io/palmier-pro
 tier: standard
 metrics:
-  stars: 14291
-  pushed_at: "2026-08-28T23:30:01Z"
-  checked_at: "2026-09-05"
+  stars: 14454
+  pushed_at: "2026-09-23T02:20:19Z"
+  checked_at: "2026-09-24"
   archived: false
 aliases: [Palmier Pro, palmier]
 risk_notes: "仅 macOS 26 (Tahoe) + Apple Silicon (M 系列)；v0.7.6 及之前源码为 GPLv3，后续二进制版本为专有许可（源码未发布）；仓库不再接受代码贡献；14 语 README。"
@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # Palmier Pro AI 视频剪辑
 
-> The video editor built for AI.上游：[palmier-io/palmier-pro](https://github.com/palmier-io/palmier-pro) · 历史 GPL v3（≤v0.7.6）/ 当前二进制专有 · 14.3k stars · YC S24
+> The video editor built for AI.上游：[palmier-io/palmier-pro](https://github.com/palmier-io/palmier-pro) · 历史 GPL v3（≤v0.7.6）/ 当前二进制专有 · 14.5k stars · YC S24
 
 ## 这是什么
 

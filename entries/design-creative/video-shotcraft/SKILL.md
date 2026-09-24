@@ -15,9 +15,9 @@ homepage: https://github.com/Vincentwei1021/video-shotcraft
 repo: https://github.com/Vincentwei1021/video-shotcraft
 tier: standard
 metrics:
-  stars: 6400
-  pushed_at: "2026-08-26"
-  checked_at: "2026-08-26"
+  stars: 9392
+  pushed_at: "2026-09-23T20:07:39Z"
+  checked_at: "2026-09-24"
   archived: false
 related: []
 aliases: [shotcraft, remotion-video, product-video]

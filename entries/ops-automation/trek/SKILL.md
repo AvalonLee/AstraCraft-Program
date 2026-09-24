@@ -15,9 +15,9 @@ homepage: https://demo.liketrek.com
 repo: https://github.com/liketrek/TREK
 tier: standard
 metrics:
-  stars: 13181
-  pushed_at: "2026-09-04T23:10:40Z"
-  checked_at: "2026-09-05"
+  stars: 14327
+  pushed_at: "2026-09-24T15:38:20Z"
+  checked_at: "2026-09-24"
   archived: false
 aliases: [TREK Planner, liketrek]
 risk_notes: "AGPL-3.0 为强 Copyleft：本地自用无额外义务，对外提供网络服务时需以 AGPL 开源衍生；自托管需自行维护备份、TLS 证书和 WebSocket 反向代理配置；地图服务默认 OpenStreetMap/OpenFreeMap（无 key），配 Google Places / Mapbox key 时费用与条款自担；booking 导入需 Docker 镜像内置的 kitinerary-extractor。"
@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # TREK 自托管旅行规划
 
-> your trip. your plan. 自托管实时协作旅行规划器。上游：[liketrek/TREK](https://github.com/liketrek/TREK) · 许可证：AGPL-3.0 · 13.2k stars · [Demo](https://demo.liketrek.com)
+> your trip. your plan. 自托管实时协作旅行规划器。上游：[liketrek/TREK](https://github.com/liketrek/TREK) · 许可证：AGPL-3.0 · 14.3k stars · [Demo](https://demo.liketrek.com)
 
 ## 这是什么
 
@@ -99,4 +99,4 @@ AI addon 开启后可自动解析预订邮件（EML / PDF / PKPass / HTML / TXT�
 - **反向代理**：生产部署需 TLS 终结的反向代理，WebSocket 升级（`/ws`）必须支持；MCP addon 需透传 `Mcp-Session-Id` 头。
 - **免费开放源**：地图 OpenFreeMap / OpenStreetMap / Open-Meteo 均无 key；Google Places / Mapbox / Frankfurter（汇率）配 key 后增强但费用自担。
 - **备份**：SQLite 数据库 + uploads 目录需自行备份；encryption key 丢失无法恢复。
-- **维护极其活跃**（2026-09-04 仍有提交，13.2k stars），提供 Wiki（安装 / 更新 / 反向代理）、Sonar Quality Gate 和 Discord 社区。
+- **维护极其活跃**（2026-09-04 仍有提交，14.3k stars），提供 Wiki（安装 / 更新 / 反向代理）、Sonar Quality Gate 和 Discord 社区。

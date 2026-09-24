@@ -15,9 +15,9 @@ homepage: https://github.com/harry0703/MoneyPrinterTurbo
 repo: https://github.com/harry0703/MoneyPrinterTurbo
 tier: standard
 metrics:
-  stars: 116792
-  pushed_at: "2026-08-26T09:37:30Z"
-  checked_at: "2026-08-26"
+  stars: 125471
+  pushed_at: "2026-09-24T09:16:08Z"
+  checked_at: "2026-09-24"
   archived: false
 related: []
 aliases: [moneyprinter]
@@ -32,7 +32,7 @@ updated_at: "2026-08-26"
 
 ## 这是什么
 
-MoneyPrinterTurbo 是目前 AI 短视频生成领域最具代表性的开源项目之一（11.6 万+ star）：给定一个主题或关键词，它会调用大模型生成视频脚本，从 Pexels / Pixabay / Coverr 挑选高清素材（也可用本地素材或 WaveSpeed 按脚本生成画面），再合成 TTS 配音、字幕、背景音乐和转场，输出竖屏 9:16 或横屏 16:9 成品视频。仓库同时提供 AI Agent Skill、WebUI、API、CLI 四种使用方式，支持批量生成、多语言脚本、预设导入导出，并可一键发布到 TikTok、Instagram 与 YouTube Shorts。
+MoneyPrinterTurbo 是目前 AI 短视频生成领域最具代表性的开源项目之一（12.5 万+ star）：给定一个主题或关键词，它会调用大模型生成视频脚本，从 Pexels / Pixabay / Coverr 挑选高清素材（也可用本地素材或 WaveSpeed 按脚本生成画面），再合成 TTS 配音、字幕、背景音乐和转场，输出竖屏 9:16 或横屏 16:9 成品视频。仓库同时提供 AI Agent Skill、WebUI、API、CLI 四种使用方式，支持批量生成、多语言脚本、预设导入导出，并可一键发布到 TikTok、Instagram 与 YouTube Shorts。
 
 ## 怎么安装
 

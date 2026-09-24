@@ -498,36 +498,36 @@ star 数不参与收录判断，仅作为排序维度。`—` 表示尚未采集
 
 | # | 条目 | star | 最近提交 |
 |---|---|---|---|
-| 1 | [CC Switch 多 Agent 供应商切换器](entries/agent-infra/cc-switch/SKILL.md) | 131268 | 2026-09-06T03:02:36Z |
-| 2 | [MoneyPrinterTurbo 一站式 AI 短视频生成工具](entries/design-creative/money-printer-turbo/SKILL.md) | 116792 | 2026-08-26T09:37:30Z |
-| 3 | [Browser Use 浏览器 Agent](entries/agent-infra/browser-use/SKILL.md) | 112327 | 2026-09-05T07:00:06Z |
-| 4 | [Caveman Agent 省 Token 工具集](entries/agent-infra/caveman/SKILL.md) | 104494 | 2026-09-09T07:22:27Z |
-| 5 | [OpenCut 开源视频剪辑器（CapCut 替代）](entries/design-creative/opencut/SKILL.md) | 89793 | 2026-08-10T16:38:36Z |
-| 6 | [Crawl4AI LLM 友好爬虫](entries/research-intel/crawl4ai/SKILL.md) | 81396 | 2026-09-01T07:58:26Z |
-| 7 | [Anime.js 动画引擎](entries/design-creative/animejs/SKILL.md) | 72674 | 2026-08-21T21:29:50Z |
-| 8 | [MediaCrawler 自媒体爬虫](entries/research-intel/mediacrawler/SKILL.md) | 64464 | 2026-08-14T08:19:00Z |
-| 9 | [Voicebox 本地 AI 语音工作室](entries/design-creative/voicebox/SKILL.md) | 52350 | 2026-08-09T00:03:42Z |
-| 10 | [OpenMontage 开源智能体视频制作系统](entries/design-creative/openmontage/SKILL.md) | 50726 | 2026-08-22T18:22:24Z |
-| 11 | [HyperFrames HTML 视频渲染](entries/design-creative/hyperframes/SKILL.md) | 44054 | 2026-09-05T08:39:34Z |
-| 12 | [AI Job Search 求职申请框架](entries/business-office/ai-job-search/SKILL.md) | 40808 | 2026-09-03T17:44:17Z |
-| 13 | [OpenScreen 开源录屏演示工具](entries/design-creative/openscreen/SKILL.md) | 39904 | 2026-06-17T02:34:20Z |
-| 14 | [VoxCPM2 无 Tokenizer TTS](entries/design-creative/voxcpm/SKILL.md) | 36718 | 2026-09-02T12:12:35Z |
-| 15 | [Emil Kowalski 设计与动效技能集](entries/design-creative/emilkowalski-skills/SKILL.md) | 36165 | 2026-08-21T09:32:33Z |
-| 16 | [Meetily 隐私优先 AI 会议助手](entries/ops-automation/meetily/SKILL.md) | 30366 | 2026-09-05T09:03:14Z |
-| 17 | [Codex++ Codex 桌面增强器](entries/agent-infra/codexplusplus/SKILL.md) | 30281 | 2026-09-04T09:01:05Z |
-| 18 | [OfficeCLI AI Office 套件](entries/business-office/officecli/SKILL.md) | 29872 | 2026-09-03T07:16:42Z |
-| 19 | [GSAP 动画平台](entries/design-creative/gsap/SKILL.md) | 28252 | 2026-04-13T13:08:58Z |
-| 20 | [Pixelle-Video AI 全自动短视频引擎](entries/design-creative/pixelle-video/SKILL.md) | 28227 | 2026-06-14T12:40:58Z |
-| 21 | [AiToEarn AI 内容营销智能体](entries/agent-infra/aitoearn/SKILL.md) | 25715 | 2026-08-15T15:20:35Z |
-| 22 | [Guizang PPT Skill 网页 PPT](entries/design-creative/guizang-ppt-skill/SKILL.md) | 25657 | 2026-08-07T03:58:08Z |
-| 23 | [video-use 用编码 Agent 剪视频](entries/design-creative/video-use/SKILL.md) | 25107 | 2026-08-30T09:45:51Z |
-| 24 | [花叔设计 HTML 原生设计系统](entries/design-creative/huashu-design/SKILL.md) | 23662 | 2026-08-25 |
-| 25 | [WeKnora 开源 LLM 知识平台](entries/agent-infra/weknora/SKILL.md) | 21375 | 2026-09-04T09:35:26Z |
-| 26 | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) | 21060 | 2026-08-11T12:12:06Z |
-| 27 | [GPT-Image2 工业级提示词引擎与模板库](entries/design-creative/awesome-gpt-image-2/SKILL.md) | 19916 | 2026-08-26T08:54:32Z |
-| 28 | [Humanizer-zh AI 写作去痕](entries/writing-docs/humanizer-zh/SKILL.md) | 16695 | 2026-01-19T07:46:35Z |
-| 29 | [Toonflow 一站式 AI 短剧创作工具](entries/design-creative/toonflow/SKILL.md) | 14622 | 2026-08-26T10:49:08Z |
-| 30 | [Claude Code Haha 桌面工作台](entries/agent-infra/cc-haha/SKILL.md) | 14331 | 2026-09-11T10:49:34Z |
+| 1 | [Agent Skills 规范](entries/meta-skillcraft/agent-skills-spec/SKILL.md) | 177926 | 2026-09-22T17:16:36Z |
+| 2 | [Anthropic Office 文档技能](entries/business-office/anthropics-office-skills/SKILL.md) | 177925 | 2026-09-22T17:16:36Z |
+| 3 | [CC Switch 多 Agent 供应商切换器](entries/agent-infra/cc-switch/SKILL.md) | 136390 | 2026-09-24T14:43:18Z |
+| 4 | [MoneyPrinterTurbo 一站式 AI 短视频生成工具](entries/design-creative/money-printer-turbo/SKILL.md) | 125471 | 2026-09-24T09:16:08Z |
+| 5 | [Browser Use 浏览器 Agent](entries/agent-infra/browser-use/SKILL.md) | 116169 | 2026-09-24T01:38:47Z |
+| 6 | [Caveman Agent 省 Token 工具集](entries/agent-infra/caveman/SKILL.md) | 107662 | 2026-09-24T07:39:42Z |
+| 7 | [OpenCut 开源视频剪辑器（CapCut 替代）](entries/design-creative/opencut/SKILL.md) | 90590 | 2026-09-24T09:24:44Z |
+| 8 | [Crawl4AI LLM 友好爬虫](entries/research-intel/crawl4ai/SKILL.md) | 84201 | 2026-09-23T15:10:21Z |
+| 9 | [Anime.js 动画引擎](entries/design-creative/animejs/SKILL.md) | 73093 | 2026-08-21T21:29:50Z |
+| 10 | [MediaCrawler 自媒体爬虫](entries/research-intel/mediacrawler/SKILL.md) | 65675 | 2026-09-19T05:26:11Z |
+| 11 | [OpenMontage 开源智能体视频制作系统](entries/design-creative/openmontage/SKILL.md) | 61149 | 2026-09-06T05:02:34Z |
+| 12 | [Voicebox 本地 AI 语音工作室](entries/design-creative/voicebox/SKILL.md) | 55581 | 2026-08-09T00:03:42Z |
+| 13 | [HyperFrames HTML 视频渲染](entries/design-creative/hyperframes/SKILL.md) | 52821 | 2026-09-24T15:39:25Z |
+| 14 | [AI Job Search 求职申请框架](entries/business-office/ai-job-search/SKILL.md) | 43811 | 2026-09-21T06:41:22Z |
+| 15 | [Emil Kowalski 设计与动效技能集](entries/design-creative/emilkowalski-skills/SKILL.md) | 40899 | 2026-09-23T23:18:27Z |
+| 16 | [OpenScreen 开源录屏演示工具](entries/design-creative/openscreen/SKILL.md) | 39966 | 2026-06-17T02:34:20Z |
+| 17 | [VoxCPM2 无 Tokenizer TTS](entries/design-creative/voxcpm/SKILL.md) | 37945 | 2026-09-02T12:12:35Z |
+| 18 | [GPT-Image2 工业级提示词引擎与模板库](entries/design-creative/awesome-gpt-image-2/SKILL.md) | 33475 | 2026-09-24T08:01:10Z |
+| 19 | [Codex++ Codex 桌面增强器](entries/agent-infra/codexplusplus/SKILL.md) | 31493 | 2026-09-23T17:51:13Z |
+| 20 | [OfficeCLI AI Office 套件](entries/business-office/officecli/SKILL.md) | 31189 | 2026-09-24T08:20:47Z |
+| 21 | [Meetily 隐私优先 AI 会议助手](entries/ops-automation/meetily/SKILL.md) | 31078 | 2026-09-15T18:32:32Z |
+| 22 | [WeKnora 开源 LLM 知识平台](entries/agent-infra/weknora/SKILL.md) | 29644 | 2026-09-24T15:44:49Z |
+| 23 | [GSAP 动画平台](entries/design-creative/gsap/SKILL.md) | 28605 | 2026-04-13T13:08:58Z |
+| 24 | [Pixelle-Video AI 全自动短视频引擎](entries/design-creative/pixelle-video/SKILL.md) | 28396 | 2026-06-14T12:40:58Z |
+| 25 | [TencentDB Agent Memory](entries/agent-infra/tencentdb-agent-memory/SKILL.md) | 27236 | 2026-09-24T06:37:04Z |
+| 26 | [Guizang PPT Skill 网页 PPT](entries/design-creative/guizang-ppt-skill/SKILL.md) | 26902 | 2026-08-07T03:58:08Z |
+| 27 | [video-use 用编码 Agent 剪视频](entries/design-creative/video-use/SKILL.md) | 26778 | 2026-09-24T04:50:14Z |
+| 28 | [AiToEarn AI 内容营销智能体](entries/agent-infra/aitoearn/SKILL.md) | 26399 | 2026-09-18T07:18:26Z |
+| 29 | [花叔设计 HTML 原生设计系统](entries/design-creative/huashu-design/SKILL.md) | 24431 | 2026-09-22T15:52:07Z |
+| 30 | [Humanizer-zh AI 写作去痕](entries/writing-docs/humanizer-zh/SKILL.md) | 18370 | 2026-09-23T02:24:28Z |
 
 ### 最近加入
 

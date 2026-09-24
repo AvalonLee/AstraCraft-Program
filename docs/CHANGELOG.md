@@ -65,6 +65,11 @@
 
 ---
 
+### 更新
+- **全量刷新上游指标（2026-09-24）**：对 77 个带 `metrics` 块的条目重新拉取 GitHub 数据，76 条更新 `stars` 与 `pushed_at`，`checked_at` 统一置为 2026-09-24。涨幅居前：`awesome-gpt-image-2` 19,916→33,475、`openmontage` 50,726→61,149、`hyperframes` 44,054→52,821、`money-printer-turbo` 116,792→125,471、`weknora` 21,375→29,644；另把 `anthropics-office-skills`、`agent-skills-spec`、`dashi-ppt-skill` 三条 `stars: null` 补成实际值。
+- **两处上游已归档**：`design-creative/openscreen`（★39,966，末次推送 2026-06-17）与 `agent-infra/deepseek-pp`（★1,871，末次推送 2026-08-13）的 `metrics.archived` 由 false 改为 true。两者 tier 暂仍为 `standard`，是否按收录标准降为 `watch` 待维护者判定。
+- **正文写死的星号同步刷新**：条目详情页与 `skills.json` 不同，正文里的星号是手写进散文的（如 `> 上游：… · 44.1k stars`），不随 `metrics` 自动更新。本次把 27 个条目「当前状态」语义的星号（标题行与「维护活跃」句）改到实测值，千位以下改用实际数字（如 `约 0.3k` → `约 331`）；明确标注「截至 <日期> 核验」的历史陈述保持原样不动。
+
 ## 2026-08
 
 ### 新增

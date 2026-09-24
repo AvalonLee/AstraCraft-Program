@@ -15,9 +15,9 @@ homepage: https://github.com/chuspeeism/dashi-ppt-skill
 repo: https://github.com/chuspeeism/dashi-ppt-skill
 tier: standard
 metrics:
-  stars: null
-  pushed_at: "2026-08-26"
-  checked_at: "2026-08-26"
+  stars: 8724
+  pushed_at: "2026-09-12T14:13:08Z"
+  checked_at: "2026-09-24"
   archived: false
 related: []
 aliases: [dashi-ppt, 大师ppt, 大师PPT, dashippt]

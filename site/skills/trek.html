@@ -60,7 +60,7 @@
 
   <article id="body" class="content-panel detail-body" style="margin-top:24px;">
 <h1>TREK 自托管旅行规划</h1>
-<blockquote>your trip. your plan. 自托管实时协作旅行规划器。上游：<a href="https://github.com/liketrek/TREK" target="_blank" rel="noopener">liketrek/TREK</a> · 许可证：AGPL-3.0 · 13.2k stars · <a href="https://demo.liketrek.com" target="_blank" rel="noopener">Demo</a></blockquote>
+<blockquote>your trip. your plan. 自托管实时协作旅行规划器。上游：<a href="https://github.com/liketrek/TREK" target="_blank" rel="noopener">liketrek/TREK</a> · 许可证：AGPL-3.0 · 14.3k stars · <a href="https://demo.liketrek.com" target="_blank" rel="noopener">Demo</a></blockquote>
 <h2>这是什么</h2>
 <p>TREK 是一个功能极其完整的自托管旅行规划器——不只是"存一下行程"，而是一套把计划、预订、地图、费用、协作、日志和 AI 全部打通的实时协作平台。核心卖点是<strong>每一步都自托管</strong>：数据在自己服务器上，地图和天气用免费开放源（OpenStreetMap / Open-Meteo），配 key 就增强、不配也能跑。</p>
 <p><strong>核心模块</strong>（admin 逐项开关）：</p>
@@ -86,7 +86,7 @@ helm install trek trek/trek</code></pre>
 <p>1. <strong>加地点</strong>：搜索（Google Places / OSM）或导入 GPX / KML / KMZ / Google Maps 列表 2. <strong>排日计划</strong>：拖拽排序或一键 auto-sort（OSRM 路由 + 2-opt 优化） 3. <strong>录预订</strong>：航班/火车/酒店，自动关联天气和日计划 4. <strong>算费用</strong>：多币种分摊，汇率自动冻结 5. <strong>共享</strong>：邀请协作者实时同步，或导出 GPX / ICS</p>
 <p>AI addon 开启后可自动解析预订邮件（EML / PDF / PKPass / HTML / TXT）为预订条目。</p>
 <h2>注意事项</h2>
-<ul><li><strong>许可证 AGPL-3.0</strong>：强 Copyleft——自用和内部部署无额外义务；对外提供网络服务需以 AGPL 开源衍生，具体以上游 LICENSE 为准。</li><li><strong>反向代理</strong>：生产部署需 TLS 终结的反向代理，WebSocket 升级（<code>/ws</code>）必须支持；MCP addon 需透传 <code>Mcp-Session-Id</code> 头。</li><li><strong>免费开放源</strong>：地图 OpenFreeMap / OpenStreetMap / Open-Meteo 均无 key；Google Places / Mapbox / Frankfurter（汇率）配 key 后增强但费用自担。</li><li><strong>备份</strong>：SQLite 数据库 + uploads 目录需自行备份；encryption key 丢失无法恢复。</li><li><strong>维护极其活跃</strong>（2026-09-04 仍有提交，13.2k stars），提供 Wiki（安装 / 更新 / 反向代理）、Sonar Quality Gate 和 Discord 社区。</li></ul>
+<ul><li><strong>许可证 AGPL-3.0</strong>：强 Copyleft——自用和内部部署无额外义务；对外提供网络服务需以 AGPL 开源衍生，具体以上游 LICENSE 为准。</li><li><strong>反向代理</strong>：生产部署需 TLS 终结的反向代理，WebSocket 升级（<code>/ws</code>）必须支持；MCP addon 需透传 <code>Mcp-Session-Id</code> 头。</li><li><strong>免费开放源</strong>：地图 OpenFreeMap / OpenStreetMap / Open-Meteo 均无 key；Google Places / Mapbox / Frankfurter（汇率）配 key 后增强但费用自担。</li><li><strong>备份</strong>：SQLite 数据库 + uploads 目录需自行备份；encryption key 丢失无法恢复。</li><li><strong>维护极其活跃</strong>（2026-09-04 仍有提交，14.3k stars），提供 Wiki（安装 / 更新 / 反向代理）、Sonar Quality Gate 和 Discord 社区。</li></ul>
   </article>
 
   <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>

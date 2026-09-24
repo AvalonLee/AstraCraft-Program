@@ -15,9 +15,9 @@ homepage: https://github.com/zenstory-ai/oh-story-claudecode
 repo: https://github.com/zenstory-ai/oh-story-claudecode
 tier: standard
 metrics:
-  stars: 6086
-  pushed_at: "2026-08-26T05:28:29Z"
-  checked_at: "2026-08-26"
+  stars: 7090
+  pushed_at: "2026-09-24T14:20:23Z"
+  checked_at: "2026-09-24"
   archived: false
 related: []
 aliases: [网文写作, 去AI味]

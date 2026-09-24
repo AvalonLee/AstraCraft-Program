@@ -15,9 +15,9 @@ homepage: https://codexpp.cc/
 repo: https://github.com/BigPizzaV3/CodexPlusPlus
 tier: standard
 metrics:
-  stars: 30281
-  pushed_at: "2026-09-04T09:01:05Z"
-  checked_at: "2026-09-06"
+  stars: 31493
+  pushed_at: "2026-09-23T17:51:13Z"
+  checked_at: "2026-09-24"
   archived: false
 related: [cc-switch]
 aliases: [CodexPlusPlus, Codex++]
@@ -68,4 +68,4 @@ sudo xattr -rd com.apple.quarantine /Applications/Codex++.app
 - **兼容性**：依赖官方桌面应用的页面结构、CDP 和本地数据格式，官方更新后部分注入功能可能需要跟随适配。
 - **数据备份**：修改供应商配置或本地会话数据前应保留备份；配置在 `~/.codex/config.toml`，登录状态在 `~/.codex/auth.json`。
 - **macOS 未签名**：安装包未签名/未公证时，Gatekeeper 会拦截，需手动解除隔离。
-- 维护活跃（2026-09 持续更新），当前 30,281 stars。
+- 维护活跃（2026-09 持续更新），当前 31.5k stars。

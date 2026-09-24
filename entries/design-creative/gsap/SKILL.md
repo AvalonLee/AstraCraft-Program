@@ -16,9 +16,9 @@ repo: https://github.com/greensock/GSAP
 docs_url: https://gsap.com/docs/v3/
 tier: core
 metrics:
-  stars: 28252
+  stars: 28605
   pushed_at: "2026-04-13T13:08:58Z"
-  checked_at: "2026-09-05"
+  checked_at: "2026-09-24"
   archived: false
 related: [remotion-skills]
 aliases: [GreenSock Animation Platform, GreenSock]

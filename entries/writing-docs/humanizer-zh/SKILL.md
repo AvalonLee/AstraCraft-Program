@@ -15,9 +15,9 @@ homepage: https://github.com/op7418/Humanizer-zh
 repo: https://github.com/op7418/Humanizer-zh
 tier: standard
 metrics:
-  stars: 16695
-  pushed_at: "2026-01-19T07:46:35Z"
-  checked_at: "2026-09-05"
+  stars: 18370
+  pushed_at: "2026-09-23T02:24:28Z"
+  checked_at: "2026-09-24"
   archived: false
 aliases: [humanizer, AI 去痕, writing-dehumanizer]
 risk_notes: "基于 blader/humanizer 英文原版的中文汉化 + 中文语境适配；24 种模式主要来自维基百科 Signs of AI writing 指南，中文特有 AI 痕迹（如「格局」「织锦」等抽象名词）已补充但覆盖面仍在扩展；不是为欺骗 AI 检测器设计。"
@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # Humanizer-zh AI 写作去痕
 
-> 把 AI 味文本改写成"人味"文本。上游：[op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh) · 许可证：MIT · 16.7k stars · 基于 [blader/humanizer](https://github.com/blader/humanizer) 汉化
+> 把 AI 味文本改写成"人味"文本。上游：[op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh) · 许可证：MIT · 18.4k stars · 基于 [blader/humanizer](https://github.com/blader/humanizer) 汉化
 
 ## 这是什么
 

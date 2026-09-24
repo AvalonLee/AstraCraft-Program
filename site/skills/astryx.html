@@ -60,7 +60,7 @@
 
   <article id="body" class="content-panel detail-body" style="margin-top:24px;">
 <h1>Astryx 设计系统</h1>
-<blockquote>Meta 内部打磨八年、13,000+ apps 在用的设计系统，现在开源了。上游：<a href="https://github.com/facebook/astryx" target="_blank" rel="noopener">facebook/astryx</a> · 许可证：MIT · 12.8k stars · <a href="https://astryx.atmeta.com" target="_blank" rel="noopener">文档</a> · <a href="https://facebook.github.io/astryx/storybook/" target="_blank" rel="noopener">Storybook</a></blockquote>
+<blockquote>Meta 内部打磨八年、13,000+ apps 在用的设计系统，现在开源了。上游：<a href="https://github.com/facebook/astryx" target="_blank" rel="noopener">facebook/astryx</a> · 许可证：MIT · 13.3k stars · <a href="https://astryx.atmeta.com" target="_blank" rel="noopener">文档</a> · <a href="https://facebook.github.io/astryx/storybook/" target="_blank" rel="noopener">Storybook</a></blockquote>
 <h2>这是什么</h2>
 <p>Astryx 是 Meta 开源的 React 19 设计系统，在公司内部使用八年后成为 Meta 最常用的设计系统（13,000+ 应用），现在以 MIT 协议向公众开放。它提供 150+ 可访问的 TypeScript 组件、7 个可完全定制的主题、深色模式、页面模板和一套面向 AI Agent 的 CLI 工具链。</p>
 <p><strong>对 Agent 的设计</strong>——这不是 marketing 话术，而是系统级架构：</p>
@@ -109,7 +109,7 @@ npx @astryxdesign/cli upgrade --apply        # 版本迁移
 npx @astryxdesign/cli doctor                 # 环境检查 + 修复建议</code></pre>
 <p>Agent 可用 <code>--json</code> 获取 typed 输出，用 <code>--zh</code> 获取中文文档，用 <code>--dense</code> 获取压缩格式（省 token）。</p>
 <h2>注意事项</h2>
-<ul><li><strong>许可证 MIT</strong>：可自由商用。</li><li><strong>Beta 状态</strong>：API 可能变动，建议关注 GitHub Releases 或用 <code>astryx upgrade</code> 做 codemod 迁移。</li><li><strong>React 19+ 必需</strong>：<code>react</code> 和 <code>react-dom</code> &gt;= 19.0.0 是 peer dependency。</li><li><strong>样式覆盖</strong>：内部 StyleX 对消费者不可见，用 <code>className</code> + Tailwind / CSS modules / 原生 CSS 覆盖即可。</li><li><strong>Agent 文档更新</strong>：新组件发布后需重新运行 <code>astryx init</code> 或手动更新 <code>AGENTS.md</code> 中的 Astryx 区块。</li><li><strong>维护极其活跃</strong>（Meta 出品，2026-09-05 当天仍有提交，12.8k stars），Node 22+ / pnpm 11 构建，提供 Storybook / Sandbox / Discord 社区。</li></ul>
+<ul><li><strong>许可证 MIT</strong>：可自由商用。</li><li><strong>Beta 状态</strong>：API 可能变动，建议关注 GitHub Releases 或用 <code>astryx upgrade</code> 做 codemod 迁移。</li><li><strong>React 19+ 必需</strong>：<code>react</code> 和 <code>react-dom</code> &gt;= 19.0.0 是 peer dependency。</li><li><strong>样式覆盖</strong>：内部 StyleX 对消费者不可见，用 <code>className</code> + Tailwind / CSS modules / 原生 CSS 覆盖即可。</li><li><strong>Agent 文档更新</strong>：新组件发布后需重新运行 <code>astryx init</code> 或手动更新 <code>AGENTS.md</code> 中的 Astryx 区块。</li><li><strong>维护极其活跃</strong>（Meta 出品，2026-09-05 当天仍有提交，13.3k stars），Node 22+ / pnpm 11 构建，提供 Storybook / Sandbox / Discord 社区。</li></ul>
   </article>
 
   <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>

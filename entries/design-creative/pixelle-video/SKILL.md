@@ -16,9 +16,9 @@ repo: https://github.com/ATH-MaaS/Pixelle-Video
 docs_url: https://ath-maas.github.io/Pixelle-Video/zh
 tier: standard
 metrics:
-  stars: 28227
+  stars: 28396
   pushed_at: "2026-06-14T12:40:58Z"
-  checked_at: "2026-09-19"
+  checked_at: "2026-09-24"
   archived: false
 related: [money-printer-turbo, comfyui-minimax-h3-studio, voxcpm]
 aliases: [pixelle]

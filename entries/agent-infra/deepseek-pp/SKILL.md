@@ -15,10 +15,10 @@ homepage: https://github.com/zhu1090093659/deepseek-pp
 repo: https://github.com/zhu1090093659/deepseek-pp
 tier: standard
 metrics:
-  stars: 1841
+  stars: 1871
   pushed_at: "2026-08-13T17:19:34Z"
-  checked_at: "2026-09-11"
-  archived: false
+  checked_at: "2026-09-24"
+  archived: true
 related: [officecli]
 aliases: [DeepSeek++, deepseek-pp]
 risk_notes: "Apache-2.0 可商用；依赖 DeepSeek 网页版界面，上游 DOM 或站点策略变化可能影响扩展功能；MCP/浏览器控制/Shell 能力需按需授权，Shell MCP 会获得本机命令执行能力，安装前应确认来源并限制权限；多模态 API Key 与配置保存在浏览器本地。"

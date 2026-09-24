@@ -15,9 +15,9 @@ homepage: https://github.com/Agentchengfeng/chengfeng-videocut-skills
 repo: https://github.com/Agentchengfeng/chengfeng-videocut-skills
 tier: watch
 metrics:
-  stars: 3000
-  pushed_at: "2026-09-14T15:41:49Z"
-  checked_at: "2026-09-19"
+  stars: 3010
+  pushed_at: "2026-09-20T12:07:07Z"
+  checked_at: "2026-09-24"
   archived: false
 related: [manju-laoli-skill, video-shotcraft]
 aliases: []

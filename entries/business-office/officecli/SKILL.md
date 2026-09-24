@@ -16,9 +16,9 @@ repo: https://github.com/iOfficeAI/OfficeCLI
 docs_url: https://github.com/iOfficeAI/OfficeCLI/wiki
 tier: core
 metrics:
-  stars: 29872
-  pushed_at: "2026-09-03T07:16:42Z"
-  checked_at: "2026-09-05"
+  stars: 31189
+  pushed_at: "2026-09-24T08:20:47Z"
+  checked_at: "2026-09-24"
   archived: false
 aliases: [office-cli, officecli-cli]
 risk_notes: "单二进制内嵌 .NET 运行时，无需额外安装；后台自动检查更新（可关），config 存于 ~/.officecli/config.json；resident 模式延迟磁盘写入，其他程序读取前需 officecli save 或 OFFICECLI_RESIDENT_FLUSH=each；源码构建需 .NET 10 SDK，但运行时不需要。"
@@ -28,7 +28,7 @@ updated_at: "2026-09-05"
 
 # OfficeCLI AI Office 套件
 
-> The world's first and the best Office suite designed for AI agents。上游：[iOfficeAI/OfficeCLI](https://github.com/iOfficeAI/OfficeCLI) · 许可证：Apache 2.0 · 29.9k stars · [officecli.ai](https://officecli.ai)
+> The world's first and the best Office suite designed for AI agents。上游：[iOfficeAI/OfficeCLI](https://github.com/iOfficeAI/OfficeCLI) · 许可证：Apache 2.0 · 31.2k stars · [officecli.ai](https://officecli.ai)
 
 ## 这是什么
 
@@ -149,4 +149,4 @@ officecli mcp list      # 查看注册状态
 - **单二进制**：内嵌 .NET 运行时，无需安装 .NET 或 Office；源码构建需 .NET 10 SDK（仅编译用）。
 - **resident 模式磁盘刷新**：resident 会话延迟磁盘写入，其他程序（python-docx / openpyxl / Microsoft Word）读取前需 `officecli save` 或 `officecli close` 刷新，或设 `OFFICECLI_RESIDENT_FLUSH=each` 让每次变更即时落盘。
 - **自动更新**：后台自动检查新版本（`officecli config autoUpdate false` 关闭），配置存于 `~/.officecli/config.json`。
-- **维护活跃**（2026-09 更新，29.9k stars），提供英文/中文/日文/韩文四语 README、完整 Wiki 文档与 runnable examples，iOfficeAI 团队出品。
+- **维护活跃**（2026-09 更新，31.2k stars），提供英文/中文/日文/韩文四语 README、完整 Wiki 文档与 runnable examples，iOfficeAI 团队出品。

@@ -15,9 +15,9 @@ homepage: https://meetily.ai
 repo: https://github.com/Zackriya-Solutions/meetily
 tier: core
 metrics:
-  stars: 30366
-  pushed_at: "2026-09-05T09:03:14Z"
-  checked_at: "2026-09-05"
+  stars: 31078
+  pushed_at: "2026-09-15T18:32:32Z"
+  checked_at: "2026-09-24"
   archived: false
 aliases: [meetily, meeting-minutes, Meetily AI]
 risk_notes: "100% 本地处理，但本地 LLM（Ollama）摘要质量取决于设备算力；转写模型首次需下载（Parakeet / Whisper），断网可用但首次配置需网络；PRO 版（付费）提供增强精度、高级导出和团队功能，社区版为 MIT。"
@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # Meetily 隐私优先 AI 会议助手
 
-> Privacy-First AI Meeting Assistant。上游：[Zackriya-Solutions/meetily](https://github.com/Zackriya-Solutions/meetily) · 许可证：MIT · 30.4k stars · [官网](https://meetily.ai)
+> Privacy-First AI Meeting Assistant。上游：[Zackriya-Solutions/meetily](https://github.com/Zackriya-Solutions/meetily) · 许可证：MIT · 31.1k stars · [官网](https://meetily.ai)
 
 ## 这是什么
 
@@ -88,4 +88,4 @@ pnpm install
 - **本地 LLM 摘要**：Ollama 推荐但需要较好硬件（8GB+ RAM 模型运行）；也可接云端 API 获得更强摘要但失去"零云端"优势。
 - **首次模型下载**：Parakeet / Whisper 模型需网络下载，之后离线可用。
 - **说话人分离**：社区版已内置，PRO 版计划增强。
-- **维护极其活跃**（2026-09-05 当天仍有提交，30.4k stars），提供 Trendshift 徽章、Discord / Reddit 社区和详细文档。
+- **维护极其活跃**（2026-09-05 当天仍有提交，31.1k stars），提供 Trendshift 徽章、Discord / Reddit 社区和详细文档。

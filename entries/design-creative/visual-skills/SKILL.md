@@ -15,9 +15,9 @@ homepage: https://github.com/smixs/visual-skills
 repo: https://github.com/smixs/visual-skills
 tier: standard
 metrics:
-  stars: 292
-  pushed_at: "2026-08-08T00:40:19Z"
-  checked_at: "2026-09-05"
+  stars: 430
+  pushed_at: "2026-09-16T13:21:46Z"
+  checked_at: "2026-09-24"
   archived: false
 related: [seedance-20, awesome-gpt-image-2]
 aliases: [visual-skills-smixs, ai-film-director]

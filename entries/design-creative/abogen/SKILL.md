@@ -15,9 +15,9 @@ homepage: https://github.com/denizsafak/abogen
 repo: https://github.com/denizsafak/abogen
 tier: standard
 metrics:
-  stars: 5898
-  pushed_at: "2026-08-29T09:45:51Z"
-  checked_at: "2026-09-05"
+  stars: 6047
+  pushed_at: "2026-09-07T14:30:10Z"
+  checked_at: "2026-09-24"
   archived: false
 aliases: [abogen-tts]
 risk_notes: "依赖 espeak-ng（phonemization）和 PyTorch；NVIDIA GPU 加速需安装 CUDA 化 PyTorch（按显卡驱动选 cu126/cu128/cu130），无 GPU 时 CPU 推理较慢；AMD GPU 在 Windows 上不支持 ROCm，需 Linux；本地推理无 API 费用。"
@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # Abogen 有声书生成器
 
-> 把书变成有声书，把文本变成配音。上游：[denizsafak/abogen](https://github.com/denizsafak/abogen) · 许可证：MIT · 5.9k stars
+> 把书变成有声书，把文本变成配音。上游：[denizsafak/abogen](https://github.com/denizsafak/abogen) · 许可证：MIT · 6.0k stars
 
 ## 这是什么
 
@@ -81,4 +81,4 @@ Windows：安装 espeak-ng MSI 后可运行 `WINDOWS_INSTALL.bat`（自动装 Py
 - **espeak-ng 依赖**：phonemization 必需，各平台需单独安装。
 - **GPU 差异**：NVIDIA CUDA 化 PyTorch 提速显著；AMD GPU Windows 上不支持 ROCm（用 Linux 或 CPU）；Intel Mac 用 MPS。
 - **本地推理**：无 API 费用，无网络依赖（模型首次从 Hugging Face 下载）。
-- **维护活跃**（2026-08 更新，5.9k stars，PyPI 持续下载），提供跨平台 release。
+- **维护活跃**（2026-08 更新，6.0k stars，PyPI 持续下载），提供跨平台 release。

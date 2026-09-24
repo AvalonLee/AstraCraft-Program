@@ -15,9 +15,9 @@ homepage: https://github.com/Hommy-master/capcut-mate
 repo: https://github.com/Hommy-master/capcut-mate
 tier: standard
 metrics:
-  stars: 1701
-  pushed_at: "2026-09-01T11:32:43Z"
-  checked_at: "2026-09-05"
+  stars: 1859
+  pushed_at: "2026-09-21T00:56:35Z"
+  checked_at: "2026-09-24"
   archived: false
 aliases: [jianying-assistant, capcut-mate-api, 剪映小助手]
 risk_notes: "生成的是剪映草稿文件（非成片），最终导出仍需剪映客户端或云渲染；草稿写入剪映的 draft_content 目录路径因版本和平台而异；Docker 部署默认端口 30000；剪映版本升级可能导致草稿格式不兼容。"
@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # CapCut Mate 剪映自动化
 
-> 开源剪映小助手：让大模型具备剪映剪辑能力。上游：[Hommy-master/capcut-mate](https://github.com/Hommy-master/capcut-mate) · 许可证：Apache 2.0 · 1.7k stars
+> 开源剪映小助手：让大模型具备剪映剪辑能力。上游：[Hommy-master/capcut-mate](https://github.com/Hommy-master/capcut-mate) · 许可证：Apache 2.0 · 1.9k stars
 
 ## 这是什么
 

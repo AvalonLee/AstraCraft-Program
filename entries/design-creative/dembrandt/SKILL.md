@@ -15,9 +15,9 @@ homepage: https://dembrandt.com/
 repo: https://github.com/dembrandt/dembrandt
 tier: standard
 metrics:
-  stars: 3396
-  pushed_at: "2026-09-08T09:25:19Z"
-  checked_at: "2026-09-08"
+  stars: 3522
+  pushed_at: "2026-09-23T07:01:05Z"
+  checked_at: "2026-09-24"
   archived: false
 related: []
 aliases: []

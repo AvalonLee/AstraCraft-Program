@@ -15,9 +15,9 @@ homepage: https://opencut.app
 repo: https://github.com/OpenCut-app/OpenCut
 tier: standard
 metrics:
-  stars: 89793
-  pushed_at: "2026-08-10T16:38:36Z"
-  checked_at: "2026-09-19"
+  stars: 90590
+  pushed_at: "2026-09-24T09:24:44Z"
+  checked_at: "2026-09-24"
   archived: false
 related: [capcut-mate, hyperframes]
 aliases: [opencut-app]

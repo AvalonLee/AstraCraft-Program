@@ -15,9 +15,9 @@ homepage: https://github.com/AHEKOT/ComfyUI_VNCCS_Utils
 repo: https://github.com/AHEKOT/ComfyUI_VNCCS_Utils
 tier: standard
 metrics:
-  stars: 1022
-  pushed_at: "2026-09-08T14:18:28Z"
-  checked_at: "2026-09-10"
+  stars: 1062
+  pushed_at: "2026-09-11T05:26:35Z"
+  checked_at: "2026-09-24"
   archived: false
 related: []
 aliases: []
@@ -28,7 +28,7 @@ updated_at: "2026-09-10"
 
 # VNCCS Utils ComfyUI 创作工具箱
 
-> ComfyUI 里的 VNCCS 通用节点集合。上游：[AHEKOT/ComfyUI_VNCCS_Utils](https://github.com/AHEKOT/ComfyUI_VNCCS_Utils) · 许可证：MIT · 约 1.0k stars
+> ComfyUI 里的 VNCCS 通用节点集合。上游：[AHEKOT/ComfyUI_VNCCS_Utils](https://github.com/AHEKOT/ComfyUI_VNCCS_Utils) · 许可证：MIT · 约 1.1k stars
 
 ## 这是什么
 

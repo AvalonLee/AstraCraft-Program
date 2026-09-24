@@ -15,9 +15,9 @@ homepage: https://github.com/volcengine/mediakit-cli
 repo: https://github.com/volcengine/mediakit-cli
 tier: standard
 metrics:
-  stars: 197
+  stars: 201
   pushed_at: "2026-09-02T03:57:08Z"
-  checked_at: "2026-09-05"
+  checked_at: "2026-09-24"
   archived: false
 aliases: [mediakit, AI MediaKit CLI, byted-mediakit]
 risk_notes: "云端 AI 能力需火山引擎 API Key，按调用计费，使用前需阅读火山引擎智能处理服务条款与计费规则；本地模式依赖本机 FFmpeg 5.1.x（ffmpeg + ffprobe），Agent 安装会下载并执行 npm 包与 Skill 文件，执行前应复核上游 README 与许可证全文。"

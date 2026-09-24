@@ -15,7 +15,7 @@ homepage: https://toolknit.com
 repo: https://github.com/ZihangDong/toolknit-desktop
 tier: standard
 metrics:
-  stars: 1165
+  stars: 1166
   pushed_at: "2026-09-23T06:21:32Z"
   checked_at: "2026-09-24"
   archived: false

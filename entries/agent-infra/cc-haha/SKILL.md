@@ -15,9 +15,9 @@ homepage: https://cchaha.ai
 repo: https://github.com/NanmiCoder/cc-haha
 tier: standard
 metrics:
-  stars: 14331
-  pushed_at: "2026-09-11T10:49:34Z"
-  checked_at: "2026-09-11"
+  stars: 14698
+  pushed_at: "2026-09-24T10:57:45Z"
+  checked_at: "2026-09-24"
   archived: false
 related: [cc-switch, codexplusplus]
 aliases: [cc-haha, Claude Code Haha]

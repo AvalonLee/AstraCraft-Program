@@ -60,7 +60,7 @@
 
   <article id="body" class="content-panel detail-body" style="margin-top:24px;">
 <h1>OpenPencil AI 原生矢量设计工具</h1>
-<blockquote>The world's first open-source AI-native vector design tool。上游：<a href="https://github.com/ZSeven-W/openpencil" target="_blank" rel="noopener">ZSeven-W/openpencil</a> · 许可证：MIT · 5.8k stars</blockquote>
+<blockquote>The world's first open-source AI-native vector design tool。上游：<a href="https://github.com/ZSeven-W/openpencil" target="_blank" rel="noopener">ZSeven-W/openpencil</a> · 许可证：MIT · 6.0k stars</blockquote>
 <h2>这是什么</h2>
 <p>OpenPencil 是第一个开源的 AI 原生矢量设计工具：不是给传统设计工具加一个 AI 插件，而是从内核开始把 AI 作为一等公民。Rust 核心 + GPU-Skia 渲染（无浏览器引擎）+ 前端（React），单二进制跨 macOS / Windows / Linux 桌面 + Web。</p>
 <p><strong>核心特性</strong>：</p>
@@ -93,7 +93,7 @@ cat my-design.op.dsl | op design --stdin</code></pre>
 <p><strong>MCP（Claude Code 内）：</strong></p>
 <p>安装后在对话中说 <code>打开 /path/to/my-design.op，把按钮改成圆角</code>——agent 通过 MCP 工具直接修改设计文件。</p>
 <h2>注意事项</h2>
-<ul><li><strong>许可证 MIT</strong>：可自由商用。</li><li><strong>Rust 核心 + 3 submodule</strong>：从源码构建需 <code>git clone --recurse-submodules</code>（vendor/jian、vendor/casement、vendor/agent-rs）。</li><li><strong>Windows 杀毒误报</strong>：新发布低普及度触发启发式误报，官方提供<a href="https://github.com/ZSeven-W/openpencil/blob/main/docs/security/antivirus-false-positives.md" target="_blank" rel="noopener">验证文档</a>。</li><li><strong>Web 版凭据</strong>：默认存浏览器 localStorage（同源隔离）；服务端持久化需 <code>OPENPENCIL_PERSIST_WEB_CREDENTIALS_SERVER=true</code>，仅限可信 HTTPS 部署。</li><li><strong>维护极其活跃</strong>（2026-09-05 当天仍有提交，5.8k stars），提供 14 语 README、Discord 社区和 Trendshift 徽章。</li></ul>
+<ul><li><strong>许可证 MIT</strong>：可自由商用。</li><li><strong>Rust 核心 + 3 submodule</strong>：从源码构建需 <code>git clone --recurse-submodules</code>（vendor/jian、vendor/casement、vendor/agent-rs）。</li><li><strong>Windows 杀毒误报</strong>：新发布低普及度触发启发式误报，官方提供<a href="https://github.com/ZSeven-W/openpencil/blob/main/docs/security/antivirus-false-positives.md" target="_blank" rel="noopener">验证文档</a>。</li><li><strong>Web 版凭据</strong>：默认存浏览器 localStorage（同源隔离）；服务端持久化需 <code>OPENPENCIL_PERSIST_WEB_CREDENTIALS_SERVER=true</code>，仅限可信 HTTPS 部署。</li><li><strong>维护极其活跃</strong>（2026-09-05 当天仍有提交，6.0k stars），提供 14 语 README、Discord 社区和 Trendshift 徽章。</li></ul>
   </article>
 
   <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>

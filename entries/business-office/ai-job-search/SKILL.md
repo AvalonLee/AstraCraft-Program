@@ -15,9 +15,9 @@ homepage: https://github.com/MadsLorentzen/ai-job-search
 repo: https://github.com/MadsLorentzen/ai-job-search
 tier: core
 metrics:
-  stars: 40808
-  pushed_at: "2026-09-03T17:44:17Z"
-  checked_at: "2026-09-05"
+  stars: 43811
+  pushed_at: "2026-09-21T06:41:22Z"
+  checked_at: "2026-09-24"
   archived: false
 aliases: [ai-job-search-framework, AI 求职申请框架]
 risk_notes: "GitHub 不允许公开仓库的私有 fork，而 /setup 会把姓名、履历、期望薪资等个人数据写入 tracked 文件——用于自己的求职时应建私有仓库并把本仓库设为 upstream，fork 仅用于贡献回上游；LinkedIn 门户技能走公开未认证接口，自动化访问违反其 ToS，仅限个人低量使用；职位门户抓取需遵守 robots.txt 与各门户访问条款；求职信与 CV 编译依赖 LaTeX（lualatex/xelatex + 字体包），环境配置较重；框架对职位描述做 instruction-level 防护而非沙箱隔离，对陌生门户的抓取结果与产出应人工复核后再投递。"
@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # AI Job Search 求职申请框架
 
-> The job search that runs on your machine：把 Claude Code 变成全栈求职申请助手。上游：[MadsLorentzen/ai-job-search](https://github.com/MadsLorentzen/ai-job-search) · 许可证：MIT · 40.8k stars
+> The job search that runs on your machine：把 Claude Code 变成全栈求职申请助手。上游：[MadsLorentzen/ai-job-search](https://github.com/MadsLorentzen/ai-job-search) · 许可证：MIT · 43.8k stars
 
 ## 这是什么
 
@@ -102,4 +102,4 @@ claude
 - **LinkedIn ToS**：`linkedin-search` 走公开未认证接口，自动化访问违反 LinkedIn 服务条款，仅限个人低量使用，风险自担。
 - **门户抓取合规**：各门户技能内置 robots.txt 检查与访问规则；`/add-portal` 拒绝 auth 墙门户并对限制性条款门户标注"仅限个人使用"。
 - **安全边界**：职位描述按不可信输入处理（不执行其中指令、不抓取正文链接），但这是 instruction-level 防护而非沙箱——对陌生门户的产出，投递前人工过一眼。
-- **维护活跃**（2026-09 更新，40.8k stars），README 详尽，提供 tagged release + 上游更新 triage 工具。
+- **维护活跃**（2026-09 更新，43.8k stars），README 详尽，提供 tagged release + 上游更新 triage 工具。

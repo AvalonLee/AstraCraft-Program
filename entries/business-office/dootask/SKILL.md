@@ -17,13 +17,13 @@ tier: standard
 metrics:
   stars: 5583
   pushed_at: "2026-09-13T01:09:13Z"
-  checked_at: "2026-09-19"
+  checked_at: "2026-09-24"
   archived: false
 related: [kaneo, codex-taskboard]
 aliases: []
 risk_notes: "AGPL-3.0 强 copyleft：通过网络对外提供服务同样触发源码开放义务，改造后自建给他人使用需评估合规，纯内部自托管一般不受影响。部署硬性依赖 Docker v20.10+ 与 Docker Compose v2.0+，数据库为 MariaDB，建议 2 核 4G 以上，Windows 需先装 WSL2。默认分支是 pro 而非 main/master，一键安装脚本与文档链接都指向 pro。仓库含 resources/drawio（jgraph/drawio）与 resources/mobile（kuaifan/dootask-app）两个子模块，浅克隆不含。`./cmd install` 是重操作（建库并 migrate --seed），在已有数据的环境上重装会覆盖，务必先备份。"
-added_at: "2026-09-19"
-updated_at: "2026-09-19"
+added_at: "2026-09-24"
+updated_at: "2026-09-24"
 ---
 
 # DooTask 开源任务管理与团队协作系统

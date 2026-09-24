@@ -531,7 +531,7 @@ star 数不参与收录判断，仅作为排序维度。`—` 表示尚未采集
 
 | 条目 | 加入日期 | 最后更新 |
 |---|---|---|
-| [DooTask 开源任务管理与团队协作系统](entries/business-office/dootask/SKILL.md) | 2026-09-19 | 2026-09-19 |
+| [DooTask 开源任务管理与团队协作系统](entries/business-office/dootask/SKILL.md) | 2026-09-24 | 2026-09-24 |
 | [成峰视频剪辑 Codex 插件包](entries/design-creative/chengfeng-videocut-skills/SKILL.md) | 2026-09-19 | 2026-09-19 |
 | [OpenCut 开源视频剪辑器（CapCut 替代）](entries/design-creative/opencut/SKILL.md) | 2026-09-19 | 2026-09-19 |
 | [Pixelle-Video AI 全自动短视频引擎](entries/design-creative/pixelle-video/SKILL.md) | 2026-09-19 | 2026-09-19 |

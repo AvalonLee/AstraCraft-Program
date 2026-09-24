@@ -15,9 +15,9 @@ homepage: https://github.com/chuspeeism/dashi-taskboard
 repo: https://github.com/chuspeeism/dashi-taskboard
 tier: standard
 metrics:
-  stars: 2611
-  pushed_at: "2026-08-26T08:54:06Z"
-  checked_at: "2026-08-26"
+  stars: 3202
+  pushed_at: "2026-09-24T11:04:44Z"
+  checked_at: "2026-09-24"
   archived: false
 related: []
 aliases: [dashi-taskboard, codex-task-board]
@@ -68,4 +68,4 @@ CLI 走 `npm run taskctl -- <subcommand>`（如 `project create` / `issue create
 - **许可证 Apache-2.0**：宽松可商用。
 - **运行环境**：本地运行需 Node.js 22.5+；构建 macOS App / Windows NSIS 桌面版额外需要 Rust 1.88+ 与 Xcode Command Line Tools / Visual Studio Build Tools（Tauri），纯本地 Web 运行无需这些。
 - 云端部署通过 **loopback companion**（设备本地的 loopback 鉴权与路径映射服务，非聊天人格）配置 `taskctl cloud login`。
-- 维护活跃（2026-08 持续更新），当前 2,611 stars。
+- 维护活跃（2026-08 持续更新），当前 3.2k stars。

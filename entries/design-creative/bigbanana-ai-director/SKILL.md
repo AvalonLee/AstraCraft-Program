@@ -15,9 +15,9 @@ homepage: https://director.tree456.com/
 repo: https://github.com/shuyu-labs/BigBanana-AI-Director
 tier: standard
 metrics:
-  stars: 2115
-  pushed_at: "2026-09-07T03:44:33Z"
-  checked_at: "2026-09-10"
+  stars: 2265
+  pushed_at: "2026-09-22T07:51:51Z"
+  checked_at: "2026-09-24"
   archived: false
 related: []
 aliases: ["BigBanana AI Director", "AI 漫剧工场"]
@@ -28,7 +28,7 @@ updated_at: "2026-09-10"
 
 # BigBanana AI 漫剧导演工场
 
-> AI 一站式短剧/漫剧生成平台。上游：[shuyu-labs/BigBanana-AI-Director](https://github.com/shuyu-labs/BigBanana-AI-Director) · 许可证：CC BY-NC-SA 4.0 · 约 2.1k stars
+> AI 一站式短剧/漫剧生成平台。上游：[shuyu-labs/BigBanana-AI-Director](https://github.com/shuyu-labs/BigBanana-AI-Director) · 许可证：CC BY-NC-SA 4.0 · 约 2.3k stars
 
 ## 这是什么
 

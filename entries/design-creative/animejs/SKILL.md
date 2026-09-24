@@ -16,9 +16,9 @@ repo: https://github.com/juliangarnier/anime
 docs_url: https://animejs.com/documentation
 tier: core
 metrics:
-  stars: 72674
+  stars: 73093
   pushed_at: "2026-08-21T21:29:50Z"
-  checked_at: "2026-09-05"
+  checked_at: "2026-09-24"
   archived: false
 related: [gsap, remotion-skills]
 aliases: [Anime.js, animejs]

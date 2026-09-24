@@ -15,9 +15,9 @@ homepage: https://toonflow.net
 repo: https://github.com/HBAI-Ltd/Toonflow-app
 tier: standard
 metrics:
-  stars: 14622
-  pushed_at: "2026-08-26T10:49:08Z"
-  checked_at: "2026-08-26"
+  stars: 15994
+  pushed_at: "2026-09-24T12:17:09Z"
+  checked_at: "2026-09-24"
   archived: false
 aliases: [toonflow-app, toon-flow]
 risk_notes: "Apache-2.0 可商用；核心能力依赖外部模型服务（LLM、视频/图像生成，如 Sora、豆包、Nano Banana Pro），需自行配置 API 与费用；Docker 部署默认账号 admin/admin123，首次登录后应尽快改密。"

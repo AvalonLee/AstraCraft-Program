@@ -15,9 +15,9 @@ homepage: https://github.com/anthropics/skills
 repo: https://github.com/anthropics/skills
 tier: standard
 metrics:
-  stars: null
-  pushed_at: null
-  checked_at: "2026-08-10"
+  stars: 177925
+  pushed_at: "2026-09-22T17:16:36Z"
+  checked_at: "2026-09-24"
   archived: false
 related: []
 aliases: [anthropics-office-skills, office-skills]

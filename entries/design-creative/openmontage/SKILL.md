@@ -15,9 +15,9 @@ homepage: https://www.openmontage.video/
 repo: https://github.com/calesthio/OpenMontage
 tier: standard
 metrics:
-  stars: 50726
-  pushed_at: "2026-08-22T18:22:24Z"
-  checked_at: "2026-08-26"
+  stars: 61149
+  pushed_at: "2026-09-06T05:02:34Z"
+  checked_at: "2026-09-24"
   archived: false
 aliases: [open-montage]
 risk_notes: "AGPL-3.0 为强 Copyleft：本地自用无额外义务，对外提供网络服务时需以 AGPL 开源衍生，具体以上游 LICENSE 为准；零 API key 可通过 Piper 本地 TTS、开放档案素材与 Remotion/HyperFrames 出片，云生成能力随 FAL/Kling/Veo/OpenAI/ElevenLabs 等密钥增加且费用自担；默认总预算上限 $10、单笔超 $0.50 需审批。"
@@ -74,4 +74,4 @@ Make a 60-second animated explainer about how neural networks learn
 - **零 key 可用**：Piper 本地 TTS、开放档案素材、Remotion/HyperFrames 本地合成与 FFmpeg 后期即可出片；配置 FAL、Kling、Veo、Seedance、Runway、OpenAI、ElevenLabs、Suno 等密钥后能力增强，费用自担。
 - **预算与门禁**：默认总预算上限 $10，单笔超过 $0.50 暂停审批；渲染前有 slideshow 风险评估，渲染后自动跑 ffprobe/抽帧/音频检查，失败不会交付。
 - **本地 GPU 可选**：`make install-gpu` 可启用 WAN 2.1/2.2、Hunyuan、CogVideo、LTX-Video 等本地视频生成。
-- 维护活跃（2026-08 更新，5 万+ star），提供中英文 README，并为各主流 AI 编程助手内置了适配指令文件。
+- 维护活跃（2026-08 更新，6.1 万+ star），提供中英文 README，并为各主流 AI 编程助手内置了适配指令文件。

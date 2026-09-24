@@ -15,9 +15,9 @@ homepage: https://github.com/op7418/guizang-ppt-skill
 repo: https://github.com/op7418/guizang-ppt-skill
 tier: core
 metrics:
-  stars: 25657
+  stars: 26902
   pushed_at: "2026-08-07T03:58:08Z"
-  checked_at: "2026-09-05"
+  checked_at: "2026-09-24"
   archived: false
 aliases: [guizang-ppt, 歸藏 PPT, web-ppt-skill]
 risk_notes: "AGPL-3.0 为强 Copyleft：对外提供网络服务需以 AGPL 开源衍生；单文件 HTML 适合演讲和展示，不适合多人协作编辑或大量表格数据；配图流程依赖 GPT-Image 2.0 / GPT-M 2.0（Codex 环境），其他 Agent 可用 Playwright 后验替代。"
@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # Guizang PPT Skill 网页 PPT
 
-> 适配 Claude Code / Codex 的网页 PPT 技能。上游：[op7418/guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill) · 许可证：AGPL-3.0 · 25.7k stars · 歸藏（[@op7418](https://x.com/op7418)）出品
+> 适配 Claude Code / Codex 的网页 PPT 技能。上游：[op7418/guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill) · 许可证：AGPL-3.0 · 26.9k stars · 歸藏（[@op7418](https://x.com/op7418)）出品
 
 ## 这是什么
 

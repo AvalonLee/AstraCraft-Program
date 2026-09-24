@@ -15,9 +15,9 @@ homepage: https://ccswitch.io
 repo: https://github.com/farion1231/cc-switch
 tier: core
 metrics:
-  stars: 131268
-  pushed_at: "2026-09-06T03:02:36Z"
-  checked_at: "2026-09-06"
+  stars: 136390
+  pushed_at: "2026-09-24T14:43:18Z"
+  checked_at: "2026-09-24"
   archived: false
 related: [codexplusplus]
 aliases: [CCSwitch, cc-switch]

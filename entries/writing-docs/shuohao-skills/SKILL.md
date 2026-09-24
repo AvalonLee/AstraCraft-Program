@@ -15,9 +15,9 @@ homepage: https://github.com/eternityspring/shuohao-skills
 repo: https://github.com/eternityspring/shuohao-skills
 tier: standard
 metrics:
-  stars: 2100
-  pushed_at: "2026-08-26"
-  checked_at: "2026-08-26"
+  stars: 3765
+  pushed_at: "2026-09-24T04:34:07Z"
+  checked_at: "2026-09-24"
   archived: false
 related: []
 aliases: [短剧制作, 烁皓短剧, novel-outline, novel-characters, novel-art, novel-script, novel-storyboard]

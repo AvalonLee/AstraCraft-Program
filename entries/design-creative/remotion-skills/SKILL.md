@@ -15,9 +15,9 @@ homepage: https://www.remotion.dev/docs/ai/skills
 repo: https://github.com/remotion-dev/skills
 tier: core
 metrics:
-  stars: 4430
-  pushed_at: "2026-08-26"
-  checked_at: "2026-08-29"
+  stars: 4702
+  pushed_at: "2026-09-24T09:55:51Z"
+  checked_at: "2026-09-24"
   archived: false
 aliases: [Remotion Skills, Remotion Agent Skills]
 risk_notes: skills 仓库未附 LICENSE 文件且 package.json 未声明协议（UNKNOWN），商用前需确认；依赖 Remotion 生态——Remotion 框架本体采用 Remotion License（个人与小团队免费，达规模的公司需购买公司许可），商用渲染前需自查；渲染消耗本地或云端算力；技能内容为英文。

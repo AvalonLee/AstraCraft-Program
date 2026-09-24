@@ -15,9 +15,9 @@ homepage: https://github.com/browser-use/video-use
 repo: https://github.com/browser-use/video-use
 tier: standard
 metrics:
-  stars: 25107
-  pushed_at: "2026-08-30T09:45:51Z"
-  checked_at: "2026-09-19"
+  stars: 26778
+  pushed_at: "2026-09-24T04:50:14Z"
+  checked_at: "2026-09-24"
   archived: false
 related: [hyperframes, remotion-skills, video-shotcraft]
 aliases: []

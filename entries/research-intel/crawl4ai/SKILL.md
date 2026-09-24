@@ -15,9 +15,9 @@ homepage: https://crawl4ai.com
 repo: https://github.com/unclecode/crawl4ai
 tier: core
 metrics:
-  stars: 81396
-  pushed_at: "2026-09-01T07:58:26Z"
-  checked_at: "2026-09-05"
+  stars: 84201
+  pushed_at: "2026-09-23T15:10:21Z"
+  checked_at: "2026-09-24"
   archived: false
 aliases: [crawl4ai, Crawl4AI]
 risk_notes: "v0.9.3 为安全修复版（关闭任意文件写入 / SSRF / DoS / XSS 等协调披露公告 + 33 个 bug 修复），建议始终使用最新版；Docker API server 从 v0.9.0 起默认开启认证并绑定 loopback，公网部署需配置 token 和反向代理；LLM 提取功能需配置 API Key（爬取本身零 Key）。"
@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # Crawl4AI LLM 友好爬虫
 
-> 🚀🤖 Open-source LLM Friendly Web Crawler & Scraper。上游：[unclecode/crawl4ai](https://github.com/unclecode/crawl4ai) · 许可证：Apache 2.0 · 81.4k stars
+> 🚀🤖 Open-source LLM Friendly Web Crawler & Scraper。上游：[unclecode/crawl4ai](https://github.com/unclecode/crawl4ai) · 许可证：Apache 2.0 · 84.2k stars
 
 ## 这是什么
 
@@ -108,4 +108,4 @@ v0.9.0 起 Docker API server 默认开启认证并绑定 loopback，公网部署
 - **安全版本**：始终使用最新版（v0.9.3 关闭了多个协调披露安全公告）；Docker 部署不要裸露公网。
 - **爬取零 Key / 提取需 Key**：爬取和 Markdown 生成完全本地免费；LLM 提取（`-q` 参数）需要配置 LLM API Key。
 - **合规**：遵守目标网站 robots.txt 和服务条款；大规模爬取建议配置代理池和速率限制。
-- **维护极其活跃**（2026-09 更新，81.4k stars，GitHub 最受关注的爬虫项目），提供 Discord 社区和详细文档。
+- **维护极其活跃**（2026-09 更新，84.2k stars，GitHub 最受关注的爬虫项目），提供 Discord 社区和详细文档。

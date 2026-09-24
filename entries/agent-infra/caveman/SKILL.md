@@ -15,9 +15,9 @@ homepage: https://docs.caveman.so/docs/quickstart
 repo: https://github.com/JuliusBrussee/caveman
 tier: standard
 metrics:
-  stars: 104494
-  pushed_at: "2026-09-09T07:22:27Z"
-  checked_at: "2026-09-09"
+  stars: 107662
+  pushed_at: "2026-09-24T07:39:42Z"
+  checked_at: "2026-09-24"
   archived: false
 related: []
 aliases: [caveman-ai]

@@ -16,9 +16,9 @@ repo: https://github.com/heygen-com/hyperframes
 docs_url: https://hyperframes.heygen.com/introduction
 tier: core
 metrics:
-  stars: 44054
-  pushed_at: "2026-09-05T08:39:34Z"
-  checked_at: "2026-09-05"
+  stars: 52821
+  pushed_at: "2026-09-24T15:39:25Z"
+  checked_at: "2026-09-24"
   archived: false
 aliases: [hyperframes, HeyGen HyperFrames]
 risk_notes: "HTML → 确定性渲染（非实时）需要 Node >= 22；20 个 skill 的完整安装体积较大（agents 建议 npx hyperframes skills update 装 core set）；skills.sh registry 可能滞后 main 数小时，新 skill 用 npx hyperframes skills update 获取最新版。"
@@ -28,7 +28,7 @@ updated_at: "2026-09-05"
 
 # HyperFrames HTML 视频渲染
 
-> Write HTML. Render video. Built for agents.上游：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · 许可证：Apache 2.0 · 44.1k stars · [文档](https://hyperframes.heygen.com/introduction) · [Playground](https://www.hyperframes.dev/)
+> Write HTML. Render video. Built for agents.上游：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · 许可证：Apache 2.0 · 52.8k stars · [文档](https://hyperframes.heygen.com/introduction) · [Playground](https://www.hyperframes.dev/)
 
 ## 这是什么
 
@@ -88,4 +88,4 @@ Agent 会按生产循环执行：读 `/hyperframes` 路由 → 确认 brief → 
 - **许可证 Apache 2.0**：可自由商用。
 - **Node >= 22**：渲染引擎需要 Node 22 或更高。
 - **skill 安装策略**：`skills add --all` 装 20 个全量 skill；agents / 非交互场景用 `npx hyperframes skills update` 装 core set（从 main 最新拉取，不滞后 registry）。
-- **维护极其活跃**（2026-09-05 当天仍有提交，44.1k stars），提供 npm 月下载、Playground、Showcase 和 Discord 社区，HeyGen 出品。
+- **维护极其活跃**（2026-09-05 当天仍有提交，52.8k stars），提供 npm 月下载、Playground、Showcase 和 Discord 社区，HeyGen 出品。

@@ -60,7 +60,7 @@
 
   <article id="body" class="content-panel detail-body" style="margin-top:24px;">
 <h1>VoxCPM2 无 Tokenizer TTS</h1>
-<blockquote>Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning。上游：<a href="https://github.com/OpenBMB/VoxCPM" target="_blank" rel="noopener">OpenBMB/VoxCPM</a> · 许可证：Apache 2.0 · 36.7k stars · <a href="https://voxcpm.readthedocs.io/en/latest/" target="_blank" rel="noopener">文档</a> · <a href="https://huggingface.co/spaces/OpenBMB/VoxCPM-Demo" target="_blank" rel="noopener">Demo</a></blockquote>
+<blockquote>Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning。上游：<a href="https://github.com/OpenBMB/VoxCPM" target="_blank" rel="noopener">OpenBMB/VoxCPM</a> · 许可证：Apache 2.0 · 37.9k stars · <a href="https://voxcpm.readthedocs.io/en/latest/" target="_blank" rel="noopener">文档</a> · <a href="https://huggingface.co/spaces/OpenBMB/VoxCPM-Demo" target="_blank" rel="noopener">Demo</a></blockquote>
 <h2>这是什么</h2>
 <p>VoxCPM 是 OpenBMB（面壁智能 / 清华）开源的 tokenizer-free Text-to-Speech 系统：不经过离散 tokenization，用扩散自回归架构直接生成连续语音表征，实现高度自然和富有表现力的合成。<strong>VoxCPM2</strong> 是最新大版本：2B 参数（MiniCPM-4 骨干）、200 万小时多语言数据训练、30 语言、48kHz 输出。</p>
 <p><strong>四种生成模式</strong>：</p>
@@ -111,7 +111,7 @@ voxcpm clone --text &quot;...&quot; --reference-audio voice.wav --output out.wav
 <h3>生产部署</h3>
 <ul><li><strong>vLLM-Omni</strong>（官方）：PagedAttention + OpenAI-compatible API，RTF ~0.13</li><li><strong>Nano-vLLM</strong>：社区加速方案</li><li><strong>llama.cpp-omni</strong>：端侧推理</li></ul>
 <h2>注意事项</h2>
-<ul><li><strong>许可证 Apache 2.0</strong>：权重和代码均可免费商用。</li><li><strong>GPU 需求</strong>：2B 模型需要较高显存；CPU 推理极慢不适合实际使用；vLLM 部署推荐 A100/H100。</li><li><strong>声音克隆合规</strong>：克隆他人声音必须获得授权；合成内容需遵守当地关于深度合成和语音伪造的法规。</li><li><strong>模型演进</strong>：VoxCPM-0.5B（2025-09，HuggingFace Trending #1）→ VoxCPM1.5（2025-12，GitHub Trending #1，SFT/LoRA）→ VoxCPM2（2026-04，2B、30 语言、Voice Design、48kHz）。</li><li><strong>维护极其活跃</strong>（2026-09 更新，36.7k stars），提供中英文 README、ReadTheDocs、HuggingFace Playground 和音频样本页。</li></ul>
+<ul><li><strong>许可证 Apache 2.0</strong>：权重和代码均可免费商用。</li><li><strong>GPU 需求</strong>：2B 模型需要较高显存；CPU 推理极慢不适合实际使用；vLLM 部署推荐 A100/H100。</li><li><strong>声音克隆合规</strong>：克隆他人声音必须获得授权；合成内容需遵守当地关于深度合成和语音伪造的法规。</li><li><strong>模型演进</strong>：VoxCPM-0.5B（2025-09，HuggingFace Trending #1）→ VoxCPM1.5（2025-12，GitHub Trending #1，SFT/LoRA）→ VoxCPM2（2026-04，2B、30 语言、Voice Design、48kHz）。</li><li><strong>维护极其活跃</strong>（2026-09 更新，37.9k stars），提供中英文 README、ReadTheDocs、HuggingFace Playground 和音频样本页。</li></ul>
   </article>
 
   <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>

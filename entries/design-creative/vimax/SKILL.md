@@ -15,9 +15,9 @@ homepage: https://github.com/HKUDS/ViMax
 repo: https://github.com/HKUDS/ViMax
 tier: standard
 metrics:
-  stars: 12103
-  pushed_at: "2026-07-29T08:56:47Z"
-  checked_at: "2026-08-26"
+  stars: 12462
+  pushed_at: "2026-09-20T04:27:39Z"
+  checked_at: "2026-09-24"
   archived: false
 aliases: [vimax, hku-vimax]
 risk_notes: "MIT 可商用；需 Python 3.12 + uv，Web UI 需 Node.js 18+；实际出片依赖所配置的 LLM/图像/视频生成供应商 API（如 OpenRouter、Google Gemini/Veo、Seedance 2.0），密钥与费用由使用者自行承担。"

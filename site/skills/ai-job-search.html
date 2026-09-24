@@ -60,7 +60,7 @@
 
   <article id="body" class="content-panel detail-body" style="margin-top:24px;">
 <h1>AI Job Search 求职申请框架</h1>
-<blockquote>The job search that runs on your machine：把 Claude Code 变成全栈求职申请助手。上游：<a href="https://github.com/MadsLorentzen/ai-job-search" target="_blank" rel="noopener">MadsLorentzen/ai-job-search</a> · 许可证：MIT · 40.8k stars</blockquote>
+<blockquote>The job search that runs on your machine：把 Claude Code 变成全栈求职申请助手。上游：<a href="https://github.com/MadsLorentzen/ai-job-search" target="_blank" rel="noopener">MadsLorentzen/ai-job-search</a> · 许可证：MIT · 43.8k stars</blockquote>
 <h2>这是什么</h2>
 <p>AI Job Search 是一个建在 <a href="https://claude.com/claude-code" target="_blank" rel="noopener">Claude Code</a> 上的开源求职申请框架：fork 填入个人档案，让 Claude 评估职位匹配度、定制 CV、写求职信、准备面试。作者是地球物理学家出身，2025 年底被裁后用这个框架跑自己的求职——69 份定制申请、20 场初面、1 份签约合同，2026 年 6 月入职 AI 工程师。项目随后开源并登上 GitHub Trending，40.8k stars。</p>
 <p>核心工作流（建档 → 职位抓取 → fit 评估 → 起草-审校申请）是语言与国家无关的；职位门户搜索技能内置丹麦市场（Jobindex、Jobnet 等）+ LinkedIn + freehire.me，<code>/add-portal</code> 可为自己的本地门户生成同构搜索技能。</p>
@@ -94,7 +94,7 @@ foreach ($tool in $tools) { Push-Location &quot;.agents/skills/$tool/cli&quot;; 
 /outcome        # 记录结果、归档材料、跟进提醒</code></pre>
 <p>门户搜索换成自己的市场：<code>/add-portal</code> 给本地求职网站 URL，自动调查门户结构并生成同构搜索技能（auth 墙门户拒绝生成）。CV/求职信模板可换成自己的：<code>/add-template</code> 指向源文件（LaTeX、Typst 等），测试编译通过后接管 <code>/apply</code>。</p>
 <h2>注意事项</h2>
-<ul><li><strong>许可证 MIT</strong>：可自由使用、修改与分发。</li><li><strong>隐私与 fork</strong>：公开 fork + tracked 个人数据 = 泄露。务必用私有仓库 + upstream 模式（见上文安装说明）。</li><li><strong>LinkedIn ToS</strong>：<code>linkedin-search</code> 走公开未认证接口，自动化访问违反 LinkedIn 服务条款，仅限个人低量使用，风险自担。</li><li><strong>门户抓取合规</strong>：各门户技能内置 robots.txt 检查与访问规则；<code>/add-portal</code> 拒绝 auth 墙门户并对限制性条款门户标注"仅限个人使用"。</li><li><strong>安全边界</strong>：职位描述按不可信输入处理（不执行其中指令、不抓取正文链接），但这是 instruction-level 防护而非沙箱——对陌生门户的产出，投递前人工过一眼。</li><li><strong>维护活跃</strong>（2026-09 更新，40.8k stars），README 详尽，提供 tagged release + 上游更新 triage 工具。</li></ul>
+<ul><li><strong>许可证 MIT</strong>：可自由使用、修改与分发。</li><li><strong>隐私与 fork</strong>：公开 fork + tracked 个人数据 = 泄露。务必用私有仓库 + upstream 模式（见上文安装说明）。</li><li><strong>LinkedIn ToS</strong>：<code>linkedin-search</code> 走公开未认证接口，自动化访问违反 LinkedIn 服务条款，仅限个人低量使用，风险自担。</li><li><strong>门户抓取合规</strong>：各门户技能内置 robots.txt 检查与访问规则；<code>/add-portal</code> 拒绝 auth 墙门户并对限制性条款门户标注"仅限个人使用"。</li><li><strong>安全边界</strong>：职位描述按不可信输入处理（不执行其中指令、不抓取正文链接），但这是 instruction-level 防护而非沙箱——对陌生门户的产出，投递前人工过一眼。</li><li><strong>维护活跃</strong>（2026-09 更新，43.8k stars），README 详尽，提供 tagged release + 上游更新 triage 工具。</li></ul>
   </article>
 
   <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>

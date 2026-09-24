@@ -15,9 +15,9 @@ homepage: https://github.com/ZSeven-W/openpencil
 repo: https://github.com/ZSeven-W/openpencil
 tier: core
 metrics:
-  stars: 5831
-  pushed_at: "2026-09-05T09:06:15Z"
-  checked_at: "2026-09-05"
+  stars: 6016
+  pushed_at: "2026-09-23T17:46:59Z"
+  checked_at: "2026-09-24"
   archived: false
 aliases: [open-pencil, OpenPencil]
 risk_notes: "Windows 安装器可能触发杀毒软件启发式误报（官方提供验证文档）；Rust 核心 + 3 个 submodule（jian / casement / agent-rs）从源码构建需 clone --recurse-submodules；Web 版凭据默认存浏览器 localStorage，服务端持久化需显式开启且仅限可信部署；多模型智能按模型能力自适应（Claude 完整 prompt / GPT-4o 关闭 thinking / 小模型简化），费用自担。"
@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # OpenPencil AI 原生矢量设计工具
 
-> The world's first open-source AI-native vector design tool。上游：[ZSeven-W/openpencil](https://github.com/ZSeven-W/openpencil) · 许可证：MIT · 5.8k stars
+> The world's first open-source AI-native vector design tool。上游：[ZSeven-W/openpencil](https://github.com/ZSeven-W/openpencil) · 许可证：MIT · 6.0k stars
 
 ## 这是什么
 
@@ -105,4 +105,4 @@ cat my-design.op.dsl | op design --stdin
 - **Rust 核心 + 3 submodule**：从源码构建需 `git clone --recurse-submodules`（vendor/jian、vendor/casement、vendor/agent-rs）。
 - **Windows 杀毒误报**：新发布低普及度触发启发式误报，官方提供[验证文档](https://github.com/ZSeven-W/openpencil/blob/main/docs/security/antivirus-false-positives.md)。
 - **Web 版凭据**：默认存浏览器 localStorage（同源隔离）；服务端持久化需 `OPENPENCIL_PERSIST_WEB_CREDENTIALS_SERVER=true`，仅限可信 HTTPS 部署。
-- **维护极其活跃**（2026-09-05 当天仍有提交，5.8k stars），提供 14 语 README、Discord 社区和 Trendshift 徽章。
+- **维护极其活跃**（2026-09-05 当天仍有提交，6.0k stars），提供 14 语 README、Discord 社区和 Trendshift 徽章。

@@ -15,9 +15,9 @@ homepage: https://kaneo.app/
 repo: https://github.com/usekaneo/kaneo
 tier: standard
 metrics:
-  stars: 8997
-  pushed_at: "2026-09-08T06:50:05Z"
-  checked_at: "2026-09-08"
+  stars: 9178
+  pushed_at: "2026-09-24T15:31:03Z"
+  checked_at: "2026-09-24"
   archived: false
 related: [codex-taskboard]
 risk_notes: MIT 许可可商用；自托管数据自持，依赖 PostgreSQL 16；部署前需配置 POSTGRES_PASSWORD、AUTH_SECRET 与 KANEO_CLIENT_URL，KANEO_API_URL 默认由 KANEO_CLIENT_URL 推导；MCP stdio 通过 npx 拉取 @kaneo/mcp，客户端需 Node.js 与 npm 网络。

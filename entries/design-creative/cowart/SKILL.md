@@ -15,9 +15,9 @@ homepage: https://cowart.jiqiren.ai
 repo: https://github.com/zhongerxin/Cowart
 tier: standard
 metrics:
-  stars: 5826
-  pushed_at: "2026-08-29T16:14:37Z"
-  checked_at: "2026-09-05"
+  stars: 5962
+  pushed_at: "2026-09-13T16:16:11Z"
+  checked_at: "2026-09-24"
   archived: false
 aliases: [cowart, Codex Canvas]
 risk_notes: "需要 Codex 桌面端（非 CLI），安装后必须完全退出并重启 Codex 才能加载 skill 和 MCP 工具；画布数据保存到当前项目的 canvas/ 目录而非插件仓库；遵循 Agent Plugins v1.0.0 规范，MCP bundle 自包含（无需 npm install）；网页版 cowart.jiqiren.ai 无需安装但功能与桌面插件有差异。"
@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # Cowart Codex 无限画布
 
-> 面向 Codex 的原生无限画布 widget 插件。上游：[zhongerxin/Cowart](https://github.com/zhongerxin/Cowart) · 许可证：MIT · 5.8k stars · 画布基于 [tldraw](https://github.com/tldraw/tldraw)
+> 面向 Codex 的原生无限画布 widget 插件。上游：[zhongerxin/Cowart](https://github.com/zhongerxin/Cowart) · 许可证：MIT · 6.0k stars · 画布基于 [tldraw](https://github.com/tldraw/tldraw)
 
 ## 这是什么
 

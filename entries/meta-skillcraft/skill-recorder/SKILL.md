@@ -15,9 +15,9 @@ homepage: https://github.com/microsoft/skill-recorder
 repo: https://github.com/microsoft/skill-recorder
 tier: standard
 metrics:
-  stars: 3837
-  pushed_at: "2026-09-03T12:03:38Z"
-  checked_at: "2026-09-05"
+  stars: 4082
+  pushed_at: "2026-09-23T11:46:46Z"
+  checked_at: "2026-09-24"
   archived: false
 related: []
 aliases: [skill-recorder, microsoft-skill-recorder]

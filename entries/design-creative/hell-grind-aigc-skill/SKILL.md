@@ -15,9 +15,9 @@ homepage: https://github.com/renmu2017/Hell-Grind-AIGC-Skill
 repo: https://github.com/renmu2017/Hell-Grind-AIGC-Skill
 tier: standard
 metrics:
-  stars: 146
-  pushed_at: "2026-08-07T13:21:37Z"
-  checked_at: "2026-09-05"
+  stars: 209
+  pushed_at: "2026-09-24T03:38:24Z"
+  checked_at: "2026-09-24"
   archived: false
 aliases: [hell-grind, AIGC production skill]
 risk_notes: "方法论受 Higgsfield 公开项目 Hell Grind 启发但不包含原视频、原始资产或全量提示词（公开可访问不代表再分发许可）；默认不调用生成模型、不扣费、不下载媒体、不上传、不发布；本地工具（init / validate / audit）全部只读 + 0 网络请求；仅支持 macOS / Linux 安装（install.sh），Windows 需手动适配；项目规模较小（146 stars）。"

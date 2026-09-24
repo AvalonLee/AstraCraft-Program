@@ -16,9 +16,9 @@ repo: https://github.com/MeiGen-AI/InfiniteTalk
 docs_url: https://arxiv.org/abs/2508.14033
 tier: standard
 metrics:
-  stars: 7785
+  stars: 7915
   pushed_at: "2026-05-22T02:35:51Z"
-  checked_at: "2026-09-05"
+  checked_at: "2026-09-24"
   archived: false
 related: [seedance]
 aliases: [InfiniteTalk, MeiGen InfiniteTalk]
@@ -29,7 +29,7 @@ updated_at: "2026-09-05"
 
 # InfiniteTalk 无限长口播视频生成
 
-> Audio-driven Video Generation for Sparse-Frame Video Dubbing。上游：[MeiGen-AI/InfiniteTalk](https://github.com/MeiGen-AI/InfiniteTalk) · 许可证：Apache 2.0 · 7.8k stars · [项目页](https://meigen-ai.github.io/InfiniteTalk/) · [技术报告](https://arxiv.org/abs/2508.14033)
+> Audio-driven Video Generation for Sparse-Frame Video Dubbing。上游：[MeiGen-AI/InfiniteTalk](https://github.com/MeiGen-AI/InfiniteTalk) · 许可证：Apache 2.0 · 7.9k stars · [项目页](https://meigen-ai.github.io/InfiniteTalk/) · [技术报告](https://arxiv.org/abs/2508.14033)
 
 ## 这是什么
 

@@ -16,9 +16,9 @@ repo: https://github.com/browser-use/browser-use
 docs_url: https://docs.browser-use.com
 tier: core
 metrics:
-  stars: 112327
-  pushed_at: "2026-09-05T07:00:06Z"
-  checked_at: "2026-09-05"
+  stars: 116169
+  pushed_at: "2026-09-24T01:38:47Z"
+  checked_at: "2026-09-24"
   archived: false
 related: [mcp, ai-agent]
 aliases: [Browser Use, browseruse]

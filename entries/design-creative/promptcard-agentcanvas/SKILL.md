@@ -15,9 +15,9 @@ homepage: https://github.com/Aoye-3/PromptCard-AgentCanvas
 repo: https://github.com/Aoye-3/PromptCard-AgentCanvas
 tier: standard
 metrics:
-  stars: 163
+  stars: 164
   pushed_at: "2026-09-01T13:39:13Z"
-  checked_at: "2026-09-05"
+  checked_at: "2026-09-24"
   archived: false
 aliases: [PMAgent-Canvas, PromptCard]
 risk_notes: "当前 main 为开发版本（不稳定，处于功能测试中），稳定基线请用 Git tag stable-2026-08-25；目前提供 Windows 桌面开发预览（start-desktop.vbs，非签名安装包）；核心模型依赖火山引擎（Seedream 5.0 Pro / Doubao Seed 2.0），调用按 API 计费；项目尚处早期（163 stars）。"

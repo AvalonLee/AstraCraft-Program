@@ -15,9 +15,9 @@ homepage: https://github.com/thaakeno/ComfyUI-MiniMax-H3-Studio
 repo: https://github.com/thaakeno/ComfyUI-MiniMax-H3-Studio
 tier: watch
 metrics:
-  stars: 98
-  pushed_at: "2026-08-20T13:58:21Z"
-  checked_at: "2026-09-10"
+  stars: 115
+  pushed_at: "2026-09-21T04:23:11Z"
+  checked_at: "2026-09-24"
   archived: false
 related: []
 aliases: ["H3 Studio", "MiniMax H3 Studio"]
@@ -28,7 +28,7 @@ updated_at: "2026-09-10"
 
 # MiniMax H3 Studio ComfyUI 图像工作流
 
-> Turn MiniMax H3 into an actual image workflow for ComfyUI。上游：[thaakeno/ComfyUI-MiniMax-H3-Studio](https://github.com/thaakeno/ComfyUI-MiniMax-H3-Studio) · 许可证：MIT · 约 0.1k stars
+> Turn MiniMax H3 into an actual image workflow for ComfyUI。上游：[thaakeno/ComfyUI-MiniMax-H3-Studio](https://github.com/thaakeno/ComfyUI-MiniMax-H3-Studio) · 许可证：MIT · 约 115 stars
 
 ## 这是什么
 

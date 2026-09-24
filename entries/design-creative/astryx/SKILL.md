@@ -16,9 +16,9 @@ repo: https://github.com/facebook/astryx
 docs_url: https://astryx.atmeta.com
 tier: core
 metrics:
-  stars: 12791
-  pushed_at: "2026-09-05T09:04:44Z"
-  checked_at: "2026-09-05"
+  stars: 13345
+  pushed_at: "2026-09-24T15:45:53Z"
+  checked_at: "2026-09-24"
   archived: false
 aliases: [astryx-design, Astryx DS]
 risk_notes: "Beta 状态，API 可能变动；需要 React 19+（peer dependency）；StyleX 为内部实现但消费者不可见，覆盖样式用 className 即可；agent 覆盖面依赖 init 写入的 AGENTS.md 块，新组件需重新运行 init 或手动更新。"
@@ -28,7 +28,7 @@ updated_at: "2026-09-05"
 
 # Astryx 设计系统
 
-> Meta 内部打磨八年、13,000+ apps 在用的设计系统，现在开源了。上游：[facebook/astryx](https://github.com/facebook/astryx) · 许可证：MIT · 12.8k stars · [文档](https://astryx.atmeta.com) · [Storybook](https://facebook.github.io/astryx/storybook/)
+> Meta 内部打磨八年、13,000+ apps 在用的设计系统，现在开源了。上游：[facebook/astryx](https://github.com/facebook/astryx) · 许可证：MIT · 13.3k stars · [文档](https://astryx.atmeta.com) · [Storybook](https://facebook.github.io/astryx/storybook/)
 
 ## 这是什么
 
@@ -119,4 +119,4 @@ Agent 可用 `--json` 获取 typed 输出，用 `--zh` 获取中文文档，用 
 - **React 19+ 必需**：`react` 和 `react-dom` >= 19.0.0 是 peer dependency。
 - **样式覆盖**：内部 StyleX 对消费者不可见，用 `className` + Tailwind / CSS modules / 原生 CSS 覆盖即可。
 - **Agent 文档更新**：新组件发布后需重新运行 `astryx init` 或手动更新 `AGENTS.md` 中的 Astryx 区块。
-- **维护极其活跃**（Meta 出品，2026-09-05 当天仍有提交，12.8k stars），Node 22+ / pnpm 11 构建，提供 Storybook / Sandbox / Discord 社区。
+- **维护极其活跃**（Meta 出品，2026-09-05 当天仍有提交，13.3k stars），Node 22+ / pnpm 11 构建，提供 Storybook / Sandbox / Discord 社区。

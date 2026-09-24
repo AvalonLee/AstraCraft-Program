@@ -15,9 +15,9 @@ homepage: https://github.com/NickPittas/DirectorsConsole
 repo: https://github.com/NickPittas/DirectorsConsole
 tier: watch
 metrics:
-  stars: 324
-  pushed_at: "2026-02-25T18:56:05Z"
-  checked_at: "2026-09-10"
+  stars: 331
+  pushed_at: "2026-09-19T09:58:42Z"
+  checked_at: "2026-09-24"
   archived: false
 related: []
 aliases: ["DirectorsConsole", "Director Console"]
@@ -28,7 +28,7 @@ updated_at: "2026-09-10"
 
 # Director's Console AI 影视工作台
 
-> 电影化 AI VFX 生产管线。上游：[NickPittas/DirectorsConsole](https://github.com/NickPittas/DirectorsConsole) · 许可证：Proprietary / All rights reserved · 约 0.3k stars
+> 电影化 AI VFX 生产管线。上游：[NickPittas/DirectorsConsole](https://github.com/NickPittas/DirectorsConsole) · 许可证：Proprietary / All rights reserved · 约 331 stars
 
 ## 这是什么
 

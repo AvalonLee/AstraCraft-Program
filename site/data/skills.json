@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-15T15:21:23Z",
-  "count": 89,
+  "generated_at": "2026-09-24T13:12:26Z",
+  "count": 95,
   "categories": [
     {
       "dir": "writing-docs",
@@ -788,6 +788,50 @@
       "detail_url": "skills/chatgpt-shortcut.html"
     },
     {
+      "id": "dootask",
+      "name_zh": "DooTask 开源任务管理与团队协作系统",
+      "name_en": "DooTask — Open Source Task Management & Team Collaboration",
+      "summary_zh": "开源自托管任务管理与团队协作系统（PHP/Laravel + Vue）：任务、看板、团队 IM、文件与流程一体，Docker Compose 部署、`./cmd` 一键运维，仓库内置 5 个 Claude Code 运维技能与 AGENTS.md。",
+      "summary_en": "Open source self-hosted task management and team collaboration system (PHP/Laravel + Vue) with Docker deployment, a `./cmd` ops CLI, and five bundled Claude Code skills plus AGENTS.md.",
+      "category_dir": "business-office",
+      "category_name": "商业与办公",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "office",
+        "self-hosted",
+        "docker",
+        "agent-skills",
+        "project-management",
+        "kanban"
+      ],
+      "languages": [
+        "php",
+        "javascript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "AGPL-3.0",
+      "license_bucket": "copyleft",
+      "homepage": "https://www.dootask.com",
+      "repo": "https://github.com/kuaifan/dootask",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "kaneo",
+        "codex-taskboard"
+      ],
+      "aliases": [],
+      "risk_notes": "AGPL-3.0 强 copyleft：通过网络对外提供服务同样触发源码开放义务，改造后自建给他人使用需评估合规，纯内部自托管一般不受影响。部署硬性依赖 Docker v20.10+ 与 Docker Compose v2.0+，数据库为 MariaDB，建议 2 核 4G 以上，Windows 需先装 WSL2。默认分支是 pro 而非 main/master，一键安装脚本与文档链接都指向 pro。仓库含 resources/drawio（jgraph/drawio）与 resources/mobile（kuaifan/dootask-app）两个子模块，浅克隆不含。`./cmd install` 是重操作（建库并 migrate --seed），在已有数据的环境上重装会覆盖，务必先备份。",
+      "added_at": "2026-09-24",
+      "updated_at": "2026-09-24",
+      "install": "bash\ncurl -fsSL https://raw.githubusercontent.com/kuaifan/dootask/pro/bin/install | bash",
+      "detail_url": "skills/dootask.html"
+    },
+    {
       "id": "officecli",
       "name_zh": "OfficeCLI AI Office 套件",
       "name_en": "OfficeCLI",
@@ -834,6 +878,53 @@
       "updated_at": "2026-09-05",
       "install": "bash\n# macOS / Linux\ncurl -fsSL https://raw.githubusercontent.com/iOfficeAI/OfficeCLI/main/install.sh | bash\n\n# Windows PowerShell\nirm https://raw.githubusercontent.com/iOfficeAI/OfficeCLI/main/install.ps1 | iex",
       "detail_url": "skills/officecli.html"
+    },
+    {
+      "id": "toolknit-desktop",
+      "name_zh": "ToolKnit Desktop 本地文件工作台（桌面 / CLI / MCP）",
+      "name_en": "ToolKnit Desktop — Local-first File Workbench with CLI and MCP",
+      "summary_zh": "Tauri 2 + Rust 的开源本地文件工作台：桌面端 12 类 68 项工具覆盖 PDF、PPT、图像、音视频、文本转写、清理与开发者工具；同一套能力经 @toolknit/cli 与 MCP 暴露给 IDE Agent，输出 JSON、退出码分级、原子写入且不覆盖源文件。",
+      "summary_en": "Local-first file workbench on Tauri 2 and Rust: 68 tools across 12 groups for PDF, PPT, image, audio, video, text and AI work, exposed to IDE agents via @toolknit/cli and an MCP server.",
+      "category_dir": "business-office",
+      "category_name": "商业与办公",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "office",
+        "mcp",
+        "cli",
+        "pdf",
+        "pptx",
+        "document-generation",
+        "ai-agent"
+      ],
+      "languages": [
+        "javascript",
+        "rust"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "Apache-2.0",
+      "license_bucket": "open",
+      "homepage": "https://toolknit.com",
+      "repo": "https://github.com/ZihangDong/toolknit-desktop",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "officecli",
+        "anthropics-office-skills"
+      ],
+      "aliases": [
+        "toolknit"
+      ],
+      "risk_notes": "Apache-2.0 只覆盖 Desktop 与 CLI/MCP 源码，README 明确不授予 ToolKnit 名称、Logo、视觉标识、域名、托管网页服务与账号的使用权（另见 NOTICE），toolknit.com 网页端不在本仓开源范围内。桌面端仅支持 Windows 10 1803（17134）+/Windows 11，依赖 Microsoft Edge WebView2 Runtime（安装包内置引导程序，首次安装仍需联网），无 macOS/Linux 桌面版；安装包须只从本仓 Releases 下载并核对随附 .sha256，实际签名状态以对应 Release 说明为准。项目 2026-07-30 创建、当前 3.0.0，历史约两个月。CLI 契约文档中图像转换与压缩、图标生成、AI 润色与翻译仍标注 Planned，CLI 覆盖面小于桌面端。AI 功能会把符合说明的数据发往你所配置的模型服务，需 DEEPSEEK_API_KEY 或 TOOLKNIT_AI_API_KEY；官方明确「本地优先」不表示程序完全不联网。",
+      "added_at": "2026-09-24",
+      "updated_at": "2026-09-24",
+      "install": "powershell\nnpm install --global @toolknit/cli\ntoolknit doctor --json\ntoolknit --help",
+      "detail_url": "skills/toolknit-desktop.html"
     },
     {
       "id": "abogen",
@@ -1306,6 +1397,47 @@
       "updated_at": "2026-08-26",
       "install": "bash\n# 克隆上游仓库到本地\ngit clone https://github.com/dacnay816y62-hub/character-casting-studio-skill.git\ncd character-casting-studio-skill\n\n# 在支持 skills 的 Agent（如 Codex）中，将本目录作为 skill 加载，\n# 即可读取其角色设计流程与硬规则。需要参考素材时请在本地运行环境提供，\n# 不要把私人照片或未授权素材提交进仓库。",
       "detail_url": "skills/character-casting-studio-skill.html"
+    },
+    {
+      "id": "chengfeng-videocut-skills",
+      "name_zh": "成峰视频剪辑 Codex 插件包",
+      "name_en": "chengfeng-videocut-skills — Codex Plugin for Chinese Video Cutting",
+      "summary_zh": "面向中文创作者的视频剪辑 Codex Plugin 公开安装入口：插件向 Agent 提供方法与确认工具，Runtime / Studio 负责工程操作与工作台，串起字幕、剪辑与短视频流程；安装 Plugin、准备 Runtime、完成视频被明确列为三件不同的事。",
+      "summary_en": "Public Codex Plugin install entry for a Chinese-language video cutting workflow: the plugin gives the agent methods and confirmation tools, while the Runtime/Studio does project work and UI.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "skill-collection",
+      "kind_label": "技能集",
+      "tags": [
+        "video-production",
+        "short-video",
+        "codex",
+        "skill-pack",
+        "cn-localization"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh"
+      ],
+      "license": "Apache-2.0",
+      "license_bucket": "open",
+      "homepage": "https://github.com/Agentchengfeng/chengfeng-videocut-skills",
+      "repo": "https://github.com/Agentchengfeng/chengfeng-videocut-skills",
+      "tier": "watch",
+      "tier_label": "观察",
+      "featured": false,
+      "related": [
+        "manju-laoli-skill",
+        "video-shotcraft"
+      ],
+      "aliases": [],
+      "risk_notes": "观察期，原因有三。其一，3.0k star 集中在本安装入口仓，软件本体 Agentchengfeng/chengfeng-videocut 仅 11 star。其二，README 自述当前为 Plugin 0.10.10 / bootstrap 0.5.2 配套 Runtime v0.4.11 CLI-only 预发行，明确「本轮不推进 stable」，且「无 Bun 自动准备」仅覆盖 macOS arm64 固定官方资产，其他平台、常驻服务与业务流程不在验证结论内。其三，安装前提是 Node.js 18+、Git 与已登录且支持 codex plugin 子命令的 Codex CLI，非通用 Agent 可用。独立「小黑」包要求 Runtime >=0.5.9，0.4.10 与 0.4.11 均不满足其合同，仅装本 Plugin 不能宣称接通。Apache-2.0，仓库保留 LICENSE / NOTICE / CITATION.cff。",
+      "added_at": "2026-09-19",
+      "updated_at": "2026-09-19",
+      "install": "sh\nnode bin/install.cjs install --dry-run\nnode bin/install.cjs install\nnode bin/install.cjs doctor",
+      "detail_url": "skills/chengfeng-videocut-skills.html"
     },
     {
       "id": "cinema-dna-21x9x3",
@@ -2215,6 +2347,50 @@
       "detail_url": "skills/open-storyboard-canvas.html"
     },
     {
+      "id": "opencut",
+      "name_zh": "OpenCut 开源视频剪辑器（CapCut 替代）",
+      "name_en": "OpenCut — The Open Source CapCut Alternative",
+      "summary_zh": "面向 web、桌面与移动端的免费开源视频剪辑器，定位 CapCut 替代品；主仓库正以 Rust 核心 + 插件优先架构重写，规划中的能力包括 Editor API、第三方插件一等公民、内置 MCP 服务、headless 批量渲染与编辑器内脚本标签页。",
+      "summary_en": "Open source video editor for web, desktop and mobile, pitched as a CapCut alternative. Main repo is being rewritten on a Rust core: plugin-first, Editor API, MCP server, headless rendering.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "video-production",
+        "short-video",
+        "motion-design",
+        "self-hosted",
+        "social-media"
+      ],
+      "languages": [
+        "typescript",
+        "rust"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://opencut.app",
+      "repo": "https://github.com/OpenCut-app/OpenCut",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "capcut-mate",
+        "hyperframes"
+      ],
+      "aliases": [
+        "opencut-app"
+      ],
+      "risk_notes": "主仓库处于重写期：README 明确「架构设计阶段尚未准备好接收外部贡献」，重写版尚未成品。今天可用的产品是 opencut.app 上运行的 classic 版，其源码仓 opencut-app/opencut-classic 已于 2026-05-17 归档（251 star）。本地跑主仓库需要先安装 proto 与 moon 工具链，不是开箱即用的成品。MIT 可商用。",
+      "added_at": "2026-09-19",
+      "updated_at": "2026-09-19",
+      "install": "text\nhttps://opencut.app",
+      "detail_url": "skills/opencut.html"
+    },
+    {
       "id": "openmontage",
       "name_zh": "OpenMontage 开源智能体视频制作系统",
       "name_en": "OpenMontage — Agentic Video Production System",
@@ -2420,6 +2596,54 @@
       "updated_at": "2026-09-05",
       "install": "",
       "detail_url": "skills/palmier-pro.html"
+    },
+    {
+      "id": "pixelle-video",
+      "name_zh": "Pixelle-Video AI 全自动短视频引擎",
+      "name_en": "Pixelle-Video — AI Fully Automated Short Video Engine",
+      "summary_zh": "输入一个主题即可自动完成文案撰写、AI 配图/视频生成、语音解说合成、背景音乐添加与一键合成出片；Streamlit WebUI + Docker 部署，图像/视频/TTS 可按需替换为 ComfyUI、RunningHub 工作流或 DashScope、OpenAI、Seedream、Seedance、Kling 等直连 API。",
+      "summary_en": "Turn one topic into script, AI images or video, narration, BGM and a finished short video. Streamlit WebUI plus Docker; ComfyUI / RunningHub workflows or direct image, video and TTS APIs.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "video-production",
+        "short-video",
+        "tts",
+        "comfyui",
+        "docker",
+        "self-hosted",
+        "multilingual",
+        "social-media"
+      ],
+      "languages": [
+        "python"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "Apache-2.0",
+      "license_bucket": "open",
+      "homepage": "https://ath-maas.github.io/Pixelle-Video/zh",
+      "repo": "https://github.com/ATH-MaaS/Pixelle-Video",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "money-printer-turbo",
+        "comfyui-minimax-h3-studio",
+        "voxcpm"
+      ],
+      "aliases": [
+        "pixelle"
+      ],
+      "risk_notes": "仓库已从 AIDC-AI 组织迁移到 ATH-MaaS（旧仓库地址自动跳转，但 README 内链接仍大量写 AIDC-AI，其文档域名 aidc-ai.github.io 已 404，可用地址为 ath-maas.github.io）。最近一次推送 2026-06-14，距今约 3 个月。出片链路依赖外部模型与额度：LLM API Key 为必填，图像/视频需三选一（本地 ComfyUI、RunningHub 按量、或直连 DashScope/OpenAI/ARK/Kling 等 API），TTS 默认 Edge-TTS 免费、可换 Index-TTS；另需自备 ffmpeg。Apache-2.0 可商用，注意仓库含 NOTICE 文件。",
+      "added_at": "2026-09-19",
+      "updated_at": "2026-09-19",
+      "install": "text\nhttps://github.com/ATH-MaaS/Pixelle-Video/releases/latest\n下载 Windows 一键整合包 → 解压 → 双击 start.bat → 自动打开 http://localhost:8501",
+      "detail_url": "skills/pixelle-video.html"
     },
     {
       "id": "promptcard-agentcanvas",
@@ -2692,6 +2916,49 @@
       "updated_at": "2026-08-30",
       "install": "text\n帮我安装这个 skill：https://github.com/Vincentwei1021/video-talkcraft",
       "detail_url": "skills/video-talkcraft.html"
+    },
+    {
+      "id": "video-use",
+      "name_zh": "video-use 用编码 Agent 剪视频",
+      "name_en": "video-use — Edit Videos with Coding Agents",
+      "summary_zh": "把原始素材丢进文件夹、跟 Claude Code 说一句话就拿到 final.mp4 的 Agent 技能：自动去掉口水词与废片段、逐段调色、切点处 30ms 音频淡变防爆音、按自定义样式烧字幕、并行子 Agent 生成动画叠加层，并在展示预览前对每个切点做渲染自检。",
+      "summary_en": "Drop raw footage in a folder, chat with a coding agent, get final.mp4 back: cuts filler words and dead takes, grades segments, fades audio, burns subtitles, self-evaluates every cut boundary.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "skill",
+      "kind_label": "技能包",
+      "tags": [
+        "video-production",
+        "short-video",
+        "ai-agent",
+        "subagent",
+        "skill-md",
+        "social-media"
+      ],
+      "languages": [
+        "python"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/browser-use/video-use",
+      "repo": "https://github.com/browser-use/video-use",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "hyperframes",
+        "remotion-skills",
+        "video-shotcraft"
+      ],
+      "aliases": [],
+      "risk_notes": "必需依赖 ffmpeg；转录层每次调用 ElevenLabs Scribe（需 ELEVENLABS_API_KEY，按量计费），这是它 word 级切点精度的来源。yt-dlp 为可选（下载在线素材）。README 的手动安装命令用 brew 装依赖，Windows 需自备 ffmpeg 并手动配 .env。所有产物写在 <videos_dir>/edit/ 下，技能目录保持干净。与 browser-use 同源，MIT 可商用。",
+      "added_at": "2026-09-19",
+      "updated_at": "2026-09-19",
+      "install": "text\nSet up https://github.com/browser-use/video-use for me.\n\nRead install.md first to install this repo, wire up ffmpeg, register the skill with whichever agent you're running under, and set up the ElevenLabs API key — ask me to paste it when you need it. Then read SKILL.md for daily usage, and always read helpers/ because that's where the editing scripts live. After install, don't transcribe anything on your own — just tell me it's ready and wait for me to drop footage into a folder.",
+      "detail_url": "skills/video-use.html"
     },
     {
       "id": "vimax",

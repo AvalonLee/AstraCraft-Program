@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GSAP 动画平台 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">GSAP 动画平台</h1>
+      <p class="hero-subtitle">GSAP — GreenSock Animation Platform</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>主推</span><span class="lic-badge lic-unknown" title="LicenseRef-GSAP-Standard-No-Charge">版权未声明</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">高性能 JavaScript 动画库：统一驱动 CSS、SVG、Canvas、WebGL 与通用对象的时间轴动画，内置 ScrollTrigger、Flip、MotionPath 等插件，适合交互页面、数据可视化和产品演示的动效实现。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/greensock/GSAP" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://gsap.com" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>GSAP 动画平台</h1>
+<blockquote>高性能 JavaScript 动画库，也是 Web 动效领域的事实标准之一。上游：<a href="https://github.com/greensock/GSAP" target="_blank" rel="noopener">greensock/GSAP</a> · 许可证：<a href="https://gsap.com/standard-license" target="_blank" rel="noopener">Standard “no charge” license</a></blockquote>
+<h2>这是什么</h2>
+<p>GSAP（GreenSock Animation Platform）是 GreenSock / Webflow 维护的 JavaScript 动画框架。它用统一的时间轴、缓动和补间系统驱动 CSS、SVG、Canvas、WebGL、React/Vue 状态或任意 JavaScript 对象，核心库覆盖补间动画与序列控制，插件覆盖滚动触发、布局翻转、运动路径、拖拽和文本动画等场景。</p>
+<h2>怎么安装</h2>
+<p>在项目根目录执行：</p>
+<pre><code class="lang-bash">npm install gsap</code></pre>
+<p>然后在入口文件或组件中导入：</p>
+<pre><code class="lang-js">import gsap from &quot;gsap&quot;;
+import { ScrollTrigger } from &quot;gsap/ScrollTrigger&quot;;</code></pre>
+<h2>怎么用</h2>
+<p>最小补间示例如下：</p>
+<pre><code class="lang-js">gsap.to(&quot;.card&quot;, {
+  y: 0,
+  opacity: 1,
+  duration: 0.6,
+  ease: &quot;power3.out&quot;,
+});</code></pre>
+<p>复杂序列用 <code>gsap.timeline()</code> 管理；滚动动画先把 <code>ScrollTrigger</code> 注册到 GSAP，再在 <code>scrollTrigger</code> 配置中声明触发位置和 scrub 行为。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证特殊</strong>：上游没有仓库根 <code>LICENSE</code> 文件，<code>package.json</code> 标注 Standard “no charge” license；这不是 OSI 开源协议，商用前请复核 <a href="https://gsap.com/standard-license" target="_blank" rel="noopener">GSAP Standard License</a> 全文。</li><li><strong>运行时依赖</strong>：GSAP 是浏览器/运行时库，安装后仍需结合目标项目的前端工具链使用。</li><li><strong>文档语言</strong>：官方文档与 API 参考以英文为主。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

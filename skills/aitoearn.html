@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AiToEarn AI 内容营销智能体 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">AiToEarn AI 内容营销智能体</h1>
+      <p class="hero-subtitle">AiToEarn — AI Content Marketing Agent</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>Agent 基础设施</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">面向一人公司与创作者的 AI 内容营销平台：用 Agent 批量生成视频/图文，排期分发到抖音、小红书、TikTok、YouTube、X 等平台，并支持自动化互动、评论转化信号识别与 CPS/CPE/CPM 内容变现。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/yikart/AiToEarn" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://aitoearn.ai/" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>AiToEarn AI 内容营销智能体</h1>
+<blockquote>用 AI Agent 打通内容创作、跨平台分发、互动运营与内容变现的闭环。上游：<a href="https://github.com/yikart/AiToEarn" target="_blank" rel="noopener">yikart/AiToEarn</a> · 许可证：MIT</blockquote>
+<h2>这是什么</h2>
+<p>AiToEarn 是面向一人公司、创作者与品牌团队的 AI 内容营销平台。它围绕创作、发布、互动和变现四个环节提供 Agent 能力：</p>
+<ul><li><strong>Create</strong>：调用视频与图像模型批量生成视频或图文草稿，支持参考图、翻译、剪辑、目标平台限制与文案提示词。</li><li><strong>Publish</strong>：通过统一日历把内容排期发布到抖音、小红书、快手、B 站、视频号、公众号、TikTok、YouTube、X、Facebook、Instagram、Threads、Pinterest、LinkedIn 等平台。</li><li><strong>Engage</strong>：结合浏览器插件与 AI 自动处理点赞、收藏、关注和评论回复，并识别“求链接”“怎么购买”等转化信号。</li><li><strong>Monetize</strong>：提供内容交易与商家推广任务，支持按成交、互动或播放量结算。</li></ul>
+<p>平台提供网站、OpenClaw 插件、MCP 接入、Docker 自部署与源码开发等多种入口；主体工程包含 Web、后端和 Electron 桌面客户端。</p>
+<h2>怎么安装</h2>
+<p>自部署时在服务器执行：</p>
+<pre><code class="lang-bash">git clone https://github.com/yikart/AiToEarn.git
+cd AiToEarn
+docker compose up -d</code></pre>
+<p>启动后访问 <code>http://localhost:8080</code>。若要在 Claude、Cursor 或其他 MCP Agent 中调用，先在官网注册并创建 API Key，再把 Agent 的 MCP 地址设为 <code>https://aitoearn.ai/api/unified/mcp</code>，请求头 <code>x-api-key</code> 填入 Key。中国版应使用 <code>aitoearn.cn</code> 与对应 Key。</p>
+<h2>怎么用</h2>
+<p>1. 登录平台并在设置中创建 API Key。 2. 连接目标社媒账号或配置官方 Relay 授权；自部署后在配置管理中分别设置 Server Relay 与 AI Relay。 3. 向 Agent 下发创作或发布任务，确认平台限制、排期时间和生成素材。 4. 用互动模块管理评论与品牌监测；需要商业化时在内容市场接取或发布推广任务。</p>
+<h2>注意事项</h2>
+<ul><li><strong>账号与合规</strong>：自动发布、批量互动和平台授权都涉及真实账号，务必遵守目标平台服务条款，控制频率并准备人工复核。</li><li><strong>凭据安全</strong>：API Key、模型 Key、OAuth Relay 与社媒账号授权应分环境保存；中国版与国际版 Key 混用会返回 401。</li><li><strong>成本依赖</strong>：AI 生成、视频处理和平台调用可能产生模型或服务费用，实际效果取决于所配置模型与素材质量。</li><li><strong>部署依赖</strong>：Docker 部署不需要手动安装数据库；源码开发需要 Node.js 20+、pnpm/Nx 与可选 MongoDB/Redis 环境。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

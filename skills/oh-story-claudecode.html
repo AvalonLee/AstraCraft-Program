@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OH-Story 网文/小说写作 Skill 包 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">OH-Story 网文/小说写作 Skill 包</h1>
+      <p class="hero-subtitle">OH-Story Claude Code Skill Pack</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>写作与文档</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>技能集</span>
+    </div>
+    <p class="muted detail-meta">面向 Claude Code 的网文/小说写作 skill 包：覆盖长篇与短篇网络小说的扫榜、拆文、写作、去AI味、封面图全流程，内置 13 个 skill，适配多 Agent 环境。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/zenstory-ai/oh-story-claudecode" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/zenstory-ai/oh-story-claudecode" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>OH-Story 网文/小说写作 Skill 包</h1>
+<blockquote>面向 Claude Code 的网文/小说写作 skill 包。上游：<a href="https://github.com/zenstory-ai/oh-story-claudecode" target="_blank" rel="noopener">zenstory-ai/oh-story-claudecode</a> · 许可证：MIT（GitHub 识别）</blockquote>
+<h2>这是什么</h2>
+<p>它是一套面向 <strong>Claude Code</strong> 的<strong>网文/小说写作 skill 包</strong>，方法论为「套路 = 确定性情绪满足」，覆盖长篇与短篇网络小说的<strong>扫榜、拆文、写作、去 AI 味、封面图</strong>全流程，内置 13 个 skill：<code>story-setup</code>、<code>story</code>、<code>story-long-write</code>、<code>story-long-analyze</code>、<code>story-long-scan</code>、<code>story-short-write</code>、<code>story-short-analyze</code>、<code>story-short-scan</code>、<code>story-deslop</code>、<code>story-import</code>、<code>story-review</code>、<code>story-cover</code>、<code>browser-cdp</code>。适配多 Agent 环境，支持长篇（<code>{书名}/</code> 下设设定 / 大纲 / 正文 / 对标 / 追踪 / 参考资料）与短篇（<code>短篇/{标题}/</code>）的结构化工程。</p>
+<h2>怎么安装</h2>
+<pre><code class="lang-bash"># 方式一：对话安装（在 Claude Code 中）
+# 告诉 Claude Code：安装这个 skill https://github.com/zenstory-ai/oh-story-claudecode
+
+# 方式二：命令行（npx skills，-g 全局装到 ~/.claude/skills/；去掉 -g 装当前目录）
+npx skills add zenstory-ai/oh-story-claudecode -y -g</code></pre>
+<h2>怎么用</h2>
+<p>安装后在 Claude Code 中以自然语言调用，例如「用 story-long-write 写第 3 章」「用 story-deslop 给这段去 AI 味」「用 story-cover 生成封面图」。各 skill 职责分明：扫榜 / 拆文负责 inputs，写作 / 去味负责 production，review / cover 负责质检与视觉。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证</strong>：GitHub 识别为 MIT，但仓库 README 未显式附 LICENSE 文件，商用或再分发前请确认授权范围。</li><li><strong>运行环境</strong>：需 Claude Code 与 Node.js（npx）；依赖外部大模型 API，封面图生成依赖图像模型。</li><li><strong>工程约定</strong>：默认在 <code>{书名}/</code> 或 <code>短篇/{标题}/</code> 下维护 Markdown 工程文件，注意 <code>.story/作者记忆/</code>、<code>.active-book</code> 等隐藏目录的备份。</li><li>维护活跃（2026-08 更新），暂无已知重大缺陷。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-08-26 · 更新于 2026-08-26 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

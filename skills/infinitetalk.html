@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>InfiniteTalk 无限长口播视频生成 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">InfiniteTalk 无限长口播视频生成</h1>
+      <p class="hero-subtitle">InfiniteTalk</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>常规</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">MeiGen-AI 的音频驱动无限长口播视频生成框架：给定输入视频和音频，合成唇形同步的新视频，同时对齐头部运动、肢体姿态与面部表情；支持 image-to-video 和 video-to-video 两种模式，提供 Gradio demo 与 ComfyUI 分支。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/MeiGen-AI/InfiniteTalk" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://meigen-ai.github.io/InfiniteTalk/" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>InfiniteTalk 无限长口播视频生成</h1>
+<blockquote>Audio-driven Video Generation for Sparse-Frame Video Dubbing。上游：<a href="https://github.com/MeiGen-AI/InfiniteTalk" target="_blank" rel="noopener">MeiGen-AI/InfiniteTalk</a> · 许可证：Apache 2.0 · 7.8k stars · <a href="https://meigen-ai.github.io/InfiniteTalk/" target="_blank" rel="noopener">项目页</a> · <a href="https://arxiv.org/abs/2508.14033" target="_blank" rel="noopener">技术报告</a></blockquote>
+<h2>这是什么</h2>
+<p>InfiniteTalk 是 MeiGen-AI 团队（美团 + 南方科技大学等合作者）开源的音频驱动视频生成框架。与传统口型同步只动嘴唇不同，InfiniteTalk 的稀疏帧视频配音（sparse-frame video dubbing）在精确唇形同步的同时，让头部运动、肢体姿态和面部表情都对齐音频节奏——生成的视频可以无限长，且人物身份一致。</p>
+<p><strong>两种模式</strong>：</p>
+<p>| 模式 | 输入 | 输出 | |------|------|------| | <strong>Video-to-Video</strong> | 原视频 + 音频 | 唇形同步 + 头/身/表情对齐的新视频（配音模式） | | <strong>Image-to-Video</strong> | 单张图片 + 音频 | 从图片生成口播视频（数字人模式） |</p>
+<p><strong>核心特性</strong>：</p>
+<ul><li><strong>无限长生成</strong>：不限于固定时长，按音频长度持续生成</li><li><strong>唇形精准</strong>：比 MultiTalk 有更好的唇形同步精度</li><li><strong>稳定</strong>：比 MultiTalk 减少手部/身体畸变</li><li><strong>低显存</strong>：支持极低 VRAM 运行 + TeaCache + int8 量化加速</li></ul>
+<p><strong>生态集成</strong>：社区已将 InfiniteTalk 集成到 <a href="https://github.com/deepbeepmeep/Wan2GP/" target="_blank" rel="noopener">Wan2GP</a>（低显存优化版）和 <a href="https://github.com/kijai/ComfyUI-WanVideoWrapper" target="_blank" rel="noopener">ComfyUI WanVideoWrapper</a>，ComfyUI 官方分支也在仓库中。</p>
+<p><strong>后续版本</strong>：团队于 2025-12 发布 <a href="https://github.com/MeiGen-AI/LongCat-Video-Avatar" target="_blank" rel="noopener">LongCat-Video-Avatar</a>（单流/多流音频 + 视频续写）、2026-05 发布 <a href="https://meigen-ai.github.io/LongCat-Video-Avatar-1.5-Page/" target="_blank" rel="noopener">LongCat-Video-Avatar-1.5</a>（Whisper-Large 替代 Wav2Vec2、8 步蒸馏加速、风格化泛化），长期演进以 LongCat 系列为主。</p>
+<h2>怎么安装</h2>
+<p>前置条件：NVIDIA GPU（推理显存视模型规格而定）、Python 3.10+、PyTorch。</p>
+<pre><code class="lang-bash">git clone https://github.com/MeiGen-AI/InfiniteTalk.git
+cd InfiniteTalk
+pip install -r requirements.txt
+# 下载模型权重（Hugging Face）
+huggingface-cli download MeiGen-AI/InfiniteTalk --local-dir ./weights</code></pre>
+<p>ComfyUI 用户：切换到仓库的 <a href="https://github.com/MeiGen-AI/InfiniteTalk/tree/comfyui" target="_blank" rel="noopener">comfyui 分支</a>按 ComfyUI 节点安装。</p>
+<h2>怎么用</h2>
+<pre><code class="lang-bash"># Gradio demo
+python app.py
+
+# 推理脚本（video-to-video）
+python generate.py \
+  --video_path input.mp4 \
+  --audio_path voice.wav \
+  --output_path output.mp4
+
+# Image-to-video
+python generate.py \
+  --image_path portrait.jpg \
+  --audio_path voice.wav \
+  --output_path output.mp4</code></pre>
+<p>具体参数与多 GPU 推理见上游 README 和 Wiki。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 Apache 2.0</strong>：可商用，但生成人物视频需自行承担肖像权与深度伪造合规责任。</li><li><strong>显存需求</strong>：长视频生成显存消耗大，社区提供 Wan2GP 低显存方案；TeaCache 和 int8 量化可进一步加速。</li><li><strong>项目演进</strong>：InfiniteTalk 本体（2025-08 发布）更新频率已放缓，最新能力（多流音频、风格化、8 步加速）在 LongCat-Video-Avatar-1.5；如需前沿效果建议关注 LongCat 系列。</li><li><strong>模型下载</strong>：权重在 <a href="https://huggingface.co/MeiGen-AI/InfiniteTalk" target="_blank" rel="noopener">Hugging Face</a>，国内可走镜像。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

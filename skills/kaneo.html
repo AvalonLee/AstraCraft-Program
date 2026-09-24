@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kaneo 开源极简项目管理平台 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Kaneo 开源极简项目管理平台</h1>
+      <p class="hero-subtitle">Kaneo</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>Agent 基础设施</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">极简开放式项目管理平台：看板、Issue、项目与标签一体管理，支持自托管，每个实例内置 HTTP MCP 端点并发布官方 @kaneo/mcp，Claude、Cursor 等 MCP 客户端可直接在对话中创建与推进任务。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/usekaneo/kaneo" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://kaneo.app/" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Kaneo 开源极简项目管理平台</h1>
+<blockquote>极简、自托管、自带官方 MCP 的项目管理平台。上游：<a href="https://github.com/usekaneo/kaneo" target="_blank" rel="noopener">usekaneo/kaneo</a> · 许可证：MIT</blockquote>
+<h2>这是什么</h2>
+<p>Kaneo 是一个"少即是多"的开源项目管理平台：看板、Issue、项目与标签一体管理，界面干净，官方明确反对"功能堆叠"。它支持 Docker Compose、Coolify、Helm Chart 等自托管方式，数据留在自己手里，TypeScript（React Web + Hono API）单仓库维护。</p>
+<p>对 Agent 生态的独特价值在于官方 MCP server：每个实例内置 HTTP MCP 端点（<code>/api/mcp</code>），同时发布 npm 包 <code>@kaneo/mcp</code>（stdio）。Claude、Cursor 等 MCP 客户端可以在对话中直接创建任务、更新项目、维护标签，仓库还自带 <code>.agents</code> / <code>.cursor</code> / <code>.claude</code> 等 Agent 工作流配置。</p>
+<h2>怎么安装</h2>
+<pre><code class="lang-bash"># 1) 自托管 Kaneo（仓库自带 compose.yml / .env.sample）
+git clone https://github.com/usekaneo/kaneo.git
+cd kaneo
+cp .env.sample .env   # 设置 POSTGRES_PASSWORD、AUTH_SECRET、KANEO_CLIENT_URL=http://localhost:5173
+docker compose up -d
+# 打开 http://localhost:5173
+
+# 2) 给 AI 工具接入官方 MCP（stdio 方式）
+# 在 Claude Code / Cursor / Codex 等 MCP 客户端添加：
+#   command: npx
+#   args: [&quot;-y&quot;, &quot;@kaneo/mcp&quot;]
+# 自托管实例的 HTTP MCP endpoint：&lt;你的实例地址&gt;/api/mcp</code></pre>
+<h2>怎么用</h2>
+<p>接入 MCP 后，直接在 AI 工具中说"把任务 X 移到进行中，给项目 Y 加三个新任务"，Kaneo 会通过 MCP 工具调用更新看板；纯人工使用则在网页端拖拽卡片、管理 Issue 与标签。详细的部署、环境变量与 MCP 配置见 <a href="https://kaneo.app/docs/core" target="_blank" rel="noopener">官方文档</a>。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 MIT</strong>：宽松可商用。</li><li><strong>自托管依赖</strong>：核心部署需要 PostgreSQL 16，并配置 <code>POSTGRES_PASSWORD</code>、<code>AUTH_SECRET</code>、<code>KANEO_CLIENT_URL</code>；<code>KANEO_API_URL</code> 默认由 <code>KANEO_CLIENT_URL</code> 推导。</li><li><strong>MCP 两种接入</strong>：stdio 用 <code>npx -y @kaneo/mcp</code>（需 Node.js 与 npm 网络），自托管实例直接提供 HTTP MCP 端点 <code>/api/mcp</code>。</li><li>维护活跃（2026-09 持续更新），截至 2026-09-08 核验约 8,997 stars。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-08 · 更新于 2026-09-08 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

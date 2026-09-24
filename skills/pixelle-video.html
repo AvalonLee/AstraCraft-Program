@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pixelle-Video AI 全自动短视频引擎 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Pixelle-Video AI 全自动短视频引擎</h1>
+      <p class="hero-subtitle">Pixelle-Video — AI Fully Automated Short Video Engine</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>常规</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">输入一个主题即可自动完成文案撰写、AI 配图/视频生成、语音解说合成、背景音乐添加与一键合成出片；Streamlit WebUI + Docker 部署，图像/视频/TTS 可按需替换为 ComfyUI、RunningHub 工作流或 DashScope、OpenAI、Seedream、Seedance、Kling 等直连 API。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/ATH-MaaS/Pixelle-Video" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://ath-maas.github.io/Pixelle-Video/zh" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Pixelle-Video AI 全自动短视频引擎</h1>
+<blockquote>一句话主题 → 成片。上游：<a href="https://github.com/ATH-MaaS/Pixelle-Video" target="_blank" rel="noopener">ATH-MaaS/Pixelle-Video</a> · 许可证：Apache-2.0</blockquote>
+<h2>这是什么</h2>
+<p>Pixelle-Video（28.2k star）是「全自动短视频」路线的代表项目：只给一个主题，它自动完成文案撰写 → AI 配图/视频 → 语音解说 → 背景音乐 → 合成出片，主打零剪辑经验可用。</p>
+<p>模块化流水线（文案生成 → 配图规划 → 逐帧处理 → 视频合成）的每个环节都能替换实现：</p>
+<ul><li><strong>LLM</strong>：通义千问、GPT、DeepSeek、Ollama 等，WebUI 内选预设自动填 base_url 与 model；</li><li><strong>图像/视频</strong>：本地 ComfyUI 工作流、RunningHub（含 48G 显存机器）、或直连 DashScope / OpenAI / Seedream / Seedance / Kling 等 API，支持 WAN 2.1 等视频模型；</li><li><strong>语音</strong>：Edge-TTS（免费）、Index-TTS 及多语言音色；</li><li><strong>扩展模块</strong>：数字人口播、图生视频、动作迁移（上传参考视频 + 图片）。</li></ul>
+<p>竖屏 / 横屏多尺寸、多种视觉风格模板，支持批量创建任务与历史记录。</p>
+<h2>怎么安装</h2>
+<p>Windows 有免环境的一键整合包（含全部依赖，无需 Python / uv / ffmpeg）：</p>
+<pre><code class="lang-text">https://github.com/ATH-MaaS/Pixelle-Video/releases/latest
+下载 Windows 一键整合包 → 解压 → 双击 start.bat → 自动打开 http://localhost:8501</code></pre>
+<p>macOS / Linux 从源码（需先备好 <code>uv</code> 与 <code>ffmpeg</code>）：</p>
+<pre><code class="lang-bash">git clone https://github.com/ATH-MaaS/Pixelle-Video.git
+cd Pixelle-Video
+uv run streamlit run web/app.py     # 自动装依赖并打开 http://localhost:8501</code></pre>
+<p>Docker：仓库自带 <code>Dockerfile</code> 与 <code>docker-compose.yml</code>，另有 <code>docker-start.sh</code>、<code>start_web.sh</code>。</p>
+<h2>怎么用</h2>
+<ul><li>首次使用先在 WebUI 的「⚙️ 系统配置」里填 LLM API Key，并按需配 ComfyUI 地址 / RunningHub Key / 直连模型供应商，然后「保存配置」。</li><li>主流程三栏布局：输入主题 → 选模板与尺寸 → 生成；也可用固定脚本按段落/行/句子切分。</li><li>自定义素材：上传自己的照片与视频，让 AI 分析后生成脚本。</li><li>除 WebUI 外还提供 API 接口，支持模板自定义参数，可接入自动化批量出片。</li></ul>
+<h2>注意事项</h2>
+<ul><li><strong>上游组织迁移</strong>：仓库现属 <code>ATH-MaaS</code>，README 内仍大量写 <code>AIDC-AI</code>；旧文档域名 <code>aidc-ai.github.io</code> 已 404，clone 与查文档都用新地址。</li><li><strong>更新节奏</strong>：最近推送 2026-06-14，功能列表停在 2026-06-01，选型时留意是否仍活跃。</li><li><strong>成本</strong>：真正决定出片质量与费用的是所配的图像/视频模型额度；Edge-TTS 免费但稳定性一般，README 记录过锁定 edge-tts 版本修 TTS 不稳定的处理。</li><li><strong>许可证 Apache-2.0</strong>：可商用，仓库含 <code>NOTICE</code> 文件需一并保留。</li><li>官方文档：<a href="https://ath-maas.github.io/Pixelle-Video/zh" target="_blank" rel="noopener">ath-maas.github.io/Pixelle-Video/zh</a>，另有 B 站视频教程与 Windows 整合包发行页。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-19 · 更新于 2026-09-19 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

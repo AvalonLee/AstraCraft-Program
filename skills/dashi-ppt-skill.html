@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dashi PPT Skill 大师 PPT · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Dashi PPT Skill 大师 PPT</h1>
+      <p class="hero-subtitle">Dashi PPT Skill</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>写作与文档</span><span>常规</span><span class="lic-badge lic-copyleft" title="AGPL-3.0">部分开源</span><span>技能包</span>
+    </div>
+    <p class="muted detail-meta">面向职场的可编辑 PPT 生成 Skill：把文档丢给 AI Agent，一键生成自带浏览器编辑控制台的演示文稿，支持 12 套视觉主题、1020 个版式，并可导出 HTML / PDF / 真实可编辑的 PPTX。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/chuspeeism/dashi-ppt-skill" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/chuspeeism/dashi-ppt-skill" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Dashi PPT Skill 大师 PPT</h1>
+<blockquote>面向职场的可编辑 PPT 生成 Skill。上游：<a href="https://github.com/chuspeeism/dashi-ppt-skill" target="_blank" rel="noopener">chuspeeism/dashi-ppt-skill</a> · 许可证：AGPL-3.0</blockquote>
+<h2>这是什么</h2>
+<p>一个真正面向职场人的 <strong>PPT 生成 Skill</strong>：把文档丢给你的 AI Agent，每一页都自带浏览器内编辑控制台的演示文稿——不满意的地方直接在浏览器里改，改完还能一键导出成真实的、可编辑的 PPTX。</p>
+<p>内置 <strong>12 套视觉主题、1020 个版式页面、8576 个可调控件</strong>，覆盖封面、目录、指标、趋势、对比、流程、风险、结尾等 20 种页面角色，并集成雷达图 / 瀑布图 / 桑基图 / 甘特图等图表，以及 SWOT、波特五力、PEST、商业模式画布、双钻模型等分析模型版式。支持 Claude Code、Codex、豆包、Marvis、Workbuddy、Dumate、Qclaw 等多平台。</p>
+<h2>怎么安装</h2>
+<p>一条命令即可安装 / 更新（重跑即原地更新，已装依赖自动保留）：</p>
+<pre><code class="lang-bash"># 国际网络
+npx dashi-ppt-skill@latest
+
+# 国内网络
+npx --registry=https://registry.npmmirror.com dashi-ppt-skill@latest</code></pre>
+<p>也可以让 AI Agent 帮你安装：</p>
+<pre><code class="lang-text">帮我安装 skill：npx dashi-ppt-skill@latest</code></pre>
+<p>环境要求：Node.js 20+ 与 npm；导出 PPTX / PDF 需要本机装有 Chrome / Chromium / Edge。</p>
+<h2>怎么用</h2>
+<p>把文档交给接入了 Dashi PPT 的 AI Agent，告诉它主题与页面结构，Agent 会生成带浏览器编辑控制台的演示文稿；在浏览器里用滑杆、开关、下拉直接调布局 / 配色 / 模块数量 / 页面重点，文字可就地修改、媒体可替换，最后一键导出 HTML 离线包 / PDF / 可编辑 PPTX。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 AGPL-3.0（强 Copyleft）</strong>：本仓库仅做索引导航、不转载源码；但请注意，若你修改 dashi-ppt-skill 并再分发、或以网络服务形式（含 SaaS）提供，须按 AGPL-3.0 开源你的修改。纯本地使用、不修改不分发则无此义务。</li><li><strong>导出依赖</strong>：导出 PPTX / PDF 需本机安装 Chrome / Chromium / Edge。</li><li><strong>不适合</strong>：需要逐像素手工定制视觉的场景。</li><li>维护活跃（2026-08），多平台 Agent 已实测支持。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-08-26 · 更新于 2026-08-26 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

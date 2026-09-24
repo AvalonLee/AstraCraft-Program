@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HyperFrames HTML 视频渲染 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">HyperFrames HTML 视频渲染</h1>
+      <p class="hero-subtitle">HyperFrames</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>主推</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">HeyGen 开源的 HTML → MP4 视频渲染框架：把 HTML、CSS、媒体和可 seek 动画变成确定性 MP4 视频——Agent 写 HTML、框架负责渲染；20 个内置 skill 按需加载（路由 /hyperframes 按请求分发创建工作流），支持产品发布视频、无脸解说、PR-to-video、deck 和组合移植等场景。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/heygen-com/hyperframes" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://hyperframes.heygen.com" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>HyperFrames HTML 视频渲染</h1>
+<blockquote>Write HTML. Render video. Built for agents.上游：<a href="https://github.com/heygen-com/hyperframes" target="_blank" rel="noopener">heygen-com/hyperframes</a> · 许可证：Apache 2.0 · 44.1k stars · <a href="https://hyperframes.heygen.com/introduction" target="_blank" rel="noopener">文档</a> · <a href="https://www.hyperframes.dev/" target="_blank" rel="noopener">Playground</a></blockquote>
+<h2>这是什么</h2>
+<p>HyperFrames 是 HeyGen 开源的 HTML → 确定性 MP4 视频渲染框架：你（或你的 AI Agent）写 HTML + CSS + 可 seek 动画，HyperFrames 渲染成 MP4。与 Remotion 不同，HyperFrames 从头设计为 agent-first——20 个内置 skill 让 Claude Code / Cursor / Gemini CLI / Codex 等 coding agent 直接"make me a video"。</p>
+<p><strong>核心设计</strong>：</p>
+<ul><li><strong>HTML 即视频源</strong>：Agent 最擅长写 HTML/CSS，HyperFrames 把它变成确定性视频（每帧可 seek，不是黑盒浏览器截屏）</li><li><strong>20 个 skill 按需加载</strong>：<code>/hyperframes</code> 路由 skill 先读——根据请求分发到创建工作流；core set 走 <code>npx hyperframes skills update</code>（从 main 最新拉取，不滞后）</li><li><strong>创建工作流</strong>（按需求选）：</li><li><code>/product-launch-video</code>：网站产品发布视频（30-90 秒甜蜜点，最长 ~3 分钟）</li><li><code>/faceless-explainer</code>：无脸解说视频（纯文本 → 排版 / 图表 / 动效）</li><li><code>/pr-to-video</code>：GitHub PR → 变更日志 / 功能展示视频</li><li>更多见 <a href="https://hyperframes.heygen.com/catalog/" target="_blank" rel="noopener">Skills 目录</a></li><li><strong>生产循环</strong>：规划视频 → 写合法 HTML → 接可 seek 动画 → 加媒体 → lint → preview → render</li></ul>
+<p><strong>与 Remotion 的区别</strong>：Remotion 是 React 组件写视频（开发者工具），HyperFrames 是纯 HTML + agent skill（agent 工具）——任何会写 HTML 的 agent 都能出片。</p>
+<h2>怎么安装</h2>
+<p><strong>Agent 一键安装（推荐）：</strong></p>
+<pre><code class="lang-bash">npx skills add heygen-com/hyperframes</code></pre>
+<p>Picker 打开后选 <strong>Core Skills</strong> 组（路由 + 按需工作流），不要全选。</p>
+<p><strong>Agent / 非交互式：</strong></p>
+<pre><code class="lang-bash">npx hyperframes skills update</code></pre>
+<p>前置条件：Node.js &gt;= 22。</p>
+<h2>怎么用</h2>
+<p>安装 skill 后对 Agent 说：</p>
+<pre><code class="lang-text">Using /hyperframes, create a 10-second product intro
+with a fade-in title, a background video, and subtle background music.</code></pre>
+<p>Agent 会按生产循环执行：读 <code>/hyperframes</code> 路由 → 确认 brief → 选工作流 → 写 HTML → 接动画 → 加媒体 → lint → preview → render MP4。</p>
+<p><strong>典型场景</strong>：</p>
+<ul><li>网站产品发布视频（从 URL / brief / 脚本）</li><li>无脸解说（任意主题文本）</li><li>PR 变更展示（GitHub PR URL）</li><li>HTML deck → 视频</li></ul>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 Apache 2.0</strong>：可自由商用。</li><li><strong>Node &gt;= 22</strong>：渲染引擎需要 Node 22 或更高。</li><li><strong>skill 安装策略</strong>：<code>skills add --all</code> 装 20 个全量 skill；agents / 非交互场景用 <code>npx hyperframes skills update</code> 装 core set（从 main 最新拉取，不滞后 registry）。</li><li><strong>维护极其活跃</strong>（2026-09-05 当天仍有提交，44.1k stars），提供 npm 月下载、Playground、Showcase 和 Discord 社区，HeyGen 出品。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

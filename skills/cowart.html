@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cowart Codex 无限画布 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Cowart Codex 无限画布</h1>
+      <p class="hero-subtitle">Cowart</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>技能包</span>
+    </div>
+    <p class="muted detail-meta">面向 Codex 的原生无限画布 widget 插件（基于 tldraw）：在 Codex 内直接打开可视化画布用于构思、标注、AI 图片生成与迭代；AI 图片框按框位置和比例生成并替换、标注截图自动去痕生成修订图、AI HTML 框生成可运行单文件页面、AI Slides 组合为 16:9 演示文稿；画布数据持久化到项目目录。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/zhongerxin/Cowart" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://cowart.jiqiren.ai" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Cowart Codex 无限画布</h1>
+<blockquote>面向 Codex 的原生无限画布 widget 插件。上游：<a href="https://github.com/zhongerxin/Cowart" target="_blank" rel="noopener">zhongerxin/Cowart</a> · 许可证：MIT · 5.8k stars · 画布基于 <a href="https://github.com/tldraw/tldraw" target="_blank" rel="noopener">tldraw</a></blockquote>
+<h2>这是什么</h2>
+<p>Cowart 是一个 Codex 原生无限画布 widget 插件：不需要打开浏览器或 in-app browser，Codex 内直接弹出一个 tldraw 无限画布。构思、标注、生成图片、迭代图片——人和 Codex 在同一块画布上协作，画布数据保存到当前项目目录。</p>
+<p><strong>核心能力</strong>：</p>
+<p>| 能力 | 说明 | |------|------| | <strong>AI 图片框</strong> | 在画布中创建框 → 输入 prompt + 选参考图 → Codex 按框的位置和比例生成图片替换它 | | <strong>标注修改</strong> | 对图片做标注（箭头 / 文字）→ 选中 → 按标注修改 → 导出含标注的截图发给 Codex → 生成去掉标注的干净新图，放原图旁边 | | <strong>AI HTML 框</strong> | 创建 16:9 的 HTML 框 → prompt + 参考图 → Codex 生成可运行的单文件 HTML 嵌入画布，继续编辑或迭代 | | <strong>AI Slides</strong> | 把画布中的图片和 HTML 组织成演示文稿，或让 Codex 按指定页数生成一组 16:9 HTML 页面；支持缩略图预览 + 全屏播放 + 交互保留 | | <strong>MCP 工具</strong> | <code>render_cowart_canvas_widget</code> 打开画布；读取选择状态、保存画布、插入图片或 HTML |</p>
+<p><strong>3 个内置 Skill</strong>：<code>cowart-open-canvas</code>（打开画布）、<code>cowart-image-gen</code>（prompt → 生成图片替换框）、<code>cowart-image-edit</code>（标注截图 → 修订图）。</p>
+<p><strong>插件规范</strong>：遵循 <a href="https://agent-plugins.org/specification" target="_blank" rel="noopener">Agent Plugins v1.0.0</a>；根目录 <code>plugin.json</code> / <code>skills/</code> / <code>mcp.json</code> 提供可移植入口，<code>.codex-plugin/</code> 提供 Codex 专用界面。MCP bundle 自包含 + 预构建 Widget，安装后不在插件缓存里跑 npm install。</p>
+<h2>怎么安装</h2>
+<p><strong>让 Codex 自动安装（推荐）：</strong></p>
+<p>把下面这段发给 Codex：</p>
+<pre><code class="lang-text">请通过 Cowart 仓库自带的 Git marketplace 安装 Cowart Codex 插件。
+先运行 codex plugin marketplace add zhongerxin/Cowart --ref main，
+再运行 codex plugin add cowart@cowart-github，并用 codex plugin list 确认插件已启用。
+安装完成后请提醒我完全退出并重新启动一次 Codex。</code></pre>
+<p><strong>手动安装：</strong></p>
+<pre><code class="lang-bash">codex plugin marketplace add zhongerxin/Cowart --ref main
+codex plugin add cowart@cowart-github
+codex plugin list</code></pre>
+<p>安装后必须完全退出并重启 Codex。</p>
+<p><strong>网页版（无需安装）：</strong> 在 Codex 内置浏览器中打开 <a href="https://cowart.jiqiren.ai/" target="_blank" rel="noopener">cowart.jiqiren.ai</a>。</p>
+<h2>怎么用</h2>
+<pre><code class="lang-text">Open the Cowart canvas for this project.</code></pre>
+<p>画布数据保存到：</p>
+<pre><code class="lang-text">canvas/pages/&lt;page-id&gt;/cowart-canvas.json
+canvas/pages/&lt;page-id&gt;/assets/</code></pre>
+<p><strong>生成新图</strong>：创建 AI 图片框 → 输入 prompt / 选参考图 → Codex 按框的位置和比例生成 → 框被替换成普通图片形状。</p>
+<p><strong>标注修改</strong>：在图片上画箭头 / 加文字 → 选中 → 按标注修改 → Codex 读取标注 → 生成干净新图放原图旁。</p>
+<p><strong>AI Slides 演示</strong>：创建 Slides 框 → 拖入图片或 HTML → 或让 Codex 按页数生成 → 演示 Slides 全屏播放（方向键翻页，HTML 交互保留）。</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 MIT</strong>：可自由商用。</li><li><strong>Codex 专属</strong>：需要 Codex 桌面端（widget 原生嵌入），不适用于 Claude Code / Cursor 等其他 agent。</li><li><strong>安装后重启</strong>：MCP 工具和 skill 需要重启后加载；更新后同样需要重启。</li><li><strong>画布持久化</strong>：数据在项目 <code>canvas/</code> 目录，跟随项目走，不在插件仓库里。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

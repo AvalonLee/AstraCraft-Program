@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Humanizer-zh AI 写作去痕 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Humanizer-zh AI 写作去痕</h1>
+      <p class="hero-subtitle">Humanizer-zh</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>写作与文档</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>技能包</span>
+    </div>
+    <p class="muted detail-meta">Humanizer 的中文汉化版 Claude Code Skill：识别并修复 24 种 AI 写作痕迹（内容 / 语言语法 / 风格 / 交流填充词四大类），把 AI 生成文本改写得更自然、更像人写的；附 AI 高频词汇警示列表和改写前后对比示例。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/op7418/Humanizer-zh" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/op7418/Humanizer-zh" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Humanizer-zh AI 写作去痕</h1>
+<blockquote>把 AI 味文本改写成"人味"文本。上游：<a href="https://github.com/op7418/Humanizer-zh" target="_blank" rel="noopener">op7418/Humanizer-zh</a> · 许可证：MIT · 16.7k stars · 基于 <a href="https://github.com/blader/humanizer" target="_blank" rel="noopener">blader/humanizer</a> 汉化</blockquote>
+<h2>这是什么</h2>
+<p>Humanizer-zh 是 <a href="https://github.com/blader/humanizer" target="_blank" rel="noopener">blader/humanizer</a> 的中文汉化版，帮 AI Agent 识别并修复中文文本中的 AI 生成痕迹。原项目基于维基百科 <a href="https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing" target="_blank" rel="noopener">Signs of AI writing</a> 指南；本版本翻译核心规则 + 补充中文语境特有模式（如「格局」「织锦」等抽象名词、「此外」「至关重要」等 AI 高频词）。</p>
+<p><strong>24 种 AI 写作模式（四大类）</strong>：</p>
+<p>| 类别 | 模式 | |------|------| | <strong>内容模式（6）</strong> | 过度强调意义 / 遗产 / 趋势；过度强调知名度；-ing 式肤浅分析；宣传广告语；模糊归因；"挑战与未来展望"提纲 | | <strong>语言语法（6）</strong> | AI 高频词汇；系动词回避；否定式排比；三段式法则；同义词循环；虚假范围 | | <strong>风格（6）</strong> | 破折号 / 粗体过度；内联标题垂直列表；标题大写；表情符号；弯引号 | | <strong>交流填充（6）</strong> | 协作交流痕迹；知识截止免责；谄媚语气；填充短语；过度限定；通用积极结论 |</p>
+<p><strong>改写原则</strong>：不仅要"干净"，更要"鲜活"——有观点、变化节奏、承认复杂性、适当用"我"、允许一些混乱、对感受具体。</p>
+<h2>怎么安装</h2>
+<pre><code class="lang-bash">npx skills add https://github.com/op7418/Humanizer-zh.git</code></pre>
+<p>或手动克隆到 <code>~/.claude/skills/humanizer-zh/</code>。</p>
+<h2>怎么用</h2>
+<p>安装后在 Claude Code 中：</p>
+<pre><code class="lang-text">/humanizer-zh 请帮我人性化以下文本：
+
+这个项目作为我们团队致力于创新的证明。此外，它展示了我们在不断演变的技术格局中的关键作用。</code></pre>
+<p>Agent 会对照 24 种模式扫描 → 重写问题片段 → 保留核心含义 → 匹配语调 → 注入真实个性。</p>
+<p><strong>改写示例</strong>：</p>
+<blockquote>改写前：本研究深入探讨了机器学习在医疗诊断中的关键作用，突出了其在不断演变的医疗格局中的重要性。  改写后：本研究分析了机器学习在医疗诊断中的应用，重点是肺癌早期筛查。研究使用了 2019-2023 年间 5000 例病历数据。</blockquote>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 MIT</strong>。</li><li><strong>中文语境适配</strong>：英文模式在中文中表现不同（如标题大小写在中文不存在），已按中文习惯调整；中文 AI 高频词（「此外」「至关重要」「深入探讨」「格局」「织锦」「充满活力的」等）在 SKILL.md 中有警示列表。</li><li><strong>不是检测器对抗</strong>：工具目标是提升写作质量，不是为了"欺骗"AI 检测器。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

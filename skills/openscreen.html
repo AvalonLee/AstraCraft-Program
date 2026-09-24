@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OpenScreen 开源录屏演示工具 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">OpenScreen 开源录屏演示工具</h1>
+      <p class="hero-subtitle">OpenScreen</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">Screen Studio 的免费开源替代：录屏 + 自动缩放跟随光标 + 自定义光标主题 + 本地离线字幕 + 运动模糊 + 时间线标注，导出 MP4 / GIF 多比例多分辨率；100% 免费（个人和商用）、无订阅、无水印、无付费墙。已官宣即将归档，社区 fork 由核心贡献者继续维护。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/siddharthvaddem/openscreen" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/siddharthvaddem/openscreen" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>OpenScreen 开源录屏演示工具</h1>
+<blockquote>Free, open-source alternative to Screen Studio。上游：<a href="https://github.com/siddharthvaddem/openscreen" target="_blank" rel="noopener">siddharthvaddem/openscreen</a> · 许可证：MIT · 39.9k stars · 已官宣即将归档</blockquote>
+<h2>这是什么</h2>
+<p>OpenScreen 是 Screen Studio（$29/月）的免费开源替代：录屏 → 自动缩放跟随光标 → 精致光标动画 → 本地离线字幕 → 导出 MP4 / GIF。适合做产品 demo、walkthrough，发 X / Reddit / YouTube。100% 免费（个人 + 商用），无订阅、无水印、无付费墙。</p>
+<p><strong>核心特性</strong>：</p>
+<ul><li><strong>录制</strong>：指定窗口或全屏；麦克风 + 系统音频；webcam 画中画（拖拽定位 / 镜像 / 形状选项）</li><li><strong>缩放</strong>：自动缩放跟随光标（可调深度 / 时长 / easing / 像素级位置）或手动缩放</li><li><strong>光标</strong>：自定义大小 / 平滑 / 点击效果 / 光标主题 / 后期路径平滑</li><li><strong>字幕</strong>：本地离线自动生成（不上传）</li><li><strong>背景</strong>：壁纸 / 纯色 / 渐变 / 自定义背景图</li><li><strong>运动模糊</strong>：转场模糊效果</li><li><strong>时间线</strong>：裁剪 / 修剪 / 逐段变速 / 吸附参考线 / 音频波形</li><li><strong>标注</strong>：文字 / 箭头 / 图片，带文字动画预设</li><li><strong>导出</strong>：MP4 / GIF，多比例（16:9 / 9:16 / 1:1）多分辨率</li><li><strong>12 种语言</strong>：阿拉伯语 / 英语 / 西语 / 法语 / 意语 / 日语 / 韩语 / 葡语 / 俄语 / 土耳其语 / 越南语 / 简中 / 繁中</li></ul>
+<h2>怎么安装</h2>
+<p><strong>macOS（Homebrew）：</strong></p>
+<pre><code class="lang-bash">brew install --cask siddharthvaddem/openscreen/openscreen</code></pre>
+<p><strong>Windows（winget）：</strong></p>
+<pre><code class="lang-bash">winget install SiddharthVaddem.OpenScreen</code></pre>
+<p><strong>Linux</strong>：从 <a href="https://github.com/siddharthvaddem/openscreen/releases" target="_blank" rel="noopener">Releases</a> 下载 <code>.deb</code> / <code>.pacman</code> / <code>.rpm</code>。</p>
+<h2>怎么用</h2>
+<p>1. 打开 OpenScreen → 选择录制窗口或全屏 2. 录制（可选 webcam 画中画 + 麦克风 + 系统音频） 3. 停止后进入编辑器：自动缩放已按光标位置生成，可调深度和 easing 4. 时间线裁剪 / 修剪 / 加标注 / 加背景 5. 导出 MP4（多比例多分辨率）或 GIF</p>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 MIT</strong>：100% 免费商用，无水印。</li><li><strong>项目即将归档</strong>：原作者已官宣（README 顶部 WARNING），社区 fork 由核心贡献者在 <a href="https://github.com/EtienneLescot/openscreen" target="_blank" rel="noopener">EtienneLescot/openscreen</a> 继续维护；长期使用建议关注 fork 或自行维护。</li><li><strong>macOS 权限</strong>：需要 Screen Recording + Accessibility 权限；升级后权限失效需在系统设置删除旧条目重装。</li><li><strong>bug 预期</strong>：side project 起家非生产级，核心功能覆盖但可能有 bug。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

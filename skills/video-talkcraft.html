@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>口播视频动效工作室 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">口播视频动效工作室</h1>
+      <p class="hero-subtitle">video-talkcraft — Voiceover-Driven Explainer Video Skill</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>常规</span><span class="lic-badge lic-unknown" title="PolyForm-Noncommercial-1.0.0">版权未声明</span><span>技能包</span>
+    </div>
+    <p class="muted detail-meta">把 Claude Code / Codex 变成口播视频动效工作室的 agent skill：字级配音同步、78 张动效配方卡、七层反 PPT 镜头系统、三重验收，用 Remotion 渲出动态字卡、证据截图、运镜与音效全部锁在人声上的解说成片。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/Vincentwei1021/video-talkcraft" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/Vincentwei1021/video-talkcraft" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>口播视频动效工作室</h1>
+<blockquote>把 Claude Code / Codex 变成口播视频动效工作室的 agent skill。上游：<a href="https://github.com/Vincentwei1021/video-talkcraft" target="_blank" rel="noopener">Vincentwei1021/video-talkcraft</a> · 许可证：PolyForm Noncommercial 1.0.0</blockquote>
+<h2>这是什么</h2>
+<p><a href="https://github.com/Vincentwei1021/video-shotcraft" target="_blank" rel="noopener">video-shotcraft</a> 系列的口播视频篇：给它一份口播稿和一条成品配音，它在本机对齐字级时间戳、把每个语义拍写进 SHOTBOOK 分镜，然后用 Remotion 渲出解说成片——动态字卡、证据截图、运镜、字幕、影视级音效，全部锚在人声的确切字上。核心能力：</p>
+<ul><li><strong>字级配音同步</strong>：<code>scripts/timestamps_cpu.py</code> 把口播稿对齐到音频（默认 FireRedASR2-CTC int8，备选 faster-whisper），110 秒中英混合口播实测字级偏差中位 20-40ms、最差 200ms。</li><li><strong>78 张动效配方卡</strong>：每张含意图、参数、已知坑、自包含 Remotion tsx 源码和可跑 HTML 预览（<a href="https://vincentwei1021.github.io/video-talkcraft/" target="_blank" rel="noopener">在线画廊</a>一页全览），覆盖动态字卡、数据镜头、证据巡游、六式运动承接转场、长镜头世界画布、人物合成等。</li><li><strong>七层反 PPT 系统</strong>：连续相机曲线、视差平面、idle/让位生命周期、呼吸环境层，静止帧在结构上不可能出现，漏网的也会被自动检测抓住。</li><li><strong>审片级排版纪律</strong>：语义拍分镜、同屏元素预算、留白锚、枢轴句切镜规则，人脸安全区用真实检测脚本（<code>scripts/face_bbox.py</code>）量出来，不靠目测。</li><li><strong>三重验收</strong>：自动静止检测、纯音效轨逐 cue 能量验证、带动效锚点帧的独立评审（专抓单帧看不见的时域缺陷）。</li></ul>
+<h2>怎么安装</h2>
+<p>最直接的方式——把仓库链接丢给 Agent：</p>
+<pre><code class="lang-text">帮我安装这个 skill：https://github.com/Vincentwei1021/video-talkcraft</code></pre>
+<p>或用 skills CLI / 手动安装：</p>
+<pre><code class="lang-bash">npx skills add Vincentwei1021/video-talkcraft</code></pre>
+<pre><code class="lang-bash">git clone https://github.com/Vincentwei1021/video-talkcraft.git
+cd video-talkcraft
+ln -s &quot;$(pwd)&quot; ~/.claude/skills/video-talkcraft   # Claude Code
+# 或
+ln -s &quot;$(pwd)&quot; ~/.codex/skills/video-talkcraft    # Codex</code></pre>
+<p>环境依赖（Agent 会按需自行配置）：Node 18+（Remotion 渲染）、Python 3.10+（时间戳管线，<code>pip install zhconv pypinyin sherpa-onnx soundfile numpy</code>，首次使用下载一次 767MB ASR 模型，或加 <code>--backend whisper</code>）、ffmpeg。</p>
+<h2>怎么用</h2>
+<p>安装后在 Claude Code / Codex 里直接下需求：</p>
+<pre><code class="lang-text">用 video-talkcraft 把这份口播稿 + voiceover.wav 做成视频。
+做一条 100 秒的 &lt;话题&gt; 解说，稿子和音频在这里。</code></pre>
+<p>典型流程：准备口播稿与成品配音 → Agent 对齐字级时间戳 → 按 SHOTBOOK 分镜选用配方卡动效 → Remotion 渲染 → 三重验收出片。想先看动效效果，浏览在线画廊或本地 <code>gallery/index.html</code> 挑配方。</p>
+<h2>注意事项</h2>
+<ul><li><strong>非商用许可</strong>：PolyForm Noncommercial 1.0.0 仅允许非商业用途；产出的视频归创作者所有，但把工具链本身用于商业交付违反许可条款。</li><li><strong>模型下载</strong>：字级时间戳管线首次使用需下载 767MB 的 FireRedASR2-CTC 模型（国内网络可能较慢），不想要大文件可改 <code>--backend whisper</code>。</li><li><strong>工具链较重</strong>：Node + Python + ffmpeg + Remotion 全链路本地渲染，首次跑通需要环境配置；渲染消耗本机算力。</li><li><strong>同系列</strong>：静态分镜/运镜设计见同作者 <code>video-shotcraft</code>（本库 design-creative 分类已收录）；Remotion 本体知识可配合本库收录的 <code>remotion-skills</code>。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-08-30 · 更新于 2026-08-30 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

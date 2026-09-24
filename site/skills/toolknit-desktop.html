@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ToolKnit Desktop 本地文件工作台（桌面 / CLI / MCP） · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">ToolKnit Desktop 本地文件工作台（桌面 / CLI / MCP）</h1>
+      <p class="hero-subtitle">ToolKnit Desktop — Local-first File Workbench with CLI and MCP</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>商业与办公</span><span>常规</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">Tauri 2 + Rust 的开源本地文件工作台：桌面端 12 类 68 项工具覆盖 PDF、PPT、图像、音视频、文本转写、清理与开发者工具；同一套能力经 @toolknit/cli 与 MCP 暴露给 IDE Agent，输出 JSON、退出码分级、原子写入且不覆盖源文件。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/ZihangDong/toolknit-desktop" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://toolknit.com" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>ToolKnit Desktop 本地文件工作台（桌面 / CLI / MCP）</h1>
+<blockquote>把文件处理能力做成 Agent 可调用契约的桌面工具箱。上游：<a href="https://github.com/ZihangDong/toolknit-desktop" target="_blank" rel="noopener">ZihangDong/toolknit-desktop</a> · 许可证：Apache-2.0</blockquote>
+<h2>这是什么</h2>
+<p>ToolKnit Desktop 3.0（Tauri 2.x + Rust 桌面容器，Vite + JavaScript 界面）提供三种工作方式：<strong>网页端</strong>（toolknit.com，开箱即用）、<strong>Windows 桌面端</strong>（文件留在本机）、以及 <strong>CLI 与 MCP</strong>（脚本、批处理、CI 与 IDE Agent）。</p>
+<p>桌面端按 12 个分类列出 68 项工具：PDF 文档 13 项、PPT 演示 7 项、图像 7 项、开发者 6 项、文本与转写 5 项、计算器 5 项、AI 工作台 5 项、硬件与系统 8 项、音频 4 项、视频 3 项、创意 3 项、清理 2 项。</p>
+<p>它对本目录的价值主要不在工具箱本身，而在<strong>它把本地能力设计成了 Agent 可验证的契约</strong>：</p>
+<ul><li>每个写文件的命令都要求显式目标路径；只接受常规 <code>.pdf</code>（拒绝符号链接）；未显式给 <code>--overwrite</code> 绝不覆盖已有文件，且拒绝覆盖自己的输入文件；</li><li>输出先写同目录临时文件，处理成功后原子发布；</li><li>加 <code>--json</code> 即得结构化结果，退出码分级明确：<code>0</code> 成功、<code>2</code> 用法错误、<code>3</code> 输入无效或缺失、<code>4</code> 输出路径不安全或拒绝覆盖、<code>5</code> 缺少引擎、<code>6</code> 处理失败；</li><li>密码等敏感输入不写入日志、输出 JSON、文件名或 Agent 回复。</li></ul>
+<p>隐私边界也写得很清楚：PDF/PPT/图像/音视频/文本/计算器/硬件/清理类工具默认本机运行；只有主动使用 AI 润色、翻译、AI 文档、AI 表格、AI PDF 转 Markdown、PPT 文本 AI 整理、AI PPT 大纲、AI PPTX 草稿、转写后 <code>refine</code> 时，符合该功能说明的数据才会发往你配置的模型服务；大文件清理只发送元数据。桌面端 AI Key 用 Windows DPAPI 加密保存。运行时按需复用本机已有的 FFmpeg 与 LibreOffice，Whisper 模型与缺失运行时按需下载（支持校验和与镜像源选择）。</p>
+<h2>怎么安装</h2>
+<p>Agent / 脚本路线（npm 包已发布，<code>@toolknit/cli</code>，bin 为 <code>toolknit</code>）：</p>
+<pre><code class="lang-powershell">npm install --global @toolknit/cli
+toolknit doctor --json
+toolknit --help</code></pre>
+<p>Windows 桌面端从仓库 Releases 下载安装包，运行前核对随附的 <code>.sha256</code>：</p>
+<pre><code class="lang-text">https://github.com/ZihangDong/toolknit-desktop/releases</code></pre>
+<p>从源码运行（建议 Node.js 24，与 GitHub Actions 一致；Vite 8 要求 Node <code>20.19+</code> 或 <code>22.12+</code>；构建桌面端还需 Rust stable、VS C++ Build Tools、Windows SDK 与 WebView2）：</p>
+<pre><code class="lang-powershell">git clone --branch &quot;ToolKnit-Desktop-V3.0-正式版&quot; --single-branch https://github.com/ZihangDong/toolknit-desktop.git
+Set-Location toolknit-desktop\toolknit-desktop
+npm ci
+npm run tauri dev</code></pre>
+<h2>怎么用</h2>
+<p>在 Trae、Cursor、VS Code 等任意支持 MCP 的客户端里加一段配置，就能让 Agent 调用本地文件能力：</p>
+<pre><code class="lang-json">{
+  &quot;mcpServers&quot;: {
+    &quot;toolknit&quot;: {
+      &quot;command&quot;: &quot;toolknit&quot;,
+      &quot;args&quot;: [&quot;mcp&quot;, &quot;serve&quot;]
+    }
+  }
+}</code></pre>
+<p>命令行侧已定契约的能力示例（PDF / 音频 / 视频）：</p>
+<pre><code class="lang-powershell">toolknit pdf inspect --input .\report.pdf --json
+toolknit pdf merge --input .\part-a.pdf --input .\part-b.pdf --output .\merged.pdf --json
+toolknit pdf split --input .\report.pdf --pages 1,3-5 --output-dir .\pages --json
+toolknit pdf compress --input .\report.pdf --output .\small.pdf --level high --json
+toolknit pdf to-image --input .\report.pdf --output-dir .\out --mode images --format png --clarity high --json
+toolknit audio convert --input .\meeting.m4a --output-dir .\out --format mp3 --quality high --json
+toolknit audio extract --input .\lesson.mp4 --output-dir .\out --format mp3 --track-index 0 --json
+toolknit video convert --input .\recording.mov --output-dir .\out --format mp4 --json</code></pre>
+<ul><li>基础文件工具与非 AI 的 PPT 工具<strong>不需要 AI Key</strong>；AI 文档、AI 表格、PPT 文本整理、AI PPT 大纲、AI PPTX 草稿与转写后 <code>refine</code> 需在 CLI/MCP 进程环境配置 <code>DEEPSEEK_API_KEY</code> 或 <code>TOOLKNIT_AI_API_KEY</code>。</li><li>分工定位：桌面端负责可视化预览与交互，CLI 负责批处理，Agent 负责自然语言编排。</li><li>必读文档（都在仓库的 <code>toolknit-desktop/docs/</code> 下）：<a href="https://github.com/ZihangDong/toolknit-desktop/blob/main/toolknit-desktop/docs/cli-agent.md" target="_blank" rel="noopener">CLI 与 MCP 契约</a>、<a href="https://github.com/ZihangDong/toolknit-desktop/blob/main/toolknit-desktop/docs/agent-guide.zh-CN.md" target="_blank" rel="noopener">中文 Agent 手册</a>、<a href="https://github.com/ZihangDong/toolknit-desktop/blob/main/toolknit-desktop/docs/agent-guide.en.md" target="_blank" rel="noopener">English Agent guide</a>、<a href="https://github.com/ZihangDong/toolknit-desktop/blob/main/toolknit-desktop/docs/ai-document-project-spec.md" target="_blank" rel="noopener">AI 文档工程规范</a>。</li></ul>
+<h2>注意事项</h2>
+<ul><li><strong>商标与品牌不在授权范围内</strong>：Apache-2.0 只覆盖源码，ToolKnit 名称、Logo、域名、托管网页服务与账号均不授予使用权（见 <code>NOTICE</code>）；二次分发产品需改名或另行取得授权。</li><li><strong>仅 Windows 桌面端</strong>：macOS/Linux 用户走网页端或 CLI；Win7/8/8.1 与 1803 之前的 Win10 不受支持，安装器会在复制文件前直接提示原因。</li><li><strong>供应链纪律</strong>：官方要求只从本仓 Releases 下载并核对 SHA-256；代码签名状态以各 Release 说明为准，另有 <code>CODE_SIGNING_POLICY.md</code>。</li><li><strong>CLI 覆盖小于桌面端</strong>：契约文档中图像转换/压缩、图标生成、AI 润色与翻译等仍标 <code>Planned</code>，编排 Agent 工作流前先 <code>toolknit --help</code> 确认实际可用面。</li><li><strong>仓库结构有嵌套</strong>：应用源码与 Agent 文档位于 <code>toolknit-desktop/</code> 子目录下，根目录 <code>docs/</code> 放的是架构与更新说明；源码运行需 <code>cd</code> 进嵌套目录。</li><li>项目 2026-07-30 创建，至今约两个月但迭代很密（2026-09-23 仍在推送），star 规模尚小（1.2k），选型时留意长期维护。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-24 · 更新于 2026-09-24 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

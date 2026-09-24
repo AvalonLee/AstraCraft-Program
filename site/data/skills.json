@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-19T06:08:45Z",
-  "count": 93,
+  "generated_at": "2026-09-24T13:12:26Z",
+  "count": 95,
   "categories": [
     {
       "dir": "writing-docs",
@@ -788,6 +788,50 @@
       "detail_url": "skills/chatgpt-shortcut.html"
     },
     {
+      "id": "dootask",
+      "name_zh": "DooTask 开源任务管理与团队协作系统",
+      "name_en": "DooTask — Open Source Task Management & Team Collaboration",
+      "summary_zh": "开源自托管任务管理与团队协作系统（PHP/Laravel + Vue）：任务、看板、团队 IM、文件与流程一体，Docker Compose 部署、`./cmd` 一键运维，仓库内置 5 个 Claude Code 运维技能与 AGENTS.md。",
+      "summary_en": "Open source self-hosted task management and team collaboration system (PHP/Laravel + Vue) with Docker deployment, a `./cmd` ops CLI, and five bundled Claude Code skills plus AGENTS.md.",
+      "category_dir": "business-office",
+      "category_name": "商业与办公",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "office",
+        "self-hosted",
+        "docker",
+        "agent-skills",
+        "project-management",
+        "kanban"
+      ],
+      "languages": [
+        "php",
+        "javascript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "AGPL-3.0",
+      "license_bucket": "copyleft",
+      "homepage": "https://www.dootask.com",
+      "repo": "https://github.com/kuaifan/dootask",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "kaneo",
+        "codex-taskboard"
+      ],
+      "aliases": [],
+      "risk_notes": "AGPL-3.0 强 copyleft：通过网络对外提供服务同样触发源码开放义务，改造后自建给他人使用需评估合规，纯内部自托管一般不受影响。部署硬性依赖 Docker v20.10+ 与 Docker Compose v2.0+，数据库为 MariaDB，建议 2 核 4G 以上，Windows 需先装 WSL2。默认分支是 pro 而非 main/master，一键安装脚本与文档链接都指向 pro。仓库含 resources/drawio（jgraph/drawio）与 resources/mobile（kuaifan/dootask-app）两个子模块，浅克隆不含。`./cmd install` 是重操作（建库并 migrate --seed），在已有数据的环境上重装会覆盖，务必先备份。",
+      "added_at": "2026-09-24",
+      "updated_at": "2026-09-24",
+      "install": "bash\ncurl -fsSL https://raw.githubusercontent.com/kuaifan/dootask/pro/bin/install | bash",
+      "detail_url": "skills/dootask.html"
+    },
+    {
       "id": "officecli",
       "name_zh": "OfficeCLI AI Office 套件",
       "name_en": "OfficeCLI",
@@ -834,6 +878,53 @@
       "updated_at": "2026-09-05",
       "install": "bash\n# macOS / Linux\ncurl -fsSL https://raw.githubusercontent.com/iOfficeAI/OfficeCLI/main/install.sh | bash\n\n# Windows PowerShell\nirm https://raw.githubusercontent.com/iOfficeAI/OfficeCLI/main/install.ps1 | iex",
       "detail_url": "skills/officecli.html"
+    },
+    {
+      "id": "toolknit-desktop",
+      "name_zh": "ToolKnit Desktop 本地文件工作台（桌面 / CLI / MCP）",
+      "name_en": "ToolKnit Desktop — Local-first File Workbench with CLI and MCP",
+      "summary_zh": "Tauri 2 + Rust 的开源本地文件工作台：桌面端 12 类 68 项工具覆盖 PDF、PPT、图像、音视频、文本转写、清理与开发者工具；同一套能力经 @toolknit/cli 与 MCP 暴露给 IDE Agent，输出 JSON、退出码分级、原子写入且不覆盖源文件。",
+      "summary_en": "Local-first file workbench on Tauri 2 and Rust: 68 tools across 12 groups for PDF, PPT, image, audio, video, text and AI work, exposed to IDE agents via @toolknit/cli and an MCP server.",
+      "category_dir": "business-office",
+      "category_name": "商业与办公",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "office",
+        "mcp",
+        "cli",
+        "pdf",
+        "pptx",
+        "document-generation",
+        "ai-agent"
+      ],
+      "languages": [
+        "javascript",
+        "rust"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "Apache-2.0",
+      "license_bucket": "open",
+      "homepage": "https://toolknit.com",
+      "repo": "https://github.com/ZihangDong/toolknit-desktop",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "officecli",
+        "anthropics-office-skills"
+      ],
+      "aliases": [
+        "toolknit"
+      ],
+      "risk_notes": "Apache-2.0 只覆盖 Desktop 与 CLI/MCP 源码，README 明确不授予 ToolKnit 名称、Logo、视觉标识、域名、托管网页服务与账号的使用权（另见 NOTICE），toolknit.com 网页端不在本仓开源范围内。桌面端仅支持 Windows 10 1803（17134）+/Windows 11，依赖 Microsoft Edge WebView2 Runtime（安装包内置引导程序，首次安装仍需联网），无 macOS/Linux 桌面版；安装包须只从本仓 Releases 下载并核对随附 .sha256，实际签名状态以对应 Release 说明为准。项目 2026-07-30 创建、当前 3.0.0，历史约两个月。CLI 契约文档中图像转换与压缩、图标生成、AI 润色与翻译仍标注 Planned，CLI 覆盖面小于桌面端。AI 功能会把符合说明的数据发往你所配置的模型服务，需 DEEPSEEK_API_KEY 或 TOOLKNIT_AI_API_KEY；官方明确「本地优先」不表示程序完全不联网。",
+      "added_at": "2026-09-24",
+      "updated_at": "2026-09-24",
+      "install": "powershell\nnpm install --global @toolknit/cli\ntoolknit doctor --json\ntoolknit --help",
+      "detail_url": "skills/toolknit-desktop.html"
     },
     {
       "id": "abogen",

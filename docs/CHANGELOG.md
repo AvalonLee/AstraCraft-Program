@@ -15,6 +15,10 @@
 ## 2026-09
 
 ### 新增
+- **OpenCut 开源视频剪辑器（2026-09-19）**：收录 `design-creative/opencut`（MIT）。★89.8k 的 CapCut 开源替代（web / 桌面 / 移动）：主仓库正以 Rust 核心 + 插件优先架构重写，规划 Editor API、内置 MCP 服务与 headless 批量渲染；今天可用的仍是 opencut.app 上运行的 classic 版，其源码仓 `opencut-app/opencut-classic` 已于 2026-05-17 归档。本地跑主仓库需先装 proto + moon 工具链。评级：常规。
+- **Pixelle-Video AI 全自动短视频引擎（2026-09-19）**：收录 `design-creative/pixelle-video`（Apache-2.0）。★28.2k 的中文全自动短视频引擎：输入主题即完成文案、AI 配图/视频、配音、BGM 与合成出片，提供 Streamlit WebUI、Docker 与 API；图像/视频/TTS 可换 ComfyUI 工作流、RunningHub 或 DashScope / Seedream / Seedance / Kling 直连，Windows 有免环境一键整合包。上游已从 `AIDC-AI` 迁至 `ATH-MaaS`（旧地址跳转），最近推送 2026-06-14。评级：常规。
+- **video-use 用编码 Agent 剪视频（2026-09-19）**：收录 `design-creative/video-use`（MIT）。★25.1k 的 browser-use 团队作品：素材丢进文件夹、跟 Claude Code 说一句话拿回 `final.mp4`，自动去口水词与废片段、逐段调色、切点 30ms 音频淡变防爆音、按样式烧字幕、并行子 Agent 生成动画叠加层，并在展示预览前对每个切点做渲染自检。思路是给 LLM 结构化输入而非抽帧：读 ElevenLabs Scribe 的 word 级转录（约 12KB）+ 按需 `timeline_view` 合成图。硬依赖 ffmpeg 与 ElevenLabs API Key。评级：常规。
+- **成峰视频剪辑 Codex 插件包（2026-09-19）**：收录 `design-creative/chengfeng-videocut-skills`（Apache-2.0）。★3.0k 的中文短视频剪辑 Codex Plugin 公开安装入口：插件向 Agent 提供方法与确认工具，Runtime / Studio 负责工程操作与工作台，README 明确「装插件、备 Runtime、出片」是三件事。按观察期收录：3.0k star 集中在本安装入口仓，软件本体 `chengfeng-videocut` 仅 11 star；当前为 Plugin 0.10.10 配套 Runtime v0.4.11 CLI-only 预发行，本轮不推进 stable，无 Bun 自动准备仅覆盖 macOS arm64，安装需 Node 18+ 与支持 `codex plugin` 的 Codex CLI。评级：观察（watch）。目录总数由 89 增至 **93**（四条同批）。
 - **Claude Code Haha 桌面工作台（2026-09-11）**：收录 `agent-infra/cc-haha`（MIT）。★14.3k 的本地优先跨平台桌面端 Claude Code / Agent 工作台（TypeScript + Electron + React + Bun）：多会话、分支/Worktree、Diff 审阅、内置浏览器预览、权限审批、模型自选、MCP 管理、SubAgent 与动态 Workflow 编排、Computer Use、技能市场、H5 远程访问与多 IM 接入。评级：常规。目录总数由 87 增至 **88**。
 - **DeepSeek++ 浏览器 Agent 工作台（2026-09-11）**：收录 `agent-infra/deepseek-pp`（Apache-2.0）。★1.8k 的 DeepSeek 网页版浏览器扩展（Chrome / Edge / Firefox，TypeScript）：侧边栏 Agent 工作台，支持 MCP 工具、长期记忆、Skills、多模态媒体分析、网页控制、保存项、产物下载、对话导出与定时自动化。评级：常规。目录总数由 88 增至 **89**（两条同批）。
 

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>成峰视频剪辑 Codex 插件包 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">成峰视频剪辑 Codex 插件包</h1>
+      <p class="hero-subtitle">chengfeng-videocut-skills — Codex Plugin for Chinese Video Cutting</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>观察</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>技能集</span>
+    </div>
+    <p class="muted detail-meta">面向中文创作者的视频剪辑 Codex Plugin 公开安装入口：插件向 Agent 提供方法与确认工具，Runtime / Studio 负责工程操作与工作台，串起字幕、剪辑与短视频流程；安装 Plugin、准备 Runtime、完成视频被明确列为三件不同的事。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/Agentchengfeng/chengfeng-videocut-skills" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/Agentchengfeng/chengfeng-videocut-skills" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>成峰视频剪辑 Codex 插件包</h1>
+<blockquote>中文视频剪辑流程的 Codex Plugin 安装入口。上游：<a href="https://github.com/Agentchengfeng/chengfeng-videocut-skills" target="_blank" rel="noopener">Agentchengfeng/chengfeng-videocut-skills</a> · 许可证：Apache-2.0</blockquote>
+<h2>这是什么</h2>
+<p>维护者成峰（AI产品自由）出品的中文短视频剪辑工具链，本仓是<strong>公开 Codex Plugin 安装入口</strong>。它把三件事刻意分开，README 反复强调不要混为一谈：</p>
+<p>1. 安装 Plugin（本仓：给 Agent 的方法与确认工具，<code>plugins/</code> + <code>bin/install.cjs</code> + <code>installer-manifest.json</code>）； 2. 准备 Runtime（软件本体仓 <a href="https://github.com/Agentchengfeng/chengfeng-videocut" target="_blank" rel="noopener">chengfeng-videocut</a>：工程操作与 Studio 工作台）； 3. 完成视频（实际剪辑交付）。</p>
+<p>仓库分工还包括独立的<a href="https://github.com/Agentchengfeng/chengfeng-videocut-install" target="_blank" rel="noopener">安装与接入 Skill</a>，以及各自维护的其他独立 Skills（如 <a href="https://github.com/Agentchengfeng/chengfeng-videocut-xiaohei" target="_blank" rel="noopener">chengfeng-videocut-xiaohei</a> 负责动画方法与 ChatCut 适配）。</p>
+<h2>怎么安装</h2>
+<p>前提：Node.js 18+、Git，以及<strong>已登录且支持 <code>codex plugin</code> 命令的 Codex CLI</strong>。按 README 要求先审阅取得的固定源码，再在该目录内运行：</p>
+<pre><code class="lang-sh">node bin/install.cjs install --dry-run
+node bin/install.cjs install
+node bin/install.cjs doctor</code></pre>
+<p>安装身份是固定的，不要跟随可变分支：Plugin 0.10.10（内容提交 <code>ea3b0e4</code>）、带来源回执的安装快照 <code>442523b</code>、配套 Runtime <a href="https://github.com/Agentchengfeng/chengfeng-videocut/releases/tag/v0.4.11" target="_blank" rel="noopener">v0.4.11</a>。<code>installer-manifest.json</code> 同时固定 marketplaceRef 与 pluginRef；<code>stable</code> 只是发现入口，不能代替安装身份。</p>
+<p>需要工作台时，按包内 <code>references/runtime-and-product-contract.md</code> 与 <code>scripts/ensure-runtime.cjs</code> 准备固定配套 Runtime，并以实际输出确认版本与能力。</p>
+<h2>怎么用</h2>
+<ul><li>安装器只调用宿主 Codex 支持的 Plugin 命令，并回读来源、克隆提交与安装状态；遇到同名或来源不明的已有安装会拒绝覆盖，<strong>不要靠删安装目录绕过检查</strong>。</li><li>它不准备也不启动 Runtime；新任务能否发现 Skill 与 MCP 需分别验收，已有会话可能要重开。</li><li>媒体依赖、宿主加载、常驻服务与实际剪辑要逐项验收；本轮不提供新的 DMG / EXE。</li><li>已有健康且能力满足的 0.4.10+ Runtime 可继续复用，不会自动升级覆盖。</li></ul>
+<h2>注意事项</h2>
+<ul><li><strong>预发行状态</strong>：README 明确本轮仅按新候选的固定提交安装与复测，不宣称默认 stable 已修复；常驻服务生命周期尚未完成新版本验收。</li><li><strong>平台覆盖有限</strong>：「无 Bun 自动准备」仅覆盖 macOS arm64 固定官方资产与 SHA-256，其他平台不在结论内；CLI 安装器仍需 Node 或已有 Bun 启动，不改全局 Bun 或 shell 配置。</li><li><strong>npm 打包坑</strong>：npm 10.9.2 按完整提交做 Git 打包时可能报 <code>GitFetcher requires an Arborist constructor</code>，这是引导获取失败、尚未安装 Plugin，应按 Release 给定的完整提交取源码后核对 HEAD，而不是改用未锁定的 main/stable。</li><li><strong>兼容边界</strong>：独立小黑的 Runtime 路线要求 &gt;=0.5.9（<code>workbench commands/connect</code>、<code>module publish/get</code>、<code>workbench visuals-put</code> 等接口），0.4.10 / 0.4.11 均不满足；只要独立动画时可交付 HTML/SVG，但不应声称已进入剪辑工程。</li><li>本条目按 <code>watch</code>（观察期）收录：等其 Runtime 完成新版本验收并推进 stable 后，可复评为常规收录。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-19 · 更新于 2026-09-19 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

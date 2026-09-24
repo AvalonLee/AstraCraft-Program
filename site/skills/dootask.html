@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DooTask 开源任务管理与团队协作系统 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent Skill</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">DooTask 开源任务管理与团队协作系统</h1>
+      <p class="hero-subtitle">DooTask — Open Source Task Management &amp; Team Collaboration</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>商业与办公</span><span>常规</span><span class="lic-badge lic-copyleft" title="AGPL-3.0">部分开源</span><span>框架</span>
+    </div>
+    <p class="muted detail-meta">开源自托管任务管理与团队协作系统（PHP/Laravel + Vue）：任务、看板、团队 IM、文件与流程一体，Docker Compose 部署、`./cmd` 一键运维，仓库内置 5 个 Claude Code 运维技能与 AGENTS.md。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/kuaifan/dootask" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://www.dootask.com" target="_blank" rel="noopener">项目主页</a>
+    </div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>DooTask 开源任务管理与团队协作系统</h1>
+<blockquote>自托管的任务管理 + 团队 IM 一体系统，且自带 Agent 运维技能。上游：<a href="https://github.com/kuaifan/dootask" target="_blank" rel="noopener">kuaifan/dootask</a> · 许可证：AGPL-3.0</blockquote>
+<h2>这是什么</h2>
+<p>DooTask（5.6k star，2021 年至今持续维护）是一套 PHP（Laravel）+ Vue 的开源任务管理系统，把<strong>任务/项目/看板</strong>与<strong>团队即时通讯（IM）</strong>放在同一个自托管实例里，配套文件、流程与在线绘图（内嵌 drawio）。服务端同一套代码支撑网页端、桌面端（<code>electron/</code>）与移动端（<code>resources/mobile</code> 子模块指向 <a href="https://github.com/kuaifan/dootask-app" target="_blank" rel="noopener">kuaifan/dootask-app</a>）。</p>
+<p>它对本目录特别相关的一点是：<strong>上游自己就把 Agent 接口做进了仓库</strong>。默认分支 <code>pro</code> 上带有：</p>
+<ul><li><code>AGENTS.md</code> 与 <code>CLAUDE.md</code>：给编码 Agent 的项目约定；</li><li><code>.claude/skills/</code>：<strong>5 个中文 Claude Code 技能</strong> —— <code>dootask-install</code>、<code>dootask-update</code>、<code>dootask-backup</code>、<code>dootask-release</code>、<code>dootask-fix-permission</code>；</li><li><code>.claude/hooks/php-stan-check.sh</code> + <code>settings.json</code>：保存 PHP 文件时跑 phpstan 校验。</li></ul>
+<p>其中 <code>dootask-install</code> 是写得相当严格的「刚性技能」：前置检查（工作目录、Docker daemon、Node.js ≥ 20、<code>APP_ID</code> 冲突、sudo）→ 向用户确认一次 → 执行 → 报告，任何一步失败立即停止，并明确标注 <code>./cmd install</code> 会建库并 <code>migrate --seed</code>，已有数据环境重装须先确认。这类「重操作 + 单次确认 + 失败即停」的写法，是给 Agent 编排运维流程时值得参考的样本。</p>
+<h2>怎么安装</h2>
+<p>前置：Docker v20.10+、Docker Compose v2.0+，Linux/Unix 环境（Windows 走 WSL2），建议 2 核 4G 以上。</p>
+<p>官方推荐的一键脚本——空目录中执行即自动克隆并安装，在已安装目录中执行则自动检查并升级：</p>
+<pre><code class="lang-bash">curl -fsSL https://raw.githubusercontent.com/kuaifan/dootask/pro/bin/install | bash</code></pre>
+<p>手动部署（国内可用 Gitee 镜像）：</p>
+<pre><code class="lang-bash">git clone --depth=1 https://github.com/kuaifan/dootask.git
+# 或： git clone --depth=1 https://gitee.com/aipaw/dootask.git
+cd dootask
+./cmd install                 # 自定义端口： ./cmd install --port 80</code></pre>
+<p><code>./cmd install</code> 内部已封装赋权 → 起容器 → <code>composer install</code> → <code>key:generate</code> → <code>migrate --seed</code> → <code>up -d</code> 整套流程。</p>
+<h2>怎么用</h2>
+<p>日常运维都走同一个 <code>./cmd</code> 入口：</p>
+<pre><code class="lang-bash">./cmd help                 # 查看全部子命令
+./cmd up                   # 启动服务
+./cmd down                 # 停止服务
+./cmd port 80              # 更换 HTTP 端口
+./cmd https                # 自动申请配置 SSL（交互式）
+./cmd https agent          # 改走 Nginx 反向代理
+./cmd repassword           # 重置管理员密码
+./cmd update               # 升级（升级前先备份数据）
+./cmd reup                 # 升级后 502 时重启服务
+./cmd mysql backup         # 备份数据库（迁移用）
+./cmd mysql recovery       # 在新实例恢复数据库
+./cmd uninstall            # 卸载</code></pre>
+<ul><li><strong>让 Agent 接手部署</strong>：在项目根目录打开 Claude Code，<code>.claude/skills/</code> 下的安装、升级、备份、发版、权限修复技能会被自动发现；换其他 Agent 时，可把这几个 <code>SKILL.md</code> 作为流程蓝本喂给它，并保留其「先检查、再确认、失败即停」的约束。</li><li><strong>数据迁移</strong>：新实例装好后，搬运数据库备份 + <code>docker/appstore</code> + <code>public/uploads</code> 三处，再 <code>./cmd mysql recovery</code>。</li><li><strong>二次开发</strong>：需 Node.js 20+，<code>./cmd dev</code> 开发模式、<code>./cmd prod</code> 编译网页端；桌面/客户端构建参考 <code>.github/workflows/publish.yml</code>。</li></ul>
+<h2>注意事项</h2>
+<ul><li><strong>许可证 AGPL-3.0</strong>：与 MIT/Apache 不同，改造后通过网络对外提供服务会触发源码开放义务。内部自托管通常无碍，但二次封装成商用 SaaS 前请先做合规评估。</li><li><strong>默认分支是 <code>pro</code></strong>：不是 <code>main</code>/<code>master</code>。写脚本、订阅更新或引用 raw 文件时都要带上 <code>pro</code>。</li><li><strong>子模块</strong>：<code>resources/drawio</code> 与 <code>resources/mobile</code> 为 git submodule，<code>--depth=1</code> 浅克隆不含其内容，需要时补 <code>git submodule update --init</code>。</li><li><strong>安装/重装是破坏性操作</strong>：<code>./cmd install</code> 会建库并灌种子数据，升级前官方明确要求先备份。</li><li><strong>数据库固定为 MariaDB</strong>（默认 compose 内的 <code>mariadb</code> 服务），换库需自行改造。</li><li>社区支持以 QQ 群 <code>546574618</code> 与 GitHub Issues 为主，中英文 README 齐全；演示与官网在 <a href="https://www.dootask.com" target="_blank" rel="noopener">dootask.com</a>。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-09-19 · 更新于 2026-09-19 · AstraCraft Program 轻量索引</p>
+</main>
+</body>
+</html>

@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-19T06:08:45Z",
-  "count": 93,
+  "generated_at": "2026-09-24T12:59:21Z",
+  "count": 94,
   "categories": [
     {
       "dir": "writing-docs",
@@ -786,6 +786,50 @@
       "updated_at": "2026-08-30",
       "install": "bash\n# 方式一：无需安装，直接使用在线站\n#   https://www.aishort.top\n\n# 方式二：Docker 自托管（数据完全本地）\ngit clone --depth 1 https://github.com/rockbenben/ChatGPT-Shortcut.git\ncd ChatGPT-Shortcut\ndocker compose up -d\n# 浏览器访问 http://localhost:3000",
       "detail_url": "skills/chatgpt-shortcut.html"
+    },
+    {
+      "id": "dootask",
+      "name_zh": "DooTask 开源任务管理与团队协作系统",
+      "name_en": "DooTask — Open Source Task Management & Team Collaboration",
+      "summary_zh": "开源自托管任务管理与团队协作系统（PHP/Laravel + Vue）：任务、看板、团队 IM、文件与流程一体，Docker Compose 部署、`./cmd` 一键运维，仓库内置 5 个 Claude Code 运维技能与 AGENTS.md。",
+      "summary_en": "Open source self-hosted task management and team collaboration system (PHP/Laravel + Vue) with Docker deployment, a `./cmd` ops CLI, and five bundled Claude Code skills plus AGENTS.md.",
+      "category_dir": "business-office",
+      "category_name": "商业与办公",
+      "kind": "framework",
+      "kind_label": "框架",
+      "tags": [
+        "office",
+        "self-hosted",
+        "docker",
+        "agent-skills",
+        "project-management",
+        "kanban"
+      ],
+      "languages": [
+        "php",
+        "javascript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "AGPL-3.0",
+      "license_bucket": "copyleft",
+      "homepage": "https://www.dootask.com",
+      "repo": "https://github.com/kuaifan/dootask",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "kaneo",
+        "codex-taskboard"
+      ],
+      "aliases": [],
+      "risk_notes": "AGPL-3.0 强 copyleft：通过网络对外提供服务同样触发源码开放义务，改造后自建给他人使用需评估合规，纯内部自托管一般不受影响。部署硬性依赖 Docker v20.10+ 与 Docker Compose v2.0+，数据库为 MariaDB，建议 2 核 4G 以上，Windows 需先装 WSL2。默认分支是 pro 而非 main/master，一键安装脚本与文档链接都指向 pro。仓库含 resources/drawio（jgraph/drawio）与 resources/mobile（kuaifan/dootask-app）两个子模块，浅克隆不含。`./cmd install` 是重操作（建库并 migrate --seed），在已有数据的环境上重装会覆盖，务必先备份。",
+      "added_at": "2026-09-19",
+      "updated_at": "2026-09-19",
+      "install": "bash\ncurl -fsSL https://raw.githubusercontent.com/kuaifan/dootask/pro/bin/install | bash",
+      "detail_url": "skills/dootask.html"
     },
     {
       "id": "officecli",

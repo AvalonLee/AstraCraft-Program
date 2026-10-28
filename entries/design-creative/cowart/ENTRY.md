@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # Cowart Codex 无限画布
 
-> 面向 Codex 的原生无限画布 widget 插件。上游：[zhongerxin/Cowart](https://github.com/zhongerxin/Cowart) · 许可证：MIT · 6.0k stars · 画布基于 [tldraw](https://github.com/tldraw/tldraw)
+> 面向 Codex 的原生无限画布 widget 插件。上游：[zhongerxin/Cowart](https://github.com/zhongerxin/Cowart) · 许可证：MIT · 画布基于 [tldraw](https://github.com/tldraw/tldraw)
 
 ## 这是什么
 

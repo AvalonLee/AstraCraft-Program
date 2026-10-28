@@ -71,4 +71,4 @@ curl -fsSL https://raw.githubusercontent.com/JuliusBrussee/caveman/v2.6.0/instal
 - **诚实数字**：skill 只省输出，规则本身每轮多花约 1-1.5k input token；整账单节省低于基准表，本就简洁的任务可能亏钱，先用 `caveman trial` 实测自己的工作负载。
 - **隐私**：全部本地运行、无需账号；CLI 默认匿名遥测（仅命令名与 token 计数），`caveman telemetry off` 或 `DO_NOT_TRACK=1` 永久关闭。
 - **可恢复**：所有压缩都留本地备份（SQLite recovery handle / `SKILL.orig.md`），pixel 模式转换失败时字节级还原；Codex 暂跳过 shrink hook（上游 runtime 限制）。
-- 维护非常活跃（2026-10-27 仍有推送），截至 2026-10-28 核验约 115,605 stars。
+- 维护非常活跃（2026-10-27 仍有推送）。

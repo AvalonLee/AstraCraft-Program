@@ -28,7 +28,7 @@ updated_at: "2026-09-05"
 
 # Voicebox 本地 AI 语音工作室
 
-> The open-source AI voice studio. Clone, dictate, create.上游：[jamiepine/voicebox](https://github.com/jamiepine/voicebox) · 许可证：MIT · 58.8k stars · [voicebox.sh](https://voicebox.sh) · [文档](https://docs.voicebox.sh)
+> The open-source AI voice studio. Clone, dictate, create.上游：[jamiepine/voicebox](https://github.com/jamiepine/voicebox) · 许可证：MIT · [voicebox.sh](https://voicebox.sh) · [文档](https://docs.voicebox.sh)
 
 ## 这是什么
 
@@ -91,4 +91,4 @@ curl -X POST http://localhost:8250/api/tts \
 - **100% 本地隐私**：模型、语音数据、录音不离开本机；TTS 引擎首次从 Hugging Face 下载数 GB 模型。
 - **GPU 加速**：macOS MLX/Metal、Windows CUDA、Linux AMD ROCm / Intel Arc 均支持，但推理速度因硬件而异。
 - **克隆合规**：克隆他人声音必须获得授权。
-- **维护活跃**（2026-08 更新，55.6k stars，Trendshift 徽章），提供 DeepWiki、详细文档和 Troubleshooting Guide。
+- **维护活跃**（2026-08 更新，Trendshift 徽章），提供 DeepWiki、详细文档和 Troubleshooting Guide。

@@ -28,7 +28,7 @@ updated_at: "2026-10-28"
 
 # BigBanana AI 漫剧导演工场
 
-> AI 一站式短剧/漫剧生成平台。上游：[shuyu-labs/BigBanana-AI-Director](https://github.com/shuyu-labs/BigBanana-AI-Director) · 许可证：BigBanana Community License 1.0（非商业） · 约 2.4k stars
+> AI 一站式短剧/漫剧生成平台。上游：[shuyu-labs/BigBanana-AI-Director](https://github.com/shuyu-labs/BigBanana-AI-Director) · 许可证：BigBanana Community License 1.0（非商业）
 
 ## 这是什么
 

@@ -20,7 +20,7 @@ metrics:
   checked_at: "2026-10-28"
   archived: false
 aliases: [hell-grind, AIGC production skill]
-risk_notes: "方法论受 Higgsfield 公开项目 Hell Grind 启发但不包含原视频、原始资产或全量提示词（公开可访问不代表再分发许可）；默认不调用生成模型、不扣费、不下载媒体、不上传、不发布；本地工具（init / validate / audit）全部只读 + 0 网络请求；仅支持 macOS / Linux 安装（install.sh），Windows 需手动适配；项目规模较小（146 stars）。"
+risk_notes: "方法论受 Higgsfield 公开项目 Hell Grind 启发但不包含原视频、原始资产或全量提示词（公开可访问不代表再分发许可）；默认不调用生成模型、不扣费、不下载媒体、不上传、不发布；本地工具（init / validate / audit）全部只读 + 0 网络请求；仅支持 macOS / Linux 安装（install.sh），Windows 需手动适配；项目规模较小。"
 added_at: "2026-09-05"
 updated_at: "2026-09-05"
 ---
@@ -98,4 +98,4 @@ cd Hell-Grind-AIGC-Skill
 - **零副作用**：Skill 默认不调用生成模型、不扣费、不下载媒体、不上传、不发布；本地工具全部 0 网络请求 0 数据库操作。
 - **v1 兼容**：旧项目迁移必须显式执行，Skill 不自动改写。
 - **平台**：安装脚本仅支持 macOS / Linux，Windows 需手动适配。
-- **早期项目**（146 stars），v2.0.0（2026-08），方法论深度高但社区规模小。
+- **早期项目**，v2.0.0（2026-08），方法论深度高但社区规模小。

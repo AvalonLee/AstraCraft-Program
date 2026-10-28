@@ -20,7 +20,7 @@ metrics:
   checked_at: "2026-10-28"
   archived: false
 aliases: [PMAgent-Canvas, PromptCard]
-risk_notes: "当前 main 为开发版本（不稳定，处于功能测试中），稳定基线请用 Git tag stable-2026-08-25；目前提供 Windows 桌面开发预览（start-desktop.vbs，非签名安装包）；核心模型依赖火山引擎（Seedream 5.0 Pro / Doubao Seed 2.0），调用按 API 计费；项目尚处早期（108 stars）。"
+risk_notes: "当前 main 为开发版本（不稳定，处于功能测试中），稳定基线请用 Git tag stable-2026-08-25；目前提供 Windows 桌面开发预览（start-desktop.vbs，非签名安装包）；核心模型依赖火山引擎（Seedream 5.0 Pro / Doubao Seed 2.0），调用按 API 计费；项目尚处早期。"
 added_at: "2026-09-05"
 updated_at: "2026-09-05"
 ---
@@ -75,4 +75,4 @@ cd PromptCard-AgentCanvas
 - **开发预览**：main 分支不稳定，生产用 `stable-2026-08-25` tag。
 - **平台**：目前 Windows 桌面开发预览（`start-desktop.vbs` 非签名包）；macOS / Linux 尚未提供。
 - **模型费用**：Seedream 5.0 Pro 和 Doubao Seed 2.0 走火山引擎 API，按调用计费。
-- **早期项目**（163 stars），README 装修中、演示视频待上架，迭代速度快。
+- **早期项目**，README 装修中、演示视频待上架，迭代速度快。

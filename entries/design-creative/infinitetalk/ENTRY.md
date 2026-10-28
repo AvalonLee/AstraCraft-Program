@@ -29,7 +29,7 @@ updated_at: "2026-09-05"
 
 # InfiniteTalk 无限长口播视频生成
 
-> Audio-driven Video Generation for Sparse-Frame Video Dubbing。上游：[MeiGen-AI/InfiniteTalk](https://github.com/MeiGen-AI/InfiniteTalk) · 许可证：Apache 2.0 · 8.2k stars · [项目页](https://meigen-ai.github.io/InfiniteTalk/) · [技术报告](https://arxiv.org/abs/2508.14033)
+> Audio-driven Video Generation for Sparse-Frame Video Dubbing。上游：[MeiGen-AI/InfiniteTalk](https://github.com/MeiGen-AI/InfiniteTalk) · 许可证：Apache 2.0 · [项目页](https://meigen-ai.github.io/InfiniteTalk/) · [技术报告](https://arxiv.org/abs/2508.14033)
 
 ## 这是什么
 

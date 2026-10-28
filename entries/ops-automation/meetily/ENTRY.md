@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # Meetily 隐私优先 AI 会议助手
 
-> Privacy-First AI Meeting Assistant。上游：[Zackriya-Solutions/meetily](https://github.com/Zackriya-Solutions/meetily) · 许可证：MIT · 32.2k stars · [官网](https://meetily.ai)
+> Privacy-First AI Meeting Assistant。上游：[Zackriya-Solutions/meetily](https://github.com/Zackriya-Solutions/meetily) · 许可证：MIT · [官网](https://meetily.ai)
 
 ## 这是什么
 
@@ -88,4 +88,4 @@ pnpm install
 - **本地 LLM 摘要**：Ollama 推荐但需要较好硬件（8GB+ RAM 模型运行）；也可接云端 API 获得更强摘要但失去"零云端"优势。
 - **首次模型下载**：Parakeet / Whisper 模型需网络下载，之后离线可用。
 - **说话人分离**：社区版已内置，PRO 版计划增强。
-- **维护极其活跃**（2026-09-05 当天仍有提交，31.1k stars），提供 Trendshift 徽章、Discord / Reddit 社区和详细文档。
+- **维护极其活跃**（2026-09-05 当天仍有提交），提供 Trendshift 徽章、Discord / Reddit 社区和详细文档。

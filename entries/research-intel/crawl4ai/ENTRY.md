@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # Crawl4AI LLM 友好爬虫
 
-> 🚀🤖 Open-source LLM Friendly Web Crawler & Scraper。上游：[unclecode/crawl4ai](https://github.com/unclecode/crawl4ai) · 许可证：Apache 2.0 · 86.4k stars
+> 🚀🤖 Open-source LLM Friendly Web Crawler & Scraper。上游：[unclecode/crawl4ai](https://github.com/unclecode/crawl4ai) · 许可证：Apache 2.0
 
 ## 这是什么
 
@@ -108,4 +108,4 @@ v0.9.0 起 Docker API server 默认开启认证并绑定 loopback，公网部署
 - **安全版本**：始终使用最新版（v0.9.3 关闭了多个协调披露安全公告）；Docker 部署不要裸露公网。
 - **爬取零 Key / 提取需 Key**：爬取和 Markdown 生成完全本地免费；LLM 提取（`-q` 参数）需要配置 LLM API Key。
 - **合规**：遵守目标网站 robots.txt 和服务条款；大规模爬取建议配置代理池和速率限制。
-- **维护极其活跃**（2026-09 更新，84.2k stars，GitHub 最受关注的爬虫项目），提供 Discord 社区和详细文档。
+- **维护极其活跃**（2026-09 更新，GitHub 最受关注的爬虫项目），提供 Discord 社区和详细文档。

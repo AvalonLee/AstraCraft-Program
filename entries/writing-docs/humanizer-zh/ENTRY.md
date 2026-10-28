@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # Humanizer-zh AI 写作去痕
 
-> 把 AI 味文本改写成"人味"文本。上游：[op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh) · 许可证：MIT · 21.2k stars · 基于 [blader/humanizer](https://github.com/blader/humanizer) 汉化
+> 把 AI 味文本改写成"人味"文本。上游：[op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh) · 许可证：MIT · 基于 [blader/humanizer](https://github.com/blader/humanizer) 汉化
 
 ## 这是什么
 

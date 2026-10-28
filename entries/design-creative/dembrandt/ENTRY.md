@@ -63,4 +63,4 @@ MCP 模式下工具链为：`get_design_tokens` 等提取工具返回 `job_id`�
 - **浏览器依赖**：`playwright-core` 不带浏览器二进制，首次使用必须 `dembrandt install-browser`（或 `npx dembrandt install-browser`），浏览器落在共享 Playwright 缓存，只需装一次。
 - **技术边界**：Canvas/WebGL 渲染的站点没有 DOM 可读，无法分析；暗色模式需显式 `--dark-mode`；hover/focus 状态从 CSS 提取，非完全交互。
 - **配套技能**：作者另有 [dembrandt-skills](https://github.com/dembrandt/dembrandt-skills) 提供基于 token 的 UX 审查技能（`npx skills add dembrandt/dembrandt-skills`）。
-- 维护活跃（2026-09-08 当天仍有推送），截至 2026-09-08 核验约 3,396 stars。
+- 维护活跃（2026-09-08 当天仍有推送）。

@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-28T00:52:17Z",
-  "count": 95,
+  "generated_at": "2026-10-28T01:04:40Z",
+  "count": 96,
   "categories": [
     {
       "dir": "writing-docs",
@@ -2257,6 +2257,52 @@
       "updated_at": "2026-08-26",
       "install": "bash\ngit clone https://github.com/harry0703/MoneyPrinterTurbo.git\ncd MoneyPrinterTurbo\nuv python install 3.11\nuv sync --frozen\ncp config.example.toml config.toml",
       "detail_url": "skills/money-printer-turbo.html"
+    },
+    {
+      "id": "onetake",
+      "name_zh": "Onetake 一镜到底连贯动效视频技能",
+      "name_en": "Onetake — One-Take Motion Film Skill",
+      "summary_zh": "让 coding agent 拍「一镜到底」的产品发布影片：全程一个连续镜头，每一拍都从上一拍自然长出来，由连贯性 oracle 逐帧验收，解决 AI 生成视频切幻灯片式的跳变问题。",
+      "summary_en": "An agent skill directing continuous one-take motion films: one camera, every beat grows out of the last, continuity verified by an oracle — for launch films and demos.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "skill",
+      "kind_label": "技能包",
+      "tags": [
+        "cinematic",
+        "motion-design",
+        "product-video",
+        "storyboard",
+        "claude-code",
+        "ai-agent"
+      ],
+      "languages": [
+        "python"
+      ],
+      "doc_languages": [
+        "en",
+        "zh"
+      ],
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_bucket": "unknown",
+      "homepage": "https://github.com/feitangyuan/onetake",
+      "repo": "https://github.com/feitangyuan/onetake",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "video-talkcraft",
+        "video-shotcraft"
+      ],
+      "aliases": [
+        "one-take",
+        "one-take-video"
+      ],
+      "risk_notes": "PolyForm Noncommercial 1.0.0 仅限非商业用途（区别于同类 video-shotcraft 的 Apache-2.0，商用交付前须先看协议）；依赖较重：Python 3（playwright、numpy、scipy、Pillow、matplotlib）+ ffmpeg + Node.js，环境由 agent 按需配置；4K60 渲染耗时明显；上游 2026-09-26 创建，尚属新项目。",
+      "added_at": "2026-10-28",
+      "updated_at": "2026-10-28",
+      "install": "bash\n# Claude Code\ngit clone --depth 1 https://github.com/feitangyuan/onetake.git ~/.claude/skills/onetake\n\n# 通用 agent skills 目录\ngit clone --depth 1 https://github.com/feitangyuan/onetake.git ~/.agents/skills/onetake",
+      "detail_url": "skills/onetake.html"
     },
     {
       "id": "open-ai-canvas",

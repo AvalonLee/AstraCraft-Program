@@ -14,16 +14,8 @@
 
 ## 2026-10
 
-### 更新
-- **全量刷新上游指标与正文星号（2026-10-28）**：对 95 个条目的上游重新拉取 GitHub 数据（95/95 成功，0 失败）。metrics 块（77 个有块的条目，77 个有变化）stars 与 pushed_at 全部更新，checked_at 统一置为 2026-10-28；正文星号（25 处「当前状态」语义的标题行/维护句/risk_notes）随之更新，带「截至 <日期> 核验」的历史陈述保持原样。涨幅居前：hyperframes 52,821→73,956、ai-job-search 43,811→66,798、openmontage 61,149→72,470、money-printer-turbo 125,471→135,850、emilkowalski-skills 40,899→50,721、cc-switch 136,390→149,386、caveman 107,662→115,543。无新增归档；无 metrics 块的 18 个条目未新增块。
-
-### 待维护者判定（本次取证发现，未改动）
-- **caveman**：上游 LICENSE 由 MIT + BSL-1.1 变为 Apache-2.0，frontmatter `license` 待复核更新
-- **directors-console**：上游由专有协议变为 MIT；**toonflow**：由 Apache-2.0 变为 MIT（均变宽松，仍需对照 LICENSE 文本确认）
-- **anthropics/skills**（同被 anthropics-office-skills 与 agent-skills-spec 两个条目引用）：GitHub 已检测不到 LICENSE 文件，上游疑似移除或更名协议文件
-- **gsap**：上游 LICENSE 文件消失（原 GSAP Standard No-Charge，Webflow 收购后政策可能已变）
-- **openopc**：上游仓库改名为 HKUDS/AutoSwarm（原 URL 重定向仍可达）；**ai-job-search**：所有者改名 ai-job-search-dev
-- **codexplusplus**：GitHub 检出 SPDX 由 AGPL-3.0-only 归一为 AGPL-3.0（同一许可证的写法差异）
+### 新增
+- **Onetake 一镜到底连贯动效视频技能（2026-10-28）**：收录 `design-creative/onetake`（PolyForm Noncommercial 1.0.0）。★3.4k 的 Claude Agent Skill，让 coding agent 拍「一镜到底」的产品发布影片与功能演示：全程一个连续镜头，每个节拍从上一拍自然生长，由连贯性 oracle 逐帧验收，解决 AI 生成视频「切幻灯片」式硬切；八步流程（解构参考 → 概念 → 分镜 → 素材/UI → 合成 → 渲染 → 音效 → 校验），产出 4K60 带真实 UI、运动模糊与音效。注意 PolyForm Noncommercial 仅限非商业用途（商用请用同类 Apache-2.0 条目 video-shotcraft）；依赖 Python 科学计算栈 + playwright + ffmpeg + Node；上游 2026-09-26 创建，尚属新项目。评级：常规。目录总数由 95 增至 **96**。
 
 ## 2026-09
 

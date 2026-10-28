@@ -28,7 +28,7 @@ updated_at: "2026-10-28"
 
 # AI Canvas 可视化创作画布
 
-> 基于 Vue Flow 的可视化 AI 创作画布。上游：[chatfire-AI/huobao-canvas](https://github.com/chatfire-AI/huobao-canvas) · 许可证：CC BY-NC-SA 4.0 · 约 0.9k stars
+> 基于 Vue Flow 的可视化 AI 创作画布。上游：[chatfire-AI/huobao-canvas](https://github.com/chatfire-AI/huobao-canvas) · 许可证：CC BY-NC-SA 4.0
 
 ## 这是什么
 

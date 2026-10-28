@@ -54,4 +54,4 @@ npx skills@latest add emilkowalski/skills
 - **安装方式**：依赖 skills.sh CLI（`npx skills@latest add`），支持主流 Agent；手动安装则复制对应技能目录。
 - **语言**：技能正文为英文，无中文本地化。
 - **适用范围**：动效建议以 Web/React 为主，`animate-expo` 覆盖 React Native/Expo；`write-swift` 面向 Swift 开发者。
-- 维护活跃（2026-08 持续更新），截至 2026-09-08 核验约 36,165 stars。
+- 维护活跃（2026-08 持续更新）。

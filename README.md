@@ -146,7 +146,9 @@ frontmatter 关键字段：
 1. 参照 [目录条目格式规范](docs/catalog-format.md) 创建 `entries/<分类>/<id>/ENTRY.md`；
 2. 填 frontmatter（`id` 等于目录名，`mode` 四选一），正文写「是什么 / 怎么上手 / 怎么用 / 注意事项」；
 3. 跑 `python scripts/validate.py && python scripts/gen_index.py && python scripts/gen_site.py`，提交 PR
-   （重新生成的 `INDEX.md` 与 `site/` 要一并提交）。
+   （重新生成的 `INDEX.md` 与 `site/data/skills.json` 要一并提交；详情页 `site/skills/` 由部署工作流生成，不入库）。
+
+本地预览站点：跑 `python scripts/gen_site.py` 后执行 `python -m http.server -d site`，浏览器开 `http://localhost:8000`。
 
 ## 协议与合规
 

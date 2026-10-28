@@ -28,7 +28,7 @@ updated_at: "2026-09-10"
 
 # VNCCS Utils ComfyUI 创作工具箱
 
-> ComfyUI 里的 VNCCS 通用节点集合。上游：[AHEKOT/ComfyUI_VNCCS_Utils](https://github.com/AHEKOT/ComfyUI_VNCCS_Utils) · 许可证：MIT · 约 1.2k stars
+> ComfyUI 里的 VNCCS 通用节点集合。上游：[AHEKOT/ComfyUI_VNCCS_Utils](https://github.com/AHEKOT/ComfyUI_VNCCS_Utils) · 许可证：MIT
 
 ## 这是什么
 

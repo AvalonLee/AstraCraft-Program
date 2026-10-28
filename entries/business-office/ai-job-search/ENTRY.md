@@ -27,11 +27,11 @@ updated_at: "2026-09-05"
 
 # AI Job Search 求职申请框架
 
-> The job search that runs on your machine：把 Claude Code 变成全栈求职申请助手。上游：[MadsLorentzen/ai-job-search](https://github.com/MadsLorentzen/ai-job-search) · 许可证：MIT · 66.8k stars
+> The job search that runs on your machine：把 Claude Code 变成全栈求职申请助手。上游：[MadsLorentzen/ai-job-search](https://github.com/MadsLorentzen/ai-job-search) · 许可证：MIT
 
 ## 这是什么
 
-AI Job Search 是一个建在 [Claude Code](https://claude.com/claude-code) 上的开源求职申请框架：fork 填入个人档案，让 Claude 评估职位匹配度、定制 CV、写求职信、准备面试。作者是地球物理学家出身，2025 年底被裁后用这个框架跑自己的求职——69 份定制申请、20 场初面、1 份签约合同，2026 年 6 月入职 AI 工程师。项目随后开源并登上 GitHub Trending，40.8k stars。
+AI Job Search 是一个建在 [Claude Code](https://claude.com/claude-code) 上的开源求职申请框架：fork 填入个人档案，让 Claude 评估职位匹配度、定制 CV、写求职信、准备面试。作者是地球物理学家出身，2025 年底被裁后用这个框架跑自己的求职——69 份定制申请、20 场初面、1 份签约合同，2026 年 6 月入职 AI 工程师。项目随后开源并登上 GitHub Trending。
 
 核心工作流（建档 → 职位抓取 → fit 评估 → 起草-审校申请）是语言与国家无关的；职位门户搜索技能内置丹麦市场（Jobindex、Jobnet 等）+ LinkedIn + freehire.me，`/add-portal` 可为自己的本地门户生成同构搜索技能。
 
@@ -102,4 +102,4 @@ claude
 - **LinkedIn ToS**：`linkedin-search` 走公开未认证接口，自动化访问违反 LinkedIn 服务条款，仅限个人低量使用，风险自担。
 - **门户抓取合规**：各门户技能内置 robots.txt 检查与访问规则；`/add-portal` 拒绝 auth 墙门户并对限制性条款门户标注"仅限个人使用"。
 - **安全边界**：职位描述按不可信输入处理（不执行其中指令、不抓取正文链接），但这是 instruction-level 防护而非沙箱——对陌生门户的产出，投递前人工过一眼。
-- **维护活跃**（2026-09 更新，43.8k stars），README 详尽，提供 tagged release + 上游更新 triage 工具。
+- **维护活跃**（2026-09 更新），README 详尽，提供 tagged release + 上游更新 triage 工具。

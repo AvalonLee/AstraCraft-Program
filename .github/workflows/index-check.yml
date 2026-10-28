@@ -13,6 +13,8 @@ on:
       - 'docs/**'
       - 'scripts/**'
       - 'site/**'
+      - 'tests/**'
+      - 'verification/**'
       - 'INDEX.md'
       - '.github/workflows/index-check.yml'
       - '.github/workflows/upstream-refresh.yml'

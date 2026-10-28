@@ -308,6 +308,7 @@ DETAIL_TEMPLATE = """<!DOCTYPE html>
       <span>{cat_name}</span><span>{tier_label}</span>{verify_badge}<span class="lic-badge lic-{license_bucket}" title="{license}">{license_bucket_label}</span><span>{mode_label}</span>
     </div>
     <p class="muted detail-meta">{summary_zh}</p>
+    {upstream_line}
     {verify_note}
     <div class="link-row" style="margin-top:14px;">
       {repo_link}
@@ -374,12 +375,19 @@ VERIFY_BADGES = {
 }
 
 
+def format_stars(stars) -> str:
+    if not isinstance(stars, int):
+        return ""
+    return f"{stars / 1000:.1f}k" if stars >= 1000 else str(stars)
+
+
 def build_detail(
     entry,
     cat_name: str,
     body_html: str,
     quickstart: str = "",
     verification_status: str = "verified",
+    upstream: dict | None = None,
 ) -> str:
     meta = entry.meta
     repo = meta.get("repo") or ""
@@ -402,6 +410,17 @@ def build_detail(
     )
     verify_note = (
         f'<p class="detail-verify-note">{html.escape(note)}</p>' if note else ""
+    )
+    upstream = upstream or {}
+    parts = []
+    if format_stars(upstream.get("stars")):
+        parts.append(f"{format_stars(upstream.get('stars'))} stars")
+    if upstream.get("checked_at") or upstream.get("snapshot_at"):
+        parts.append(f"{upstream.get('checked_at') or upstream.get('snapshot_at')} 核验")
+    if upstream.get("archived"):
+        parts.append("已归档")
+    upstream_line = (
+        f'<p class="detail-upstream">上游状态：{" · ".join(parts)}</p>' if parts else ""
     )
     if quickstart.strip():
         quickstart_block = (
@@ -430,6 +449,7 @@ def build_detail(
         "homepage_link": homepage_link,
         "verify_badge": verify_badge,
         "verify_note": verify_note,
+        "upstream_line": upstream_line,
         "quickstart_block": quickstart_block,
         "added_at": html.escape(str(meta.get("added_at", ""))),
         "updated_at": html.escape(str(meta.get("updated_at", ""))),
@@ -441,7 +461,8 @@ def build_detail(
     return out
 
 
-def outputs_match(payload: dict, details: dict[str, str], data_dir: Path, skills_dir: Path) -> bool:
+def outputs_match(payload: dict, data_dir: Path) -> bool:
+    """详情页不再入库（部署时生成），漂移检查只比 skills.json。"""
     data_file = data_dir / "skills.json"
     if not data_file.exists():
         return False
@@ -452,15 +473,7 @@ def outputs_match(payload: dict, details: dict[str, str], data_dir: Path, skills
     current.pop("generated_at", None)
     expected = dict(payload)
     expected.pop("generated_at", None)
-    if current != expected:
-        return False
-    current_files = {path.name for path in skills_dir.glob("*.html")} if skills_dir.exists() else set()
-    if current_files != set(details):
-        return False
-    return all(
-        (skills_dir / name).read_text(encoding="utf-8") == content
-        for name, content in details.items()
-    )
+    return current == expected
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -490,8 +503,14 @@ def main(argv: list[str] | None = None) -> int:
         quickstart = extract_action(body, mode)
         upstream = verification.get(entry.id)
         status = upstream.get("status") if upstream else "unverified"
+        upstream_info = dict(upstream) if upstream else {}
+        if verified_at:
+            upstream_info.setdefault("checked_at", str(verified_at)[:10])
 
-        detail_html = build_detail(entry, cat_name, body_html, quickstart=quickstart, verification_status=status)
+        detail_html = build_detail(
+            entry, cat_name, body_html, quickstart=quickstart,
+            verification_status=status, upstream=upstream_info,
+        )
         details[f"{entry.id}.html"] = detail_html
 
         skills.append(
@@ -548,7 +567,7 @@ def main(argv: list[str] | None = None) -> int:
         "skills": skills,
     }
     if args.check:
-        if outputs_match(payload, details, DATA_DIR, SKILLS_DIR):
+        if outputs_match(payload, DATA_DIR):
             print(f"√ 站点产物与 {len(skills)} 个条目一致")
             return 0
         print("x 站点产物与条目数据已脱节。请执行 python scripts/gen_site.py")

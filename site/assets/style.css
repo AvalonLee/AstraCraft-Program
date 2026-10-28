@@ -877,6 +877,11 @@ textarea {
   font-size: 13px; line-height: 1.7;
   color: #b45309;
 }
+.detail-upstream {
+  margin: 8px 0 0;
+  font-size: 12px; line-height: 1.7;
+  color: var(--muted);
+}
 
 /* 详情页顶部上手命令快捷区 */
 .detail-quick { margin-top: 16px; }

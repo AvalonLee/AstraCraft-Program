@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # OpenPencil AI 原生矢量设计工具
 
-> The world's first open-source AI-native vector design tool。上游：[ZSeven-W/openpencil](https://github.com/ZSeven-W/openpencil) · 许可证：MIT · 6.7k stars
+> The world's first open-source AI-native vector design tool。上游：[ZSeven-W/openpencil](https://github.com/ZSeven-W/openpencil) · 许可证：MIT
 
 ## 这是什么
 
@@ -105,4 +105,4 @@ cat my-design.op.dsl | op design --stdin
 - **Rust 核心 + 3 submodule**：从源码构建需 `git clone --recurse-submodules`（vendor/jian、vendor/casement、vendor/agent-rs）。
 - **Windows 杀毒误报**：新发布低普及度触发启发式误报，官方提供[验证文档](https://github.com/ZSeven-W/openpencil/blob/main/docs/security/antivirus-false-positives.md)。
 - **Web 版凭据**：默认存浏览器 localStorage（同源隔离）；服务端持久化需 `OPENPENCIL_PERSIST_WEB_CREDENTIALS_SERVER=true`，仅限可信 HTTPS 部署。
-- **维护极其活跃**（2026-09-05 当天仍有提交，6.0k stars），提供 14 语 README、Discord 社区和 Trendshift 徽章。
+- **维护极其活跃**（2026-09-05 当天仍有提交），提供 14 语 README、Discord 社区和 Trendshift 徽章。

@@ -27,7 +27,7 @@ updated_at: "2026-10-28"
 
 # Guizang PPT Skill 网页 PPT
 
-> 适配 Claude Code / Codex 的网页 PPT 技能。上游：[op7418/guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill) · 许可证：AGPL-3.0 · 28.8k stars · 歸藏（[@op7418](https://x.com/op7418)）出品
+> 适配 Claude Code / Codex 的网页 PPT 技能。上游：[op7418/guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill) · 许可证：AGPL-3.0 · 歸藏（[@op7418](https://x.com/op7418)）出品
 
 ## 这是什么
 

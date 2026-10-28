@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # TREK 自托管旅行规划
 
-> your trip. your plan. 自托管实时协作旅行规划器。上游：[liketrek/TREK](https://github.com/liketrek/TREK) · 许可证：AGPL-3.0 · 15.2k stars · [Demo](https://demo.liketrek.com)
+> your trip. your plan. 自托管实时协作旅行规划器。上游：[liketrek/TREK](https://github.com/liketrek/TREK) · 许可证：AGPL-3.0 · [Demo](https://demo.liketrek.com)
 
 ## 这是什么
 
@@ -99,4 +99,4 @@ AI addon 开启后可自动解析预订邮件（EML / PDF / PKPass / HTML / TXT�
 - **反向代理**：生产部署需 TLS 终结的反向代理，WebSocket 升级（`/ws`）必须支持；MCP addon 需透传 `Mcp-Session-Id` 头。
 - **免费开放源**：地图 OpenFreeMap / OpenStreetMap / Open-Meteo 均无 key；Google Places / Mapbox / Frankfurter（汇率）配 key 后增强但费用自担。
 - **备份**：SQLite 数据库 + uploads 目录需自行备份；encryption key 丢失无法恢复。
-- **维护极其活跃**（2026-09-04 仍有提交，14.3k stars），提供 Wiki（安装 / 更新 / 反向代理）、Sonar Quality Gate 和 Discord 社区。
+- **维护极其活跃**（2026-09-04 仍有提交），提供 Wiki（安装 / 更新 / 反向代理）、Sonar Quality Gate 和 Discord 社区。

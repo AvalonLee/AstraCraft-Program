@@ -1,7 +1,39 @@
 import json
 from pathlib import Path
 
-from scripts.gen_site import outputs_match
+from scripts import gen_site
+from scripts._common import discover_entries
+from scripts.gen_site import license_bucket, outputs_match
+
+
+def test_duplicate_upstream_repos_keep_separate_verification(tmp_path: Path, monkeypatch) -> None:
+    snapshot = tmp_path / "snapshot.json"
+    snapshot.write_text(
+        json.dumps({
+            "generated_at": "now",
+            "entries": {
+                "a": {"repo": "https://github.com/example/shared", "status": "verified"},
+                "b": {"repo": "https://github.com/example/shared", "status": "needs-review"},
+            },
+        }),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(gen_site, "SNAPSHOT_PATH", snapshot)
+
+    verification, _ = gen_site.load_verification()
+
+    assert verification["a"]["status"] == "verified"
+    assert verification["b"]["status"] == "needs-review"
+
+
+def test_every_declared_license_maps_to_a_bucket() -> None:
+    unmapped = {
+        entry.meta["license"]
+        for entry in discover_entries()
+        if entry.meta.get("license") not in (None, "", "UNKNOWN")
+        and license_bucket(entry.meta["license"]) == "unknown"
+    }
+    assert unmapped == set()
 
 
 def test_generated_timestamp_does_not_cause_site_drift(tmp_path: Path) -> None:

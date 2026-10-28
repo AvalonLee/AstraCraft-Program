@@ -28,10 +28,10 @@
   <header class="topbar">
     <div class="brand-lockup">
     <div class="brand-name">AstraCraft Program</div>
-    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
     </div>
     <nav class="nav-links">
-      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="../index.html">浏览条目</a>
       <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </header>
@@ -49,7 +49,7 @@
 
   <div class="card" style="margin-top:24px;">
     <div class="mini-tags">
-      <span>Agent 基础设施</span><span>常规</span><span class="lic-badge lic-unknown" title="AGPL-3.0-only">版权未声明</span><span>框架</span>
+      <span>Agent 基础设施</span><span>常规</span><span class="lic-badge lic-copyleft" title="AGPL-3.0-only">部分开源</span><span>部署运行</span>
     </div>
     <p class="muted detail-meta">面向 OpenAI Codex / ChatGPT 桌面应用的外部启动器与管理工具，通过 CDP 注入提供供应商切换、协议转换、会话管理与界面增强，不修改官方应用文件。</p>
     <div class="link-row" style="margin-top:14px;">
@@ -64,7 +64,7 @@
 <h2>这是什么</h2>
 <p>Codex++ 是一个不侵入官方应用的增强工具：它通过 Chromium DevTools Protocol 和本地辅助服务为 Codex 桌面版提供供应商切换、协议转换（Chat Completions 转 Responses）、会话管理（批量删除、Markdown 导出、Token 用量历史）和界面增强（中文界面、插件市场、会话宽度恢复等）。不修改 <code>app.asar</code>，不向安装目录写补丁。</p>
 <p>供应商管理是它的强项：支持官方登录、官方登录混入 API、纯 API 和聚合供应商（故障转移、按会话/请求/权重轮转）四种模式，每供应商可配置 Responses 或 Chat Completions 协议、模型列表、上下文窗口和自动压缩阈值，还可按供应商启用不同的 MCP Server、Skill 和 Plugin。</p>
-<h2>怎么安装</h2>
+<h2>怎么部署运行</h2>
 <p>从 <a href="https://github.com/BigPizzaV3/CodexPlusPlus/releases" target="_blank" rel="noopener">GitHub Releases</a> 下载最新安装包：</p>
 <pre><code class="lang-bash"># Windows：CodexPlusPlus-*-windows-x64-setup.exe
 # macOS Intel：CodexPlusPlus-*-macos-x64.dmg

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """AstraCraft Program（天工计划）静态预览站生成器。
 
-扫描 entries/**/SKILL.md，生成纯静态、零依赖的在线预览站素材：
-  - site/data/skills.json      全量条目元数据（首页前端筛选/搜索用）
-  - site/skills/<id>.html      每技能详情页（正文预渲染为 HTML，无需 JS 即可读）
+扫描 entries/**/ENTRY.md，生成纯静态、零依赖的在线预览站素材：
+  - site/data/skills.json      全量条目元数据（首页筛选 + 对外机器契约）
+  - site/skills/<id>.html      每个条目详情页（正文预渲染为 HTML，无需 JS 即可读）
 
 index.html / assets/style.css / assets/app.js 为静态文件，由仓库直接提供，
 本脚本只负责数据 + 详情页，与现有 scripts/gen_index.py 思路一致。
@@ -26,21 +26,47 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from _common import (  # noqa: E402
     CATEGORIES,
-    KIND_LABELS,
+    ENTRY_FILE,
+    MODE_HEADINGS,
+    MODE_LABELS,
     REPO_ROOT,
     TIER_LABELS,
     discover_entries,
+    extract_section_code,
     normalize_tags,
 )
 
 SITE_DIR = REPO_ROOT / "site"
 DATA_DIR = SITE_DIR / "data"
 SKILLS_DIR = SITE_DIR / "skills"
+SNAPSHOT_PATH = REPO_ROOT / "verification" / "upstream-snapshot.json"
+DATA_VERSION_PATH = REPO_ROOT / "data-version.json"
+RAW_BASE = "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main"
+SCHEMA_VERSION = 1
 GEN_AT = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+def load_dataset_version() -> dict:
+    try:
+        return json.loads(DATA_VERSION_PATH.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+
+
+def load_verification() -> tuple[dict[str, dict], str | None]:
+    """读上游核验快照；未核验的条目由调用方标记为 unverified。"""
+    if not SNAPSHOT_PATH.exists():
+        return {}, None
+    try:
+        snapshot = json.loads(SNAPSHOT_PATH.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}, None
+    # 多个条目可以指向同一个上游仓库（如 anthropics/skills），只能按条目 id 对账
+    return dict(snapshot.get("entries") or {}), snapshot.get("generated_at")
+
+
 # ---------------------------------------------------------------------------
-# 最小 Markdown -> HTML（仅覆盖 SKILL.md 正文用到的构造）
+# 最小 Markdown -> HTML（仅覆盖 ENTRY.md 正文用到的构造）
 # ---------------------------------------------------------------------------
 def _inline(text: str) -> str:
     """行内元素：转义后处理 `code`、**粗体**、*斜体*、[文本](链接)。"""
@@ -75,7 +101,7 @@ def __replace_bold(text: str) -> str:
 
 
 def md_to_html(md: str) -> str:
-    """将 SKILL.md 正文（已去掉 frontmatter）转为 HTML 片段。"""
+    """将 ENTRY.md 正文（已去掉 frontmatter）转为 HTML 片段。"""
     lines = md.splitlines()
     out: list[str] = []
     i = 0
@@ -185,23 +211,9 @@ def md_to_html(md: str) -> str:
     return "\n".join(out)
 
 
-def extract_install(body: str) -> str:
-    """从正文中抽取「怎么安装」小节的首个代码块，作为首页快速预览。"""
-    marker = "## 怎么安装"
-    idx = body.find(marker)
-    if idx == -1:
-        return ""
-    seg = body[idx:]
-    nxt = seg.find("\n## ", 1)
-    if nxt != -1:
-        seg = seg[:nxt]
-    start = seg.find("```")
-    if start == -1:
-        return ""
-    end = seg.find("```", start + 3)
-    if end == -1:
-        return ""
-    return seg[start + 3 : end].strip()
+def extract_action(body: str, mode: str) -> str:
+    """抽取条目前端预览用的首段上手命令。"""
+    return extract_section_code(body, MODE_HEADINGS.get(mode, ()))
 
 
 # ---------------------------------------------------------------------------
@@ -237,10 +249,10 @@ DETAIL_TEMPLATE = """<!DOCTYPE html>
   <header class="topbar">
     <div class="brand-lockup">
     <div class="brand-name">AstraCraft Program</div>
-    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
     </div>
     <nav class="nav-links">
-      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="../index.html">浏览条目</a>
       <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </header>
@@ -258,7 +270,7 @@ DETAIL_TEMPLATE = """<!DOCTYPE html>
 
   <div class="card" style="margin-top:24px;">
     <div class="mini-tags">
-      <span>{cat_name}</span><span>{tier_label}</span><span class="lic-badge lic-{license_bucket}" title="{license}">{license_bucket_label}</span><span>{kind_label}</span>
+      <span>{cat_name}</span><span>{tier_label}</span><span class="lic-badge lic-{license_bucket}" title="{license}">{license_bucket_label}</span><span>{mode_label}</span>
     </div>
     <p class="muted detail-meta">{summary_zh}</p>
     <div class="link-row" style="margin-top:14px;">
@@ -286,12 +298,17 @@ LICENSE_BUCKETS = {
     "Python-2.0": "open", "MS-PL": "open", "WTFPL": "open",
     "CC-BY-4.0": "open", "CC-BY-3.0": "open",
     # 部分开源（Copyleft / 衍生约束）
-    "GPL-2.0": "copyleft", "GPL-3.0": "copyleft", "AGPL-3.0": "copyleft",
+    "GPL-2.0": "copyleft", "GPL-3.0": "copyleft", "AGPL-3.0": "copyleft", "AGPL-3.0-only": "copyleft",
     "LGPL-2.1": "copyleft", "LGPL-3.0": "copyleft", "MPL-2.0": "copyleft",
     "EPL-2.0": "copyleft", "EPL-1.0": "copyleft", "OSL-3.0": "copyleft",
     "EUPL-1.2": "copyleft", "CDDL-1.0": "copyleft", "CeCILL-2.1": "copyleft",
-    # 商用授权（专有 / 源码可见但受限）
+    # 商用需授权（专有 / 源码可见但受限）
     "LicenseRef-Anthropic-Source-Available": "commercial",
+    "LicenseRef-BigBanana-Community-1.0": "commercial",
+    "LicenseRef-cc-haha-Community-Source-1.0": "commercial",
+    "LicenseRef-GSAP-Standard-No-Charge": "commercial",
+    "LicenseRef-NC-Learning": "commercial",
+    "PolyForm-Noncommercial-1.0.0": "commercial",
     "Commercial": "commercial", "Proprietary": "commercial",
     "CC-BY-NC-4.0": "commercial", "CC-BY-NC-SA-4.0": "commercial",
     "BUSL-1.1": "commercial", "SSPL-1.0": "commercial",
@@ -301,7 +318,7 @@ LICENSE_BUCKETS = {
 BUCKET_LABELS = {
     "open": "完全开源",
     "copyleft": "部分开源",
-    "commercial": "商用授权",
+    "commercial": "商用需授权",
     "unknown": "版权未声明",
 }
 
@@ -336,7 +353,7 @@ def build_detail(entry, cat_name: str, body_html: str) -> str:
         "license": html.escape(str(meta.get("license", "未知"))),
         "license_bucket": license_bucket(meta.get("license")),
         "license_bucket_label": BUCKET_LABELS[license_bucket(meta.get("license"))],
-        "kind_label": html.escape(KIND_LABELS.get(str(meta.get("kind", "")), str(meta.get("kind", "")))),
+        "mode_label": html.escape(MODE_LABELS.get(str(meta.get("mode", "")), str(meta.get("mode", "")))),
         "summary_zh": html.escape(str(meta.get("summary_zh", ""))),
         "repo_link": repo_link,
         "homepage_link": homepage_link,
@@ -379,8 +396,9 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     quiet = args.quiet
     entries = discover_entries()
+    verification, verified_at = load_verification()
     if not quiet:
-        print(f"发现 {len(entries)} 个条目")
+        print(f"发现 {len(entries)} 个条目，核验快照 {len(verification)} 条")
 
     skills: list[dict] = []
     details: dict[str, str] = {}
@@ -389,13 +407,14 @@ def main(argv: list[str] | None = None) -> int:
         meta = entry.meta
         cat_dir = entry.category_dir
         cat_name = CATEGORIES.get(cat_dir, (cat_dir,))[0]
-        skill_file = entry.skill_file
-        raw = skill_file.read_text(encoding="utf-8")
+        mode = str(meta.get("mode", ""))
+        raw = entry.entry_file.read_text(encoding="utf-8")
         # 去 frontmatter
         body = raw.split("\n---", 1)[-1] if "\n---" in raw else raw
         body = body.lstrip("\n")
         body_html = md_to_html(body)
-        install = extract_install(body)
+        quickstart = extract_action(body, mode)
+        upstream = verification.get(entry.id)
 
         detail_html = build_detail(entry, cat_name, body_html)
         details[f"{entry.id}.html"] = detail_html
@@ -409,8 +428,8 @@ def main(argv: list[str] | None = None) -> int:
                 "summary_en": meta.get("summary_en", ""),
                 "category_dir": cat_dir,
                 "category_name": cat_name,
-                "kind": meta.get("kind", ""),
-                "kind_label": KIND_LABELS.get(str(meta.get("kind", "")), str(meta.get("kind", ""))),
+                "mode": mode,
+                "mode_label": MODE_LABELS.get(mode, mode),
                 "tags": normalize_tags(meta.get("tags"))[0],
                 "languages": meta.get("languages") or [],
                 "doc_languages": meta.get("doc_languages") or [],
@@ -426,8 +445,13 @@ def main(argv: list[str] | None = None) -> int:
                 "risk_notes": meta.get("risk_notes") or "",
                 "added_at": str(meta.get("added_at", "")),
                 "updated_at": str(meta.get("updated_at", "")),
-                "install": install,
+                "verification_status": upstream.get("status") if upstream else "unverified",
+                "health_score": upstream.get("health_score") if upstream else None,
+                "stars": upstream.get("stars") if upstream else None,
+                "checked_at": verified_at if upstream else None,
+                "quickstart": quickstart,
                 "detail_url": f"skills/{entry.id}.html",
+                "source_url": f"{RAW_BASE}/{entry.rel_path}/{ENTRY_FILE}",
             }
         )
         if not quiet:
@@ -437,8 +461,14 @@ def main(argv: list[str] | None = None) -> int:
         {"dir": d, "name": n, "desc": desc} for d, (n, desc) in CATEGORIES.items()
     ]
     payload = {
+        "schema_version": SCHEMA_VERSION,
+        "dataset_version": load_dataset_version().get("version"),
         "generated_at": GEN_AT,
         "count": len(skills),
+        "modes": [
+            {"value": mode, "label": MODE_LABELS[mode]}
+            for mode in ("install", "connect", "deploy", "read")
+        ],
         "categories": categories,
         "skills": skills,
     }
@@ -461,7 +491,7 @@ def main(argv: list[str] | None = None) -> int:
     )
 
     if not quiet:
-        print(f"\n生成完成：{len(skills)} 个技能 -> site/data/skills.json + site/skills/*.html")
+        print(f"\n生成完成：{len(skills)} 个条目 -> site/data/skills.json + site/skills/*.html")
     return 0
 
 

@@ -28,10 +28,10 @@
   <header class="topbar">
     <div class="brand-lockup">
     <div class="brand-name">AstraCraft Program</div>
-    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
     </div>
     <nav class="nav-links">
-      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="../index.html">浏览条目</a>
       <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </header>
@@ -49,7 +49,7 @@
 
   <div class="card" style="margin-top:24px;">
     <div class="mini-tags">
-      <span>Agent 基础设施</span><span>常规</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>框架</span>
+      <span>Agent 基础设施</span><span>常规</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>部署运行</span>
     </div>
     <p class="muted detail-meta">本地优先的 issue 看板，可在浏览器运行并通过 CDP 启动器或注入脚本嵌入 Codex；同一套 HTTP API 驱动 React UI 与随附 Codex Skill 使用的 taskctl CLI。</p>
     <div class="link-row" style="margin-top:14px;">
@@ -64,7 +64,7 @@
 <h2>这是什么</h2>
 <p>一个<strong>本地优先（local-first）的任务看板</strong>：在浏览器中运行，既可以通过独立的 CDP 启动器、也可以通过注入脚本嵌入 Codex 使用。同一套 HTTP API 同时驱动 React Web UI 和随附 Codex Skill 使用的 <code>taskctl</code> CLI，形成一个"看板 + CLI + Agent 技能"一体的任务管理底座。</p>
 <p>它让 Agent（Codex）拥有持久化的项目 / issue 视图与命令行操作能力，适合把长任务拆成可跟踪的 issue 并交给 Agent 推进。</p>
-<h2>怎么安装</h2>
+<h2>怎么部署运行</h2>
 <pre><code class="lang-bash"># 1) 克隆并安装依赖
 git clone --depth 1 https://github.com/chuspeeism/dashi-taskboard.git /tmp/codex-taskboard
 cd /tmp/codex-taskboard

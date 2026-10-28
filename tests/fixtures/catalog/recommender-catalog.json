@@ -2,49 +2,68 @@
   {
     "id": "testing-pro",
     "category": "dev-engineering",
-    "tags": ["testing", "python"],
-    "kind": "skill",
+    "tags": [
+      "testing",
+      "python"
+    ],
     "tier": "standard",
     "license": "MIT",
-    "doc_languages": ["zh", "en"],
+    "doc_languages": [
+      "zh",
+      "en"
+    ],
     "risk_notes": "",
     "verification_status": "verified",
-    "health_score": 90
+    "health_score": 90,
+    "mode": "install"
   },
   {
     "id": "testing-unknown",
     "category": "dev-engineering",
-    "tags": ["testing"],
-    "kind": "skill",
+    "tags": [
+      "testing"
+    ],
     "tier": "core",
     "license": "UNKNOWN",
-    "doc_languages": ["en"],
+    "doc_languages": [
+      "en"
+    ],
     "risk_notes": "commercial license unknown",
     "verification_status": "verified",
-    "health_score": 70
+    "health_score": 70,
+    "mode": "install"
   },
   {
     "id": "blocked-best-match",
     "category": "dev-engineering",
-    "tags": ["testing", "python"],
-    "kind": "skill",
+    "tags": [
+      "testing",
+      "python"
+    ],
     "tier": "core",
     "license": "MIT",
-    "doc_languages": ["zh"],
+    "doc_languages": [
+      "zh"
+    ],
     "risk_notes": "",
     "verification_status": "blocked",
-    "health_score": 99
+    "health_score": 99,
+    "mode": "install"
   },
   {
     "id": "data-tool",
     "category": "data-analytics",
-    "tags": ["python"],
-    "kind": "framework",
+    "tags": [
+      "python"
+    ],
     "tier": "standard",
     "license": "Apache-2.0",
-    "doc_languages": ["en"],
+    "doc_languages": [
+      "en"
+    ],
     "risk_notes": "",
     "verification_status": "verified",
-    "health_score": 85
+    "health_score": 85,
+    "mode": "deploy"
   }
 ]

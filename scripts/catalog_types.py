@@ -75,7 +75,9 @@ def validate_document_boundary(document: CatalogDocument) -> None:
         raise CatalogFormatError(
             "E_ROOT_AS_ENTRY", document.relative_path, "root recommender must be installable"
         )
-    if is_entry and "/entries/" in document.body and "SKILL.md" in document.body:
+    if is_entry and "/entries/" in document.body and (
+        "ENTRY.md" in document.body or "SKILL.md" in document.body
+    ):
         raise CatalogFormatError(
             "E_ENTRY_INSTALL_SELF",
             document.relative_path,

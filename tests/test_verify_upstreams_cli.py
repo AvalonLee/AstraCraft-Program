@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 
 from scripts import verify_upstreams
+from scripts._common import discover_entries
 from scripts.verify_upstreams import build_snapshot, candidate_entries, main, merge_snapshots, reconcile_placeholder_conflicts, write_snapshot_atomic
 
 
@@ -70,6 +71,106 @@ def test_needs_review_is_reported_without_blocking_refresh() -> None:
     assert snapshot["entries"]["tool"]["status"] == "needs-review"
 
 
+def test_manual_review_promotes_matching_entry_to_verified() -> None:
+    payload = healthy_payload()
+    payload["api_license"] = "UNKNOWN"
+    payload["text_license"] = "UNKNOWN"
+    review = {
+        "tool": {
+            "license": "MIT",
+            "head_sha": "abc123",
+            "reviewed_at": "2026-10-28",
+            "evidence": "https://example.com/LICENSE",
+        }
+    }
+
+    snapshot, exit_code = build_snapshot([catalog_entry()], lambda _: payload, "2026-10-28T00:00:00Z", review)
+
+    record = snapshot["entries"]["tool"]
+    assert exit_code == 0
+    assert record["status"] == "verified"
+    assert record["manual_review"]["evidence"] == "https://example.com/LICENSE"
+
+
+def test_manual_review_expires_when_upstream_head_changes() -> None:
+    payload = healthy_payload()
+    payload["api_license"] = "UNKNOWN"
+    payload["text_license"] = "UNKNOWN"
+    payload["head_sha"] = "def456"
+    review = {"tool": {"license": "MIT", "head_sha": "abc123", "reviewed_at": "2026-10-28", "evidence": "e"}}
+
+    snapshot, _ = build_snapshot([catalog_entry()], lambda _: payload, "2026-10-28T00:00:00Z", review)
+
+    record = snapshot["entries"]["tool"]
+    assert record["status"] == "needs-review"
+    assert "manual_review" not in record
+
+
+def test_manual_review_survives_new_commits_when_evidence_file_unchanged() -> None:
+    payload = healthy_payload()
+    payload["api_license"] = "UNKNOWN"
+    payload["text_license"] = "UNKNOWN"
+    payload["head_sha"] = "def456"
+    review = {
+        "tool": {
+            "license": "MIT",
+            "head_sha": "abc123",
+            "evidence_path": "LICENSE",
+            "evidence_sha": "blob1",
+            "reviewed_at": "2026-10-28",
+            "evidence": "e",
+        }
+    }
+
+    snapshot, _ = build_snapshot(
+        [catalog_entry()],
+        lambda _: payload,
+        "2026-10-28T00:00:00Z",
+        review,
+        blob_sha=lambda _repo, _path: "blob1",
+    )
+
+    assert snapshot["entries"]["tool"]["status"] == "verified"
+
+
+def test_manual_review_expires_when_evidence_file_changes() -> None:
+    payload = healthy_payload()
+    payload["api_license"] = "UNKNOWN"
+    payload["text_license"] = "UNKNOWN"
+    payload["head_sha"] = "def456"
+    review = {
+        "tool": {
+            "license": "MIT",
+            "head_sha": "abc123",
+            "evidence_path": "LICENSE",
+            "evidence_sha": "blob1",
+            "reviewed_at": "2026-10-28",
+            "evidence": "e",
+        }
+    }
+
+    snapshot, _ = build_snapshot(
+        [catalog_entry()],
+        lambda _: payload,
+        "2026-10-28T00:00:00Z",
+        review,
+        blob_sha=lambda _repo, _path: "blob2",
+    )
+
+    assert snapshot["entries"]["tool"]["status"] == "needs-review"
+
+
+def test_manual_review_expires_when_entry_license_changes() -> None:
+    payload = healthy_payload()
+    payload["api_license"] = "UNKNOWN"
+    payload["text_license"] = "UNKNOWN"
+    review = {"tool": {"license": "Apache-2.0", "head_sha": "abc123", "reviewed_at": "2026-10-28", "evidence": "e"}}
+
+    snapshot, _ = build_snapshot([catalog_entry()], lambda _: payload, "2026-10-28T00:00:00Z", review)
+
+    assert snapshot["entries"]["tool"]["status"] == "needs-review"
+
+
 def test_atomic_writer_replaces_snapshot(tmp_path: Path) -> None:
     path = tmp_path / "snapshot.json"
     path.write_text('{"old": true}', encoding="utf-8")
@@ -129,6 +230,8 @@ def test_github_fetcher_records_head_commit_sha(monkeypatch) -> None:
         calls.append(url)
         if url.endswith("/readme"):
             return {"path": "README.md"}
+        if "/commits/" in url:
+            return {"sha": "deadbeef"}
         return {
             "default_branch": "main",
             "archived": False,
@@ -140,19 +243,18 @@ def test_github_fetcher_records_head_commit_sha(monkeypatch) -> None:
         }
 
     monkeypatch.setattr(verify_upstreams, "_request_json", fake_request)
-    monkeypatch.setattr(verify_upstreams, "_git_head_sha", lambda _: "deadbeef")
 
     result = verify_upstreams.fetch_github_facts("https://github.com/example/tool")
 
     assert result["head_sha"] == "deadbeef"
-    assert len(calls) == 2
+    assert len(calls) == 3
 
 
 def test_candidate_entries_build_auditable_catalog_records() -> None:
     candidates = {
-        "dsh": [
-            {"category": "dsh", "repo": "https://github.com/deepseek-ai/deepseek-harness", "priority": "primary", "coverage_code": "dsh-1"},
-            {"category": "dsh", "repo": "https://github.com/example/fallback", "priority": "fallback", "coverage_code": "dsh-2"},
+        "agent-infra": [
+            {"category": "agent-infra", "repo": "https://github.com/deepseek-ai/deepseek-harness", "priority": "primary", "coverage_code": "dsh-1"},
+            {"category": "agent-infra", "repo": "https://github.com/example/fallback", "priority": "fallback", "coverage_code": "dsh-2"},
         ]
     }
 
@@ -160,7 +262,7 @@ def test_candidate_entries_build_auditable_catalog_records() -> None:
 
     assert records == [{
         "id": "deepseek-ai-deepseek-harness",
-        "category": "dsh",
+        "category": "agent-infra",
         "tags": ["dsh", "deepseek-harness", "plugin"],
         "repo": "https://github.com/deepseek-ai/deepseek-harness",
         "license": "UNKNOWN",
@@ -198,3 +300,54 @@ def test_reconcile_removes_only_obsolete_unknown_placeholder_conflict() -> None:
     assert repaired["entries"]["ok"]["status"] == "verified"
     assert repaired["entries"]["ok"]["issues"] == []
     assert repaired["entries"]["real-conflict"]["status"] == "needs-review"
+
+
+def test_entries_catalog_covers_all_entries() -> None:
+    records = verify_upstreams.entries_catalog()
+
+    assert len(records) == len(discover_entries())
+    assert all(record["repo"].startswith("https://github.com/") for record in records)
+    assert {record["category"] for record in records} <= {
+        "writing-docs", "dev-engineering", "design-creative", "research-intel",
+        "ops-automation", "business-office", "agent-infra", "meta-skillcraft",
+    }
+
+
+def test_request_json_retries_transient_network_error(monkeypatch) -> None:
+    import urllib.error
+
+    calls = []
+
+    class Response:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_args):
+            return False
+
+        def read(self):
+            return b'{"ok": true}'
+
+    def fake_urlopen(_request, timeout):
+        calls.append(timeout)
+        if len(calls) == 1:
+            raise urllib.error.URLError("handshake timed out")
+        return Response()
+
+    monkeypatch.setattr(verify_upstreams.urllib.request, "urlopen", fake_urlopen)
+    monkeypatch.setattr(verify_upstreams.time, "sleep", lambda _seconds: None)
+
+    assert verify_upstreams._request_json("https://api.github.com/example") == {"ok": True}
+    assert len(calls) == 2
+
+
+def test_build_snapshot_isolates_fetch_failures() -> None:
+    def fetch(_repo: str) -> dict:
+        raise RuntimeError("network reset")
+
+    snapshot, exit_code = build_snapshot([catalog_entry()], fetch, "2026-10-28T00:00:00Z")
+
+    assert exit_code == 0
+    entry = snapshot["entries"]["tool"]
+    assert entry["status"] == "needs-review"
+    assert entry["issues"] == ["E_UPSTREAM_UNREACHABLE"]

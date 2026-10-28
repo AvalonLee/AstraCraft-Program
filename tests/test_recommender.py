@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 
 from scripts._common import discover_entries
-from scripts.recommender import ProjectProfile, recommend, score_entry
+from scripts.recommender import ProjectProfile, load_entries, recommend, score_entry
 
 
 FIXTURES = Path(__file__).parent / "fixtures"
@@ -28,7 +28,7 @@ def test_score_explains_every_matching_signal() -> None:
         "CATEGORY_MATCH:+3",
         "TAG_MATCH:python:+2",
         "TAG_MATCH:testing:+2",
-        "KIND_MATCH:+1",
+        "MODE_MATCH:+1",
         "TIER_STANDARD:+1",
         "LICENSE_MATCH:+1",
         "DOC_LANGUAGE_MATCH:+1",
@@ -40,6 +40,23 @@ def test_unknown_license_is_penalized_for_commercial_profile() -> None:
     assert "LICENSE_COMMERCIAL_RISK:-2" in scored.reasons
 
 
+def test_commercial_bucket_is_penalized_without_spdx_id() -> None:
+    entry = {
+        "id": "poly",
+        "category": "design-creative",
+        "tags": [],
+        "mode": "deploy",
+        "tier": "standard",
+        "license": "PolyForm-Noncommercial-1.0.0",
+        "license_bucket": "commercial",
+        "doc_languages": [],
+    }
+    commercial = ProjectProfile.from_dict({"commercial": True})
+    assert "LICENSE_COMMERCIAL_RISK:-2" in score_entry(entry, commercial).reasons
+    personal = ProjectProfile.from_dict({"commercial": False})
+    assert "LICENSE_COMMERCIAL_RISK:-2" not in score_entry(entry, personal).reasons
+
+
 def test_non_verified_entries_are_excluded() -> None:
     ids = [item.id for item in recommend(load_catalog(), load_profile(), limit=3)]
     assert "blocked-best-match" not in ids
@@ -48,6 +65,32 @@ def test_non_verified_entries_are_excluded() -> None:
 def test_recommendation_is_limited_and_ranked() -> None:
     results = recommend(load_catalog(), load_profile(), limit=2)
     assert [item.id for item in results] == ["testing-pro", "testing-unknown"]
+
+
+def test_watch_entries_are_excluded_from_recommendations() -> None:
+    base = load_catalog()[0]
+    watch = {**base, "id": "watch-best", "tier": "watch", "verification_status": "verified"}
+    standard = {**base, "id": "standard-ok", "tier": "standard", "verification_status": "verified"}
+
+    results = recommend([watch, standard], load_profile(), limit=5)
+
+    assert [item.id for item in results] == ["standard-ok"]
+
+
+def test_star_volume_is_a_weak_signal() -> None:
+    base = {
+        "id": "x", "category": "dev-engineering", "tags": [], "mode": "install",
+        "tier": "standard", "license": "MIT", "doc_languages": [],
+    }
+    profile = ProjectProfile.from_dict({})
+    baseline = score_entry({**base, "stars": None}, profile).score
+    popular = score_entry({**base, "stars": 5000}, profile)
+    low = score_entry({**base, "stars": 10}, profile)
+
+    assert popular.score == baseline + 1
+    assert "STARS_POPULAR:+1" in popular.reasons
+    assert low.score == baseline - 1
+    assert "STARS_LOW:-1" in low.reasons
 
 
 def test_ties_use_health_then_id() -> None:
@@ -67,11 +110,8 @@ def test_ties_use_health_then_id() -> None:
 @pytest.mark.parametrize(
     ("category", "tags"),
     [
-        ("dev-engineering", ["software-engineering", "testing"]),
-        ("data-analytics", ["data-analytics", "python"]),
+        ("agent-infra", ["dsh", "plugin"]),
         ("research-intel", ["research", "search"]),
-        ("ops-automation", ["ops-automation", "automation"]),
-        ("dsh", ["dsh", "plugin"]),
     ],
 )
 def test_real_catalog_recalls_each_expanded_category(category: str, tags: list[str]) -> None:
@@ -92,7 +132,7 @@ def test_real_catalog_recalls_each_expanded_category(category: str, tags: list[s
     profile = ProjectProfile.from_dict({
         "categories": [category],
         "tags": tags,
-        "desired_kinds": ["skill", "skill-collection", "framework", "cli-tool"],
+        "desired_modes": ["install", "connect", "deploy", "read"],
         "commercial": False,
         "offline": False,
         "doc_languages": ["zh"],
@@ -106,3 +146,10 @@ def test_real_catalog_recalls_each_expanded_category(category: str, tags: list[s
 
     by_id = {entry.meta["id"]: entry.category_dir for entry in discover_entries()}
     assert sum(by_id[result.id] == category for result in results) >= 2
+
+
+def test_load_entries_accepts_published_contract(tmp_path: Path) -> None:
+    path = tmp_path / "skills.json"
+    path.write_text(json.dumps({"schema_version": 1, "skills": [{"id": "a"}]}), encoding="utf-8")
+
+    assert load_entries(path) == [{"id": "a"}]

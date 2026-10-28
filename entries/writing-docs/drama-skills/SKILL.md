@@ -16,9 +16,9 @@ repo: https://github.com/zenstory-ai/drama-skills
 tier: standard
 featured: true
 metrics:
-  stars: 2242
-  pushed_at: "2026-09-24T01:48:41Z"
-  checked_at: "2026-09-24"
+  stars: 3434
+  pushed_at: "2026-10-20T19:23:14Z"
+  checked_at: "2026-10-28"
   archived: false
 related: []
 aliases: [短剧创作, 漫剧]

@@ -15,9 +15,9 @@ homepage: https://github.com/NanmiCoder/MediaCrawler
 repo: https://github.com/NanmiCoder/MediaCrawler
 tier: standard
 metrics:
-  stars: 65675
-  pushed_at: "2026-09-19T05:26:11Z"
-  checked_at: "2026-09-24"
+  stars: 68759
+  pushed_at: "2026-10-27T00:36:40Z"
+  checked_at: "2026-10-28"
   archived: false
 aliases: [MediaCrawler, media-crawler]
 risk_notes: "NON-COMMERCIAL LEARNING LICENSE 1.1：仅限学习研究，禁止商用和大规模爬取；使用前需阅读上游免责声明和中国爬虫违法案例库；CDP 模式连接已有 Chrome 可复用登录态降低风控风险，但平台风控策略持续变化；MediaCrawlerPro 为付费闭源版本，本条目只覆盖开源版。"
@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # MediaCrawler 自媒体爬虫
 
-> 多平台自媒体数据采集工具。上游：[NanmiCoder/MediaCrawler](https://github.com/NanmiCoder/MediaCrawler) · 许可证：NON-COMMERCIAL LEARNING LICENSE 1.1（仅限学习） · 65.7k stars
+> 多平台自媒体数据采集工具。上游：[NanmiCoder/MediaCrawler](https://github.com/NanmiCoder/MediaCrawler) · 许可证：NON-COMMERCIAL LEARNING LICENSE 1.1（仅限学习） · 68.8k stars
 
 ## 这是什么
 

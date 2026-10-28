@@ -15,9 +15,9 @@ homepage: https://crawl4ai.com
 repo: https://github.com/unclecode/crawl4ai
 tier: core
 metrics:
-  stars: 84201
-  pushed_at: "2026-09-23T15:10:21Z"
-  checked_at: "2026-09-24"
+  stars: 86413
+  pushed_at: "2026-10-26T13:15:13Z"
+  checked_at: "2026-10-28"
   archived: false
 aliases: [crawl4ai, Crawl4AI]
 risk_notes: "v0.9.3 为安全修复版（关闭任意文件写入 / SSRF / DoS / XSS 等协调披露公告 + 33 个 bug 修复），建议始终使用最新版；Docker API server 从 v0.9.0 起默认开启认证并绑定 loopback，公网部署需配置 token 和反向代理；LLM 提取功能需配置 API Key（爬取本身零 Key）。"
@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # Crawl4AI LLM 友好爬虫
 
-> 🚀🤖 Open-source LLM Friendly Web Crawler & Scraper。上游：[unclecode/crawl4ai](https://github.com/unclecode/crawl4ai) · 许可证：Apache 2.0 · 84.2k stars
+> 🚀🤖 Open-source LLM Friendly Web Crawler & Scraper。上游：[unclecode/crawl4ai](https://github.com/unclecode/crawl4ai) · 许可证：Apache 2.0 · 86.4k stars
 
 ## 这是什么
 

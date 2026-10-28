@@ -100,6 +100,29 @@ def __replace_bold(text: str) -> str:
     return re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", text)
 
 
+def _is_table_separator(line: str) -> bool:
+    import re
+
+    if not line.startswith("|"):
+        return False
+    cells = line.strip().strip("|").split("|")
+    return all(re.fullmatch(r":?-+:?", c.strip()) for c in cells)
+
+
+def _table_cells(line: str) -> list[str]:
+    return [c.strip() for c in line.strip().strip("|").split("|")]
+
+
+def _render_table(header: list[str], rows: list[list[str]]) -> str:
+    # shortcut: 不解析分隔行里的对齐标记，表格一律左对齐；出现居中/右对齐需求时再补
+    def tr(cells: list[str], tag: str) -> str:
+        return "<tr>" + "".join(f"<{tag}>{_inline(c)}</{tag}>" for c in cells) + "</tr>"
+
+    thead = f"<thead>{tr(header, 'th')}</thead>"
+    tbody = f"<tbody>{''.join(tr(r, 'td') for r in rows)}</tbody>"
+    return f"<table>{thead}{tbody}</table>"
+
+
 def md_to_html(md: str) -> str:
     """将 ENTRY.md 正文（已去掉 frontmatter）转为 HTML 片段。"""
     lines = md.splitlines()
@@ -147,6 +170,18 @@ def md_to_html(md: str) -> str:
             flush_paragraph(para)
             out.append("<hr/>")
             i += 1
+            continue
+
+        # 管道表格：表头行 + 分隔行 + 数据行
+        if stripped.startswith("|") and i + 1 < n and _is_table_separator(lines[i + 1].strip()):
+            flush_paragraph(para)
+            header = _table_cells(stripped)
+            rows: list[list[str]] = []
+            i += 2
+            while i < n and lines[i].strip().startswith("|"):
+                rows.append(_table_cells(lines[i].strip()))
+                i += 1
+            out.append(_render_table(header, rows))
             continue
 
         # 引用
@@ -258,7 +293,7 @@ DETAIL_TEMPLATE = """<!DOCTYPE html>
   </header>
 
   <section class="hero-shell">
-    <div class="eyebrow">Agent Skill</div>
+    <div class="eyebrow">{cat_name}</div>
     <div class="hero-copy-block">
       <h1 class="hero-title">{name_zh}</h1>
       <p class="hero-subtitle">{name_en}</p>
@@ -270,13 +305,15 @@ DETAIL_TEMPLATE = """<!DOCTYPE html>
 
   <div class="card" style="margin-top:24px;">
     <div class="mini-tags">
-      <span>{cat_name}</span><span>{tier_label}</span><span class="lic-badge lic-{license_bucket}" title="{license}">{license_bucket_label}</span><span>{mode_label}</span>
+      <span>{cat_name}</span><span>{tier_label}</span>{verify_badge}<span class="lic-badge lic-{license_bucket}" title="{license}">{license_bucket_label}</span><span>{mode_label}</span>
     </div>
     <p class="muted detail-meta">{summary_zh}</p>
+    {verify_note}
     <div class="link-row" style="margin-top:14px;">
       {repo_link}
       {homepage_link}
     </div>
+    {quickstart_block}
   </div>
 
   <article id="body" class="content-panel detail-body" style="margin-top:24px;">
@@ -285,6 +322,7 @@ DETAIL_TEMPLATE = """<!DOCTYPE html>
 
   <p class="footer">收录于 {added_at} · 更新于 {updated_at} · AstraCraft Program 轻量索引</p>
 </main>
+<script src="../assets/copy.js"></script>
 </body>
 </html>
 """
@@ -329,7 +367,20 @@ def license_bucket(spdx) -> str:
     return LICENSE_BUCKETS.get(str(spdx), "unknown")
 
 
-def build_detail(entry, cat_name: str, body_html: str) -> str:
+VERIFY_BADGES = {
+    "needs-review": ("待复核", "该条目待人工复核（许可证或分类需再确认），使用前先核对上游许可证。"),
+    "blocked": ("暂不推荐", "该条目暂不推荐：上游已归档或核验未通过，使用前先看注意事项。"),
+    "unverified": ("暂不推荐", "该条目尚未通过上游核验，使用前先自行核对。"),
+}
+
+
+def build_detail(
+    entry,
+    cat_name: str,
+    body_html: str,
+    quickstart: str = "",
+    verification_status: str = "verified",
+) -> str:
     meta = entry.meta
     repo = meta.get("repo") or ""
     homepage = meta.get("homepage") or ""
@@ -343,6 +394,26 @@ def build_detail(entry, cat_name: str, body_html: str) -> str:
         if homepage
         else ""
     )
+    badge_label, note = VERIFY_BADGES.get(verification_status, ("", ""))
+    verify_badge = (
+        f'<span class="verify-badge verify-{verification_status}">{html.escape(badge_label)}</span>'
+        if badge_label
+        else ""
+    )
+    verify_note = (
+        f'<p class="detail-verify-note">{html.escape(note)}</p>' if note else ""
+    )
+    if quickstart.strip():
+        quickstart_block = (
+            '<div class="detail-quick">'
+            '<p class="panel-label">上手命令</p>'
+            '<div class="detail-quick-row">'
+            f'<pre id="detail-quickstart-cmd"><code>{html.escape(quickstart.strip())}</code></pre>'
+            '<button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button>'
+            "</div></div>"
+        )
+    else:
+        quickstart_block = ""
     # 手动替换占位符：避免 .format() 与模板内 <style> 的 CSS 花括号冲突
     fields = {
         "title": html.escape(str(meta.get("name_zh", entry.id))),
@@ -357,6 +428,9 @@ def build_detail(entry, cat_name: str, body_html: str) -> str:
         "summary_zh": html.escape(str(meta.get("summary_zh", ""))),
         "repo_link": repo_link,
         "homepage_link": homepage_link,
+        "verify_badge": verify_badge,
+        "verify_note": verify_note,
+        "quickstart_block": quickstart_block,
         "added_at": html.escape(str(meta.get("added_at", ""))),
         "updated_at": html.escape(str(meta.get("updated_at", ""))),
         "body_html": body_html,
@@ -415,8 +489,9 @@ def main(argv: list[str] | None = None) -> int:
         body_html = md_to_html(body)
         quickstart = extract_action(body, mode)
         upstream = verification.get(entry.id)
+        status = upstream.get("status") if upstream else "unverified"
 
-        detail_html = build_detail(entry, cat_name, body_html)
+        detail_html = build_detail(entry, cat_name, body_html, quickstart=quickstart, verification_status=status)
         details[f"{entry.id}.html"] = detail_html
 
         skills.append(

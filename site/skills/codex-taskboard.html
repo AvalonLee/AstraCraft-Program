@@ -37,7 +37,7 @@
   </header>
 
   <section class="hero-shell">
-    <div class="eyebrow">Agent Skill</div>
+    <div class="eyebrow">Agent 基础设施</div>
     <div class="hero-copy-block">
       <h1 class="hero-title">Codex Taskboard 本地任务看板</h1>
       <p class="hero-subtitle">Codex Taskboard</p>
@@ -52,10 +52,18 @@
       <span>Agent 基础设施</span><span>常规</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>部署运行</span>
     </div>
     <p class="muted detail-meta">本地优先的 issue 看板，可在浏览器运行并通过 CDP 启动器或注入脚本嵌入 Codex；同一套 HTTP API 驱动 React UI 与随附 Codex Skill 使用的 taskctl CLI。</p>
+    
     <div class="link-row" style="margin-top:14px;">
       <a class="button button-secondary" href="https://github.com/chuspeeism/dashi-taskboard" target="_blank" rel="noopener">查看仓库 / 源码</a>
       <a class="button button-ghost" href="https://github.com/chuspeeism/dashi-taskboard" target="_blank" rel="noopener">项目主页</a>
     </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code># 1) 克隆并安装依赖
+git clone --depth 1 https://github.com/chuspeeism/dashi-taskboard.git /tmp/codex-taskboard
+cd /tmp/codex-taskboard
+npm install
+npm run build
+npm start
+# 打开 http://127.0.0.1:47823 ，SQLite 库位于 .data/taskboard.sqlite</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
   </div>
 
   <article id="body" class="content-panel detail-body" style="margin-top:24px;">
@@ -84,5 +92,6 @@ npm start
 
   <p class="footer">收录于 2026-08-26 · 更新于 2026-08-26 · AstraCraft Program 轻量索引</p>
 </main>
+<script src="../assets/copy.js"></script>
 </body>
 </html>

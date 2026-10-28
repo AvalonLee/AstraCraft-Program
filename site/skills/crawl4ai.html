@@ -37,7 +37,7 @@
   </header>
 
   <section class="hero-shell">
-    <div class="eyebrow">Agent Skill</div>
+    <div class="eyebrow">研究与信息获取</div>
     <div class="hero-copy-block">
       <h1 class="hero-title">Crawl4AI LLM 友好爬虫</h1>
       <p class="hero-subtitle">Crawl4AI</p>
@@ -52,10 +52,21 @@
       <span>研究与信息获取</span><span>主推</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>接入 Agent</span>
     </div>
     <p class="muted detail-meta">GitHub 最多 star 的开源 LLM 友好爬虫：网页 → 干净的 LLM-ready Markdown（Fit Markdown 启发式去噪）；异步浏览器池、深度爬取 + 崩溃恢复 + prefetch 加速；CLI + Docker 部署、爬取零 API Key。</p>
+    
     <div class="link-row" style="margin-top:14px;">
       <a class="button button-secondary" href="https://github.com/unclecode/crawl4ai" target="_blank" rel="noopener">查看仓库 / 源码</a>
       <a class="button button-ghost" href="https://crawl4ai.com" target="_blank" rel="noopener">项目主页</a>
     </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code>pip install -U crawl4ai
+
+# 运行安装后设置（浏览器配置）
+crawl4ai-setup
+
+# 验证安装
+crawl4ai-doctor
+
+# 浏览器问题手动安装
+python -m playwright install --with-deps chromium</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
   </div>
 
   <article id="body" class="content-panel detail-body" style="margin-top:24px;">
@@ -66,7 +77,7 @@
 <p><strong>为什么开发者选 Crawl4AI</strong>：</p>
 <ul><li><strong>LLM-ready 输出</strong>：智能 Markdown（标题 / 表格 / 代码 / 引用提示 / 链接编号引用列表）</li><li><strong>快</strong>：异步浏览器池 + 缓存 + 最少跳转</li><li><strong>全控制</strong>：会话 / 代理 / Cookie / 用户脚本 / hooks</li><li><strong>自适应智能</strong>：学习网站模式，只探索有价值的内容</li><li><strong>部署自由</strong>：零 API Key（爬取本身）、CLI + Docker、云友好</li></ul>
 <p><strong>关键版本</strong>：</p>
-<p>| 版本 | 亮点 | |------|------| | v0.9.3（当前） | 安全修复：关闭任意文件写入 / SSRF / DoS / XSS + 33 个 bug | | v0.9.0 | Docker API server 安全加固：默认认证 + loopback + untrusted trust boundary | | v0.8.0 | 深度爬取崩溃恢复（<code>resume_state</code>）+ prefetch 模式（URL 发现提速 5-10 倍） |</p>
+<table><thead><tr><th>版本</th><th>亮点</th></tr></thead><tbody><tr><td>v0.9.3（当前）</td><td>安全修复：关闭任意文件写入 / SSRF / DoS / XSS + 33 个 bug</td></tr><tr><td>v0.9.0</td><td>Docker API server 安全加固：默认认证 + loopback + untrusted trust boundary</td></tr><tr><td>v0.8.0</td><td>深度爬取崩溃恢复（<code>resume_state</code>）+ prefetch 模式（URL 发现提速 5-10 倍）</td></tr></tbody></table>
 <h2>怎么接入</h2>
 <pre><code class="lang-bash">pip install -U crawl4ai
 
@@ -108,5 +119,6 @@ docker run -d -p 11235:11235 unclecode/crawl4ai:latest</code></pre>
 
   <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
 </main>
+<script src="../assets/copy.js"></script>
 </body>
 </html>

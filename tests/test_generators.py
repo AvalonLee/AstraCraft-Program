@@ -63,3 +63,27 @@ def test_real_site_drift_is_detected_without_writing(tmp_path: Path) -> None:
     assert outputs_match(fresh, {"a.html": "new detail", "b.html": "detail"}, data, skills) is False
     assert (data / "skills.json").read_text(encoding="utf-8") == original
     assert (skills / "a.html").read_text(encoding="utf-8") == "old detail"
+
+
+def test_md_to_html_renders_pipe_table() -> None:
+    md = (
+        "| 能力 | 平台 |\n"
+        "|------|------|\n"
+        "| 搜索 | 小红书 |\n"
+        "| 评论 | 抖音 |"
+    )
+    out = gen_site.md_to_html(md)
+    assert "<table><thead><tr><th>能力</th><th>平台</th></tr></thead>" in out
+    assert "<tbody><tr><td>搜索</td><td>小红书</td></tr>" in out
+
+
+def test_md_to_html_table_escapes_and_inline() -> None:
+    md = "| 名称 | 命令 |\n|---|---|\n| 安装 | `uv sync` |"
+    out = gen_site.md_to_html(md)
+    assert "<code>uv sync</code>" in out
+
+
+def test_md_to_html_keeps_pipe_paragraph() -> None:
+    out = gen_site.md_to_html("竖线 a | b 只是普通文本")
+    assert "<table>" not in out
+    assert "a | b" in out

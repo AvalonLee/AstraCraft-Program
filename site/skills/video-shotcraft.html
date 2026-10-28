@@ -37,7 +37,7 @@
   </header>
 
   <section class="hero-shell">
-    <div class="eyebrow">Agent Skill</div>
+    <div class="eyebrow">设计与创意</div>
     <div class="hero-copy-block">
       <h1 class="hero-title">Video Shotcraft 产品视频动态设计技能</h1>
       <p class="hero-subtitle">Video Shotcraft — Cinematic Product Video Skill</p>
@@ -52,10 +52,22 @@
       <span>设计与创意</span><span>常规</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>装进 Agent</span>
     </div>
     <p class="muted detail-meta">面向 Claude Code 与 Codex 的 AI 产品视频动态设计 skill：152 张镜头配方卡、209 种动态预览、一套可投产的 Remotion 模板，把 Agent 变成动态设计工作室，一键生成电影级产品宣传片。</p>
+    
     <div class="link-row" style="margin-top:14px;">
       <a class="button button-secondary" href="https://github.com/Vincentwei1021/video-shotcraft" target="_blank" rel="noopener">查看仓库 / 源码</a>
       <a class="button button-ghost" href="https://github.com/Vincentwei1021/video-shotcraft" target="_blank" rel="noopener">项目主页</a>
     </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code># 方式一：直接让 Agent 安装
+# 在 Claude Code / Codex 中说：
+# &quot;Install this skill for me: https://github.com/Vincentwei1021/video-shotcraft&quot;
+
+# 方式二：skills CLI
+npx skills add Vincentwei1021/video-shotcraft
+
+# 方式三：手动软链
+git clone https://github.com/Vincentwei1021/video-shotcraft.git
+ln -s &quot;$(pwd)/video-shotcraft&quot; ~/.codex/skills/video-shotcraft  # Codex
+ln -s &quot;$(pwd)/video-shotcraft&quot; ~/.claude/skills/video-shotcraft  # Claude Code</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
   </div>
 
   <article id="body" class="content-panel detail-body" style="margin-top:24px;">
@@ -84,5 +96,6 @@ ln -s &quot;$(pwd)/video-shotcraft&quot; ~/.claude/skills/video-shotcraft  # Cla
 
   <p class="footer">收录于 2026-08-26 · 更新于 2026-08-26 · AstraCraft Program 轻量索引</p>
 </main>
+<script src="../assets/copy.js"></script>
 </body>
 </html>

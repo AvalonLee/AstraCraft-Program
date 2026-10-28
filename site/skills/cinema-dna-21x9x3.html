@@ -37,7 +37,7 @@
   </header>
 
   <section class="hero-shell">
-    <div class="eyebrow">Agent Skill</div>
+    <div class="eyebrow">设计与创意</div>
     <div class="hero-copy-block">
       <h1 class="hero-title">Cinema DNA 21:9×3 电影画面生成 Skill</h1>
       <p class="hero-subtitle">Cinema DNA 21:9x3</p>
@@ -49,13 +49,20 @@
 
   <div class="card" style="margin-top:24px;">
     <div class="mini-tags">
-      <span>设计与创意</span><span>常规</span><span class="lic-badge lic-unknown" title="UNKNOWN">版权未声明</span><span>装进 Agent</span>
+      <span>设计与创意</span><span>常规</span><span class="verify-badge verify-needs-review">待复核</span><span class="lic-badge lic-unknown" title="UNKNOWN">版权未声明</span><span>装进 Agent</span>
     </div>
     <p class="muted detail-meta">面向 Codex 的电影感画面生成 Skill：把题材或一句剧情转译为真实电影镜头的 21:9 三联叙事画面，支持片名与主题海报。</p>
+    <p class="detail-verify-note">该条目待人工复核（许可证或分类需再确认），使用前先核对上游许可证。</p>
     <div class="link-row" style="margin-top:14px;">
       <a class="button button-secondary" href="https://github.com/dacnay816y62-hub/cinema-dna-21x9x3" target="_blank" rel="noopener">查看仓库 / 源码</a>
       <a class="button button-ghost" href="https://github.com/dacnay816y62-hub/cinema-dna-21x9x3" target="_blank" rel="noopener">项目主页</a>
     </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code># 克隆上游仓库到本地
+git clone https://github.com/dacnay816y62-hub/cinema-dna-21x9x3.git
+cd cinema-dna-21x9x3
+
+# 复制到 Codex skills 目录（PowerShell 示例；CODEX_HOME 可自定义）
+Copy-Item -Recurse . &quot;$env:USERPROFILE\.codex\skills\cinema-dna-21x9x3&quot;</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
   </div>
 
   <article id="body" class="content-panel detail-body" style="margin-top:24px;">
@@ -81,5 +88,6 @@ Copy-Item -Recurse . &quot;$env:USERPROFILE\.codex\skills\cinema-dna-21x9x3&quot
 
   <p class="footer">收录于 2026-08-26 · 更新于 2026-08-26 · AstraCraft Program 轻量索引</p>
 </main>
+<script src="../assets/copy.js"></script>
 </body>
 </html>

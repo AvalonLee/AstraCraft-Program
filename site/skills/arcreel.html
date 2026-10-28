@@ -37,7 +37,7 @@
   </header>
 
   <section class="hero-shell">
-    <div class="eyebrow">Agent Skill</div>
+    <div class="eyebrow">设计与创意</div>
     <div class="hero-copy-block">
       <h1 class="hero-title">ArcReel AI 视频生产工作台</h1>
       <p class="hero-subtitle">ArcReel — Self-Hosted AI Video Production Workbench</p>
@@ -52,10 +52,17 @@
       <span>设计与创意</span><span>观察</span><span class="lic-badge lic-copyleft" title="AGPL-3.0">部分开源</span><span>部署运行</span>
     </div>
     <p class="muted detail-meta">开源自托管的 AI 视频生产工作台：将小说、剧本或商品素材转化为角色一致、过程可控、成本可追踪的短视频，支持 Docker 一键部署、Agent 编排、剪映草稿导出。</p>
+    
     <div class="link-row" style="margin-top:14px;">
       <a class="button button-secondary" href="https://github.com/ArcReel/ArcReel" target="_blank" rel="noopener">查看仓库 / 源码</a>
       <a class="button button-ghost" href="https://github.com/ArcReel/ArcReel" target="_blank" rel="noopener">项目主页</a>
     </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code># 前提：Docker + Docker Compose
+git clone https://github.com/ArcReel/ArcReel.git
+cd ArcReel/deploy
+
+cp .env.example .env
+docker compose up -d</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
   </div>
 
   <article id="body" class="content-panel detail-body" style="margin-top:24px;">
@@ -81,5 +88,6 @@ docker compose up -d</code></pre>
 
   <p class="footer">收录于 2026-08-26 · 更新于 2026-08-26 · AstraCraft Program 轻量索引</p>
 </main>
+<script src="../assets/copy.js"></script>
 </body>
 </html>

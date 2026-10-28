@@ -51,8 +51,8 @@
       <div class="content-panel content-panel-featured">
         <div class="section-head library-head">
           <div>
-            <p class="panel-label">Random</p>
-            <h2 class="section-title">随机推荐</h2>
+            <p class="panel-label">Featured</p>
+            <h2 class="section-title">精选推荐</h2>
           </div>
         </div>
         <div class="featured-grid" id="featured-results"></div>
@@ -130,46 +130,6 @@
   </main>
   <script src="assets/app.js"></script>
   <div class="toast" id="toast"></div>
-  <script>
-    (function () {
-      "use strict";
-      var btn = document.getElementById("install-copy");
-      if (!btn) return;
-      btn.addEventListener("click", function () {
-        var target = document.getElementById(btn.getAttribute("data-copy-target"));
-        if (!target) return;
-        var text = (target.textContent || "").trim();
-        var toast = document.getElementById("toast");
-        var showToast = function (msg) {
-          if (!toast) return;
-          toast.textContent = msg;
-          toast.classList.add("visible");
-          setTimeout(function () { toast.classList.remove("visible"); }, 2200);
-        };
-        var mark = function () {
-          var old = btn.textContent;
-          btn.textContent = "已复制 ✓";
-          btn.classList.add("copied");
-          showToast("已复制到剪贴板，发给你的 AI Agent 即可安装");
-          setTimeout(function () { btn.textContent = old; btn.classList.remove("copied"); }, 1800);
-        };
-        var fallback = function () {
-          var ta = document.createElement("textarea");
-          ta.value = text;
-          ta.style.position = "fixed";
-          ta.style.opacity = "0";
-          document.body.appendChild(ta);
-          ta.focus(); ta.select();
-          try { document.execCommand("copy"); mark(); } catch (e) {}
-          document.body.removeChild(ta);
-        };
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(text).then(mark).catch(fallback);
-        } else {
-          fallback();
-        }
-      });
-    })();
-  </script>
+  <script src="assets/copy.js"></script>
 </body>
 </html>

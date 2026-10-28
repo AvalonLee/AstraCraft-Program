@@ -37,7 +37,7 @@
   </header>
 
   <section class="hero-shell">
-    <div class="eyebrow">Agent Skill</div>
+    <div class="eyebrow">技能工程</div>
     <div class="hero-copy-block">
       <h1 class="hero-title">Agent Skills 规范</h1>
       <p class="hero-subtitle">Agent Skills Specification</p>
@@ -49,13 +49,21 @@
 
   <div class="card" style="margin-top:24px;">
     <div class="mini-tags">
-      <span>技能工程</span><span>常规</span><span class="lic-badge lic-unknown" title="UNKNOWN">版权未声明</span><span>阅读参考</span>
+      <span>技能工程</span><span>常规</span><span class="verify-badge verify-needs-review">待复核</span><span class="lic-badge lic-unknown" title="UNKNOWN">版权未声明</span><span>阅读参考</span>
     </div>
     <p class="muted detail-meta">Anthropic 发起、社区共建的开放智能体技能格式标准，定义 SKILL.md 结构与按需三级加载机制。作为活的标准，本仓库始终指向官方最新版。</p>
+    <p class="detail-verify-note">该条目待人工复核（许可证或分类需再确认），使用前先核对上游许可证。</p>
     <div class="link-row" style="margin-top:14px;">
       <a class="button button-secondary" href="https://github.com/anthropics/skills" target="_blank" rel="noopener">查看仓库 / 源码</a>
       <a class="button button-ghost" href="https://agentskills.io/specification" target="_blank" rel="noopener">项目主页</a>
     </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code># 在线阅读（推荐，始终最新）：
+#   https://agentskills.io/specification
+
+# 如需本地离线快照（个人阅读用，勿回传本仓库）：
+git clone --depth 1 --filter=blob:none --sparse https://github.com/anthropics/skills /tmp/agent-skills-spec
+cd /tmp/agent-skills-spec
+git sparse-checkout set spec</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
   </div>
 
   <article id="body" class="content-panel detail-body" style="margin-top:24px;">
@@ -80,5 +88,6 @@ git sparse-checkout set spec</code></pre>
 
   <p class="footer">收录于 2026-08-10 · 更新于 2026-10-28 · AstraCraft Program 轻量索引</p>
 </main>
+<script src="../assets/copy.js"></script>
 </body>
 </html>

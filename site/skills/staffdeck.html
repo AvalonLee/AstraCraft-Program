@@ -37,7 +37,7 @@
   </header>
 
   <section class="hero-shell">
-    <div class="eyebrow">Agent Skill</div>
+    <div class="eyebrow">Agent 基础设施</div>
     <div class="hero-copy-block">
       <h1 class="hero-title">StaffDeck 企业数字员工平台</h1>
       <p class="hero-subtitle">StaffDeck — Enterprise Digital Employee Platform</p>
@@ -52,10 +52,18 @@
       <span>Agent 基础设施</span><span>常规</span><span class="lic-badge lic-copyleft" title="AGPL-3.0">部分开源</span><span>部署运行</span>
     </div>
     <p class="muted detail-meta">OpenBMB 开源的企业数字员工平台：把业务经验、SOP、决策标准与知识库沉淀为可持续运行的数字员工，支持状态机流程、文档感知检索、MCP/HTTP 工具执行、长期记忆与审计。</p>
+    
     <div class="link-row" style="margin-top:14px;">
       <a class="button button-secondary" href="https://github.com/OpenBMB/StaffDeck" target="_blank" rel="noopener">查看仓库 / 源码</a>
       <a class="button button-ghost" href="https://staffdeck.openbmb.cn/" target="_blank" rel="noopener">项目主页</a>
     </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code>git clone https://github.com/OpenBMB/StaffDeck.git
+cd StaffDeck
+python3 -m venv backend/.venv
+backend/.venv/bin/python -m pip install -e &quot;backend[dev]&quot;
+npm --prefix frontend-enterprise ci
+cp backend/.env.example backend/.env
+scripts/dev_up.sh --detach</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
   </div>
 
   <article id="body" class="content-panel detail-body" style="margin-top:24px;">
@@ -95,5 +103,6 @@ Copy-Item backend\.env.example backend\.env
 
   <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
 </main>
+<script src="../assets/copy.js"></script>
 </body>
 </html>

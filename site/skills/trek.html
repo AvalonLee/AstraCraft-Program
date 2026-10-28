@@ -37,7 +37,7 @@
   </header>
 
   <section class="hero-shell">
-    <div class="eyebrow">Agent Skill</div>
+    <div class="eyebrow">运维与自动化</div>
     <div class="hero-copy-block">
       <h1 class="hero-title">TREK 自托管旅行规划</h1>
       <p class="hero-subtitle">TREK Travel Planner</p>
@@ -52,10 +52,15 @@
       <span>运维与自动化</span><span>常规</span><span class="lic-badge lic-copyleft" title="AGPL-3.0">部分开源</span><span>部署运行</span>
     </div>
     <p class="muted detail-meta">自托管实时协作旅行规划器：日计划拖拽排线（OSRM 路由 + 2-opt 优化）、Leaflet/Mapbox/MapLibre 地图、16 种预订类型（航班/火车多段 + 4,045 内置机场时区）、费用分摊与多币种、打包清单、旅行日志、GPX/KML 导入导出、PWA 支持、SSO/Passkey/TOTP MFA，内置 AI 解析与 MCP addon。</p>
+    
     <div class="link-row" style="margin-top:14px;">
       <a class="button button-secondary" href="https://github.com/liketrek/TREK" target="_blank" rel="noopener">查看仓库 / 源码</a>
       <a class="button button-ghost" href="https://demo.liketrek.com" target="_blank" rel="noopener">项目主页</a>
     </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code>docker run -d -p 3000:3000 \
+  -e ENCRYPTION_KEY=$ENCRYPTION_KEY \
+  -v ./data:/app/data -v ./uploads:/app/uploads \
+  mauriceboe/trek</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
   </div>
 
   <article id="body" class="content-panel detail-body" style="margin-top:24px;">
@@ -64,7 +69,7 @@
 <h2>这是什么</h2>
 <p>TREK 是一个功能极其完整的自托管旅行规划器——不只是"存一下行程"，而是一套把计划、预订、地图、费用、协作、日志和 AI 全部打通的实时协作平台。核心卖点是<strong>每一步都自托管</strong>：数据在自己服务器上，地图和天气用免费开放源（OpenStreetMap / Open-Meteo），配 key 就增强、不配也能跑。</p>
 <p><strong>核心模块</strong>（admin 逐项开关）：</p>
-<p>| 模块 | 能力 | |------|------| | <strong>Planning</strong> | 日计划拖拽排序 + undo、地点/预订/备注跨日拖拽、地图 marker 直落日计划 | | <strong>Maps</strong> | Leaflet / Mapbox GL / MapLibre GL（OpenFreeMap 无 token），聚类、照片 marker、路线线段、3D 建筑（Mapbox only） | | <strong>Place</strong> | Google Places（有 key 时含照片/评分/营业时间）或 OpenStreetMap（无 key）；Wikipedia/Wikidata/Wikimedia 补充描述 | | <strong>Routes</strong> | OSRM 路由（驾车/步行/骑行）、最近邻 + 2-opt 自动排序（锁定酒店锚点不动）、Transitous 公交门到门 | | <strong>Bookings</strong> | 16 种预订类型（航班/火车多段、酒店、租车……），4,045 内置机场数据免 key 解析时区 | | <strong>Costs</strong> | 整数分币种、多付款人、均分/自定义分摊、结算建议 + 结算日志、汇率冻结（Frankfurter 免 key） | | <strong>Packing</strong> | 分类打包清单、模板、多人实时勾选 | | <strong>Journal</strong> | 旅行日志（markdown），照片集成 | | <strong>Collab</strong> | WebSocket 实时协作，多人同时编辑无冲突 | | <strong>AI + MCP</strong> | 内置 AI 解析 addon（识别预订邮件/PDF）、MCP addon（agent 可通过 MCP 工具读写行程） | | <strong>Vacay / Atlas</strong> | 度假村/目的地灵感板、地图 atlas |</p>
+<table><thead><tr><th>模块</th><th>能力</th></tr></thead><tbody><tr><td><strong>Planning</strong></td><td>日计划拖拽排序 + undo、地点/预订/备注跨日拖拽、地图 marker 直落日计划</td></tr><tr><td><strong>Maps</strong></td><td>Leaflet / Mapbox GL / MapLibre GL（OpenFreeMap 无 token），聚类、照片 marker、路线线段、3D 建筑（Mapbox only）</td></tr><tr><td><strong>Place</strong></td><td>Google Places（有 key 时含照片/评分/营业时间）或 OpenStreetMap（无 key）；Wikipedia/Wikidata/Wikimedia 补充描述</td></tr><tr><td><strong>Routes</strong></td><td>OSRM 路由（驾车/步行/骑行）、最近邻 + 2-opt 自动排序（锁定酒店锚点不动）、Transitous 公交门到门</td></tr><tr><td><strong>Bookings</strong></td><td>16 种预订类型（航班/火车多段、酒店、租车……），4,045 内置机场数据免 key 解析时区</td></tr><tr><td><strong>Costs</strong></td><td>整数分币种、多付款人、均分/自定义分摊、结算建议 + 结算日志、汇率冻结（Frankfurter 免 key）</td></tr><tr><td><strong>Packing</strong></td><td>分类打包清单、模板、多人实时勾选</td></tr><tr><td><strong>Journal</strong></td><td>旅行日志（markdown），照片集成</td></tr><tr><td><strong>Collab</strong></td><td>WebSocket 实时协作，多人同时编辑无冲突</td></tr><tr><td><strong>AI + MCP</strong></td><td>内置 AI 解析 addon（识别预订邮件/PDF）、MCP addon（agent 可通过 MCP 工具读写行程）</td></tr><tr><td><strong>Vacay / Atlas</strong></td><td>度假村/目的地灵感板、地图 atlas</td></tr></tbody></table>
 <p><strong>技术栈</strong>：NestJS 11 + React 19 + Vite + SQLite + WebSocket（ws）+ Zustand + Tailwind；JWT + OAuth 2.1 + OIDC + Passkeys (WebAuthn) + TOTP MFA。</p>
 <p><strong>部署</strong>：Docker / Docker Compose / Helm (Kubernetes) / PWA。</p>
 <h2>怎么部署运行</h2>
@@ -91,5 +96,6 @@ helm install trek trek/trek</code></pre>
 
   <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
 </main>
+<script src="../assets/copy.js"></script>
 </body>
 </html>

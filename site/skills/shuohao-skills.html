@@ -37,7 +37,7 @@
   </header>
 
   <section class="hero-shell">
-    <div class="eyebrow">Agent Skill</div>
+    <div class="eyebrow">写作与文档</div>
     <div class="hero-copy-block">
       <h1 class="hero-title">shuohao-skills AI 短剧制作技能合集</h1>
       <p class="hero-subtitle">shuohao-skills — AI Short-Drama Production Skill Suite</p>
@@ -52,10 +52,22 @@
       <span>写作与文档</span><span>常规</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>装进 Agent</span>
     </div>
     <p class="muted detail-meta">面向 Claude Code 与 Codex 的 AI 短剧制作 skill 合集：从一本小说到直接喂生成管线的制作素材——拆角色、排大纲、出场景与道具设定、写剧本、切分镜。5 个技能线性协作，每段自带质量门脚本检查。</p>
+    
     <div class="link-row" style="margin-top:14px;">
       <a class="button button-secondary" href="https://github.com/eternityspring/shuohao-skills" target="_blank" rel="noopener">查看仓库 / 源码</a>
       <a class="button button-ghost" href="https://github.com/eternityspring/shuohao-skills" target="_blank" rel="noopener">项目主页</a>
     </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code># 克隆仓库
+git clone https://github.com/eternityspring/shuohao-skills.git
+cd shuohao-skills
+
+# 自动检测并安装到 Claude Code / Codex，或指定
+./scripts/install.sh              # 自动检测
+./scripts/install.sh --codex      # 仅装到 Codex
+./scripts/install.sh novel-characters  # 只装某一个
+
+# 手动软链
+ln -s &quot;$PWD/skills/novel-characters&quot; ~/.codex/skills/novel-characters</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
   </div>
 
   <article id="body" class="content-panel detail-body" style="margin-top:24px;">
@@ -84,5 +96,6 @@ ln -s &quot;$PWD/skills/novel-characters&quot; ~/.codex/skills/novel-characters<
 
   <p class="footer">收录于 2026-08-26 · 更新于 2026-08-26 · AstraCraft Program 轻量索引</p>
 </main>
+<script src="../assets/copy.js"></script>
 </body>
 </html>

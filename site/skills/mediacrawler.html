@@ -37,7 +37,7 @@
   </header>
 
   <section class="hero-shell">
-    <div class="eyebrow">Agent Skill</div>
+    <div class="eyebrow">研究与信息获取</div>
     <div class="hero-copy-block">
       <h1 class="hero-title">MediaCrawler 自媒体爬虫</h1>
       <p class="hero-subtitle">MediaCrawler</p>
@@ -52,10 +52,16 @@
       <span>研究与信息获取</span><span>常规</span><span class="lic-badge lic-commercial" title="LicenseRef-NC-Learning">商用需授权</span><span>接入 Agent</span>
     </div>
     <p class="muted detail-meta">多平台自媒体数据采集工具：小红书 / 抖音 / 快手 / B 站 / 微博 / 贴吧 / 知乎的关键词搜索、帖子详情、二级评论、创作者主页全支持；基于 Playwright 浏览器自动化保留登录态（无需 JS 逆向），CDP 模式复用已有 Chrome 降低风控风险；支持 IP 代理池、登录态缓存、评论词云图。</p>
+    
     <div class="link-row" style="margin-top:14px;">
       <a class="button button-secondary" href="https://github.com/NanmiCoder/MediaCrawler" target="_blank" rel="noopener">查看仓库 / 源码</a>
       <a class="button button-ghost" href="https://github.com/NanmiCoder/MediaCrawler" target="_blank" rel="noopener">项目主页</a>
     </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code>cd MediaCrawler
+uv sync
+
+# 仅 Playwright 标准模式需要
+uv run playwright install</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
   </div>
 
   <article id="body" class="content-panel detail-body" style="margin-top:24px;">
@@ -64,9 +70,9 @@
 <h2>这是什么</h2>
 <p>MediaCrawler 是一个功能强大的多平台自媒体数据采集工具，支持 7 大平台（小红书、抖音、快手、B 站、微博、贴吧、知乎）的关键词搜索、帖子详情、二级评论和创作者主页爬取。核心思路：<strong>用 Playwright 浏览器自动化保留登录态，通过 JS 表达式获取签名参数</strong>——无需逆向复杂加密算法，大幅降低技术门槛。</p>
 <p><strong>平台 × 能力矩阵</strong>（全平台支持）：</p>
-<p>| 能力 | 小红书 | 抖音 | 快手 | B 站 | 微博 | 贴吧 | 知乎 | |------|--------|------|------|------|------|------|------| | 关键词搜索 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | 指定帖子 ID 爬取 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | 二级评论 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | 指定创作者主页 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | 登录态缓存 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | IP 代理池 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | 评论词云图 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |</p>
+<table><thead><tr><th>能力</th><th>小红书</th><th>抖音</th><th>快手</th><th>B 站</th><th>微博</th><th>贴吧</th><th>知乎</th></tr></thead><tbody><tr><td>关键词搜索</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr><tr><td>指定帖子 ID 爬取</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr><tr><td>二级评论</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr><tr><td>指定创作者主页</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr><tr><td>登录态缓存</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr><tr><td>IP 代理池</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr><tr><td>评论词云图</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr></tbody></table>
 <p><strong>两种浏览器模式</strong>：</p>
-<p>| 模式 | 说明 | |------|------| | <strong>CDP 模式（推荐）</strong> | 连接已有 Chrome（需开启远程调试），复用已有登录态 / Cookie / 扩展，大幅降低风控检测风险 | | <strong>Playwright 标准模式</strong> | 启动新浏览器实例 + 扫码登录；需安装浏览器驱动 |</p>
+<table><thead><tr><th>模式</th><th>说明</th></tr></thead><tbody><tr><td><strong>CDP 模式（推荐）</strong></td><td>连接已有 Chrome（需开启远程调试），复用已有登录态 / Cookie / 扩展，大幅降低风控检测风险</td></tr><tr><td><strong>Playwright 标准模式</strong></td><td>启动新浏览器实例 + 扫码登录；需安装浏览器驱动</td></tr></tbody></table>
 <h2>怎么接入</h2>
 <p>前置依赖：uv（Python 包管理）、Node.js &gt;= 16、Chrome &gt;= 144（CDP 模式）。</p>
 <pre><code class="lang-bash">cd MediaCrawler
@@ -100,5 +106,6 @@ uv run main.py --help</code></pre>
 
   <p class="footer">收录于 2026-09-05 · 更新于 2026-09-05 · AstraCraft Program 轻量索引</p>
 </main>
+<script src="../assets/copy.js"></script>
 </body>
 </html>

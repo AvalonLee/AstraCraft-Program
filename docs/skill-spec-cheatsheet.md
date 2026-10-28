@@ -1,6 +1,6 @@
 # Agent Skills 规范速查
 
-判断一个 skill 是否符合规范，是 [H3 文档可用](admission-criteria.md#h3-文档可用)
+判断一个 skill 是否符合规范，是 [A2 文档可用](admission-criteria.md#a2-文档可用)
 门槛的核心依据。这份速查表用于收录时快速核对。
 
 规范来源：[agentskills.io/specification](https://agentskills.io/specification) ·
@@ -28,7 +28,7 @@ allowed-tools: Read Write Bash
 | `name` | ✅ | ≤64 字符；仅小写字母、数字、连字符；不可首尾或连续连字符；**必须与父目录名一致** | 目录名对不上是常见错误，会导致 skill 加载失败 |
 | `description` | ✅ | ≤1024 字符 | **最关键**。必须同时写清「做什么」和「何时用」——只写功能不写触发场景的，Agent 不知道什么时候该加载它 |
 | `license` | ○ | 许可证名或指向内置许可证文件 | **务必与目录内 LICENSE 交叉核对**，不一致按红灯处理 |
-| `compatibility` | ○ | ≤500 字符 | 环境要求，收录时抄进 README 的「怎么装」段 |
+| `compatibility` | ○ | ≤500 字符 | 环境要求，收录时抄进条目「怎么上手」小节 |
 | `metadata` | ○ | 任意键值对 | `author` / `version` 嵌在这里，**不是顶层字段**。顶层写 `version:` 是常见错误 |
 | `allowed-tools` | ○ | 空格分隔的工具名 | 实验性字段，各实现支持度不一 |
 
@@ -50,7 +50,7 @@ description: 从 PDF 提取文本、表格与元数据。当用户上传 PDF 文
 
 前半句「做什么」，后半句「何时用」并且列出了具体触发场景。
 
-**收录判断**：description 里没有「当…时使用」这类触发语义的，H3 记不通过。
+**收录判断**：description 里没有「当…时使用」这类触发语义的，A2 记不通过。
 
 ---
 
@@ -91,7 +91,7 @@ skill-name/
 
 倒数第二条容易被忽略但很重要：**收录前扫一遍 `scripts/`**，见过上游脚本里残留
 测试用的 token 或 `/Users/someone/...` 路径的情况。发现了就在条目
-`SKILL.md` 的「注意事项」里记下来提醒使用者。
+`ENTRY.md` 的「注意事项」里记下来提醒使用者。
 
 ---
 
@@ -104,7 +104,7 @@ skill-name/
 | `name` ≠ 目录名 | skill 加载失败 | 记入「注意事项」，提示手动改名 |
 | `description` 只写功能不写触发场景 | Agent 不会主动加载 | 记入「注意事项」 |
 | `version` / `author` 写在顶层 | 部分实现解析报错 | 记入「注意事项」，不影响收录 |
-| 完全没有 frontmatter | 不是合法 skill | 不收，或改按 `kind: cli-tool` 收录 |
+| 完全没有 frontmatter | 不是合法 skill | 不收，或改按 `mode: connect` 收录 |
 | `license` 与 LICENSE 文件冲突 | 权利状态不明 | 以 LICENSE 为准填 SPDX，并在 `risk_notes` 记录 |
 | 无 LICENSE 文件 | 默认保留所有权利 | `license` 填 `UNKNOWN`，提示谨慎使用 |
 
@@ -112,9 +112,9 @@ skill-name/
 
 ## 与本仓库条目 frontmatter 的字段映射
 
-收录时可以直接从上游 SKILL.md 抄过来的字段（写入本条目 `SKILL.md` 的 frontmatter）：
+收录时可以直接从上游 SKILL.md 抄过来的字段（写入本条目 `ENTRY.md` 的 frontmatter）：
 
-| 上游 SKILL.md | → | 条目 SKILL.md frontmatter |
+| 上游 SKILL.md | → | 条目 ENTRY.md frontmatter |
 |---|---|---|
 | `name` | → | `id`（若合法）、`name_en` |
 | `description` | → | `summary_en` 的素材（精简到 200 字符内并翻译成 `summary_zh`） |

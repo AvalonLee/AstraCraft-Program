@@ -6,8 +6,8 @@ from __future__ import annotations
 import argparse
 import json
 import os
-import subprocess
 import tempfile
+import time
 import urllib.error
 import urllib.request
 from datetime import datetime, timezone
@@ -19,15 +19,21 @@ try:
 except ModuleNotFoundError:  # direct: python scripts/verify_upstreams.py
     from upstream_verify import UpstreamFacts, normalize_github_repo, verify_entry
 
+try:
+    from scripts._common import MODE_HEADINGS, discover_entries, extract_section_code
+except ModuleNotFoundError:  # direct: python scripts/verify_upstreams.py
+    from _common import MODE_HEADINGS, discover_entries, extract_section_code
+
 
 Fetcher = Callable[[str], dict]
 
+MANUAL_REVIEW_PATH = Path("verification/manual-review.json")
+
 CANDIDATE_TAGS = {
     "dev-engineering": ["software-engineering", "code-review", "testing"],
-    "data-analytics": ["data", "analytics", "visualization"],
     "research-intel": ["research", "search", "intelligence"],
     "ops-automation": ["devops", "automation", "deployment"],
-    "dsh": ["dsh", "deepseek-harness", "plugin"],
+    "agent-infra": ["dsh", "deepseek-harness", "plugin"],
 }
 
 
@@ -42,7 +48,7 @@ def candidate_entries(candidates: dict[str, list[dict]], priority: str = "primar
             records.append({
                 "id": f"{owner}-{name}",
                 "category": category,
-                "tags": CANDIDATE_TAGS[category],
+                "tags": CANDIDATE_TAGS.get(category, []),
                 "repo": repo,
                 "license": "UNKNOWN",
                 "tier": "watch",
@@ -52,18 +58,96 @@ def candidate_entries(candidates: dict[str, list[dict]], priority: str = "primar
     return records
 
 
-def build_snapshot(entries: list[dict], fetcher: Fetcher, generated_at: str) -> tuple[dict, int]:
+def entries_catalog() -> list[dict]:
+    """把 entries/*/ENTRY.md 的 frontmatter 与上手指令转成核验输入。"""
+    records = []
+    for entry in discover_entries():
+        body = entry.entry_file.read_text(encoding="utf-8").split("\n---", 1)[-1]
+        records.append({
+            "id": entry.id,
+            "category": entry.meta.get("category"),
+            "tags": entry.meta.get("tags") or [],
+            "repo": entry.meta.get("repo"),
+            "license": entry.meta.get("license", "UNKNOWN"),
+            "tier": entry.tier,
+            "risk_notes": entry.meta.get("risk_notes") or "",
+            "install_text": extract_section_code(
+                body, MODE_HEADINGS.get(str(entry.meta.get("mode", "")), ())
+            ),
+        })
+    return records
+
+
+def load_manual_review(path: Path) -> dict[str, dict]:
+    if not path.exists():
+        return {}
+    return dict(json.loads(path.read_text(encoding="utf-8")).get("entries") or {})
+
+
+def _manual_override(
+    entry: dict,
+    facts: UpstreamFacts,
+    manual_review: dict[str, dict],
+    blob_sha: Callable[[str, str], str] | None = None,
+) -> dict | None:
+    record = manual_review.get(str(entry["id"]))
+    if not record or record.get("license") != entry.get("license"):
+        return None
+    if record.get("head_sha") == facts.head_sha:
+        return record
+    path, sha = record.get("evidence_path"), record.get("evidence_sha")
+    # 上游有新提交不要紧，证据文件（LICENSE / README）内容没变就继续有效
+    if blob_sha and path and sha:
+        try:
+            if blob_sha(facts.repo, path) == sha:
+                return record
+        except Exception:
+            return None
+    return None
+
+
+def _evidence_blob_sha(repo: str, path: str) -> str:
+    owner_repo = normalize_github_repo(repo).removeprefix("https://github.com/")
+    data = _request_json(f"https://api.github.com/repos/{owner_repo}/contents/{path}")
+    return str(data.get("sha") or "")
+
+
+def build_snapshot(
+    entries: list[dict],
+    fetcher: Fetcher,
+    generated_at: str,
+    manual_review: dict[str, dict] | None = None,
+    blob_sha: Callable[[str, str], str] | None = None,
+) -> tuple[dict, int]:
     results: dict[str, dict] = {}
     blocked = False
     for entry in entries:
-        payload = fetcher(str(entry["repo"]))
+        try:
+            payload = fetcher(str(entry["repo"]))
+        except Exception:  # 单条网络/命令失败不该毁掉整轮核验
+            results[str(entry["id"])] = {
+                "repo": normalize_github_repo(str(entry["repo"])),
+                "head_sha": "",
+                "status": "needs-review",
+                "health_score": 0,
+                "max_tier": "watch",
+                "issues": ["E_UPSTREAM_UNREACHABLE"],
+                "archived": False,
+                "license": "UNKNOWN",
+                "pushed_at": "",
+                "stars": 0,
+            }
+            continue
+        time.sleep(0.15)  # 放慢批量请求，降低 GitHub 二次限流概率
         facts = UpstreamFacts(**payload)
         result = verify_entry(entry, facts)
-        blocked = blocked or result.status == "blocked"
+        override = _manual_override(entry, facts, manual_review or {}, blob_sha)
+        status = "verified" if override else result.status
+        blocked = blocked or status == "blocked"
         results[str(entry["id"])] = {
             "repo": normalize_github_repo(facts.repo),
             "head_sha": facts.head_sha,
-            "status": result.status,
+            "status": status,
             "health_score": result.health_score,
             "max_tier": result.max_tier,
             "issues": list(result.issue_codes),
@@ -71,6 +155,11 @@ def build_snapshot(entries: list[dict], fetcher: Fetcher, generated_at: str) -> 
             "license": facts.api_license,
             "pushed_at": facts.pushed_at,
             "stars": facts.stars,
+            **(
+                {"manual_review": {"reviewed_at": override.get("reviewed_at"), "evidence": override.get("evidence")}}
+                if override
+                else {}
+            ),
         }
     return {"generated_at": generated_at, "entries": results}, int(blocked)
 
@@ -116,19 +205,22 @@ def _request_json(url: str) -> dict:
     if token:
         headers["Authorization"] = f"Bearer {token}"
     request = urllib.request.Request(url, headers=headers)
-    with urllib.request.urlopen(request, timeout=20) as response:
-        return json.load(response)
-
-
-def _git_head_sha(repo: str) -> str:
-    result = subprocess.run(
-        ["git", "ls-remote", f"{normalize_github_repo(repo)}.git", "HEAD"],
-        check=True,
-        capture_output=True,
-        text=True,
-        timeout=30,
-    )
-    return result.stdout.split()[0] if result.stdout.split() else ""
+    last_error: Exception | None = None
+    # 全量刷新会连续打上百次请求，GitHub 偶发握手超时/连接重置；重试避免一次抖动毁掉整轮
+    for attempt in range(1, 5):
+        try:
+            with urllib.request.urlopen(request, timeout=20) as response:
+                return json.load(response)
+        except urllib.error.HTTPError as error:
+            if error.code in (403, 429) and attempt < 4:
+                time.sleep(float(error.headers.get("Retry-After") or 5))
+                continue
+            raise
+        except OSError as error:
+            last_error = error
+            if attempt < 4:
+                time.sleep(2 * attempt)
+    raise last_error  # type: ignore[misc]
 
 
 def fetch_github_facts(repo: str) -> dict:
@@ -144,9 +236,11 @@ def fetch_github_facts(repo: str) -> dict:
         if error.code != 404:
             raise
         has_readme = False
+    branch = str(data.get("default_branch") or "main")
+    commit = _request_json(f"{base}/commits/{branch}")
     return {
         "repo": normalized,
-        "head_sha": _git_head_sha(normalized),
+        "head_sha": str(commit.get("sha") or ""),
         "archived": bool(data.get("archived")),
         "stars": int(data.get("stargazers_count") or 0),
         "pushed_at": str(data.get("pushed_at") or ""),
@@ -165,7 +259,7 @@ def _load_catalog(path: Path) -> list[dict]:
     return data
 
 
-def _offline_check(entries: list[dict], snapshot: dict) -> int:
+def _offline_check(entries: list[dict], snapshot: dict, manual_review: dict[str, dict] | None = None) -> int:
     by_repo = {
         normalize_github_repo(str(value["repo"])): value
         for value in (snapshot.get("entries") or {}).values()
@@ -176,7 +270,8 @@ def _offline_check(entries: list[dict], snapshot: dict) -> int:
             return 1
         declared = str(entry.get("license", "UNKNOWN"))
         detected = str(value.get("license", declared))
-        if declared not in {"UNKNOWN", "NOASSERTION", ""} and detected != declared:
+        reviewed = (manual_review or {}).get(str(entry.get("id")), {}).get("license") == declared
+        if not reviewed and declared not in {"UNKNOWN", "NOASSERTION", ""} and detected != declared:
             return 1
     return 0
 
@@ -187,26 +282,37 @@ def main(argv: list[str] | None = None, fetcher: Fetcher | None = None) -> int:
     mode.add_argument("--refresh", action="store_true", help="联网刷新并写入快照")
     mode.add_argument("--check", action="store_true", help="只比较，不写入快照")
     source = parser.add_mutually_exclusive_group(required=True)
+    source.add_argument("--entries", action="store_true", help="核验 entries/ 全部条目")
     source.add_argument("--catalog", type=Path, help="待核验 JSON 数组")
     source.add_argument("--candidates", type=Path, help="候选清单 JSON")
     parser.add_argument("--candidate-priority", default="primary")
     parser.add_argument("--merge", action="store_true", help="保留现有快照并合并本次结果")
     parser.add_argument("--snapshot", type=Path, default=Path("verification/upstream-snapshot.json"))
+    parser.add_argument("--manual-review", type=Path, default=MANUAL_REVIEW_PATH, help="人工复核清单 JSON")
     args = parser.parse_args(argv)
 
     generated_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    manual_review = load_manual_review(args.manual_review)
     if args.candidates:
         raw_candidates = json.loads(args.candidates.read_text(encoding="utf-8"))
         entries = candidate_entries(raw_candidates, args.candidate_priority)
+    elif args.entries:
+        entries = entries_catalog()
     else:
         entries = _load_catalog(args.catalog)
     if args.check and fetcher is None:
         if not args.snapshot.exists():
             return 1
         current = json.loads(args.snapshot.read_text(encoding="utf-8"))
-        return _offline_check(entries, current)
+        return _offline_check(entries, current, manual_review)
 
-    fresh, blocked = build_snapshot(entries, fetcher or fetch_github_facts, generated_at)
+    fresh, blocked = build_snapshot(
+        entries,
+        fetcher or fetch_github_facts,
+        generated_at,
+        manual_review,
+        _evidence_blob_sha if manual_review else None,
+    )
     if args.refresh:
         if args.merge and args.snapshot.exists():
             current = json.loads(args.snapshot.read_text(encoding="utf-8"))

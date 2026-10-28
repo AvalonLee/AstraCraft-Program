@@ -17,6 +17,30 @@
 ### 新增
 - **Onetake 一镜到底连贯动效视频技能（2026-10-28）**：收录 `design-creative/onetake`（PolyForm Noncommercial 1.0.0）。★3.4k 的 Claude Agent Skill，让 coding agent 拍「一镜到底」的产品发布影片与功能演示：全程一个连续镜头，每个节拍从上一拍自然生长，由连贯性 oracle 逐帧验收，解决 AI 生成视频「切幻灯片」式硬切；八步流程（解构参考 → 概念 → 分镜 → 素材/UI → 合成 → 渲染 → 音效 → 校验），产出 4K60 带真实 UI、运动模糊与音效。注意 PolyForm Noncommercial 仅限非商业用途（商用请用同类 Apache-2.0 条目 video-shotcraft）；依赖 Python 科学计算栈 + playwright + ffmpeg + Node；上游 2026-09-26 创建，尚属新项目。评级：常规。目录总数由 95 增至 **96**。
 
+### 更新
+
+- **4 条许可证按上游更正（2026-10-28）**：全量核验发现 4 条声明与上游 LICENSE 不一致，已按上游现状更新——`agent-infra/caveman` 整仓改为 Apache-2.0（原 MIT + BSL-1.1 拆分，上游已整仓开源）、`design-creative/directors-console` 由专有改为 MIT、`design-creative/toonflow` 由 Apache-2.0 改为 MIT；`agent-infra/codexplusplus` 保留 AGPL-3.0-only 的精确写法，核验器改为把 GitHub 返回的旧别名 `AGPL-3.0` 视为同一协议，不再误报冲突。
+- **2 条已归档条目降为观察（2026-10-28）**：`agent-infra/deepseek-pp`、`design-creative/openscreen` 上游仓库已归档，评级由常规降为观察（watch）；openscreen 使用建议改为其社区 fork。
+- **20 条许可证人工复核（2026-10-28）**：逐条对照上游 LICENSE 与 README，更正 4 条错误声明——`agent-infra/cc-haha` 改为自定义 Community Source License 1.0（原文案误标 MIT）、`design-creative/huobao-canvas` 改为 CC BY-NC-SA 4.0（误标 MIT）、`design-creative/bigbanana-ai-director` 以 LICENSE 全文改为 BigBanana Community License 1.0、`business-office/toolknit-desktop` 改为 PolyForm Noncommercial 1.0.0（上游 2026-10-14 换协议，原 Apache-2.0 不再适用）；`meta-skillcraft/agent-skills-spec` 因规范页与仓库均无许可声明改为 UNKNOWN。其余 14 条声明与上游一致，另有 6 条上游确实没有许可声明（保持 UNKNOWN）；这些条目因上游许可不可机器识别而保留 needs-review。分类置信度误报通过补齐关键词（`self-hosted`、`web-crawler`）消除。
+- **人工复核清单（2026-10-28）**：新增 `verification/manual-review.json`，把 14 条「声明已核实、上游许可不可机器识别」的条目提升为 `verified`，推荐范围由 74 条扩到 88 条；判定按证据文件（LICENSE / README）的 blob SHA 校验，条目声明或证据内容一变即失效并退回 `needs-review`。另将协议分桶文案「商用授权」改为「商用需授权」，避免被读成必须付费。
+- **核验状态对账（2026-10-28）**：修复多个条目指向同一上游仓库（`anthropics/skills`）时状态互相覆盖的问题，站点改为按条目 id 对账。
+- **推荐技能改为在线优先（2026-10-28）**：根 `SKILL.md` 从「默认离线、联网需用户同意」改为「先联网核对最终候选的上游状态（归档 / 最近推送 / 许可证）」，网络失败时回退本地 `skills.json` 并在结果顶部明确提示原因与数据日期；在线核验只读公开元数据，不 clone、不安装。
+- **推荐口径收紧（2026-10-28）**：观察期（`tier: watch`）条目只进清单、不进推荐；`skills.json` 新增 `stars` 字段，推荐打分把 star 量级作为弱权重（≥1000 +1、<50 −1）。
+
+### 结构
+
+- **目录重新界定（2026-10-28）**：从「Agent Skill 索引」扩为「AI 开源项目索引」，收能被 Agent 安装、接入、部署运行或阅读参考的 AI 开源项目；明确不收模型权重、数据集、纯训练库与无使用路径的论文仓。**破坏性变更**：旧 `entries/**/SKILL.md` 路径失效，GitHub 不做重定向。
+  - **条目文件改名**：96 个 `entries/**/SKILL.md` → `ENTRY.md`，消除“条目会被 Agent 当成技能注册”的歧义；根 `SKILL.md` 仍是唯一可安装技能。
+  - **`kind` → `mode`**：消费方式四值 `install / connect / deploy / read`，单值主模式，判定顺序 install > deploy > connect > read；全部条目重标。
+  - **正文小节按 mode 分标题**：怎么安装 / 怎么接入 / 怎么部署运行 / 怎么阅读。
+  - **分类减法**：`dsh` 并入 `agent-infra`（保留 `dsh` 标签），移除空分类 `data-analytics`；一级分类由 10 个减为 8 个。
+  - **机器契约**：`site/data/skills.json` 升级为对外契约，新增 `schema_version`、`dataset_version`、`mode`、`verification_status`、`health_score`、`checked_at`、`quickstart`、`source_url`；harness 不再需要 clone 仓库。
+  - **推荐技能**：改为拉取单文件 `skills.json`；一份 skill 支持“推荐”与“清单”两种模式；只推 `verified` 条目。
+  - **核验**：`verify_upstreams.py` 新增 `--entries`，覆盖全部条目；`verification/catalog.json` 退役。
+  - **验收**：README 可复述边界；只拉 JSON 可完成筛选与上手；同画像在 `install` 与 `deploy` 下返回不同结果。
+
+---
+
 ## 2026-09
 
 ### 新增

@@ -5,10 +5,12 @@ import pytest
 
 from scripts._common import discover_entries
 from scripts.select_candidates import CandidateCapacityError, select_candidates
+from scripts.upstream_verify import licenses_agree
 
 
 ROOT = Path(__file__).resolve().parents[1]
-TARGETS = {"dev-engineering", "data-analytics", "research-intel", "ops-automation", "dsh"}
+TARGETS = {"dev-engineering", "research-intel", "ops-automation", "agent-infra"}
+TIER_RANK = {"watch": 0, "standard": 1, "core": 2}
 
 
 def load_candidates() -> dict:
@@ -49,10 +51,10 @@ def test_selector_replaces_blocked_primary_only_with_same_category_fallback() ->
 
 def test_selector_fails_when_category_has_insufficient_capacity() -> None:
     data = load_candidates()
-    statuses = {item["repo"]: "blocked" for item in data["dsh"]}
+    statuses = {item["repo"]: "blocked" for item in data["agent-infra"]}
 
     with pytest.raises(CandidateCapacityError) as exc:
-        select_candidates({"dsh": data["dsh"]}, statuses, per_category=5)
+        select_candidates({"agent-infra": data["agent-infra"]}, statuses, per_category=5)
 
     assert exc.value.code == "E_CATEGORY_CAPACITY"
 
@@ -73,7 +75,9 @@ def test_expanded_entries_match_selected_upstream_snapshot() -> None:
         if entry.meta["repo"].lower() not in by_repo:
             continue  # 台架快照之外的人工新增条目，不作快照对账
         upstream = by_repo[entry.meta["repo"].lower()]
-        assert upstream["status"] != "blocked"
-        assert entry.meta["license"] == upstream["license"]
-        if upstream["status"] == "needs-review":
-            assert entry.tier == "watch"
+        if upstream["status"] == "blocked":
+            assert entry.tier == "watch"  # 归档条目保留，但只能处于观察期
+            continue
+        if upstream["license"] not in {"", "UNKNOWN", "NOASSERTION"}:
+            assert licenses_agree(entry.meta["license"], upstream["license"])
+        assert TIER_RANK[entry.tier] <= TIER_RANK[upstream["max_tier"]]

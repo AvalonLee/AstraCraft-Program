@@ -20,7 +20,7 @@ RESTRICTED_LICENSES = {"UNKNOWN", "Commercial", "Proprietary", "CC-BY-NC-4.0"}
 class ProjectProfile:
     categories: tuple[str, ...]
     tags: tuple[str, ...]
-    desired_kinds: tuple[str, ...]
+    desired_modes: tuple[str, ...]
     commercial: bool
     offline: bool
     doc_languages: tuple[str, ...]
@@ -30,7 +30,7 @@ class ProjectProfile:
         return cls(
             tuple(value.get("categories") or []),
             tuple(sorted({str(tag).lower() for tag in value.get("tags") or []})),
-            tuple(value.get("desired_kinds") or []),
+            tuple(value.get("desired_modes") or []),
             bool(value.get("commercial")),
             bool(value.get("offline")),
             tuple(value.get("doc_languages") or []),
@@ -57,9 +57,9 @@ def score_entry(entry: dict, profile: ProjectProfile) -> ScoredEntry:
     for tag in sorted(set(entry.get("tags") or []) & set(profile.tags)):
         score += 2
         reasons.append(f"TAG_MATCH:{tag}:+2")
-    if entry.get("kind") in profile.desired_kinds:
+    if entry.get("mode") in profile.desired_modes:
         score += 1
-        reasons.append("KIND_MATCH:+1")
+        reasons.append("MODE_MATCH:+1")
     tier = entry.get("tier")
     if tier == "core":
         score += 2
@@ -68,15 +68,27 @@ def score_entry(entry: dict, profile: ProjectProfile) -> ScoredEntry:
         score += 1
         reasons.append("TIER_STANDARD:+1")
     license_id = str(entry.get("license", "UNKNOWN"))
-    if profile.commercial and license_id in RESTRICTED_LICENSES:
+    # 契约里有 license_bucket 就以它为准，否则退回按协议名判断
+    bucket = str(entry.get("license_bucket") or "")
+    if not bucket:
+        bucket = "commercial" if license_id in RESTRICTED_LICENSES else "open" if license_id in OPEN_LICENSES else "unknown"
+    if profile.commercial and bucket in {"commercial", "unknown"}:
         score -= 2
         reasons.append("LICENSE_COMMERCIAL_RISK:-2")
-    elif license_id in OPEN_LICENSES:
+    elif bucket in {"open", "copyleft"}:
         score += 1
         reasons.append("LICENSE_MATCH:+1")
     if set(entry.get("doc_languages") or []) & set(profile.doc_languages):
         score += 1
         reasons.append("DOC_LANGUAGE_MATCH:+1")
+    stars = entry.get("stars")
+    if isinstance(stars, int):
+        if stars >= 1000:
+            score += 1
+            reasons.append("STARS_POPULAR:+1")
+        elif stars < 50:
+            score -= 1
+            reasons.append("STARS_LOW:-1")
     risk = str(entry.get("risk_notes") or "").lower()
     if profile.offline and any(word in risk for word in ("network", "联网", "cloud", "云端")):
         score -= 3
@@ -85,9 +97,22 @@ def score_entry(entry: dict, profile: ProjectProfile) -> ScoredEntry:
 
 
 def recommend(entries: list[dict], profile: ProjectProfile, limit: int = 3) -> list[ScoredEntry]:
-    eligible = [entry for entry in entries if entry.get("verification_status") == "verified"]
+    # 观察期条目（watch）只进清单，不进推荐
+    eligible = [
+        entry for entry in entries
+        if entry.get("verification_status") == "verified" and entry.get("tier") != "watch"
+    ]
     scored = [score_entry(entry, profile) for entry in eligible]
     return sorted(scored, key=lambda item: (-item.score, -item.health_score, item.id))[:limit]
+
+
+def load_entries(path: Path) -> list[dict]:
+    """兼容发布契约（{skills: [...]}）与裸数组两种输入。"""
+    data = json.loads(path.read_text(encoding="utf-8"))
+    entries = data.get("skills") if isinstance(data, dict) else data
+    if not isinstance(entries, list):
+        raise ValueError("catalog must be a JSON array or {skills: [...]}")
+    return entries
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -96,7 +121,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--profile", type=Path, required=True)
     parser.add_argument("--limit", type=int, default=3)
     args = parser.parse_args(argv)
-    entries = json.loads(args.catalog.read_text(encoding="utf-8"))
+    entries = load_entries(args.catalog)
     profile = ProjectProfile.from_dict(json.loads(args.profile.read_text(encoding="utf-8")))
     print(json.dumps([item.to_dict() for item in recommend(entries, profile, args.limit)], ensure_ascii=False, indent=2))
     return 0

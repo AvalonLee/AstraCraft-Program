@@ -2,9 +2,9 @@
 """AstraCraft Program（天工计划）条目校验。
 
 检查项：
-  1. SKILL.md 的 YAML frontmatter 符合 JSON Schema
+  1. ENTRY.md 的 YAML frontmatter 符合 JSON Schema
   2. id / category 与目录结构一致
-  3. SKILL.md 正文包含「怎么安装」指令（给 Agent 用的核心内容）
+  3. ENTRY.md 正文包含与 mode 对应的上手指令（给 Agent 用的核心内容）
   4. 分类目录存在
   5. 去重（id / aliases）
   6. 已移除条目不得重复收录
@@ -27,6 +27,7 @@ from _common import (  # noqa: E402
     CATEGORIES,
     CHANGELOG_PATH,
     ENTRY_FILE,
+    MODE_HEADINGS,
     REPO_ROOT,
     SCHEMA_PATH,
     TAG_CAP,
@@ -50,9 +51,6 @@ except ImportError:  # pragma: no cover
     )
     raise SystemExit(2)
 
-# 「怎么安装」小节的可用标题（正文里至少命中其一，且要带一个代码块）
-INSTALL_HEADINGS = ("## 怎么安装", "## 安装", "## 如何安装")
-
 
 def check_schema(entry: Entry, validator: Draft7Validator, rep: Reporter) -> None:
     for error in sorted(validator.iter_errors(entry.meta), key=lambda e: list(e.path)):
@@ -75,23 +73,28 @@ def check_identity(entry: Entry, rep: Reporter) -> None:
         )
 
 
-def check_skill_doc(entry: Entry, rep: Reporter) -> None:
-    """SKILL.md 必须存在，且正文包含「怎么安装」指令与代码块。"""
-    if not entry.skill_file.exists():
+def check_entry_doc(entry: Entry, rep: Reporter) -> None:
+    """ENTRY.md 必须存在，且正文包含与 mode 对应的上手指令与代码块。"""
+    if not entry.entry_file.exists():
         rep.error(entry.rel_path, f"缺少入口文件 {ENTRY_FILE}")
         return
-    text = entry.skill_file.read_text(encoding="utf-8")
+    text = entry.entry_file.read_text(encoding="utf-8")
     body = text.split("\n---", 1)[-1]  # 去掉 frontmatter
-    if not any(h in body for h in INSTALL_HEADINGS):
+    mode = str(entry.meta.get("mode", ""))
+    headings = MODE_HEADINGS.get(mode)
+    if headings is None:
+        rep.error(entry.rel_path, f"mode 无效或缺失：{mode!r}（应为 install/connect/deploy/read 之一）")
+        return
+    if not any(h in body for h in headings):
         rep.error(
             entry.rel_path,
-            f"{ENTRY_FILE} 正文缺少安装指令小节（需包含 {INSTALL_HEADINGS[0]}），"
-            "这是给 Agent 定位并安装的关键内容。",
+            f"{ENTRY_FILE} 正文缺少 mode={mode} 对应的上手小节（需包含 {headings[0]}），"
+            "这是给 Agent 定位并上手的关键内容。",
         )
     elif "```" not in body:
         rep.error(
             entry.rel_path,
-            f"{ENTRY_FILE} 的安装指令应包含一个可执行的代码块（``` 包裹）。",
+            f"{ENTRY_FILE} 的上手指令应包含一个可执行的代码块（``` 包裹）。",
         )
 
 
@@ -200,9 +203,9 @@ def main() -> int:
         if not args.quiet:
             print(f"  {entry.rel_path}")
         check_schema(entry, validator, rep)
-        check_format_boundary(entry.skill_file, rep)
+        check_format_boundary(entry.entry_file, rep)
         check_identity(entry, rep)
-        check_skill_doc(entry, rep)
+        check_entry_doc(entry, rep)
         check_tags(entry, vocab, rep)
 
     check_duplicates(entries, rep)

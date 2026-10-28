@@ -28,10 +28,10 @@
   <header class="topbar">
     <div class="brand-lockup">
     <div class="brand-name">AstraCraft Program</div>
-    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
     </div>
     <nav class="nav-links">
-      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="../index.html">浏览条目</a>
       <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </header>
@@ -49,7 +49,7 @@
 
   <div class="card" style="margin-top:24px;">
     <div class="mini-tags">
-      <span>Agent 基础设施</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>框架</span>
+      <span>Agent 基础设施</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>部署运行</span>
     </div>
     <p class="muted detail-meta">腾讯云出品的 Agent 团队级记忆中心（Memory Hub）：把对话、文档与代码沉淀为 Chat Memory / Skill / LLM-Wiki / CodeGraph 四类可复用资产，支持治理、共享并跨 Agent 与框架装备。</p>
     <div class="link-row" style="margin-top:14px;">
@@ -63,7 +63,7 @@
 <blockquote>腾讯云出品的 <strong>Agent 团队级记忆中心（Memory Hub）</strong>：让经验在 Agent 之间沉淀、流动、继承。 上游：<a href="https://github.com/TencentCloud/TencentDB-Agent-Memory" target="_blank" rel="noopener">TencentCloud/TencentDB-Agent-Memory</a> · 许可证：MIT</blockquote>
 <h2>这是什么</h2>
 <p>面向 <strong>Agent 团队</strong>的长期记忆基础设施。把"对话、文档、代码"沉淀为四类可复用记忆资产： <strong>Chat Memory</strong>（L0 对话 → L1 原子 → L2 场景 → L3 人格逐层沉淀）、<strong>Skill</strong>（带版本/资源/ 触发边界的可复用技能）、<strong>LLM-Wiki</strong>（文档知识）、<strong>CodeGraph</strong>（代码图谱）。部署形态为 <code>memory-core + memory-hub + memory-proxy</code> 三件套 + SDK，接入 OpenClaw / Hermes / Claude Code / CodeBuddy 等。当前版本 v2.0.0。</p>
-<h2>怎么安装</h2>
+<h2>怎么部署运行</h2>
 <pre><code class="lang-bash"># 1) 克隆上游（默认分支 feat/server_team，直接 clone 即得该版本）
 git clone https://github.com/TencentCloud/TencentDB-Agent-Memory.git /tmp/tdb
 cd /tmp/tdb/deploy/global-images

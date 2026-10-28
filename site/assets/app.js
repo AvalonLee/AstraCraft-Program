@@ -4,7 +4,8 @@
   "use strict";
 
   var DATA_URL = "data/skills.json";
-  var GROUPS = ["category", "tag", "tier", "license"];
+  var GROUPS = ["category", "mode", "tag", "tier", "license"];
+  var MODE_ORDER = ["install", "connect", "deploy", "read"];
   var TAG_LIMIT = 20;     // 标签折叠态兜底上限：有效标签过多时仍只显示前 N 个
   var TAG_MIN_COUNT = 2;  // 折叠态仅展示被 >=2 个条目使用的「有效标签」，单例标签默认折叠
   var RANDOM_PICK_COUNT = 4;
@@ -22,12 +23,17 @@
     "Python-2.0": "open", "MS-PL": "open", "WTFPL": "open",
     "CC-BY-4.0": "open", "CC-BY-3.0": "open",
     // 部分开源（Copyleft / 衍生约束）
-    "GPL-2.0": "copyleft", "GPL-3.0": "copyleft", "AGPL-3.0": "copyleft",
+    "GPL-2.0": "copyleft", "GPL-3.0": "copyleft", "AGPL-3.0": "copyleft", "AGPL-3.0-only": "copyleft",
     "LGPL-2.1": "copyleft", "LGPL-3.0": "copyleft", "MPL-2.0": "copyleft",
     "EPL-2.0": "copyleft", "EPL-1.0": "copyleft", "OSL-3.0": "copyleft",
     "EUPL-1.2": "copyleft", "CDDL-1.0": "copyleft", "CeCILL-2.1": "copyleft",
-    // 商用授权（专有 / 源码可见但受限）
+    // 商用需授权（专有 / 源码可见但受限）
     "LicenseRef-Anthropic-Source-Available": "commercial",
+    "LicenseRef-BigBanana-Community-1.0": "commercial",
+    "LicenseRef-cc-haha-Community-Source-1.0": "commercial",
+    "LicenseRef-GSAP-Standard-No-Charge": "commercial",
+    "LicenseRef-NC-Learning": "commercial",
+    "PolyForm-Noncommercial-1.0.0": "commercial",
     "Commercial": "commercial", "Proprietary": "commercial",
     "CC-BY-NC-4.0": "commercial", "CC-BY-NC-SA-4.0": "commercial",
     "BUSL-1.1": "commercial", "SSPL-1.0": "commercial",
@@ -37,7 +43,7 @@
   var BUCKET_META = {
     open:       { label: "完全开源", desc: "宽松许可（MIT / BSD / Apache / ISC / CC0 等）：可商用、可闭源，仅需保留原作者署名。" },
     copyleft:   { label: "部分开源", desc: "Copyleft 许可（GPL / LGPL / MPL / AGPL 等）：可自由使用与修改，但衍生作品须以相同或兼容协议开源。" },
-    commercial: { label: "商用授权", desc: "专有 / 源码可见但受限（Commercial / Source-Available / NC / BUSL / SSPL 等）：需商业授权或有使用限制，使用前请确认条款。" },
+    commercial: { label: "商用需授权", desc: "专有 / 源码可见但受限（Commercial / Source-Available / NC / PolyForm / BUSL / SSPL 等）：商用须另行取得授权或有使用限制，多数仍可免费用于非商业场景；使用前请确认条款。" },
     unknown:    { label: "版权未声明", desc: "仓库未附 LICENSE 文件：默认保留所有权利，他人无权擅自使用，使用前须获作者明确许可。" }
   };
   var BUCKET_ORDER = ["open", "copyleft", "commercial", "unknown"];
@@ -49,7 +55,7 @@
   var state = {
     skills: [],
     categories: [],
-    sel: { category: null, tag: null, tier: null, license: null },
+    sel: { category: null, mode: null, tag: null, tier: null, license: null },
     q: "",
   };
 
@@ -89,6 +95,10 @@
       });
     var tiers = uniq(state.skills.map(function (s) { return s.tier_label; }))
       .map(function (t) { return { value: t, label: t }; });
+    var modeNames = {};
+    state.skills.forEach(function (s) { if (s.mode) modeNames[s.mode] = s.mode_label; });
+    var modes = MODE_ORDER.filter(function (m) { return modeNames[m]; })
+      .map(function (m) { return { value: m, label: modeNames[m] }; });
     var bucketCounts = {};
     state.skills.forEach(function (s) {
       var k = licenseBucket(s);
@@ -96,6 +106,7 @@
     });
 
     fillChips("category-chips", "category", cats);
+    fillChips("mode-chips", "mode", modes);
     fillTagChips(tags);
     fillChips("tier-chips", "tier", tiers);
     fillLicenseChips(bucketCounts);
@@ -150,7 +161,7 @@
       b.dataset.group = "tag";
       b.dataset.value = it.value;
       b.dataset.count = String(it.count);
-      b.title = it.count + " 个技能";
+      b.title = it.count + " 个条目";
       // 默认折叠：单例标签（仅 1 个条目使用）隐藏；有效标签默认显示
       if (it.count < TAG_MIN_COUNT) b.classList.add("chip-hidden");
       b.addEventListener("click", function () {
@@ -216,7 +227,7 @@
     });
   }
 
-  // ---- 协议筛选：按直观许可分类（完全开源 / 部分开源 / 商用授权 / 版权未声明）展示 ----
+  // ---- 协议筛选：按直观许可分类（完全开源 / 部分开源 / 商用需授权 / 版权未声明）展示 ----
   function fillLicenseChips(bucketCounts) {
     var box = $("license-chips");
     box.innerHTML = "";
@@ -252,6 +263,7 @@
   function matches(s) {
     var q = state.q;
     if (state.sel.category && s.category_dir !== state.sel.category) return false;
+    if (state.sel.mode && s.mode !== state.sel.mode) return false;
     if (state.sel.tier && s.tier_label !== state.sel.tier) return false;
     if (state.sel.license && licenseBucket(s) !== state.sel.license) return false;
     if (state.sel.tag) {
@@ -259,7 +271,7 @@
     }
     if (q) {
       var hay = [s.name_zh, s.name_en, s.summary_zh, s.summary_en,
-        (s.tags || []).join(" "), s.category_name, s.kind_label]
+        (s.tags || []).join(" "), s.category_name, s.mode_label]
         .join(" ").toLowerCase();
       if (hay.indexOf(q) === -1) return false;
     }
@@ -287,7 +299,7 @@
 
     return (
       '<div class="card">' +
-        '<p class="card-kicker">' + esc(s.category_name) + " · " + esc(s.kind_label) + "</p>" +
+        '<p class="card-kicker">' + esc(s.category_name) + " · " + esc(s.mode_label) + "</p>" +
         '<h3 class="card-title"><a href="' + esc(s.detail_url) + '">' + esc(s.name_zh) + "</a></h3>" +
         (s.summary_zh ? '<p class="card-subtitle">' + esc(s.summary_zh) + "</p>" : "") +
         (meta.length ? '<div class="card-meta">' + meta.join("") + "</div>" : "") +
@@ -300,14 +312,14 @@
     var list = state.skills.filter(matches);
     var wrap = $("results");
     if (!list.length) {
-      wrap.innerHTML = '<p class="muted" style="padding:8px 2px;">没有匹配的技能，试试其他关键词或筛选条件。</p>';
+      wrap.innerHTML = '<p class="muted" style="padding:8px 2px;">没有匹配的条目，试试其他关键词或筛选条件。</p>';
     } else {
       wrap.innerHTML = list.map(cardHtml).join("");
     }
     var total = state.skills.length;
     $("result-count").textContent = list.length === total
-      ? "共 " + list.length + " 个技能"
-      : "共 " + list.length + " 个技能（已从 " + total + " 个中筛选）";
+      ? "共 " + list.length + " 个条目"
+      : "共 " + list.length + " 个条目（已从 " + total + " 个中筛选）";
   }
 
   function pickRandomSkills(count) {

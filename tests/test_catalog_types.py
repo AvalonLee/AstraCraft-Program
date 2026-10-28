@@ -18,14 +18,14 @@ def write_doc(path: Path, frontmatter: str, body: str = "## 怎么安装\n\n```b
 
 def test_parses_entry_record(tmp_path: Path) -> None:
     path = write_doc(
-        tmp_path / "entries/dev-engineering/demo/SKILL.md",
+        tmp_path / "entries/dev-engineering/demo/ENTRY.md",
         "record_type: entry-record\nid: demo\ncategory: dev-engineering",
     )
 
     doc = parse_catalog_document(path, tmp_path)
 
     assert doc.record_type is RecordType.ENTRY_RECORD
-    assert doc.relative_path == Path("entries/dev-engineering/demo/SKILL.md")
+    assert doc.relative_path == Path("entries/dev-engineering/demo/ENTRY.md")
 
 
 def test_parses_installable_root_skill(tmp_path: Path) -> None:
@@ -42,9 +42,9 @@ def test_parses_installable_root_skill(tmp_path: Path) -> None:
 @pytest.mark.parametrize(
     ("relative_path", "frontmatter", "code"),
     [
-        ("entries/dev-engineering/demo/SKILL.md", "id: demo", "E_RECORD_TYPE_MISSING"),
+        ("entries/dev-engineering/demo/ENTRY.md", "id: demo", "E_RECORD_TYPE_MISSING"),
         (
-            "entries/dev-engineering/demo/SKILL.md",
+            "entries/dev-engineering/demo/ENTRY.md",
             "record_type: installable-skill\nname: demo\ndescription: demo",
             "E_ENTRY_AS_SKILL",
         ),
@@ -64,9 +64,9 @@ def test_rejects_missing_or_mixed_record_types(
 
 def test_rejects_entry_that_installs_itself(tmp_path: Path) -> None:
     path = write_doc(
-        tmp_path / "entries/dev-engineering/demo/SKILL.md",
+        tmp_path / "entries/dev-engineering/demo/ENTRY.md",
         "record_type: entry-record\nid: demo\ncategory: dev-engineering",
-        "## 怎么安装\n\n```bash\ncurl https://example.test/repo/entries/dev-engineering/demo/SKILL.md -o ~/.codex/skills/demo/SKILL.md\n```\n",
+        "## 怎么安装\n\n```bash\ncurl https://example.test/repo/entries/dev-engineering/demo/ENTRY.md -o ~/.codex/skills/demo/ENTRY.md\n```\n",
     )
     doc = parse_catalog_document(path, tmp_path)
 

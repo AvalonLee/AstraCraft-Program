@@ -1,0 +1,117 @@
+{
+  "note": "人工复核通过的上游许可证。判定按证据文件（LICENSE / README）的 blob SHA 校验：条目 license 变化或证据文件内容变化即失效，核验会重新标为 needs-review 等待复核；head_sha 只记录复核时的上游提交。",
+  "entries": {
+    "aimangastudio": {
+      "license": "MIT",
+      "head_sha": "97c902392a1c0bbf4797bedf1929328157916889",
+      "evidence_path": "README.md",
+      "evidence_sha": "392ce1ceba3703073d24bf6bd942a09d69815432",
+      "reviewed_at": "2026-10-28",
+      "evidence": "https://github.com/morsoli/aimangastudio/blob/97c902392a1c0bbf4797bedf1929328157916889/README.md"
+    },
+    "andrej-karpathy-skills": {
+      "license": "MIT",
+      "head_sha": "2c606141936f1eeef17fa3043a72095b4765b9c2",
+      "evidence_path": "README.md",
+      "evidence_sha": "7cf07a786532bebe01c65179c8e2c3a98cc0a09b",
+      "reviewed_at": "2026-10-28",
+      "evidence": "https://github.com/multica-ai/andrej-karpathy-skills/blob/2c606141936f1eeef17fa3043a72095b4765b9c2/README.md"
+    },
+    "anthropics-office-skills": {
+      "license": "LicenseRef-Anthropic-Source-Available",
+      "head_sha": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "evidence_path": "skills/docx/LICENSE.txt",
+      "evidence_sha": "c55ab42224874608473643de0a85736b7fec0730",
+      "reviewed_at": "2026-10-28",
+      "evidence": "https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/docx/LICENSE.txt"
+    },
+    "bigbanana-ai-director": {
+      "license": "LicenseRef-BigBanana-Community-1.0",
+      "head_sha": "ead7a5ca0513d7c225f72197ac78712a825a9ae9",
+      "evidence_path": "LICENSE",
+      "evidence_sha": "77917868157bea233727f8e794dcc2eb49d1db22",
+      "reviewed_at": "2026-10-28",
+      "evidence": "https://github.com/shuyu-labs/bigbanana-ai-director/blob/ead7a5ca0513d7c225f72197ac78712a825a9ae9/LICENSE"
+    },
+    "cc-haha": {
+      "license": "LicenseRef-cc-haha-Community-Source-1.0",
+      "head_sha": "6d9d10f086ec772a9108b541407ea2f67b029c38",
+      "evidence_path": "LICENSE",
+      "evidence_sha": "911fdae7fbbee635160e198d18d4a43402a01ca2",
+      "reviewed_at": "2026-10-28",
+      "evidence": "https://github.com/nanmicoder/cc-haha/blob/6d9d10f086ec772a9108b541407ea2f67b029c38/LICENSE"
+    },
+    "gsap": {
+      "license": "LicenseRef-GSAP-Standard-No-Charge",
+      "head_sha": "13e2b790546426a1a2e0e9b409f3f8dc6d6611f2",
+      "evidence_path": "README.md",
+      "evidence_sha": "291cd9ced95fd5be5c9d4e982b6eed130e8ff926",
+      "reviewed_at": "2026-10-28",
+      "evidence": "https://github.com/greensock/gsap/blob/13e2b790546426a1a2e0e9b409f3f8dc6d6611f2/README.md"
+    },
+    "huobao-canvas": {
+      "license": "CC-BY-NC-SA-4.0",
+      "head_sha": "e9e6cf69960573e5d578b906f8a4bd7031ae629d",
+      "evidence_path": "LICENSE",
+      "evidence_sha": "7cdbe0b482f604a06a0988dad8877ae8d9257f7d",
+      "reviewed_at": "2026-10-28",
+      "evidence": "https://github.com/chatfire-ai/huobao-canvas/blob/e9e6cf69960573e5d578b906f8a4bd7031ae629d/LICENSE"
+    },
+    "mediacrawler": {
+      "license": "LicenseRef-NC-Learning",
+      "head_sha": "68d9ef1c1da22eab75940dfd7cec259907006538",
+      "evidence_path": "LICENSE",
+      "evidence_sha": "78408f6201d46f746850c039ae5754b8fcc4b6c1",
+      "reviewed_at": "2026-10-28",
+      "evidence": "https://github.com/nanmicoder/mediacrawler/blob/68d9ef1c1da22eab75940dfd7cec259907006538/LICENSE"
+    },
+    "onetake": {
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "head_sha": "013a61ac8d98883c73733f59c06e49e9ba444f14",
+      "evidence_path": "LICENSE",
+      "evidence_sha": "51071c357084b2f8c5b427baffcc3ea0d2ad72ad",
+      "reviewed_at": "2026-10-28",
+      "evidence": "https://github.com/feitangyuan/onetake/blob/013a61ac8d98883c73733f59c06e49e9ba444f14/LICENSE"
+    },
+    "open-storyboard-canvas": {
+      "license": "MIT",
+      "head_sha": "f872c925c31ffe47573ea95f9fb6b81f5414c9bd",
+      "evidence_path": "LICENSE",
+      "evidence_sha": "893e2d780c6db30c274db873f2c3a6a6af7e20c4",
+      "reviewed_at": "2026-10-28",
+      "evidence": "https://github.com/ganbo-gab/open-storyboard-canvas/blob/f872c925c31ffe47573ea95f9fb6b81f5414c9bd/LICENSE"
+    },
+    "tencentdb-agent-memory": {
+      "license": "MIT",
+      "head_sha": "42c6711c218b40d38d1d6b0ed4767bcc6069cbfd",
+      "evidence_path": "LICENSE",
+      "evidence_sha": "86fd8a122221fc402da9fd64724172d08c6bbbd3",
+      "reviewed_at": "2026-10-28",
+      "evidence": "https://github.com/tencentcloud/tencentdb-agent-memory/blob/42c6711c218b40d38d1d6b0ed4767bcc6069cbfd/LICENSE"
+    },
+    "toolknit-desktop": {
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "head_sha": "0f088b0ee25ac3a1d362c740fed7267ab4b36b36",
+      "evidence_path": "LICENSE",
+      "evidence_sha": "1a71cb64397535482ff19542d1093c0d4a6442d0",
+      "reviewed_at": "2026-10-28",
+      "evidence": "https://github.com/zihangdong/toolknit-desktop/blob/0f088b0ee25ac3a1d362c740fed7267ab4b36b36/LICENSE"
+    },
+    "video-talkcraft": {
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "head_sha": "a7c29edfb2404612dde6a5a1c8aa94232e85625b",
+      "evidence_path": "LICENSE",
+      "evidence_sha": "15dce701bd0f9421a562a0e6b49119a910db3cbe",
+      "reviewed_at": "2026-10-28",
+      "evidence": "https://github.com/vincentwei1021/video-talkcraft/blob/a7c29edfb2404612dde6a5a1c8aa94232e85625b/LICENSE"
+    },
+    "weknora": {
+      "license": "MIT",
+      "head_sha": "dacb9c2643bdfe7b3f95e0d96e1584513b27f3a2",
+      "evidence_path": "LICENSE",
+      "evidence_sha": "08ad298cc277d43af6caa1df8218fd4d9d86b5bf",
+      "reviewed_at": "2026-10-28",
+      "evidence": "https://github.com/tencent/weknora/blob/dacb9c2643bdfe7b3f95e0d96e1584513b27f3a2/LICENSE"
+    }
+  }
+}

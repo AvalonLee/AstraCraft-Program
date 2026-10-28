@@ -16,9 +16,9 @@ repo: https://github.com/dacnay816y62-hub/cinema-dna-21x9x3
 tier: standard
 featured: true
 metrics:
-  stars: 1421
+  stars: 1519
   pushed_at: "2026-09-19T15:05:33Z"
-  checked_at: "2026-09-24"
+  checked_at: "2026-10-28"
   archived: false
 related: []
 aliases: [电影感三联图, 电影画面生成]

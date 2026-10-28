@@ -15,9 +15,9 @@ homepage: https://www.openmontage.video/
 repo: https://github.com/calesthio/OpenMontage
 tier: standard
 metrics:
-  stars: 61149
-  pushed_at: "2026-09-06T05:02:34Z"
-  checked_at: "2026-09-24"
+  stars: 72470
+  pushed_at: "2026-10-24T00:49:34Z"
+  checked_at: "2026-10-28"
   archived: false
 aliases: [open-montage]
 risk_notes: "AGPL-3.0 为强 Copyleft：本地自用无额外义务，对外提供网络服务时需以 AGPL 开源衍生，具体以上游 LICENSE 为准；零 API key 可通过 Piper 本地 TTS、开放档案素材与 Remotion/HyperFrames 出片，云生成能力随 FAL/Kling/Veo/OpenAI/ElevenLabs 等密钥增加且费用自担；默认总预算上限 $10、单笔超 $0.50 需审批。"

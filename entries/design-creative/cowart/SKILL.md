@@ -15,9 +15,9 @@ homepage: https://cowart.jiqiren.ai
 repo: https://github.com/zhongerxin/Cowart
 tier: standard
 metrics:
-  stars: 5962
-  pushed_at: "2026-09-13T16:16:11Z"
-  checked_at: "2026-09-24"
+  stars: 6047
+  pushed_at: "2026-10-08T12:07:12Z"
+  checked_at: "2026-10-28"
   archived: false
 aliases: [cowart, Codex Canvas]
 risk_notes: "需要 Codex 桌面端（非 CLI），安装后必须完全退出并重启 Codex 才能加载 skill 和 MCP 工具；画布数据保存到当前项目的 canvas/ 目录而非插件仓库；遵循 Agent Plugins v1.0.0 规范，MCP bundle 自包含（无需 npm install）；网页版 cowart.jiqiren.ai 无需安装但功能与桌面插件有差异。"

@@ -15,9 +15,9 @@ homepage: https://github.com/denizsafak/abogen
 repo: https://github.com/denizsafak/abogen
 tier: standard
 metrics:
-  stars: 6047
-  pushed_at: "2026-09-07T14:30:10Z"
-  checked_at: "2026-09-24"
+  stars: 6167
+  pushed_at: "2026-10-25T21:50:32Z"
+  checked_at: "2026-10-28"
   archived: false
 aliases: [abogen-tts]
 risk_notes: "依赖 espeak-ng（phonemization）和 PyTorch；NVIDIA GPU 加速需安装 CUDA 化 PyTorch（按显卡驱动选 cu126/cu128/cu130），无 GPU 时 CPU 推理较慢；AMD GPU 在 Windows 上不支持 ROCm，需 Linux；本地推理无 API 费用。"
@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # Abogen 有声书生成器
 
-> 把书变成有声书，把文本变成配音。上游：[denizsafak/abogen](https://github.com/denizsafak/abogen) · 许可证：MIT · 6.0k stars
+> 把书变成有声书，把文本变成配音。上游：[denizsafak/abogen](https://github.com/denizsafak/abogen) · 许可证：MIT · 6.2k stars
 
 ## 这是什么
 

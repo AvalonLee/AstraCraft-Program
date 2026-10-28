@@ -15,9 +15,9 @@ homepage: https://github.com/Emily2040/seedance-2.0
 repo: https://github.com/Emily2040/seedance-2.0
 tier: standard
 metrics:
-  stars: 7421
-  pushed_at: "2026-09-08T02:41:14Z"
-  checked_at: "2026-09-24"
+  stars: 7955
+  pushed_at: "2026-10-03T01:39:10Z"
+  checked_at: "2026-10-28"
   archived: false
 related: []
 aliases: [seedance-2, seedance-prompt-os]

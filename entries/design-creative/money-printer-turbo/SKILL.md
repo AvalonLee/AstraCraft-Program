@@ -15,9 +15,9 @@ homepage: https://github.com/harry0703/MoneyPrinterTurbo
 repo: https://github.com/harry0703/MoneyPrinterTurbo
 tier: standard
 metrics:
-  stars: 125471
-  pushed_at: "2026-09-24T09:16:08Z"
-  checked_at: "2026-09-24"
+  stars: 135850
+  pushed_at: "2026-10-27T10:13:32Z"
+  checked_at: "2026-10-28"
   archived: false
 related: []
 aliases: [moneyprinter]

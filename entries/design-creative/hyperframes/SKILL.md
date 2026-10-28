@@ -16,9 +16,9 @@ repo: https://github.com/heygen-com/hyperframes
 docs_url: https://hyperframes.heygen.com/introduction
 tier: core
 metrics:
-  stars: 52821
-  pushed_at: "2026-09-24T15:39:25Z"
-  checked_at: "2026-09-24"
+  stars: 73956
+  pushed_at: "2026-10-28T00:44:01Z"
+  checked_at: "2026-10-28"
   archived: false
 aliases: [hyperframes, HeyGen HyperFrames]
 risk_notes: "HTML → 确定性渲染（非实时）需要 Node >= 22；20 个 skill 的完整安装体积较大（agents 建议 npx hyperframes skills update 装 core set）；skills.sh registry 可能滞后 main 数小时，新 skill 用 npx hyperframes skills update 获取最新版。"
@@ -28,7 +28,7 @@ updated_at: "2026-09-05"
 
 # HyperFrames HTML 视频渲染
 
-> Write HTML. Render video. Built for agents.上游：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · 许可证：Apache 2.0 · 52.8k stars · [文档](https://hyperframes.heygen.com/introduction) · [Playground](https://www.hyperframes.dev/)
+> Write HTML. Render video. Built for agents.上游：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · 许可证：Apache 2.0 · 74.0k stars · [文档](https://hyperframes.heygen.com/introduction) · [Playground](https://www.hyperframes.dev/)
 
 ## 这是什么
 

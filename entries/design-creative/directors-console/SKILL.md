@@ -15,9 +15,9 @@ homepage: https://github.com/NickPittas/DirectorsConsole
 repo: https://github.com/NickPittas/DirectorsConsole
 tier: watch
 metrics:
-  stars: 331
-  pushed_at: "2026-09-19T09:58:42Z"
-  checked_at: "2026-09-24"
+  stars: 363
+  pushed_at: "2026-10-02T15:23:27Z"
+  checked_at: "2026-10-28"
   archived: false
 related: []
 aliases: ["DirectorsConsole", "Director Console"]

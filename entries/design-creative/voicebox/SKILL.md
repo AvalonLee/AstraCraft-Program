@@ -16,9 +16,9 @@ repo: https://github.com/jamiepine/voicebox
 docs_url: https://docs.voicebox.sh
 tier: core
 metrics:
-  stars: 55581
-  pushed_at: "2026-08-09T00:03:42Z"
-  checked_at: "2026-09-24"
+  stars: 58773
+  pushed_at: "2026-10-07T01:17:58Z"
+  checked_at: "2026-10-28"
   archived: false
 aliases: [voicebox, Voicebox Studio]
 risk_notes: "模型和语音数据 100% 本地处理，但 TTS 引擎首次需从 Hugging Face 下载（数 GB 级）；声音克隆他人声音需获得授权；macOS (MLX/Metal) / Windows (CUDA) / Linux / AMD ROCm / Intel Arc / Docker 均支持但 GPU 加速效果因平台而异；Stories 编辑器和部分高级功能仍在活跃开发中。"
@@ -28,7 +28,7 @@ updated_at: "2026-09-05"
 
 # Voicebox 本地 AI 语音工作室
 
-> The open-source AI voice studio. Clone, dictate, create.上游：[jamiepine/voicebox](https://github.com/jamiepine/voicebox) · 许可证：MIT · 55.6k stars · [voicebox.sh](https://voicebox.sh) · [文档](https://docs.voicebox.sh)
+> The open-source AI voice studio. Clone, dictate, create.上游：[jamiepine/voicebox](https://github.com/jamiepine/voicebox) · 许可证：MIT · 58.8k stars · [voicebox.sh](https://voicebox.sh) · [文档](https://docs.voicebox.sh)
 
 ## 这是什么
 

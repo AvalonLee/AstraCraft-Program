@@ -16,9 +16,9 @@ repo: https://github.com/fchangjun/awesome-design-md-cn
 tier: standard
 featured: true
 metrics:
-  stars: 144
+  stars: 147
   pushed_at: "2026-07-07T07:47:56Z"
-  checked_at: "2026-09-24"
+  checked_at: "2026-10-28"
   archived: false
 related: []
 aliases: [awesome-design-md-cn, design-md-cn]

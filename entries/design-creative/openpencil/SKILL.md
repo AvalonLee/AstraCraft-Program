@@ -15,9 +15,9 @@ homepage: https://github.com/ZSeven-W/openpencil
 repo: https://github.com/ZSeven-W/openpencil
 tier: core
 metrics:
-  stars: 6016
-  pushed_at: "2026-09-23T17:46:59Z"
-  checked_at: "2026-09-24"
+  stars: 6728
+  pushed_at: "2026-10-27T12:32:03Z"
+  checked_at: "2026-10-28"
   archived: false
 aliases: [open-pencil, OpenPencil]
 risk_notes: "Windows 安装器可能触发杀毒软件启发式误报（官方提供验证文档）；Rust 核心 + 3 个 submodule（jian / casement / agent-rs）从源码构建需 clone --recurse-submodules；Web 版凭据默认存浏览器 localStorage，服务端持久化需显式开启且仅限可信部署；多模型智能按模型能力自适应（Claude 完整 prompt / GPT-4o 关闭 thinking / 小模型简化），费用自担。"
@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # OpenPencil AI 原生矢量设计工具
 
-> The world's first open-source AI-native vector design tool。上游：[ZSeven-W/openpencil](https://github.com/ZSeven-W/openpencil) · 许可证：MIT · 6.0k stars
+> The world's first open-source AI-native vector design tool。上游：[ZSeven-W/openpencil](https://github.com/ZSeven-W/openpencil) · 许可证：MIT · 6.7k stars
 
 ## 这是什么
 

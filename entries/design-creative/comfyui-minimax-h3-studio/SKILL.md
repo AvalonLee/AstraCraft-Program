@@ -15,9 +15,9 @@ homepage: https://github.com/thaakeno/ComfyUI-MiniMax-H3-Studio
 repo: https://github.com/thaakeno/ComfyUI-MiniMax-H3-Studio
 tier: watch
 metrics:
-  stars: 115
+  stars: 131
   pushed_at: "2026-09-21T04:23:11Z"
-  checked_at: "2026-09-24"
+  checked_at: "2026-10-28"
   archived: false
 related: []
 aliases: ["H3 Studio", "MiniMax H3 Studio"]

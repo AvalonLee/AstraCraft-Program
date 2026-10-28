@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-24T13:12:26Z",
-  "count": 95,
+  "generated_at": "2026-10-28T01:05:10Z",
+  "count": 96,
   "categories": [
     {
       "dir": "writing-docs",
@@ -2259,6 +2259,52 @@
       "detail_url": "skills/money-printer-turbo.html"
     },
     {
+      "id": "onetake",
+      "name_zh": "Onetake 一镜到底连贯动效视频技能",
+      "name_en": "Onetake — One-Take Motion Film Skill",
+      "summary_zh": "让 coding agent 拍「一镜到底」的产品发布影片：全程一个连续镜头，每一拍都从上一拍自然长出来，由连贯性 oracle 逐帧验收，解决 AI 生成视频切幻灯片式的跳变问题。",
+      "summary_en": "An agent skill directing continuous one-take motion films: one camera, every beat grows out of the last, continuity verified by an oracle — for launch films and demos.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "kind": "skill",
+      "kind_label": "技能包",
+      "tags": [
+        "cinematic",
+        "motion-design",
+        "product-video",
+        "storyboard",
+        "claude-code",
+        "ai-agent"
+      ],
+      "languages": [
+        "python"
+      ],
+      "doc_languages": [
+        "en",
+        "zh"
+      ],
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_bucket": "unknown",
+      "homepage": "https://github.com/feitangyuan/onetake",
+      "repo": "https://github.com/feitangyuan/onetake",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "video-talkcraft",
+        "video-shotcraft"
+      ],
+      "aliases": [
+        "one-take",
+        "one-take-video"
+      ],
+      "risk_notes": "PolyForm Noncommercial 1.0.0 仅限非商业用途（区别于同类 video-shotcraft 的 Apache-2.0，商用交付前须先看协议）；依赖较重：Python 3（playwright、numpy、scipy、Pillow、matplotlib）+ ffmpeg + Node.js，环境由 agent 按需配置；4K60 渲染耗时明显；上游 2026-09-26 创建，尚属新项目。",
+      "added_at": "2026-10-28",
+      "updated_at": "2026-10-28",
+      "install": "bash\n# Claude Code\ngit clone --depth 1 https://github.com/feitangyuan/onetake.git ~/.claude/skills/onetake\n\n# 通用 agent skills 目录\ngit clone --depth 1 https://github.com/feitangyuan/onetake.git ~/.agents/skills/onetake",
+      "detail_url": "skills/onetake.html"
+    },
+    {
       "id": "open-ai-canvas",
       "name_zh": "影策 Open AI Canvas 影视创作工作台",
       "name_en": "YingCe / Open AI Canvas",
@@ -2680,7 +2726,7 @@
         "PMAgent-Canvas",
         "PromptCard"
       ],
-      "risk_notes": "当前 main 为开发版本（不稳定，处于功能测试中），稳定基线请用 Git tag stable-2026-08-25；目前提供 Windows 桌面开发预览（start-desktop.vbs，非签名安装包）；核心模型依赖火山引擎（Seedream 5.0 Pro / Doubao Seed 2.0），调用按 API 计费；项目尚处早期（163 stars）。",
+      "risk_notes": "当前 main 为开发版本（不稳定，处于功能测试中），稳定基线请用 Git tag stable-2026-08-25；目前提供 Windows 桌面开发预览（start-desktop.vbs，非签名安装包）；核心模型依赖火山引擎（Seedream 5.0 Pro / Doubao Seed 2.0），调用按 API 计费；项目尚处早期（108 stars）。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
       "install": "bash\ngit clone https://github.com/Aoye-3/PromptCard-AgentCanvas.git\ncd PromptCard-AgentCanvas\n# 双击 start-desktop.vbs 启动桌面壳",

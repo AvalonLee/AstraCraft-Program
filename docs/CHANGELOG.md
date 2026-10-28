@@ -12,6 +12,11 @@
 
 ---
 
+## 2026-10
+
+### 新增
+- **Onetake 一镜到底连贯动效视频技能（2026-10-28）**：收录 `design-creative/onetake`（PolyForm Noncommercial 1.0.0）。★3.4k 的 Claude Agent Skill，让 coding agent 拍「一镜到底」的产品发布影片与功能演示：全程一个连续镜头，每个节拍从上一拍自然生长，由连贯性 oracle 逐帧验收，解决 AI 生成视频「切幻灯片」式硬切；八步流程（解构参考 → 概念 → 分镜 → 素材/UI → 合成 → 渲染 → 音效 → 校验），产出 4K60 带真实 UI、运动模糊与音效。注意 PolyForm Noncommercial 仅限非商业用途（商用请用同类 Apache-2.0 条目 video-shotcraft）；依赖 Python 科学计算栈 + playwright + ffmpeg + Node；上游 2026-09-26 创建，尚属新项目。评级：常规。目录总数由 95 增至 **96**。
+
 ## 2026-09
 
 ### 新增
@@ -64,6 +69,11 @@
 - **Visual Skills AI 影像导演技能集（2026-09-05）**：收录 `design-creative/visual-skills`（CC BY 4.0）。面向 Agent 的电影级 AI 影像导演技能集，`video` 负责先做戏剧结构再生成 Seedance / Kling / Veo 提示词，`image` 负责 Nano Banana / GPT Image 的分镜与关键帧。评级：常规。目录总数由 44 增至 **45**。
 
 ---
+
+### 更新
+- **全量刷新上游指标（2026-09-24）**：对 77 个带 `metrics` 块的条目重新拉取 GitHub 数据，76 条更新 `stars` 与 `pushed_at`，`checked_at` 统一置为 2026-09-24。涨幅居前：`awesome-gpt-image-2` 19,916→33,475、`openmontage` 50,726→61,149、`hyperframes` 44,054→52,821、`money-printer-turbo` 116,792→125,471、`weknora` 21,375→29,644；另把 `anthropics-office-skills`、`agent-skills-spec`、`dashi-ppt-skill` 三条 `stars: null` 补成实际值。
+- **两处上游已归档**：`design-creative/openscreen`（★39,966，末次推送 2026-06-17）与 `agent-infra/deepseek-pp`（★1,871，末次推送 2026-08-13）的 `metrics.archived` 由 false 改为 true。两者 tier 暂仍为 `standard`，是否按收录标准降为 `watch` 待维护者判定。
+- **正文写死的星号同步刷新**：条目详情页与 `skills.json` 不同，正文里的星号是手写进散文的（如 `> 上游：… · 44.1k stars`），不随 `metrics` 自动更新。本次把 27 个条目「当前状态」语义的星号（标题行与「维护活跃」句）改到实测值，千位以下改用实际数字（如 `约 0.3k` → `约 331`）；明确标注「截至 <日期> 核验」的历史陈述保持原样不动。
 
 ## 2026-08
 

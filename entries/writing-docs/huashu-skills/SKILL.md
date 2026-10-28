@@ -15,9 +15,9 @@ homepage: https://github.com/alchaincyf/huashu-skills
 repo: https://github.com/alchaincyf/huashu-skills
 tier: standard
 metrics:
-  stars: 1425
-  pushed_at: "2026-08-25"
-  checked_at: "2026-08-29"
+  stars: 2053
+  pushed_at: "2026-10-26T05:46:06Z"
+  checked_at: "2026-10-28"
   archived: false
 related: [huashu-design, shuohao-skills]
 aliases: [花叔技能, 花叔 Skills 总目录, huashu]

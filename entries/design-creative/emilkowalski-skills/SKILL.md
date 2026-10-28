@@ -15,9 +15,9 @@ homepage: https://emilkowal.ski/skill
 repo: https://github.com/emilkowalski/skills
 tier: standard
 metrics:
-  stars: 36165
-  pushed_at: "2026-08-21T09:32:33Z"
-  checked_at: "2026-09-08"
+  stars: 50721
+  pushed_at: "2026-10-11T13:58:36Z"
+  checked_at: "2026-10-28"
   archived: false
 related: []
 aliases: [emil-skills]

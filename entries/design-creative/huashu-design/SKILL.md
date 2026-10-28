@@ -16,9 +16,9 @@ repo: https://github.com/alchaincyf/huashu-design
 tier: core
 featured: true
 metrics:
-  stars: 23662
-  pushed_at: "2026-08-25"
-  checked_at: "2026-08-29"
+  stars: 27731
+  pushed_at: "2026-10-23T15:32:08Z"
+  checked_at: "2026-10-28"
   archived: false
 related: [huashu-skills]
 aliases: [Huashu Design, 花叔设计]

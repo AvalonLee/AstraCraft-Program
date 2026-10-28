@@ -15,9 +15,9 @@ homepage: https://marketing.chatfire.site/huobao-canvas/
 repo: https://github.com/chatfire-AI/huobao-canvas
 tier: standard
 metrics:
-  stars: 809
-  pushed_at: "2026-09-10T14:51:41Z"
-  checked_at: "2026-09-10"
+  stars: 904
+  pushed_at: "2026-10-25T17:17:51Z"
+  checked_at: "2026-10-28"
   archived: false
 related: []
 aliases: ["AI Canvas"]
@@ -28,7 +28,7 @@ updated_at: "2026-09-10"
 
 # AI Canvas 可视化创作画布
 
-> 基于 Vue Flow 的可视化 AI 创作画布。上游：[chatfire-AI/huobao-canvas](https://github.com/chatfire-AI/huobao-canvas) · 许可证：MIT · 约 0.8k stars
+> 基于 Vue Flow 的可视化 AI 创作画布。上游：[chatfire-AI/huobao-canvas](https://github.com/chatfire-AI/huobao-canvas) · 许可证：MIT · 约 838 stars
 
 ## 这是什么
 

@@ -15,9 +15,9 @@ homepage: https://github.com/dacnay816y62-hub/fantasy-life-force-portrait-photog
 repo: https://github.com/dacnay816y62-hub/fantasy-life-force-portrait-photography
 tier: standard
 metrics:
-  stars: 287
-  pushed_at: "2026-07-19T09:05:19Z"
-  checked_at: "2026-08-26"
+  stars: 450
+  pushed_at: "2026-09-24T18:54:20Z"
+  checked_at: "2026-10-28"
   archived: false
 related: []
 aliases: [生命感人像, 人像摄影]

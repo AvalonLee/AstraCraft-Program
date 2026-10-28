@@ -24,6 +24,7 @@
 - **20 条许可证人工复核（2026-10-28）**：逐条对照上游 LICENSE 与 README，更正 4 条错误声明——`agent-infra/cc-haha` 改为自定义 Community Source License 1.0（原文案误标 MIT）、`design-creative/huobao-canvas` 改为 CC BY-NC-SA 4.0（误标 MIT）、`design-creative/bigbanana-ai-director` 以 LICENSE 全文改为 BigBanana Community License 1.0、`business-office/toolknit-desktop` 改为 PolyForm Noncommercial 1.0.0（上游 2026-10-14 换协议，原 Apache-2.0 不再适用）；`meta-skillcraft/agent-skills-spec` 因规范页与仓库均无许可声明改为 UNKNOWN。其余 14 条声明与上游一致，另有 6 条上游确实没有许可声明（保持 UNKNOWN）；这些条目因上游许可不可机器识别而保留 needs-review。分类置信度误报通过补齐关键词（`self-hosted`、`web-crawler`）消除。
 - **人工复核清单（2026-10-28）**：新增 `verification/manual-review.json`，把 14 条「声明已核实、上游许可不可机器识别」的条目提升为 `verified`，推荐范围由 74 条扩到 88 条；判定按证据文件（LICENSE / README）的 blob SHA 校验，条目声明或证据内容一变即失效并退回 `needs-review`。另将协议分桶文案「商用授权」改为「商用需授权」，避免被读成必须付费。
 - **核验状态对账（2026-10-28）**：修复多个条目指向同一上游仓库（`anthropics/skills`）时状态互相覆盖的问题，站点改为按条目 id 对账。
+- **推荐技能改为在线优先（2026-10-28）**：根 `SKILL.md` 从「默认离线、联网需用户同意」改为「先联网核对最终候选的上游状态（归档 / 最近推送 / 许可证）」，网络失败时回退本地 `skills.json` 并在结果顶部明确提示原因与数据日期；在线核验只读公开元数据，不 clone、不安装。
 
 ### 结构
 

@@ -1,7 +1,7 @@
 ---
 record_type: installable-skill
 name: astracraft-recommender
-description: 根据项目画像从天工计划目录中筛选并解释最匹配的 AI 开源项目与技能，支持推荐与清单两种模式。
+description: 根据项目画像从天工计划目录中筛选并解释最匹配的 AI 开源项目与技能：优先联网核对上游最新状态，网络不可用时回退本地数据并明确提示，支持推荐与清单两种模式。
 id: AstraCraft Recommender
 name_zh: 天工精选
 name_en: AstraCraft Recommender
@@ -17,7 +17,7 @@ homepage: https://github.com/AvalonLee/AstraCraft-Program
 repo: https://github.com/AvalonLee/AstraCraft-Program
 related: [agent-skills-spec, superpowers]
 aliases: [AstraCraft Recommender, 天工精选]
-risk_notes: 推荐基于 LLM 对条目元数据的语义推理，非确定性召回；库数据按需拉取 skills.json 到独立缓存目录（非 skills 目录），不 clone 仓库；不自动安装任何项目；只推荐 verified 条目；推荐新项目仅限 GitHub 公开开源，经 Issue 模板提交、由维护者人工核验。
+risk_notes: 推荐基于 LLM 对条目元数据的语义推理，非确定性召回；默认先联网核对最终候选的上游状态（只读 GitHub 公开元数据，不 clone、不写入、不安装），网络失败时回退本地数据并明确提示；库数据按需拉取 skills.json 到独立缓存目录（非 skills 目录）；不自动安装任何项目；只推荐 verified 条目；推荐新项目仅限 GitHub 公开开源，经 Issue 模板提交、由维护者人工核验。
 added_at: "2026-08-27"
 updated_at: "2026-10-28"
 ---
@@ -51,7 +51,7 @@ updated_at: "2026-10-28"
 
 本技能就是仓库根目录这一份 `SKILL.md`。**安装 = 只把这一份文件放进你的 skills 目录**，不需要克隆整个仓库。
 
-> `entries/` 下的 95 份文件叫 `ENTRY.md`，是条目数据，不是技能；多数 Agent 不会把它们识别成技能。
+> `entries/` 下的 96 份文件叫 `ENTRY.md`，是条目数据，不是技能；多数 Agent 不会把它们识别成技能。
 
 ```bash
 # 以 WorkBuddy 为例；其他 agent 换成 ~/.claude/skills、~/.codex/skills、<项目>/.cursor/skills
@@ -64,9 +64,35 @@ curl -fsSL https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/S
 
 ### 模式 A：推荐
 
-**0. 取数据（每轮先做）**
+**0. 准备数据（每轮先做，在线优先）**
 
-读本地缓存 `skills.json`（见「数据更新」）。缓存不存在或超过 7 天，先问用户是否联网拉取，**不擅自联网**。
+- **先联网**：拉最新 `skills.json`（见「数据更新」）。
+- **本地初筛**：按第 2 步筛出候选，只保留前 5 条进入后续处理。
+- **在线核验候选**：写推荐前，对这 5 条逐条查一次 GitHub 最新状态，用最新事实修正判断。
+- **联网失败**：不中断流程，改用本地数据完成推荐，并按「联网失败」的格式明确提示。
+
+在线核验**只查最终候选，不扫全库**——没有 token 时 GitHub API 每小时只有 60 次额度。
+
+```bash
+# 每条候选一次请求；<owner>/<repo> 取自 skills.json 的 repo 字段
+curl -fsS -m 10 "https://api.github.com/repos/<owner>/<repo>" \
+  | jq '{archived, pushed_at, stars: .stargazers_count, license: .license.spdx_id}'
+```
+
+| 核验结果 | 处理 |
+|---|---|
+| 请求失败 / 403 限流 / 超时 / 非 JSON | 转「联网失败」流程 |
+| `archived: true` | 不推荐；用户明确要历史项目时才列为观察 |
+| `pushed_at` 距今超过 12 个月 | 降权，并在理由里注明「上游近期无更新」 |
+| `license` 与条目记录不一致 | 以在线结果为准，展示时注明「在线核验为 X，条目记录为 Y」 |
+| star 数有变化 | 只展示最新值，不改变排序 |
+
+**联网失败**（超时、连接被重置、403 限流、返回非 JSON）：
+
+- 最多重试 1 次，仍失败就用本地数据继续。
+- 结果最上方必须写一行：
+  `⚠ 联网核验失败（<原因>），本次基于本地数据（dataset <dataset_version>，核验于 <checked_at>），上游指标可能已过时；网络恢复后可重跑。`
+- 不得静默降级，也不得把本地数据说成最新数据。
 
 **1. 写项目画像**
 
@@ -81,7 +107,7 @@ curl -fsSL https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/S
 }
 ```
 
-`desired_modes` 可不填；不填就四类混合推荐。填了只是加分，不硬性过滤。
+`desired_modes` 可不填；不填就四类混合推荐。填了只是加分，不硬性过滤。`offline: true` 表示用户要求本轮不联网。
 
 **2. 确定性初筛**
 
@@ -102,6 +128,7 @@ python scripts/recommender.py --catalog skills.json --profile profile.json --lim
 | 许可证契合 | 开放协议 +1；商用受限且项目需商用 −2 | `license` 为 UNKNOWN 或被标注受限时降权 |
 | 文档语言匹配 | +1 | 中文团队优先 `doc_languages` 含 `zh` |
 | 离线冲突 | −3 | 项目要求离线而条目依赖云服务 |
+| 在线核验 | 归档直接排除；12 个月无更新 −1 | 以第 0 步的 GitHub 最新结果为准 |
 
 **3. 语义终审**
 
@@ -120,6 +147,8 @@ python scripts/recommender.py --catalog skills.json --profile profile.json --lim
 
 不替用户执行安装。用户要“再来 3 个”就取下一批。
 
+结果末尾注明数据来源：在线核验成功写 `数据来源：在线核验 <时间>`；回退时写「联网失败」要求的那一行提示。
+
 ### 模式 B：清单
 
 用户问“有哪些……”“列一下……”时，直接检索 `skills.json`，不要打分：
@@ -128,13 +157,15 @@ python scripts/recommender.py --catalog skills.json --profile profile.json --lim
 - 默认只列 `verification_status: verified`；用户要全量时再放开，并标出未核验项。
 - 输出表：`名称 | 分类 | 消费方式 | 评级 | 协议 | 一句话 | 上手入口`（入口用 `detail_url` 或 `source_url`）。
 
-### 数据更新
+### 数据更新（在线优先）
 
 - **数据源**：`https://avalonlee.github.io/AstraCraft-Program/data/skills.json`（单文件，含全部元数据与 `quickstart`）。
+- **优先联网**：每轮先拉最新版；缓存只是回退副本，不是主数据源。
 - **缓存**：`~/.cache/astracraft-catalog/skills.json`（Windows：`%LOCALAPPDATA%/astracraft-catalog/skills.json`）。**这不是 skills 目录**，不会被注册成技能。
-- **首次 / 过期**：用户同意后 `curl -fsSL <上面的 URL> -o <缓存路径>`；不需要 clone 仓库。
+- **回退顺序**：拉取失败 → 用已有缓存 → 没有缓存再用仓库内 `site/data/skills.json`；两种情况都要按「联网失败」的要求说明原因与数据日期。
+- **在仓库内工作时**：本地 `site/data/skills.json` 就是最新生成物，直接用；在线核验照常做。
 - **过期判断**：`generated_at` 距今超过 7 天，或 `dataset_version` 与用户提到的版本不符时提示。
-- **离线**：仍可用旧缓存推荐，但要在结果里说明数据日期。
+- **主动离线**：用户声明离线，或推荐画像里 `offline: true` 时跳过联网与在线核验，直接用缓存并标明日期。
 
 `skills.json` 关键字段：
 
@@ -159,6 +190,7 @@ python scripts/recommender.py --catalog skills.json --profile profile.json --lim
 
 ## 注意事项
 
+- **联网只读**：在线核验只读 GitHub 公开元数据，不 clone、不写入、不安装；无 token 时注意每小时 60 次限额，只查最终候选。
 - **只推荐、不自动安装**：产出清单与命令，是否执行由用户决定。
 - **只推 verified**：`needs-review` / `blocked` / `unverified` 条目只进清单并标注，不进推荐。
 - **非确定性召回**：LLM 语义推理会随表述变化；补充项目细节后可重跑。

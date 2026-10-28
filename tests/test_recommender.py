@@ -67,6 +67,32 @@ def test_recommendation_is_limited_and_ranked() -> None:
     assert [item.id for item in results] == ["testing-pro", "testing-unknown"]
 
 
+def test_watch_entries_are_excluded_from_recommendations() -> None:
+    base = load_catalog()[0]
+    watch = {**base, "id": "watch-best", "tier": "watch", "verification_status": "verified"}
+    standard = {**base, "id": "standard-ok", "tier": "standard", "verification_status": "verified"}
+
+    results = recommend([watch, standard], load_profile(), limit=5)
+
+    assert [item.id for item in results] == ["standard-ok"]
+
+
+def test_star_volume_is_a_weak_signal() -> None:
+    base = {
+        "id": "x", "category": "dev-engineering", "tags": [], "mode": "install",
+        "tier": "standard", "license": "MIT", "doc_languages": [],
+    }
+    profile = ProjectProfile.from_dict({})
+    baseline = score_entry({**base, "stars": None}, profile).score
+    popular = score_entry({**base, "stars": 5000}, profile)
+    low = score_entry({**base, "stars": 10}, profile)
+
+    assert popular.score == baseline + 1
+    assert "STARS_POPULAR:+1" in popular.reasons
+    assert low.score == baseline - 1
+    assert "STARS_LOW:-1" in low.reasons
+
+
 def test_ties_use_health_then_id() -> None:
     base = load_catalog()[0]
     entries = [

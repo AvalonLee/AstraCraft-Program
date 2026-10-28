@@ -92,7 +92,7 @@ frontmatter 关键字段：
 
 ## 如何使用
 
-**Agent / harness（推荐）：** 拉一份 [skills.json](https://avalonlee.github.io/AstraCraft-Program/data/skills.json)，按 `category` / `mode` / `tags` / `license` 筛选；需要完整说明时再取 `source_url`。推荐只使用 `verification_status: verified` 的条目。
+**Agent / harness（推荐）：** 拉一份 [skills.json](https://avalonlee.github.io/AstraCraft-Program/data/skills.json)，按 `category` / `mode` / `tags` / `license` 筛选；需要完整说明时再取 `source_url`。推荐只使用 `verification_status: verified` 且非观察期（`tier` ≠ `watch`）的条目。
 
 **人工浏览：** 打开 [在线预览站](https://avalonlee.github.io/AstraCraft-Program/)，用搜索、分类、消费方式、标签、评级、协议筛选。
 

@@ -81,6 +81,14 @@ def score_entry(entry: dict, profile: ProjectProfile) -> ScoredEntry:
     if set(entry.get("doc_languages") or []) & set(profile.doc_languages):
         score += 1
         reasons.append("DOC_LANGUAGE_MATCH:+1")
+    stars = entry.get("stars")
+    if isinstance(stars, int):
+        if stars >= 1000:
+            score += 1
+            reasons.append("STARS_POPULAR:+1")
+        elif stars < 50:
+            score -= 1
+            reasons.append("STARS_LOW:-1")
     risk = str(entry.get("risk_notes") or "").lower()
     if profile.offline and any(word in risk for word in ("network", "联网", "cloud", "云端")):
         score -= 3
@@ -89,7 +97,11 @@ def score_entry(entry: dict, profile: ProjectProfile) -> ScoredEntry:
 
 
 def recommend(entries: list[dict], profile: ProjectProfile, limit: int = 3) -> list[ScoredEntry]:
-    eligible = [entry for entry in entries if entry.get("verification_status") == "verified"]
+    # 观察期条目（watch）只进清单，不进推荐
+    eligible = [
+        entry for entry in entries
+        if entry.get("verification_status") == "verified" and entry.get("tier") != "watch"
+    ]
     scored = [score_entry(entry, profile) for entry in eligible]
     return sorted(scored, key=lambda item: (-item.score, -item.health_score, item.id))[:limit]
 

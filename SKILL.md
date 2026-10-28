@@ -17,7 +17,7 @@ homepage: https://github.com/AvalonLee/AstraCraft-Program
 repo: https://github.com/AvalonLee/AstraCraft-Program
 related: [agent-skills-spec, superpowers]
 aliases: [AstraCraft Recommender, 天工精选]
-risk_notes: 推荐基于 LLM 对条目元数据的语义推理，非确定性召回；默认先联网核对最终候选的上游状态（只读 GitHub 公开元数据，不 clone、不写入、不安装），网络失败时回退本地数据并明确提示；库数据按需拉取 skills.json 到独立缓存目录（非 skills 目录）；不自动安装任何项目；只推荐 verified 条目；推荐新项目仅限 GitHub 公开开源，经 Issue 模板提交、由维护者人工核验。
+risk_notes: 推荐基于 LLM 对条目元数据的语义推理，非确定性召回；默认先联网核对最终候选的上游状态（只读 GitHub 公开元数据，不 clone、不写入、不安装），网络失败时回退本地数据并明确提示；库数据按需拉取 skills.json 到独立缓存目录（非 skills 目录）；不自动安装任何项目；只推荐 verified 且非观察期条目；推荐新项目仅限 GitHub 公开开源，经 Issue 模板提交、由维护者人工核验。
 added_at: "2026-08-27"
 updated_at: "2026-10-28"
 ---
@@ -67,7 +67,7 @@ curl -fsSL https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/S
 **0. 准备数据（每轮先做，在线优先）**
 
 - **先联网**：拉最新 `skills.json`（见「数据更新」）。
-- **本地初筛**：按第 2 步筛出候选，只保留前 5 条进入后续处理。
+- **本地初筛**：按第 2 步筛出候选，只保留前 5 条进入后续处理；候选只能来自 `verified` 且**非观察期**（`tier` ≠ `watch`）的条目。
 - **在线核验候选**：写推荐前，对这 5 条逐条查一次 GitHub 最新状态，用最新事实修正判断。
 - **联网失败**：不中断流程，改用本地数据完成推荐，并按「联网失败」的格式明确提示。
 
@@ -85,7 +85,7 @@ curl -fsS -m 10 "https://api.github.com/repos/<owner>/<repo>" \
 | `archived: true` | 不推荐；用户明确要历史项目时才列为观察 |
 | `pushed_at` 距今超过 12 个月 | 降权，并在理由里注明「上游近期无更新」 |
 | `license` 与条目记录不一致 | 以在线结果为准，展示时注明「在线核验为 X，条目记录为 Y」 |
-| star 数有变化 | 只展示最新值，不改变排序 |
+| star 数有变化 | 展示最新值；跨过 1000 / 50 的量级门槛时按弱权重重算 |
 
 **联网失败**（超时、连接被重置、403 限流、返回非 JSON）：
 
@@ -117,14 +117,15 @@ curl -fsS -m 10 "https://api.github.com/repos/<owner>/<repo>" \
 python scripts/recommender.py --catalog skills.json --profile profile.json --limit 3
 ```
 
-脚本只返回 `verification_status: verified` 的条目，并给出逐项理由。没有脚本时按下表手工初筛：
+脚本只返回 `verification_status: verified` 且非观察期（`tier` ≠ `watch`）的条目，并给出逐项理由。没有脚本时按下表手工初筛：
 
 | 信号 | 加分 | 说明 |
 | --- | --- | --- |
 | 分类命中 | +3 | 项目领域落在某条目的 `category` |
 | 标签命中 | 每个 +2 | 项目关键词命中条目 `tags` |
 | 消费方式匹配 | +1 | 命中 `desired_modes` |
-| 层级加权 | core +2 / standard +1 / watch 0 | 来自 `tier` |
+| 层级加权 | core +2 / standard +1；watch 直接排除 | 来自 `tier`，观察期条目不进推荐 |
+| star 热度 | ≥1000 +1 / <50 −1 | 弱权重，只看量级，不按最新数字排序 |
 | 许可证契合 | 开放协议 +1；商用受限且项目需商用 −2 | `license` 为 UNKNOWN 或被标注受限时降权 |
 | 文档语言匹配 | +1 | 中文团队优先 `doc_languages` 含 `zh` |
 | 离线冲突 | −3 | 项目要求离线而条目依赖云服务 |
@@ -154,7 +155,7 @@ python scripts/recommender.py --catalog skills.json --profile profile.json --lim
 用户问“有哪些……”“列一下……”时，直接检索 `skills.json`，不要打分：
 
 - 支持条件：`category_dir`、`mode`、`tags`、`tier`、`license` / `license_bucket`、`doc_languages`、关键词。
-- 默认只列 `verification_status: verified`；用户要全量时再放开，并标出未核验项。
+- 默认只列 `verification_status: verified` 的条目；观察期（`tier: watch`）条目在清单里照常列出并标注，但不会出现在推荐里。
 - 输出表：`名称 | 分类 | 消费方式 | 评级 | 协议 | 一句话 | 上手入口`（入口用 `detail_url` 或 `source_url`）。
 
 ### 数据更新（在线优先）
@@ -177,7 +178,7 @@ python scripts/recommender.py --catalog skills.json --profile profile.json --lim
 | `tags` / `languages` / `doc_languages` | 检索与可用性 |
 | `license` / `license_bucket` | 能否商用 |
 | `tier` / `tier_label` | 推荐权重 |
-| `verification_status` / `health_score` / `checked_at` | 核验状态；推荐只用 `verified` |
+| `verification_status` / `health_score` / `stars` / `checked_at` | 核验状态与热度；推荐只用 `verified` 且非 `watch` |
 | `quickstart` | 上手命令；为空时取 `source_url` 正文 |
 | `detail_url` / `source_url` / `repo` | 详情页、条目原文、上游仓库 |
 
@@ -192,7 +193,7 @@ python scripts/recommender.py --catalog skills.json --profile profile.json --lim
 
 - **联网只读**：在线核验只读 GitHub 公开元数据，不 clone、不写入、不安装；无 token 时注意每小时 60 次限额，只查最终候选。
 - **只推荐、不自动安装**：产出清单与命令，是否执行由用户决定。
-- **只推 verified**：`needs-review` / `blocked` / `unverified` 条目只进清单并标注，不进推荐。
+- **只推 verified 且非观察期**：`needs-review` / `blocked` / `unverified` 只进清单并标注；`tier: watch` 的观察期条目只进清单，不进推荐。
 - **非确定性召回**：LLM 语义推理会随表述变化；补充项目细节后可重跑。
 - **数据只有元数据**：每个条目只有一份 `ENTRY.md`，不收录上游源码；安装命令指向上游仓库。
 - **许可证**：`license` 仅作参考，最终以上游 LICENSE 全文为准。

@@ -447,6 +447,7 @@ def main(argv: list[str] | None = None) -> int:
                 "updated_at": str(meta.get("updated_at", "")),
                 "verification_status": upstream.get("status") if upstream else "unverified",
                 "health_score": upstream.get("health_score") if upstream else None,
+                "stars": upstream.get("stars") if upstream else None,
                 "checked_at": verified_at if upstream else None,
                 "quickstart": quickstart,
                 "detail_url": f"skills/{entry.id}.html",

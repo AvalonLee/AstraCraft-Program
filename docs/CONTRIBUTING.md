@@ -67,12 +67,20 @@ touch entries/<分类>/<你的id>/ENTRY.md
 ```bash
 python scripts/validate.py          # frontmatter + mode/标题 + 去重
 python scripts/gen_index.py         # 重新生成 INDEX.md
-python scripts/gen_site.py          # 重新生成 site/data/skills.json 与详情页
+python scripts/gen_site.py          # 重新生成 site/data/skills.json
 ```
 
 三条都过了再提 PR。CI 会跑同样的检查，本地先过能省一轮往返。
 
-**记得把生成后的 `INDEX.md` 与 `site/` 一起提交**——CI 会重新渲染并 diff，不一致直接失败。
+**记得把生成后的 `INDEX.md` 与 `site/data/skills.json` 一起提交**——CI 会重新渲染并 diff，不一致直接失败。
+详情页 `site/skills/*.html` 由部署工作流在发布时生成，**不要提交**（已列入 .gitignore）。
+
+本地预览站点：
+
+```bash
+python scripts/gen_site.py
+python -m http.server -d site    # 浏览器开 http://localhost:8000
+```
 
 ---
 
@@ -86,7 +94,7 @@ python scripts/gen_site.py          # 重新生成 site/data/skills.json 与详�
 | frontmatter 缺必填字段 | 用 `validate.py` 检查 |
 | 没有对应小节 / 没有代码块 | Agent 没法上手，等于没收录 |
 | 正文搬运了上游源码 | 本仓库只给链接与指令，不转载源码 |
-| 忘了更新 INDEX.md / site | 跑一下生成脚本就行 |
+| 忘了更新 INDEX.md / skills.json | 跑一下生成脚本就行 |
 | 重复收录 | 同一个 `repo` 已存在，或该项目在 CHANGELOG「已移除」名单里 |
 
 ---

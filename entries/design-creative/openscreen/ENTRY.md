@@ -27,7 +27,7 @@ updated_at: "2026-10-28"
 
 # OpenScreen 开源录屏演示工具
 
-> Free, open-source alternative to Screen Studio。上游：[siddharthvaddem/openscreen](https://github.com/siddharthvaddem/openscreen) · 许可证：MIT · 39.9k stars · 已官宣即将归档
+> Free, open-source alternative to Screen Studio。上游：[siddharthvaddem/openscreen](https://github.com/siddharthvaddem/openscreen) · 许可证：MIT · 已官宣即将归档
 
 ## 这是什么
 

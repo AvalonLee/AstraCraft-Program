@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # Palmier Pro AI 视频剪辑
 
-> The video editor built for AI.上游：[palmier-io/palmier-pro](https://github.com/palmier-io/palmier-pro) · 历史 GPL v3（≤v0.7.6）/ 当前二进制专有 · 14.6k stars · YC S24
+> The video editor built for AI.上游：[palmier-io/palmier-pro](https://github.com/palmier-io/palmier-pro) · 历史 GPL v3（≤v0.7.6）/ 当前二进制专有 · YC S24
 
 ## 这是什么
 

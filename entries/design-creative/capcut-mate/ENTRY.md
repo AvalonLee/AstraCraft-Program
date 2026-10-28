@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # CapCut Mate 剪映自动化
 
-> 开源剪映小助手：让大模型具备剪映剪辑能力。上游：[Hommy-master/capcut-mate](https://github.com/Hommy-master/capcut-mate) · 许可证：Apache 2.0 · 2.0k stars
+> 开源剪映小助手：让大模型具备剪映剪辑能力。上游：[Hommy-master/capcut-mate](https://github.com/Hommy-master/capcut-mate) · 许可证：Apache 2.0
 
 ## 这是什么
 

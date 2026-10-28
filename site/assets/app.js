@@ -13,33 +13,7 @@
   // 评级（tier）视觉分类：tier_label -> 配色档（与 style.css .tier-* 对应）
   var TIER_CLASS = { "主推": "core", "常规": "standard", "观察": "watch" };
 
-  // 协议直观分类：将 SPDX 协议名映射为更易懂的开放程度分桶
-  // （与 scripts/gen_site.py 的 LICENSE_BUCKETS / BUCKET_LABELS 保持一致）
-  var LICENSE_BUCKETS = {
-    // 完全开源（宽松许可）：可商用、可闭源，仅需保留署名
-    "MIT": "open", "MIT-0": "open", "BSD-2-Clause": "open", "BSD-3-Clause": "open",
-    "Apache-2.0": "open", "ISC": "open", "Unlicense": "open", "0BSD": "open",
-    "Zlib": "open", "BSL-1.0": "open", "CC0-1.0": "open", "BlueOak-1.0.0": "open",
-    "Python-2.0": "open", "MS-PL": "open", "WTFPL": "open",
-    "CC-BY-4.0": "open", "CC-BY-3.0": "open",
-    // 部分开源（Copyleft / 衍生约束）
-    "GPL-2.0": "copyleft", "GPL-3.0": "copyleft", "AGPL-3.0": "copyleft", "AGPL-3.0-only": "copyleft",
-    "LGPL-2.1": "copyleft", "LGPL-3.0": "copyleft", "MPL-2.0": "copyleft",
-    "EPL-2.0": "copyleft", "EPL-1.0": "copyleft", "OSL-3.0": "copyleft",
-    "EUPL-1.2": "copyleft", "CDDL-1.0": "copyleft", "CeCILL-2.1": "copyleft",
-    // 商用需授权（专有 / 源码可见但受限）
-    "LicenseRef-Anthropic-Source-Available": "commercial",
-    "LicenseRef-BigBanana-Community-1.0": "commercial",
-    "LicenseRef-cc-haha-Community-Source-1.0": "commercial",
-    "LicenseRef-GSAP-Standard-No-Charge": "commercial",
-    "LicenseRef-NC-Learning": "commercial",
-    "PolyForm-Noncommercial-1.0.0": "commercial",
-    "Commercial": "commercial", "Proprietary": "commercial",
-    "CC-BY-NC-4.0": "commercial", "CC-BY-NC-SA-4.0": "commercial",
-    "BUSL-1.1": "commercial", "SSPL-1.0": "commercial",
-    // 版权未声明
-    "UNKNOWN": "unknown"
-  };
+  // 协议直观分类：分桶结果由 skills.json 的 license_bucket 提供（生成侧 scripts/gen_site.py）
   var BUCKET_META = {
     open:       { label: "完全开源", desc: "宽松许可（MIT / BSD / Apache / ISC / CC0 等）：可商用、可闭源，仅需保留原作者署名。" },
     copyleft:   { label: "部分开源", desc: "Copyleft 许可（GPL / LGPL / MPL / AGPL 等）：可自由使用与修改，但衍生作品须以相同或兼容协议开源。" },
@@ -48,8 +22,7 @@
   };
   var BUCKET_ORDER = ["open", "copyleft", "commercial", "unknown"];
   function licenseBucket(s) {
-    if (s && s.license_bucket) return s.license_bucket;
-    return LICENSE_BUCKETS[String(s && s.license)] || "unknown";
+    return (s && s.license_bucket) || "unknown";
   }
 
   var state = {
@@ -288,6 +261,11 @@
       var tk = TIER_CLASS[s.tier_label] || "standard";
       meta.push('<span class="tier-badge tier-' + tk + '">' + esc(s.tier_label) + "</span>");
     }
+    if (s.verification_status === "needs-review") {
+      meta.push('<span class="verify-badge verify-needs-review">待复核</span>');
+    } else if (s.verification_status === "blocked" || s.verification_status === "unverified") {
+      meta.push('<span class="verify-badge verify-blocked">暂不推荐</span>');
+    }
     var lbKey = licenseBucket(s);
     var lb = BUCKET_META[lbKey];
     if (lb) meta.push('<span class="lic-badge lic-' + lbKey + '">' + esc(lb.label) + "</span>");
@@ -320,24 +298,34 @@
     $("result-count").textContent = list.length === total
       ? "共 " + list.length + " 个条目"
       : "共 " + list.length + " 个条目（已从 " + total + " 个中筛选）";
+    writeUrlState();
   }
 
-  function pickRandomSkills(count) {
-    var pool = state.skills.slice();
+  function shuffle(pool) {
     for (var i = pool.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
-      var temp = pool[i];
-      pool[i] = pool[j];
-      pool[j] = temp;
+      var t = pool[i]; pool[i] = pool[j]; pool[j] = t;
     }
-    return pool.slice(0, count);
+    return pool;
   }
 
-  // ---- 首页随机推荐区渲染 ----
+  // 精选推荐：featured 优先，不足的名额由 verified 且非观察期条目随机补位
+  function pickFeatured(count) {
+    var picks = shuffle(state.skills.filter(function (s) { return s.featured; })).slice(0, count);
+    var pool = shuffle(state.skills.filter(function (s) {
+      return s.verification_status === "verified" && s.tier !== "watch";
+    }));
+    for (var i = 0; picks.length < count && i < pool.length; i++) {
+      if (picks.indexOf(pool[i]) === -1) picks.push(pool[i]);
+    }
+    return picks;
+  }
+
+  // ---- 首页精选区渲染 ----
   function renderRandomPicks() {
     var box = $("featured-results");
     if (!box) return;
-    box.innerHTML = pickRandomSkills(RANDOM_PICK_COUNT).map(cardHtml).join("");
+    box.innerHTML = pickFeatured(RANDOM_PICK_COUNT).map(cardHtml).join("");
   }
 
   // 卡片标签点击 -> 联动 sidebar 的 tag 分面筛选
@@ -356,13 +344,56 @@
   }
 
   function clearFilters() {
-    state.sel = { category: null, tag: null, tier: null, license: null };
+    state.sel = { category: null, mode: null, tag: null, tier: null, license: null };
     state.q = "";
     $("search-input").value = "";
     Array.prototype.forEach.call(document.querySelectorAll(".chip.active"), function (el) {
       el.classList.remove("active");
     });
     render();
+  }
+
+  // ---- URL 状态：筛选与搜索进 query，刷新/分享/后退均可恢复 ----
+  var URL_KEYS = ["category", "mode", "tag", "tier", "license"];
+
+  function readUrlState() {
+    var params;
+    try { params = new URLSearchParams(location.search); } catch (e) { return; }
+    var q = params.get("q");
+    if (q) state.q = q.trim().toLowerCase();
+    URL_KEYS.forEach(function (k) {
+      var v = params.get(k);
+      if (v) state.sel[k] = v;
+    });
+  }
+
+  function writeUrlState() {
+    var params = new URLSearchParams();
+    if (state.q) params.set("q", state.q);
+    URL_KEYS.forEach(function (k) {
+      if (state.sel[k]) params.set(k, state.sel[k]);
+    });
+    var qs = params.toString();
+    try {
+      history.replaceState(null, "", location.pathname + (qs ? "?" + qs : "") + location.hash);
+    } catch (e) { /* file:// 下可能被拒绝，忽略 */ }
+  }
+
+  // 把 state.sel 同步到 chip 高亮；URL 里带无效值时丢弃该筛选
+  function syncChips() {
+    URL_KEYS.forEach(function (k) {
+      var box = $(k + "-chips");
+      if (!box) return;
+      var val = state.sel[k];
+      var matched = false;
+      Array.prototype.forEach.call(box.querySelectorAll(".chip"), function (el) {
+        var on = !!val && el.dataset.value === val;
+        el.classList.toggle("active", on);
+        if (on) matched = true;
+      });
+      if (val && !matched) state.sel[k] = null;
+    });
+    if (state.q) $("search-input").value = state.q;
   }
 
   function init() {
@@ -381,7 +412,10 @@
           [].concat.apply([], state.skills.map(function (s) { return s.tags || []; }))
         ).length;
 
+        readUrlState();
         buildChips();
+        syncChips();
+        applyTagCollapse();
         $("search-input").addEventListener("input", function (e) {
           state.q = e.target.value.trim().toLowerCase();
           render();

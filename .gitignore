@@ -25,6 +25,9 @@ tmp/
 pip-*/
 pytest-of-root/
 
+# ── 站点生成物（部署时由 deploy.yml 生成，不入库）──────────
+site/skills/
+
 # ── 本地 Agent 私有数据（不上传仓库）────────────────────
 .workbuddy/
 _template/

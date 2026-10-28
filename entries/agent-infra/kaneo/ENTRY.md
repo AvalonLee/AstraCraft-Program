@@ -61,4 +61,4 @@ docker compose up -d
 - **许可证 MIT**：宽松可商用。
 - **自托管依赖**：核心部署需要 PostgreSQL 16，并配置 `POSTGRES_PASSWORD`、`AUTH_SECRET`、`KANEO_CLIENT_URL`；`KANEO_API_URL` 默认由 `KANEO_CLIENT_URL` 推导。
 - **MCP 两种接入**：stdio 用 `npx -y @kaneo/mcp`（需 Node.js 与 npm 网络），自托管实例直接提供 HTTP MCP 端点 `/api/mcp`。
-- 维护活跃（2026-09 持续更新），截至 2026-09-08 核验约 8,997 stars。
+- 维护活跃（2026-09 持续更新）。

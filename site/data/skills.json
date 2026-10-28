@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "dataset_version": "261028c",
-  "generated_at": "2026-10-28T12:47:37Z",
+  "dataset_version": "261028d",
+  "generated_at": "2026-10-28T15:30:34Z",
   "count": 96,
   "modes": [
     {
@@ -2374,7 +2374,7 @@
         "hell-grind",
         "AIGC production skill"
       ],
-      "risk_notes": "方法论受 Higgsfield 公开项目 Hell Grind 启发但不包含原视频、原始资产或全量提示词（公开可访问不代表再分发许可）；默认不调用生成模型、不扣费、不下载媒体、不上传、不发布；本地工具（init / validate / audit）全部只读 + 0 网络请求；仅支持 macOS / Linux 安装（install.sh），Windows 需手动适配；项目规模较小（146 stars）。",
+      "risk_notes": "方法论受 Higgsfield 公开项目 Hell Grind 启发但不包含原视频、原始资产或全量提示词（公开可访问不代表再分发许可）；默认不调用生成模型、不扣费、不下载媒体、不上传、不发布；本地工具（init / validate / audit）全部只读 + 0 网络请求；仅支持 macOS / Linux 安装（install.sh），Windows 需手动适配；项目规模较小。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
       "verification_status": "verified",
@@ -3247,7 +3247,7 @@
         "PMAgent-Canvas",
         "PromptCard"
       ],
-      "risk_notes": "当前 main 为开发版本（不稳定，处于功能测试中），稳定基线请用 Git tag stable-2026-08-25；目前提供 Windows 桌面开发预览（start-desktop.vbs，非签名安装包）；核心模型依赖火山引擎（Seedream 5.0 Pro / Doubao Seed 2.0），调用按 API 计费；项目尚处早期（108 stars）。",
+      "risk_notes": "当前 main 为开发版本（不稳定，处于功能测试中），稳定基线请用 Git tag stable-2026-08-25；目前提供 Windows 桌面开发预览（start-desktop.vbs，非签名安装包）；核心模型依赖火山引擎（Seedream 5.0 Pro / Doubao Seed 2.0），调用按 API 计费；项目尚处早期。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
       "verification_status": "verified",

@@ -28,7 +28,7 @@ updated_at: "2026-09-05"
 
 # VoxCPM2 无 Tokenizer TTS
 
-> Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning。上游：[OpenBMB/VoxCPM](https://github.com/OpenBMB/VoxCPM) · 许可证：Apache 2.0 · 40.7k stars · [文档](https://voxcpm.readthedocs.io/en/latest/) · [Demo](https://huggingface.co/spaces/OpenBMB/VoxCPM-Demo)
+> Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning。上游：[OpenBMB/VoxCPM](https://github.com/OpenBMB/VoxCPM) · 许可证：Apache 2.0 · [文档](https://voxcpm.readthedocs.io/en/latest/) · [Demo](https://huggingface.co/spaces/OpenBMB/VoxCPM-Demo)
 
 ## 这是什么
 
@@ -120,4 +120,4 @@ voxcpm clone --text "..." --reference-audio voice.wav --output out.wav
 - **GPU 需求**：2B 模型需要较高显存；CPU 推理极慢不适合实际使用；vLLM 部署推荐 A100/H100。
 - **声音克隆合规**：克隆他人声音必须获得授权；合成内容需遵守当地关于深度合成和语音伪造的法规。
 - **模型演进**：VoxCPM-0.5B（2025-09，HuggingFace Trending #1）→ VoxCPM1.5（2025-12，GitHub Trending #1，SFT/LoRA）→ VoxCPM2（2026-04，2B、30 语言、Voice Design、48kHz）。
-- **维护极其活跃**（2026-09 更新，37.9k stars），提供中英文 README、ReadTheDocs、HuggingFace Playground 和音频样本页。
+- **维护极其活跃**（2026-09 更新），提供中英文 README、ReadTheDocs、HuggingFace Playground 和音频样本页。

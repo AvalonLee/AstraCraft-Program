@@ -28,7 +28,7 @@ updated_at: "2026-10-28"
 
 # Director's Console AI 影视工作台
 
-> 电影化 AI VFX 生产管线。上游：[NickPittas/DirectorsConsole](https://github.com/NickPittas/DirectorsConsole) · 许可证：MIT · 约 0.4k stars
+> 电影化 AI VFX 生产管线。上游：[NickPittas/DirectorsConsole](https://github.com/NickPittas/DirectorsConsole) · 许可证：MIT
 
 ## 这是什么
 
@@ -72,4 +72,4 @@ python start.py
 - 许可证为 **MIT**，可商用，保留版权声明即可；生成内容与第三方 ComfyUI 工作流仍须自行确认各自授权。
 - 图像/视频生成效果取决于你接入的 ComfyUI 工作流、模型与硬件；视频支持 Wan 2.2、CogVideoX、HunyuanVideo 等，但需正确配置输出检测。
 - 项目支持本地或 NAS 路径存储；多用户/公网暴露未在 README 中声明为默认安全模型，建议先在可信环境使用。
-- 截至 2026-09-10 核验，上游最近推送为 2026-02-25，更新频率低于其他新条目，故列入观察档。
+- 上游最近推送为 2026-02-25，更新频率低于其他新条目，故列入观察档。

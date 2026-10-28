@@ -28,7 +28,7 @@ updated_at: "2026-09-10"
 
 # MiniMax H3 Studio ComfyUI 图像工作流
 
-> Turn MiniMax H3 into an actual image workflow for ComfyUI。上游：[thaakeno/ComfyUI-MiniMax-H3-Studio](https://github.com/thaakeno/ComfyUI-MiniMax-H3-Studio) · 许可证：MIT · 约 115 stars
+> Turn MiniMax H3 into an actual image workflow for ComfyUI。上游：[thaakeno/ComfyUI-MiniMax-H3-Studio](https://github.com/thaakeno/ComfyUI-MiniMax-H3-Studio) · 许可证：MIT
 
 ## 这是什么
 

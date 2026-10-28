@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # MediaCrawler 自媒体爬虫
 
-> 多平台自媒体数据采集工具。上游：[NanmiCoder/MediaCrawler](https://github.com/NanmiCoder/MediaCrawler) · 许可证：NON-COMMERCIAL LEARNING LICENSE 1.1（仅限学习） · 68.8k stars
+> 多平台自媒体数据采集工具。上游：[NanmiCoder/MediaCrawler](https://github.com/NanmiCoder/MediaCrawler) · 许可证：NON-COMMERCIAL LEARNING LICENSE 1.1（仅限学习）
 
 ## 这是什么
 
@@ -95,4 +95,4 @@ uv run main.py --help
 - **许可证 NON-COMMERCIAL LEARNING LICENSE 1.1**：仅限学习研究，**禁止商用**；使用前阅读上游免责声明和[中国爬虫违法案例库](https://github.com/HiddenStrawberry/Crawler_Illegal_Cases_In_China)。
 - **法律合规**：不得用于对平台进行大规模爬虫或其他非法行为；遵守 robots.txt 和平台服务条款。
 - **MediaCrawlerPro**：付费闭源版本（断点续爬 / 多账号 / 去除 Playwright / Linux 完整支持 / AI Agent Skill 一键安装），本条目只覆盖开源版。
-- **维护活跃**（2026-08 更新，65.7k stars），提供中 / 英 / 西三语 README 和 WebUI 可视化操作界面。
+- **维护活跃**（2026-08 更新），提供中 / 英 / 西三语 README 和 WebUI 可视化操作界面。

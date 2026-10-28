@@ -21,7 +21,9 @@
 
 - **4 条许可证按上游更正（2026-10-28）**：全量核验发现 4 条声明与上游 LICENSE 不一致，已按上游现状更新——`agent-infra/caveman` 整仓改为 Apache-2.0（原 MIT + BSL-1.1 拆分，上游已整仓开源）、`design-creative/directors-console` 由专有改为 MIT、`design-creative/toonflow` 由 Apache-2.0 改为 MIT；`agent-infra/codexplusplus` 保留 AGPL-3.0-only 的精确写法，核验器改为把 GitHub 返回的旧别名 `AGPL-3.0` 视为同一协议，不再误报冲突。
 - **2 条已归档条目降为观察（2026-10-28）**：`agent-infra/deepseek-pp`、`design-creative/openscreen` 上游仓库已归档，评级由常规降为观察（watch）；openscreen 使用建议改为其社区 fork。
-- **20 条许可证人工复核（2026-10-28）**：逐条对照上游 LICENSE 与 README，更正 4 条错误声明——`agent-infra/cc-haha` 改为自定义 Community Source License 1.0（原文案误标 MIT）、`design-creative/huobao-canvas` 改为 CC BY-NC-SA 4.0（误标 MIT）、`design-creative/bigbanana-ai-director` 以 LICENSE 全文改为 BigBanana Community License 1.0、`business-office/toolknit-desktop` 改为 PolyForm Noncommercial 1.0.0（上游 2026-10-14 换协议，原 Apache-2.0 不再适用）；`meta-skillcraft/agent-skills-spec` 因规范页与仓库均无许可声明改为 UNKNOWN。其余 15 条声明与上游一致，仅因上游许可不可机器识别而保留 needs-review。分类置信度误报通过补齐关键词（`self-hosted`、`web-crawler`）消除。
+- **20 条许可证人工复核（2026-10-28）**：逐条对照上游 LICENSE 与 README，更正 4 条错误声明——`agent-infra/cc-haha` 改为自定义 Community Source License 1.0（原文案误标 MIT）、`design-creative/huobao-canvas` 改为 CC BY-NC-SA 4.0（误标 MIT）、`design-creative/bigbanana-ai-director` 以 LICENSE 全文改为 BigBanana Community License 1.0、`business-office/toolknit-desktop` 改为 PolyForm Noncommercial 1.0.0（上游 2026-10-14 换协议，原 Apache-2.0 不再适用）；`meta-skillcraft/agent-skills-spec` 因规范页与仓库均无许可声明改为 UNKNOWN。其余 14 条声明与上游一致，另有 6 条上游确实没有许可声明（保持 UNKNOWN）；这些条目因上游许可不可机器识别而保留 needs-review。分类置信度误报通过补齐关键词（`self-hosted`、`web-crawler`）消除。
+- **人工复核清单（2026-10-28）**：新增 `verification/manual-review.json`，把 14 条「声明已核实、上游许可不可机器识别」的条目提升为 `verified`，推荐范围由 74 条扩到 88 条；判定按证据文件（LICENSE / README）的 blob SHA 校验，条目声明或证据内容一变即失效并退回 `needs-review`。另将协议分桶文案「商用授权」改为「商用需授权」，避免被读成必须付费。
+- **核验状态对账（2026-10-28）**：修复多个条目指向同一上游仓库（`anthropics/skills`）时状态互相覆盖的问题，站点改为按条目 id 对账。
 
 ### 结构
 

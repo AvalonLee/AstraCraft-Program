@@ -53,11 +53,6 @@ def load_dataset_version() -> dict:
         return {}
 
 
-def repo_key(url: object) -> str:
-    value = str(url or "").strip().lower().rstrip("/")
-    return value.removesuffix(".git")
-
-
 def load_verification() -> tuple[dict[str, dict], str | None]:
     """读上游核验快照；未核验的条目由调用方标记为 unverified。"""
     if not SNAPSHOT_PATH.exists():
@@ -66,11 +61,8 @@ def load_verification() -> tuple[dict[str, dict], str | None]:
         snapshot = json.loads(SNAPSHOT_PATH.read_text(encoding="utf-8"))
     except (json.JSONDecodeError, OSError):
         return {}, None
-    by_repo = {
-        repo_key(value.get("repo")): value
-        for value in (snapshot.get("entries") or {}).values()
-    }
-    return by_repo, snapshot.get("generated_at")
+    # 多个条目可以指向同一个上游仓库（如 anthropics/skills），只能按条目 id 对账
+    return dict(snapshot.get("entries") or {}), snapshot.get("generated_at")
 
 
 # ---------------------------------------------------------------------------
@@ -310,7 +302,7 @@ LICENSE_BUCKETS = {
     "LGPL-2.1": "copyleft", "LGPL-3.0": "copyleft", "MPL-2.0": "copyleft",
     "EPL-2.0": "copyleft", "EPL-1.0": "copyleft", "OSL-3.0": "copyleft",
     "EUPL-1.2": "copyleft", "CDDL-1.0": "copyleft", "CeCILL-2.1": "copyleft",
-    # 商用授权（专有 / 源码可见但受限）
+    # 商用需授权（专有 / 源码可见但受限）
     "LicenseRef-Anthropic-Source-Available": "commercial",
     "LicenseRef-BigBanana-Community-1.0": "commercial",
     "LicenseRef-cc-haha-Community-Source-1.0": "commercial",
@@ -326,7 +318,7 @@ LICENSE_BUCKETS = {
 BUCKET_LABELS = {
     "open": "完全开源",
     "copyleft": "部分开源",
-    "commercial": "商用授权",
+    "commercial": "商用需授权",
     "unknown": "版权未声明",
 }
 
@@ -422,7 +414,7 @@ def main(argv: list[str] | None = None) -> int:
         body = body.lstrip("\n")
         body_html = md_to_html(body)
         quickstart = extract_action(body, mode)
-        upstream = verification.get(repo_key(meta.get("repo")))
+        upstream = verification.get(entry.id)
 
         detail_html = build_detail(entry, cat_name, body_html)
         details[f"{entry.id}.html"] = detail_html

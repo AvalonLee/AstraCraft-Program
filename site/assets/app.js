@@ -27,7 +27,7 @@
     "LGPL-2.1": "copyleft", "LGPL-3.0": "copyleft", "MPL-2.0": "copyleft",
     "EPL-2.0": "copyleft", "EPL-1.0": "copyleft", "OSL-3.0": "copyleft",
     "EUPL-1.2": "copyleft", "CDDL-1.0": "copyleft", "CeCILL-2.1": "copyleft",
-    // 商用授权（专有 / 源码可见但受限）
+    // 商用需授权（专有 / 源码可见但受限）
     "LicenseRef-Anthropic-Source-Available": "commercial",
     "LicenseRef-BigBanana-Community-1.0": "commercial",
     "LicenseRef-cc-haha-Community-Source-1.0": "commercial",
@@ -43,7 +43,7 @@
   var BUCKET_META = {
     open:       { label: "完全开源", desc: "宽松许可（MIT / BSD / Apache / ISC / CC0 等）：可商用、可闭源，仅需保留原作者署名。" },
     copyleft:   { label: "部分开源", desc: "Copyleft 许可（GPL / LGPL / MPL / AGPL 等）：可自由使用与修改，但衍生作品须以相同或兼容协议开源。" },
-    commercial: { label: "商用授权", desc: "专有 / 源码可见但受限（Commercial / Source-Available / NC / BUSL / SSPL 等）：需商业授权或有使用限制，使用前请确认条款。" },
+    commercial: { label: "商用需授权", desc: "专有 / 源码可见但受限（Commercial / Source-Available / NC / PolyForm / BUSL / SSPL 等）：商用须另行取得授权或有使用限制，多数仍可免费用于非商业场景；使用前请确认条款。" },
     unknown:    { label: "版权未声明", desc: "仓库未附 LICENSE 文件：默认保留所有权利，他人无权擅自使用，使用前须获作者明确许可。" }
   };
   var BUCKET_ORDER = ["open", "copyleft", "commercial", "unknown"];
@@ -227,7 +227,7 @@
     });
   }
 
-  // ---- 协议筛选：按直观许可分类（完全开源 / 部分开源 / 商用授权 / 版权未声明）展示 ----
+  // ---- 协议筛选：按直观许可分类（完全开源 / 部分开源 / 商用需授权 / 版权未声明）展示 ----
   function fillLicenseChips(bucketCounts) {
     var box = $("license-chips");
     box.innerHTML = "";

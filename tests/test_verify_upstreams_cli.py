@@ -71,6 +71,106 @@ def test_needs_review_is_reported_without_blocking_refresh() -> None:
     assert snapshot["entries"]["tool"]["status"] == "needs-review"
 
 
+def test_manual_review_promotes_matching_entry_to_verified() -> None:
+    payload = healthy_payload()
+    payload["api_license"] = "UNKNOWN"
+    payload["text_license"] = "UNKNOWN"
+    review = {
+        "tool": {
+            "license": "MIT",
+            "head_sha": "abc123",
+            "reviewed_at": "2026-10-28",
+            "evidence": "https://example.com/LICENSE",
+        }
+    }
+
+    snapshot, exit_code = build_snapshot([catalog_entry()], lambda _: payload, "2026-10-28T00:00:00Z", review)
+
+    record = snapshot["entries"]["tool"]
+    assert exit_code == 0
+    assert record["status"] == "verified"
+    assert record["manual_review"]["evidence"] == "https://example.com/LICENSE"
+
+
+def test_manual_review_expires_when_upstream_head_changes() -> None:
+    payload = healthy_payload()
+    payload["api_license"] = "UNKNOWN"
+    payload["text_license"] = "UNKNOWN"
+    payload["head_sha"] = "def456"
+    review = {"tool": {"license": "MIT", "head_sha": "abc123", "reviewed_at": "2026-10-28", "evidence": "e"}}
+
+    snapshot, _ = build_snapshot([catalog_entry()], lambda _: payload, "2026-10-28T00:00:00Z", review)
+
+    record = snapshot["entries"]["tool"]
+    assert record["status"] == "needs-review"
+    assert "manual_review" not in record
+
+
+def test_manual_review_survives_new_commits_when_evidence_file_unchanged() -> None:
+    payload = healthy_payload()
+    payload["api_license"] = "UNKNOWN"
+    payload["text_license"] = "UNKNOWN"
+    payload["head_sha"] = "def456"
+    review = {
+        "tool": {
+            "license": "MIT",
+            "head_sha": "abc123",
+            "evidence_path": "LICENSE",
+            "evidence_sha": "blob1",
+            "reviewed_at": "2026-10-28",
+            "evidence": "e",
+        }
+    }
+
+    snapshot, _ = build_snapshot(
+        [catalog_entry()],
+        lambda _: payload,
+        "2026-10-28T00:00:00Z",
+        review,
+        blob_sha=lambda _repo, _path: "blob1",
+    )
+
+    assert snapshot["entries"]["tool"]["status"] == "verified"
+
+
+def test_manual_review_expires_when_evidence_file_changes() -> None:
+    payload = healthy_payload()
+    payload["api_license"] = "UNKNOWN"
+    payload["text_license"] = "UNKNOWN"
+    payload["head_sha"] = "def456"
+    review = {
+        "tool": {
+            "license": "MIT",
+            "head_sha": "abc123",
+            "evidence_path": "LICENSE",
+            "evidence_sha": "blob1",
+            "reviewed_at": "2026-10-28",
+            "evidence": "e",
+        }
+    }
+
+    snapshot, _ = build_snapshot(
+        [catalog_entry()],
+        lambda _: payload,
+        "2026-10-28T00:00:00Z",
+        review,
+        blob_sha=lambda _repo, _path: "blob2",
+    )
+
+    assert snapshot["entries"]["tool"]["status"] == "needs-review"
+
+
+def test_manual_review_expires_when_entry_license_changes() -> None:
+    payload = healthy_payload()
+    payload["api_license"] = "UNKNOWN"
+    payload["text_license"] = "UNKNOWN"
+    review = {"tool": {"license": "Apache-2.0", "head_sha": "abc123", "reviewed_at": "2026-10-28", "evidence": "e"}}
+
+    snapshot, _ = build_snapshot([catalog_entry()], lambda _: payload, "2026-10-28T00:00:00Z", review)
+
+    assert snapshot["entries"]["tool"]["status"] == "needs-review"
+
+
 def test_atomic_writer_replaces_snapshot(tmp_path: Path) -> None:
     path = tmp_path / "snapshot.json"
     path.write_text('{"old": true}', encoding="utf-8")
@@ -152,9 +252,9 @@ def test_github_fetcher_records_head_commit_sha(monkeypatch) -> None:
 
 def test_candidate_entries_build_auditable_catalog_records() -> None:
     candidates = {
-        "dsh": [
-            {"category": "dsh", "repo": "https://github.com/deepseek-ai/deepseek-harness", "priority": "primary", "coverage_code": "dsh-1"},
-            {"category": "dsh", "repo": "https://github.com/example/fallback", "priority": "fallback", "coverage_code": "dsh-2"},
+        "agent-infra": [
+            {"category": "agent-infra", "repo": "https://github.com/deepseek-ai/deepseek-harness", "priority": "primary", "coverage_code": "dsh-1"},
+            {"category": "agent-infra", "repo": "https://github.com/example/fallback", "priority": "fallback", "coverage_code": "dsh-2"},
         ]
     }
 
@@ -162,7 +262,7 @@ def test_candidate_entries_build_auditable_catalog_records() -> None:
 
     assert records == [{
         "id": "deepseek-ai-deepseek-harness",
-        "category": "dsh",
+        "category": "agent-infra",
         "tags": ["dsh", "deepseek-harness", "plugin"],
         "repo": "https://github.com/deepseek-ai/deepseek-harness",
         "license": "UNKNOWN",

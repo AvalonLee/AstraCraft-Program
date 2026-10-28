@@ -108,6 +108,10 @@ Windows 用户建议在 Git Bash 下操作，`.gitattributes` 已强制 LF，不
 - `main` 是**默认分支**（GitHub 仓库默认分支、稳定基线）：对外展示与克隆的入口，
   一般不直接在此开发，仅通过 `dev` -> `main` 的合并更新。
 - `dev` 是**开发分支**：所有修改、新增条目都先推送到 `dev`。
+- 需要走 PR 时，**从 `dev` 切分支**（不要从 `main` 切，否则 `dev` 前进后必然要交叉合并）：
+  ```bash
+  git switch -c feat/2026-10-28-xxx dev
+  ```
 - 日常操作：
   ```bash
   git checkout dev            # 确保在 dev 上

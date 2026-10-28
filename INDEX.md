@@ -37,7 +37,7 @@ AstraCraft Program（天工计划）全部收录条目的交叉检索表。七�
 | ⚠️ | [Codex Taskboard 本地任务看板](entries/agent-infra/codex-taskboard/ENTRY.md) | Agent 基础设施 | 部署运行 | Apache-2.0 | 常规 | 本地优先的 issue 看板，可在浏览器运行并通过 CDP 启动器或注入脚本嵌入 Codex；同一套 HTTP API 驱动 React UI 与随附 Codex Skill 使用的 taskctl CLI。 |
 | ⚠️ | [Codex++ Codex 桌面增强器](entries/agent-infra/codexplusplus/ENTRY.md) | Agent 基础设施 | 部署运行 | AGPL-3.0-only | 常规 | 面向 OpenAI Codex / ChatGPT 桌面应用的外部启动器与管理工具，通过 CDP 注入提供供应商切换、协议转换、会话管理与界面增强，不修改官方应用文件。 |
 | ⚠️ | [DeepSeek Harness](entries/agent-infra/deepseek-ai-deepseek-harness/ENTRY.md) | Agent 基础设施 | 部署运行 | MIT | 常规 | DeepSeek 官方开源 Agent Harness，以 Cordis 为基础提供一切皆插件的模型、工具、界面与技能运行时。 |
-| ⚠️ | [DeepSeek++ 浏览器 Agent 工作台](entries/agent-infra/deepseek-pp/ENTRY.md) | Agent 基础设施 | 部署运行 | Apache-2.0 | 常规 | 把 DeepSeek 网页版扩展成浏览器内 AI Agent 工作台：支持 MCP 工具、长期记忆、Skills、多模态媒体分析、网页控制、保存项、产物下载、对话导出与定时自动化。 |
+| ⚠️ | [DeepSeek++ 浏览器 Agent 工作台](entries/agent-infra/deepseek-pp/ENTRY.md) | Agent 基础设施 | 部署运行 | Apache-2.0 | 观察 | 把 DeepSeek 网页版扩展成浏览器内 AI Agent 工作台：支持 MCP 工具、长期记忆、Skills、多模态媒体分析、网页控制、保存项、产物下载、对话导出与定时自动化。 |
 | ⚠️ | [DSH 插件市场](entries/agent-infra/dsh-market-dsh-market/ENTRY.md) | Agent 基础设施 | 部署运行 | MIT | 常规 | 嵌入 DeepSeek Harness 的插件市场，用于浏览、安装、更新、启停和备份社区插件。 |
 | ⚠️ | [Kaneo 开源极简项目管理平台](entries/agent-infra/kaneo/ENTRY.md) | Agent 基础设施 | 部署运行 | MIT | 常规 | 极简开放式项目管理平台：看板、Issue、项目与标签一体管理，支持自托管，每个实例内置 HTTP MCP 端点并发布官方 @kaneo/mcp，Claude、Cursor 等 MCP 客户端可直接在对话中创建与推进任务。 |
 | ⚠️ | [OpenOPC 个人 AI 原生公司](entries/agent-infra/openopc/ENTRY.md) | Agent 基础设施 | 部署运行 | MIT | 常规 | 港大 HKUDS 出品的个人 AI 原生公司运行时：给定目标自动建组织（Self-Built）、状态机驱动多角色协作交付（Self-Run）、按角色归因学习沉淀组织记忆（Self-Grown）；支持 Codex / Claude Code / Cursor 等作为执行引擎，附像素风办公室 UI 与 10+ 消息渠道。 |
@@ -87,7 +87,7 @@ AstraCraft Program（天工计划）全部收录条目的交叉检索表。七�
 | ⚠️ | [OpenCut 开源视频剪辑器（CapCut 替代）](entries/design-creative/opencut/ENTRY.md) | 设计与创意 | 部署运行 | MIT | 常规 | 面向 web、桌面与移动端的免费开源视频剪辑器，定位 CapCut 替代品；主仓库正以 Rust 核心 + 插件优先架构重写，规划中的能力包括 Editor API、第三方插件一等公民、内置 MCP 服务、headless 批量渲染与编辑器内脚本标签页。 |
 | ⚠️ | [OpenMontage 开源智能体视频制作系统](entries/design-creative/openmontage/ENTRY.md) | 设计与创意 | 部署运行 | AGPL-3.0 | 常规 | 首个开源智能体视频制作系统：把你的 AI 编程助手变成完整视频制作工作室；12 条生产流水线、100+ 注册工具与 700+ 个 skill 知识文件，覆盖真实素材剪辑、AI 生成、Remotion/HyperFrames 合成、预算治理与质量门禁。 |
 | ★ ⚠️ | [OpenPencil AI 原生矢量设计工具](entries/design-creative/openpencil/ENTRY.md) | 设计与创意 | 部署运行 | MIT | 主推 | 首个开源 AI 原生矢量设计工具：Prompt → Canvas、并发 Agent Teams 并行作画、Design-as-Code（.op 文件 JSON 可 diff）、MCP Server 一键接入 Claude Code / Codex、多模型智能适配、10+ 平台代码导出（React / Vue / SwiftUI / Flutter 等）。 |
-| ⚠️ | [OpenScreen 开源录屏演示工具](entries/design-creative/openscreen/ENTRY.md) | 设计与创意 | 部署运行 | MIT | 常规 | Screen Studio 的免费开源替代：录屏 + 自动缩放跟随光标 + 自定义光标主题 + 本地离线字幕 + 运动模糊 + 时间线标注，导出 MP4 / GIF 多比例多分辨率；100% 免费（个人和商用）、无订阅、无水印、无付费墙。已官宣即将归档，社区 fork 由核心贡献者继续维护。 |
+| ⚠️ | [OpenScreen 开源录屏演示工具](entries/design-creative/openscreen/ENTRY.md) | 设计与创意 | 部署运行 | MIT | 观察 | Screen Studio 的免费开源替代：录屏 + 自动缩放跟随光标 + 自定义光标主题 + 本地离线字幕 + 运动模糊 + 时间线标注，导出 MP4 / GIF 多比例多分辨率；100% 免费（个人和商用）、无订阅、无水印、无付费墙。已官宣即将归档，社区 fork 由核心贡献者继续维护。 |
 | ⚠️ | [Palmier Pro AI 视频剪辑](entries/design-creative/palmier-pro/ENTRY.md) | 设计与创意 | 部署运行 | GPL-3.0 | 常规 | 为 AI 打造的 macOS 原生视频剪辑器（Swift 从零构建，北极星对标 Premiere Pro）：内置 SOTA 生成模型（Seedance / Kling / Nano Banana Pro）在时间线上直接生成视频和图片；通过 MCP 让 Claude / Codex / Cursor 直接在时间线上创建和编辑，或用内置 Agent 协作。 |
 | ⚠️ | [Pixelle-Video AI 全自动短视频引擎](entries/design-creative/pixelle-video/ENTRY.md) | 设计与创意 | 部署运行 | Apache-2.0 | 常规 | 输入一个主题即可自动完成文案撰写、AI 配图/视频生成、语音解说合成、背景音乐添加与一键合成出片；Streamlit WebUI + Docker 部署，图像/视频/TTS 可按需替换为 ComfyUI、RunningHub 工作流或 DashScope、OpenAI、Seedream、Seedance、Kling 等直连 API。 |
 | ⚠️ | [PMAgent-Canvas 本地创作画布](entries/design-creative/promptcard-agentcanvas/ENTRY.md) | 设计与创意 | 部署运行 | Apache-2.0 | 常规 | 面向 AIGC 创作者的本地桌面创作上下文环境：参考素材、Prompt、分镜、Agent 对话、生成结果和复盘经验以可携带的项目资产沉淀在同一画布；Seedream 5.0 Pro 图片生成与编辑、Doubao Seed 2.0 Agent 协作、全能参考式提示词编辑（一目标多参考 @ 节点）、Prompt 库与媒体库、分镜切割与标注。 |
@@ -545,7 +545,7 @@ star 数不参与收录判断，仅作为排序维度。`—` 表示尚未采集
 | [Pixelle-Video AI 全自动短视频引擎](entries/design-creative/pixelle-video/ENTRY.md) | 2026-09-19 | 2026-09-19 |
 | [video-use 用编码 Agent 剪视频](entries/design-creative/video-use/ENTRY.md) | 2026-09-19 | 2026-09-19 |
 | [Claude Code Haha 桌面工作台](entries/agent-infra/cc-haha/ENTRY.md) | 2026-09-11 | 2026-09-11 |
-| [DeepSeek++ 浏览器 Agent 工作台](entries/agent-infra/deepseek-pp/ENTRY.md) | 2026-09-11 | 2026-09-11 |
+| [DeepSeek++ 浏览器 Agent 工作台](entries/agent-infra/deepseek-pp/ENTRY.md) | 2026-09-11 | 2026-10-28 |
 | [BigBanana AI 漫剧导演工场](entries/design-creative/bigbanana-ai-director/ENTRY.md) | 2026-09-10 | 2026-09-10 |
 | [MiniMax H3 Studio ComfyUI 图像工作流](entries/design-creative/comfyui-minimax-h3-studio/ENTRY.md) | 2026-09-10 | 2026-09-10 |
 | [VNCCS Utils ComfyUI 创作工具箱](entries/design-creative/comfyui-vnccs-utils/ENTRY.md) | 2026-09-10 | 2026-09-10 |

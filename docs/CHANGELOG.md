@@ -20,6 +20,7 @@
 ### 更新
 
 - **4 条许可证按上游更正（2026-10-28）**：全量核验发现 4 条声明与上游 LICENSE 不一致，已按上游现状更新——`agent-infra/caveman` 整仓改为 Apache-2.0（原 MIT + BSL-1.1 拆分，上游已整仓开源）、`design-creative/directors-console` 由专有改为 MIT、`design-creative/toonflow` 由 Apache-2.0 改为 MIT；`agent-infra/codexplusplus` 保留 AGPL-3.0-only 的精确写法，核验器改为把 GitHub 返回的旧别名 `AGPL-3.0` 视为同一协议，不再误报冲突。
+- **2 条已归档条目降为观察（2026-10-28）**：`agent-infra/deepseek-pp`、`design-creative/openscreen` 上游仓库已归档，评级由常规降为观察（watch）；openscreen 使用建议改为其社区 fork。
 
 ### 结构
 

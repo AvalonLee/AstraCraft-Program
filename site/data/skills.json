@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "dataset_version": "261028c",
-  "generated_at": "2026-10-28T07:50:59Z",
+  "generated_at": "2026-10-28T07:53:51Z",
   "count": 96,
   "modes": [
     {
@@ -613,8 +613,8 @@
       "license_bucket": "open",
       "homepage": "https://github.com/zhu1090093659/deepseek-pp",
       "repo": "https://github.com/zhu1090093659/deepseek-pp",
-      "tier": "standard",
-      "tier_label": "常规",
+      "tier": "watch",
+      "tier_label": "观察",
       "featured": false,
       "related": [
         "officecli"
@@ -623,9 +623,9 @@
         "DeepSeek++",
         "deepseek-pp"
       ],
-      "risk_notes": "Apache-2.0 可商用；依赖 DeepSeek 网页版界面，上游 DOM 或站点策略变化可能影响扩展功能；MCP/浏览器控制/Shell 能力需按需授权，Shell MCP 会获得本机命令执行能力，安装前应确认来源并限制权限；多模态 API Key 与配置保存在浏览器本地。",
+      "risk_notes": "上游仓库已归档（2026-10 核验），仅作参考；Apache-2.0 可商用；依赖 DeepSeek 网页版界面，上游 DOM 或站点策略变化可能影响扩展功能；MCP/浏览器控制/Shell 能力需按需授权，Shell MCP 会获得本机命令执行能力，安装前应确认来源并限制权限；多模态 API Key 与配置保存在浏览器本地。",
       "added_at": "2026-09-11",
-      "updated_at": "2026-09-11",
+      "updated_at": "2026-10-28",
       "verification_status": "blocked",
       "health_score": 30,
       "checked_at": "2026-10-28T07:37:20Z",
@@ -3020,8 +3020,8 @@
       "license_bucket": "open",
       "homepage": "https://github.com/siddharthvaddem/openscreen",
       "repo": "https://github.com/siddharthvaddem/openscreen",
-      "tier": "standard",
-      "tier_label": "常规",
+      "tier": "watch",
+      "tier_label": "观察",
       "featured": false,
       "related": [],
       "aliases": [
@@ -3029,9 +3029,9 @@
         "Open Screen",
         "Screen Studio alternative"
       ],
-      "risk_notes": "原作者已官宣即将归档（README 顶部 WARNING），社区 fork 由核心贡献者在 [EtienneLescot/openscreen](https://github.com/EtienneLescot/openscreen) 继续维护——长期使用建议关注 fork；不是 Screen Studio 1:1 克隆，覆盖核心功能但有 bug；macOS 需要 Screen Recording + Accessibility 权限，升级后需重置隐私权限。",
+      "risk_notes": "上游仓库已归档（原 README 顶部 WARNING 已兑现），社区 fork 由核心贡献者在 [EtienneLescot/openscreen](https://github.com/EtienneLescot/openscreen) 继续维护——长期使用建议改用 fork；不是 Screen Studio 1:1 克隆，覆盖核心功能但有 bug；macOS 需要 Screen Recording + Accessibility 权限，升级后需重置隐私权限。",
       "added_at": "2026-09-05",
-      "updated_at": "2026-09-05",
+      "updated_at": "2026-10-28",
       "verification_status": "blocked",
       "health_score": 30,
       "checked_at": "2026-10-28T07:37:20Z",

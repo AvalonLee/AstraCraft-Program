@@ -1,9 +1,9 @@
 """AstraCraft Program（天工计划）脚本共享工具。
 
-提供条目发现、SKILL.md frontmatter 加载与常量定义，供 validate.py / gen_index.py 复用。
+提供条目发现、ENTRY.md frontmatter 加载与常量定义，供 validate.py / gen_index.py 复用。
 
-AstraCraft Program 的收录形态：每个条目只保存一个 `SKILL.md`（介绍 + 安装指令），
-不收录上游源码快照。Agent 通过该文件快速定位并安装对应 skill 项目。
+AstraCraft Program 的收录形态：每个条目只保存一个 `ENTRY.md`（介绍 + 上手指令），
+不收录上游源码快照。Agent 通过该文件快速定位并上手对应项目。
 """
 
 from __future__ import annotations
@@ -38,22 +38,26 @@ CATEGORIES: dict[str, tuple[str, str]] = {
     "writing-docs": ("写作与文档", "文案、报告、技术写作、文档生成"),
     "dev-engineering": ("研发与代码", "编码、重构、测试、代码审查"),
     "design-creative": ("设计与创意", "UI/UX、视觉、品牌、素材生成"),
-    "data-analytics": ("数据与分析", "数据处理、可视化、表格、BI"),
     "research-intel": ("研究与信息获取", "检索、调研、信息聚合、竞品分析"),
     "ops-automation": ("运维与自动化", "部署、CI/CD、脚本、系统维护"),
     "business-office": ("商业与办公", "办公文档、协作、流程、商务"),
-    "agent-infra": ("Agent 基础设施", "MCP server、框架、CLI 工具"),
-    "dsh": ("DSH 插件", "DeepSeek Harness 插件——「一切皆插件」，模型适配器、工具、界面、技能、Agent 均可插拔扩展"),
+    "agent-infra": ("Agent 基础设施", "MCP server、框架、CLI、运行时与插件"),
     "meta-skillcraft": ("技能工程", "写 skill 的 skill、规范、模板、元技能"),
 }
 
-KIND_LABELS: dict[str, str] = {
-    "skill": "技能包",
-    "skill-collection": "技能集",
-    "mcp-server": "MCP 服务",
-    "cli-tool": "CLI 工具",
-    "framework": "框架",
-    "spec": "规范",
+# 消费方式：一个项目只取一个主模式，判定顺序 install > deploy > connect > read
+MODE_LABELS: dict[str, str] = {
+    "install": "装进 Agent",
+    "connect": "接入 Agent",
+    "deploy": "部署运行",
+    "read": "阅读参考",
+}
+
+MODE_HEADINGS: dict[str, tuple[str, ...]] = {
+    "install": ("## 怎么安装", "## 安装", "## 如何安装"),
+    "connect": ("## 怎么接入", "## 接入", "## 如何接入"),
+    "deploy": ("## 怎么部署运行", "## 怎么部署", "## 部署", "## 如何部署"),
+    "read": ("## 怎么阅读", "## 阅读", "## 如何阅读"),
 }
 
 TIER_LABELS: dict[str, str] = {
@@ -62,13 +66,37 @@ TIER_LABELS: dict[str, str] = {
     "watch": "观察",
 }
 
-# 每个条目的入口文件：唯一一个给 Agent 读的「介绍 + 安装指令」文档
-ENTRY_FILE = "SKILL.md"
+# 每个条目的入口文件：唯一一个给 Agent 读的「介绍 + 上手指令」文档
+ENTRY_FILE = "ENTRY.md"
+
+
+def extract_section_code(body: str, headings: tuple[str, ...]) -> str:
+    """抽取指定小节里的首个代码块（条目上手指令的唯一来源）。"""
+    for heading in headings:
+        idx = body.find(heading)
+        if idx == -1:
+            continue
+        seg = body[idx:]
+        nxt = seg.find("\n## ", 1)
+        if nxt != -1:
+            seg = seg[:nxt]
+        start = seg.find("```")
+        if start == -1:
+            return ""
+        # 跳过围栏所在行的语言标记，只取代码正文
+        body_start = seg.find("\n", start + 3)
+        if body_start == -1:
+            return ""
+        end = seg.find("```", body_start)
+        if end == -1:
+            return ""
+        return seg[body_start + 1 : end].strip()
+    return ""
 
 
 @dataclass
 class Entry:
-    """一个收录条目（由单个 SKILL.md 描述，不包含上游源码）。"""
+    """一个收录条目（由单个 ENTRY.md 描述，不包含上游源码）。"""
 
     path: Path
     meta: dict[str, Any]
@@ -90,7 +118,7 @@ class Entry:
         return self.path.relative_to(REPO_ROOT).as_posix()
 
     @property
-    def skill_file(self) -> Path:
+    def entry_file(self) -> Path:
         return self.path / ENTRY_FILE
 
     @property
@@ -157,7 +185,7 @@ def normalize_tags(raw_tags: list[str] | None) -> tuple[list[str], dict[str, str
 
 
 def load_frontmatter(path: Path) -> dict[str, Any]:
-    """解析 SKILL.md 的 YAML frontmatter（--- 包裹），失败返回空字典。"""
+    """解析 ENTRY.md 的 YAML frontmatter（--- 包裹），失败返回空字典。"""
     if not path.exists():
         return {}
     text = path.read_text(encoding="utf-8")
@@ -174,9 +202,9 @@ def load_frontmatter(path: Path) -> dict[str, Any]:
 
 
 def discover_entries(root: Path = REPO_ROOT) -> list[Entry]:
-    """扫描 entries/ 下各一级分类目录，收集所有含 SKILL.md 的条目。
+    """扫描 entries/ 下各一级分类目录，收集所有含 ENTRY.md 的条目。
 
-    只扫描 entries/<分类>/<id>/SKILL.md 这一层，不递归。
+    只扫描 entries/<分类>/<id>/ENTRY.md 这一层，不递归。
     """
     entries: list[Entry] = []
     for category in sorted(CATEGORIES):
@@ -184,10 +212,10 @@ def discover_entries(root: Path = REPO_ROOT) -> list[Entry]:
         if not category_dir.is_dir():
             continue
         for entry_dir in sorted(p for p in category_dir.iterdir() if p.is_dir()):
-            skill = entry_dir / ENTRY_FILE
-            if not skill.exists():
+            entry_file = entry_dir / ENTRY_FILE
+            if not entry_file.exists():
                 continue
-            entries.append(Entry(path=entry_dir, meta=load_frontmatter(skill)))
+            entries.append(Entry(path=entry_dir, meta=load_frontmatter(entry_file)))
     return entries
 
 

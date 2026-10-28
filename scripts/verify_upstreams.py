@@ -6,8 +6,8 @@ from __future__ import annotations
 import argparse
 import json
 import os
-import subprocess
 import tempfile
+import time
 import urllib.error
 import urllib.request
 from datetime import datetime, timezone
@@ -18,6 +18,11 @@ try:
     from scripts.upstream_verify import UpstreamFacts, normalize_github_repo, verify_entry
 except ModuleNotFoundError:  # direct: python scripts/verify_upstreams.py
     from upstream_verify import UpstreamFacts, normalize_github_repo, verify_entry
+
+try:
+    from scripts._common import MODE_HEADINGS, discover_entries, extract_section_code
+except ModuleNotFoundError:  # direct: python scripts/verify_upstreams.py
+    from _common import MODE_HEADINGS, discover_entries, extract_section_code
 
 
 Fetcher = Callable[[str], dict]
@@ -52,11 +57,47 @@ def candidate_entries(candidates: dict[str, list[dict]], priority: str = "primar
     return records
 
 
+def entries_catalog() -> list[dict]:
+    """把 entries/*/ENTRY.md 的 frontmatter 与上手指令转成核验输入。"""
+    records = []
+    for entry in discover_entries():
+        body = entry.entry_file.read_text(encoding="utf-8").split("\n---", 1)[-1]
+        records.append({
+            "id": entry.id,
+            "category": entry.meta.get("category"),
+            "tags": entry.meta.get("tags") or [],
+            "repo": entry.meta.get("repo"),
+            "license": entry.meta.get("license", "UNKNOWN"),
+            "tier": entry.tier,
+            "risk_notes": entry.meta.get("risk_notes") or "",
+            "install_text": extract_section_code(
+                body, MODE_HEADINGS.get(str(entry.meta.get("mode", "")), ())
+            ),
+        })
+    return records
+
+
 def build_snapshot(entries: list[dict], fetcher: Fetcher, generated_at: str) -> tuple[dict, int]:
     results: dict[str, dict] = {}
     blocked = False
     for entry in entries:
-        payload = fetcher(str(entry["repo"]))
+        try:
+            payload = fetcher(str(entry["repo"]))
+        except Exception:  # 单条网络/命令失败不该毁掉整轮核验
+            results[str(entry["id"])] = {
+                "repo": normalize_github_repo(str(entry["repo"])),
+                "head_sha": "",
+                "status": "needs-review",
+                "health_score": 0,
+                "max_tier": "watch",
+                "issues": ["E_UPSTREAM_UNREACHABLE"],
+                "archived": False,
+                "license": "UNKNOWN",
+                "pushed_at": "",
+                "stars": 0,
+            }
+            continue
+        time.sleep(0.15)  # 放慢批量请求，降低 GitHub 二次限流概率
         facts = UpstreamFacts(**payload)
         result = verify_entry(entry, facts)
         blocked = blocked or result.status == "blocked"
@@ -116,19 +157,22 @@ def _request_json(url: str) -> dict:
     if token:
         headers["Authorization"] = f"Bearer {token}"
     request = urllib.request.Request(url, headers=headers)
-    with urllib.request.urlopen(request, timeout=20) as response:
-        return json.load(response)
-
-
-def _git_head_sha(repo: str) -> str:
-    result = subprocess.run(
-        ["git", "ls-remote", f"{normalize_github_repo(repo)}.git", "HEAD"],
-        check=True,
-        capture_output=True,
-        text=True,
-        timeout=30,
-    )
-    return result.stdout.split()[0] if result.stdout.split() else ""
+    last_error: Exception | None = None
+    # 全量刷新会连续打上百次请求，GitHub 偶发握手超时/连接重置；重试避免一次抖动毁掉整轮
+    for attempt in range(1, 5):
+        try:
+            with urllib.request.urlopen(request, timeout=20) as response:
+                return json.load(response)
+        except urllib.error.HTTPError as error:
+            if error.code in (403, 429) and attempt < 4:
+                time.sleep(float(error.headers.get("Retry-After") or 5))
+                continue
+            raise
+        except OSError as error:
+            last_error = error
+            if attempt < 4:
+                time.sleep(2 * attempt)
+    raise last_error  # type: ignore[misc]
 
 
 def fetch_github_facts(repo: str) -> dict:
@@ -144,9 +188,11 @@ def fetch_github_facts(repo: str) -> dict:
         if error.code != 404:
             raise
         has_readme = False
+    branch = str(data.get("default_branch") or "main")
+    commit = _request_json(f"{base}/commits/{branch}")
     return {
         "repo": normalized,
-        "head_sha": _git_head_sha(normalized),
+        "head_sha": str(commit.get("sha") or ""),
         "archived": bool(data.get("archived")),
         "stars": int(data.get("stargazers_count") or 0),
         "pushed_at": str(data.get("pushed_at") or ""),
@@ -187,6 +233,7 @@ def main(argv: list[str] | None = None, fetcher: Fetcher | None = None) -> int:
     mode.add_argument("--refresh", action="store_true", help="联网刷新并写入快照")
     mode.add_argument("--check", action="store_true", help="只比较，不写入快照")
     source = parser.add_mutually_exclusive_group(required=True)
+    source.add_argument("--entries", action="store_true", help="核验 entries/ 全部条目")
     source.add_argument("--catalog", type=Path, help="待核验 JSON 数组")
     source.add_argument("--candidates", type=Path, help="候选清单 JSON")
     parser.add_argument("--candidate-priority", default="primary")
@@ -198,6 +245,8 @@ def main(argv: list[str] | None = None, fetcher: Fetcher | None = None) -> int:
     if args.candidates:
         raw_candidates = json.loads(args.candidates.read_text(encoding="utf-8"))
         entries = candidate_entries(raw_candidates, args.candidate_priority)
+    elif args.entries:
+        entries = entries_catalog()
     else:
         entries = _load_catalog(args.catalog)
     if args.check and fetcher is None:

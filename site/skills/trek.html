@@ -28,10 +28,10 @@
   <header class="topbar">
     <div class="brand-lockup">
     <div class="brand-name">AstraCraft Program</div>
-    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
     </div>
     <nav class="nav-links">
-      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="../index.html">浏览条目</a>
       <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </header>
@@ -49,7 +49,7 @@
 
   <div class="card" style="margin-top:24px;">
     <div class="mini-tags">
-      <span>运维与自动化</span><span>常规</span><span class="lic-badge lic-copyleft" title="AGPL-3.0">部分开源</span><span>框架</span>
+      <span>运维与自动化</span><span>常规</span><span class="lic-badge lic-copyleft" title="AGPL-3.0">部分开源</span><span>部署运行</span>
     </div>
     <p class="muted detail-meta">自托管实时协作旅行规划器：日计划拖拽排线（OSRM 路由 + 2-opt 优化）、Leaflet/Mapbox/MapLibre 地图、16 种预订类型（航班/火车多段 + 4,045 内置机场时区）、费用分摊与多币种、打包清单、旅行日志、GPX/KML 导入导出、PWA 支持、SSO/Passkey/TOTP MFA，内置 AI 解析与 MCP addon。</p>
     <div class="link-row" style="margin-top:14px;">
@@ -67,7 +67,7 @@
 <p>| 模块 | 能力 | |------|------| | <strong>Planning</strong> | 日计划拖拽排序 + undo、地点/预订/备注跨日拖拽、地图 marker 直落日计划 | | <strong>Maps</strong> | Leaflet / Mapbox GL / MapLibre GL（OpenFreeMap 无 token），聚类、照片 marker、路线线段、3D 建筑（Mapbox only） | | <strong>Place</strong> | Google Places（有 key 时含照片/评分/营业时间）或 OpenStreetMap（无 key）；Wikipedia/Wikidata/Wikimedia 补充描述 | | <strong>Routes</strong> | OSRM 路由（驾车/步行/骑行）、最近邻 + 2-opt 自动排序（锁定酒店锚点不动）、Transitous 公交门到门 | | <strong>Bookings</strong> | 16 种预订类型（航班/火车多段、酒店、租车……），4,045 内置机场数据免 key 解析时区 | | <strong>Costs</strong> | 整数分币种、多付款人、均分/自定义分摊、结算建议 + 结算日志、汇率冻结（Frankfurter 免 key） | | <strong>Packing</strong> | 分类打包清单、模板、多人实时勾选 | | <strong>Journal</strong> | 旅行日志（markdown），照片集成 | | <strong>Collab</strong> | WebSocket 实时协作，多人同时编辑无冲突 | | <strong>AI + MCP</strong> | 内置 AI 解析 addon（识别预订邮件/PDF）、MCP addon（agent 可通过 MCP 工具读写行程） | | <strong>Vacay / Atlas</strong> | 度假村/目的地灵感板、地图 atlas |</p>
 <p><strong>技术栈</strong>：NestJS 11 + React 19 + Vite + SQLite + WebSocket（ws）+ Zustand + Tailwind；JWT + OAuth 2.1 + OIDC + Passkeys (WebAuthn) + TOTP MFA。</p>
 <p><strong>部署</strong>：Docker / Docker Compose / Helm (Kubernetes) / PWA。</p>
-<h2>怎么安装</h2>
+<h2>怎么部署运行</h2>
 <p><strong>Docker 一行：</strong></p>
 <pre><code class="lang-bash">docker run -d -p 3000:3000 \
   -e ENCRYPTION_KEY=$ENCRYPTION_KEY \

@@ -20,7 +20,7 @@ RESTRICTED_LICENSES = {"UNKNOWN", "Commercial", "Proprietary", "CC-BY-NC-4.0"}
 class ProjectProfile:
     categories: tuple[str, ...]
     tags: tuple[str, ...]
-    desired_kinds: tuple[str, ...]
+    desired_modes: tuple[str, ...]
     commercial: bool
     offline: bool
     doc_languages: tuple[str, ...]
@@ -30,7 +30,7 @@ class ProjectProfile:
         return cls(
             tuple(value.get("categories") or []),
             tuple(sorted({str(tag).lower() for tag in value.get("tags") or []})),
-            tuple(value.get("desired_kinds") or []),
+            tuple(value.get("desired_modes") or []),
             bool(value.get("commercial")),
             bool(value.get("offline")),
             tuple(value.get("doc_languages") or []),
@@ -57,9 +57,9 @@ def score_entry(entry: dict, profile: ProjectProfile) -> ScoredEntry:
     for tag in sorted(set(entry.get("tags") or []) & set(profile.tags)):
         score += 2
         reasons.append(f"TAG_MATCH:{tag}:+2")
-    if entry.get("kind") in profile.desired_kinds:
+    if entry.get("mode") in profile.desired_modes:
         score += 1
-        reasons.append("KIND_MATCH:+1")
+        reasons.append("MODE_MATCH:+1")
     tier = entry.get("tier")
     if tier == "core":
         score += 2
@@ -90,13 +90,22 @@ def recommend(entries: list[dict], profile: ProjectProfile, limit: int = 3) -> l
     return sorted(scored, key=lambda item: (-item.score, -item.health_score, item.id))[:limit]
 
 
+def load_entries(path: Path) -> list[dict]:
+    """兼容发布契约（{skills: [...]}）与裸数组两种输入。"""
+    data = json.loads(path.read_text(encoding="utf-8"))
+    entries = data.get("skills") if isinstance(data, dict) else data
+    if not isinstance(entries, list):
+        raise ValueError("catalog must be a JSON array or {skills: [...]}")
+    return entries
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="AstraCraft 确定性推荐初筛")
     parser.add_argument("--catalog", type=Path, required=True)
     parser.add_argument("--profile", type=Path, required=True)
     parser.add_argument("--limit", type=int, default=3)
     args = parser.parse_args(argv)
-    entries = json.loads(args.catalog.read_text(encoding="utf-8"))
+    entries = load_entries(args.catalog)
     profile = ProjectProfile.from_dict(json.loads(args.profile.read_text(encoding="utf-8")))
     print(json.dumps([item.to_dict() for item in recommend(entries, profile, args.limit)], ensure_ascii=False, indent=2))
     return 0

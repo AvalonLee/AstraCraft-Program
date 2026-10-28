@@ -28,10 +28,10 @@
   <header class="topbar">
     <div class="brand-lockup">
     <div class="brand-name">AstraCraft Program</div>
-    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
     </div>
     <nav class="nav-links">
-      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="../index.html">浏览条目</a>
       <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </header>
@@ -49,7 +49,7 @@
 
   <div class="card" style="margin-top:24px;">
     <div class="mini-tags">
-      <span>商业与办公</span><span>常规</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>框架</span>
+      <span>商业与办公</span><span>常规</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>部署运行</span>
     </div>
     <p class="muted detail-meta">Tauri 2 + Rust 的开源本地文件工作台：桌面端 12 类 68 项工具覆盖 PDF、PPT、图像、音视频、文本转写、清理与开发者工具；同一套能力经 @toolknit/cli 与 MCP 暴露给 IDE Agent，输出 JSON、退出码分级、原子写入且不覆盖源文件。</p>
     <div class="link-row" style="margin-top:14px;">
@@ -67,7 +67,7 @@
 <p>它对本目录的价值主要不在工具箱本身，而在<strong>它把本地能力设计成了 Agent 可验证的契约</strong>：</p>
 <ul><li>每个写文件的命令都要求显式目标路径；只接受常规 <code>.pdf</code>（拒绝符号链接）；未显式给 <code>--overwrite</code> 绝不覆盖已有文件，且拒绝覆盖自己的输入文件；</li><li>输出先写同目录临时文件，处理成功后原子发布；</li><li>加 <code>--json</code> 即得结构化结果，退出码分级明确：<code>0</code> 成功、<code>2</code> 用法错误、<code>3</code> 输入无效或缺失、<code>4</code> 输出路径不安全或拒绝覆盖、<code>5</code> 缺少引擎、<code>6</code> 处理失败；</li><li>密码等敏感输入不写入日志、输出 JSON、文件名或 Agent 回复。</li></ul>
 <p>隐私边界也写得很清楚：PDF/PPT/图像/音视频/文本/计算器/硬件/清理类工具默认本机运行；只有主动使用 AI 润色、翻译、AI 文档、AI 表格、AI PDF 转 Markdown、PPT 文本 AI 整理、AI PPT 大纲、AI PPTX 草稿、转写后 <code>refine</code> 时，符合该功能说明的数据才会发往你配置的模型服务；大文件清理只发送元数据。桌面端 AI Key 用 Windows DPAPI 加密保存。运行时按需复用本机已有的 FFmpeg 与 LibreOffice，Whisper 模型与缺失运行时按需下载（支持校验和与镜像源选择）。</p>
-<h2>怎么安装</h2>
+<h2>怎么部署运行</h2>
 <p>Agent / 脚本路线（npm 包已发布，<code>@toolknit/cli</code>，bin 为 <code>toolknit</code>）：</p>
 <pre><code class="lang-powershell">npm install --global @toolknit/cli
 toolknit doctor --json

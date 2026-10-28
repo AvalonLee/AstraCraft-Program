@@ -1,5 +1,5 @@
 name: 建议收录新条目
-description: 推荐一个你认为不错的 GitHub 公开开源 Skill 或关联项目（仅限 GitHub 开源，闭源/私有不予收录）
+description: 推荐一个你认为不错的 GitHub 公开开源 AI 项目（仅限 GitHub 开源，闭源/私有不予收录）
 title: "[收录] <项目名称>"
 labels: ["收录建议"]
 body:
@@ -26,12 +26,23 @@ body:
         - writing-docs（写作与文档）
         - dev-engineering（研发与代码）
         - design-creative（设计与创意）
-        - data-analytics（数据与分析）
         - research-intel（研究与信息获取）
         - ops-automation（运维与自动化）
         - business-office（商业与办公）
         - agent-infra（Agent 基础设施）
         - meta-skillcraft（技能工程）
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: 建议消费方式
+      description: 一个项目只选一个主模式；判定顺序 install > deploy > connect > read
+      options:
+        - install（装进 Agent 的技能目录）
+        - deploy（自己部署运行）
+        - connect（作为 MCP / CLI / API / SDK 接入）
+        - read（阅读规范、提示词库或资源集）
     validations:
       required: true
   - type: input
@@ -54,5 +65,5 @@ body:
     attributes:
       label: 自检
       options:
-        - label: 我确认这是 GitHub 公开开源仓库（非私有/闭源），来源可溯、文档可用，且能写清安装指令
+        - label: 我确认这是 GitHub 公开开源仓库（非私有/闭源），来源可溯、文档可用，且能写清上手指令
           required: true

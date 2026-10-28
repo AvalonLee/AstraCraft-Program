@@ -12,6 +12,26 @@
 
 ---
 
+## 2026-10
+
+### 结构
+
+- **目录重新界定（2026-10-28）**：从「Agent Skill 索引」扩为「AI 开源项目索引」，收能被 Agent 安装、接入、部署运行或阅读参考的 AI 开源项目；明确不收模型权重、数据集、纯训练库与无使用路径的论文仓。**破坏性变更**：旧 `entries/**/SKILL.md` 路径失效，GitHub 不做重定向。
+  - **条目文件改名**：95 个 `entries/**/SKILL.md` → `ENTRY.md`，消除“条目会被 Agent 当成技能注册”的歧义；根 `SKILL.md` 仍是唯一可安装技能。
+  - **`kind` → `mode`**：消费方式四值 `install / connect / deploy / read`，单值主模式，判定顺序 install > deploy > connect > read；95 条全部重标。
+  - **正文小节按 mode 分标题**：怎么安装 / 怎么接入 / 怎么部署运行 / 怎么阅读。
+  - **分类减法**：`dsh` 并入 `agent-infra`（保留 `dsh` 标签），移除空分类 `data-analytics`；一级分类由 10 个减为 8 个。
+  - **机器契约**：`site/data/skills.json` 升级为对外契约，新增 `schema_version`、`dataset_version`、`mode`、`verification_status`、`health_score`、`checked_at`、`quickstart`、`source_url`；harness 不再需要 clone 仓库。
+  - **推荐技能**：改为拉取单文件 `skills.json`；一份 skill 支持“推荐”与“清单”两种模式；只推 `verified` 条目。
+  - **核验**：`verify_upstreams.py` 新增 `--entries`，覆盖全部条目；`verification/catalog.json` 退役。
+  - **验收**：README 可复述边界；只拉 JSON 可完成筛选与上手；同画像在 `install` 与 `deploy` 下返回不同结果。
+
+### 更新
+
+- **4 条许可证按上游更正（2026-10-28）**：全量核验发现 4 条声明与上游 LICENSE 不一致，已按上游现状更新——`agent-infra/caveman` 整仓改为 Apache-2.0（原 MIT + BSL-1.1 拆分，上游已整仓开源）、`design-creative/directors-console` 由专有改为 MIT、`design-creative/toonflow` 由 Apache-2.0 改为 MIT；`agent-infra/codexplusplus` 保留 AGPL-3.0-only 的精确写法，核验器改为把 GitHub 返回的旧别名 `AGPL-3.0` 视为同一协议，不再误报冲突。
+
+---
+
 ## 2026-09
 
 ### 新增

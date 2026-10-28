@@ -28,10 +28,10 @@
   <header class="topbar">
     <div class="brand-lockup">
     <div class="brand-name">AstraCraft Program</div>
-    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
     </div>
     <nav class="nav-links">
-      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="../index.html">浏览条目</a>
       <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </header>
@@ -49,7 +49,7 @@
 
   <div class="card" style="margin-top:24px;">
     <div class="mini-tags">
-      <span>设计与创意</span><span>常规</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>框架</span>
+      <span>设计与创意</span><span>常规</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>部署运行</span>
     </div>
     <p class="muted detail-meta">开源剪映草稿自动化助手（FastAPI）：让大模型具备剪映基础剪辑能力——创建草稿、添加视频/音频/图片/贴纸/字幕/特效/蒙版、关键帧控制、文本样式与动画；支持独立部署、Coze/n8n 工作流集成、剪映云渲染直接生成成片，提供 Coze 插件一键导入。</p>
     <div class="link-row" style="margin-top:14px;">
@@ -67,7 +67,7 @@
 <p>| 类别 | 接口 | |------|------| | 草稿管理 | <code>create_draft</code>（设置画布尺寸）、<code>save_draft</code>、<code>get_draft</code> | | 视频素材 | <code>add_videos</code>（裁剪/缩放/特效）、<code>add_images</code>（动画/转场）、<code>add_sticker</code> | | 音频处理 | <code>add_audios</code>（音量/淡入淡出）、<code>get_audio_duration</code> | | 文本字幕 | <code>add_texts</code>、<code>add_captions</code>（字幕识别） | | 高级功能 | 关键帧控制、文本样式、动画效果、特效、蒙版 | | 导出 | 剪映云渲染直接生成最终视频 |</p>
 <p><strong>部署方式</strong>：</p>
 <ul><li><strong>独立部署</strong>：Docker / uv 本地跑 FastAPI 服务</li><li><strong>Coze 工作流</strong>：上传 <code>openapi.yaml</code> 一键导入 Coze 插件</li><li><strong>n8n 工作流</strong>：REST API 通用接入</li><li><strong>Agent Skill</strong>：内置 <code>SKILL.md</code>，AI Agent 读完即可调用</li></ul>
-<h2>怎么安装</h2>
+<h2>怎么部署运行</h2>
 <p><strong>Docker（推荐）：</strong></p>
 <pre><code class="lang-bash">git clone https://github.com/Hommy-master/capcut-mate.git
 cd capcut-mate

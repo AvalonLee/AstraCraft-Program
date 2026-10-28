@@ -28,10 +28,10 @@
   <header class="topbar">
     <div class="brand-lockup">
     <div class="brand-name">AstraCraft Program</div>
-    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
     </div>
     <nav class="nav-links">
-      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="../index.html">浏览条目</a>
       <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </header>
@@ -49,7 +49,7 @@
 
   <div class="card" style="margin-top:24px;">
     <div class="mini-tags">
-      <span>Agent 基础设施</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>框架</span>
+      <span>Agent 基础设施</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>部署运行</span>
     </div>
     <p class="muted detail-meta">极简开放式项目管理平台：看板、Issue、项目与标签一体管理，支持自托管，每个实例内置 HTTP MCP 端点并发布官方 @kaneo/mcp，Claude、Cursor 等 MCP 客户端可直接在对话中创建与推进任务。</p>
     <div class="link-row" style="margin-top:14px;">
@@ -64,7 +64,7 @@
 <h2>这是什么</h2>
 <p>Kaneo 是一个"少即是多"的开源项目管理平台：看板、Issue、项目与标签一体管理，界面干净，官方明确反对"功能堆叠"。它支持 Docker Compose、Coolify、Helm Chart 等自托管方式，数据留在自己手里，TypeScript（React Web + Hono API）单仓库维护。</p>
 <p>对 Agent 生态的独特价值在于官方 MCP server：每个实例内置 HTTP MCP 端点（<code>/api/mcp</code>），同时发布 npm 包 <code>@kaneo/mcp</code>（stdio）。Claude、Cursor 等 MCP 客户端可以在对话中直接创建任务、更新项目、维护标签，仓库还自带 <code>.agents</code> / <code>.cursor</code> / <code>.claude</code> 等 Agent 工作流配置。</p>
-<h2>怎么安装</h2>
+<h2>怎么部署运行</h2>
 <pre><code class="lang-bash"># 1) 自托管 Kaneo（仓库自带 compose.yml / .env.sample）
 git clone https://github.com/usekaneo/kaneo.git
 cd kaneo

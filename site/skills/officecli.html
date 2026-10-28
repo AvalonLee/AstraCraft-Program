@@ -28,10 +28,10 @@
   <header class="topbar">
     <div class="brand-lockup">
     <div class="brand-name">AstraCraft Program</div>
-    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
     </div>
     <nav class="nav-links">
-      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="../index.html">浏览条目</a>
       <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </header>
@@ -49,7 +49,7 @@
 
   <div class="card" style="margin-top:24px;">
     <div class="mini-tags">
-      <span>商业与办公</span><span>主推</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>CLI 工具</span>
+      <span>商业与办公</span><span>主推</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>接入 Agent</span>
     </div>
     <p class="muted detail-meta">专为 AI Agent 设计的 Office 套件 CLI：单二进制无需安装 Office，读写编辑 Word / Excel / PowerPoint；内置渲染引擎（HTML / PNG / watch 实时预览）、350+ Excel 函数求值、原生数据透视表、模板合并与 round-trip dump，MCP server 一键接入主流 Agent。</p>
     <div class="link-row" style="margin-top:14px;">
@@ -67,7 +67,7 @@
 <ul><li><strong>内置渲染引擎（"给 AI 一双眼睛"）</strong>：从零实现的高保真 HTML 渲染，覆盖 shapes、charts（趋势线 / 误差线 / 瀑布图 / K线 / sparklines）、公式（OMML → KaTeX）、3D .glb 模型（Three.js）、morph 切换、slide zoom、shape effects。<code>view html</code> 输出独立 HTML、<code>view screenshot</code> 输出逐页 PNG（供多模态 agent 阅读）、<code>watch</code> 本地实时预览（每次 add / set / remove 即刻刷新浏览器）。Agent 在 CI、Docker、无显示器服务器上都能<strong>看到</strong>自己生成的东西再修——不是从 DOM 猜。</li><li><strong>三层架构（L1 → L2 → L3）</strong>：L1 语义视图（<code>view</code> outline / text / annotated / stats / issues / html / screenshot）→ L2 结构化元素操作（<code>get</code> / <code>query</code> / <code>set</code> / <code>add</code> / <code>remove</code> / <code>move</code> / <code>swap</code>）→ L3 原始 XML（<code>raw</code> / <code>raw-set</code> / XPath）。Agent 从高层开始，只在需要时下沉，最小化 token 消耗。</li><li><strong>路径寻址</strong>：每个元素有稳定路径（<code>/slide[1]/shape[2]</code>），agent 不需要理解 XML 命名空间。1-based 索引、元素本地名（非 XPath 语法）。</li><li><strong>确定性 JSON 输出</strong>：所有命令支持 <code>--json</code>，统一 schema；错误返回结构化 error code + suggestion + 有效范围，agent 可自纠正。</li><li><strong>350+ Excel 函数自动求值</strong>：写入 <code>=SUM(A1:A2)</code> 立即出值，无需经 Office 回算；支持 spilling 动态数组（FILTER / SORT / UNIQUE / SEQUENCE / LET / LAMBDA / MAP）、财务债券（XIRR / PRICE / YIELD / DURATION）、统计回归（LINEST）。</li><li><strong>OOXML 原生数据透视表</strong>：一条命令从源范围生成多字段 pivot table（10 种聚合、showDataAs、日期分组、计算字段、top-N、布局），Excel 打开即见结果。</li><li><strong>模板合并</strong>：agent 设计一次排版（贵），生产代码用 JSON 填充 <code>{{key}}</code> N 次（便宜、确定、零 token 消耗），避免 agent 每次从零重新生成导致 N 份报告风格不一致。</li><li><strong>Round-trip dump</strong>：<code>dump</code> 把任意 .docx / .pptx / .xlsx（含子树）序列化为可回放的 batch JSON，agent 读懂结构化规格后 <code>batch</code> 回放——桥接"我有一个模板"和"生成 100 个变体"。</li></ul>
 <p><strong>Agent 集成</strong>：</p>
 <ul><li><strong>MCP Server</strong>：<code>officecli mcp claude</code> / <code>cursor</code> / <code>vscode</code> / <code>lmstudio</code> 一行注册，暴露全部文档操作为 JSON-RPC 工具。</li><li><strong>自动安装</strong>：<code>officecli install</code> 检测 Claude Code / Cursor / Windsurf / GitHub Copilot 等 agent 的配置目录，自动部署 skill 文件，无需手动配置。</li><li><strong>Self-healing 工作流</strong>：<code>validate</code>（OpenXML schema 校验）+ <code>view issues</code>（排版溢出 / 缺 alt text / 公式错误）+ 结构化错误码 + 属性名自动纠错——agent 无需人工干预即可自修。</li></ul>
-<h2>怎么安装</h2>
+<h2>怎么接入</h2>
 <p><strong>一行安装：</strong></p>
 <pre><code class="lang-bash"># macOS / Linux
 curl -fsSL https://raw.githubusercontent.com/iOfficeAI/OfficeCLI/main/install.sh | bash

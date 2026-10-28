@@ -91,7 +91,7 @@ def test_remote_script_requires_risk_note() -> None:
 
 def test_low_category_confidence_needs_review() -> None:
     result = verify_entry(
-        entry(tags=["finance"], category="data-analytics"),
+        entry(tags=["finance"], category="dev-engineering"),
         facts(topics=["game"], description="A platform game"),
     )
     assert result.status == "needs-review"
@@ -115,3 +115,13 @@ def test_unknown_candidate_license_accepts_machine_detected_license() -> None:
     result = verify_entry(entry(license="UNKNOWN"), facts(api_license="MIT", text_license="MIT"))
     assert result.status == "verified"
     assert "E_LICENSE_CONFLICT" not in result.issue_codes
+
+
+def test_gpl_alias_without_suffix_is_not_a_conflict() -> None:
+    result = verify_entry(entry(license="AGPL-3.0-only"), facts(api_license="AGPL-3.0", text_license="AGPL-3.0"))
+    assert "E_LICENSE_CONFLICT" not in result.issue_codes
+
+
+def test_gpl_only_and_later_still_conflict() -> None:
+    result = verify_entry(entry(license="GPL-2.0-only"), facts(api_license="GPL-2.0-or-later", text_license="GPL-2.0-or-later"))
+    assert "E_LICENSE_CONFLICT" in result.issue_codes

@@ -28,10 +28,10 @@
   <header class="topbar">
     <div class="brand-lockup">
     <div class="brand-name">AstraCraft Program</div>
-    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
     </div>
     <nav class="nav-links">
-      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="../index.html">浏览条目</a>
       <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </header>
@@ -49,7 +49,7 @@
 
   <div class="card" style="margin-top:24px;">
     <div class="mini-tags">
-      <span>研究与信息获取</span><span>常规</span><span class="lic-badge lic-unknown" title="LicenseRef-NC-Learning">版权未声明</span><span>CLI 工具</span>
+      <span>研究与信息获取</span><span>常规</span><span class="lic-badge lic-unknown" title="LicenseRef-NC-Learning">版权未声明</span><span>接入 Agent</span>
     </div>
     <p class="muted detail-meta">多平台自媒体数据采集工具：小红书 / 抖音 / 快手 / B 站 / 微博 / 贴吧 / 知乎的关键词搜索、帖子详情、二级评论、创作者主页全支持；基于 Playwright 浏览器自动化保留登录态（无需 JS 逆向），CDP 模式复用已有 Chrome 降低风控风险；支持 IP 代理池、登录态缓存、评论词云图。</p>
     <div class="link-row" style="margin-top:14px;">
@@ -67,7 +67,7 @@
 <p>| 能力 | 小红书 | 抖音 | 快手 | B 站 | 微博 | 贴吧 | 知乎 | |------|--------|------|------|------|------|------|------| | 关键词搜索 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | 指定帖子 ID 爬取 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | 二级评论 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | 指定创作者主页 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | 登录态缓存 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | IP 代理池 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | 评论词云图 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |</p>
 <p><strong>两种浏览器模式</strong>：</p>
 <p>| 模式 | 说明 | |------|------| | <strong>CDP 模式（推荐）</strong> | 连接已有 Chrome（需开启远程调试），复用已有登录态 / Cookie / 扩展，大幅降低风控检测风险 | | <strong>Playwright 标准模式</strong> | 启动新浏览器实例 + 扫码登录；需安装浏览器驱动 |</p>
-<h2>怎么安装</h2>
+<h2>怎么接入</h2>
 <p>前置依赖：uv（Python 包管理）、Node.js &gt;= 16、Chrome &gt;= 144（CDP 模式）。</p>
 <pre><code class="lang-bash">cd MediaCrawler
 uv sync

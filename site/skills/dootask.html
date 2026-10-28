@@ -28,10 +28,10 @@
   <header class="topbar">
     <div class="brand-lockup">
     <div class="brand-name">AstraCraft Program</div>
-    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
     </div>
     <nav class="nav-links">
-      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="../index.html">浏览条目</a>
       <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </header>
@@ -49,7 +49,7 @@
 
   <div class="card" style="margin-top:24px;">
     <div class="mini-tags">
-      <span>商业与办公</span><span>常规</span><span class="lic-badge lic-copyleft" title="AGPL-3.0">部分开源</span><span>框架</span>
+      <span>商业与办公</span><span>常规</span><span class="lic-badge lic-copyleft" title="AGPL-3.0">部分开源</span><span>部署运行</span>
     </div>
     <p class="muted detail-meta">开源自托管任务管理与团队协作系统（PHP/Laravel + Vue）：任务、看板、团队 IM、文件与流程一体，Docker Compose 部署、`./cmd` 一键运维，仓库内置 5 个 Claude Code 运维技能与 AGENTS.md。</p>
     <div class="link-row" style="margin-top:14px;">
@@ -66,7 +66,7 @@
 <p>它对本目录特别相关的一点是：<strong>上游自己就把 Agent 接口做进了仓库</strong>。默认分支 <code>pro</code> 上带有：</p>
 <ul><li><code>AGENTS.md</code> 与 <code>CLAUDE.md</code>：给编码 Agent 的项目约定；</li><li><code>.claude/skills/</code>：<strong>5 个中文 Claude Code 技能</strong> —— <code>dootask-install</code>、<code>dootask-update</code>、<code>dootask-backup</code>、<code>dootask-release</code>、<code>dootask-fix-permission</code>；</li><li><code>.claude/hooks/php-stan-check.sh</code> + <code>settings.json</code>：保存 PHP 文件时跑 phpstan 校验。</li></ul>
 <p>其中 <code>dootask-install</code> 是写得相当严格的「刚性技能」：前置检查（工作目录、Docker daemon、Node.js ≥ 20、<code>APP_ID</code> 冲突、sudo）→ 向用户确认一次 → 执行 → 报告，任何一步失败立即停止，并明确标注 <code>./cmd install</code> 会建库并 <code>migrate --seed</code>，已有数据环境重装须先确认。这类「重操作 + 单次确认 + 失败即停」的写法，是给 Agent 编排运维流程时值得参考的样本。</p>
-<h2>怎么安装</h2>
+<h2>怎么部署运行</h2>
 <p>前置：Docker v20.10+、Docker Compose v2.0+，Linux/Unix 环境（Windows 走 WSL2），建议 2 核 4G 以上。</p>
 <p>官方推荐的一键脚本——空目录中执行即自动克隆并安装，在已安装目录中执行则自动检查并升级：</p>
 <pre><code class="lang-bash">curl -fsSL https://raw.githubusercontent.com/kuaifan/dootask/pro/bin/install | bash</code></pre>

@@ -129,6 +129,8 @@ def test_github_fetcher_records_head_commit_sha(monkeypatch) -> None:
         calls.append(url)
         if url.endswith("/readme"):
             return {"path": "README.md"}
+        if "/commits/" in url:
+            return {"sha": "deadbeef"}
         return {
             "default_branch": "main",
             "archived": False,
@@ -140,12 +142,11 @@ def test_github_fetcher_records_head_commit_sha(monkeypatch) -> None:
         }
 
     monkeypatch.setattr(verify_upstreams, "_request_json", fake_request)
-    monkeypatch.setattr(verify_upstreams, "_git_head_sha", lambda _: "deadbeef")
 
     result = verify_upstreams.fetch_github_facts("https://github.com/example/tool")
 
     assert result["head_sha"] == "deadbeef"
-    assert len(calls) == 2
+    assert len(calls) == 3
 
 
 def test_candidate_entries_build_auditable_catalog_records() -> None:
@@ -198,3 +199,54 @@ def test_reconcile_removes_only_obsolete_unknown_placeholder_conflict() -> None:
     assert repaired["entries"]["ok"]["status"] == "verified"
     assert repaired["entries"]["ok"]["issues"] == []
     assert repaired["entries"]["real-conflict"]["status"] == "needs-review"
+
+
+def test_entries_catalog_covers_all_entries() -> None:
+    records = verify_upstreams.entries_catalog()
+
+    assert len(records) == 95
+    assert all(record["repo"].startswith("https://github.com/") for record in records)
+    assert {record["category"] for record in records} <= {
+        "writing-docs", "dev-engineering", "design-creative", "research-intel",
+        "ops-automation", "business-office", "agent-infra", "meta-skillcraft",
+    }
+
+
+def test_request_json_retries_transient_network_error(monkeypatch) -> None:
+    import urllib.error
+
+    calls = []
+
+    class Response:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_args):
+            return False
+
+        def read(self):
+            return b'{"ok": true}'
+
+    def fake_urlopen(_request, timeout):
+        calls.append(timeout)
+        if len(calls) == 1:
+            raise urllib.error.URLError("handshake timed out")
+        return Response()
+
+    monkeypatch.setattr(verify_upstreams.urllib.request, "urlopen", fake_urlopen)
+    monkeypatch.setattr(verify_upstreams.time, "sleep", lambda _seconds: None)
+
+    assert verify_upstreams._request_json("https://api.github.com/example") == {"ok": True}
+    assert len(calls) == 2
+
+
+def test_build_snapshot_isolates_fetch_failures() -> None:
+    def fetch(_repo: str) -> dict:
+        raise RuntimeError("network reset")
+
+    snapshot, exit_code = build_snapshot([catalog_entry()], fetch, "2026-10-28T00:00:00Z")
+
+    assert exit_code == 0
+    entry = snapshot["entries"]["tool"]
+    assert entry["status"] == "needs-review"
+    assert entry["issues"] == ["E_UPSTREAM_UNREACHABLE"]

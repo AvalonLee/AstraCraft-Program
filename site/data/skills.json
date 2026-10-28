@@ -1,6 +1,26 @@
 {
-  "generated_at": "2026-09-24T13:12:26Z",
+  "schema_version": 1,
+  "dataset_version": "261028",
+  "generated_at": "2026-10-28T07:21:00Z",
   "count": 95,
+  "modes": [
+    {
+      "value": "install",
+      "label": "装进 Agent"
+    },
+    {
+      "value": "connect",
+      "label": "接入 Agent"
+    },
+    {
+      "value": "deploy",
+      "label": "部署运行"
+    },
+    {
+      "value": "read",
+      "label": "阅读参考"
+    }
+  ],
   "categories": [
     {
       "dir": "writing-docs",
@@ -16,11 +36,6 @@
       "dir": "design-creative",
       "name": "设计与创意",
       "desc": "UI/UX、视觉、品牌、素材生成"
-    },
-    {
-      "dir": "data-analytics",
-      "name": "数据与分析",
-      "desc": "数据处理、可视化、表格、BI"
     },
     {
       "dir": "research-intel",
@@ -40,12 +55,7 @@
     {
       "dir": "agent-infra",
       "name": "Agent 基础设施",
-      "desc": "MCP server、框架、CLI 工具"
-    },
-    {
-      "dir": "dsh",
-      "name": "DSH 插件",
-      "desc": "DeepSeek Harness 插件——「一切皆插件」，模型适配器、工具、界面、技能、Agent 均可插拔扩展"
+      "desc": "MCP server、框架、CLI、运行时与插件"
     },
     {
       "dir": "meta-skillcraft",
@@ -55,6 +65,49 @@
   ],
   "skills": [
     {
+      "id": "0xsline-awesome-deepseek-harness",
+      "name_zh": "DeepSeek Harness Ultimate",
+      "name_en": "Awesome DeepSeek Harness",
+      "summary_zh": "社区维护的 DSH 可复现配置与插件组合，覆盖编码、工作流、可靠性和生产力场景。",
+      "summary_en": "A community-maintained reproducible DSH profile and plugin bundle for coding, workflows, reliability, and productivity.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "mode": "read",
+      "mode_label": "阅读参考",
+      "tags": [
+        "dsh",
+        "plugin",
+        "awesome-list",
+        "automation"
+      ],
+      "languages": [
+        "markdown",
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "CC0-1.0",
+      "license_bucket": "open",
+      "homepage": "https://github.com/0xsline/awesome-deepseek-harness",
+      "repo": "https://github.com/0xsline/awesome-deepseek-harness",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone --depth 1 https://github.com/0xsline/awesome-deepseek-harness.git\ncd awesome-deepseek-harness",
+      "detail_url": "skills/0xsline-awesome-deepseek-harness.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/0xsline-awesome-deepseek-harness/ENTRY.md"
+    },
+    {
       "id": "aitoearn",
       "name_zh": "AiToEarn AI 内容营销智能体",
       "name_en": "AiToEarn — AI Content Marketing Agent",
@@ -62,8 +115,8 @@
       "summary_en": "AI content marketing platform for creators and one-person companies: batch media generation, cross-platform publishing, automated engagement, and monetization.",
       "category_dir": "agent-infra",
       "category_name": "Agent 基础设施",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "aitoearn",
         "content-marketing",
@@ -101,8 +154,55 @@
       "risk_notes": "MIT 许可，但平台会操作真实社媒账号并调用第三方模型/平台接口；使用前需确认各平台服务条款与账号策略，配置最小权限 API Key，并注意模型调用与内容分发费用。中国版与国际版 Key 和 API 环境必须匹配，否则会返回 401。自动化互动和批量发布应控制频率，避免触发平台风控。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\ngit clone https://github.com/yikart/AiToEarn.git\ncd AiToEarn\ndocker compose up -d",
-      "detail_url": "skills/aitoearn.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone https://github.com/yikart/AiToEarn.git\ncd AiToEarn\ndocker compose up -d",
+      "detail_url": "skills/aitoearn.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/aitoearn/ENTRY.md"
+    },
+    {
+      "id": "awesome-dsh-plugin-dsh-find-plugin",
+      "name_zh": "DSH 插件发现助手",
+      "name_en": "DSH Find Plugin",
+      "summary_zh": "通过自然语言需求在 DeepSeek Harness 插件目录中检索并推荐合适插件的发现工具。",
+      "summary_en": "A discovery tool that searches and recommends DeepSeek Harness plugins from natural-language requirements.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "mode": "install",
+      "mode_label": "装进 Agent",
+      "tags": [
+        "dsh",
+        "plugin",
+        "search",
+        "ai-agent"
+      ],
+      "languages": [
+        "typescript",
+        "markdown"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/awesome-dsh-plugin/dsh-find-plugin",
+      "repo": "https://github.com/awesome-dsh-plugin/dsh-find-plugin",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone --depth 1 https://github.com/awesome-dsh-plugin/dsh-find-plugin.git\ncd dsh-find-plugin",
+      "detail_url": "skills/awesome-dsh-plugin-dsh-find-plugin.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/awesome-dsh-plugin-dsh-find-plugin/ENTRY.md"
     },
     {
       "id": "browser-use",
@@ -112,8 +212,8 @@
       "summary_en": "Open-source browser agent framework for web navigation, form filling, extraction and custom tools, usable as a Python library or CLI skill with Claude Code, Codex and Cursor.",
       "category_dir": "agent-infra",
       "category_name": "Agent 基础设施",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "connect",
+      "mode_label": "接入 Agent",
       "tags": [
         "browser-use",
         "browser-automation",
@@ -147,19 +247,23 @@
       "risk_notes": "MIT 许可，但开源库默认会向浏览器执行真实点击、输入、上传与数据读取；使用前必须确认目标网站条款、账号策略与隐私影响，为敏感站点配置人工审批或最小权限。生产规模建议使用远程浏览器与代理管理；LLM 与云服务调用会产生费用，且仓库另有 Cloud 服务条款。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\nuv add browser-use\nbrowser-use skill install",
-      "detail_url": "skills/browser-use.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "uv add browser-use\nbrowser-use skill install",
+      "detail_url": "skills/browser-use.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/browser-use/ENTRY.md"
     },
     {
       "id": "caveman",
       "name_zh": "Caveman Agent 省 Token 工具集",
       "name_en": "Caveman",
-      "summary_zh": "让 AI 编码 Agent 说更少、读更省的组合工具：MIT 技能让输出 token 省 65%（30+ Agent 可装），本地 Go 代理压缩输入流（Claude Code 基准 -33.2%、18/18 正确性通过），原内容本地备份可恢复，/caveman 分级模式含 wenyan 文言文风。",
-      "summary_en": "A token-saving toolkit for AI coding agents: an MIT skill that cuts 65% of output tokens across 30+ agents, plus a local Go proxy that shrinks what agents read with byte-exact local recovery.",
+      "summary_zh": "让 AI 编码 Agent 说更少、读更省的组合工具：Apache-2.0 技能让输出 token 省 65%（30+ Agent 可装），本地 Go 代理压缩输入流（Claude Code 基准 -33.2%、18/18 正确性通过），原内容本地备份可恢复，/caveman 分级模式含 wenyan 文言文风。",
+      "summary_en": "A token-saving toolkit for AI coding agents: an Apache-2.0 skill that cuts 65% of output tokens across 30+ agents, plus a local Go proxy that shrinks what agents read with byte-exact local recovery.",
       "category_dir": "agent-infra",
       "category_name": "Agent 基础设施",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "prompt-engineering",
         "claude-code",
@@ -175,8 +279,8 @@
       "doc_languages": [
         "en"
       ],
-      "license": "MIT AND BSL-1.1",
-      "license_bucket": "unknown",
+      "license": "Apache-2.0",
+      "license_bucket": "open",
       "homepage": "https://docs.caveman.so/docs/quickstart",
       "repo": "https://github.com/JuliusBrussee/caveman",
       "tier": "standard",
@@ -186,11 +290,15 @@
       "aliases": [
         "caveman-ai"
       ],
-      "risk_notes": "拆分许可证：skill/CLI/SDK 为 MIT，Engine/Proxy/Browse/MCP server 等 Go 运行时为 BSL-1.1（源可用非 OSI，自托管第一方流量含生产免费，第三方托管需商业授权，2030-06-21 或发布四年后转 Apache-2.0）；skill 只省输出，每轮固定多花约 1-1.5k input token，本就简洁的任务可能亏损；CLI 默认匿名遥测（caveman telemetry off 或 DO_NOT_TRACK=1 关闭）；所有压缩本地可恢复。",
+      "risk_notes": "整仓 Apache-2.0（2026-10 上游改为整仓开源，旧版本与第三方组件声明见 LICENSING.md）；\"Caveman\" 名称与石头 logo 为上游商标；skill 只省输出，每轮固定多花约 1-1.5k input token，本就简洁的任务可能亏损；CLI 默认匿名遥测（caveman telemetry off 或 DO_NOT_TRACK=1 关闭）；所有压缩本地可恢复。",
       "added_at": "2026-09-09",
-      "updated_at": "2026-09-09",
-      "install": "bash\n# 小石头：skill（30+ Agent，MIT）\nnpx skills add JuliusBrussee/caveman\n\n# 大石头：本地代理（Node.js 22.13+，MIT CLI + BSL-1.1 引擎）\nnpm install -g @caveman-ai/cli && caveman setup --install\ncaveman claude        # 或 codex · gemini · aider · kilo · qwen · opencode · hermes · openclaw · pi",
-      "detail_url": "skills/caveman.html"
+      "updated_at": "2026-10-28",
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# 小石头：skill（30+ Agent）\nnpx skills add JuliusBrussee/caveman\n\n# 大石头：本地代理（Node.js 22.13+）\nnpm install -g @caveman-ai/cli && caveman setup --install\ncaveman claude        # 或 codex · gemini · aider · kilo · qwen · opencode · hermes · openclaw · pi",
+      "detail_url": "skills/caveman.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/caveman/ENTRY.md"
     },
     {
       "id": "cc-haha",
@@ -200,8 +308,8 @@
       "summary_en": "Local-first cross-platform desktop workspace for Claude Code and agents: sessions, worktrees, diff review, MCP, subagents, workflows and remote access.",
       "category_dir": "agent-infra",
       "category_name": "Agent 基础设施",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "ai-agent",
         "multi-agent",
@@ -235,8 +343,12 @@
       "risk_notes": "MIT 许可可商用；桌面端发布包可能存在签名/公证差异，安装时需按系统提示确认来源；模型 API Key、会话与本地配置存于本机；Computer Use、权限模式与工作流可执行真实系统操作，应在受控环境逐步授权；调试 CLI 需要 Bun 运行时。",
       "added_at": "2026-09-11",
       "updated_at": "2026-09-11",
-      "install": "bash\n# 从 GitHub Releases 下载桌面端安装包\n# macOS / Windows / Linux：https://github.com/NanmiCoder/cc-haha/releases",
-      "detail_url": "skills/cc-haha.html"
+      "verification_status": "needs-review",
+      "health_score": 75,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# 从 GitHub Releases 下载桌面端安装包\n# macOS / Windows / Linux：https://github.com/NanmiCoder/cc-haha/releases",
+      "detail_url": "skills/cc-haha.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/cc-haha/ENTRY.md"
     },
     {
       "id": "cc-switch",
@@ -246,8 +358,8 @@
       "summary_en": "Cross-platform desktop app that unifies provider switching, MCP/Skills/Prompts sync, proxy failover and usage tracking across Claude Code, Codex, Gemini CLI, OpenCode, OpenClaw, Grok Build and Hermes.",
       "category_dir": "agent-infra",
       "category_name": "Agent 基础设施",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "provider-switching",
         "mcp",
@@ -285,8 +397,54 @@
       "risk_notes": "MIT 许可可商用；切换供应商后大多数 CLI 工具需重启终端（Claude Code 除外）；API Key 保存在本机 SQLite，切换操作会写入各工具的配置文件，建议定期备份 ~/.cc-switch 目录；首次启动可导入现有配置作为默认供应商，系统始终保留一个活跃配置以防工具不可用。",
       "added_at": "2026-09-06",
       "updated_at": "2026-09-06",
-      "install": "bash\n# macOS（Homebrew，代码签名公证）\nbrew install --cask cc-switch\n\n# Arch Linux（paru）\nparu -S cc-switch-bin",
-      "detail_url": "skills/cc-switch.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# macOS（Homebrew，代码签名公证）\nbrew install --cask cc-switch\n\n# Arch Linux（paru）\nparu -S cc-switch-bin",
+      "detail_url": "skills/cc-switch.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/cc-switch/ENTRY.md"
+    },
+    {
+      "id": "ccch1mneyyy-dsh-tui",
+      "name_zh": "DSH 终端界面",
+      "name_en": "DSH TUI",
+      "summary_zh": "为 DeepSeek Harness 提供键盘优先的全屏终端界面，展示流式输出、状态、上下文和会话控制。",
+      "summary_en": "A keyboard-first full-screen terminal interface for DeepSeek Harness with streaming output, status, context, and session controls.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "mode": "connect",
+      "mode_label": "接入 Agent",
+      "tags": [
+        "dsh",
+        "cli",
+        "plugin",
+        "ai-agent"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/ccch1mneyyy/dsh-TUI",
+      "repo": "https://github.com/ccch1mneyyy/dsh-TUI",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone --depth 1 https://github.com/ccch1mneyyy/dsh-TUI.git\ncd dsh-TUI",
+      "detail_url": "skills/ccch1mneyyy-dsh-tui.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/ccch1mneyyy-dsh-tui/ENTRY.md"
     },
     {
       "id": "codex-taskboard",
@@ -296,8 +454,8 @@
       "summary_en": "A local-first issue board that runs in the browser and embeds into Codex via CDP launcher or injection; one HTTP API powers the React UI and the taskctl CLI used by the bundled Codex Skill.",
       "category_dir": "agent-infra",
       "category_name": "Agent 基础设施",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "codex",
         "cli",
@@ -326,8 +484,12 @@
       "risk_notes": "Apache-2.0 宽松可商用；本地运行需 Node.js 22.5+（npm install / build / start 起本地服务 127.0.0.1:47823）；若构建 macOS/Windows 桌面版需 Rust 1.88+ 与 Xcode/VS Build Tools（Tauri）。随附 Codex Skill 通过软链到 ~/.agents/skills/ 安装。",
       "added_at": "2026-08-26",
       "updated_at": "2026-08-26",
-      "install": "bash\n# 1) 克隆并安装依赖\ngit clone --depth 1 https://github.com/chuspeeism/dashi-taskboard.git /tmp/codex-taskboard\ncd /tmp/codex-taskboard\nnpm install\nnpm run build\nnpm start\n# 打开 http://127.0.0.1:47823 ，SQLite 库位于 .data/taskboard.sqlite",
-      "detail_url": "skills/codex-taskboard.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# 1) 克隆并安装依赖\ngit clone --depth 1 https://github.com/chuspeeism/dashi-taskboard.git /tmp/codex-taskboard\ncd /tmp/codex-taskboard\nnpm install\nnpm run build\nnpm start\n# 打开 http://127.0.0.1:47823 ，SQLite 库位于 .data/taskboard.sqlite",
+      "detail_url": "skills/codex-taskboard.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/codex-taskboard/ENTRY.md"
     },
     {
       "id": "codexplusplus",
@@ -337,8 +499,8 @@
       "summary_en": "An external launcher and manager for the OpenAI Codex desktop app with provider switching, protocol conversion, session management and UI enhancement via CDP injection.",
       "category_dir": "agent-infra",
       "category_name": "Agent 基础设施",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "codex",
         "provider-switching",
@@ -373,8 +535,54 @@
       "risk_notes": "AGPL-3.0-only 要求修改分发或网络服务时开放源码；通过 CDP 注入依赖官方桌面应用页面结构，官方更新后部分功能可能需适配；修改供应商配置和本地会话数据前应保留备份；macOS 安装包未签名时需手动解除 Gatekeeper 隔离。",
       "added_at": "2026-09-06",
       "updated_at": "2026-09-06",
-      "install": "bash\n# Windows：CodexPlusPlus-*-windows-x64-setup.exe\n# macOS Intel：CodexPlusPlus-*-macos-x64.dmg\n# macOS Apple Silicon：CodexPlusPlus-*-macos-arm64.dmg",
-      "detail_url": "skills/codexplusplus.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# Windows：CodexPlusPlus-*-windows-x64-setup.exe\n# macOS Intel：CodexPlusPlus-*-macos-x64.dmg\n# macOS Apple Silicon：CodexPlusPlus-*-macos-arm64.dmg",
+      "detail_url": "skills/codexplusplus.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/codexplusplus/ENTRY.md"
+    },
+    {
+      "id": "deepseek-ai-deepseek-harness",
+      "name_zh": "DeepSeek Harness",
+      "name_en": "DeepSeek Harness",
+      "summary_zh": "DeepSeek 官方开源 Agent Harness，以 Cordis 为基础提供一切皆插件的模型、工具、界面与技能运行时。",
+      "summary_en": "DeepSeek's official open agent harness, built on Cordis with plugin-based models, tools, interfaces, and skills.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "mode": "deploy",
+      "mode_label": "部署运行",
+      "tags": [
+        "dsh",
+        "ai-agent",
+        "framework",
+        "plugin"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/deepseek-ai/deepseek-harness",
+      "repo": "https://github.com/deepseek-ai/deepseek-harness",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone --depth 1 https://github.com/deepseek-ai/deepseek-harness.git\ncd deepseek-harness",
+      "detail_url": "skills/deepseek-ai-deepseek-harness.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/deepseek-ai-deepseek-harness/ENTRY.md"
     },
     {
       "id": "deepseek-pp",
@@ -384,8 +592,8 @@
       "summary_en": "Browser extension that turns DeepSeek Web into an AI agent workspace with MCP, memory, Skills, media analysis, web control and automation.",
       "category_dir": "agent-infra",
       "category_name": "Agent 基础设施",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "ai-agent",
         "mcp",
@@ -418,8 +626,54 @@
       "risk_notes": "Apache-2.0 可商用；依赖 DeepSeek 网页版界面，上游 DOM 或站点策略变化可能影响扩展功能；MCP/浏览器控制/Shell 能力需按需授权，Shell MCP 会获得本机命令执行能力，安装前应确认来源并限制权限；多模态 API Key 与配置保存在浏览器本地。",
       "added_at": "2026-09-11",
       "updated_at": "2026-09-11",
-      "install": "bash\n# 源码构建（需要 Node.js 与 npm）\ngit clone https://github.com/zhu1090093659/deepseek-pp.git\ncd deepseek-pp\nnpm install\nnpm run build",
-      "detail_url": "skills/deepseek-pp.html"
+      "verification_status": "blocked",
+      "health_score": 30,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# 源码构建（需要 Node.js 与 npm）\ngit clone https://github.com/zhu1090093659/deepseek-pp.git\ncd deepseek-pp\nnpm install\nnpm run build",
+      "detail_url": "skills/deepseek-pp.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/deepseek-pp/ENTRY.md"
+    },
+    {
+      "id": "dsh-market-dsh-market",
+      "name_zh": "DSH 插件市场",
+      "name_en": "DSH Market",
+      "summary_zh": "嵌入 DeepSeek Harness 的插件市场，用于浏览、安装、更新、启停和备份社区插件。",
+      "summary_en": "A plugin marketplace embedded in DeepSeek Harness for discovering, installing, updating, enabling, and backing up plugins.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "mode": "deploy",
+      "mode_label": "部署运行",
+      "tags": [
+        "dsh",
+        "plugin",
+        "marketplace",
+        "self-hosted"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/dsh-market/dsh-market",
+      "repo": "https://github.com/dsh-market/dsh-market",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
+      "added_at": "2026-08-27",
+      "updated_at": "2026-08-27",
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone --depth 1 https://github.com/dsh-market/dsh-market.git\ncd dsh-market",
+      "detail_url": "skills/dsh-market-dsh-market.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/dsh-market-dsh-market/ENTRY.md"
     },
     {
       "id": "kaneo",
@@ -429,8 +683,8 @@
       "summary_en": "Minimal open-source self-hosted project management with built-in MCP: Claude, Cursor and other clients manage issues, projects and labels via the official @kaneo/mcp.",
       "category_dir": "agent-infra",
       "category_name": "Agent 基础设施",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "mcp",
         "self-hosted",
@@ -459,8 +713,12 @@
       "risk_notes": "MIT 许可可商用；自托管数据自持，依赖 PostgreSQL 16；部署前需配置 POSTGRES_PASSWORD、AUTH_SECRET 与 KANEO_CLIENT_URL，KANEO_API_URL 默认由 KANEO_CLIENT_URL 推导；MCP stdio 通过 npx 拉取 @kaneo/mcp，客户端需 Node.js 与 npm 网络。",
       "added_at": "2026-09-08",
       "updated_at": "2026-09-08",
-      "install": "bash\n# 1) 自托管 Kaneo（仓库自带 compose.yml / .env.sample）\ngit clone https://github.com/usekaneo/kaneo.git\ncd kaneo\ncp .env.sample .env   # 设置 POSTGRES_PASSWORD、AUTH_SECRET、KANEO_CLIENT_URL=http://localhost:5173\ndocker compose up -d\n# 打开 http://localhost:5173\n\n# 2) 给 AI 工具接入官方 MCP（stdio 方式）\n# 在 Claude Code / Cursor / Codex 等 MCP 客户端添加：\n#   command: npx\n#   args: [\"-y\", \"@kaneo/mcp\"]\n# 自托管实例的 HTTP MCP endpoint：<你的实例地址>/api/mcp",
-      "detail_url": "skills/kaneo.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# 1) 自托管 Kaneo（仓库自带 compose.yml / .env.sample）\ngit clone https://github.com/usekaneo/kaneo.git\ncd kaneo\ncp .env.sample .env   # 设置 POSTGRES_PASSWORD、AUTH_SECRET、KANEO_CLIENT_URL=http://localhost:5173\ndocker compose up -d\n# 打开 http://localhost:5173\n\n# 2) 给 AI 工具接入官方 MCP（stdio 方式）\n# 在 Claude Code / Cursor / Codex 等 MCP 客户端添加：\n#   command: npx\n#   args: [\"-y\", \"@kaneo/mcp\"]\n# 自托管实例的 HTTP MCP endpoint：<你的实例地址>/api/mcp",
+      "detail_url": "skills/kaneo.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/kaneo/ENTRY.md"
     },
     {
       "id": "openopc",
@@ -470,8 +728,8 @@
       "summary_en": "AI-native company runtime from HKU HKUDS: auto-staffing, multi-role collaboration with work-item DAGs, role-attributed learning, Codex and Claude Code as engines.",
       "category_dir": "agent-infra",
       "category_name": "Agent 基础设施",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "ai-agent",
         "multi-agent",
@@ -511,8 +769,12 @@
       "risk_notes": "LLM API 调用费用自担（LiteLLM/OpenRouter 兼容配置）；外部 agent（Codex / Claude Code / Cursor 等）的审批与沙箱设置独立于 OpenOPC 的三级权限体系，需分别配置；full-access 仅关闭 Native 工具审批但组织审校与 WorkItem 门禁仍生效；工作区信任绑定配置指纹，修改 YAML 后需重新 opc trust add；JiuwenSwarm-team 作为黑盒团队运行，内部代理不可由 OpenOPC 管理。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\n# 1. uv 环境（macOS / Linux）\ncd /path/to/OpenOPC\nuv python install 3.12\nuv venv --python 3.12\nsource .venv/bin/activate\n\n# 2. 安装 OpenOPC\nuv pip install -e .\n\n# 3. 可选：浏览器工具\nuv run python -m playwright install chromium\n\n# 4. 初始化本地配置、记忆、技能、项目与工作区\nuv run opc init\n\n# 5. 编辑 .opc/config/llm_config.yaml 填入 API Key\n\n# 6. 启动 Office UI（默认 http://localhost:8765）\nuv run opc ui",
-      "detail_url": "skills/openopc.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# 1. uv 环境（macOS / Linux）\ncd /path/to/OpenOPC\nuv python install 3.12\nuv venv --python 3.12\nsource .venv/bin/activate\n\n# 2. 安装 OpenOPC\nuv pip install -e .\n\n# 3. 可选：浏览器工具\nuv run python -m playwright install chromium\n\n# 4. 初始化本地配置、记忆、技能、项目与工作区\nuv run opc init\n\n# 5. 编辑 .opc/config/llm_config.yaml 填入 API Key\n\n# 6. 启动 Office UI（默认 http://localhost:8765）\nuv run opc ui",
+      "detail_url": "skills/openopc.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/openopc/ENTRY.md"
     },
     {
       "id": "staffdeck",
@@ -522,8 +784,8 @@
       "summary_en": "OpenBMB's enterprise platform for governed digital employees: state-machine SOPs, document-aware retrieval, audited tool execution, and long-term memory.",
       "category_dir": "agent-infra",
       "category_name": "Agent 基础设施",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "digital-employee",
         "ai-agent",
@@ -556,8 +818,12 @@
       "risk_notes": "AGPL-3.0 有强 Copyleft：对外提供网络服务需满足开源义务，商用前请评估；平台可执行 HTTP/MCP/定时任务等真实操作，应配置最小权限凭证与高风险操作审批；源码部署默认管理员 admin/admin，首次登录必须改密；法律、医疗、金融、安全等受监管场景不得替代专业审查。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\ngit clone https://github.com/OpenBMB/StaffDeck.git\ncd StaffDeck\npython3 -m venv backend/.venv\nbackend/.venv/bin/python -m pip install -e \"backend[dev]\"\nnpm --prefix frontend-enterprise ci\ncp backend/.env.example backend/.env\nscripts/dev_up.sh --detach",
-      "detail_url": "skills/staffdeck.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone https://github.com/OpenBMB/StaffDeck.git\ncd StaffDeck\npython3 -m venv backend/.venv\nbackend/.venv/bin/python -m pip install -e \"backend[dev]\"\nnpm --prefix frontend-enterprise ci\ncp backend/.env.example backend/.env\nscripts/dev_up.sh --detach",
+      "detail_url": "skills/staffdeck.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/staffdeck/ENTRY.md"
     },
     {
       "id": "tencentdb-agent-memory",
@@ -567,8 +833,8 @@
       "summary_en": "Team memory hub for AI agents: turns conversations, docs and code into reusable assets (Chat Memory, Skill, LLM-Wiki, CodeGraph), shared across agents and frameworks.",
       "category_dir": "agent-infra",
       "category_name": "Agent 基础设施",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "memory",
         "long-term-memory",
@@ -601,8 +867,12 @@
       "risk_notes": "默认分支为迭代中的 feat/server_team；README 安装段 clone URL 有笔误（Tencent 应为 TencentCloud）；需 Docker 三件套 + LLM 配置，非即插即用。",
       "added_at": "2026-08-13",
       "updated_at": "2026-08-13",
-      "install": "bash\n# 1) 克隆上游（默认分支 feat/server_team，直接 clone 即得该版本）\ngit clone https://github.com/TencentCloud/TencentDB-Agent-Memory.git /tmp/tdb\ncd /tmp/tdb/deploy/global-images\n\n# 2) 配置并一键启动（需两组 LLM 参数：memory 组 + proxy 组）\ncp .env.example .env\n# 用编辑器填入 .env 中的两组 LLM 参数\n./start-all.sh\n\n# 3) 打开控制台\n#    http://localhost:8125",
-      "detail_url": "skills/tencentdb-agent-memory.html"
+      "verification_status": "needs-review",
+      "health_score": 75,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# 1) 克隆上游（默认分支 feat/server_team，直接 clone 即得该版本）\ngit clone https://github.com/TencentCloud/TencentDB-Agent-Memory.git /tmp/tdb\ncd /tmp/tdb/deploy/global-images\n\n# 2) 配置并一键启动（需两组 LLM 参数：memory 组 + proxy 组）\ncp .env.example .env\n# 用编辑器填入 .env 中的两组 LLM 参数\n./start-all.sh\n\n# 3) 打开控制台\n#    http://localhost:8125",
+      "detail_url": "skills/tencentdb-agent-memory.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/tencentdb-agent-memory/ENTRY.md"
     },
     {
       "id": "weknora",
@@ -612,8 +882,8 @@
       "summary_en": "Tencent's open-source LLM knowledge platform for RAG, autonomous agents, and self-maintaining Wikis, with MCP, DSH plugin, CLI, API, IM, and self-hosted deployment options.",
       "category_dir": "agent-infra",
       "category_name": "Agent 基础设施",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "rag",
         "knowledge-management",
@@ -649,8 +919,12 @@
       "risk_notes": "整体采用 MIT License，但仓库 LICENSE 中另列 Apache-2.0 等第三方组件条款，商用需按上游 LICENSE 全文与第三方许可复核；部署需 Docker，实际 RAG/Agent 效果依赖所配置 LLM、嵌入与向量库服务；生产环境建议置于内网并配置访问控制。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\ngit clone https://github.com/Tencent/WeKnora.git\ncd WeKnora\ncp .env.example .env   # 按需修改模型、存储与端口配置\ndocker compose pull\ndocker compose up -d",
-      "detail_url": "skills/weknora.html"
+      "verification_status": "needs-review",
+      "health_score": 75,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone https://github.com/Tencent/WeKnora.git\ncd WeKnora\ncp .env.example .env   # 按需修改模型、存储与端口配置\ndocker compose pull\ndocker compose up -d",
+      "detail_url": "skills/weknora.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/weknora/ENTRY.md"
     },
     {
       "id": "ai-job-search",
@@ -660,8 +934,8 @@
       "summary_en": "Open-source AI job application framework on Claude Code: profile setup, job scraping, drafter-reviewer LaTeX CV and cover letters with PDF/ATS verification, interview prep, 13 slash commands.",
       "category_dir": "business-office",
       "category_name": "商业与办公",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "job-search",
         "career",
@@ -695,8 +969,12 @@
       "risk_notes": "GitHub 不允许公开仓库的私有 fork，而 /setup 会把姓名、履历、期望薪资等个人数据写入 tracked 文件——用于自己的求职时应建私有仓库并把本仓库设为 upstream，fork 仅用于贡献回上游；LinkedIn 门户技能走公开未认证接口，自动化访问违反其 ToS，仅限个人低量使用；职位门户抓取需遵守 robots.txt 与各门户访问条款；求职信与 CV 编译依赖 LaTeX（lualatex/xelatex + 字体包），环境配置较重；框架对职位描述做 instruction-level 防护而非沙箱隔离，对陌生门户的抓取结果与产出应人工复核后再投递。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\n# 私有仓库方式（推荐个人使用）\ngh repo create my-job-search --private --clone\ncd my-job-search\ngit remote add upstream https://github.com/MadsLorentzen/ai-job-search.git\ngit fetch upstream master\ngit merge upstream/master\n\n# 安装门户搜索 CLI 工具（PowerShell）\n$tools = @(\"jobbank-search\",\"jobdanmark-search\",\"jobindex-search\",\"jobnet-search\",\"linkedin-search\",\"freehire-search\")\nforeach ($tool in $tools) { Push-Location \".agents/skills/$tool/cli\"; bun install; Pop-Location }",
-      "detail_url": "skills/ai-job-search.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# 私有仓库方式（推荐个人使用）\ngh repo create my-job-search --private --clone\ncd my-job-search\ngit remote add upstream https://github.com/MadsLorentzen/ai-job-search.git\ngit fetch upstream master\ngit merge upstream/master\n\n# 安装门户搜索 CLI 工具（PowerShell）\n$tools = @(\"jobbank-search\",\"jobdanmark-search\",\"jobindex-search\",\"jobnet-search\",\"linkedin-search\",\"freehire-search\")\nforeach ($tool in $tools) { Push-Location \".agents/skills/$tool/cli\"; bun install; Pop-Location }",
+      "detail_url": "skills/ai-job-search.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/business-office/ai-job-search/ENTRY.md"
     },
     {
       "id": "anthropics-office-skills",
@@ -706,8 +984,8 @@
       "summary_en": "Anthropic's official document-processing skills: docx generation/editing, pdf read/merge, pptx slides, xlsx spreadsheets. Source-available, not open source — linked, not vendored.",
       "category_dir": "business-office",
       "category_name": "商业与办公",
-      "kind": "skill-collection",
-      "kind_label": "技能集",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "document-generation",
         "office",
@@ -739,8 +1017,12 @@
       "risk_notes": "上游 README 明示 docx/pdf/pptx/xlsx 四个技能为 source-available（非开源），限制再分发；本仓库仅提供导航与安装指引。",
       "added_at": "2026-08-10",
       "updated_at": "2026-08-13",
-      "install": "bash\n# 仅克隆文档技能子目录（稀疏检出，体积小）\ngit clone --depth 1 --filter=blob:none --sparse https://github.com/anthropics/skills /tmp/office-skills\ncd /tmp/office-skills\ngit sparse-checkout set skills/document-skills\n\n# 然后将所需技能目录复制到你的 agent 的 skills 目录（仅本地使用）\ncp -r skills/document-skills/* ~/.claude/skills/",
-      "detail_url": "skills/anthropics-office-skills.html"
+      "verification_status": "needs-review",
+      "health_score": 75,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# 仅克隆文档技能子目录（稀疏检出，体积小）\ngit clone --depth 1 --filter=blob:none --sparse https://github.com/anthropics/skills /tmp/office-skills\ncd /tmp/office-skills\ngit sparse-checkout set skills/document-skills\n\n# 然后将所需技能目录复制到你的 agent 的 skills 目录（仅本地使用）\ncp -r skills/document-skills/* ~/.claude/skills/",
+      "detail_url": "skills/anthropics-office-skills.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/business-office/anthropics-office-skills/ENTRY.md"
     },
     {
       "id": "chatgpt-shortcut",
@@ -750,8 +1032,8 @@
       "summary_en": "A searchable prompt library for ChatGPT, Claude, Gemini and Cursor: ready-to-use prompt cards by role and scenario, with browser extension and Docker self-hosting.",
       "category_dir": "business-office",
       "category_name": "商业与办公",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "read",
+      "mode_label": "阅读参考",
       "tags": [
         "prompt-engineering",
         "writing",
@@ -784,8 +1066,12 @@
       "risk_notes": "非 SKILL.md 项目：主体是提示词库网站与浏览器扩展，不能作为 Agent 技能安装；提示词面向通用对话模型且由社区贡献，质量参差，实际使用前需自行校准。",
       "added_at": "2026-08-30",
       "updated_at": "2026-08-30",
-      "install": "bash\n# 方式一：无需安装，直接使用在线站\n#   https://www.aishort.top\n\n# 方式二：Docker 自托管（数据完全本地）\ngit clone --depth 1 https://github.com/rockbenben/ChatGPT-Shortcut.git\ncd ChatGPT-Shortcut\ndocker compose up -d\n# 浏览器访问 http://localhost:3000",
-      "detail_url": "skills/chatgpt-shortcut.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# 方式一：无需安装，直接使用在线站\n#   https://www.aishort.top\n\n# 方式二：Docker 自托管（数据完全本地）\ngit clone --depth 1 https://github.com/rockbenben/ChatGPT-Shortcut.git\ncd ChatGPT-Shortcut\ndocker compose up -d\n# 浏览器访问 http://localhost:3000",
+      "detail_url": "skills/chatgpt-shortcut.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/business-office/chatgpt-shortcut/ENTRY.md"
     },
     {
       "id": "dootask",
@@ -795,8 +1081,8 @@
       "summary_en": "Open source self-hosted task management and team collaboration system (PHP/Laravel + Vue) with Docker deployment, a `./cmd` ops CLI, and five bundled Claude Code skills plus AGENTS.md.",
       "category_dir": "business-office",
       "category_name": "商业与办公",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "office",
         "self-hosted",
@@ -828,8 +1114,12 @@
       "risk_notes": "AGPL-3.0 强 copyleft：通过网络对外提供服务同样触发源码开放义务，改造后自建给他人使用需评估合规，纯内部自托管一般不受影响。部署硬性依赖 Docker v20.10+ 与 Docker Compose v2.0+，数据库为 MariaDB，建议 2 核 4G 以上，Windows 需先装 WSL2。默认分支是 pro 而非 main/master，一键安装脚本与文档链接都指向 pro。仓库含 resources/drawio（jgraph/drawio）与 resources/mobile（kuaifan/dootask-app）两个子模块，浅克隆不含。`./cmd install` 是重操作（建库并 migrate --seed），在已有数据的环境上重装会覆盖，务必先备份。",
       "added_at": "2026-09-24",
       "updated_at": "2026-09-24",
-      "install": "bash\ncurl -fsSL https://raw.githubusercontent.com/kuaifan/dootask/pro/bin/install | bash",
-      "detail_url": "skills/dootask.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "curl -fsSL https://raw.githubusercontent.com/kuaifan/dootask/pro/bin/install | bash",
+      "detail_url": "skills/dootask.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/business-office/dootask/ENTRY.md"
     },
     {
       "id": "officecli",
@@ -839,8 +1129,8 @@
       "summary_en": "AI agent-first Office CLI: single binary, no Office needed. Read, edit, create docx/xlsx/pptx with built-in rendering, 350+ Excel formulas, pivot tables, template merge, and MCP.",
       "category_dir": "business-office",
       "category_name": "商业与办公",
-      "kind": "cli-tool",
-      "kind_label": "CLI 工具",
+      "mode": "connect",
+      "mode_label": "接入 Agent",
       "tags": [
         "cli",
         "docx",
@@ -876,8 +1166,12 @@
       "risk_notes": "单二进制内嵌 .NET 运行时，无需额外安装；后台自动检查更新（可关），config 存于 ~/.officecli/config.json；resident 模式延迟磁盘写入，其他程序读取前需 officecli save 或 OFFICECLI_RESIDENT_FLUSH=each；源码构建需 .NET 10 SDK，但运行时不需要。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\n# macOS / Linux\ncurl -fsSL https://raw.githubusercontent.com/iOfficeAI/OfficeCLI/main/install.sh | bash\n\n# Windows PowerShell\nirm https://raw.githubusercontent.com/iOfficeAI/OfficeCLI/main/install.ps1 | iex",
-      "detail_url": "skills/officecli.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# macOS / Linux\ncurl -fsSL https://raw.githubusercontent.com/iOfficeAI/OfficeCLI/main/install.sh | bash\n\n# Windows PowerShell\nirm https://raw.githubusercontent.com/iOfficeAI/OfficeCLI/main/install.ps1 | iex",
+      "detail_url": "skills/officecli.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/business-office/officecli/ENTRY.md"
     },
     {
       "id": "toolknit-desktop",
@@ -887,8 +1181,8 @@
       "summary_en": "Local-first file workbench on Tauri 2 and Rust: 68 tools across 12 groups for PDF, PPT, image, audio, video, text and AI work, exposed to IDE agents via @toolknit/cli and an MCP server.",
       "category_dir": "business-office",
       "category_name": "商业与办公",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "office",
         "mcp",
@@ -923,8 +1217,12 @@
       "risk_notes": "Apache-2.0 只覆盖 Desktop 与 CLI/MCP 源码，README 明确不授予 ToolKnit 名称、Logo、视觉标识、域名、托管网页服务与账号的使用权（另见 NOTICE），toolknit.com 网页端不在本仓开源范围内。桌面端仅支持 Windows 10 1803（17134）+/Windows 11，依赖 Microsoft Edge WebView2 Runtime（安装包内置引导程序，首次安装仍需联网），无 macOS/Linux 桌面版；安装包须只从本仓 Releases 下载并核对随附 .sha256，实际签名状态以对应 Release 说明为准。项目 2026-07-30 创建、当前 3.0.0，历史约两个月。CLI 契约文档中图像转换与压缩、图标生成、AI 润色与翻译仍标注 Planned，CLI 覆盖面小于桌面端。AI 功能会把符合说明的数据发往你所配置的模型服务，需 DEEPSEEK_API_KEY 或 TOOLKNIT_AI_API_KEY；官方明确「本地优先」不表示程序完全不联网。",
       "added_at": "2026-09-24",
       "updated_at": "2026-09-24",
-      "install": "powershell\nnpm install --global @toolknit/cli\ntoolknit doctor --json\ntoolknit --help",
-      "detail_url": "skills/toolknit-desktop.html"
+      "verification_status": "needs-review",
+      "health_score": 75,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "npm install --global @toolknit/cli\ntoolknit doctor --json\ntoolknit --help",
+      "detail_url": "skills/toolknit-desktop.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/business-office/toolknit-desktop/ENTRY.md"
     },
     {
       "id": "abogen",
@@ -934,8 +1232,8 @@
       "summary_en": "Convert ePub, PDF, text, markdown, and subtitle files into high-quality audio with synchronized captions using Kokoro-82M TTS: voice mixer, chapter control, batch queue, and multiple output formats.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "cli-tool",
-      "kind_label": "CLI 工具",
+      "mode": "connect",
+      "mode_label": "接入 Agent",
       "tags": [
         "tts",
         "audiobook",
@@ -962,8 +1260,12 @@
       "risk_notes": "依赖 espeak-ng（phonemization）和 PyTorch；NVIDIA GPU 加速需安装 CUDA 化 PyTorch（按显卡驱动选 cu126/cu128/cu130），无 GPU 时 CPU 推理较慢；AMD GPU 在 Windows 上不支持 ROCm，需 Linux；本地推理无 API 费用。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\n# NVIDIA GPU（CUDA 12.8）\nuv tool install --python 3.12 abogen[cuda] --extra-index-url https://download.pytorch.org/whl/cu128 --index-strategy unsafe-best-match\n\n# NVIDIA GPU（旧驱动 CUDA 12.6 / 新驱动 CUDA 13.0）\nuv tool install --python 3.12 abogen[cuda126] --extra-index-url https://download.pytorch.org/whl/cu126 --index-strategy unsafe-best-match\n\n# CPU / 无 NVIDIA GPU\nuv tool install --python 3.12 abogen",
-      "detail_url": "skills/abogen.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# NVIDIA GPU（CUDA 12.8）\nuv tool install --python 3.12 abogen[cuda] --extra-index-url https://download.pytorch.org/whl/cu128 --index-strategy unsafe-best-match\n\n# NVIDIA GPU（旧驱动 CUDA 12.6 / 新驱动 CUDA 13.0）\nuv tool install --python 3.12 abogen[cuda126] --extra-index-url https://download.pytorch.org/whl/cu126 --index-strategy unsafe-best-match\n\n# CPU / 无 NVIDIA GPU\nuv tool install --python 3.12 abogen",
+      "detail_url": "skills/abogen.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/abogen/ENTRY.md"
     },
     {
       "id": "aigc-line",
@@ -973,8 +1275,8 @@
       "summary_en": "A harness-engineering desktop workbench for the AI short-drama loop: scripts, consistent characters, storyboards, multimodal video generation and analysis on one canvas.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "short-drama",
         "video-production",
@@ -1005,8 +1307,12 @@
       "risk_notes": "Electron 桌面应用；连接本地 ComfyUI 与云端 AI 服务（Google、火山方舟、Qwen 等），部分密钥使用系统安全存储、方舟 Key 明文保存在本机设置，AI 生成会消耗配额或产生费用。",
       "added_at": "2026-08-27",
       "updated_at": "2026-08-27",
-      "install": "bash\ngit clone https://github.com/zhangtuo723/aigc_line.git\ncd aigc_line\nnpm install",
-      "detail_url": "skills/aigc-line.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone https://github.com/zhangtuo723/aigc_line.git\ncd aigc_line\nnpm install",
+      "detail_url": "skills/aigc-line.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/aigc-line/ENTRY.md"
     },
     {
       "id": "aimangastudio",
@@ -1016,8 +1322,8 @@
       "summary_en": "An AI-powered comic creation tool covering script writing, storyboard design, and character/style control, with multi-page export to PNG/PDF.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "storyboard",
         "image-generation",
@@ -1045,8 +1351,12 @@
       "risk_notes": "早期项目，仅少量提交且长期未更新，无正式 release，功能以雏形为主；依赖 Google GenAI（@google/genai）服务，生成需相应 API 凭据与用量。",
       "added_at": "2026-08-27",
       "updated_at": "2026-08-27",
-      "install": "bash\ngit clone https://github.com/morsoli/aimangastudio.git\ncd aimangastudio\nnpm install",
-      "detail_url": "skills/aimangastudio.html"
+      "verification_status": "needs-review",
+      "health_score": 75,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone https://github.com/morsoli/aimangastudio.git\ncd aimangastudio\nnpm install",
+      "detail_url": "skills/aimangastudio.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/aimangastudio/ENTRY.md"
     },
     {
       "id": "animejs",
@@ -1056,8 +1366,8 @@
       "summary_en": "A lightweight JavaScript animation engine for CSS, SVG, DOM attributes, JavaScript objects and optional Three.js scenes, with modular timelines, springs, scrolling, dragging and WAAPI support.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "connect",
+      "mode_label": "接入 Agent",
       "tags": [
         "animejs",
         "animation",
@@ -1091,8 +1401,12 @@
       "risk_notes": "MIT 许可，主体免费可商用；V4 采用 ES 模块和函数式 API，与 V3 的默认导入写法差异较大，升级项目需先读迁移指南。Three.js 适配为可选 peer dependency，复杂 DOM/SVG/WebGL 动画仍需关注性能与浏览器兼容。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\nnpm install animejs",
-      "detail_url": "skills/animejs.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "npm install animejs",
+      "detail_url": "skills/animejs.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/animejs/ENTRY.md"
     },
     {
       "id": "arcreel",
@@ -1102,8 +1416,8 @@
       "summary_en": "Open-source self-hosted AI video workbench: turn novels, scripts, or products into short videos with consistent characters, cost tracking, and agent orchestration.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "video-production",
         "cinematic",
@@ -1134,8 +1448,12 @@
       "risk_notes": "",
       "added_at": "2026-08-26",
       "updated_at": "2026-08-26",
-      "install": "bash\n# 前提：Docker + Docker Compose\ngit clone https://github.com/ArcReel/ArcReel.git\ncd ArcReel/deploy\n\ncp .env.example .env\ndocker compose up -d",
-      "detail_url": "skills/arcreel.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# 前提：Docker + Docker Compose\ngit clone https://github.com/ArcReel/ArcReel.git\ncd ArcReel/deploy\n\ncp .env.example .env\ndocker compose up -d",
+      "detail_url": "skills/arcreel.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/arcreel/ENTRY.md"
     },
     {
       "id": "astryx",
@@ -1145,8 +1463,8 @@
       "summary_en": "Open-source React 19 design system from Meta: 150+ accessible components, 7 themes, dark mode, page templates, and an agent-ready CLI with capability manifests, typed JSON, and stable error codes.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "connect",
+      "mode_label": "接入 Agent",
       "tags": [
         "design-system",
         "ui-generation",
@@ -1178,8 +1496,12 @@
       "risk_notes": "Beta 状态，API 可能变动；需要 React 19+（peer dependency）；StyleX 为内部实现但消费者不可见，覆盖样式用 className 即可；agent 覆盖面依赖 init 写入的 AGENTS.md 块，新组件需重新运行 init 或手动更新。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\n# npm\nnpm install @astryxdesign/core @astryxdesign/theme-neutral @stylexjs/stylex\nnpm install -D @astryxdesign/cli",
-      "detail_url": "skills/astryx.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# npm\nnpm install @astryxdesign/core @astryxdesign/theme-neutral @stylexjs/stylex\nnpm install -D @astryxdesign/cli",
+      "detail_url": "skills/astryx.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/astryx/ENTRY.md"
     },
     {
       "id": "awesome-design-md-cn",
@@ -1189,8 +1511,8 @@
       "summary_en": "A Chinese-localized collection of 70+ DESIGN.md files (Google Stitch's plain-text design format); copy one into your project so AI agents build a consistent UI.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "skill-collection",
-      "kind_label": "技能集",
+      "mode": "read",
+      "mode_label": "阅读参考",
       "tags": [
         "design-system",
         "design-md",
@@ -1221,8 +1543,12 @@
       "risk_notes": "上游 cn 仓库未包含 LICENSE 文件（GitHub license 字段为 null）。它基于 MIT 许可的 VoltAgent/awesome-design-md 做中文本地化整理，但本仓库未显式声明许可证；商用或再分发前请确认授权范围。",
       "added_at": "2026-08-26",
       "updated_at": "2026-08-26",
-      "install": "bash\n# 1) 克隆仓库（含全部 70+ 站点 DESIGN.md 与预览页，约 1.2 MB）\ngit clone --depth 1 https://github.com/fchangjun/awesome-design-md-cn.git /tmp/awesome-design-md-cn\n\n# 2) 复制某个站点的设计系统到你项目根目录（以 Apple 为例）\ncp /tmp/awesome-design-md-cn/design-md/apple/DESIGN.md ./DESIGN.md",
-      "detail_url": "skills/awesome-design-md-cn.html"
+      "verification_status": "needs-review",
+      "health_score": 75,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# 1) 克隆仓库（含全部 70+ 站点 DESIGN.md 与预览页，约 1.2 MB）\ngit clone --depth 1 https://github.com/fchangjun/awesome-design-md-cn.git /tmp/awesome-design-md-cn\n\n# 2) 复制某个站点的设计系统到你项目根目录（以 Apple 为例）\ncp /tmp/awesome-design-md-cn/design-md/apple/DESIGN.md ./DESIGN.md",
+      "detail_url": "skills/awesome-design-md-cn.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/awesome-design-md-cn/ENTRY.md"
     },
     {
       "id": "awesome-gpt-image-2",
@@ -1232,8 +1558,8 @@
       "summary_en": "Industrial prompt engine & template library for GPT-Image2: 530+ reverse-engineered cases and 20+ structured templates turning prose prompts into reusable Prompt-as-Code.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "skill-collection",
-      "kind_label": "技能集",
+      "mode": "read",
+      "mode_label": "阅读参考",
       "tags": [
         "image-generation",
         "prompt-engineering",
@@ -1263,8 +1589,12 @@
       "risk_notes": "MIT 可商用；本质是 Markdown 提示词/模板库（clone 即\"安装\"，无需构建）；自带的 GPT-Image2 Style Library Agent Skill 可直接装入 Claude Code / Cursor。案例与模板持续更新，生产生图依赖外部 GPT-Image-2 API（按量计费）。",
       "added_at": "2026-08-26",
       "updated_at": "2026-08-26",
-      "install": "bash\n# 1) 克隆仓库（含全部案例、模板与 Agent Skill）\ngit clone --depth 1 https://github.com/freestylefly/awesome-gpt-image-2.git /tmp/gpt-image2\n\n# 2) 直接使用：复制 docs/ 下的模板与案例提示词到你的生图工作流\n#    浏览式体验见在线站 https://gpt-image2.canghe.ai\n\n# 3) （可选）装入自带的 Agent Skill 到 Claude Code\nmkdir -p \"$HOME/.claude/skills\"\nln -s /tmp/gpt-image2/agents/skills/gpt-image-2-style-library \"$HOME/.claude/skills/gpt-image-2-style-library\"",
-      "detail_url": "skills/awesome-gpt-image-2.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# 1) 克隆仓库（含全部案例、模板与 Agent Skill）\ngit clone --depth 1 https://github.com/freestylefly/awesome-gpt-image-2.git /tmp/gpt-image2\n\n# 2) 直接使用：复制 docs/ 下的模板与案例提示词到你的生图工作流\n#    浏览式体验见在线站 https://gpt-image2.canghe.ai\n\n# 3) （可选）装入自带的 Agent Skill 到 Claude Code\nmkdir -p \"$HOME/.claude/skills\"\nln -s /tmp/gpt-image2/agents/skills/gpt-image-2-style-library \"$HOME/.claude/skills/gpt-image-2-style-library\"",
+      "detail_url": "skills/awesome-gpt-image-2.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/awesome-gpt-image-2/ENTRY.md"
     },
     {
       "id": "bigbanana-ai-director",
@@ -1274,8 +1604,8 @@
       "summary_en": "An AI short drama and motion comic platform that turns scripts into consistent assets, keyframes and shots, then delivers edited video through a project-level production workflow.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "short-drama",
         "storyboard",
@@ -1309,8 +1639,12 @@
       "risk_notes": "官方声明采用 CC BY-NC-SA 4.0，仅限非商业用途；后续版本只通过官方 Docker 镜像发布，商业源码需授权；部署后需配置 AntSK API Key，并使用外部 LLM、图像与视频模型，费用自担。",
       "added_at": "2026-09-10",
       "updated_at": "2026-09-10",
-      "install": "bash\ngit clone https://github.com/shuyu-labs/BigBanana-AI-Director.git\ncd BigBanana-AI-Director\ndocker-compose up -d",
-      "detail_url": "skills/bigbanana-ai-director.html"
+      "verification_status": "needs-review",
+      "health_score": 75,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone https://github.com/shuyu-labs/BigBanana-AI-Director.git\ncd BigBanana-AI-Director\ndocker-compose up -d",
+      "detail_url": "skills/bigbanana-ai-director.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/bigbanana-ai-director/ENTRY.md"
     },
     {
       "id": "capcut-mate",
@@ -1320,8 +1654,8 @@
       "summary_en": "Open-source CapCut draft automation API on FastAPI: create drafts, add video, audio, images, stickers, subtitles, and effects; deploy standalone or via Coze/n8n workflows.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "video-production",
         "short-video",
@@ -1353,8 +1687,12 @@
       "risk_notes": "生成的是剪映草稿文件（非成片），最终导出仍需剪映客户端或云渲染；草稿写入剪映的 draft_content 目录路径因版本和平台而异；Docker 部署默认端口 30000；剪映版本升级可能导致草稿格式不兼容。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\ngit clone https://github.com/Hommy-master/capcut-mate.git\ncd capcut-mate\ndocker-compose pull && docker-compose up -d",
-      "detail_url": "skills/capcut-mate.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone https://github.com/Hommy-master/capcut-mate.git\ncd capcut-mate\ndocker-compose pull && docker-compose up -d",
+      "detail_url": "skills/capcut-mate.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/capcut-mate/ENTRY.md"
     },
     {
       "id": "character-casting-studio-skill",
@@ -1364,8 +1702,8 @@
       "summary_en": "Material-reference-driven photorealistic character casting skill for Codex; generate original, true-to-life people for ads, film, fashion, and casting visuals.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "skill",
-      "kind_label": "技能包",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "character-design",
         "image-generation",
@@ -1395,8 +1733,12 @@
       "risk_notes": "上游仓库未包含 LICENSE 文件（GitHub 识别为 null），许可证 UNKNOWN，商用/再分发前请确认授权范围；示例图库（examples/）为原创视觉示例，使用人脸/肖像参考素材须确保已获授权。",
       "added_at": "2026-08-26",
       "updated_at": "2026-08-26",
-      "install": "bash\n# 克隆上游仓库到本地\ngit clone https://github.com/dacnay816y62-hub/character-casting-studio-skill.git\ncd character-casting-studio-skill\n\n# 在支持 skills 的 Agent（如 Codex）中，将本目录作为 skill 加载，\n# 即可读取其角色设计流程与硬规则。需要参考素材时请在本地运行环境提供，\n# 不要把私人照片或未授权素材提交进仓库。",
-      "detail_url": "skills/character-casting-studio-skill.html"
+      "verification_status": "needs-review",
+      "health_score": 75,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# 克隆上游仓库到本地\ngit clone https://github.com/dacnay816y62-hub/character-casting-studio-skill.git\ncd character-casting-studio-skill\n\n# 在支持 skills 的 Agent（如 Codex）中，将本目录作为 skill 加载，\n# 即可读取其角色设计流程与硬规则。需要参考素材时请在本地运行环境提供，\n# 不要把私人照片或未授权素材提交进仓库。",
+      "detail_url": "skills/character-casting-studio-skill.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/character-casting-studio-skill/ENTRY.md"
     },
     {
       "id": "chengfeng-videocut-skills",
@@ -1406,8 +1748,8 @@
       "summary_en": "Public Codex Plugin install entry for a Chinese-language video cutting workflow: the plugin gives the agent methods and confirmation tools, while the Runtime/Studio does project work and UI.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "skill-collection",
-      "kind_label": "技能集",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "video-production",
         "short-video",
@@ -1436,8 +1778,12 @@
       "risk_notes": "观察期，原因有三。其一，3.0k star 集中在本安装入口仓，软件本体 Agentchengfeng/chengfeng-videocut 仅 11 star。其二，README 自述当前为 Plugin 0.10.10 / bootstrap 0.5.2 配套 Runtime v0.4.11 CLI-only 预发行，明确「本轮不推进 stable」，且「无 Bun 自动准备」仅覆盖 macOS arm64 固定官方资产，其他平台、常驻服务与业务流程不在验证结论内。其三，安装前提是 Node.js 18+、Git 与已登录且支持 codex plugin 子命令的 Codex CLI，非通用 Agent 可用。独立「小黑」包要求 Runtime >=0.5.9，0.4.10 与 0.4.11 均不满足其合同，仅装本 Plugin 不能宣称接通。Apache-2.0，仓库保留 LICENSE / NOTICE / CITATION.cff。",
       "added_at": "2026-09-19",
       "updated_at": "2026-09-19",
-      "install": "sh\nnode bin/install.cjs install --dry-run\nnode bin/install.cjs install\nnode bin/install.cjs doctor",
-      "detail_url": "skills/chengfeng-videocut-skills.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "node bin/install.cjs install --dry-run\nnode bin/install.cjs install\nnode bin/install.cjs doctor",
+      "detail_url": "skills/chengfeng-videocut-skills.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/chengfeng-videocut-skills/ENTRY.md"
     },
     {
       "id": "cinema-dna-21x9x3",
@@ -1447,8 +1793,8 @@
       "summary_en": "A Codex skill that turns a subject or one-line plot into cinematic 21:9 triptych frames with real film-language logic; optional title and theme poster.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "skill",
-      "kind_label": "技能包",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "cinematic",
         "image-generation",
@@ -1478,8 +1824,12 @@
       "risk_notes": "上游仓库未包含 LICENSE 文件（GitHub 识别为 null），许可证 UNKNOWN，商用/再分发前请确认授权范围；示例图库为原创视觉示例，复制现成 IP 需注意。",
       "added_at": "2026-08-26",
       "updated_at": "2026-08-26",
-      "install": "bash\n# 克隆上游仓库到本地\ngit clone https://github.com/dacnay816y62-hub/cinema-dna-21x9x3.git\ncd cinema-dna-21x9x3\n\n# 复制到 Codex skills 目录（PowerShell 示例；CODEX_HOME 可自定义）\nCopy-Item -Recurse . \"$env:USERPROFILE\\.codex\\skills\\cinema-dna-21x9x3\"",
-      "detail_url": "skills/cinema-dna-21x9x3.html"
+      "verification_status": "needs-review",
+      "health_score": 75,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# 克隆上游仓库到本地\ngit clone https://github.com/dacnay816y62-hub/cinema-dna-21x9x3.git\ncd cinema-dna-21x9x3\n\n# 复制到 Codex skills 目录（PowerShell 示例；CODEX_HOME 可自定义）\nCopy-Item -Recurse . \"$env:USERPROFILE\\.codex\\skills\\cinema-dna-21x9x3\"",
+      "detail_url": "skills/cinema-dna-21x9x3.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/cinema-dna-21x9x3/ENTRY.md"
     },
     {
       "id": "comfyui-minimax-h3-studio",
@@ -1489,8 +1839,8 @@
       "summary_en": "A ComfyUI custom node suite that turns MiniMax H3 into image workflows with text-to-image, editing, up to nine references, fast paths, previews, face refinement, and benchmarking.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "comfyui",
         "image-generation",
@@ -1519,8 +1869,12 @@
       "risk_notes": "项目仍为 alpha，把音频-视频模型 H3 改用于图像生成，高分辨率/加速/后处理路径实验性强；暂不支持 ComfyUI Nodes 2.0；不自动下载核心 H3 模型，模型与显存要求较高。",
       "added_at": "2026-09-10",
       "updated_at": "2026-09-10",
-      "install": "bash\ncd /path/to/ComfyUI/custom_nodes\ngit clone https://github.com/thaakeno/ComfyUI-MiniMax-H3-Studio.git\ncd ComfyUI-MiniMax-H3-Studio\npython -m pip install -r requirements.txt",
-      "detail_url": "skills/comfyui-minimax-h3-studio.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "cd /path/to/ComfyUI/custom_nodes\ngit clone https://github.com/thaakeno/ComfyUI-MiniMax-H3-Studio.git\ncd ComfyUI-MiniMax-H3-Studio\npython -m pip install -r requirements.txt",
+      "detail_url": "skills/comfyui-minimax-h3-studio.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/comfyui-minimax-h3-studio/ENTRY.md"
     },
     {
       "id": "comfyui-vnccs-utils",
@@ -1530,8 +1884,8 @@
       "summary_en": "A ComfyUI utility collection for image-to-3D Gaussian scenes, infinite-canvas editing, 3D pose and keyframe generation, visual camera control, and model management.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "comfyui",
         "image-generation",
@@ -1558,8 +1912,12 @@
       "risk_notes": "VNCCS 3D Factory 依赖本地 TripoSplat 推理与模型权重下载，实际效果受 GPU/显存和模型选择影响；新增节点或依赖后需重启 ComfyUI。",
       "added_at": "2026-09-10",
       "updated_at": "2026-09-10",
-      "install": "bash\ncd /path/to/ComfyUI/custom_nodes\ngit clone https://github.com/AHEKOT/ComfyUI_VNCCS_Utils.git\ncd ComfyUI_VNCCS_Utils\npip install -r requirements.txt",
-      "detail_url": "skills/comfyui-vnccs-utils.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "cd /path/to/ComfyUI/custom_nodes\ngit clone https://github.com/AHEKOT/ComfyUI_VNCCS_Utils.git\ncd ComfyUI_VNCCS_Utils\npip install -r requirements.txt",
+      "detail_url": "skills/comfyui-vnccs-utils.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/comfyui-vnccs-utils/ENTRY.md"
     },
     {
       "id": "cowart",
@@ -1569,8 +1927,8 @@
       "summary_en": "A native infinite-canvas widget plugin for Codex built on tldraw: brainstorm, annotate, generate AI images and HTML blocks, and slide decks directly inside Codex.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "skill",
-      "kind_label": "技能包",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "canvas",
         "ai-agent",
@@ -1601,8 +1959,12 @@
       "risk_notes": "需要 Codex 桌面端（非 CLI），安装后必须完全退出并重启 Codex 才能加载 skill 和 MCP 工具；画布数据保存到当前项目的 canvas/ 目录而非插件仓库；遵循 Agent Plugins v1.0.0 规范，MCP bundle 自包含（无需 npm install）；网页版 cowart.jiqiren.ai 无需安装但功能与桌面插件有差异。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "text\n请通过 Cowart 仓库自带的 Git marketplace 安装 Cowart Codex 插件。\n先运行 codex plugin marketplace add zhongerxin/Cowart --ref main，\n再运行 codex plugin add cowart@cowart-github，并用 codex plugin list 确认插件已启用。\n安装完成后请提醒我完全退出并重新启动一次 Codex。",
-      "detail_url": "skills/cowart.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "请通过 Cowart 仓库自带的 Git marketplace 安装 Cowart Codex 插件。\n先运行 codex plugin marketplace add zhongerxin/Cowart --ref main，\n再运行 codex plugin add cowart@cowart-github，并用 codex plugin list 确认插件已启用。\n安装完成后请提醒我完全退出并重新启动一次 Codex。",
+      "detail_url": "skills/cowart.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/cowart/ENTRY.md"
     },
     {
       "id": "dembrandt",
@@ -1612,8 +1974,8 @@
       "summary_en": "Extract any website's design system into tokens: colors, typography, spacing, borders, shadows, motion and components, with DTCG, DESIGN.md and Tailwind exports, WCAG audit and a built-in MCP server.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "cli-tool",
-      "kind_label": "CLI 工具",
+      "mode": "connect",
+      "mode_label": "接入 Agent",
       "tags": [
         "cli",
         "mcp",
@@ -1639,8 +2001,12 @@
       "risk_notes": "MIT 许可可商用；首次使用必须运行 install-browser 安装 Playwright Chromium，否则报 browser engine not available；通过读取公开页面 DOM 计算样式工作，Canvas/WebGL 站点无法分析，暗色模式需显式 --dark-mode；默认仅终端输出，需 --save-output 才落盘。",
       "added_at": "2026-09-08",
       "updated_at": "2026-09-08",
-      "install": "bash\n# CLI（Node.js 18+）\nnpm install -g dembrandt\ndembrandt install-browser        # 一次性：安装匹配的 Chromium\ndembrandt dembrandt.com          # 提取目标站点\n\n# 或免全局安装\nnpx dembrandt dembrandt.com      # 同样需先 npx dembrandt install-browser\n\n# MCP 接入（Claude Code 示例）\nclaude mcp add --transport stdio dembrandt -- npx -y --package dembrandt dembrandt-mcp",
-      "detail_url": "skills/dembrandt.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# CLI（Node.js 18+）\nnpm install -g dembrandt\ndembrandt install-browser        # 一次性：安装匹配的 Chromium\ndembrandt dembrandt.com          # 提取目标站点\n\n# 或免全局安装\nnpx dembrandt dembrandt.com      # 同样需先 npx dembrandt install-browser\n\n# MCP 接入（Claude Code 示例）\nclaude mcp add --transport stdio dembrandt -- npx -y --package dembrandt dembrandt-mcp",
+      "detail_url": "skills/dembrandt.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/dembrandt/ENTRY.md"
     },
     {
       "id": "depth-studio",
@@ -1650,8 +2016,8 @@
       "summary_en": "Turns a reference clip into a temporally consistent grayscale depth video, giving compatible AI video tools a spatial guide for pose, movement, silhouette and camera distance.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "video-production",
         "cinematic",
@@ -1679,8 +2045,12 @@
       "risk_notes": "仅约 3 次提交、单维护者、无正式 release，属早期项目；首次运行需联网下载约 116 MB 的 Video-Depth-Anything Small 模型（Apache 2.0）；本项目只生成深度视频，能否增强最终效果取决于后续所用的 AI 视频工具是否支持 depth guide。",
       "added_at": "2026-08-27",
       "updated_at": "2026-08-27",
-      "install": "请帮我安装并启动这个项目：\nhttps://github.com/Toolsai/Depth-Studio",
-      "detail_url": "skills/depth-studio.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "请帮我安装并启动这个项目：\nhttps://github.com/Toolsai/Depth-Studio",
+      "detail_url": "skills/depth-studio.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/depth-studio/ENTRY.md"
     },
     {
       "id": "directors-console",
@@ -1690,8 +2060,8 @@
       "summary_en": "A unified AI VFX production console with cinema prompt engineering, storyboard canvas, media gallery, and distributed multi-node ComfyUI rendering for images and videos.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "comfyui",
         "storyboard",
@@ -1709,8 +2079,8 @@
       "doc_languages": [
         "en"
       ],
-      "license": "LicenseRef-Proprietary-All-Rights-Reserved",
-      "license_bucket": "unknown",
+      "license": "MIT",
+      "license_bucket": "open",
       "homepage": "https://github.com/NickPittas/DirectorsConsole",
       "repo": "https://github.com/NickPittas/DirectorsConsole",
       "tier": "watch",
@@ -1721,11 +2091,15 @@
         "DirectorsConsole",
         "Director Console"
       ],
-      "risk_notes": "README 明确 proprietary software, all rights reserved，不可默认商用或再分发；需同时准备 Python、Node.js、Git 和至少一个 ComfyUI 实例；仓库最近更新距 2026-09-10 较久。",
+      "risk_notes": "MIT 可商用，需保留版权声明；需同时准备 Python、Node.js、Git 和至少一个 ComfyUI 实例；上游更新节奏较慢，最近推送为 2026-10-02。",
       "added_at": "2026-09-10",
-      "updated_at": "2026-09-10",
-      "install": "bash\ngit clone https://github.com/NickPittas/DirectorsConsole.git\ncd DirectorsConsole\npython start.py --setup",
-      "detail_url": "skills/directors-console.html"
+      "updated_at": "2026-10-28",
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone https://github.com/NickPittas/DirectorsConsole.git\ncd DirectorsConsole\npython start.py --setup",
+      "detail_url": "skills/directors-console.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/directors-console/ENTRY.md"
     },
     {
       "id": "emilkowalski-skills",
@@ -1735,8 +2109,8 @@
       "summary_en": "A skill pack for designers and engineers: 12 skills for animation building, review, opportunities, vocabulary, Apple design principles, Swift and prototyping; installs with one npx command.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "skill-collection",
-      "kind_label": "技能集",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "skill-pack",
         "motion-design",
@@ -1764,8 +2138,12 @@
       "risk_notes": "MIT 许可可商用；技能以英文编写，通过 skills.sh CLI（npx skills@latest add）安装到支持的 Agent；内容为作者个人经验沉淀，动画建议偏 Web/React 与 React Native（animate-expo），非通用设计规范。",
       "added_at": "2026-09-08",
       "updated_at": "2026-09-08",
-      "install": "bash\nnpx skills@latest add emilkowalski/skills",
-      "detail_url": "skills/emilkowalski-skills.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "npx skills@latest add emilkowalski/skills",
+      "detail_url": "skills/emilkowalski-skills.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/emilkowalski-skills/ENTRY.md"
     },
     {
       "id": "fantasy-life-force-portrait-photography",
@@ -1775,8 +2153,8 @@
       "summary_en": "A Codex portrait photography skill that upgrades casual snapshots into vivid life-force portraits, or generates original samples and prompts from scratch.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "skill",
-      "kind_label": "技能包",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "portrait",
         "image-generation",
@@ -1806,8 +2184,12 @@
       "risk_notes": "上游仓库未包含 LICENSE 文件（GitHub 识别为 null），许可证 UNKNOWN，商用/再分发前请确认授权范围；含示例图（assets/），涉及人像美化需注意肖像权与油腻审美边界。",
       "added_at": "2026-08-26",
       "updated_at": "2026-08-26",
-      "install": "bash\n# 克隆上游仓库到本地\ngit clone https://github.com/dacnay816y62-hub/fantasy-life-force-portrait-photography.git\ncd fantasy-life-force-portrait-photography\n\n# 将仓库目录放入你的 Codex skills 目录后，即可在对话中触发，例如：\n# 使用 Fantasy 生命感人像摄影 Skill，把这张普通生活照升级成更有生命感的人像。",
-      "detail_url": "skills/fantasy-life-force-portrait-photography.html"
+      "verification_status": "needs-review",
+      "health_score": 75,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# 克隆上游仓库到本地\ngit clone https://github.com/dacnay816y62-hub/fantasy-life-force-portrait-photography.git\ncd fantasy-life-force-portrait-photography\n\n# 将仓库目录放入你的 Codex skills 目录后，即可在对话中触发，例如：\n# 使用 Fantasy 生命感人像摄影 Skill，把这张普通生活照升级成更有生命感的人像。",
+      "detail_url": "skills/fantasy-life-force-portrait-photography.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/fantasy-life-force-portrait-photography/ENTRY.md"
     },
     {
       "id": "gsap",
@@ -1817,8 +2199,8 @@
       "summary_en": "A high-performance JavaScript animation library for CSS, SVG, Canvas, WebGL and generic objects, with a timeline API and plugins such as ScrollTrigger, Flip and MotionPath.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "connect",
+      "mode_label": "接入 Agent",
       "tags": [
         "gsap",
         "motion-design",
@@ -1851,8 +2233,12 @@
       "risk_notes": "上游仓库无根 LICENSE 文件，package.json 标注 Standard 'no charge' license（https://gsap.com/standard-license），非 OSI 开源协议；使用或商用前需复核许可全文。安装会引入第三方运行时代码；官方文档以英文为主。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\nnpm install gsap",
-      "detail_url": "skills/gsap.html"
+      "verification_status": "needs-review",
+      "health_score": 75,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "npm install gsap",
+      "detail_url": "skills/gsap.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/gsap/ENTRY.md"
     },
     {
       "id": "guizang-ppt-skill",
@@ -1862,8 +2248,8 @@
       "summary_en": "AI Agent skill for single-file HTML slide decks: dual visual systems, 32 locked layouts, image generation, multi-platform covers, and presenter mode.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "skill",
-      "kind_label": "技能包",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "pptx",
         "ai-agent",
@@ -1898,8 +2284,12 @@
       "risk_notes": "AGPL-3.0 为强 Copyleft：对外提供网络服务需以 AGPL 开源衍生；单文件 HTML 适合演讲和展示，不适合多人协作编辑或大量表格数据；配图流程依赖 GPT-Image 2.0 / GPT-M 2.0（Codex 环境），其他 Agent 可用 Playwright 后验替代。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\nnpx skills add https://github.com/op7418/guizang-ppt-skill --skill guizang-ppt-skill",
-      "detail_url": "skills/guizang-ppt-skill.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "npx skills add https://github.com/op7418/guizang-ppt-skill --skill guizang-ppt-skill",
+      "detail_url": "skills/guizang-ppt-skill.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/guizang-ppt-skill/ENTRY.md"
     },
     {
       "id": "hell-grind-aigc-skill",
@@ -1909,8 +2299,8 @@
       "summary_en": "A model-agnostic AIGC video production manager: seven-layer prompt architecture, 22 on-demand method modules, a 14-table schema v2 project database, failure triage, and local prompt auditor.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "skill",
-      "kind_label": "技能包",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "video-production",
         "ai-agent",
@@ -1941,8 +2331,12 @@
       "risk_notes": "方法论受 Higgsfield 公开项目 Hell Grind 启发但不包含原视频、原始资产或全量提示词（公开可访问不代表再分发许可）；默认不调用生成模型、不扣费、不下载媒体、不上传、不发布；本地工具（init / validate / audit）全部只读 + 0 网络请求；仅支持 macOS / Linux 安装（install.sh），Windows 需手动适配；项目规模较小（146 stars）。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\ngit clone https://github.com/renmu2017/Hell-Grind-AIGC-Skill.git\ncd Hell-Grind-AIGC-Skill\n./scripts/install.sh",
-      "detail_url": "skills/hell-grind-aigc-skill.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone https://github.com/renmu2017/Hell-Grind-AIGC-Skill.git\ncd Hell-Grind-AIGC-Skill\n./scripts/install.sh",
+      "detail_url": "skills/hell-grind-aigc-skill.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/hell-grind-aigc-skill/ENTRY.md"
     },
     {
       "id": "huashu-design",
@@ -1952,8 +2346,8 @@
       "summary_en": "HTML-native design skill for agents: hi-fi prototypes, editable-PPTX slide decks, MP4/GIF timeline animations, print-grade infographics, 60-style library and 5-dimension expert review.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "skill",
-      "kind_label": "技能包",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "design-system",
         "ui-generation",
@@ -1989,8 +2383,12 @@
       "risk_notes": "MIT 可商用（2026-05-14 起，此前商用授权条款已作废）；视频/PDF/PPTX 导出依赖本地 Node + Playwright/ffmpeg 工具链；云能力（豆包 TTS 配音、AI 看片评审）隔离在 scripts/cloud/，需自备 key 并 --yes 显式确认；不支持图层级可编辑 PPTX 回灌 Figma、3D/物理/粒子级复杂动画；空白品牌从零设计质量有限，建议提供品牌资产。",
       "added_at": "2026-08-29",
       "updated_at": "2026-08-29",
-      "install": "bash\nnpx skills add alchaincyf/huashu-design",
-      "detail_url": "skills/huashu-design.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "npx skills add alchaincyf/huashu-design",
+      "detail_url": "skills/huashu-design.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/huashu-design/ENTRY.md"
     },
     {
       "id": "huobao-canvas",
@@ -2000,8 +2398,8 @@
       "summary_en": "A Vue Flow based visual AI canvas for text-to-image, image-to-video and storyboard workflows, with prompt polish, automatic orchestration, undo/redo, and local projects.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "canvas",
         "image-generation",
@@ -2030,8 +2428,12 @@
       "risk_notes": "需要自备 OpenAI 兼容 API Base URL、Key 与模型；自动执行质量取决于模型能力；本地项目数据持久化在浏览器/本地存储中，生产使用请自行备份。",
       "added_at": "2026-09-10",
       "updated_at": "2026-09-10",
-      "install": "bash\ngit clone https://github.com/chatfire-AI/huobao-canvas.git\ncd huobao-canvas\nnpm install\nnpm run dev",
-      "detail_url": "skills/huobao-canvas.html"
+      "verification_status": "needs-review",
+      "health_score": 75,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone https://github.com/chatfire-AI/huobao-canvas.git\ncd huobao-canvas\nnpm install\nnpm run dev",
+      "detail_url": "skills/huobao-canvas.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/huobao-canvas/ENTRY.md"
     },
     {
       "id": "hyperframes",
@@ -2041,8 +2443,8 @@
       "summary_en": "Open-source HTML-to-MP4 video rendering framework from HeyGen: turn HTML, CSS, and seekable animations into deterministic videos. 20 skills agents load on demand.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "video-production",
         "product-video",
@@ -2073,8 +2475,12 @@
       "risk_notes": "HTML → 确定性渲染（非实时）需要 Node >= 22；20 个 skill 的完整安装体积较大（agents 建议 npx hyperframes skills update 装 core set）；skills.sh registry 可能滞后 main 数小时，新 skill 用 npx hyperframes skills update 获取最新版。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\nnpx skills add heygen-com/hyperframes",
-      "detail_url": "skills/hyperframes.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "npx skills add heygen-com/hyperframes",
+      "detail_url": "skills/hyperframes.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/hyperframes/ENTRY.md"
     },
     {
       "id": "infinitetalk",
@@ -2084,8 +2490,8 @@
       "summary_en": "Audio-driven unlimited-length talking video generation from MeiGen-AI: lip-sync video dubbing with head, body, and expression alignment, supporting image-to-video and video-to-video modes.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "video-production",
         "video-dubbing",
@@ -2115,8 +2521,12 @@
       "risk_notes": "推理需要 NVIDIA GPU（显存依赖模型规格，低显存模式可用但速度更慢）；社区已集成 Wan2GP（低显存优化）与 ComfyUI（kijai WanVideoWrapper）；项目已发布后续版本 LongCat-Video-Avatar（2026-05），InfiniteTalk 本体更新频率放缓，长期维护以 LongCat 系列为主；生成人物视频需注意肖像权与深度伪造合规。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\ngit clone https://github.com/MeiGen-AI/InfiniteTalk.git\ncd InfiniteTalk\npip install -r requirements.txt\n# 下载模型权重（Hugging Face）\nhuggingface-cli download MeiGen-AI/InfiniteTalk --local-dir ./weights",
-      "detail_url": "skills/infinitetalk.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone https://github.com/MeiGen-AI/InfiniteTalk.git\ncd InfiniteTalk\npip install -r requirements.txt\n# 下载模型权重（Hugging Face）\nhuggingface-cli download MeiGen-AI/InfiniteTalk --local-dir ./weights",
+      "detail_url": "skills/infinitetalk.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/infinitetalk/ENTRY.md"
     },
     {
       "id": "manju-laoli-skill",
@@ -2126,8 +2536,8 @@
       "summary_en": "Industrial screenwriting & directing system for viral short dramas: gated script engine, dialogue diagnosis, asset locking, dual-mode storyboards, action PREVIS, Seedance prompts and QC gates.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "skill",
-      "kind_label": "技能包",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "short-drama",
         "screenwriting",
@@ -2163,8 +2573,12 @@
       "risk_notes": "MIT 可商用；项目自述为测试版，由开源内容二次修改整合而成，尚无社区实测背书（star 数极低）；渲染依赖 Seedance 2.0/即梦/可灵等外部视频模型，消耗额度；内置平台合规转译词典但不构成内容合规保证，发布前仍需人工过审；安装目标以 OpenClaw 为主，其他 Agent 需手动复制目录。",
       "added_at": "2026-08-30",
       "updated_at": "2026-09-15",
-      "install": "bash\nmkdir -p ~/.claude/skills\ngit clone --depth 1 https://github.com/lixiaoxiao9888-create/manju-laoli-skill.git /tmp/manju-laoli\ncp -r /tmp/manju-laoli/short-drama-director ~/.claude/skills/",
-      "detail_url": "skills/manju-laoli-skill.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "mkdir -p ~/.claude/skills\ngit clone --depth 1 https://github.com/lixiaoxiao9888-create/manju-laoli-skill.git /tmp/manju-laoli\ncp -r /tmp/manju-laoli/short-drama-director ~/.claude/skills/",
+      "detail_url": "skills/manju-laoli-skill.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/manju-laoli-skill/ENTRY.md"
     },
     {
       "id": "mediakit-cli",
@@ -2174,8 +2588,8 @@
       "summary_en": "Volcengine MediaKit official CLI with an FFmpeg-compatible command surface: local FFmpeg editing plus cloud AI capabilities like video enhancement, subtitle erasure, ASR, OCR, and storyline analysis.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "cli-tool",
-      "kind_label": "CLI 工具",
+      "mode": "connect",
+      "mode_label": "接入 Agent",
       "tags": [
         "cli",
         "video-production",
@@ -2210,8 +2624,12 @@
       "risk_notes": "云端 AI 能力需火山引擎 API Key，按调用计费，使用前需阅读火山引擎智能处理服务条款与计费规则；本地模式依赖本机 FFmpeg 5.1.x（ffmpeg + ffprobe），Agent 安装会下载并执行 npm 包与 Skill 文件，执行前应复核上游 README 与许可证全文。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\nnpx @volcengine/mediakit-cli install -y",
-      "detail_url": "skills/mediakit-cli.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "npx @volcengine/mediakit-cli install -y",
+      "detail_url": "skills/mediakit-cli.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/mediakit-cli/ENTRY.md"
     },
     {
       "id": "money-printer-turbo",
@@ -2221,8 +2639,8 @@
       "summary_en": "One-stop AI short-video generator: turn a topic or keyword into script, footage, subtitles, music, and HD video through Agent, WebUI, API, CLI, or batch tasks.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "video-production",
         "ai-agent",
@@ -2255,8 +2673,12 @@
       "risk_notes": "MIT 可商用；生成效果依赖外部服务：脚本需要 LLM API Key（Kimi/OpenAI/Claude/Gemini/DeepSeek 等），素材与出片依赖 Pexels/Pixabay/Coverr 或 WaveSpeed 账号与额度，默认 Edge TTS 免费；自动发布功能依赖 Upload-Post 配置；Whisper 字幕首次需下载约 3GB 模型，GPU 非必需；Windows 路径应避免中文、空格与特殊字符，ffmpeg 自动下载失败时可手动指定 ffmpeg_path。",
       "added_at": "2026-08-26",
       "updated_at": "2026-08-26",
-      "install": "bash\ngit clone https://github.com/harry0703/MoneyPrinterTurbo.git\ncd MoneyPrinterTurbo\nuv python install 3.11\nuv sync --frozen\ncp config.example.toml config.toml",
-      "detail_url": "skills/money-printer-turbo.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone https://github.com/harry0703/MoneyPrinterTurbo.git\ncd MoneyPrinterTurbo\nuv python install 3.11\nuv sync --frozen\ncp config.example.toml config.toml",
+      "detail_url": "skills/money-printer-turbo.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/money-printer-turbo/ENTRY.md"
     },
     {
       "id": "open-ai-canvas",
@@ -2266,8 +2688,8 @@
       "summary_en": "Open-source AI film and short-drama workbench: canvas, storyboard, assets, image/video/audio generation, async tasks and local agents, with self-hosting and Codex MCP.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "short-drama",
         "storyboard",
@@ -2299,8 +2721,12 @@
       "risk_notes": "默认适合个人、本地或可信环境部署，未经安全配置不应作为公网多人服务；涉及模型渠道、API Key 与多供应商配额，AI 生成产生费用；项目仍在快速迭代，数据结构和外部接口可能调整。",
       "added_at": "2026-08-27",
       "updated_at": "2026-08-27",
-      "install": "bash\ngit clone https://github.com/ddcat-ai/open-ai-canvas.git\ncd open-ai-canvas\n\nmkdir -p .local/project-workbench-debug .local/cache/go-build .local/cache/go-mod\n\n# 终端一：后端\ncd backend\nCANVAS_BACKEND_DATA_DIR=../.local/project-workbench-debug go run ./cmd/server\n\n# 终端二：前端（另开终端）\ncd ../web\nbun install\nbun run dev",
-      "detail_url": "skills/open-ai-canvas.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone https://github.com/ddcat-ai/open-ai-canvas.git\ncd open-ai-canvas\n\nmkdir -p .local/project-workbench-debug .local/cache/go-build .local/cache/go-mod\n\n# 终端一：后端\ncd backend\nCANVAS_BACKEND_DATA_DIR=../.local/project-workbench-debug go run ./cmd/server\n\n# 终端二：前端（另开终端）\ncd ../web\nbun install\nbun run dev",
+      "detail_url": "skills/open-ai-canvas.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/open-ai-canvas/ENTRY.md"
     },
     {
       "id": "open-storyboard-canvas",
@@ -2310,8 +2736,8 @@
       "summary_en": "A local node canvas for AI image, video and storyboard creation: references, prompts, generation, storyboard, director desk and panoramas in one canvas with agent collaboration.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "storyboard",
         "image-generation",
@@ -2343,8 +2769,12 @@
       "risk_notes": "使用付费 AI 供应商或本地 Dreamina CLI，生成时提示词与参考素材会发送给所选供应商并可能产生费用；macOS 安装包未签名公证；基于 Storyboard-Copilot 二次开发，新增代码按 MIT 发布。",
       "added_at": "2026-08-27",
       "updated_at": "2026-08-27",
-      "install": "bash\ngit clone https://github.com/ganbo-gab/open-storyboard-canvas.git\ncd open-storyboard-canvas\nnpm install\n\n# 前端开发\nnpm run dev\n\n# 源码桌面应用\nnpm run tauri dev",
-      "detail_url": "skills/open-storyboard-canvas.html"
+      "verification_status": "needs-review",
+      "health_score": 75,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone https://github.com/ganbo-gab/open-storyboard-canvas.git\ncd open-storyboard-canvas\nnpm install\n\n# 前端开发\nnpm run dev\n\n# 源码桌面应用\nnpm run tauri dev",
+      "detail_url": "skills/open-storyboard-canvas.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/open-storyboard-canvas/ENTRY.md"
     },
     {
       "id": "opencut",
@@ -2354,8 +2784,8 @@
       "summary_en": "Open source video editor for web, desktop and mobile, pitched as a CapCut alternative. Main repo is being rewritten on a Rust core: plugin-first, Editor API, MCP server, headless rendering.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "video-production",
         "short-video",
@@ -2387,8 +2817,12 @@
       "risk_notes": "主仓库处于重写期：README 明确「架构设计阶段尚未准备好接收外部贡献」，重写版尚未成品。今天可用的产品是 opencut.app 上运行的 classic 版，其源码仓 opencut-app/opencut-classic 已于 2026-05-17 归档（251 star）。本地跑主仓库需要先安装 proto 与 moon 工具链，不是开箱即用的成品。MIT 可商用。",
       "added_at": "2026-09-19",
       "updated_at": "2026-09-19",
-      "install": "text\nhttps://opencut.app",
-      "detail_url": "skills/opencut.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "https://opencut.app",
+      "detail_url": "skills/opencut.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/opencut/ENTRY.md"
     },
     {
       "id": "openmontage",
@@ -2398,8 +2832,8 @@
       "summary_en": "The first open-source agentic video production system: 12 pipelines, 100+ tools, 700+ skill files, real-footage editing, quality gates, and budget governance.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "video-production",
         "ai-agent",
@@ -2431,8 +2865,12 @@
       "risk_notes": "AGPL-3.0 为强 Copyleft：本地自用无额外义务，对外提供网络服务时需以 AGPL 开源衍生，具体以上游 LICENSE 为准；零 API key 可通过 Piper 本地 TTS、开放档案素材与 Remotion/HyperFrames 出片，云生成能力随 FAL/Kling/Veo/OpenAI/ElevenLabs 等密钥增加且费用自担；默认总预算上限 $10、单笔超 $0.50 需审批。",
       "added_at": "2026-08-26",
       "updated_at": "2026-08-26",
-      "install": "bash\ngit clone https://github.com/calesthio/OpenMontage.git\ncd OpenMontage\nmake setup",
-      "detail_url": "skills/openmontage.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone https://github.com/calesthio/OpenMontage.git\ncd OpenMontage\nmake setup",
+      "detail_url": "skills/openmontage.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/openmontage/ENTRY.md"
     },
     {
       "id": "openpencil",
@@ -2442,8 +2880,8 @@
       "summary_en": "First open-source AI-native vector design tool: prompt-to-canvas streaming, concurrent Agent Teams, Design-as-Code, MCP server, and code export to React, Vue, SwiftUI, Flutter.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "design-system",
         "ui-generation",
@@ -2488,8 +2926,12 @@
       "risk_notes": "Windows 安装器可能触发杀毒软件启发式误报（官方提供验证文档）；Rust 核心 + 3 个 submodule（jian / casement / agent-rs）从源码构建需 clone --recurse-submodules；Web 版凭据默认存浏览器 localStorage，服务端持久化需显式开启且仅限可信部署；多模型智能按模型能力自适应（Claude 完整 prompt / GPT-4o 关闭 thinking / 小模型简化），费用自担。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\nbrew tap zseven-w/openpencil\nbrew install --cask openpencil",
-      "detail_url": "skills/openpencil.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "brew tap zseven-w/openpencil\nbrew install --cask openpencil",
+      "detail_url": "skills/openpencil.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/openpencil/ENTRY.md"
     },
     {
       "id": "openscreen",
@@ -2499,8 +2941,8 @@
       "summary_en": "Open-source alternative to Screen Studio: screen recording with auto-zoom, cursor themes, offline captions, motion blur, timeline annotations, and MP4/GIF export.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "video-production",
         "product-video",
@@ -2540,8 +2982,12 @@
       "risk_notes": "原作者已官宣即将归档（README 顶部 WARNING），社区 fork 由核心贡献者在 [EtienneLescot/openscreen](https://github.com/EtienneLescot/openscreen) 继续维护——长期使用建议关注 fork；不是 Screen Studio 1:1 克隆，覆盖核心功能但有 bug；macOS 需要 Screen Recording + Accessibility 权限，升级后需重置隐私权限。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\nbrew install --cask siddharthvaddem/openscreen/openscreen",
-      "detail_url": "skills/openscreen.html"
+      "verification_status": "blocked",
+      "health_score": 30,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "brew install --cask siddharthvaddem/openscreen/openscreen",
+      "detail_url": "skills/openscreen.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/openscreen/ENTRY.md"
     },
     {
       "id": "palmier-pro",
@@ -2551,8 +2997,8 @@
       "summary_en": "macOS-native video editor built in Swift for AI: generate video and images with SOTA models on the timeline; let Claude, Codex, and Cursor edit via MCP.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "video-production",
         "ai-agent",
@@ -2594,8 +3040,12 @@
       "risk_notes": "仅 macOS 26 (Tahoe) + Apple Silicon (M 系列)；v0.7.6 及之前源码为 GPLv3，后续二进制版本为专有许可（源码未发布）；仓库不再接受代码贡献；14 语 README。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "",
-      "detail_url": "skills/palmier-pro.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "",
+      "detail_url": "skills/palmier-pro.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/palmier-pro/ENTRY.md"
     },
     {
       "id": "pixelle-video",
@@ -2605,8 +3055,8 @@
       "summary_en": "Turn one topic into script, AI images or video, narration, BGM and a finished short video. Streamlit WebUI plus Docker; ComfyUI / RunningHub workflows or direct image, video and TTS APIs.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "video-production",
         "short-video",
@@ -2642,8 +3092,12 @@
       "risk_notes": "仓库已从 AIDC-AI 组织迁移到 ATH-MaaS（旧仓库地址自动跳转，但 README 内链接仍大量写 AIDC-AI，其文档域名 aidc-ai.github.io 已 404，可用地址为 ath-maas.github.io）。最近一次推送 2026-06-14，距今约 3 个月。出片链路依赖外部模型与额度：LLM API Key 为必填，图像/视频需三选一（本地 ComfyUI、RunningHub 按量、或直连 DashScope/OpenAI/ARK/Kling 等 API），TTS 默认 Edge-TTS 免费、可换 Index-TTS；另需自备 ffmpeg。Apache-2.0 可商用，注意仓库含 NOTICE 文件。",
       "added_at": "2026-09-19",
       "updated_at": "2026-09-19",
-      "install": "text\nhttps://github.com/ATH-MaaS/Pixelle-Video/releases/latest\n下载 Windows 一键整合包 → 解压 → 双击 start.bat → 自动打开 http://localhost:8501",
-      "detail_url": "skills/pixelle-video.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "https://github.com/ATH-MaaS/Pixelle-Video/releases/latest\n下载 Windows 一键整合包 → 解压 → 双击 start.bat → 自动打开 http://localhost:8501",
+      "detail_url": "skills/pixelle-video.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/pixelle-video/ENTRY.md"
     },
     {
       "id": "promptcard-agentcanvas",
@@ -2653,8 +3107,8 @@
       "summary_en": "A local desktop creation canvas for AIGC creators: prompts, storyboards, references, and generation results persist as portable project assets with Seedream image generation and agent collaboration.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "canvas",
         "image-generation",
@@ -2683,8 +3137,12 @@
       "risk_notes": "当前 main 为开发版本（不稳定，处于功能测试中），稳定基线请用 Git tag stable-2026-08-25；目前提供 Windows 桌面开发预览（start-desktop.vbs，非签名安装包）；核心模型依赖火山引擎（Seedream 5.0 Pro / Doubao Seed 2.0），调用按 API 计费；项目尚处早期（163 stars）。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\ngit clone https://github.com/Aoye-3/PromptCard-AgentCanvas.git\ncd PromptCard-AgentCanvas\n# 双击 start-desktop.vbs 启动桌面壳",
-      "detail_url": "skills/promptcard-agentcanvas.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone https://github.com/Aoye-3/PromptCard-AgentCanvas.git\ncd PromptCard-AgentCanvas\n# 双击 start-desktop.vbs 启动桌面壳",
+      "detail_url": "skills/promptcard-agentcanvas.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/promptcard-agentcanvas/ENTRY.md"
     },
     {
       "id": "remotion-skills",
@@ -2694,8 +3152,8 @@
       "summary_en": "Official Agent Skills maintained by Remotion: ~12 skills for writing videos in React — project creation, markup, Studio, rendering, maps, captions, SaaS, docs search and upgrades.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "skill-collection",
-      "kind_label": "技能集",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "remotion",
         "video-production",
@@ -2725,8 +3183,12 @@
       "risk_notes": "skills 仓库未附 LICENSE 文件且 package.json 未声明协议（UNKNOWN），商用前需确认；依赖 Remotion 生态——Remotion 框架本体采用 Remotion License（个人与小团队免费，达规模的公司需购买公司许可），商用渲染前需自查；渲染消耗本地或云端算力；技能内容为英文。",
       "added_at": "2026-08-29",
       "updated_at": "2026-08-29",
-      "install": "bash\nnpx skills add remotion-dev/skills",
-      "detail_url": "skills/remotion-skills.html"
+      "verification_status": "needs-review",
+      "health_score": 75,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "npx skills add remotion-dev/skills",
+      "detail_url": "skills/remotion-skills.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/remotion-skills/ENTRY.md"
     },
     {
       "id": "seedance-20",
@@ -2736,8 +3198,8 @@
       "summary_en": "Modular skill package for Seedance 2.0 video: reads the scene first, then prompts camera, light, sound, and references; supports T2V/I2V/V2V/R2V, first/last frames, sequences, and six languages.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "skill-collection",
-      "kind_label": "技能集",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "video-production",
         "cinematic",
@@ -2772,8 +3234,12 @@
       "risk_notes": "MIT 可商用；安装脚本需 Python 3；实际出片依赖 ByteDance Seedance 2.0 供应商账号与额度；参考标签需原样保留，受保护 IP 应改写为原创内容而非换语言隐藏。",
       "added_at": "2026-08-26",
       "updated_at": "2026-08-26",
-      "install": "bash\ngit clone https://github.com/Emily2040/seedance-2.0.git\ncd seedance-2.0\n\n# Codex（默认写入 ~/.codex/skills）\npython scripts/install_codex_skill.py\n\n# Claude Code 或其他 Agent\npython scripts/install_codex_skill.py --dest ~/.claude/skills",
-      "detail_url": "skills/seedance-20.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone https://github.com/Emily2040/seedance-2.0.git\ncd seedance-2.0\n\n# Codex（默认写入 ~/.codex/skills）\npython scripts/install_codex_skill.py\n\n# Claude Code 或其他 Agent\npython scripts/install_codex_skill.py --dest ~/.claude/skills",
+      "detail_url": "skills/seedance-20.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/seedance-20/ENTRY.md"
     },
     {
       "id": "toonflow",
@@ -2783,8 +3249,8 @@
       "summary_en": "Open-source AI workbench that turns novels and scripts into animated short dramas, with AI scriptwriting, storyboarding, character/video generation, agent workflow, and Docker self-hosting.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "short-drama",
         "screenwriting",
@@ -2806,7 +3272,7 @@
         "ja",
         "ru"
       ],
-      "license": "Apache-2.0",
+      "license": "MIT",
       "license_bucket": "open",
       "homepage": "https://toonflow.net",
       "repo": "https://github.com/HBAI-Ltd/Toonflow-app",
@@ -2818,11 +3284,15 @@
         "toonflow-app",
         "toon-flow"
       ],
-      "risk_notes": "Apache-2.0 可商用；核心能力依赖外部模型服务（LLM、视频/图像生成，如 Sora、豆包、Nano Banana Pro），需自行配置 API 与费用；Docker 部署默认账号 admin/admin123，首次登录后应尽快改密。",
+      "risk_notes": "MIT 可商用；核心能力依赖外部模型服务（LLM、视频/图像生成，如 Sora、豆包、Nano Banana Pro），需自行配置 API 与费用；Docker 部署默认账号 admin/admin123，首次登录后应尽快改密。",
       "added_at": "2026-08-26",
-      "updated_at": "2026-08-26",
-      "install": "bash\ngit clone https://github.com/HBAI-Ltd/Toonflow-app.git\ncd Toonflow-app\n\n# 本地构建并启动\nyarn docker:local\n# 或手动构建\ndocker build -t toonflow .\ndocker run -d -p 10588:10588 -v /path/to/data:/app/data toonflow",
-      "detail_url": "skills/toonflow.html"
+      "updated_at": "2026-10-28",
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone https://github.com/HBAI-Ltd/Toonflow-app.git\ncd Toonflow-app\n\n# 本地构建并启动\nyarn docker:local\n# 或手动构建\ndocker build -t toonflow .\ndocker run -d -p 10588:10588 -v /path/to/data:/app/data toonflow",
+      "detail_url": "skills/toonflow.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/toonflow/ENTRY.md"
     },
     {
       "id": "video-shotcraft",
@@ -2832,8 +3302,8 @@
       "summary_en": "An AI agent skill for crafting cinematic product videos: 152 shot recipe cards, 209 motion previews, and a production-ready Remotion template. Turns Claude Code or Codex into a motion-design studio.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "skill",
-      "kind_label": "技能包",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "cinematic",
         "motion-design",
@@ -2867,8 +3337,12 @@
       "risk_notes": "Apache-2.0 可商用；需 Node ≥ 22 与 Remotion（个人/小团队免费，公司需付费许可证）；渲染依赖 Chrome/Chromium headless shell；音频素材来自 Mixkit 等免费商用源；镜头配方卡源自对 ClickUp/Perplexity/Slack/Notion 等官方产品影片的动效语言学习与从零实现，不含原片素材。",
       "added_at": "2026-08-26",
       "updated_at": "2026-08-26",
-      "install": "bash\n# 方式一：直接让 Agent 安装\n# 在 Claude Code / Codex 中说：\n# \"Install this skill for me: https://github.com/Vincentwei1021/video-shotcraft\"\n\n# 方式二：skills CLI\nnpx skills add Vincentwei1021/video-shotcraft\n\n# 方式三：手动软链\ngit clone https://github.com/Vincentwei1021/video-shotcraft.git\nln -s \"$(pwd)/video-shotcraft\" ~/.codex/skills/video-shotcraft  # Codex\nln -s \"$(pwd)/video-shotcraft\" ~/.claude/skills/video-shotcraft  # Claude Code",
-      "detail_url": "skills/video-shotcraft.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# 方式一：直接让 Agent 安装\n# 在 Claude Code / Codex 中说：\n# \"Install this skill for me: https://github.com/Vincentwei1021/video-shotcraft\"\n\n# 方式二：skills CLI\nnpx skills add Vincentwei1021/video-shotcraft\n\n# 方式三：手动软链\ngit clone https://github.com/Vincentwei1021/video-shotcraft.git\nln -s \"$(pwd)/video-shotcraft\" ~/.codex/skills/video-shotcraft  # Codex\nln -s \"$(pwd)/video-shotcraft\" ~/.claude/skills/video-shotcraft  # Claude Code",
+      "detail_url": "skills/video-shotcraft.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/video-shotcraft/ENTRY.md"
     },
     {
       "id": "video-talkcraft",
@@ -2878,8 +3352,8 @@
       "summary_en": "Agent skill turning Claude Code / Codex into a motion studio for voiceover-driven explainer videos: word-level voiceover sync, 78 motion recipes, anti-slideshow camera, Remotion rendering.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "skill",
-      "kind_label": "技能包",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "video-production",
         "motion-design",
@@ -2914,8 +3388,12 @@
       "risk_notes": "PolyForm Noncommercial 1.0.0 仅限非商业用途（产出的视频归创作者所有，但工具链本身不可商用）；字级时间戳管线首次使用需下载 767MB 的 FireRedASR2-CTC 模型（可改 whisper 后端免手动下载）；依赖 Node 18+、Python 3.10+、ffmpeg 与 Remotion 渲染工具链，环境由 agent 按需配置。",
       "added_at": "2026-08-30",
       "updated_at": "2026-08-30",
-      "install": "text\n帮我安装这个 skill：https://github.com/Vincentwei1021/video-talkcraft",
-      "detail_url": "skills/video-talkcraft.html"
+      "verification_status": "needs-review",
+      "health_score": 75,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "帮我安装这个 skill：https://github.com/Vincentwei1021/video-talkcraft",
+      "detail_url": "skills/video-talkcraft.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/video-talkcraft/ENTRY.md"
     },
     {
       "id": "video-use",
@@ -2925,8 +3403,8 @@
       "summary_en": "Drop raw footage in a folder, chat with a coding agent, get final.mp4 back: cuts filler words and dead takes, grades segments, fades audio, burns subtitles, self-evaluates every cut boundary.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "skill",
-      "kind_label": "技能包",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "video-production",
         "short-video",
@@ -2957,8 +3435,12 @@
       "risk_notes": "必需依赖 ffmpeg；转录层每次调用 ElevenLabs Scribe（需 ELEVENLABS_API_KEY，按量计费），这是它 word 级切点精度的来源。yt-dlp 为可选（下载在线素材）。README 的手动安装命令用 brew 装依赖，Windows 需自备 ffmpeg 并手动配 .env。所有产物写在 <videos_dir>/edit/ 下，技能目录保持干净。与 browser-use 同源，MIT 可商用。",
       "added_at": "2026-09-19",
       "updated_at": "2026-09-19",
-      "install": "text\nSet up https://github.com/browser-use/video-use for me.\n\nRead install.md first to install this repo, wire up ffmpeg, register the skill with whichever agent you're running under, and set up the ElevenLabs API key — ask me to paste it when you need it. Then read SKILL.md for daily usage, and always read helpers/ because that's where the editing scripts live. After install, don't transcribe anything on your own — just tell me it's ready and wait for me to drop footage into a folder.",
-      "detail_url": "skills/video-use.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "Set up https://github.com/browser-use/video-use for me.\n\nRead install.md first to install this repo, wire up ffmpeg, register the skill with whichever agent you're running under, and set up the ElevenLabs API key — ask me to paste it when you need it. Then read SKILL.md for daily usage, and always read helpers/ because that's where the editing scripts live. After install, don't transcribe anything on your own — just tell me it's ready and wait for me to drop footage into a folder.",
+      "detail_url": "skills/video-use.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/video-use/ENTRY.md"
     },
     {
       "id": "vimax",
@@ -2968,8 +3450,8 @@
       "summary_en": "HKUDS agentic video framework: turn a concept into story, script, storyboard, shots, and a finished video. Includes Idea2Video, Script2Video, Novel2Video, AutoCameo, Agent Loop, TUI, and Web UI.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "video-production",
         "cinematic",
@@ -2999,8 +3481,12 @@
       "risk_notes": "MIT 可商用；需 Python 3.12 + uv，Web UI 需 Node.js 18+；实际出片依赖所配置的 LLM/图像/视频生成供应商 API（如 OpenRouter、Google Gemini/Veo、Seedance 2.0），密钥与费用由使用者自行承担。",
       "added_at": "2026-08-26",
       "updated_at": "2026-08-26",
-      "install": "bash\ngit clone https://github.com/HKUDS/ViMax.git\ncd ViMax\nuv sync",
-      "detail_url": "skills/vimax.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone https://github.com/HKUDS/ViMax.git\ncd ViMax\nuv sync",
+      "detail_url": "skills/vimax.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/vimax/ENTRY.md"
     },
     {
       "id": "visual-skills",
@@ -3010,8 +3496,8 @@
       "summary_en": "Agent skills that direct AI video and image generation: cinematic dramaturgy, exact Seedance/Kling/Veo syntax, and Nano Banana / GPT Image prompt routing for keyframes and edits.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "skill-collection",
-      "kind_label": "技能集",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "prompt-engineering",
         "video-production",
@@ -3045,8 +3531,12 @@
       "risk_notes": "CC BY 4.0 可商用，但需保留作者署名；技能只生成提示词，不生成成片，实际生成依赖 Seedance / Kling / Veo / Nano Banana / GPT Image 等模型渠道；部分模型语法和参考文档为英文，使用前需按供应商最新文档核对。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\nnpx skills add smixs/visual-skills",
-      "detail_url": "skills/visual-skills.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "npx skills add smixs/visual-skills",
+      "detail_url": "skills/visual-skills.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/visual-skills/ENTRY.md"
     },
     {
       "id": "voicebox",
@@ -3056,8 +3546,8 @@
       "summary_en": "Open-source local AI voice studio: zero-shot voice cloning, 7 TTS engines in 23 languages, global dictation, Stories editor, and an MCP server that gives any agent a voice.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "tts",
         "voice",
@@ -3088,8 +3578,12 @@
       "risk_notes": "模型和语音数据 100% 本地处理，但 TTS 引擎首次需从 Hugging Face 下载（数 GB 级）；声音克隆他人声音需获得授权；macOS (MLX/Metal) / Windows (CUDA) / Linux / AMD ROCm / Intel Arc / Docker 均支持但 GPU 加速效果因平台而异；Stories 编辑器和部分高级功能仍在活跃开发中。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "",
-      "detail_url": "skills/voicebox.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "",
+      "detail_url": "skills/voicebox.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/voicebox/ENTRY.md"
     },
     {
       "id": "voxcpm",
@@ -3099,8 +3593,8 @@
       "summary_en": "OpenBMB 2B tokenizer-free TTS via diffusion autoregression: 30 languages, voice design, controllable and ultimate cloning, 48kHz output, streaming inference.",
       "category_dir": "design-creative",
       "category_name": "设计与创意",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "connect",
+      "mode_label": "接入 Agent",
       "tags": [
         "tts",
         "multilingual",
@@ -3129,8 +3623,12 @@
       "risk_notes": "推理需 NVIDIA GPU（CUDA >= 12.0）与 PyTorch >= 2.5，模型权重约 2B 参数需较高显存；CPU 推理速度极慢不适合生产；克隆他人声音需获得授权，合成内容需遵守当地法规；GitHub Trending #1（2025-12）与 HuggingFace Trending #1（2025-09）双重验证。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\npip install voxcpm",
-      "detail_url": "skills/voxcpm.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "pip install voxcpm",
+      "detail_url": "skills/voxcpm.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/voxcpm/ENTRY.md"
     },
     {
       "id": "andrej-karpathy-skills",
@@ -3140,8 +3638,8 @@
       "summary_en": "A single-file Claude Code guideline distilled from Andrej Karpathy's observations on LLM coding pitfalls: Think Before Coding, Simplicity First, Surgical Changes, and Goal-Driven Execution.",
       "category_dir": "dev-engineering",
       "category_name": "研发与代码",
-      "kind": "skill",
-      "kind_label": "技能包",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "software-engineering",
         "code-review",
@@ -3172,8 +3670,12 @@
       "risk_notes": "仅注入 Agent 的行为规则，不改动任何代码仓库；默认面向 Claude Code 与 Cursor（含 .cursor/rules），其他 Agent 需手动适配；规则偏向「谨慎优于速度」，简单任务可能略显繁琐；CLAUDE.md 会与项目既有规范叠加，建议合并而非直接覆盖。",
       "added_at": "2026-08-28",
       "updated_at": "2026-08-28",
-      "install": "/plugin marketplace add multica-ai/andrej-karpathy-skills\n/plugin install andrej-karpathy-skills@karpathy-skills",
-      "detail_url": "skills/andrej-karpathy-skills.html"
+      "verification_status": "needs-review",
+      "health_score": 75,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "/plugin marketplace add multica-ai/andrej-karpathy-skills\n/plugin install andrej-karpathy-skills@karpathy-skills",
+      "detail_url": "skills/andrej-karpathy-skills.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/dev-engineering/andrej-karpathy-skills/ENTRY.md"
     },
     {
       "id": "wshobson-agents",
@@ -3183,8 +3685,8 @@
       "summary_en": "A large collection of engineering agents, plugins, and skills spanning architecture, testing, debugging, security, and delivery.",
       "category_dir": "dev-engineering",
       "category_name": "研发与代码",
-      "kind": "skill-collection",
-      "kind_label": "技能集",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "software-engineering",
         "multi-agent",
@@ -3211,200 +3713,12 @@
       "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
       "added_at": "2026-08-27",
       "updated_at": "2026-08-27",
-      "install": "bash\ngit clone --depth 1 https://github.com/wshobson/agents.git\ncd agents",
-      "detail_url": "skills/wshobson-agents.html"
-    },
-    {
-      "id": "0xsline-awesome-deepseek-harness",
-      "name_zh": "DeepSeek Harness Ultimate",
-      "name_en": "Awesome DeepSeek Harness",
-      "summary_zh": "社区维护的 DSH 可复现配置与插件组合，覆盖编码、工作流、可靠性和生产力场景。",
-      "summary_en": "A community-maintained reproducible DSH profile and plugin bundle for coding, workflows, reliability, and productivity.",
-      "category_dir": "dsh",
-      "category_name": "DSH 插件",
-      "kind": "skill-collection",
-      "kind_label": "技能集",
-      "tags": [
-        "dsh",
-        "plugin",
-        "awesome-list",
-        "automation"
-      ],
-      "languages": [
-        "markdown",
-        "typescript"
-      ],
-      "doc_languages": [
-        "zh",
-        "en"
-      ],
-      "license": "CC0-1.0",
-      "license_bucket": "open",
-      "homepage": "https://github.com/0xsline/awesome-deepseek-harness",
-      "repo": "https://github.com/0xsline/awesome-deepseek-harness",
-      "tier": "standard",
-      "tier_label": "常规",
-      "featured": false,
-      "related": [],
-      "aliases": [],
-      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
-      "added_at": "2026-08-27",
-      "updated_at": "2026-08-27",
-      "install": "bash\ngit clone --depth 1 https://github.com/0xsline/awesome-deepseek-harness.git\ncd awesome-deepseek-harness",
-      "detail_url": "skills/0xsline-awesome-deepseek-harness.html"
-    },
-    {
-      "id": "awesome-dsh-plugin-dsh-find-plugin",
-      "name_zh": "DSH 插件发现助手",
-      "name_en": "DSH Find Plugin",
-      "summary_zh": "通过自然语言需求在 DeepSeek Harness 插件目录中检索并推荐合适插件的发现工具。",
-      "summary_en": "A discovery tool that searches and recommends DeepSeek Harness plugins from natural-language requirements.",
-      "category_dir": "dsh",
-      "category_name": "DSH 插件",
-      "kind": "skill",
-      "kind_label": "技能包",
-      "tags": [
-        "dsh",
-        "plugin",
-        "search",
-        "ai-agent"
-      ],
-      "languages": [
-        "typescript",
-        "markdown"
-      ],
-      "doc_languages": [
-        "zh",
-        "en"
-      ],
-      "license": "MIT",
-      "license_bucket": "open",
-      "homepage": "https://github.com/awesome-dsh-plugin/dsh-find-plugin",
-      "repo": "https://github.com/awesome-dsh-plugin/dsh-find-plugin",
-      "tier": "standard",
-      "tier_label": "常规",
-      "featured": false,
-      "related": [],
-      "aliases": [],
-      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
-      "added_at": "2026-08-27",
-      "updated_at": "2026-08-27",
-      "install": "bash\ngit clone --depth 1 https://github.com/awesome-dsh-plugin/dsh-find-plugin.git\ncd dsh-find-plugin",
-      "detail_url": "skills/awesome-dsh-plugin-dsh-find-plugin.html"
-    },
-    {
-      "id": "ccch1mneyyy-dsh-tui",
-      "name_zh": "DSH 终端界面",
-      "name_en": "DSH TUI",
-      "summary_zh": "为 DeepSeek Harness 提供键盘优先的全屏终端界面，展示流式输出、状态、上下文和会话控制。",
-      "summary_en": "A keyboard-first full-screen terminal interface for DeepSeek Harness with streaming output, status, context, and session controls.",
-      "category_dir": "dsh",
-      "category_name": "DSH 插件",
-      "kind": "cli-tool",
-      "kind_label": "CLI 工具",
-      "tags": [
-        "dsh",
-        "cli",
-        "plugin",
-        "ai-agent"
-      ],
-      "languages": [
-        "typescript"
-      ],
-      "doc_languages": [
-        "zh",
-        "en"
-      ],
-      "license": "MIT",
-      "license_bucket": "open",
-      "homepage": "https://github.com/ccch1mneyyy/dsh-TUI",
-      "repo": "https://github.com/ccch1mneyyy/dsh-TUI",
-      "tier": "standard",
-      "tier_label": "常规",
-      "featured": false,
-      "related": [],
-      "aliases": [],
-      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
-      "added_at": "2026-08-27",
-      "updated_at": "2026-08-27",
-      "install": "bash\ngit clone --depth 1 https://github.com/ccch1mneyyy/dsh-TUI.git\ncd dsh-TUI",
-      "detail_url": "skills/ccch1mneyyy-dsh-tui.html"
-    },
-    {
-      "id": "deepseek-ai-deepseek-harness",
-      "name_zh": "DeepSeek Harness",
-      "name_en": "DeepSeek Harness",
-      "summary_zh": "DeepSeek 官方开源 Agent Harness，以 Cordis 为基础提供一切皆插件的模型、工具、界面与技能运行时。",
-      "summary_en": "DeepSeek's official open agent harness, built on Cordis with plugin-based models, tools, interfaces, and skills.",
-      "category_dir": "dsh",
-      "category_name": "DSH 插件",
-      "kind": "framework",
-      "kind_label": "框架",
-      "tags": [
-        "dsh",
-        "ai-agent",
-        "framework",
-        "plugin"
-      ],
-      "languages": [
-        "typescript"
-      ],
-      "doc_languages": [
-        "zh",
-        "en"
-      ],
-      "license": "MIT",
-      "license_bucket": "open",
-      "homepage": "https://github.com/deepseek-ai/deepseek-harness",
-      "repo": "https://github.com/deepseek-ai/deepseek-harness",
-      "tier": "standard",
-      "tier_label": "常规",
-      "featured": false,
-      "related": [],
-      "aliases": [],
-      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
-      "added_at": "2026-08-27",
-      "updated_at": "2026-08-27",
-      "install": "bash\ngit clone --depth 1 https://github.com/deepseek-ai/deepseek-harness.git\ncd deepseek-harness",
-      "detail_url": "skills/deepseek-ai-deepseek-harness.html"
-    },
-    {
-      "id": "dsh-market-dsh-market",
-      "name_zh": "DSH 插件市场",
-      "name_en": "DSH Market",
-      "summary_zh": "嵌入 DeepSeek Harness 的插件市场，用于浏览、安装、更新、启停和备份社区插件。",
-      "summary_en": "A plugin marketplace embedded in DeepSeek Harness for discovering, installing, updating, enabling, and backing up plugins.",
-      "category_dir": "dsh",
-      "category_name": "DSH 插件",
-      "kind": "framework",
-      "kind_label": "框架",
-      "tags": [
-        "dsh",
-        "plugin",
-        "marketplace",
-        "self-hosted"
-      ],
-      "languages": [
-        "typescript"
-      ],
-      "doc_languages": [
-        "zh",
-        "en"
-      ],
-      "license": "MIT",
-      "license_bucket": "open",
-      "homepage": "https://github.com/dsh-market/dsh-market",
-      "repo": "https://github.com/dsh-market/dsh-market",
-      "tier": "standard",
-      "tier_label": "常规",
-      "featured": false,
-      "related": [],
-      "aliases": [],
-      "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
-      "added_at": "2026-08-27",
-      "updated_at": "2026-08-27",
-      "install": "bash\ngit clone --depth 1 https://github.com/dsh-market/dsh-market.git\ncd dsh-market",
-      "detail_url": "skills/dsh-market-dsh-market.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone --depth 1 https://github.com/wshobson/agents.git\ncd agents",
+      "detail_url": "skills/wshobson-agents.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/dev-engineering/wshobson-agents/ENTRY.md"
     },
     {
       "id": "agent-skills-spec",
@@ -3414,8 +3728,8 @@
       "summary_en": "Open standard for agent skills (by Anthropic, community-driven) defining the SKILL.md structure and on-demand loading. Kept pointing to the live official spec.",
       "category_dir": "meta-skillcraft",
       "category_name": "技能工程",
-      "kind": "spec",
-      "kind_label": "规范",
+      "mode": "read",
+      "mode_label": "阅读参考",
       "tags": [
         "agent-skills",
         "skill-md",
@@ -3446,8 +3760,12 @@
       "risk_notes": "规范是活的标准，本仓库刻意不冻结副本，始终指向官方最新版。",
       "added_at": "2026-08-10",
       "updated_at": "2026-08-13",
-      "install": "bash\n# 在线阅读（推荐，始终最新）：\n#   https://agentskills.io/specification\n\n# 如需本地离线快照（个人阅读用，勿回传本仓库）：\ngit clone --depth 1 --filter=blob:none --sparse https://github.com/anthropics/skills /tmp/agent-skills-spec\ncd /tmp/agent-skills-spec\ngit sparse-checkout set spec",
-      "detail_url": "skills/agent-skills-spec.html"
+      "verification_status": "needs-review",
+      "health_score": 75,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# 在线阅读（推荐，始终最新）：\n#   https://agentskills.io/specification\n\n# 如需本地离线快照（个人阅读用，勿回传本仓库）：\ngit clone --depth 1 --filter=blob:none --sparse https://github.com/anthropics/skills /tmp/agent-skills-spec\ncd /tmp/agent-skills-spec\ngit sparse-checkout set spec",
+      "detail_url": "skills/agent-skills-spec.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/meta-skillcraft/agent-skills-spec/ENTRY.md"
     },
     {
       "id": "cangjie-skill",
@@ -3457,8 +3775,8 @@
       "summary_en": "Distill methodologies from books, videos, and podcasts into callable, composable, pressure-tested Agent Skills via a seven-stage RIA-TV++ pipeline. Supports OpenClaw, Claude Code, DeepSeek Harness.",
       "category_dir": "meta-skillcraft",
       "category_name": "技能工程",
-      "kind": "skill",
-      "kind_label": "技能包",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "skill",
         "skill-pack",
@@ -3494,8 +3812,12 @@
       "risk_notes": "蒸馏质量取决于源内容的方法论密度——并非所有内容都值得蒸馏，pipeline 内置晋级门筛选但低密度源产出可能偏薄；DeepSeek Harness 插件需校验 SHA256 后从本地 tarball 安装；v2.5.0 的 Capability Bundle 为单一真源，旧版 Registry v1 条目兼容但不完整。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "text\n请用 cangjie-skill 把这本书蒸馏成一组可执行的 Agent Skills：<文件路径>",
-      "detail_url": "skills/cangjie-skill.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "请用 cangjie-skill 把这本书蒸馏成一组可执行的 Agent Skills：<文件路径>",
+      "detail_url": "skills/cangjie-skill.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/meta-skillcraft/cangjie-skill/ENTRY.md"
     },
     {
       "id": "skill-recorder",
@@ -3505,8 +3827,8 @@
       "summary_en": "Microsoft desktop app that records on-screen work, reconstructs it with GitHub Copilot CLI into intent and steps, and turns it into reusable Skills or scheduled Automations.",
       "category_dir": "meta-skillcraft",
       "category_name": "技能工程",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "skill-generation",
         "screen-recording",
@@ -3538,8 +3860,12 @@
       "risk_notes": "MIT 可商用；分析阶段会把屏幕截图、窗口/URL/剪贴板预览与叙述文本发送到 GitHub Copilot 云端处理，录制前必须避免密码、令牌、API Key 等敏感信息；需要 GitHub Copilot 访问权限；macOS 与 Windows 11 为主，Linux 仅支持 Ubuntu。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\ncommit=\"<40-character-release-commit>\"; curl -fsSL \"https://raw.githubusercontent.com/microsoft/skill-recorder/$commit/install.sh\" | SKILL_RECORDER_COMMIT=\"$commit\" bash",
-      "detail_url": "skills/skill-recorder.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "commit=\"<40-character-release-commit>\"; curl -fsSL \"https://raw.githubusercontent.com/microsoft/skill-recorder/$commit/install.sh\" | SKILL_RECORDER_COMMIT=\"$commit\" bash",
+      "detail_url": "skills/skill-recorder.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/meta-skillcraft/skill-recorder/ENTRY.md"
     },
     {
       "id": "meetily",
@@ -3549,8 +3875,8 @@
       "summary_en": "Privacy-first AI meeting assistant running entirely locally: Parakeet/Whisper real-time transcription, speaker diarization, Ollama summarization, zero cloud dependency.",
       "category_dir": "ops-automation",
       "category_name": "运维与自动化",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "self-hosted",
         "ai-agent",
@@ -3581,8 +3907,12 @@
       "risk_notes": "100% 本地处理，但本地 LLM（Ollama）摘要质量取决于设备算力；转写模型首次需下载（Parakeet / Whisper），断网可用但首次配置需网络；PRO 版（付费）提供增强精度、高级导出和团队功能，社区版为 MIT。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\ngit clone https://github.com/Zackriya-Solutions/meetily.git\ncd meetily/frontend\npnpm install\n./build-gpu.sh",
-      "detail_url": "skills/meetily.html"
+      "verification_status": "needs-review",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone https://github.com/Zackriya-Solutions/meetily.git\ncd meetily/frontend\npnpm install\n./build-gpu.sh",
+      "detail_url": "skills/meetily.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/ops-automation/meetily/ENTRY.md"
     },
     {
       "id": "trek",
@@ -3592,8 +3922,8 @@
       "summary_en": "Self-hosted collaborative travel planner: day-plan drag with OSRM routing, maps, 16 booking types, cost splitting, packing lists, journal, GPX/ICS export, PWA, SSO, and an MCP addon.",
       "category_dir": "ops-automation",
       "category_name": "运维与自动化",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "travel",
         "self-hosted",
@@ -3622,8 +3952,12 @@
       "risk_notes": "AGPL-3.0 为强 Copyleft：本地自用无额外义务，对外提供网络服务时需以 AGPL 开源衍生；自托管需自行维护备份、TLS 证书和 WebSocket 反向代理配置；地图服务默认 OpenStreetMap/OpenFreeMap（无 key），配 Google Places / Mapbox key 时费用与条款自担；booking 导入需 Docker 镜像内置的 kitinerary-extractor。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\ndocker run -d -p 3000:3000 \\\n  -e ENCRYPTION_KEY=$ENCRYPTION_KEY \\\n  -v ./data:/app/data -v ./uploads:/app/uploads \\\n  mauriceboe/trek",
-      "detail_url": "skills/trek.html"
+      "verification_status": "needs-review",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "docker run -d -p 3000:3000 \\\n  -e ENCRYPTION_KEY=$ENCRYPTION_KEY \\\n  -v ./data:/app/data -v ./uploads:/app/uploads \\\n  mauriceboe/trek",
+      "detail_url": "skills/trek.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/ops-automation/trek/ENTRY.md"
     },
     {
       "id": "assafelovic-gpt-researcher",
@@ -3633,8 +3967,8 @@
       "summary_en": "An open-source deep-research agent framework that plans searches, synthesizes sources, and produces cited reports.",
       "category_dir": "research-intel",
       "category_name": "研究与信息获取",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "research",
         "search",
@@ -3661,8 +3995,12 @@
       "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
       "added_at": "2026-08-27",
       "updated_at": "2026-08-27",
-      "install": "bash\ngit clone --depth 1 https://github.com/assafelovic/gpt-researcher.git\ncd gpt-researcher",
-      "detail_url": "skills/assafelovic-gpt-researcher.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone --depth 1 https://github.com/assafelovic/gpt-researcher.git\ncd gpt-researcher",
+      "detail_url": "skills/assafelovic-gpt-researcher.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/research-intel/assafelovic-gpt-researcher/ENTRY.md"
     },
     {
       "id": "crawl4ai",
@@ -3672,8 +4010,8 @@
       "summary_en": "The most-starred open-source LLM-friendly web crawler: pages to clean LLM-ready Markdown with fit-markdown filtering, deep crawl with crash recovery, prefetch discovery, and CLI + Docker deployment.",
       "category_dir": "research-intel",
       "category_name": "研究与信息获取",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "connect",
+      "mode_label": "接入 Agent",
       "tags": [
         "web-crawler",
         "ai-agent",
@@ -3703,8 +4041,12 @@
       "risk_notes": "v0.9.3 为安全修复版（关闭任意文件写入 / SSRF / DoS / XSS 等协调披露公告 + 33 个 bug 修复），建议始终使用最新版；Docker API server 从 v0.9.0 起默认开启认证并绑定 loopback，公网部署需配置 token 和反向代理；LLM 提取功能需配置 API Key（爬取本身零 Key）。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\npip install -U crawl4ai\n\n# 运行安装后设置（浏览器配置）\ncrawl4ai-setup\n\n# 验证安装\ncrawl4ai-doctor\n\n# 浏览器问题手动安装\npython -m playwright install --with-deps chromium",
-      "detail_url": "skills/crawl4ai.html"
+      "verification_status": "needs-review",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "pip install -U crawl4ai\n\n# 运行安装后设置（浏览器配置）\ncrawl4ai-setup\n\n# 验证安装\ncrawl4ai-doctor\n\n# 浏览器问题手动安装\npython -m playwright install --with-deps chromium",
+      "detail_url": "skills/crawl4ai.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/research-intel/crawl4ai/ENTRY.md"
     },
     {
       "id": "future-house-paper-qa",
@@ -3714,8 +4056,8 @@
       "summary_en": "A retrieval-augmented scientific literature QA tool focused on source grounding, citations, and traceable research.",
       "category_dir": "research-intel",
       "category_name": "研究与信息获取",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "connect",
+      "mode_label": "接入 Agent",
       "tags": [
         "research",
         "science",
@@ -3741,8 +4083,12 @@
       "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
       "added_at": "2026-08-27",
       "updated_at": "2026-08-27",
-      "install": "bash\ngit clone --depth 1 https://github.com/Future-House/paper-qa.git\ncd paper-qa",
-      "detail_url": "skills/future-house-paper-qa.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone --depth 1 https://github.com/Future-House/paper-qa.git\ncd paper-qa",
+      "detail_url": "skills/future-house-paper-qa.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/research-intel/future-house-paper-qa/ENTRY.md"
     },
     {
       "id": "k-dense-ai-scientific-agent-skills",
@@ -3752,8 +4098,8 @@
       "summary_en": "A scientific agent skill library for literature, analysis, research workflows, and scientific databases.",
       "category_dir": "research-intel",
       "category_name": "研究与信息获取",
-      "kind": "skill-collection",
-      "kind_label": "技能集",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "research",
         "science",
@@ -3780,8 +4126,12 @@
       "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
       "added_at": "2026-08-27",
       "updated_at": "2026-08-27",
-      "install": "bash\ngit clone --depth 1 https://github.com/K-Dense-AI/scientific-agent-skills.git\ncd scientific-agent-skills",
-      "detail_url": "skills/k-dense-ai-scientific-agent-skills.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone --depth 1 https://github.com/K-Dense-AI/scientific-agent-skills.git\ncd scientific-agent-skills",
+      "detail_url": "skills/k-dense-ai-scientific-agent-skills.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/research-intel/k-dense-ai-scientific-agent-skills/ENTRY.md"
     },
     {
       "id": "mediacrawler",
@@ -3791,8 +4141,8 @@
       "summary_en": "Multi-platform social media crawler: keyword search, post detail, nested comments, and creator pages across Xiaohongshu, Douyin, Kuaishou, Bilibili, Weibo, Tieba, and Zhihu via Playwright automation.",
       "category_dir": "research-intel",
       "category_name": "研究与信息获取",
-      "kind": "cli-tool",
-      "kind_label": "CLI 工具",
+      "mode": "connect",
+      "mode_label": "接入 Agent",
       "tags": [
         "social-media",
         "web-crawler",
@@ -3822,8 +4172,12 @@
       "risk_notes": "NON-COMMERCIAL LEARNING LICENSE 1.1：仅限学习研究，禁止商用和大规模爬取；使用前需阅读上游免责声明和中国爬虫违法案例库；CDP 模式连接已有 Chrome 可复用登录态降低风控风险，但平台风控策略持续变化；MediaCrawlerPro 为付费闭源版本，本条目只覆盖开源版。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\ncd MediaCrawler\nuv sync\n\n# 仅 Playwright 标准模式需要\nuv run playwright install",
-      "detail_url": "skills/mediacrawler.html"
+      "verification_status": "needs-review",
+      "health_score": 75,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "cd MediaCrawler\nuv sync\n\n# 仅 Playwright 标准模式需要\nuv run playwright install",
+      "detail_url": "skills/mediacrawler.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/research-intel/mediacrawler/ENTRY.md"
     },
     {
       "id": "microsoft-rd-agent",
@@ -3833,8 +4187,8 @@
       "summary_en": "Microsoft's research-and-development automation agent framework for data-driven experiments and iterative modeling.",
       "category_dir": "research-intel",
       "category_name": "研究与信息获取",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "research",
         "multi-agent",
@@ -3860,8 +4214,12 @@
       "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
       "added_at": "2026-08-27",
       "updated_at": "2026-08-27",
-      "install": "bash\ngit clone --depth 1 https://github.com/microsoft/RD-Agent.git\ncd RD-Agent",
-      "detail_url": "skills/microsoft-rd-agent.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone --depth 1 https://github.com/microsoft/RD-Agent.git\ncd RD-Agent",
+      "detail_url": "skills/microsoft-rd-agent.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/research-intel/microsoft-rd-agent/ENTRY.md"
     },
     {
       "id": "stanford-oval-storm",
@@ -3871,8 +4229,8 @@
       "summary_en": "Stanford's open system for topic research and long-form knowledge writing using multi-perspective retrieval and citations.",
       "category_dir": "research-intel",
       "category_name": "研究与信息获取",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "research",
         "search",
@@ -3898,8 +4256,12 @@
       "risk_notes": "本条目只提供导航；安装会下载并运行第三方代码，执行前应复核上游 README、依赖、权限与许可证全文。",
       "added_at": "2026-08-27",
       "updated_at": "2026-08-27",
-      "install": "bash\ngit clone --depth 1 https://github.com/stanford-oval/storm.git\ncd storm",
-      "detail_url": "skills/stanford-oval-storm.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "git clone --depth 1 https://github.com/stanford-oval/storm.git\ncd storm",
+      "detail_url": "skills/stanford-oval-storm.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/research-intel/stanford-oval-storm/ENTRY.md"
     },
     {
       "id": "dashi-ppt-skill",
@@ -3909,8 +4271,8 @@
       "summary_en": "Editable PPT generation skill for the workplace: feed docs to your AI agent and get a presentation with an in-browser editing console; export to HTML / PDF / editable PPTX.",
       "category_dir": "writing-docs",
       "category_name": "写作与文档",
-      "kind": "skill",
-      "kind_label": "技能包",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "pptx",
         "document-generation",
@@ -3943,8 +4305,12 @@
       "risk_notes": "许可证 AGPL-3.0（强 Copyleft）：本仓库仅索引不转载源码，但如果你修改 dashi-ppt-skill 并再分发、或以网络服务形式（含 SaaS）提供，须按 AGPL-3.0 开源你的修改。导出 PPTX / PDF 需本机装有 Chrome / Chromium / Edge。支持 Claude Code、Codex、豆包、Marvis、Workbuddy、Dumate、Qclaw 等多平台。",
       "added_at": "2026-08-26",
       "updated_at": "2026-08-26",
-      "install": "bash\n# 国际网络\nnpx dashi-ppt-skill@latest\n\n# 国内网络\nnpx --registry=https://registry.npmmirror.com dashi-ppt-skill@latest",
-      "detail_url": "skills/dashi-ppt-skill.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# 国际网络\nnpx dashi-ppt-skill@latest\n\n# 国内网络\nnpx --registry=https://registry.npmmirror.com dashi-ppt-skill@latest",
+      "detail_url": "skills/dashi-ppt-skill.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/writing-docs/dashi-ppt-skill/ENTRY.md"
     },
     {
       "id": "drama-skills",
@@ -3954,8 +4320,8 @@
       "summary_en": "An AI short-drama skill suite for Claude Code & Codex: scripts, assets, storyboards, image/video prompts, and independent review across 10 skills.",
       "category_dir": "writing-docs",
       "category_name": "写作与文档",
-      "kind": "skill-collection",
-      "kind_label": "技能集",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "short-drama",
         "screenwriting",
@@ -3986,8 +4352,12 @@
       "risk_notes": "MIT 可商用；需 Python 3.9+ 与 Agent 运行环境（Claude Code/Codex）；生产依赖外部 adapter（Seedance/GPT Image 2/MiniMax Music），供应商凭据不进入项目，需用户明确确认后才投产。",
       "added_at": "2026-08-26",
       "updated_at": "2026-08-26",
-      "install": "bash\n# 需要 Python 3.9+；告诉 Claude Code / Codex：安装这些技能 https://github.com/zenstory-ai/drama-skills\ngit clone https://github.com/zenstory-ai/drama-skills.git\ncd drama-skills\n\n# Claude Code\nmkdir -p \"$HOME/.claude/skills\"\nfor skill in skills/*; do ln -s \"$PWD/$skill\" \"$HOME/.claude/skills/$(basename \"$skill\")\"; done\n\n# Codex\nmkdir -p \"${CODEX_HOME:-$HOME/.codex}/skills\"\nfor skill in skills/*; do ln -s \"$PWD/$skill\" \"${CODEX_HOME:-$HOME/.codex}/skills/$(basename \"$skill\")\"; done",
-      "detail_url": "skills/drama-skills.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# 需要 Python 3.9+；告诉 Claude Code / Codex：安装这些技能 https://github.com/zenstory-ai/drama-skills\ngit clone https://github.com/zenstory-ai/drama-skills.git\ncd drama-skills\n\n# Claude Code\nmkdir -p \"$HOME/.claude/skills\"\nfor skill in skills/*; do ln -s \"$PWD/$skill\" \"$HOME/.claude/skills/$(basename \"$skill\")\"; done\n\n# Codex\nmkdir -p \"${CODEX_HOME:-$HOME/.codex}/skills\"\nfor skill in skills/*; do ln -s \"$PWD/$skill\" \"${CODEX_HOME:-$HOME/.codex}/skills/$(basename \"$skill\")\"; done",
+      "detail_url": "skills/drama-skills.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/writing-docs/drama-skills/ENTRY.md"
     },
     {
       "id": "huashu-skills",
@@ -3997,8 +4367,8 @@
       "summary_en": "Master index of Huashu's 52 Agent Skills in three tiers: 16 flagship repos, 14 persona skills, and 22 built-in content-creation skills for topic generation, writing, proofreading and publishing.",
       "category_dir": "writing-docs",
       "category_name": "写作与文档",
-      "kind": "skill-collection",
-      "kind_label": "技能集",
+      "mode": "read",
+      "mode_label": "阅读参考",
       "tags": [
         "writing",
         "social-media",
@@ -4036,8 +4406,12 @@
       "risk_notes": "仓库未提供 LICENSE 文件，协议不明，商用前需与作者确认；内置 22 个 skill 需克隆后复制子目录安装；huashu-design 有独立仓库完整版与内置轻量版同名冲突，两者不能装进同一目录；部分 skill 依赖豆包/Codex 环境内置 image_gen 或外部 AI 服务，费用与可用性随平台变化。",
       "added_at": "2026-08-29",
       "updated_at": "2026-08-29",
-      "install": "读 https://github.com/alchaincyf/huashu-skills 的 README 和 skills.json，帮我按需求推荐并安装对应 skill",
-      "detail_url": "skills/huashu-skills.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "读 https://github.com/alchaincyf/huashu-skills 的 README 和 skills.json，帮我按需求推荐并安装对应 skill",
+      "detail_url": "skills/huashu-skills.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/writing-docs/huashu-skills/ENTRY.md"
     },
     {
       "id": "humanizer-zh",
@@ -4047,8 +4421,8 @@
       "summary_en": "Chinese localization of Humanizer, a Claude Code skill that identifies and fixes 24 AI writing patterns across content, grammar, style, and filler-word categories to make AI text read more naturally.",
       "category_dir": "writing-docs",
       "category_name": "写作与文档",
-      "kind": "skill",
-      "kind_label": "技能包",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "writing",
         "de-slop",
@@ -4078,8 +4452,12 @@
       "risk_notes": "基于 blader/humanizer 英文原版的中文汉化 + 中文语境适配；24 种模式主要来自维基百科 Signs of AI writing 指南，中文特有 AI 痕迹（如「格局」「织锦」等抽象名词）已补充但覆盖面仍在扩展；不是为欺骗 AI 检测器设计。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
-      "install": "bash\nnpx skills add https://github.com/op7418/Humanizer-zh.git",
-      "detail_url": "skills/humanizer-zh.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "npx skills add https://github.com/op7418/Humanizer-zh.git",
+      "detail_url": "skills/humanizer-zh.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/writing-docs/humanizer-zh/ENTRY.md"
     },
     {
       "id": "oh-story-claudecode",
@@ -4089,8 +4467,8 @@
       "summary_en": "A Claude Code skill pack for web and novel writing: scan, analyze, write, de-slop, and cover generation across long/short fiction, with 13 bundled skills.",
       "category_dir": "writing-docs",
       "category_name": "写作与文档",
-      "kind": "skill-collection",
-      "kind_label": "技能集",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "novel-writing",
         "web-fiction",
@@ -4120,8 +4498,12 @@
       "risk_notes": "GitHub 识别为 MIT，但仓库 README 未显式附 LICENSE 文件，商用前确认；需 Claude Code 环境与 Node/npx；依赖外部大模型 API，封面图生成依赖图像模型。",
       "added_at": "2026-08-26",
       "updated_at": "2026-08-26",
-      "install": "bash\n# 方式一：对话安装（在 Claude Code 中）\n# 告诉 Claude Code：安装这个 skill https://github.com/zenstory-ai/oh-story-claudecode\n\n# 方式二：命令行（npx skills，-g 全局装到 ~/.claude/skills/；去掉 -g 装当前目录）\nnpx skills add zenstory-ai/oh-story-claudecode -y -g",
-      "detail_url": "skills/oh-story-claudecode.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# 方式一：对话安装（在 Claude Code 中）\n# 告诉 Claude Code：安装这个 skill https://github.com/zenstory-ai/oh-story-claudecode\n\n# 方式二：命令行（npx skills，-g 全局装到 ~/.claude/skills/；去掉 -g 装当前目录）\nnpx skills add zenstory-ai/oh-story-claudecode -y -g",
+      "detail_url": "skills/oh-story-claudecode.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/writing-docs/oh-story-claudecode/ENTRY.md"
     },
     {
       "id": "shuohao-skills",
@@ -4131,8 +4513,8 @@
       "summary_en": "An AI short-drama production skill suite for Claude Code & Codex: novel-to-pipeline covering character bibles, art bibles, screenplays, and storyboards. 5 skills with built-in quality-gate scripts.",
       "category_dir": "writing-docs",
       "category_name": "写作与文档",
-      "kind": "skill-collection",
-      "kind_label": "技能集",
+      "mode": "install",
+      "mode_label": "装进 Agent",
       "tags": [
         "short-drama",
         "screenwriting",
@@ -4170,8 +4552,12 @@
       "risk_notes": "Apache-2.0 可商用；需 Node ≥ 18（脚本只用标准库，无 npm 依赖）；出图依赖 Codex CLI 内置 $imagegen；模型额度用当前会话的额度，无需额外 API key。",
       "added_at": "2026-08-26",
       "updated_at": "2026-08-26",
-      "install": "bash\n# 克隆仓库\ngit clone https://github.com/eternityspring/shuohao-skills.git\ncd shuohao-skills\n\n# 自动检测并安装到 Claude Code / Codex，或指定\n./scripts/install.sh              # 自动检测\n./scripts/install.sh --codex      # 仅装到 Codex\n./scripts/install.sh novel-characters  # 只装某一个\n\n# 手动软链\nln -s \"$PWD/skills/novel-characters\" ~/.codex/skills/novel-characters",
-      "detail_url": "skills/shuohao-skills.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# 克隆仓库\ngit clone https://github.com/eternityspring/shuohao-skills.git\ncd shuohao-skills\n\n# 自动检测并安装到 Claude Code / Codex，或指定\n./scripts/install.sh              # 自动检测\n./scripts/install.sh --codex      # 仅装到 Codex\n./scripts/install.sh novel-characters  # 只装某一个\n\n# 手动软链\nln -s \"$PWD/skills/novel-characters\" ~/.codex/skills/novel-characters",
+      "detail_url": "skills/shuohao-skills.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/writing-docs/shuohao-skills/ENTRY.md"
     },
     {
       "id": "zenstory",
@@ -4181,8 +4567,8 @@
       "summary_en": "An AI-agent-driven novel-writing workbench (React + FastAPI monorepo): chat-to-create, multi-agent pipeline, material library, 13 built-in writing skills, and Agent API.",
       "category_dir": "writing-docs",
       "category_name": "写作与文档",
-      "kind": "framework",
-      "kind_label": "框架",
+      "mode": "deploy",
+      "mode_label": "部署运行",
       "tags": [
         "novel-writing",
         "ai-agent",
@@ -4214,8 +4600,12 @@
       "risk_notes": "MIT 可商用；需自备 DeepSeek API Key，依赖 Docker（或本地 dev）运行；含订阅/配额/积分等商业化运营模块，自部署时按需关闭。",
       "added_at": "2026-08-26",
       "updated_at": "2026-08-26",
-      "install": "bash\n# 一行命令启动（需 Docker，且自备 DeepSeek API Key）\nexport DEEPSEEK_API_KEY=your-key\ngit clone https://github.com/zenstory-ai/zenstory.git\ncd zenstory\ndocker compose up -d --build\n# 前端 http://localhost:5173 · API 文档 http://localhost:8000/docs",
-      "detail_url": "skills/zenstory.html"
+      "verification_status": "verified",
+      "health_score": 100,
+      "checked_at": "2026-10-28T07:13:15Z",
+      "quickstart": "# 一行命令启动（需 Docker，且自备 DeepSeek API Key）\nexport DEEPSEEK_API_KEY=your-key\ngit clone https://github.com/zenstory-ai/zenstory.git\ncd zenstory\ndocker compose up -d --build\n# 前端 http://localhost:5173 · API 文档 http://localhost:8000/docs",
+      "detail_url": "skills/zenstory.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/writing-docs/zenstory/ENTRY.md"
     }
   ]
 }

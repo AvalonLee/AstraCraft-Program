@@ -9,10 +9,8 @@ from urllib.parse import urlparse
 
 CATEGORY_KEYWORDS = {
     "dev-engineering": {"testing", "developer-tools", "software-engineering", "code-review", "debugging", "security"},
-    "data-analytics": {"data", "analytics", "visualization", "statistics", "notebook", "database"},
     "research-intel": {"research", "search", "literature", "science", "intelligence", "papers"},
     "ops-automation": {"devops", "automation", "deployment", "infrastructure", "workflow", "monitoring"},
-    "dsh": {"dsh", "deepseek-harness", "plugin", "cordis"},
 }
 
 
@@ -111,6 +109,13 @@ def _category_confidence(entry: dict, facts: UpstreamFacts) -> float:
     return min(1.0, matches / 2) if expected else 1.0
 
 
+def licenses_agree(declared: str, upstream: str) -> bool:
+    if declared == upstream:
+        return True
+    # GitHub 对 GPL 系只返回旧别名（如 AGPL-3.0），无法据此区分 -only / -or-later
+    return declared.startswith(upstream + "-") or upstream.startswith(declared + "-")
+
+
 def verify_entry(entry: dict, facts: UpstreamFacts) -> VerificationResult:
     issues: list[VerificationIssue] = []
     if facts.archived:
@@ -128,7 +133,7 @@ def verify_entry(entry: dict, facts: UpstreamFacts) -> VerificationResult:
     if (
         declared not in {"UNKNOWN", "NOASSERTION", ""}
         and facts.api_license not in {"UNKNOWN", "NOASSERTION", ""}
-        and declared != facts.api_license
+        and not licenses_agree(declared, facts.api_license)
     ):
         issues.append(
             VerificationIssue("E_LICENSE_CONFLICT", "review", "entry and upstream license disagree")

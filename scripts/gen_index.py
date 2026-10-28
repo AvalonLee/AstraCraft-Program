@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-"""从各条目 SKILL.md 的 frontmatter 聚合生成 INDEX.md。
+"""从各条目 ENTRY.md 的 frontmatter 聚合生成 INDEX.md。
 
-生成六个视图：
+生成七个视图：
   1. 全量总表
   2. 按分类分组
-  3. 按标签倒排
-  4. 按语言
-  5. 按协议
-  6. 按 star 排序 + 最近更新
+  3. 按消费方式
+  4. 按标签倒排
+  5. 按语言
+  6. 按协议
+  7. 按 star 排序 + 最近更新
 
 用法：
     python scripts/gen_index.py            重新生成 INDEX.md
@@ -28,7 +29,7 @@ from _common import (  # noqa: E402
     CATEGORIES,
     ENTRY_FILE,
     INDEX_PATH,
-    KIND_LABELS,
+    MODE_LABELS,
     TIER_LABELS,
     Entry,
     discover_entries,
@@ -38,7 +39,7 @@ from _common import (  # noqa: E402
 HEADER = """<!--
   ⚠️ 本文件由 scripts/gen_index.py 自动生成，请勿手动编辑。
 
-  修改条目信息请编辑对应的 entries/<分类>/<id>/SKILL.md（frontmatter），然后执行：
+  修改条目信息请编辑对应的 entries/<分类>/<id>/ENTRY.md（frontmatter），然后执行：
       python scripts/gen_index.py
 
   CI 会重新渲染并与本文件比对，不一致将导致构建失败。
@@ -46,14 +47,14 @@ HEADER = """<!--
 
 # 索引
 
-AstraCraft Program（天工计划）全部收录条目的交叉检索表。六个视图对应六种找东西的方式：
-知道大概用途就看[分类](#二按分类)，有明确关键词就看[标签](#三按标签)，
-关心技术栈就看[语言](#四按语言)，在意合规就看[协议](#五按协议)。
+AstraCraft Program（天工计划）全部收录条目的交叉检索表。七个视图对应七种找东西的方式：
+知道大概用途就看[分类](#二按分类)，知道想怎么用就看[消费方式](#三按消费方式)，
+有明确关键词就看[标签](#四按标签)，关心技术栈就看[语言](#五按语言)，在意合规就看[协议](#六按协议)。
 
 图例：★ 主推 · ⚠️ 有风险备注
 
-> 每个条目只有一个 `SKILL.md`（介绍 + 安装指令）。Agent 点链接读取该文件，
-> 即可快速定位并安装对应的 skill 项目；本仓库**不收录上游源码快照**。
+> 每个条目只有一个 `ENTRY.md`（介绍 + 上手指令）。Agent 点链接读取该文件，
+> 即可快速定位并上手对应项目；本仓库**不收录上游源码快照**。
 """
 
 
@@ -85,17 +86,17 @@ def view_all(entries: list[Entry]) -> list[str]:
         "",
         f"共 {len(entries)} 个条目，按分类与名称排序。",
         "",
-        "| | 名称 | 分类 | 类型 | 协议 | 评级 | 简介 |",
+        "| | 名称 | 分类 | 消费方式 | 协议 | 评级 | 简介 |",
         "|---|---|---|---|---|---|---|",
     ]
     for entry in entries:
         category_zh = CATEGORIES.get(entry.meta.get("category", ""), ("?", ""))[0]
         lines.append(
-            "| {marks} | {name} | {cat} | {kind} | {lic} | {tier} | {summary} |".format(
+            "| {marks} | {name} | {cat} | {mode} | {lic} | {tier} | {summary} |".format(
                 marks=badges(entry),
                 name=link(entry),
                 cat=category_zh,
-                kind=KIND_LABELS.get(entry.meta.get("kind", ""), "?"),
+                mode=MODE_LABELS.get(entry.meta.get("mode", ""), "?"),
                 lic=license_cell(entry),
                 tier=TIER_LABELS.get(entry.tier, "?"),
                 summary=esc(entry.meta.get("summary_zh")),
@@ -128,20 +129,40 @@ def view_by_category(entries: list[Entry]) -> list[str]:
             "",
             f"`entries/{category}/` —— {desc}",
             "",
-            "| | 名称 | 类型 | 协议 | 简介 |",
+            "| | 名称 | 消费方式 | 协议 | 简介 |",
             "|---|---|---|---|---|",
         ]
         for entry in bucket:
             lines.append(
-                "| {marks} | {name} | {kind} | {lic} | {summary} |".format(
+                "| {marks} | {name} | {mode} | {lic} | {summary} |".format(
                     marks=badges(entry),
                     name=link(entry),
-                    kind=KIND_LABELS.get(entry.meta.get("kind", ""), "?"),
+                    mode=MODE_LABELS.get(entry.meta.get("mode", ""), "?"),
                     lic=license_cell(entry),
                     summary=esc(entry.meta.get("summary_zh")),
                 )
             )
         lines.append("")
+    return lines
+
+
+def view_by_mode(entries: list[Entry]) -> list[str]:
+    grouped: dict[str, list[Entry]] = defaultdict(list)
+    for entry in entries:
+        grouped[str(entry.meta.get("mode"))].append(entry)
+
+    lines = [
+        "## 三、按消费方式",
+        "",
+        "一个项目只取一个主模式。想知道“拿到之后要做什么”，先看这里。",
+        "",
+        "| 消费方式 | 条目数 | 条目 |",
+        "|---|---|---|",
+    ]
+    for mode in ("install", "connect", "deploy", "read"):
+        bucket = grouped.get(mode, [])
+        items = " · ".join(link(e) for e in bucket)
+        lines.append(f"| {MODE_LABELS[mode]} | {len(bucket)} | {items} |")
     return lines
 
 
@@ -152,7 +173,7 @@ def view_by_tag(entries: list[Entry]) -> list[str]:
             grouped[str(tag)].append(entry)
 
     lines = [
-        "## 三、按标签",
+        "## 四、按标签",
         "",
         f"共 {len(grouped)} 个标签。标签是分类之外的交叉维度——一个条目只能属于一个分类，"
         "但可以有多个标签。",
@@ -173,7 +194,7 @@ def view_by_language(entries: list[Entry]) -> list[str]:
             grouped[str(lang)].append(entry)
 
     lines = [
-        "## 四、按语言",
+        "## 五、按语言",
         "",
         "实现语言。纯文档/提示词类条目标记为 `markdown`。",
         "",
@@ -192,7 +213,7 @@ def view_by_license(entries: list[Entry]) -> list[str]:
         grouped[str(entry.meta.get("license"))].append(entry)
 
     lines = [
-        "## 五、按协议",
+        "## 六、按协议",
         "",
         "协议仅作为判断能否商用的参考（本仓库不转载源码，因此不承担再分发义务）。",
         "",
@@ -208,7 +229,7 @@ def view_by_license(entries: list[Entry]) -> list[str]:
 
 def view_ranked(entries: list[Entry]) -> list[str]:
     lines = [
-        "## 六、排行",
+        "## 七、排行",
         "",
         "star 数不参与收录判断，仅作为排序维度。`—` 表示尚未采集。",
         "",
@@ -250,6 +271,7 @@ def render(entries: list[Entry]) -> str:
     for view in (
         view_all,
         view_by_category,
+        view_by_mode,
         view_by_tag,
         view_by_language,
         view_by_license,
@@ -285,7 +307,7 @@ def main() -> int:
         current = INDEX_PATH.read_text(encoding="utf-8")
         if _strip_stamp(current) != _strip_stamp(rendered):
             print(
-                "x INDEX.md 与 SKILL.md 的 frontmatter 已脱节。\n"
+                "x INDEX.md 与 ENTRY.md 的 frontmatter 已脱节。\n"
                 "  请执行 python scripts/gen_index.py 重新生成，并把结果一并提交。"
             )
             return 1

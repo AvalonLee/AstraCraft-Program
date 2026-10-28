@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 
 from scripts._common import discover_entries
-from scripts.recommender import ProjectProfile, recommend, score_entry
+from scripts.recommender import ProjectProfile, load_entries, recommend, score_entry
 
 
 FIXTURES = Path(__file__).parent / "fixtures"
@@ -28,7 +28,7 @@ def test_score_explains_every_matching_signal() -> None:
         "CATEGORY_MATCH:+3",
         "TAG_MATCH:python:+2",
         "TAG_MATCH:testing:+2",
-        "KIND_MATCH:+1",
+        "MODE_MATCH:+1",
         "TIER_STANDARD:+1",
         "LICENSE_MATCH:+1",
         "DOC_LANGUAGE_MATCH:+1",
@@ -67,11 +67,8 @@ def test_ties_use_health_then_id() -> None:
 @pytest.mark.parametrize(
     ("category", "tags"),
     [
-        ("dev-engineering", ["software-engineering", "testing"]),
-        ("data-analytics", ["data-analytics", "python"]),
+        ("agent-infra", ["dsh", "plugin"]),
         ("research-intel", ["research", "search"]),
-        ("ops-automation", ["ops-automation", "automation"]),
-        ("dsh", ["dsh", "plugin"]),
     ],
 )
 def test_real_catalog_recalls_each_expanded_category(category: str, tags: list[str]) -> None:
@@ -92,7 +89,7 @@ def test_real_catalog_recalls_each_expanded_category(category: str, tags: list[s
     profile = ProjectProfile.from_dict({
         "categories": [category],
         "tags": tags,
-        "desired_kinds": ["skill", "skill-collection", "framework", "cli-tool"],
+        "desired_modes": ["install", "connect", "deploy", "read"],
         "commercial": False,
         "offline": False,
         "doc_languages": ["zh"],
@@ -106,3 +103,10 @@ def test_real_catalog_recalls_each_expanded_category(category: str, tags: list[s
 
     by_id = {entry.meta["id"]: entry.category_dir for entry in discover_entries()}
     assert sum(by_id[result.id] == category for result in results) >= 2
+
+
+def test_load_entries_accepts_published_contract(tmp_path: Path) -> None:
+    path = tmp_path / "skills.json"
+    path.write_text(json.dumps({"schema_version": 1, "skills": [{"id": "a"}]}), encoding="utf-8")
+
+    assert load_entries(path) == [{"id": "a"}]

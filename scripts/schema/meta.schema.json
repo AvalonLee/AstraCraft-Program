@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://github.com/AvalonLee/AstraCraft-Program/scripts/schema/meta.schema.json",
-  "title": "AstraCraft Program SKILL.md Frontmatter",
-  "description": "AstraCraft Program（天工计划）条目的元数据结构。每个条目由单个 SKILL.md 描述，元数据放在文件开头的 YAML frontmatter 中。",
+  "title": "AstraCraft Program ENTRY.md Frontmatter",
+  "description": "AstraCraft Program（天工计划）条目的元数据结构。每个条目由单个 ENTRY.md 描述，元数据放在文件开头的 YAML frontmatter 中。",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -13,7 +13,7 @@
     "summary_zh",
     "summary_en",
     "category",
-    "kind",
+    "mode",
     "tags",
     "languages",
     "license",
@@ -38,14 +38,15 @@
     "category": {
       "type": "string",
       "enum": [
-        "writing-docs", "dev-engineering", "design-creative", "data-analytics",
+        "writing-docs", "dev-engineering", "design-creative",
         "research-intel", "ops-automation", "business-office", "agent-infra",
-        "dsh", "meta-skillcraft"
+        "meta-skillcraft"
       ]
     },
-    "kind": {
+    "mode": {
       "type": "string",
-      "enum": ["skill", "skill-collection", "mcp-server", "cli-tool", "framework", "spec"]
+      "enum": ["install", "connect", "deploy", "read"],
+      "description": "主消费方式：install=装进 Agent connect=接入调用 deploy=部署运行 read=阅读参考"
     },
     "tags": {
       "type": "array",

@@ -4,7 +4,8 @@
   "use strict";
 
   var DATA_URL = "data/skills.json";
-  var GROUPS = ["category", "tag", "tier", "license"];
+  var GROUPS = ["category", "mode", "tag", "tier", "license"];
+  var MODE_ORDER = ["install", "connect", "deploy", "read"];
   var TAG_LIMIT = 20;     // 标签折叠态兜底上限：有效标签过多时仍只显示前 N 个
   var TAG_MIN_COUNT = 2;  // 折叠态仅展示被 >=2 个条目使用的「有效标签」，单例标签默认折叠
   var RANDOM_PICK_COUNT = 4;
@@ -49,7 +50,7 @@
   var state = {
     skills: [],
     categories: [],
-    sel: { category: null, tag: null, tier: null, license: null },
+    sel: { category: null, mode: null, tag: null, tier: null, license: null },
     q: "",
   };
 
@@ -89,6 +90,10 @@
       });
     var tiers = uniq(state.skills.map(function (s) { return s.tier_label; }))
       .map(function (t) { return { value: t, label: t }; });
+    var modeNames = {};
+    state.skills.forEach(function (s) { if (s.mode) modeNames[s.mode] = s.mode_label; });
+    var modes = MODE_ORDER.filter(function (m) { return modeNames[m]; })
+      .map(function (m) { return { value: m, label: modeNames[m] }; });
     var bucketCounts = {};
     state.skills.forEach(function (s) {
       var k = licenseBucket(s);
@@ -96,6 +101,7 @@
     });
 
     fillChips("category-chips", "category", cats);
+    fillChips("mode-chips", "mode", modes);
     fillTagChips(tags);
     fillChips("tier-chips", "tier", tiers);
     fillLicenseChips(bucketCounts);
@@ -150,7 +156,7 @@
       b.dataset.group = "tag";
       b.dataset.value = it.value;
       b.dataset.count = String(it.count);
-      b.title = it.count + " 个技能";
+      b.title = it.count + " 个条目";
       // 默认折叠：单例标签（仅 1 个条目使用）隐藏；有效标签默认显示
       if (it.count < TAG_MIN_COUNT) b.classList.add("chip-hidden");
       b.addEventListener("click", function () {
@@ -252,6 +258,7 @@
   function matches(s) {
     var q = state.q;
     if (state.sel.category && s.category_dir !== state.sel.category) return false;
+    if (state.sel.mode && s.mode !== state.sel.mode) return false;
     if (state.sel.tier && s.tier_label !== state.sel.tier) return false;
     if (state.sel.license && licenseBucket(s) !== state.sel.license) return false;
     if (state.sel.tag) {
@@ -259,7 +266,7 @@
     }
     if (q) {
       var hay = [s.name_zh, s.name_en, s.summary_zh, s.summary_en,
-        (s.tags || []).join(" "), s.category_name, s.kind_label]
+        (s.tags || []).join(" "), s.category_name, s.mode_label]
         .join(" ").toLowerCase();
       if (hay.indexOf(q) === -1) return false;
     }
@@ -287,7 +294,7 @@
 
     return (
       '<div class="card">' +
-        '<p class="card-kicker">' + esc(s.category_name) + " · " + esc(s.kind_label) + "</p>" +
+        '<p class="card-kicker">' + esc(s.category_name) + " · " + esc(s.mode_label) + "</p>" +
         '<h3 class="card-title"><a href="' + esc(s.detail_url) + '">' + esc(s.name_zh) + "</a></h3>" +
         (s.summary_zh ? '<p class="card-subtitle">' + esc(s.summary_zh) + "</p>" : "") +
         (meta.length ? '<div class="card-meta">' + meta.join("") + "</div>" : "") +
@@ -300,14 +307,14 @@
     var list = state.skills.filter(matches);
     var wrap = $("results");
     if (!list.length) {
-      wrap.innerHTML = '<p class="muted" style="padding:8px 2px;">没有匹配的技能，试试其他关键词或筛选条件。</p>';
+      wrap.innerHTML = '<p class="muted" style="padding:8px 2px;">没有匹配的条目，试试其他关键词或筛选条件。</p>';
     } else {
       wrap.innerHTML = list.map(cardHtml).join("");
     }
     var total = state.skills.length;
     $("result-count").textContent = list.length === total
-      ? "共 " + list.length + " 个技能"
-      : "共 " + list.length + " 个技能（已从 " + total + " 个中筛选）";
+      ? "共 " + list.length + " 个条目"
+      : "共 " + list.length + " 个条目（已从 " + total + " 个中筛选）";
   }
 
   function pickRandomSkills(count) {

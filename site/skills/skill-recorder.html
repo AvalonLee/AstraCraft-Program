@@ -28,10 +28,10 @@
   <header class="topbar">
     <div class="brand-lockup">
     <div class="brand-name">AstraCraft Program</div>
-    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
     </div>
     <nav class="nav-links">
-      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="../index.html">浏览条目</a>
       <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </header>
@@ -49,7 +49,7 @@
 
   <div class="card" style="margin-top:24px;">
     <div class="mini-tags">
-      <span>技能工程</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>框架</span>
+      <span>技能工程</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>部署运行</span>
     </div>
     <p class="muted detail-meta">微软开源的桌面应用：录制屏幕工作过程，用 GitHub Copilot CLI 重建为意图与有序步骤，再生成可复用 Skill 或定时 Automation，供 Scout / Copilot Cowork / Copilot Studio 使用。</p>
     <div class="link-row" style="margin-top:14px;">
@@ -65,7 +65,7 @@
 <p>Skill Recorder 是微软开源的桌面应用：你正常完成一次任务，它在本地捕获屏幕、窗口切换、访问的页面和可选语音叙述，然后调用 <strong>GitHub Copilot CLI</strong> 把这次操作重建成清晰的「意图 + 有序步骤」，再一键生成：</p>
 <ul><li><strong>Skill</strong>：一份 <code>SKILL.md</code> 过程，Agent 可按需调用；</li><li><strong>Automation</strong>：同一过程绑定定时器或触发器自动执行。</li></ul>
 <p>它偏向让 Agent 优先使用原生工具（如 <code>gh</code> CLI、<code>web_fetch</code>），而不是机械重放 UI 点击；并且能从单个示例泛化，比如录一次「提交表单」，教会 Agent 提交同类表单。</p>
-<h2>怎么安装</h2>
+<h2>怎么部署运行</h2>
 <p>推荐从上游 Releases 页复制你平台的官方一键安装命令。macOS / Ubuntu 通用格式：</p>
 <pre><code class="lang-bash">commit=&quot;&lt;40-character-release-commit&gt;&quot;; curl -fsSL &quot;https://raw.githubusercontent.com/microsoft/skill-recorder/$commit/install.sh&quot; | SKILL_RECORDER_COMMIT=&quot;$commit&quot; bash</code></pre>
 <p>Windows PowerShell：</p>

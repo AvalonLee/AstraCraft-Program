@@ -28,10 +28,10 @@
   <header class="topbar">
     <div class="brand-lockup">
     <div class="brand-name">AstraCraft Program</div>
-    <div class="brand-sub">天工计划 · Agent Skill 中文索引集市</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
     </div>
     <nav class="nav-links">
-      <a class="nav-link" href="../index.html">浏览技能</a>
+      <a class="nav-link" href="../index.html">浏览条目</a>
       <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </header>
@@ -49,7 +49,7 @@
 
   <div class="card" style="margin-top:24px;">
     <div class="mini-tags">
-      <span>写作与文档</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>框架</span>
+      <span>写作与文档</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>部署运行</span>
     </div>
     <p class="muted detail-meta">AI Agent 驱动的商业级小说写作工作台（React 前端 + FastAPI 后端 Monorepo）：对话即创作，多 Agent 协作、素材库拆解、13 个内置写作技能与 Agent API，支持长篇/短篇/短剧。</p>
     <div class="link-row" style="margin-top:14px;">
@@ -64,7 +64,7 @@
 <h2>这是什么</h2>
 <p>它是一套 <strong>AI Agent 驱动的商业级小说写作工作台</strong>（Monorepo：React 前端 <code>apps/web</code> + FastAPI 后端 <code>apps/server</code>，AI Agent 系统在 <code>apps/server/agent</code>）。与传统「聊天框 + 复制粘贴」不同，ZenStory 让 AI 通过完整工具链<strong>直接操作你的创作文件</strong>——建角色卡、拆参考素材、规划大纲、逐章写作，全在一次对话里完成。</p>
 <p>核心能力：① 对话 × 文件系统（9 种 Agent 工具、Diff 审阅模式）；② 多 Agent 协作引擎（Router / Planner / Hook Designer / Writer / Quality Reviewer 五工作流）；③ 素材库 AI 拆解（8 类结构化元素 + 混合 RAG 检索）；④ 灵感库；⑤ 技能系统与市场（13 个内置写作技能，Markdown 定义、可自定义分享）；⑥ Agent API（Claude Code / OpenClaw 直连）；⑦ 专业编辑器（六种文件类型、版本快照）；⑧ 商业化运营（订阅 / 配额 / 积分 / 管理后台）。支持长篇、短篇、短剧三种创作路径。</p>
-<h2>怎么安装</h2>
+<h2>怎么部署运行</h2>
 <pre><code class="lang-bash"># 一行命令启动（需 Docker，且自备 DeepSeek API Key）
 export DEEPSEEK_API_KEY=your-key
 git clone https://github.com/zenstory-ai/zenstory.git

@@ -9,8 +9,8 @@ from urllib.parse import urlparse
 
 CATEGORY_KEYWORDS = {
     "dev-engineering": {"testing", "developer-tools", "software-engineering", "code-review", "debugging", "security"},
-    "research-intel": {"research", "search", "literature", "science", "intelligence", "papers"},
-    "ops-automation": {"devops", "automation", "deployment", "infrastructure", "workflow", "monitoring"},
+    "research-intel": {"research", "search", "literature", "science", "intelligence", "papers", "web-crawler", "scraper"},
+    "ops-automation": {"devops", "automation", "deployment", "infrastructure", "workflow", "monitoring", "self-hosted"},
 }
 
 

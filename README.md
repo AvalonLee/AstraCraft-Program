@@ -116,7 +116,7 @@ frontmatter 关键字段：
 | `entries/dev-engineering/` | 编码、重构、测试、代码审查 |
 | `entries/design-creative/` | UI/UX、视觉、品牌、素材生成 |
 | `entries/research-intel/` | 检索、调研、信息聚合、竞品分析 |
-| `entries/ops-automation/` | 部署、CI/CD、脚本、系统维护 |
+| `entries/ops-automation/` | 自托管服务、部署、CI/CD、脚本、系统维护 |
 | `entries/business-office/` | 办公文档、协作、流程、商务 |
 | `entries/agent-infra/` | MCP server、框架、CLI、运行时与 DSH 插件 |
 | `entries/meta-skillcraft/` | 写 skill 的 skill、规范、模板、元技能 |

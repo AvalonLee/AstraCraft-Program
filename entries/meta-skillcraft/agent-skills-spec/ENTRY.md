@@ -10,7 +10,7 @@ mode: read
 tags: [agent-skills, skill-md, spec, standard, interoperability]
 languages: [markdown]
 doc_languages: [en]
-license: CC-BY-4.0
+license: UNKNOWN
 homepage: https://agentskills.io/specification
 repo: https://github.com/anthropics/skills
 tier: standard
@@ -21,15 +21,15 @@ metrics:
   archived: false
 related: [superpowers]
 aliases: [Agent Skills Specification, agentskills]
-risk_notes: 规范是活的标准，本仓库刻意不冻结副本，始终指向官方最新版。
+risk_notes: 规范是活的标准，本仓库刻意不冻结副本，始终指向官方最新版；规范页与 GitHub 仓库均未标注许可证（2026-10-28 核验），引用前请自行确认授权。
 added_at: "2026-08-10"
-updated_at: "2026-08-13"
+updated_at: "2026-10-28"
 ---
 
 # Agent Skills 规范
 
 > 一份让 AI 智能体"即插即用"新能力的开放格式标准。
-> 官方规范：[agentskills.io/specification](https://agentskills.io/specification) · 许可证：CC-BY-4.0
+> 官方规范：[agentskills.io/specification](https://agentskills.io/specification) · 许可证：未标注（UNKNOWN）
 
 ## 这是什么
 
@@ -59,6 +59,6 @@ git sparse-checkout set spec
 
 ## 注意事项
 
-- 规范文本 CC-BY-4.0，可自由阅读、引用并注明出处；
+- 规范页与仓库截至 2026-10-28 未标注许可证，引用前请自行确认授权；
 - 本仓库刻意**不冻结规范副本**（它是活的标准），始终链接官方最新版；
 - description 必须同时写清「做什么」与「何时用」，否则 Agent 不知道何时加载。

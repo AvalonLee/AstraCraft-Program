@@ -10,7 +10,7 @@ mode: deploy
 tags: [canvas, image-generation, video-production, prompt-engineering, ai-agent]
 languages: [vue, typescript]
 doc_languages: [zh]
-license: MIT
+license: CC-BY-NC-SA-4.0
 homepage: https://marketing.chatfire.site/huobao-canvas/
 repo: https://github.com/chatfire-AI/huobao-canvas
 tier: standard
@@ -21,14 +21,14 @@ metrics:
   archived: false
 related: []
 aliases: ["AI Canvas"]
-risk_notes: "需要自备 OpenAI 兼容 API Base URL、Key 与模型；自动执行质量取决于模型能力；本地项目数据持久化在浏览器/本地存储中，生产使用请自行备份。"
+risk_notes: "CC BY-NC-SA 4.0 仅限非商业用途，二次创作需署名并以相同协议共享；需要自备 OpenAI 兼容 API Base URL、Key 与模型；自动执行质量取决于模型能力；本地项目数据持久化在浏览器/本地存储中，生产使用请自行备份。"
 added_at: "2026-09-10"
-updated_at: "2026-09-10"
+updated_at: "2026-10-28"
 ---
 
 # AI Canvas 可视化创作画布
 
-> 基于 Vue Flow 的可视化 AI 创作画布。上游：[chatfire-AI/huobao-canvas](https://github.com/chatfire-AI/huobao-canvas) · 许可证：MIT · 约 838 stars
+> 基于 Vue Flow 的可视化 AI 创作画布。上游：[chatfire-AI/huobao-canvas](https://github.com/chatfire-AI/huobao-canvas) · 许可证：CC BY-NC-SA 4.0 · 约 0.9k stars
 
 ## 这是什么
 
@@ -64,4 +64,4 @@ npm run dev
 - API 必须兼容 OpenAI 接口；实际可用模型、速率与费用取决于你配置的服务。
 - 自动分镜依赖模型对中文意图、角色与场景的解析能力，复杂提示建议手动检查节点参数。
 - 项目数据支持本地持久化，但浏览器清理存储或换设备前请导出/备份项目。
-- README 声明 MIT 许可；如需商用仍应自行核验最新 LICENSE 与第三方依赖条款。
+- LICENSE 与 README 均为 **CC BY-NC-SA 4.0**：仅限非商业用途，二次创作需署名并以相同协议共享；商用需另行取得授权。

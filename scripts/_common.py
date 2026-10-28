@@ -39,7 +39,7 @@ CATEGORIES: dict[str, tuple[str, str]] = {
     "dev-engineering": ("研发与代码", "编码、重构、测试、代码审查"),
     "design-creative": ("设计与创意", "UI/UX、视觉、品牌、素材生成"),
     "research-intel": ("研究与信息获取", "检索、调研、信息聚合、竞品分析"),
-    "ops-automation": ("运维与自动化", "部署、CI/CD、脚本、系统维护"),
+    "ops-automation": ("运维与自动化", "自托管服务、部署、CI/CD、脚本、系统维护"),
     "business-office": ("商业与办公", "办公文档、协作、流程、商务"),
     "agent-infra": ("Agent 基础设施", "MCP server、框架、CLI、运行时与插件"),
     "meta-skillcraft": ("技能工程", "写 skill 的 skill、规范、模板、元技能"),

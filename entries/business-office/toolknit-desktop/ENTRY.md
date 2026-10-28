@@ -3,14 +3,14 @@ record_type: entry-record
 id: toolknit-desktop
 name_zh: "ToolKnit Desktop 本地文件工作台（桌面 / CLI / MCP）"
 name_en: "ToolKnit Desktop — Local-first File Workbench with CLI and MCP"
-summary_zh: "Tauri 2 + Rust 的开源本地文件工作台：桌面端 12 类 68 项工具覆盖 PDF、PPT、图像、音视频、文本转写、清理与开发者工具；同一套能力经 @toolknit/cli 与 MCP 暴露给 IDE Agent，输出 JSON、退出码分级、原子写入且不覆盖源文件。"
+summary_zh: "Tauri 2 + Rust 的源可用本地文件工作台：桌面端 12 类 68 项工具覆盖 PDF、PPT、图像、音视频、文本转写、清理与开发者工具；同一套能力经 @toolknit/cli 与 MCP 暴露给 IDE Agent，输出 JSON、退出码分级、原子写入且不覆盖源文件。"
 summary_en: "Local-first file workbench on Tauri 2 and Rust: 68 tools across 12 groups for PDF, PPT, image, audio, video, text and AI work, exposed to IDE agents via @toolknit/cli and an MCP server."
 category: business-office
 mode: deploy
 tags: [office, mcp, cli, pdf, pptx, document-generation, ai-agent]
 languages: [javascript, rust]
 doc_languages: [zh, en]
-license: Apache-2.0
+license: PolyForm-Noncommercial-1.0.0
 homepage: https://toolknit.com
 repo: https://github.com/ZihangDong/toolknit-desktop
 tier: standard
@@ -21,14 +21,14 @@ metrics:
   archived: false
 related: [officecli, anthropics-office-skills]
 aliases: [toolknit]
-risk_notes: "Apache-2.0 只覆盖 Desktop 与 CLI/MCP 源码，README 明确不授予 ToolKnit 名称、Logo、视觉标识、域名、托管网页服务与账号的使用权（另见 NOTICE），toolknit.com 网页端不在本仓开源范围内。桌面端仅支持 Windows 10 1803（17134）+/Windows 11，依赖 Microsoft Edge WebView2 Runtime（安装包内置引导程序，首次安装仍需联网），无 macOS/Linux 桌面版；安装包须只从本仓 Releases 下载并核对随附 .sha256，实际签名状态以对应 Release 说明为准。项目 2026-07-30 创建、当前 3.0.0，历史约两个月。CLI 契约文档中图像转换与压缩、图标生成、AI 润色与翻译仍标注 Planned，CLI 覆盖面小于桌面端。AI 功能会把符合说明的数据发往你所配置的模型服务，需 DEEPSEEK_API_KEY 或 TOOLKNIT_AI_API_KEY；官方明确「本地优先」不表示程序完全不联网。"
+risk_notes: "2026-10-14 起上游改为 PolyForm Noncommercial 1.0.0，仅限非商业用途（原 Apache-2.0 不再适用）；PDF 转 Word 子项目另有源码可见许可（LICENSES/ToolKnit-PDF-Word-Source-View-1.0.md）；README 明确不授予 ToolKnit 名称、Logo、视觉标识、域名、托管网页服务与账号的使用权（另见 NOTICE），toolknit.com 网页端不在本仓开源范围内。桌面端仅支持 Windows 10 1803（17134）+/Windows 11，依赖 Microsoft Edge WebView2 Runtime（安装包内置引导程序，首次安装仍需联网），无 macOS/Linux 桌面版；安装包须只从本仓 Releases 下载并核对随附 .sha256，实际签名状态以对应 Release 说明为准。项目 2026-07-30 创建、当前 3.0.0，历史约两个月。CLI 契约文档中图像转换与压缩、图标生成、AI 润色与翻译仍标注 Planned，CLI 覆盖面小于桌面端。AI 功能会把符合说明的数据发往你所配置的模型服务，需 DEEPSEEK_API_KEY 或 TOOLKNIT_AI_API_KEY；官方明确「本地优先」不表示程序完全不联网。"
 added_at: "2026-09-24"
-updated_at: "2026-09-24"
+updated_at: "2026-10-28"
 ---
 
 # ToolKnit Desktop 本地文件工作台（桌面 / CLI / MCP）
 
-> 把文件处理能力做成 Agent 可调用契约的桌面工具箱。上游：[ZihangDong/toolknit-desktop](https://github.com/ZihangDong/toolknit-desktop) · 许可证：Apache-2.0
+> 把文件处理能力做成 Agent 可调用契约的桌面工具箱。上游：[ZihangDong/toolknit-desktop](https://github.com/ZihangDong/toolknit-desktop) · 许可证：PolyForm Noncommercial 1.0.0
 
 ## 这是什么
 
@@ -104,7 +104,7 @@ toolknit video convert --input .\recording.mov --output-dir .\out --format mp4 -
 
 ## 注意事项
 
-- **商标与品牌不在授权范围内**：Apache-2.0 只覆盖源码，ToolKnit 名称、Logo、域名、托管网页服务与账号均不授予使用权（见 `NOTICE`）；二次分发产品需改名或另行取得授权。
+- **非商业许可 + 商标**：PolyForm Noncommercial 1.0.0 仅允许非商业使用，商用需另行授权；ToolKnit 名称、Logo、域名、托管网页服务与账号均不授予使用权（见 `NOTICE`）。
 - **仅 Windows 桌面端**：macOS/Linux 用户走网页端或 CLI；Win7/8/8.1 与 1803 之前的 Win10 不受支持，安装器会在复制文件前直接提示原因。
 - **供应链纪律**：官方要求只从本仓 Releases 下载并核对 SHA-256；代码签名状态以各 Release 说明为准，另有 `CODE_SIGNING_POLICY.md`。
 - **CLI 覆盖小于桌面端**：契约文档中图像转换/压缩、图标生成、AI 润色与翻译等仍标 `Planned`，编排 Agent 工作流前先 `toolknit --help` 确认实际可用面。

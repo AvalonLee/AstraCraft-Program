@@ -10,7 +10,7 @@ mode: deploy
 tags: [short-drama, storyboard, image-generation, video-production, character-design, cinematic, ai-agent, docker]
 languages: [docker]
 doc_languages: [zh, en, ja]
-license: CC-BY-NC-SA-4.0
+license: LicenseRef-BigBanana-Community-1.0
 homepage: https://director.tree456.com/
 repo: https://github.com/shuyu-labs/BigBanana-AI-Director
 tier: standard
@@ -21,14 +21,14 @@ metrics:
   archived: false
 related: []
 aliases: ["BigBanana AI Director", "AI 漫剧工场"]
-risk_notes: "官方声明采用 CC BY-NC-SA 4.0，仅限非商业用途；后续版本只通过官方 Docker 镜像发布，商业源码需授权；部署后需配置 AntSK API Key，并使用外部 LLM、图像与视频模型，费用自担。"
+risk_notes: "上游 LICENSE 文件为自定义的 BigBanana Community License 1.0（源可用、非 OSI；README 徽章写的是 CC BY-NC-SA 4.0），仅限非商业用途；后续版本只通过官方 Docker 镜像发布，商业源码需授权；部署后需配置 AntSK API Key，并使用外部 LLM、图像与视频模型，费用自担。"
 added_at: "2026-09-10"
-updated_at: "2026-09-10"
+updated_at: "2026-10-28"
 ---
 
 # BigBanana AI 漫剧导演工场
 
-> AI 一站式短剧/漫剧生成平台。上游：[shuyu-labs/BigBanana-AI-Director](https://github.com/shuyu-labs/BigBanana-AI-Director) · 许可证：CC BY-NC-SA 4.0 · 约 2.4k stars
+> AI 一站式短剧/漫剧生成平台。上游：[shuyu-labs/BigBanana-AI-Director](https://github.com/shuyu-labs/BigBanana-AI-Director) · 许可证：BigBanana Community License 1.0（非商业） · 约 2.4k stars
 
 ## 这是什么
 
@@ -61,7 +61,7 @@ docker-compose up -d
 
 ## 注意事项
 
-- 上游声明 **CC BY-NC-SA 4.0**：允许个人学习与非商业二次创作，禁止商业用途；商业源码与授权需联系作者。
+- 上游 **LICENSE 文件为 BigBanana Community License 1.0**：源可用、非 OSI，仅限个人学习、研究与非商业用途；README 徽章写的 CC BY-NC-SA 4.0 与之同为非商业限制，以 LICENSE 英文全文为准；商业授权需联系作者。
 - 因抄袭/搬运问题，后续版本仅通过官方 Docker 镜像发布，仓库保留说明与历史参考。
 - 生成依赖外部模型能力，例如 LLM、图像模型与视频模型；官方镜像预置工作流仍需配置对应 API/模型，费用自担。
 - 若不满足“长期免费”预期，上游明确提示可选官方大模型产品或商业版适配。

@@ -98,6 +98,14 @@ def test_low_category_confidence_needs_review() -> None:
     assert "E_CATEGORY_LOW_CONFIDENCE" in result.issue_codes
 
 
+def test_self_hosted_service_matches_ops_category() -> None:
+    result = verify_entry(
+        entry(tags=["self-hosted"], category="ops-automation"),
+        facts(topics=[], description="A self-hosted service"),
+    )
+    assert "E_CATEGORY_LOW_CONFIDENCE" not in result.issue_codes
+
+
 def test_health_score_caps_tier() -> None:
     score, tier = calculate_health(facts(has_readme=False, api_license="UNKNOWN", text_license="UNKNOWN"))
     assert score < 60

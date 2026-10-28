@@ -10,7 +10,7 @@ mode: deploy
 tags: [ai-agent, multi-agent, desktop-app, claude-code, mcp, skills-management]
 languages: [typescript]
 doc_languages: [zh, en]
-license: MIT
+license: LicenseRef-cc-haha-Community-Source-1.0
 homepage: https://cchaha.ai
 repo: https://github.com/NanmiCoder/cc-haha
 tier: standard
@@ -21,14 +21,14 @@ metrics:
   archived: false
 related: [cc-switch, codexplusplus]
 aliases: [cc-haha, Claude Code Haha]
-risk_notes: "MIT 许可可商用；桌面端发布包可能存在签名/公证差异，安装时需按系统提示确认来源；模型 API Key、会话与本地配置存于本机；Computer Use、权限模式与工作流可执行真实系统操作，应在受控环境逐步授权；调试 CLI 需要 Bun 运行时。"
+risk_notes: "许可证为自定义的 cc-haha Community Source License 1.0（源可用，非 OSI，LICENSE 明文写明不是 MIT/Apache）：个人使用免费，第三方商业或企业内使用需向作者取得授权；桌面端发布包可能存在签名/公证差异，安装时需按系统提示确认来源；模型 API Key、会话与本地配置存于本机；Computer Use、权限模式与工作流可执行真实系统操作，应在受控环境逐步授权；调试 CLI 需要 Bun 运行时。"
 added_at: "2026-09-11"
-updated_at: "2026-09-11"
+updated_at: "2026-10-28"
 ---
 
 # Claude Code Haha 桌面工作台
 
-> 桌面端 Claude Code / Agent 工作台，把多会话、Diff、MCP、子代理与远程接入集中管理。上游：[NanmiCoder/cc-haha](https://github.com/NanmiCoder/cc-haha) · 许可证：MIT
+> 桌面端 Claude Code / Agent 工作台，把多会话、Diff、MCP、子代理与远程接入集中管理。上游：[NanmiCoder/cc-haha](https://github.com/NanmiCoder/cc-haha) · 许可证：cc-haha Community Source License 1.0（源可用，非 OSI）
 
 ## 这是什么
 
@@ -63,7 +63,7 @@ cp .env.example .env
 
 ## 注意事项
 
-- **许可证 MIT**：宽松可商用。
+- **许可证**：cc-haha Community Source License 1.0——源可用、非 OSI，个人使用免费，商业或企业内使用需向作者取得授权。
 - **安装提示**：正式 macOS 包应经过签名和公证；Windows 未签名包可能触发 SmartScreen，安装前请确认下载来源。
 - **能力边界**：Computer Use、权限模式、MCP 与 Workflow 可执行真实本机操作；建议先使用较严格的审批模式，逐步授权。
 - **文档**：完整文档见 [cchaha.ai](https://cchaha.ai)，安装、模型、CLI、架构与贡献指南均有分区。

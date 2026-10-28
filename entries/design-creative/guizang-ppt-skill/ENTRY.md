@@ -7,7 +7,7 @@ summary_zh: "歸藏出品的 AI Agent 网页 PPT 技能：生成单文件 HTML �
 summary_en: "AI Agent skill for single-file HTML slide decks: dual visual systems, 32 locked layouts, image generation, multi-platform covers, and presenter mode."
 category: design-creative
 mode: install
-tags: [pptx, ai-agent, claude-code, codex, short-video, social-media, cn-localization]
+tags: [pptx, ai-agent, claude-code, codex, social-media, cn-localization]
 languages: [markdown, html, css]
 doc_languages: [zh, en]
 license: AGPL-3.0
@@ -22,7 +22,7 @@ metrics:
 aliases: [guizang-ppt, 歸藏 PPT, web-ppt-skill]
 risk_notes: "AGPL-3.0 为强 Copyleft：对外提供网络服务需以 AGPL 开源衍生；单文件 HTML 适合演讲和展示，不适合多人协作编辑或大量表格数据；配图流程依赖 GPT-Image 2.0 / GPT-M 2.0（Codex 环境），其他 Agent 可用 Playwright 后验替代。"
 added_at: "2026-09-05"
-updated_at: "2026-09-05"
+updated_at: "2026-10-28"
 ---
 
 # Guizang PPT Skill 网页 PPT

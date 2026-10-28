@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "dataset_version": "261028c",
-  "generated_at": "2026-10-28T12:37:21Z",
+  "generated_at": "2026-10-28T12:47:37Z",
   "count": 96,
   "modes": [
     {
@@ -2301,7 +2301,6 @@
         "ai-agent",
         "claude-code",
         "codex",
-        "short-video",
         "social-media",
         "cn-localization"
       ],
@@ -2329,7 +2328,7 @@
       ],
       "risk_notes": "AGPL-3.0 为强 Copyleft：对外提供网络服务需以 AGPL 开源衍生；单文件 HTML 适合演讲和展示，不适合多人协作编辑或大量表格数据；配图流程依赖 GPT-Image 2.0 / GPT-M 2.0（Codex 环境），其他 Agent 可用 Playwright 后验替代。",
       "added_at": "2026-09-05",
-      "updated_at": "2026-09-05",
+      "updated_at": "2026-10-28",
       "verification_status": "verified",
       "health_score": 100,
       "stars": 28828,

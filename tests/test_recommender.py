@@ -40,6 +40,23 @@ def test_unknown_license_is_penalized_for_commercial_profile() -> None:
     assert "LICENSE_COMMERCIAL_RISK:-2" in scored.reasons
 
 
+def test_commercial_bucket_is_penalized_without_spdx_id() -> None:
+    entry = {
+        "id": "poly",
+        "category": "design-creative",
+        "tags": [],
+        "mode": "deploy",
+        "tier": "standard",
+        "license": "PolyForm-Noncommercial-1.0.0",
+        "license_bucket": "commercial",
+        "doc_languages": [],
+    }
+    commercial = ProjectProfile.from_dict({"commercial": True})
+    assert "LICENSE_COMMERCIAL_RISK:-2" in score_entry(entry, commercial).reasons
+    personal = ProjectProfile.from_dict({"commercial": False})
+    assert "LICENSE_COMMERCIAL_RISK:-2" not in score_entry(entry, personal).reasons
+
+
 def test_non_verified_entries_are_excluded() -> None:
     ids = [item.id for item in recommend(load_catalog(), load_profile(), limit=3)]
     assert "blocked-best-match" not in ids

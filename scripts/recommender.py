@@ -68,10 +68,14 @@ def score_entry(entry: dict, profile: ProjectProfile) -> ScoredEntry:
         score += 1
         reasons.append("TIER_STANDARD:+1")
     license_id = str(entry.get("license", "UNKNOWN"))
-    if profile.commercial and license_id in RESTRICTED_LICENSES:
+    # 契约里有 license_bucket 就以它为准，否则退回按协议名判断
+    bucket = str(entry.get("license_bucket") or "")
+    if not bucket:
+        bucket = "commercial" if license_id in RESTRICTED_LICENSES else "open" if license_id in OPEN_LICENSES else "unknown"
+    if profile.commercial and bucket in {"commercial", "unknown"}:
         score -= 2
         reasons.append("LICENSE_COMMERCIAL_RISK:-2")
-    elif license_id in OPEN_LICENSES:
+    elif bucket in {"open", "copyleft"}:
         score += 1
         reasons.append("LICENSE_MATCH:+1")
     if set(entry.get("doc_languages") or []) & set(profile.doc_languages):

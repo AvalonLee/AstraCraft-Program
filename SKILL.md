@@ -160,7 +160,7 @@ python scripts/recommender.py --catalog skills.json --profile profile.json --lim
 ### 数据更新（在线优先）
 
 - **数据源**：`https://avalonlee.github.io/AstraCraft-Program/data/skills.json`（单文件，含全部元数据与 `quickstart`）。
-- **优先联网**：每轮先拉最新版；缓存只是回退副本，不是主数据源。
+- **优先联网**：每轮先 `curl -fsSL -m 20 <数据源> -o <缓存路径>` 拉最新版；超时或失败按「联网失败」处理，再退回缓存。缓存只是回退副本，不是主数据源。
 - **缓存**：`~/.cache/astracraft-catalog/skills.json`（Windows：`%LOCALAPPDATA%/astracraft-catalog/skills.json`）。**这不是 skills 目录**，不会被注册成技能。
 - **回退顺序**：拉取失败 → 用已有缓存 → 没有缓存再用仓库内 `site/data/skills.json`；两种情况都要按「联网失败」的要求说明原因与数据日期。
 - **在仓库内工作时**：本地 `site/data/skills.json` 就是最新生成物，直接用；在线核验照常做。

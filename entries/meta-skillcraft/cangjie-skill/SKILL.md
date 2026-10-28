@@ -15,9 +15,9 @@ homepage: https://cangjie-skill.com
 repo: https://github.com/kangarooking/cangjie-skill
 tier: core
 metrics:
-  stars: 10538
-  pushed_at: "2026-09-13T04:12:02Z"
-  checked_at: "2026-09-24"
+  stars: 11821
+  pushed_at: "2026-10-02T03:17:52Z"
+  checked_at: "2026-10-28"
   archived: false
 aliases: [cangjie, 仓颉 Skill, book-to-skill]
 risk_notes: "蒸馏质量取决于源内容的方法论密度——并非所有内容都值得蒸馏，pipeline 内置晋级门筛选但低密度源产出可能偏薄；DeepSeek Harness 插件需校验 SHA256 后从本地 tarball 安装；v2.5.0 的 Capability Bundle 为单一真源，旧版 Registry v1 条目兼容但不完整。"
@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # Cangjie Skill 内容蒸馏为 Agent Skill
 
-> Finish reading, watching, or listening—and leave with a methodology you can invoke.上游：[kangarooking/cangjie-skill](https://github.com/kangarooking/cangjie-skill) · 许可证：MIT · 10.5k stars · [官网](https://cangjie-skill.com)
+> Finish reading, watching, or listening—and leave with a methodology you can invoke.上游：[kangarooking/cangjie-skill](https://github.com/kangarooking/cangjie-skill) · 许可证：MIT · 11.8k stars · [官网](https://cangjie-skill.com)
 
 ## 这是什么
 

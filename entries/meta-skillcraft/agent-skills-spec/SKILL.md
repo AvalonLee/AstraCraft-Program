@@ -15,9 +15,9 @@ homepage: https://agentskills.io/specification
 repo: https://github.com/anthropics/skills
 tier: standard
 metrics:
-  stars: 177926
-  pushed_at: "2026-09-22T17:16:36Z"
-  checked_at: "2026-09-24"
+  stars: 184254
+  pushed_at: "2026-10-09T18:45:52Z"
+  checked_at: "2026-10-28"
   archived: false
 related: [superpowers]
 aliases: [Agent Skills Specification, agentskills]

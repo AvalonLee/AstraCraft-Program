@@ -16,9 +16,9 @@ repo: https://github.com/iOfficeAI/OfficeCLI
 docs_url: https://github.com/iOfficeAI/OfficeCLI/wiki
 tier: core
 metrics:
-  stars: 31189
-  pushed_at: "2026-09-24T08:20:47Z"
-  checked_at: "2026-09-24"
+  stars: 32589
+  pushed_at: "2026-10-27T10:32:44Z"
+  checked_at: "2026-10-28"
   archived: false
 aliases: [office-cli, officecli-cli]
 risk_notes: "单二进制内嵌 .NET 运行时，无需额外安装；后台自动检查更新（可关），config 存于 ~/.officecli/config.json；resident 模式延迟磁盘写入，其他程序读取前需 officecli save 或 OFFICECLI_RESIDENT_FLUSH=each；源码构建需 .NET 10 SDK，但运行时不需要。"
@@ -28,7 +28,7 @@ updated_at: "2026-09-05"
 
 # OfficeCLI AI Office 套件
 
-> The world's first and the best Office suite designed for AI agents。上游：[iOfficeAI/OfficeCLI](https://github.com/iOfficeAI/OfficeCLI) · 许可证：Apache 2.0 · 31.2k stars · [officecli.ai](https://officecli.ai)
+> The world's first and the best Office suite designed for AI agents。上游：[iOfficeAI/OfficeCLI](https://github.com/iOfficeAI/OfficeCLI) · 许可证：Apache 2.0 · 32.6k stars · [officecli.ai](https://officecli.ai)
 
 ## 这是什么
 

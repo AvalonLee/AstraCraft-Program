@@ -15,9 +15,9 @@ homepage: https://github.com/dacnay816y62-hub/character-casting-studio-skill
 repo: https://github.com/dacnay816y62-hub/character-casting-studio-skill
 tier: standard
 metrics:
-  stars: 116
+  stars: 134
   pushed_at: "2026-09-05T21:32:58Z"
-  checked_at: "2026-09-24"
+  checked_at: "2026-10-28"
   archived: false
 related: []
 aliases: [角色 casting, 人物角色生成]

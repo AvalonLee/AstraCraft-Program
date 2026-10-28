@@ -15,9 +15,9 @@ homepage: https://github.com/zhu1090093659/deepseek-pp
 repo: https://github.com/zhu1090093659/deepseek-pp
 tier: standard
 metrics:
-  stars: 1871
+  stars: 1854
   pushed_at: "2026-08-13T17:19:34Z"
-  checked_at: "2026-09-24"
+  checked_at: "2026-10-28"
   archived: true
 related: [officecli]
 aliases: [DeepSeek++, deepseek-pp]

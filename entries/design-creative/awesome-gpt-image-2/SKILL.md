@@ -15,9 +15,9 @@ homepage: https://gpt-image2.canghe.ai
 repo: https://github.com/freestylefly/awesome-gpt-image-2
 tier: standard
 metrics:
-  stars: 33475
-  pushed_at: "2026-09-24T08:01:10Z"
-  checked_at: "2026-09-24"
+  stars: 35119
+  pushed_at: "2026-10-14T08:48:21Z"
+  checked_at: "2026-10-28"
   archived: false
 related: []
 aliases: [gpt-image2, prompt-as-code, gpt-image-2]

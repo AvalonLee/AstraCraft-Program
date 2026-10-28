@@ -16,9 +16,9 @@ repo: https://github.com/facebook/astryx
 docs_url: https://astryx.atmeta.com
 tier: core
 metrics:
-  stars: 13345
-  pushed_at: "2026-09-24T15:45:53Z"
-  checked_at: "2026-09-24"
+  stars: 13778
+  pushed_at: "2026-10-28T00:39:29Z"
+  checked_at: "2026-10-28"
   archived: false
 aliases: [astryx-design, Astryx DS]
 risk_notes: "Beta 状态，API 可能变动；需要 React 19+（peer dependency）；StyleX 为内部实现但消费者不可见，覆盖样式用 className 即可；agent 覆盖面依赖 init 写入的 AGENTS.md 块，新组件需重新运行 init 或手动更新。"
@@ -28,7 +28,7 @@ updated_at: "2026-09-05"
 
 # Astryx 设计系统
 
-> Meta 内部打磨八年、13,000+ apps 在用的设计系统，现在开源了。上游：[facebook/astryx](https://github.com/facebook/astryx) · 许可证：MIT · 13.3k stars · [文档](https://astryx.atmeta.com) · [Storybook](https://facebook.github.io/astryx/storybook/)
+> Meta 内部打磨八年、13,000+ apps 在用的设计系统，现在开源了。上游：[facebook/astryx](https://github.com/facebook/astryx) · 许可证：MIT · 13.8k stars · [文档](https://astryx.atmeta.com) · [Storybook](https://facebook.github.io/astryx/storybook/)
 
 ## 这是什么
 

@@ -15,9 +15,9 @@ homepage: https://marketing.chatfire.site/huobao-canvas/
 repo: https://github.com/chatfire-AI/huobao-canvas
 tier: standard
 metrics:
-  stars: 838
-  pushed_at: "2026-09-19T18:37:00Z"
-  checked_at: "2026-09-24"
+  stars: 904
+  pushed_at: "2026-10-25T17:17:51Z"
+  checked_at: "2026-10-28"
   archived: false
 related: []
 aliases: ["AI Canvas"]

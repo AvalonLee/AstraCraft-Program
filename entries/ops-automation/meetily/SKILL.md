@@ -15,9 +15,9 @@ homepage: https://meetily.ai
 repo: https://github.com/Zackriya-Solutions/meetily
 tier: core
 metrics:
-  stars: 31078
-  pushed_at: "2026-09-15T18:32:32Z"
-  checked_at: "2026-09-24"
+  stars: 32249
+  pushed_at: "2026-10-24T10:35:27Z"
+  checked_at: "2026-10-28"
   archived: false
 aliases: [meetily, meeting-minutes, Meetily AI]
 risk_notes: "100% 本地处理，但本地 LLM（Ollama）摘要质量取决于设备算力；转写模型首次需下载（Parakeet / Whisper），断网可用但首次配置需网络；PRO 版（付费）提供增强精度、高级导出和团队功能，社区版为 MIT。"
@@ -27,7 +27,7 @@ updated_at: "2026-09-05"
 
 # Meetily 隐私优先 AI 会议助手
 
-> Privacy-First AI Meeting Assistant。上游：[Zackriya-Solutions/meetily](https://github.com/Zackriya-Solutions/meetily) · 许可证：MIT · 31.1k stars · [官网](https://meetily.ai)
+> Privacy-First AI Meeting Assistant。上游：[Zackriya-Solutions/meetily](https://github.com/Zackriya-Solutions/meetily) · 许可证：MIT · 32.2k stars · [官网](https://meetily.ai)
 
 ## 这是什么
 

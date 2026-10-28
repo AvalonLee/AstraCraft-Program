@@ -15,9 +15,9 @@ homepage: https://ccswitch.io
 repo: https://github.com/farion1231/cc-switch
 tier: core
 metrics:
-  stars: 136390
-  pushed_at: "2026-09-24T14:43:18Z"
-  checked_at: "2026-09-24"
+  stars: 149386
+  pushed_at: "2026-10-27T16:28:11Z"
+  checked_at: "2026-10-28"
   archived: false
 related: [codexplusplus]
 aliases: [CCSwitch, cc-switch]
@@ -66,4 +66,4 @@ Windows / Linux 从 [GitHub Releases](https://github.com/farion1231/cc-switch/re
 - **最小侵入设计**：即使卸载 CC Switch，各 CLI 工具仍正常工作；系统始终保留一个活跃配置以防工具不可用。
 - **数据位置**：配置数据库在 `~/.cc-switch/cc-switch.db`，自动备份保留最近 10 份；Skills 软链到 `~/.cc-switch/skills/`。
 - **Wayland 兼容**：AppImage 默认强制 `GDK_BACKEND=x11`（XWayland），Wayland + NVIDIA 环境如遇黑屏可用 `CC_SWITCH_GDK_BACKEND=wayland` 回退原生 Wayland。
-- 维护非常活跃（2026-09 持续更新），当前 131,268 stars。
+- 维护非常活跃（2026-09 持续更新），当前 149.4k stars。

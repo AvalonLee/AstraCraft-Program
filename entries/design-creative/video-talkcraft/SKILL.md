@@ -15,9 +15,9 @@ homepage: https://github.com/Vincentwei1021/video-talkcraft
 repo: https://github.com/Vincentwei1021/video-talkcraft
 tier: standard
 metrics:
-  stars: 1214
-  pushed_at: "2026-09-22T14:37:01Z"
-  checked_at: "2026-09-24"
+  stars: 1816
+  pushed_at: "2026-10-12T05:29:10Z"
+  checked_at: "2026-10-28"
   archived: false
 related: [video-shotcraft, remotion-skills]
 aliases: [口播视频动效工作室, talkcraft]

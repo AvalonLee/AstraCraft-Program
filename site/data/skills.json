@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T00:38:07Z",
+  "generated_at": "2026-10-28T01:05:10Z",
   "count": 96,
   "categories": [
     {
@@ -2726,7 +2726,7 @@
         "PMAgent-Canvas",
         "PromptCard"
       ],
-      "risk_notes": "当前 main 为开发版本（不稳定，处于功能测试中），稳定基线请用 Git tag stable-2026-08-25；目前提供 Windows 桌面开发预览（start-desktop.vbs，非签名安装包）；核心模型依赖火山引擎（Seedream 5.0 Pro / Doubao Seed 2.0），调用按 API 计费；项目尚处早期（163 stars）。",
+      "risk_notes": "当前 main 为开发版本（不稳定，处于功能测试中），稳定基线请用 Git tag stable-2026-08-25；目前提供 Windows 桌面开发预览（start-desktop.vbs，非签名安装包）；核心模型依赖火山引擎（Seedream 5.0 Pro / Doubao Seed 2.0），调用按 API 计费；项目尚处早期（108 stars）。",
       "added_at": "2026-09-05",
       "updated_at": "2026-09-05",
       "install": "bash\ngit clone https://github.com/Aoye-3/PromptCard-AgentCanvas.git\ncd PromptCard-AgentCanvas\n# 双击 start-desktop.vbs 启动桌面壳",

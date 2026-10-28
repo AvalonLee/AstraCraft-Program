@@ -15,9 +15,9 @@ homepage: https://www.aishort.top
 repo: https://github.com/rockbenben/ChatGPT-Shortcut
 tier: standard
 metrics:
-  stars: 8730
-  pushed_at: "2026-08-29"
-  checked_at: "2026-08-30"
+  stars: 8873
+  pushed_at: "2026-10-09T11:08:00Z"
+  checked_at: "2026-10-28"
   archived: false
 related: []
 aliases: [chatgpt-shortcut, aishort, ai-short]

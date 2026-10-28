@@ -15,9 +15,9 @@ homepage: https://github.com/HKUDS/OpenOPC
 repo: https://github.com/HKUDS/OpenOPC
 tier: standard
 metrics:
-  stars: 1614
-  pushed_at: "2026-09-04T12:03:08Z"
-  checked_at: "2026-09-05"
+  stars: 2033
+  pushed_at: "2026-10-27T12:38:24Z"
+  checked_at: "2026-10-28"
   archived: false
 related: [codex, claude-code, mcp, multi-agent]
 aliases: [OpenOPC, opc, AI-Native Company]

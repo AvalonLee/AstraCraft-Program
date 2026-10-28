@@ -60,7 +60,7 @@
 
   <article id="body" class="content-panel detail-body" style="margin-top:24px;">
 <h1>MiniMax H3 Studio ComfyUI 图像工作流</h1>
-<blockquote>Turn MiniMax H3 into an actual image workflow for ComfyUI。上游：<a href="https://github.com/thaakeno/ComfyUI-MiniMax-H3-Studio" target="_blank" rel="noopener">thaakeno/ComfyUI-MiniMax-H3-Studio</a> · 许可证：MIT · 约 0.1k stars</blockquote>
+<blockquote>Turn MiniMax H3 into an actual image workflow for ComfyUI。上游：<a href="https://github.com/thaakeno/ComfyUI-MiniMax-H3-Studio" target="_blank" rel="noopener">thaakeno/ComfyUI-MiniMax-H3-Studio</a> · 许可证：MIT · 约 115 stars</blockquote>
 <h2>这是什么</h2>
 <p>H3 Studio 把 MiniMax H3 图像工作流所需的模型路由、参考条件、采样配置、帧选择、VAE 处理和提示词工具收进一个维护型节点套件：</p>
 <ul><li><strong>One Image Director</strong>：文生图、图生图和参考编辑共用一个界面，可选择比例/精确尺寸、采样配置、种子、运行时行为与帧策略。</li><li><strong>多参考控制</strong>：最多加入 9 张有序参考图，用 <code>@Image1</code>～<code>@Image9</code> 分别指定身份、姿态、服装、风格、构图、光线或环境等责任。</li><li><strong>快速路径</strong>：提供 Base 采样与 LightX/PDD 加速配置；主要快速 FL2VA 路径为 LightX v1.0 8-step，另有 4-step 与 REF2VA PDD 路径。</li><li><strong>Face Refine</strong>：先选择成品，再检测合格人脸，裁剪真实源区域走 H3 原生图像条件路径重绘，并用羽化/可选 SAM 掩膜融合回原图。</li><li><strong>提示词分层</strong>：区分像素分析、参考责任、生成指令与提示词编译，能把友好的 <code>@ImageN</code> 转成 H3 面向模型的 <code>&lt;Picture N&gt;</code>。</li><li><strong>Benchmark Lab</strong>：用受保护矩阵测试 Profile、分辨率和重复次数，执行前报告生成数量并阻止过大的矩阵。</li></ul>

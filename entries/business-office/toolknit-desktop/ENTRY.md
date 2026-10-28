@@ -15,9 +15,9 @@ homepage: https://toolknit.com
 repo: https://github.com/ZihangDong/toolknit-desktop
 tier: standard
 metrics:
-  stars: 1165
-  pushed_at: "2026-09-23T06:21:32Z"
-  checked_at: "2026-09-24"
+  stars: 1919
+  pushed_at: "2026-10-25T20:04:20Z"
+  checked_at: "2026-10-28"
   archived: false
 related: [officecli, anthropics-office-skills]
 aliases: [toolknit]

@@ -14,21 +14,24 @@
 
 ## 2026-10
 
+### 新增
+- **Onetake 一镜到底连贯动效视频技能（2026-10-28）**：收录 `design-creative/onetake`（PolyForm Noncommercial 1.0.0）。★3.4k 的 Claude Agent Skill，让 coding agent 拍「一镜到底」的产品发布影片与功能演示：全程一个连续镜头，每个节拍从上一拍自然生长，由连贯性 oracle 逐帧验收，解决 AI 生成视频「切幻灯片」式硬切；八步流程（解构参考 → 概念 → 分镜 → 素材/UI → 合成 → 渲染 → 音效 → 校验），产出 4K60 带真实 UI、运动模糊与音效。注意 PolyForm Noncommercial 仅限非商业用途（商用请用同类 Apache-2.0 条目 video-shotcraft）；依赖 Python 科学计算栈 + playwright + ffmpeg + Node；上游 2026-09-26 创建，尚属新项目。评级：常规。目录总数由 95 增至 **96**。
+
+### 更新
+
+- **4 条许可证按上游更正（2026-10-28）**：全量核验发现 4 条声明与上游 LICENSE 不一致，已按上游现状更新——`agent-infra/caveman` 整仓改为 Apache-2.0（原 MIT + BSL-1.1 拆分，上游已整仓开源）、`design-creative/directors-console` 由专有改为 MIT、`design-creative/toonflow` 由 Apache-2.0 改为 MIT；`agent-infra/codexplusplus` 保留 AGPL-3.0-only 的精确写法，核验器改为把 GitHub 返回的旧别名 `AGPL-3.0` 视为同一协议，不再误报冲突。
+
 ### 结构
 
 - **目录重新界定（2026-10-28）**：从「Agent Skill 索引」扩为「AI 开源项目索引」，收能被 Agent 安装、接入、部署运行或阅读参考的 AI 开源项目；明确不收模型权重、数据集、纯训练库与无使用路径的论文仓。**破坏性变更**：旧 `entries/**/SKILL.md` 路径失效，GitHub 不做重定向。
-  - **条目文件改名**：95 个 `entries/**/SKILL.md` → `ENTRY.md`，消除“条目会被 Agent 当成技能注册”的歧义；根 `SKILL.md` 仍是唯一可安装技能。
-  - **`kind` → `mode`**：消费方式四值 `install / connect / deploy / read`，单值主模式，判定顺序 install > deploy > connect > read；95 条全部重标。
+  - **条目文件改名**：96 个 `entries/**/SKILL.md` → `ENTRY.md`，消除“条目会被 Agent 当成技能注册”的歧义；根 `SKILL.md` 仍是唯一可安装技能。
+  - **`kind` → `mode`**：消费方式四值 `install / connect / deploy / read`，单值主模式，判定顺序 install > deploy > connect > read；全部条目重标。
   - **正文小节按 mode 分标题**：怎么安装 / 怎么接入 / 怎么部署运行 / 怎么阅读。
   - **分类减法**：`dsh` 并入 `agent-infra`（保留 `dsh` 标签），移除空分类 `data-analytics`；一级分类由 10 个减为 8 个。
   - **机器契约**：`site/data/skills.json` 升级为对外契约，新增 `schema_version`、`dataset_version`、`mode`、`verification_status`、`health_score`、`checked_at`、`quickstart`、`source_url`；harness 不再需要 clone 仓库。
   - **推荐技能**：改为拉取单文件 `skills.json`；一份 skill 支持“推荐”与“清单”两种模式；只推 `verified` 条目。
   - **核验**：`verify_upstreams.py` 新增 `--entries`，覆盖全部条目；`verification/catalog.json` 退役。
   - **验收**：README 可复述边界；只拉 JSON 可完成筛选与上手；同画像在 `install` 与 `deploy` 下返回不同结果。
-
-### 更新
-
-- **4 条许可证按上游更正（2026-10-28）**：全量核验发现 4 条声明与上游 LICENSE 不一致，已按上游现状更新——`agent-infra/caveman` 整仓改为 Apache-2.0（原 MIT + BSL-1.1 拆分，上游已整仓开源）、`design-creative/directors-console` 由专有改为 MIT、`design-creative/toonflow` 由 Apache-2.0 改为 MIT；`agent-infra/codexplusplus` 保留 AGPL-3.0-only 的精确写法，核验器改为把 GitHub 返回的旧别名 `AGPL-3.0` 视为同一协议，不再误报冲突。
 
 ---
 
@@ -84,6 +87,11 @@
 - **Visual Skills AI 影像导演技能集（2026-09-05）**：收录 `design-creative/visual-skills`（CC BY 4.0）。面向 Agent 的电影级 AI 影像导演技能集，`video` 负责先做戏剧结构再生成 Seedance / Kling / Veo 提示词，`image` 负责 Nano Banana / GPT Image 的分镜与关键帧。评级：常规。目录总数由 44 增至 **45**。
 
 ---
+
+### 更新
+- **全量刷新上游指标（2026-09-24）**：对 77 个带 `metrics` 块的条目重新拉取 GitHub 数据，76 条更新 `stars` 与 `pushed_at`，`checked_at` 统一置为 2026-09-24。涨幅居前：`awesome-gpt-image-2` 19,916→33,475、`openmontage` 50,726→61,149、`hyperframes` 44,054→52,821、`money-printer-turbo` 116,792→125,471、`weknora` 21,375→29,644；另把 `anthropics-office-skills`、`agent-skills-spec`、`dashi-ppt-skill` 三条 `stars: null` 补成实际值。
+- **两处上游已归档**：`design-creative/openscreen`（★39,966，末次推送 2026-06-17）与 `agent-infra/deepseek-pp`（★1,871，末次推送 2026-08-13）的 `metrics.archived` 由 false 改为 true。两者 tier 暂仍为 `standard`，是否按收录标准降为 `watch` 待维护者判定。
+- **正文写死的星号同步刷新**：条目详情页与 `skills.json` 不同，正文里的星号是手写进散文的（如 `> 上游：… · 44.1k stars`），不随 `metrics` 自动更新。本次把 27 个条目「当前状态」语义的星号（标题行与「维护活跃」句）改到实测值，千位以下改用实际数字（如 `约 0.3k` → `约 331`）；明确标注「截至 <日期> 核验」的历史陈述保持原样不动。
 
 ## 2026-08
 

@@ -15,10 +15,10 @@ homepage: https://github.com/siddharthvaddem/openscreen
 repo: https://github.com/siddharthvaddem/openscreen
 tier: standard
 metrics:
-  stars: 39904
-  pushed_at: "2026-06-17T02:34:20Z"
-  checked_at: "2026-09-05"
-  archived: false
+  stars: 39920
+  pushed_at: "2026-10-17T03:25:14Z"
+  checked_at: "2026-10-28"
+  archived: true
 aliases: [openscreen, Open Screen, Screen Studio alternative]
 risk_notes: "原作者已官宣即将归档（README 顶部 WARNING），社区 fork 由核心贡献者在 [EtienneLescot/openscreen](https://github.com/EtienneLescot/openscreen) 继续维护——长期使用建议关注 fork；不是 Screen Studio 1:1 克隆，覆盖核心功能但有 bug；macOS 需要 Screen Recording + Accessibility 权限，升级后需重置隐私权限。"
 added_at: "2026-09-05"

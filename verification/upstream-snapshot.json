@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T07:13:15Z",
+  "generated_at": "2026-10-28T07:37:20Z",
   "entries": {
     "0xsline-awesome-deepseek-harness": {
       "repo": "https://github.com/0xsline/awesome-deepseek-harness",
@@ -47,7 +47,7 @@
       "archived": false,
       "license": "MIT",
       "pushed_at": "2026-10-27T00:02:24Z",
-      "stars": 119344
+      "stars": 119345
     },
     "caveman": {
       "repo": "https://github.com/juliusbrussee/caveman",
@@ -58,8 +58,8 @@
       "issues": [],
       "archived": false,
       "license": "Apache-2.0",
-      "pushed_at": "2026-10-27T21:39:46Z",
-      "stars": 115605
+      "pushed_at": "2026-10-28T07:29:52Z",
+      "stars": 115610
     },
     "cc-haha": {
       "repo": "https://github.com/nanmicoder/cc-haha",
@@ -73,7 +73,7 @@
       "archived": false,
       "license": "NOASSERTION",
       "pushed_at": "2026-10-28T07:08:30Z",
-      "stars": 15204
+      "stars": 15205
     },
     "cc-switch": {
       "repo": "https://github.com/farion1231/cc-switch",
@@ -85,7 +85,7 @@
       "archived": false,
       "license": "MIT",
       "pushed_at": "2026-10-28T04:10:16Z",
-      "stars": 149531
+      "stars": 149547
     },
     "ccch1mneyyy-dsh-tui": {
       "repo": "https://github.com/ccch1mneyyy/dsh-tui",
@@ -96,8 +96,8 @@
       "issues": [],
       "archived": false,
       "license": "MIT",
-      "pushed_at": "2026-10-28T07:07:30Z",
-      "stars": 6038
+      "pushed_at": "2026-10-28T07:37:42Z",
+      "stars": 6040
     },
     "codex-taskboard": {
       "repo": "https://github.com/chuspeeism/dashi-taskboard",
@@ -109,7 +109,7 @@
       "archived": false,
       "license": "Apache-2.0",
       "pushed_at": "2026-10-21T06:35:21Z",
-      "stars": 3407
+      "stars": 3408
     },
     "codexplusplus": {
       "repo": "https://github.com/bigpizzav3/codexplusplus",
@@ -133,7 +133,7 @@
       "archived": false,
       "license": "MIT",
       "pushed_at": "2026-10-28T02:48:17Z",
-      "stars": 264120
+      "stars": 264151
     },
     "deepseek-pp": {
       "repo": "https://github.com/zhu1090093659/deepseek-pp",
@@ -159,7 +159,7 @@
       "archived": false,
       "license": "MIT",
       "pushed_at": "2026-10-28T03:30:34Z",
-      "stars": 9398
+      "stars": 9402
     },
     "kaneo": {
       "repo": "https://github.com/usekaneo/kaneo",
@@ -223,7 +223,7 @@
       "archived": false,
       "license": "NOASSERTION",
       "pushed_at": "2026-10-28T04:29:17Z",
-      "stars": 35713
+      "stars": 35714
     },
     "ai-job-search": {
       "repo": "https://github.com/madslorentzen/ai-job-search",
@@ -235,7 +235,7 @@
       "archived": false,
       "license": "MIT",
       "pushed_at": "2026-10-27T15:16:51Z",
-      "stars": 66906
+      "stars": 66914
     },
     "anthropics-office-skills": {
       "repo": "https://github.com/anthropics/skills",
@@ -249,7 +249,7 @@
       "archived": false,
       "license": "UNKNOWN",
       "pushed_at": "2026-10-09T18:45:52Z",
-      "stars": 184328
+      "stars": 184332
     },
     "chatgpt-shortcut": {
       "repo": "https://github.com/rockbenben/chatgpt-shortcut",
@@ -285,7 +285,7 @@
       "archived": false,
       "license": "Apache-2.0",
       "pushed_at": "2026-10-28T05:56:21Z",
-      "stars": 32661
+      "stars": 32665
     },
     "toolknit-desktop": {
       "repo": "https://github.com/zihangdong/toolknit-desktop",
@@ -299,7 +299,7 @@
       "archived": false,
       "license": "NOASSERTION",
       "pushed_at": "2026-10-25T20:04:20Z",
-      "stars": 1935
+      "stars": 1937
     },
     "abogen": {
       "repo": "https://github.com/denizsafak/abogen",
@@ -311,7 +311,7 @@
       "archived": false,
       "license": "MIT",
       "pushed_at": "2026-10-25T21:50:32Z",
-      "stars": 6167
+      "stars": 6168
     },
     "aigc-line": {
       "repo": "https://github.com/zhangtuo723/aigc_line",
@@ -349,7 +349,7 @@
       "archived": false,
       "license": "MIT",
       "pushed_at": "2026-08-21T21:29:50Z",
-      "stars": 73977
+      "stars": 73976
     },
     "arcreel": {
       "repo": "https://github.com/arcreel/arcreel",
@@ -365,14 +365,14 @@
     },
     "astryx": {
       "repo": "https://github.com/facebook/astryx",
-      "head_sha": "7ec7e0ac72b70f6f5deb34d0933a02677dc53169",
+      "head_sha": "dc5a8cff711807f98648e3108aa17a1c8d610a73",
       "status": "verified",
       "health_score": 100,
       "max_tier": "core",
       "issues": [],
       "archived": false,
       "license": "MIT",
-      "pushed_at": "2026-10-28T07:09:12Z",
+      "pushed_at": "2026-10-28T07:39:12Z",
       "stars": 13782
     },
     "awesome-design-md-cn": {
@@ -399,7 +399,7 @@
       "archived": false,
       "license": "MIT",
       "pushed_at": "2026-10-14T08:48:21Z",
-      "stars": 35136
+      "stars": 35139
     },
     "bigbanana-ai-director": {
       "repo": "https://github.com/shuyu-labs/bigbanana-ai-director",
@@ -451,7 +451,7 @@
       "archived": false,
       "license": "Apache-2.0",
       "pushed_at": "2026-10-10T11:04:24Z",
-      "stars": 3146
+      "stars": 3148
     },
     "cinema-dna-21x9x3": {
       "repo": "https://github.com/dacnay816y62-hub/cinema-dna-21x9x3",
@@ -549,7 +549,7 @@
       "archived": false,
       "license": "MIT",
       "pushed_at": "2026-10-11T13:58:36Z",
-      "stars": 50822
+      "stars": 50824
     },
     "fantasy-life-force-portrait-photography": {
       "repo": "https://github.com/dacnay816y62-hub/fantasy-life-force-portrait-photography",
@@ -577,7 +577,7 @@
       "archived": false,
       "license": "UNKNOWN",
       "pushed_at": "2026-04-13T13:08:58Z",
-      "stars": 29839
+      "stars": 29842
     },
     "guizang-ppt-skill": {
       "repo": "https://github.com/op7418/guizang-ppt-skill",
@@ -589,7 +589,7 @@
       "archived": false,
       "license": "AGPL-3.0",
       "pushed_at": "2026-08-07T03:58:08Z",
-      "stars": 28820
+      "stars": 28822
     },
     "hell-grind-aigc-skill": {
       "repo": "https://github.com/renmu2017/hell-grind-aigc-skill",
@@ -613,7 +613,7 @@
       "archived": false,
       "license": "MIT",
       "pushed_at": "2026-10-23T15:32:08Z",
-      "stars": 27833
+      "stars": 27838
     },
     "huobao-canvas": {
       "repo": "https://github.com/chatfire-ai/huobao-canvas",
@@ -638,8 +638,8 @@
       "issues": [],
       "archived": false,
       "license": "Apache-2.0",
-      "pushed_at": "2026-10-28T07:18:08Z",
-      "stars": 74171
+      "pushed_at": "2026-10-28T07:39:40Z",
+      "stars": 74182
     },
     "infinitetalk": {
       "repo": "https://github.com/meigen-ai/infinitetalk",
@@ -687,7 +687,21 @@
       "archived": false,
       "license": "MIT",
       "pushed_at": "2026-10-28T03:38:17Z",
-      "stars": 135934
+      "stars": 135941
+    },
+    "onetake": {
+      "repo": "https://github.com/feitangyuan/onetake",
+      "head_sha": "013a61ac8d98883c73733f59c06e49e9ba444f14",
+      "status": "needs-review",
+      "health_score": 75,
+      "max_tier": "standard",
+      "issues": [
+        "E_LICENSE_UNKNOWN"
+      ],
+      "archived": false,
+      "license": "NOASSERTION",
+      "pushed_at": "2026-10-21T17:58:00Z",
+      "stars": 3403
     },
     "open-ai-canvas": {
       "repo": "https://github.com/ddcat-ai/open-ai-canvas",
@@ -699,7 +713,7 @@
       "archived": false,
       "license": "MIT",
       "pushed_at": "2026-10-27T15:44:41Z",
-      "stars": 1430
+      "stars": 1431
     },
     "open-storyboard-canvas": {
       "repo": "https://github.com/ganbo-gab/open-storyboard-canvas",
@@ -725,7 +739,7 @@
       "archived": false,
       "license": "MIT",
       "pushed_at": "2026-09-24T09:24:44Z",
-      "stars": 96566
+      "stars": 96568
     },
     "openmontage": {
       "repo": "https://github.com/calesthio/openmontage",
@@ -737,7 +751,7 @@
       "archived": false,
       "license": "AGPL-3.0",
       "pushed_at": "2026-10-24T00:49:34Z",
-      "stars": 72539
+      "stars": 72542
     },
     "openpencil": {
       "repo": "https://github.com/zseven-w/openpencil",
@@ -837,7 +851,7 @@
       "archived": false,
       "license": "MIT",
       "pushed_at": "2026-10-27T10:29:17Z",
-      "stars": 19666
+      "stars": 19672
     },
     "video-shotcraft": {
       "repo": "https://github.com/vincentwei1021/video-shotcraft",
@@ -849,7 +863,7 @@
       "archived": false,
       "license": "Apache-2.0",
       "pushed_at": "2026-10-17T17:50:53Z",
-      "stars": 14199
+      "stars": 14205
     },
     "video-talkcraft": {
       "repo": "https://github.com/vincentwei1021/video-talkcraft",
@@ -863,7 +877,7 @@
       "archived": false,
       "license": "NOASSERTION",
       "pushed_at": "2026-10-12T05:29:10Z",
-      "stars": 1838
+      "stars": 1841
     },
     "video-use": {
       "repo": "https://github.com/browser-use/video-use",
@@ -875,7 +889,7 @@
       "archived": false,
       "license": "MIT",
       "pushed_at": "2026-10-08T22:17:01Z",
-      "stars": 29989
+      "stars": 29990
     },
     "vimax": {
       "repo": "https://github.com/hkuds/vimax",
@@ -911,7 +925,7 @@
       "archived": false,
       "license": "MIT",
       "pushed_at": "2026-10-07T01:17:58Z",
-      "stars": 58818
+      "stars": 58819
     },
     "voxcpm": {
       "repo": "https://github.com/openbmb/voxcpm",
@@ -923,7 +937,7 @@
       "archived": false,
       "license": "Apache-2.0",
       "pushed_at": "2026-10-08T03:26:41Z",
-      "stars": 40759
+      "stars": 40761
     },
     "andrej-karpathy-skills": {
       "repo": "https://github.com/multica-ai/andrej-karpathy-skills",
@@ -937,7 +951,7 @@
       "archived": false,
       "license": "UNKNOWN",
       "pushed_at": "2026-04-20T10:05:04Z",
-      "stars": 225636
+      "stars": 225645
     },
     "wshobson-agents": {
       "repo": "https://github.com/wshobson/agents",
@@ -949,7 +963,7 @@
       "archived": false,
       "license": "MIT",
       "pushed_at": "2026-10-26T01:08:14Z",
-      "stars": 41898
+      "stars": 41900
     },
     "agent-skills-spec": {
       "repo": "https://github.com/anthropics/skills",
@@ -963,7 +977,7 @@
       "archived": false,
       "license": "UNKNOWN",
       "pushed_at": "2026-10-09T18:45:52Z",
-      "stars": 184328
+      "stars": 184332
     },
     "cangjie-skill": {
       "repo": "https://github.com/kangarooking/cangjie-skill",
@@ -987,7 +1001,7 @@
       "archived": false,
       "license": "MIT",
       "pushed_at": "2026-10-24T18:47:51Z",
-      "stars": 5401
+      "stars": 5403
     },
     "meetily": {
       "repo": "https://github.com/zackriya-solutions/meetily",
@@ -1000,7 +1014,7 @@
       ],
       "archived": false,
       "license": "MIT",
-      "pushed_at": "2026-10-24T10:35:27Z",
+      "pushed_at": "2026-10-28T07:27:46Z",
       "stars": 32261
     },
     "trek": {
@@ -1027,7 +1041,7 @@
       "archived": false,
       "license": "Apache-2.0",
       "pushed_at": "2026-10-10T22:03:53Z",
-      "stars": 30323
+      "stars": 30328
     },
     "crawl4ai": {
       "repo": "https://github.com/unclecode/crawl4ai",
@@ -1041,7 +1055,7 @@
       "archived": false,
       "license": "Apache-2.0",
       "pushed_at": "2026-10-26T13:15:13Z",
-      "stars": 86428
+      "stars": 86430
     },
     "future-house-paper-qa": {
       "repo": "https://github.com/future-house/paper-qa",
@@ -1065,7 +1079,7 @@
       "archived": false,
       "license": "MIT",
       "pushed_at": "2026-10-26T09:36:15Z",
-      "stars": 55005
+      "stars": 55010
     },
     "mediacrawler": {
       "repo": "https://github.com/nanmicoder/mediacrawler",
@@ -1080,7 +1094,7 @@
       "archived": false,
       "license": "NOASSERTION",
       "pushed_at": "2026-10-27T00:36:40Z",
-      "stars": 68792
+      "stars": 68794
     },
     "microsoft-rd-agent": {
       "repo": "https://github.com/microsoft/rd-agent",
@@ -1092,7 +1106,7 @@
       "archived": false,
       "license": "MIT",
       "pushed_at": "2026-10-21T16:01:22Z",
-      "stars": 15108
+      "stars": 15110
     },
     "stanford-oval-storm": {
       "repo": "https://github.com/stanford-oval/storm",
@@ -1116,7 +1130,7 @@
       "archived": false,
       "license": "AGPL-3.0",
       "pushed_at": "2026-09-12T14:13:08Z",
-      "stars": 10105
+      "stars": 10107
     },
     "drama-skills": {
       "repo": "https://github.com/zenstory-ai/drama-skills",
@@ -1128,7 +1142,7 @@
       "archived": false,
       "license": "MIT",
       "pushed_at": "2026-10-20T19:23:14Z",
-      "stars": 3456
+      "stars": 3457
     },
     "huashu-skills": {
       "repo": "https://github.com/alchaincyf/huashu-skills",
@@ -1140,7 +1154,7 @@
       "archived": false,
       "license": "MIT",
       "pushed_at": "2026-10-26T05:46:06Z",
-      "stars": 2066
+      "stars": 2068
     },
     "humanizer-zh": {
       "repo": "https://github.com/op7418/humanizer-zh",
@@ -1152,7 +1166,7 @@
       "archived": false,
       "license": "MIT",
       "pushed_at": "2026-09-23T02:24:28Z",
-      "stars": 21272
+      "stars": 21283
     },
     "oh-story-claudecode": {
       "repo": "https://github.com/zenstory-ai/oh-story-claudecode",
@@ -1164,7 +1178,7 @@
       "archived": false,
       "license": "MIT",
       "pushed_at": "2026-10-26T15:38:49Z",
-      "stars": 8075
+      "stars": 8076
     },
     "shuohao-skills": {
       "repo": "https://github.com/eternityspring/shuohao-skills",
@@ -1176,7 +1190,7 @@
       "archived": false,
       "license": "Apache-2.0",
       "pushed_at": "2026-10-26T03:32:47Z",
-      "stars": 5604
+      "stars": 5606
     },
     "zenstory": {
       "repo": "https://github.com/zenstory-ai/zenstory",

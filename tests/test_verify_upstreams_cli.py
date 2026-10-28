@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 
 from scripts import verify_upstreams
+from scripts._common import discover_entries
 from scripts.verify_upstreams import build_snapshot, candidate_entries, main, merge_snapshots, reconcile_placeholder_conflicts, write_snapshot_atomic
 
 
@@ -204,7 +205,7 @@ def test_reconcile_removes_only_obsolete_unknown_placeholder_conflict() -> None:
 def test_entries_catalog_covers_all_entries() -> None:
     records = verify_upstreams.entries_catalog()
 
-    assert len(records) == 95
+    assert len(records) == len(discover_entries())
     assert all(record["repo"].startswith("https://github.com/") for record in records)
     assert {record["category"] for record in records} <= {
         "writing-docs", "dev-engineering", "design-creative", "research-intel",

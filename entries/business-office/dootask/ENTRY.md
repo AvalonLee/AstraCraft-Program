@@ -15,9 +15,9 @@ homepage: https://www.dootask.com
 repo: https://github.com/kuaifan/dootask
 tier: standard
 metrics:
-  stars: 5583
-  pushed_at: "2026-09-13T01:09:13Z"
-  checked_at: "2026-09-24"
+  stars: 5602
+  pushed_at: "2026-10-25T13:04:05Z"
+  checked_at: "2026-10-28"
   archived: false
 related: [kaneo, codex-taskboard]
 aliases: []

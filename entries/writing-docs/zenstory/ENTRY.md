@@ -16,9 +16,9 @@ repo: https://github.com/zenstory-ai/zenstory
 tier: standard
 featured: true
 metrics:
-  stars: 35
-  pushed_at: "2026-08-25T11:21:09Z"
-  checked_at: "2026-08-26"
+  stars: 78
+  pushed_at: "2026-10-27T09:59:22Z"
+  checked_at: "2026-10-28"
   archived: false
 related: []
 aliases: [小说写作工作台, 故事创作]

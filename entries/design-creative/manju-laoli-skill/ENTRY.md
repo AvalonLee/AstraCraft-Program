@@ -15,9 +15,9 @@ homepage: https://github.com/lixiaoxiao9888-create/manju-laoli-skill
 repo: https://github.com/lixiaoxiao9888-create/manju-laoli-skill
 tier: watch
 metrics:
-  stars: 0
-  pushed_at: "2026-08-28"
-  checked_at: "2026-08-30"
+  stars: 1722
+  pushed_at: "2026-10-21T02:06:32Z"
+  checked_at: "2026-10-28"
   archived: false
 related: [shuohao-skills, huashu-skills]
 aliases: [漫剧老李, Short-Drama Director Suite, short-drama-director]

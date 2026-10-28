@@ -15,9 +15,9 @@ homepage: https://aitoearn.ai/
 repo: https://github.com/yikart/AiToEarn
 tier: standard
 metrics:
-  stars: 25715
-  pushed_at: "2026-08-15T15:20:35Z"
-  checked_at: "2026-09-05"
+  stars: 26974
+  pushed_at: "2026-10-20T10:49:01Z"
+  checked_at: "2026-10-28"
   archived: false
 related: [money-printer-turbo, staffdeck]
 aliases: [AiToEarn, aitoearn-ai]

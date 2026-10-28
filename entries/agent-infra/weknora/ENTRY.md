@@ -15,9 +15,9 @@ homepage: https://weknora.weixin.qq.com
 repo: https://github.com/Tencent/WeKnora
 tier: standard
 metrics:
-  stars: 21375
-  pushed_at: "2026-09-04T09:35:26Z"
-  checked_at: "2026-09-05"
+  stars: 35661
+  pushed_at: "2026-10-27T06:30:27Z"
+  checked_at: "2026-10-28"
   archived: false
 related: []
 aliases: [weknora, tencent-weknora]

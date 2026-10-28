@@ -15,9 +15,9 @@ homepage: https://github.com/TencentCloud/TencentDB-Agent-Memory
 repo: https://github.com/TencentCloud/TencentDB-Agent-Memory
 tier: standard
 metrics:
-  stars: 21060
-  pushed_at: "2026-08-11T12:12:06Z"
-  checked_at: "2026-08-13"
+  stars: 30029
+  pushed_at: "2026-10-26T14:09:03Z"
+  checked_at: "2026-10-28"
   archived: false
 related: []
 aliases: [TencentDB Agent Memory, tencent-agent-memory]

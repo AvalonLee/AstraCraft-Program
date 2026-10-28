@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "dataset_version": "261028c",
-  "generated_at": "2026-10-28T08:28:43Z",
+  "generated_at": "2026-10-28T08:32:37Z",
   "count": 96,
   "modes": [
     {
@@ -326,7 +326,7 @@
         "en"
       ],
       "license": "LicenseRef-cc-haha-Community-Source-1.0",
-      "license_bucket": "unknown",
+      "license_bucket": "commercial",
       "homepage": "https://cchaha.ai",
       "repo": "https://github.com/NanmiCoder/cc-haha",
       "tier": "standard",
@@ -519,7 +519,7 @@
         "en"
       ],
       "license": "AGPL-3.0-only",
-      "license_bucket": "unknown",
+      "license_bucket": "copyleft",
       "homepage": "https://codexpp.cc/",
       "repo": "https://github.com/BigPizzaV3/CodexPlusPlus",
       "tier": "standard",
@@ -1201,7 +1201,7 @@
         "en"
       ],
       "license": "PolyForm-Noncommercial-1.0.0",
-      "license_bucket": "unknown",
+      "license_bucket": "commercial",
       "homepage": "https://toolknit.com",
       "repo": "https://github.com/ZihangDong/toolknit-desktop",
       "tier": "standard",
@@ -1625,7 +1625,7 @@
         "ja"
       ],
       "license": "LicenseRef-BigBanana-Community-1.0",
-      "license_bucket": "unknown",
+      "license_bucket": "commercial",
       "homepage": "https://director.tree456.com/",
       "repo": "https://github.com/shuyu-labs/BigBanana-AI-Director",
       "tier": "standard",
@@ -2217,7 +2217,7 @@
         "en"
       ],
       "license": "LicenseRef-GSAP-Standard-No-Charge",
-      "license_bucket": "unknown",
+      "license_bucket": "commercial",
       "homepage": "https://gsap.com",
       "repo": "https://github.com/greensock/GSAP",
       "tier": "core",
@@ -2706,7 +2706,7 @@
         "zh"
       ],
       "license": "PolyForm-Noncommercial-1.0.0",
-      "license_bucket": "unknown",
+      "license_bucket": "commercial",
       "homepage": "https://github.com/feitangyuan/onetake",
       "repo": "https://github.com/feitangyuan/onetake",
       "tier": "standard",
@@ -3421,7 +3421,7 @@
         "en"
       ],
       "license": "PolyForm-Noncommercial-1.0.0",
-      "license_bucket": "unknown",
+      "license_bucket": "commercial",
       "homepage": "https://github.com/Vincentwei1021/video-talkcraft",
       "repo": "https://github.com/Vincentwei1021/video-talkcraft",
       "tier": "standard",
@@ -4208,7 +4208,7 @@
         "es"
       ],
       "license": "LicenseRef-NC-Learning",
-      "license_bucket": "unknown",
+      "license_bucket": "commercial",
       "homepage": "https://github.com/NanmiCoder/MediaCrawler",
       "repo": "https://github.com/NanmiCoder/MediaCrawler",
       "tier": "standard",

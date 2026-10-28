@@ -306,12 +306,17 @@ LICENSE_BUCKETS = {
     "Python-2.0": "open", "MS-PL": "open", "WTFPL": "open",
     "CC-BY-4.0": "open", "CC-BY-3.0": "open",
     # 部分开源（Copyleft / 衍生约束）
-    "GPL-2.0": "copyleft", "GPL-3.0": "copyleft", "AGPL-3.0": "copyleft",
+    "GPL-2.0": "copyleft", "GPL-3.0": "copyleft", "AGPL-3.0": "copyleft", "AGPL-3.0-only": "copyleft",
     "LGPL-2.1": "copyleft", "LGPL-3.0": "copyleft", "MPL-2.0": "copyleft",
     "EPL-2.0": "copyleft", "EPL-1.0": "copyleft", "OSL-3.0": "copyleft",
     "EUPL-1.2": "copyleft", "CDDL-1.0": "copyleft", "CeCILL-2.1": "copyleft",
     # 商用授权（专有 / 源码可见但受限）
     "LicenseRef-Anthropic-Source-Available": "commercial",
+    "LicenseRef-BigBanana-Community-1.0": "commercial",
+    "LicenseRef-cc-haha-Community-Source-1.0": "commercial",
+    "LicenseRef-GSAP-Standard-No-Charge": "commercial",
+    "LicenseRef-NC-Learning": "commercial",
+    "PolyForm-Noncommercial-1.0.0": "commercial",
     "Commercial": "commercial", "Proprietary": "commercial",
     "CC-BY-NC-4.0": "commercial", "CC-BY-NC-SA-4.0": "commercial",
     "BUSL-1.1": "commercial", "SSPL-1.0": "commercial",

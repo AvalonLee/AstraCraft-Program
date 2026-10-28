@@ -1,7 +1,18 @@
 import json
 from pathlib import Path
 
-from scripts.gen_site import outputs_match
+from scripts._common import discover_entries
+from scripts.gen_site import license_bucket, outputs_match
+
+
+def test_every_declared_license_maps_to_a_bucket() -> None:
+    unmapped = {
+        entry.meta["license"]
+        for entry in discover_entries()
+        if entry.meta.get("license") not in (None, "", "UNKNOWN")
+        and license_bucket(entry.meta["license"]) == "unknown"
+    }
+    assert unmapped == set()
 
 
 def test_generated_timestamp_does_not_cause_site_drift(tmp_path: Path) -> None:

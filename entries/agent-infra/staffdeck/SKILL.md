@@ -15,9 +15,9 @@ homepage: https://staffdeck.openbmb.cn/
 repo: https://github.com/OpenBMB/StaffDeck
 tier: standard
 metrics:
-  stars: 1948
-  pushed_at: "2026-09-23T09:56:16Z"
-  checked_at: "2026-09-24"
+  stars: 2106
+  pushed_at: "2026-10-26T01:19:26Z"
+  checked_at: "2026-10-28"
   archived: false
 related: []
 aliases: [staffdeck, digital-employee-platform]

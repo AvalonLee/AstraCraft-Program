@@ -20,6 +20,7 @@
 - **发布（2026-10-29）**：三个新条目经 PR #62/#63/#64 合入 `dev`、PR #65 发往 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261029c`，共 99 条。
 - **发布（2026-10-29，第二次）**：六条目批次与核验快照刷新经 PR #67/#68 合入 `dev`、PR #69 发往 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261029e`，共 105 条，九个新条目全部 `verified`。
 - **发布（2026-10-29，第三次）**：新条目收录（#71）与建库期陈旧文件清理（#72）经 PR #71/#72 合入 `dev`、PR #73 发往 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261029g`，共 106 条。
+- **发布（2026-10-29，第四次）**：五条目批次（mythpen / we-article / rea / reverse-skill / pentagi）经 PR #75–#78 合入 `dev`、PR #79 发往 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261029k`，共 111 条。
 
 ### 新增
 - **reverse-skill 安全技能路由包（2026-10-29）**：收录 `dev-engineering/reverse-skill`（MIT）。★43.7k 的装给 AI 代码客户端的安全技能路由包：遇到 APK / 二进制 / 前端 JS 加密 / CTF / 渗透目标时按 44 条路由规则（R0–R45）导向正确方法论与工具链（jadx、Frida、IDA、BurpSuite 等），带 175 例回归基准、Windows / Ubuntu 跨平台 CI、按需自举工具链与自动进化经验库，支持 Claude Code / Codex / Cursor / Cline / Kiro。`git clone` 后按平台刷新工具索引即可挂载。注意双用途能力——工作流强制先经 scope.md 登记授权范围才可对目标动手，勿绕过；商业工具须自行合法取得；Windows 主场；上游 2026-09-22 后暂无推送。评级：常规。

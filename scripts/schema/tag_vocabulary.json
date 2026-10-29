@@ -87,7 +87,9 @@
     "canvas",
     "voice",
     "comfyui",
-    "image-generation"
+    "image-generation",
+    "image-editing",
+    "image-matting"
   ],
   "aliases": {
     "claude": "claude-code",

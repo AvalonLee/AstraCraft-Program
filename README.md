@@ -7,7 +7,7 @@
 一个轻量、中文为主的 AI 开源项目索引：每个条目只存一份 `ENTRY.md`（介绍 + 上手指令），
 按「装进 Agent / 接入 Agent / 部署运行 / 阅读参考」四种消费方式组织。不收录上游源码快照。
 
-[![entries](https://img.shields.io/badge/entries-96-blue.svg)](site/index.html)
+[![entries](https://img.shields.io/badge/entries-97-blue.svg)](site/index.html)
 [![license](https://img.shields.io/badge/docs-CC%20BY%204.0-blue.svg)](LICENSE)
 [![code license](https://img.shields.io/badge/code-MIT-green.svg)](LICENSE)
 [![CI: index-check](https://github.com/AvalonLee/AstraCraft-Program/actions/workflows/index-check.yml/badge.svg)](https://github.com/AvalonLee/AstraCraft-Program/actions/workflows/index-check.yml)

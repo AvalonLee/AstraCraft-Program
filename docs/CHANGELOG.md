@@ -18,8 +18,10 @@
 
 - **发布（2026-10-28）**：本次重界定经 PR #56 合入 `dev`、PR #57 合入 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261028c`，共 96 条。
 - **发布（2026-10-29）**：三个新条目经 PR #62/#63/#64 合入 `dev`、PR #65 发往 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261029c`，共 99 条。
+- **发布（2026-10-29，第二次）**：六条目批次与核验快照刷新经 PR #67/#68 合入 `dev`、PR #69 发往 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261029e`，共 105 条，九个新条目全部 `verified`。
 
 ### 新增
+- **Background Removal JS 浏览器端抠图库（2026-10-29）**：收录 `design-creative/background-removal-js`（AGPL-3.0）。★7.4k 的 IMG.LY 开源抠图库：ONNX Runtime + ISNet 分割模型在浏览器 / Node.js 本地推理，图片不上传、无按张计费，`npm install @imgly/background-removal` 一行接入（浏览器包需 peer 依赖 onnxruntime-web@1.21.0，Node 端用独立包 background-removal-node），支持前景 / 背景 / 蒙版三种输出、WebGPU 加速与量化小模型，模型资产默认 IMG.LY CDN 托管、可自托管。注意 AGPL-3.0——闭源商业集成需购买授权或按协议开源；首次运行需从默认 CDN 下载约 40–80MB 模型；上游最后推送 2025-07、更新放缓但未归档。评级：常规。目录总数由 105 增至 **106**。
 - **House Plan Designer 户型图设计器技能（2026-10-29）**：收录 `design-creative/house-plan-designer`（MIT）。★217 的 Agent Skill：一张户型图（图片 / PDF / CAD DXF）交给 Agent，自动量墙识图、补全门窗房间与家具水电，生成双击即开的单文件 HTML 装修设计器——2D 布置、3D 漫游、五类管线自动排布分开导出、光线追踪出图、导出国标 DXF 施工图，离线可用；也支持整套 CAD 布置图还原办公 / 商业楼层。注意上游建议不要用豆包等弱工具型模型跑满血流程，算量报价仅供参考。评级：常规。
 - **WeDraft 公众号排版技能（2026-10-29）**：收录 `writing-docs/wedraft`（MIT）。★37 的小哈公社公众号 Markdown 排版工具：网页 / macOS / CLI / MCP / Skill 五形态共用排版核心，七款模板一键换风格、双向实时预览、复制前问题检查；AI 一句话排版成微信富文本，只管排版不自动发布。注意公开网页版为测试版（源码准备 0.2.0），安装器当前支持 macOS / Linux。评级：常规。
 - **Slate（场记）短片制作与拉片工作台（2026-10-29）**：收录 `design-creative/slate`（MIT）。★51 的本地 Web 工作台：分镜 JSON 为唯一制作数据，制作线（剧本 → 角色 → 素材 → 分镜 → 镜头 → 三层视频）与拉片线（影片解构、台词 OCR/ASR、逐帧提取、深度动作）双主线，接本地 ComfyUI 与云端 API，数据全存本机。注意目前主要支持 Windows 本机部署，Python 需 uv 固定 3.12 锁文件，服务监听 0.0.0.0:8775 勿直接暴露公网。评级：常规。
@@ -43,6 +45,15 @@
 - **推荐口径收紧（2026-10-28）**：观察期（`tier: watch`）条目只进清单、不进推荐；`skills.json` 新增 `stars` 字段，推荐打分把 star 量级作为弱权重（≥1000 +1、<50 −1）。
 
 ### 结构
+
+- **陈旧文件清理与悬空引用修复（2026-10-29）**：对 8 月建库期遗留文件做引用链排查后清理——
+  - **删除一次性规划文档** `docs/superpowers/`（plans/specs 三份，描述的「五分类 + SKILL.md 模型」架构已被 2026-10-28 目录重新界定取代，且无任何引用）；
+  - **删除无引用的孤儿 schema** `scripts/schema/installable-skill.schema.json`、`upstream-snapshot.schema.json`（校验只加载 `meta.schema.json`，两文件全库无代码引用）；
+  - **删除一次性筛选产物** `verification/replacement-candidates.json`、`selection-report.json`（2026-08-27 候选筛选的输入/输出快照，结果已在 CHANGELOG 留档；`select_candidates.py` 与 `verify_upstreams.py --candidates` 工具链保留）；
+  - **删除孤儿配置** `mlc_config.json`（markdown-link-check 的配置，死链检查实际用 lychee + `.lycheeignore`）；
+  - **删除 8 个 `entries/*/.gitkeep`**（各分类均已有条目，占位文件失效）；
+  - **修复悬空引用**：根 `SKILL.md` 与 `agent-skills-spec` 条目的 `related` 指向 2026-08-28 已下架的 `superpowers` 条目，已移除；`report-issue.yml` 示例路径改用现行条目；
+  - **术语归位**：`license-policy.md`、`THIRD_PARTY_NOTICES.md`、`CODE_OF_CONDUCT.md` 中指代条目文件的旧称 `SKILL.md` 更正为 `ENTRY.md`（根目录 `SKILL.md` 本身的指称不受影响）；README 去掉过期的条目数硬编码。
 
 - **预览站与仓库维护优化（2026-10-28）**：承接同日预览站体验修复后的维护项——
   - **星数单一来源**：条目正文移除手写星数（约 36 个文件），详情页由核验快照自动渲染「上游状态」行（stars · 核验日期 · 归档标记），刷新指标时不再需要逐条改正文；

@@ -7,7 +7,7 @@
 一个轻量、中文为主的 AI 开源项目索引：每个条目只存一份 `ENTRY.md`（介绍 + 上手指令），
 按「装进 Agent / 接入 Agent / 部署运行 / 阅读参考」四种消费方式组织。不收录上游源码快照。
 
-[![entries](https://img.shields.io/badge/entries-105-blue.svg)](site/index.html)
+[![entries](https://img.shields.io/badge/entries-106-blue.svg)](site/index.html)
 [![license](https://img.shields.io/badge/docs-CC%20BY%204.0-blue.svg)](LICENSE)
 [![code license](https://img.shields.io/badge/code-MIT-green.svg)](LICENSE)
 [![CI: index-check](https://github.com/AvalonLee/AstraCraft-Program/actions/workflows/index-check.yml/badge.svg)](https://github.com/AvalonLee/AstraCraft-Program/actions/workflows/index-check.yml)
@@ -26,7 +26,7 @@
 
 ## 一句话装到你的 Agent
 
-不想翻库、不想手敲？把下面这句直接发给你的 AI Agent，它会只安装「天工精选」这**一份**技能（仓库根目录的 `SKILL.md` 单文件），不会把库里 96 个条目注册成技能：
+不想翻库、不想手敲？把下面这句直接发给你的 AI Agent，它会只安装「天工精选」这**一份**技能（仓库根目录的 `SKILL.md` 单文件），不会把库里的条目注册成技能：
 
 ```
 请安装天工计划的天工精选技能（AstraCraft Recommender，只装根目录 SKILL.md 这一份）：https://github.com/AvalonLee/AstraCraft-Program

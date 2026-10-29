@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T05:46:27Z",
+  "generated_at": "2026-10-29T06:28:28Z",
   "entries": {
     "0xsline-awesome-deepseek-harness": {
       "repo": "https://github.com/0xsline/awesome-deepseek-harness",
@@ -1373,6 +1373,18 @@
       "license": "MIT",
       "pushed_at": "2026-10-27T09:59:22Z",
       "stars": 80
+    },
+    "background-removal-js": {
+      "repo": "https://github.com/imgly/background-removal-js",
+      "head_sha": "12f56cc4f2a90d624e165a715748d22efc7a1d93",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "AGPL-3.0",
+      "pushed_at": "2025-07-18T12:56:39Z",
+      "stars": 7360
     }
   }
 }

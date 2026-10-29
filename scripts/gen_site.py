@@ -343,6 +343,7 @@ LICENSE_BUCKETS = {
     "EUPL-1.2": "copyleft", "CDDL-1.0": "copyleft", "CeCILL-2.1": "copyleft",
     # 商用需授权（专有 / 源码可见但受限）
     "LicenseRef-Anthropic-Source-Available": "commercial",
+    "LicenseRef-BeefTV-Source-Available-1.0": "commercial",
     "LicenseRef-BigBanana-Community-1.0": "commercial",
     "LicenseRef-cc-haha-Community-Source-1.0": "commercial",
     "LicenseRef-GSAP-Standard-No-Charge": "commercial",

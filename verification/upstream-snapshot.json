@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T06:28:28Z",
+  "generated_at": "2026-10-29T10:40:00Z",
   "entries": {
     "0xsline-awesome-deepseek-harness": {
       "repo": "https://github.com/0xsline/awesome-deepseek-harness",
@@ -1385,6 +1385,68 @@
       "license": "AGPL-3.0",
       "pushed_at": "2025-07-18T12:56:39Z",
       "stars": 7360
+    },
+    "mythpen": {
+      "repo": "https://github.com/niyongsheng/mythpen",
+      "head_sha": "6a54fb90094c38cd376facd0561a3c5907f8fbaa",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "GPL-3.0",
+      "pushed_at": "2026-10-28T01:26:30Z",
+      "stars": 74
+    },
+    "we-article": {
+      "repo": "https://github.com/hongqun/we-article",
+      "head_sha": "8b967fa59725c36d75980e9ddeb5cc6a95ab6987",
+      "status": "needs-review",
+      "health_score": 75,
+      "max_tier": "standard",
+      "issues": [
+        "E_LICENSE_UNKNOWN"
+      ],
+      "archived": false,
+      "license": "UNKNOWN",
+      "pushed_at": "2026-10-15T01:47:09Z",
+      "stars": 16
+    },
+    "rea": {
+      "repo": "https://github.com/morluto/rea",
+      "head_sha": "131fbe0754332cdcf6f2ce951dad3b026f982e8d",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "MIT",
+      "pushed_at": "2026-10-29T08:26:51Z",
+      "stars": 404489
+    },
+    "reverse-skill": {
+      "repo": "https://github.com/zhaoxuya520/reverse-skill",
+      "head_sha": "cab634bd855fc287f6e420c1f36fd1a6b9245960",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "MIT",
+      "pushed_at": "2026-09-22T06:43:21Z",
+      "stars": 43696
+    },
+    "pentagi": {
+      "repo": "https://github.com/vxcontrol/pentagi",
+      "head_sha": "cffed9485aa1cca70762cd08a57ac62a80406258",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "MIT",
+      "pushed_at": "2026-10-22T23:26:13Z",
+      "stars": 32692
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "dataset_version": "261029e",
-  "generated_at": "2026-10-29T05:54:47Z",
+  "dataset_version": "261029g",
+  "generated_at": "2026-10-29T06:56:59Z",
   "count": 105,
   "modes": [
     {
@@ -4270,9 +4270,7 @@
       "tier": "standard",
       "tier_label": "常规",
       "featured": false,
-      "related": [
-        "superpowers"
-      ],
+      "related": [],
       "aliases": [
         "Agent Skills Specification",
         "agentskills"

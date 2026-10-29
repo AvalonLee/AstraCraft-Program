@@ -15,7 +15,7 @@ doc_languages: [zh, en]
 license: CC-BY-4.0
 homepage: https://github.com/AvalonLee/AstraCraft-Program
 repo: https://github.com/AvalonLee/AstraCraft-Program
-related: [agent-skills-spec, superpowers]
+related: [agent-skills-spec]
 aliases: [AstraCraft Recommender, 天工精选]
 risk_notes: 推荐基于 LLM 对条目元数据的语义推理，非确定性召回；默认先联网核对最终候选的上游状态（只读 GitHub 公开元数据，不 clone、不写入、不安装），网络失败时回退本地数据并明确提示；库数据按需拉取 skills.json 到独立缓存目录（非 skills 目录）；不自动安装任何项目；只推荐 verified 且非观察期条目；推荐新项目仅限 GitHub 公开开源，经 Issue 模板提交、由维护者人工核验。
 added_at: "2026-08-27"

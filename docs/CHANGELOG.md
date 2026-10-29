@@ -45,6 +45,15 @@
 
 ### 结构
 
+- **陈旧文件清理与悬空引用修复（2026-10-29）**：对 8 月建库期遗留文件做引用链排查后清理——
+  - **删除一次性规划文档** `docs/superpowers/`（plans/specs 三份，描述的「五分类 + SKILL.md 模型」架构已被 2026-10-28 目录重新界定取代，且无任何引用）；
+  - **删除无引用的孤儿 schema** `scripts/schema/installable-skill.schema.json`、`upstream-snapshot.schema.json`（校验只加载 `meta.schema.json`，两文件全库无代码引用）；
+  - **删除一次性筛选产物** `verification/replacement-candidates.json`、`selection-report.json`（2026-08-27 候选筛选的输入/输出快照，结果已在 CHANGELOG 留档；`select_candidates.py` 与 `verify_upstreams.py --candidates` 工具链保留）；
+  - **删除孤儿配置** `mlc_config.json`（markdown-link-check 的配置，死链检查实际用 lychee + `.lycheeignore`）；
+  - **删除 8 个 `entries/*/.gitkeep`**（各分类均已有条目，占位文件失效）；
+  - **修复悬空引用**：根 `SKILL.md` 与 `agent-skills-spec` 条目的 `related` 指向 2026-08-28 已下架的 `superpowers` 条目，已移除；`report-issue.yml` 示例路径改用现行条目；
+  - **术语归位**：`license-policy.md`、`THIRD_PARTY_NOTICES.md`、`CODE_OF_CONDUCT.md` 中指代条目文件的旧称 `SKILL.md` 更正为 `ENTRY.md`（根目录 `SKILL.md` 本身的指称不受影响）；README 去掉过期的条目数硬编码。
+
 - **预览站与仓库维护优化（2026-10-28）**：承接同日预览站体验修复后的维护项——
   - **星数单一来源**：条目正文移除手写星数（约 36 个文件），详情页由核验快照自动渲染「上游状态」行（stars · 核验日期 · 归档标记），刷新指标时不再需要逐条改正文；
   - **生成物瘦身**：详情页 `site/skills/*.html` 停止提交（已列入 .gitignore），由部署工作流生成，仅 `site/data/skills.json` 入库作为离线兜底；漂移检查 `--check` 相应只比对 skills.json；

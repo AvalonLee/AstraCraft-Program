@@ -26,7 +26,7 @@
 
 ## 一句话装到你的 Agent
 
-不想翻库、不想手敲？把下面这句直接发给你的 AI Agent，它会只安装「天工精选」这**一份**技能（仓库根目录的 `SKILL.md` 单文件），不会把库里 96 个条目注册成技能：
+不想翻库、不想手敲？把下面这句直接发给你的 AI Agent，它会只安装「天工精选」这**一份**技能（仓库根目录的 `SKILL.md` 单文件），不会把库里的条目注册成技能：
 
 ```
 请安装天工计划的天工精选技能（AstraCraft Recommender，只装根目录 SKILL.md 这一份）：https://github.com/AvalonLee/AstraCraft-Program

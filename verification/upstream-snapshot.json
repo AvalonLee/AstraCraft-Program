@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T06:28:28Z",
+  "generated_at": "2026-10-29T08:05:00Z",
   "entries": {
     "0xsline-awesome-deepseek-harness": {
       "repo": "https://github.com/0xsline/awesome-deepseek-harness",
@@ -1385,6 +1385,18 @@
       "license": "AGPL-3.0",
       "pushed_at": "2025-07-18T12:56:39Z",
       "stars": 7360
+    },
+    "mythpen": {
+      "repo": "https://github.com/niyongsheng/mythpen",
+      "head_sha": "6a54fb90094c38cd376facd0561a3c5907f8fbaa",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "GPL-3.0",
+      "pushed_at": "2026-10-28T01:26:30Z",
+      "stars": 74
     }
   }
 }

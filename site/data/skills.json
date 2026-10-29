@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "dataset_version": "261029c",
-  "generated_at": "2026-10-29T01:44:42Z",
-  "count": 97,
+  "generated_at": "2026-10-29T02:07:44Z",
+  "count": 99,
   "modes": [
     {
       "value": "install",
@@ -1435,6 +1435,56 @@
       "quickstart": "npm install animejs",
       "detail_url": "skills/animejs.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/animejs/ENTRY.md"
+    },
+    {
+      "id": "answer-me-with-html",
+      "name_zh": "Answer me with HTML 网页讲解技能",
+      "name_en": "Answer me with HTML",
+      "summary_zh": "让 AI Agent 用一页可读的 HTML 回答复杂问题：Agent 只写 Markdown 草稿，技能内置 CLI 把它渲染成带 SVG 图解、对比表格与时间线的单文件页面，离线可用；上游基准显示写页 token 约为手写 HTML 的 1/8，还支持 3b1b 风格讲解视频。适配 Claude Code、Codex、Cursor、OpenCode 等。",
+      "summary_en": "An agent skill that answers hard questions with a one-page HTML you can actually read: the model writes only a Markdown draft, and a bundled CLI renders diagrams, tables and timelines.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "mode": "install",
+      "mode_label": "装进 Agent",
+      "tags": [
+        "ai-agent",
+        "claude-code",
+        "cli",
+        "skill",
+        "explainer"
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "doc_languages": [
+        "en",
+        "zh"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://answer-me-with-html.com/",
+      "repo": "https://github.com/QingYunA/answer-me-with-html",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "ai-agent",
+        "claude-code"
+      ],
+      "aliases": [
+        "Answer me with HTML",
+        "answer-me-with-html"
+      ],
+      "risk_notes": "上游 2026-10-02 创建、迭代很快，安装方式与行为可能随版本变化；生成的页面落盘在 ~/.answer-me-with-html/pages/，内容含提问与相关代码片段，注意隐私；token 与耗时节省为上游小样本自测基准（Claude Sonnet 5.5），随模型与问题而异。",
+      "added_at": "2026-10-29",
+      "updated_at": "2026-10-29",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "npx -y skills add QingYunA/answer-me-with-html -g -y -a claude-code",
+      "detail_url": "skills/answer-me-with-html.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/answer-me-with-html/ENTRY.md"
     },
     {
       "id": "arcreel",
@@ -3801,6 +3851,56 @@
       "quickstart": "/plugin marketplace add multica-ai/andrej-karpathy-skills\n/plugin install andrej-karpathy-skills@karpathy-skills",
       "detail_url": "skills/andrej-karpathy-skills.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/dev-engineering/andrej-karpathy-skills/ENTRY.md"
+    },
+    {
+      "id": "gitnexus",
+      "name_zh": "GitNexus 代码知识图谱",
+      "name_en": "GitNexus — Zero-Server Code Intelligence Engine",
+      "summary_zh": "把代码库索引成符号、调用、依赖与执行流的知识图谱，让编码 Agent 回答「谁调用这个函数」「这个改动影响什么」时有真实代码依据；npx 一条命令建索引，通过 MCP 工具、CLI 或网页图浏览器使用，支持 Claude Code、Cursor、Codex、Qoder 等编辑器。",
+      "summary_en": "Indexes a codebase into a knowledge graph of symbols, calls, dependencies and flows; query it from your coding agent via MCP tools, CLI, or a web graph explorer.",
+      "category_dir": "dev-engineering",
+      "category_name": "研发与代码",
+      "mode": "connect",
+      "mode_label": "接入 Agent",
+      "tags": [
+        "code-graph",
+        "mcp",
+        "cli",
+        "claude-code",
+        "codex",
+        "ai-agent"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_bucket": "commercial",
+      "homepage": "https://gitnexus.vercel.app",
+      "repo": "https://github.com/abhigyanpatwari/GitNexus",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "mcp",
+        "ai-agent"
+      ],
+      "aliases": [
+        "GitNexus",
+        "gitnexus"
+      ],
+      "risk_notes": "PolyForm Noncommercial 1.0.0 仅限非商业用途，商用需另行取得授权。analyze 默认会改写仓库内的 AGENTS.md / CLAUDE.md 并注册 Claude Code hooks，接入他人仓库前先确认这些集成文件的影响（--index-only 可只建索引）。图谱查询结果依赖语言支持与索引新鲜度，存在覆盖与歧义限制，重要重构决策仍需人工核对。",
+      "added_at": "2026-10-29",
+      "updated_at": "2026-10-29",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "# 建索引 + 安装 Agent 技能 + 注册 hooks + 写 AGENTS.md / CLAUDE.md\nnpx gitnexus analyze\n\n# 只建索引，不改仓库集成文件\nnpx gitnexus analyze --index-only\n\n# 检测并配置 MCP（可多选：claude-code,cursor,codex,qoder 等）\nnpx gitnexus setup",
+      "detail_url": "skills/gitnexus.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/dev-engineering/gitnexus/ENTRY.md"
     },
     {
       "id": "open-code-review",

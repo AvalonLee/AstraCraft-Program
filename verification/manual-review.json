@@ -25,6 +25,14 @@
       "reviewed_at": "2026-10-28",
       "evidence": "https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/docx/LICENSE.txt"
     },
+    "beeftv": {
+      "license": "LicenseRef-BeefTV-Source-Available-1.0",
+      "head_sha": "bdaa37fb9ceed6f3e67338ac02aa592c883b0e6e",
+      "evidence_path": "LICENSE",
+      "evidence_sha": "1d2dab287b73ead9aee94b57ab3f6dab211d0997",
+      "reviewed_at": "2026-10-29",
+      "evidence": "https://github.com/glanderness/BeefTV/blob/bdaa37fb9ceed6f3e67338ac02aa592c883b0e6e/LICENSE"
+    },
     "bigbanana-ai-director": {
       "license": "LicenseRef-BigBanana-Community-1.0",
       "head_sha": "ead7a5ca0513d7c225f72197ac78712a825a9ae9",
@@ -40,6 +48,14 @@
       "evidence_sha": "911fdae7fbbee635160e198d18d4a43402a01ca2",
       "reviewed_at": "2026-10-28",
       "evidence": "https://github.com/nanmicoder/cc-haha/blob/6d9d10f086ec772a9108b541407ea2f67b029c38/LICENSE"
+    },
+    "gitnexus": {
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "head_sha": "c2d9012b58f0a30eea5846507d0f6ce686fc7f70",
+      "evidence_path": "LICENSE",
+      "evidence_sha": "485af9b57b41e262e414d2791831f0d12823c6b4",
+      "reviewed_at": "2026-10-29",
+      "evidence": "https://github.com/abhigyanpatwari/GitNexus/blob/c2d9012b58f0a30eea5846507d0f6ce686fc7f70/LICENSE"
     },
     "gsap": {
       "license": "LicenseRef-GSAP-Standard-No-Charge",

@@ -19,6 +19,7 @@
 - **发布（2026-10-28）**：本次重界定经 PR #56 合入 `dev`、PR #57 合入 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261028c`，共 96 条。
 - **发布（2026-10-29）**：三个新条目经 PR #62/#63/#64 合入 `dev`、PR #65 发往 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261029c`，共 99 条。
 - **发布（2026-10-29，第二次）**：六条目批次与核验快照刷新经 PR #67/#68 合入 `dev`、PR #69 发往 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261029e`，共 105 条，九个新条目全部 `verified`。
+- **发布（2026-10-29，第三次）**：新条目收录（#71）与建库期陈旧文件清理（#72）经 PR #71/#72 合入 `dev`、PR #73 发往 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261029g`，共 106 条。
 
 ### 新增
 - **Background Removal JS 浏览器端抠图库（2026-10-29）**：收录 `design-creative/background-removal-js`（AGPL-3.0）。★7.4k 的 IMG.LY 开源抠图库：ONNX Runtime + ISNet 分割模型在浏览器 / Node.js 本地推理，图片不上传、无按张计费，`npm install @imgly/background-removal` 一行接入（浏览器包需 peer 依赖 onnxruntime-web@1.21.0，Node 端用独立包 background-removal-node），支持前景 / 背景 / 蒙版三种输出、WebGPU 加速与量化小模型，模型资产默认 IMG.LY CDN 托管、可自托管。注意 AGPL-3.0——闭源商业集成需购买授权或按协议开源；首次运行需从默认 CDN 下载约 40–80MB 模型；上游最后推送 2025-07、更新放缓但未归档。评级：常规。目录总数由 105 增至 **106**。

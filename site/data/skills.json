@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "dataset_version": "261029h",
-  "generated_at": "2026-10-29T08:02:33Z",
-  "count": 107,
+  "dataset_version": "261029i",
+  "generated_at": "2026-10-29T09:05:01Z",
+  "count": 108,
   "modes": [
     {
       "value": "install",
@@ -103,7 +103,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 1276,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone --depth 1 https://github.com/0xsline/awesome-deepseek-harness.git\ncd awesome-deepseek-harness",
       "detail_url": "skills/0xsline-awesome-deepseek-harness.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/0xsline-awesome-deepseek-harness/ENTRY.md"
@@ -158,7 +158,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 27024,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone https://github.com/yikart/AiToEarn.git\ncd AiToEarn\ndocker compose up -d",
       "detail_url": "skills/aitoearn.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/aitoearn/ENTRY.md"
@@ -202,7 +202,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 211,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone --depth 1 https://github.com/awesome-dsh-plugin/dsh-find-plugin.git\ncd dsh-find-plugin",
       "detail_url": "skills/awesome-dsh-plugin-dsh-find-plugin.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/awesome-dsh-plugin-dsh-find-plugin/ENTRY.md"
@@ -253,7 +253,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 119425,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "uv add browser-use\nbrowser-use skill install",
       "detail_url": "skills/browser-use.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/browser-use/ENTRY.md"
@@ -300,7 +300,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 115870,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 小石头：skill（30+ Agent）\nnpx skills add JuliusBrussee/caveman\n\n# 大石头：本地代理（Node.js 22.13+）\nnpm install -g @caveman-ai/cli && caveman setup --install\ncaveman claude        # 或 codex · gemini · aider · kilo · qwen · opencode · hermes · openclaw · pi",
       "detail_url": "skills/caveman.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/caveman/ENTRY.md"
@@ -351,7 +351,7 @@
       "verification_status": "verified",
       "health_score": 75,
       "stars": 15218,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 从 GitHub Releases 下载桌面端安装包\n# macOS / Windows / Linux：https://github.com/NanmiCoder/cc-haha/releases",
       "detail_url": "skills/cc-haha.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/cc-haha/ENTRY.md"
@@ -406,7 +406,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 149826,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# macOS（Homebrew，代码签名公证）\nbrew install --cask cc-switch\n\n# Arch Linux（paru）\nparu -S cc-switch-bin",
       "detail_url": "skills/cc-switch.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/cc-switch/ENTRY.md"
@@ -449,7 +449,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 6130,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone --depth 1 https://github.com/ccch1mneyyy/dsh-TUI.git\ncd dsh-TUI",
       "detail_url": "skills/ccch1mneyyy-dsh-tui.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/ccch1mneyyy-dsh-tui/ENTRY.md"
@@ -495,7 +495,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 3409,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 1) 克隆并安装依赖\ngit clone --depth 1 https://github.com/chuspeeism/dashi-taskboard.git /tmp/codex-taskboard\ncd /tmp/codex-taskboard\nnpm install\nnpm run build\nnpm start\n# 打开 http://127.0.0.1:47823 ，SQLite 库位于 .data/taskboard.sqlite",
       "detail_url": "skills/codex-taskboard.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/codex-taskboard/ENTRY.md"
@@ -547,7 +547,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 32689,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# Windows：CodexPlusPlus-*-windows-x64-setup.exe\n# macOS Intel：CodexPlusPlus-*-macos-x64.dmg\n# macOS Apple Silicon：CodexPlusPlus-*-macos-arm64.dmg",
       "detail_url": "skills/codexplusplus.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/codexplusplus/ENTRY.md"
@@ -590,7 +590,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 265116,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone --depth 1 https://github.com/deepseek-ai/deepseek-harness.git\ncd deepseek-harness",
       "detail_url": "skills/deepseek-ai-deepseek-harness.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/deepseek-ai-deepseek-harness/ENTRY.md"
@@ -640,7 +640,7 @@
       "verification_status": "blocked",
       "health_score": 30,
       "stars": 1853,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 源码构建（需要 Node.js 与 npm）\ngit clone https://github.com/zhu1090093659/deepseek-pp.git\ncd deepseek-pp\nnpm install\nnpm run build",
       "detail_url": "skills/deepseek-pp.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/deepseek-pp/ENTRY.md"
@@ -683,7 +683,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 9576,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone --depth 1 https://github.com/dsh-market/dsh-market.git\ncd dsh-market",
       "detail_url": "skills/dsh-market-dsh-market.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/dsh-market-dsh-market/ENTRY.md"
@@ -729,7 +729,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 9657,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 1) 自托管 Kaneo（仓库自带 compose.yml / .env.sample）\ngit clone https://github.com/usekaneo/kaneo.git\ncd kaneo\ncp .env.sample .env   # 设置 POSTGRES_PASSWORD、AUTH_SECRET、KANEO_CLIENT_URL=http://localhost:5173\ndocker compose up -d\n# 打开 http://localhost:5173\n\n# 2) 给 AI 工具接入官方 MCP（stdio 方式）\n# 在 Claude Code / Cursor / Codex 等 MCP 客户端添加：\n#   command: npx\n#   args: [\"-y\", \"@kaneo/mcp\"]\n# 自托管实例的 HTTP MCP endpoint：<你的实例地址>/api/mcp",
       "detail_url": "skills/kaneo.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/kaneo/ENTRY.md"
@@ -786,7 +786,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 2055,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 1. uv 环境（macOS / Linux）\ncd /path/to/OpenOPC\nuv python install 3.12\nuv venv --python 3.12\nsource .venv/bin/activate\n\n# 2. 安装 OpenOPC\nuv pip install -e .\n\n# 3. 可选：浏览器工具\nuv run python -m playwright install chromium\n\n# 4. 初始化本地配置、记忆、技能、项目与工作区\nuv run opc init\n\n# 5. 编辑 .opc/config/llm_config.yaml 填入 API Key\n\n# 6. 启动 Office UI（默认 http://localhost:8765）\nuv run opc ui",
       "detail_url": "skills/openopc.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/openopc/ENTRY.md"
@@ -836,7 +836,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 2118,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone https://github.com/OpenBMB/StaffDeck.git\ncd StaffDeck\npython3 -m venv backend/.venv\nbackend/.venv/bin/python -m pip install -e \"backend[dev]\"\nnpm --prefix frontend-enterprise ci\ncp backend/.env.example backend/.env\nscripts/dev_up.sh --detach",
       "detail_url": "skills/staffdeck.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/staffdeck/ENTRY.md"
@@ -886,7 +886,7 @@
       "verification_status": "verified",
       "health_score": 75,
       "stars": 30070,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 1) 克隆上游（默认分支 feat/server_team，直接 clone 即得该版本）\ngit clone https://github.com/TencentCloud/TencentDB-Agent-Memory.git /tmp/tdb\ncd /tmp/tdb/deploy/global-images\n\n# 2) 配置并一键启动（需两组 LLM 参数：memory 组 + proxy 组）\ncp .env.example .env\n# 用编辑器填入 .env 中的两组 LLM 参数\n./start-all.sh\n\n# 3) 打开控制台\n#    http://localhost:8125",
       "detail_url": "skills/tencentdb-agent-memory.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/tencentdb-agent-memory/ENTRY.md"
@@ -939,7 +939,7 @@
       "verification_status": "verified",
       "health_score": 75,
       "stars": 35818,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone https://github.com/Tencent/WeKnora.git\ncd WeKnora\ncp .env.example .env   # 按需修改模型、存储与端口配置\ndocker compose pull\ndocker compose up -d",
       "detail_url": "skills/weknora.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/weknora/ENTRY.md"
@@ -990,7 +990,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 67249,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 私有仓库方式（推荐个人使用）\ngh repo create my-job-search --private --clone\ncd my-job-search\ngit remote add upstream https://github.com/MadsLorentzen/ai-job-search.git\ngit fetch upstream master\ngit merge upstream/master\n\n# 安装门户搜索 CLI 工具（PowerShell）\n$tools = @(\"jobbank-search\",\"jobdanmark-search\",\"jobindex-search\",\"jobnet-search\",\"linkedin-search\",\"freehire-search\")\nforeach ($tool in $tools) { Push-Location \".agents/skills/$tool/cli\"; bun install; Pop-Location }",
       "detail_url": "skills/ai-job-search.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/business-office/ai-job-search/ENTRY.md"
@@ -1039,7 +1039,7 @@
       "verification_status": "verified",
       "health_score": 75,
       "stars": 184569,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 仅克隆文档技能子目录（稀疏检出，体积小）\ngit clone --depth 1 --filter=blob:none --sparse https://github.com/anthropics/skills /tmp/office-skills\ncd /tmp/office-skills\ngit sparse-checkout set skills/document-skills\n\n# 然后将所需技能目录复制到你的 agent 的 skills 目录（仅本地使用）\ncp -r skills/document-skills/* ~/.claude/skills/",
       "detail_url": "skills/anthropics-office-skills.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/business-office/anthropics-office-skills/ENTRY.md"
@@ -1089,7 +1089,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 8884,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 方式一：无需安装，直接使用在线站\n#   https://www.aishort.top\n\n# 方式二：Docker 自托管（数据完全本地）\ngit clone --depth 1 https://github.com/rockbenben/ChatGPT-Shortcut.git\ncd ChatGPT-Shortcut\ndocker compose up -d\n# 浏览器访问 http://localhost:3000",
       "detail_url": "skills/chatgpt-shortcut.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/business-office/chatgpt-shortcut/ENTRY.md"
@@ -1138,7 +1138,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 5603,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "curl -fsSL https://raw.githubusercontent.com/kuaifan/dootask/pro/bin/install | bash",
       "detail_url": "skills/dootask.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/business-office/dootask/ENTRY.md"
@@ -1191,7 +1191,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 32727,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# macOS / Linux\ncurl -fsSL https://raw.githubusercontent.com/iOfficeAI/OfficeCLI/main/install.sh | bash\n\n# Windows PowerShell\nirm https://raw.githubusercontent.com/iOfficeAI/OfficeCLI/main/install.ps1 | iex",
       "detail_url": "skills/officecli.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/business-office/officecli/ENTRY.md"
@@ -1241,7 +1241,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 61640,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "curl -fsSL https://raw.githubusercontent.com/makeplane/plane/master/deployments/cli/community/install.sh | bash\n# 浏览器打开 http://localhost 完成工作区初始化；升级与迁移脚本在同目录",
       "detail_url": "skills/plane.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/business-office/plane/ENTRY.md"
@@ -1293,7 +1293,7 @@
       "verification_status": "verified",
       "health_score": 75,
       "stars": 1965,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "npm install --global @toolknit/cli\ntoolknit doctor --json\ntoolknit --help",
       "detail_url": "skills/toolknit-desktop.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/business-office/toolknit-desktop/ENTRY.md"
@@ -1337,7 +1337,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 6173,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# NVIDIA GPU（CUDA 12.8）\nuv tool install --python 3.12 abogen[cuda] --extra-index-url https://download.pytorch.org/whl/cu128 --index-strategy unsafe-best-match\n\n# NVIDIA GPU（旧驱动 CUDA 12.6 / 新驱动 CUDA 13.0）\nuv tool install --python 3.12 abogen[cuda126] --extra-index-url https://download.pytorch.org/whl/cu126 --index-strategy unsafe-best-match\n\n# CPU / 无 NVIDIA GPU\nuv tool install --python 3.12 abogen",
       "detail_url": "skills/abogen.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/abogen/ENTRY.md"
@@ -1385,7 +1385,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 20,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone https://github.com/zhangtuo723/aigc_line.git\ncd aigc_line\nnpm install",
       "detail_url": "skills/aigc-line.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/aigc-line/ENTRY.md"
@@ -1430,7 +1430,7 @@
       "verification_status": "verified",
       "health_score": 75,
       "stars": 1495,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone https://github.com/morsoli/aimangastudio.git\ncd aimangastudio\nnpm install",
       "detail_url": "skills/aimangastudio.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/aimangastudio/ENTRY.md"
@@ -1481,7 +1481,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 74008,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "npm install animejs",
       "detail_url": "skills/animejs.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/animejs/ENTRY.md"
@@ -1531,7 +1531,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 4604,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "npx -y skills add QingYunA/answer-me-with-html -g -y -a claude-code",
       "detail_url": "skills/answer-me-with-html.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/answer-me-with-html/ENTRY.md"
@@ -1579,7 +1579,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 5833,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 前提：Docker + Docker Compose\ngit clone https://github.com/ArcReel/ArcReel.git\ncd ArcReel/deploy\n\ncp .env.example .env\ndocker compose up -d",
       "detail_url": "skills/arcreel.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/arcreel/ENTRY.md"
@@ -1628,7 +1628,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 13796,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# npm\nnpm install @astryxdesign/core @astryxdesign/theme-neutral @stylexjs/stylex\nnpm install -D @astryxdesign/cli",
       "detail_url": "skills/astryx.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/astryx/ENTRY.md"
@@ -1676,7 +1676,7 @@
       "verification_status": "needs-review",
       "health_score": 75,
       "stars": 147,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 1) 克隆仓库（含全部 70+ 站点 DESIGN.md 与预览页，约 1.2 MB）\ngit clone --depth 1 https://github.com/fchangjun/awesome-design-md-cn.git /tmp/awesome-design-md-cn\n\n# 2) 复制某个站点的设计系统到你项目根目录（以 Apple 为例）\ncp /tmp/awesome-design-md-cn/design-md/apple/DESIGN.md ./DESIGN.md",
       "detail_url": "skills/awesome-design-md-cn.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/awesome-design-md-cn/ENTRY.md"
@@ -1723,7 +1723,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 35194,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 1) 克隆仓库（含全部案例、模板与 Agent Skill）\ngit clone --depth 1 https://github.com/freestylefly/awesome-gpt-image-2.git /tmp/gpt-image2\n\n# 2) 直接使用：复制 docs/ 下的模板与案例提示词到你的生图工作流\n#    浏览式体验见在线站 https://gpt-image2.canghe.ai\n\n# 3) （可选）装入自带的 Agent Skill 到 Claude Code\nmkdir -p \"$HOME/.claude/skills\"\nln -s /tmp/gpt-image2/agents/skills/gpt-image-2-style-library \"$HOME/.claude/skills/gpt-image-2-style-library\"",
       "detail_url": "skills/awesome-gpt-image-2.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/awesome-gpt-image-2/ENTRY.md"
@@ -1770,7 +1770,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 7360,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "npm install @imgly/background-removal onnxruntime-web@1.21.0",
       "detail_url": "skills/background-removal-js.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/background-removal-js/ENTRY.md"
@@ -1819,7 +1819,7 @@
       "verification_status": "verified",
       "health_score": 75,
       "stars": 1935,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 打开最新 Release 页下载安装包；或访问官网 https://beeftv.app/\ngh browse glanderness/BeefTV --release",
       "detail_url": "skills/beeftv.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/beeftv/ENTRY.md"
@@ -1870,7 +1870,7 @@
       "verification_status": "verified",
       "health_score": 75,
       "stars": 2386,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone https://github.com/shuyu-labs/BigBanana-AI-Director.git\ncd BigBanana-AI-Director\ndocker-compose up -d",
       "detail_url": "skills/bigbanana-ai-director.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/bigbanana-ai-director/ENTRY.md"
@@ -1919,7 +1919,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 2057,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone https://github.com/Hommy-master/capcut-mate.git\ncd capcut-mate\ndocker-compose pull && docker-compose up -d",
       "detail_url": "skills/capcut-mate.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/capcut-mate/ENTRY.md"
@@ -1966,7 +1966,7 @@
       "verification_status": "needs-review",
       "health_score": 75,
       "stars": 133,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 克隆上游仓库到本地\ngit clone https://github.com/dacnay816y62-hub/character-casting-studio-skill.git\ncd character-casting-studio-skill\n\n# 在支持 skills 的 Agent（如 Codex）中，将本目录作为 skill 加载，\n# 即可读取其角色设计流程与硬规则。需要参考素材时请在本地运行环境提供，\n# 不要把私人照片或未授权素材提交进仓库。",
       "detail_url": "skills/character-casting-studio-skill.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/character-casting-studio-skill/ENTRY.md"
@@ -2012,7 +2012,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 3152,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "node bin/install.cjs install --dry-run\nnode bin/install.cjs install\nnode bin/install.cjs doctor",
       "detail_url": "skills/chengfeng-videocut-skills.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/chengfeng-videocut-skills/ENTRY.md"
@@ -2059,7 +2059,7 @@
       "verification_status": "needs-review",
       "health_score": 75,
       "stars": 1524,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 克隆上游仓库到本地\ngit clone https://github.com/dacnay816y62-hub/cinema-dna-21x9x3.git\ncd cinema-dna-21x9x3\n\n# 复制到 Codex skills 目录（PowerShell 示例；CODEX_HOME 可自定义）\nCopy-Item -Recurse . \"$env:USERPROFILE\\.codex\\skills\\cinema-dna-21x9x3\"",
       "detail_url": "skills/cinema-dna-21x9x3.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/cinema-dna-21x9x3/ENTRY.md"
@@ -2105,7 +2105,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 131,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "cd /path/to/ComfyUI/custom_nodes\ngit clone https://github.com/thaakeno/ComfyUI-MiniMax-H3-Studio.git\ncd ComfyUI-MiniMax-H3-Studio\npython -m pip install -r requirements.txt",
       "detail_url": "skills/comfyui-minimax-h3-studio.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/comfyui-minimax-h3-studio/ENTRY.md"
@@ -2149,7 +2149,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 1179,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "cd /path/to/ComfyUI/custom_nodes\ngit clone https://github.com/AHEKOT/ComfyUI_VNCCS_Utils.git\ncd ComfyUI_VNCCS_Utils\npip install -r requirements.txt",
       "detail_url": "skills/comfyui-vnccs-utils.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/comfyui-vnccs-utils/ENTRY.md"
@@ -2197,7 +2197,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 6049,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "请通过 Cowart 仓库自带的 Git marketplace 安装 Cowart Codex 插件。\n先运行 codex plugin marketplace add zhongerxin/Cowart --ref main，\n再运行 codex plugin add cowart@cowart-github，并用 codex plugin list 确认插件已启用。\n安装完成后请提醒我完全退出并重新启动一次 Codex。",
       "detail_url": "skills/cowart.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/cowart/ENTRY.md"
@@ -2240,7 +2240,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 3878,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# CLI（Node.js 18+）\nnpm install -g dembrandt\ndembrandt install-browser        # 一次性：安装匹配的 Chromium\ndembrandt dembrandt.com          # 提取目标站点\n\n# 或免全局安装\nnpx dembrandt dembrandt.com      # 同样需先 npx dembrandt install-browser\n\n# MCP 接入（Claude Code 示例）\nclaude mcp add --transport stdio dembrandt -- npx -y --package dembrandt dembrandt-mcp",
       "detail_url": "skills/dembrandt.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/dembrandt/ENTRY.md"
@@ -2285,7 +2285,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 17,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "请帮我安装并启动这个项目：\nhttps://github.com/Toolsai/Depth-Studio",
       "detail_url": "skills/depth-studio.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/depth-studio/ENTRY.md"
@@ -2335,7 +2335,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 364,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone https://github.com/NickPittas/DirectorsConsole.git\ncd DirectorsConsole\npython start.py --setup",
       "detail_url": "skills/directors-console.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/directors-console/ENTRY.md"
@@ -2380,7 +2380,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 51166,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "npx skills@latest add emilkowalski/skills",
       "detail_url": "skills/emilkowalski-skills.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/emilkowalski-skills/ENTRY.md"
@@ -2427,7 +2427,7 @@
       "verification_status": "needs-review",
       "health_score": 75,
       "stars": 450,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 克隆上游仓库到本地\ngit clone https://github.com/dacnay816y62-hub/fantasy-life-force-portrait-photography.git\ncd fantasy-life-force-portrait-photography\n\n# 将仓库目录放入你的 Codex skills 目录后，即可在对话中触发，例如：\n# 使用 Fantasy 生命感人像摄影 Skill，把这张普通生活照升级成更有生命感的人像。",
       "detail_url": "skills/fantasy-life-force-portrait-photography.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/fantasy-life-force-portrait-photography/ENTRY.md"
@@ -2477,7 +2477,7 @@
       "verification_status": "verified",
       "health_score": 75,
       "stars": 29882,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "npm install gsap",
       "detail_url": "skills/gsap.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/gsap/ENTRY.md"
@@ -2528,7 +2528,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 28884,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "npx skills add https://github.com/op7418/guizang-ppt-skill --skill guizang-ppt-skill",
       "detail_url": "skills/guizang-ppt-skill.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/guizang-ppt-skill/ENTRY.md"
@@ -2576,7 +2576,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 246,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone https://github.com/renmu2017/Hell-Grind-AIGC-Skill.git\ncd Hell-Grind-AIGC-Skill\n./scripts/install.sh",
       "detail_url": "skills/hell-grind-aigc-skill.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/hell-grind-aigc-skill/ENTRY.md"
@@ -2623,7 +2623,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 217,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone https://github.com/ZWD11/house-plan-designer ~/.claude/skills/house-plan-designer\npip install numpy pillow opencv-python pymupdf ezdxf   # 后两个用于 CAD 图纸（PDF / DXF）\ncd ~/.claude/skills/house-plan-designer/scripts && npm install   # puppeteer-core，自查截图用",
       "detail_url": "skills/house-plan-designer.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/house-plan-designer/ENTRY.md"
@@ -2676,7 +2676,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 28008,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "npx skills add alchaincyf/huashu-design",
       "detail_url": "skills/huashu-design.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/huashu-design/ENTRY.md"
@@ -2722,7 +2722,7 @@
       "verification_status": "verified",
       "health_score": 75,
       "stars": 905,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone https://github.com/chatfire-AI/huobao-canvas.git\ncd huobao-canvas\nnpm install\nnpm run dev",
       "detail_url": "skills/huobao-canvas.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/huobao-canvas/ENTRY.md"
@@ -2770,7 +2770,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 74904,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "npx skills add heygen-com/hyperframes",
       "detail_url": "skills/hyperframes.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/hyperframes/ENTRY.md"
@@ -2817,7 +2817,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 8192,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone https://github.com/MeiGen-AI/InfiniteTalk.git\ncd InfiniteTalk\npip install -r requirements.txt\n# 下载模型权重（Hugging Face）\nhuggingface-cli download MeiGen-AI/InfiniteTalk --local-dir ./weights",
       "detail_url": "skills/infinitetalk.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/infinitetalk/ENTRY.md"
@@ -2870,7 +2870,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 1748,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "mkdir -p ~/.claude/skills\ngit clone --depth 1 https://github.com/lixiaoxiao9888-create/manju-laoli-skill.git /tmp/manju-laoli\ncp -r /tmp/manju-laoli/short-drama-director ~/.claude/skills/",
       "detail_url": "skills/manju-laoli-skill.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/manju-laoli-skill/ENTRY.md"
@@ -2922,7 +2922,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 218,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "npx @volcengine/mediakit-cli install -y",
       "detail_url": "skills/mediakit-cli.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/mediakit-cli/ENTRY.md"
@@ -2972,7 +2972,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 136175,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone https://github.com/harry0703/MoneyPrinterTurbo.git\ncd MoneyPrinterTurbo\nuv python install 3.11\nuv sync --frozen\ncp config.example.toml config.toml",
       "detail_url": "skills/money-printer-turbo.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/money-printer-turbo/ENTRY.md"
@@ -3023,7 +3023,7 @@
       "verification_status": "verified",
       "health_score": 75,
       "stars": 3459,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# Claude Code\ngit clone --depth 1 https://github.com/feitangyuan/onetake.git ~/.claude/skills/onetake\n\n# 通用 agent skills 目录\ngit clone --depth 1 https://github.com/feitangyuan/onetake.git ~/.agents/skills/onetake",
       "detail_url": "skills/onetake.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/onetake/ENTRY.md"
@@ -3072,7 +3072,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 1440,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone https://github.com/ddcat-ai/open-ai-canvas.git\ncd open-ai-canvas\n\nmkdir -p .local/project-workbench-debug .local/cache/go-build .local/cache/go-mod\n\n# 终端一：后端\ncd backend\nCANVAS_BACKEND_DATA_DIR=../.local/project-workbench-debug go run ./cmd/server\n\n# 终端二：前端（另开终端）\ncd ../web\nbun install\nbun run dev",
       "detail_url": "skills/open-ai-canvas.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/open-ai-canvas/ENTRY.md"
@@ -3121,7 +3121,7 @@
       "verification_status": "verified",
       "health_score": 75,
       "stars": 386,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone https://github.com/ganbo-gab/open-storyboard-canvas.git\ncd open-storyboard-canvas\nnpm install\n\n# 前端开发\nnpm run dev\n\n# 源码桌面应用\nnpm run tauri dev",
       "detail_url": "skills/open-storyboard-canvas.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/open-storyboard-canvas/ENTRY.md"
@@ -3170,7 +3170,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 96700,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "https://opencut.app",
       "detail_url": "skills/opencut.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/opencut/ENTRY.md"
@@ -3219,7 +3219,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 72790,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone https://github.com/calesthio/OpenMontage.git\ncd OpenMontage\nmake setup",
       "detail_url": "skills/openmontage.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/openmontage/ENTRY.md"
@@ -3281,7 +3281,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 6921,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "brew tap zseven-w/openpencil\nbrew install --cask openpencil",
       "detail_url": "skills/openpencil.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/openpencil/ENTRY.md"
@@ -3338,7 +3338,7 @@
       "verification_status": "blocked",
       "health_score": 30,
       "stars": 39918,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "brew install --cask siddharthvaddem/openscreen/openscreen",
       "detail_url": "skills/openscreen.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/openscreen/ENTRY.md"
@@ -3397,7 +3397,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 14645,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "",
       "detail_url": "skills/palmier-pro.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/palmier-pro/ENTRY.md"
@@ -3450,7 +3450,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 29518,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "https://github.com/ATH-MaaS/Pixelle-Video/releases/latest\n下载 Windows 一键整合包 → 解压 → 双击 start.bat → 自动打开 http://localhost:8501",
       "detail_url": "skills/pixelle-video.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/pixelle-video/ENTRY.md"
@@ -3496,7 +3496,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 108,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone https://github.com/Aoye-3/PromptCard-AgentCanvas.git\ncd PromptCard-AgentCanvas\n# 双击 start-desktop.vbs 启动桌面壳",
       "detail_url": "skills/promptcard-agentcanvas.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/promptcard-agentcanvas/ENTRY.md"
@@ -3543,7 +3543,7 @@
       "verification_status": "needs-review",
       "health_score": 75,
       "stars": 5843,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "npx skills add remotion-dev/skills",
       "detail_url": "skills/remotion-skills.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/remotion-skills/ENTRY.md"
@@ -3595,7 +3595,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 7968,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone https://github.com/Emily2040/seedance-2.0.git\ncd seedance-2.0\n\n# Codex（默认写入 ~/.codex/skills）\npython scripts/install_codex_skill.py\n\n# Claude Code 或其他 Agent\npython scripts/install_codex_skill.py --dest ~/.claude/skills",
       "detail_url": "skills/seedance-20.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/seedance-20/ENTRY.md"
@@ -3644,7 +3644,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 51,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone https://github.com/coracoo/Slate.git; cd Slate\nuv python install 3.12\nuv venv --python 3.12 --seed .venv\n.\\.venv\\Scripts\\python.exe -m pip install --require-hashes -r requirements-win-py312.lock\nPush-Location workbench/web; npm ci; npm run build; Pop-Location\n.\\.venv\\Scripts\\python.exe workbench/server.py 8775   # 打开 http://127.0.0.1:8775",
       "detail_url": "skills/slate.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/slate/ENTRY.md"
@@ -3698,7 +3698,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 19803,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone https://github.com/HBAI-Ltd/Toonflow-app.git\ncd Toonflow-app\n\n# 本地构建并启动\nyarn docker:local\n# 或手动构建\ndocker build -t toonflow .\ndocker run -d -p 10588:10588 -v /path/to/data:/app/data toonflow",
       "detail_url": "skills/toonflow.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/toonflow/ENTRY.md"
@@ -3749,7 +3749,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 14442,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 方式一：直接让 Agent 安装\n# 在 Claude Code / Codex 中说：\n# \"Install this skill for me: https://github.com/Vincentwei1021/video-shotcraft\"\n\n# 方式二：skills CLI\nnpx skills add Vincentwei1021/video-shotcraft\n\n# 方式三：手动软链\ngit clone https://github.com/Vincentwei1021/video-shotcraft.git\nln -s \"$(pwd)/video-shotcraft\" ~/.codex/skills/video-shotcraft  # Codex\nln -s \"$(pwd)/video-shotcraft\" ~/.claude/skills/video-shotcraft  # Claude Code",
       "detail_url": "skills/video-shotcraft.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/video-shotcraft/ENTRY.md"
@@ -3801,7 +3801,7 @@
       "verification_status": "verified",
       "health_score": 75,
       "stars": 1931,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "帮我安装这个 skill：https://github.com/Vincentwei1021/video-talkcraft",
       "detail_url": "skills/video-talkcraft.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/video-talkcraft/ENTRY.md"
@@ -3849,7 +3849,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 30034,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "Set up https://github.com/browser-use/video-use for me.\n\nRead install.md first to install this repo, wire up ffmpeg, register the skill with whichever agent you're running under, and set up the ElevenLabs API key — ask me to paste it when you need it. Then read SKILL.md for daily usage, and always read helpers/ because that's where the editing scripts live. After install, don't transcribe anything on your own — just tell me it's ready and wait for me to drop footage into a folder.",
       "detail_url": "skills/video-use.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/video-use/ENTRY.md"
@@ -3896,7 +3896,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 12792,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone https://github.com/HKUDS/ViMax.git\ncd ViMax\nuv sync",
       "detail_url": "skills/vimax.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/vimax/ENTRY.md"
@@ -3947,7 +3947,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 597,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "npx skills add smixs/visual-skills",
       "detail_url": "skills/visual-skills.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/visual-skills/ENTRY.md"
@@ -3995,7 +3995,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 58932,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "",
       "detail_url": "skills/voicebox.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/voicebox/ENTRY.md"
@@ -4041,7 +4041,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 40793,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "pip install voxcpm",
       "detail_url": "skills/voxcpm.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/voxcpm/ENTRY.md"
@@ -4089,7 +4089,7 @@
       "verification_status": "verified",
       "health_score": 75,
       "stars": 226062,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "/plugin marketplace add multica-ai/andrej-karpathy-skills\n/plugin install andrej-karpathy-skills@karpathy-skills",
       "detail_url": "skills/andrej-karpathy-skills.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/dev-engineering/andrej-karpathy-skills/ENTRY.md"
@@ -4139,7 +4139,7 @@
       "verification_status": "verified",
       "health_score": 75,
       "stars": 48099,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 建索引 + 安装 Agent 技能 + 注册 hooks + 写 AGENTS.md / CLAUDE.md\nnpx gitnexus analyze\n\n# 只建索引，不改仓库集成文件\nnpx gitnexus analyze --index-only\n\n# 检测并配置 MCP（可多选：claude-code,cursor,codex,qoder 等）\nnpx gitnexus setup",
       "detail_url": "skills/gitnexus.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/dev-engineering/gitnexus/ENTRY.md"
@@ -4190,7 +4190,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 48873,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "npm install -g @alibaba-group/open-code-review   # 装完全局可用 ocr 命令\n\n# 配置 LLM（交互式选 provider、填 API key、选模型，自动测连通性）\nocr config provider\nocr config model",
       "detail_url": "skills/open-code-review.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/dev-engineering/open-code-review/ENTRY.md"
@@ -4238,7 +4238,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 40106,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone -b master-jdk17 https://github.com/YunaiV/ruoyi-vue-pro.git\n# 1) 导入 sql/mysql/ 目录的初始化脚本（Oracle / PostgreSQL / 达梦等见 sql/ 各对应目录）\n# 2) 修改 yudao-server/src/main/resources/application-local.yaml 的 MySQL / Redis 连接\n# 3) IDE 运行 yudao-server 模块的 YudaoServerApplication（Maven 构建可先 -DskipTests）",
       "detail_url": "skills/ruoyi-vue-pro.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/dev-engineering/ruoyi-vue-pro/ENTRY.md"
@@ -4282,7 +4282,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 41956,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone --depth 1 https://github.com/wshobson/agents.git\ncd agents",
       "detail_url": "skills/wshobson-agents.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/dev-engineering/wshobson-agents/ENTRY.md"
@@ -4328,7 +4328,7 @@
       "verification_status": "needs-review",
       "health_score": 75,
       "stars": 184569,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 在线阅读（推荐，始终最新）：\n#   https://agentskills.io/specification\n\n# 如需本地离线快照（个人阅读用，勿回传本仓库）：\ngit clone --depth 1 --filter=blob:none --sparse https://github.com/anthropics/skills /tmp/agent-skills-spec\ncd /tmp/agent-skills-spec\ngit sparse-checkout set spec",
       "detail_url": "skills/agent-skills-spec.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/meta-skillcraft/agent-skills-spec/ENTRY.md"
@@ -4381,7 +4381,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 11857,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "请用 cangjie-skill 把这本书蒸馏成一组可执行的 Agent Skills：<文件路径>",
       "detail_url": "skills/cangjie-skill.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/meta-skillcraft/cangjie-skill/ENTRY.md"
@@ -4430,7 +4430,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 5510,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "commit=\"<40-character-release-commit>\"; curl -fsSL \"https://raw.githubusercontent.com/microsoft/skill-recorder/$commit/install.sh\" | SKILL_RECORDER_COMMIT=\"$commit\" bash",
       "detail_url": "skills/skill-recorder.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/meta-skillcraft/skill-recorder/ENTRY.md"
@@ -4478,7 +4478,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 32282,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone https://github.com/Zackriya-Solutions/meetily.git\ncd meetily/frontend\npnpm install\n./build-gpu.sh",
       "detail_url": "skills/meetily.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/ops-automation/meetily/ENTRY.md"
@@ -4524,7 +4524,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 15206,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "docker run -d -p 3000:3000 \\\n  -e ENCRYPTION_KEY=$ENCRYPTION_KEY \\\n  -v ./data:/app/data -v ./uploads:/app/uploads \\\n  mauriceboe/trek",
       "detail_url": "skills/trek.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/ops-automation/trek/ENTRY.md"
@@ -4568,7 +4568,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 30342,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone --depth 1 https://github.com/assafelovic/gpt-researcher.git\ncd gpt-researcher",
       "detail_url": "skills/assafelovic-gpt-researcher.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/research-intel/assafelovic-gpt-researcher/ENTRY.md"
@@ -4615,7 +4615,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 86481,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "pip install -U crawl4ai\n\n# 运行安装后设置（浏览器配置）\ncrawl4ai-setup\n\n# 验证安装\ncrawl4ai-doctor\n\n# 浏览器问题手动安装\npython -m playwright install --with-deps chromium",
       "detail_url": "skills/crawl4ai.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/research-intel/crawl4ai/ENTRY.md"
@@ -4658,7 +4658,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 9498,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone --depth 1 https://github.com/Future-House/paper-qa.git\ncd paper-qa",
       "detail_url": "skills/future-house-paper-qa.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/research-intel/future-house-paper-qa/ENTRY.md"
@@ -4702,7 +4702,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 55156,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone --depth 1 https://github.com/K-Dense-AI/scientific-agent-skills.git\ncd scientific-agent-skills",
       "detail_url": "skills/k-dense-ai-scientific-agent-skills.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/research-intel/k-dense-ai-scientific-agent-skills/ENTRY.md"
@@ -4749,7 +4749,7 @@
       "verification_status": "verified",
       "health_score": 75,
       "stars": 68850,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "cd MediaCrawler\nuv sync\n\n# 仅 Playwright 标准模式需要\nuv run playwright install",
       "detail_url": "skills/mediacrawler.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/research-intel/mediacrawler/ENTRY.md"
@@ -4792,7 +4792,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 15124,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone --depth 1 https://github.com/microsoft/RD-Agent.git\ncd RD-Agent",
       "detail_url": "skills/microsoft-rd-agent.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/research-intel/microsoft-rd-agent/ENTRY.md"
@@ -4835,7 +4835,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 31737,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "git clone --depth 1 https://github.com/stanford-oval/storm.git\ncd storm",
       "detail_url": "skills/stanford-oval-storm.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/research-intel/stanford-oval-storm/ENTRY.md"
@@ -4885,7 +4885,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 10145,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 国际网络\nnpx dashi-ppt-skill@latest\n\n# 国内网络\nnpx --registry=https://registry.npmmirror.com dashi-ppt-skill@latest",
       "detail_url": "skills/dashi-ppt-skill.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/writing-docs/dashi-ppt-skill/ENTRY.md"
@@ -4933,7 +4933,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 3488,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 需要 Python 3.9+；告诉 Claude Code / Codex：安装这些技能 https://github.com/zenstory-ai/drama-skills\ngit clone https://github.com/zenstory-ai/drama-skills.git\ncd drama-skills\n\n# Claude Code\nmkdir -p \"$HOME/.claude/skills\"\nfor skill in skills/*; do ln -s \"$PWD/$skill\" \"$HOME/.claude/skills/$(basename \"$skill\")\"; done\n\n# Codex\nmkdir -p \"${CODEX_HOME:-$HOME/.codex}/skills\"\nfor skill in skills/*; do ln -s \"$PWD/$skill\" \"${CODEX_HOME:-$HOME/.codex}/skills/$(basename \"$skill\")\"; done",
       "detail_url": "skills/drama-skills.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/writing-docs/drama-skills/ENTRY.md"
@@ -4988,7 +4988,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 2099,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "读 https://github.com/alchaincyf/huashu-skills 的 README 和 skills.json，帮我按需求推荐并安装对应 skill",
       "detail_url": "skills/huashu-skills.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/writing-docs/huashu-skills/ENTRY.md"
@@ -5035,7 +5035,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 21381,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "npx skills add https://github.com/op7418/Humanizer-zh.git",
       "detail_url": "skills/humanizer-zh.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/writing-docs/humanizer-zh/ENTRY.md"
@@ -5083,7 +5083,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 74,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 官网下载页：https://mythpen.looplooptech.com/#download\n# GitHub Releases（v0.0.17 起）：.dmg / .exe / .AppImage / .deb / .rpm\n#   https://github.com/niyongsheng/mythpen/releases",
       "detail_url": "skills/mythpen.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/writing-docs/mythpen/ENTRY.md"
@@ -5130,7 +5130,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 8101,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 方式一：对话安装（在 Claude Code 中）\n# 告诉 Claude Code：安装这个 skill https://github.com/zenstory-ai/oh-story-claudecode\n\n# 方式二：命令行（npx skills，-g 全局装到 ~/.claude/skills/；去掉 -g 装当前目录）\nnpx skills add zenstory-ai/oh-story-claudecode -y -g",
       "detail_url": "skills/oh-story-claudecode.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/writing-docs/oh-story-claudecode/ENTRY.md"
@@ -5185,10 +5185,55 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 5651,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 克隆仓库\ngit clone https://github.com/eternityspring/shuohao-skills.git\ncd shuohao-skills\n\n# 自动检测并安装到 Claude Code / Codex，或指定\n./scripts/install.sh              # 自动检测\n./scripts/install.sh --codex      # 仅装到 Codex\n./scripts/install.sh novel-characters  # 只装某一个\n\n# 手动软链\nln -s \"$PWD/skills/novel-characters\" ~/.codex/skills/novel-characters",
       "detail_url": "skills/shuohao-skills.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/writing-docs/shuohao-skills/ENTRY.md"
+    },
+    {
+      "id": "we-article",
+      "name_zh": "We-Article 公众号文章生成工作台",
+      "name_en": "We-Article",
+      "summary_zh": "微信公众号文章生成工作台：材料解读 → 选题与方向 → 写作大纲 → 文章正文四阶段 Agent 工作流（当前接入 DeepSeek），带风格学习引擎沉淀个人文风，成稿一键排版推送公众号草稿箱，并支持文章数据统计反哺风格；Node 自托管 Web 工作台，需自备 API Key。",
+      "summary_en": "Four-stage agent workbench for WeChat article writing (material, topic, outline, draft) with style learning and one-click draft-box publishing; self-hosted Node.js app using DeepSeek.",
+      "category_dir": "writing-docs",
+      "category_name": "写作与文档",
+      "mode": "deploy",
+      "mode_label": "部署运行",
+      "tags": [
+        "writing",
+        "social-media",
+        "ai-agent",
+        "multi-agent",
+        "wechat"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh"
+      ],
+      "license": "UNKNOWN",
+      "license_bucket": "unknown",
+      "homepage": "https://github.com/hongqun/we-article",
+      "repo": "https://github.com/hongqun/we-article",
+      "tier": "watch",
+      "tier_label": "观察",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "We-Article 公众号写作"
+      ],
+      "risk_notes": "仓库未附 LICENSE，默认保留所有权利——自用参考风险低，二次分发或商用前需与作者确认授权（评级观察期即源于此）；AI 能力需自备 DeepSeek API Key，推送草稿箱与文章统计需公众号 API 权限；部署须设置 APP_PASSWORD 与随机 SESSION_SECRET，勿直接暴露公网。",
+      "added_at": "2026-10-29",
+      "updated_at": "2026-10-29",
+      "verification_status": "needs-review",
+      "health_score": 75,
+      "stars": 16,
+      "checked_at": "2026-10-29T10:05:00Z",
+      "quickstart": "git clone https://github.com/hongqun/we-article.git\ncd we-article\nnpm install\ncp .env.example .env\n# .env 中填写 DEEPSEEK_API_KEY；首次部署另设置 APP_PASSWORD 与随机生成的 SESSION_SECRET\nnpm run dev\n# 浏览器打开 http://127.0.0.1:3200",
+      "detail_url": "skills/we-article.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/writing-docs/we-article/ENTRY.md"
     },
     {
       "id": "wedraft",
@@ -5234,7 +5279,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 37,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 自动准备 CLI、MCP 和 Skill，并自动配置 Codex；缺 Node 会装专用运行时（macOS / Linux）\ncurl -fsSL 'https://wedraft.xiaoha.org/integrations/install.sh' | sh -s -- 'https://wedraft.xiaoha.org/integrations/'",
       "detail_url": "skills/wedraft.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/writing-docs/wedraft/ENTRY.md"
@@ -5283,7 +5328,7 @@
       "verification_status": "verified",
       "health_score": 100,
       "stars": 80,
-      "checked_at": "2026-10-29T08:05:00Z",
+      "checked_at": "2026-10-29T10:05:00Z",
       "quickstart": "# 一行命令启动（需 Docker，且自备 DeepSeek API Key）\nexport DEEPSEEK_API_KEY=your-key\ngit clone https://github.com/zenstory-ai/zenstory.git\ncd zenstory\ndocker compose up -d --build\n# 前端 http://localhost:5173 · API 文档 http://localhost:8000/docs",
       "detail_url": "skills/zenstory.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/writing-docs/zenstory/ENTRY.md"

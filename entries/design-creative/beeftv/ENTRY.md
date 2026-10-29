@@ -15,8 +15,8 @@ homepage: https://beeftv.app/
 repo: https://github.com/glanderness/BeefTV
 tier: standard
 metrics:
-  stars: 1933
-  pushed_at: "2026-10-29T03:19:29Z"
+  stars: 1935
+  pushed_at: "2026-10-29T05:43:34Z"
   checked_at: "2026-10-29"
   archived: false
 related: [canvas, video-production]

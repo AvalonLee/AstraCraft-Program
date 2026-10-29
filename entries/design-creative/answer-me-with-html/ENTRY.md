@@ -16,7 +16,7 @@ repo: https://github.com/QingYunA/answer-me-with-html
 docs_url: https://github.com/QingYunA/answer-me-with-html/blob/main/docs/reference.md
 tier: standard
 metrics:
-  stars: 4592
+  stars: 4604
   pushed_at: "2026-10-28T03:11:44Z"
   checked_at: "2026-10-29"
   archived: false

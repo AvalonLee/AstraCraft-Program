@@ -16,8 +16,8 @@ repo: https://github.com/alibaba/open-code-review
 docs_url: https://open-codereview.ai/docs
 tier: standard
 metrics:
-  stars: 48837
-  pushed_at: "2026-10-22T04:24:26Z"
+  stars: 48873
+  pushed_at: "2026-10-29T04:18:23Z"
   checked_at: "2026-10-29"
   archived: false
 related: [ai-agent, cli]

@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "dataset_version": "261029c",
-  "generated_at": "2026-10-29T02:07:44Z",
-  "count": 99,
+  "dataset_version": "261029d",
+  "generated_at": "2026-10-29T03:38:40Z",
+  "count": 105,
   "modes": [
     {
       "value": "install",
@@ -1197,6 +1197,56 @@
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/business-office/officecli/ENTRY.md"
     },
     {
+      "id": "plane",
+      "name_zh": "Plane 开源项目管理平台",
+      "name_en": "Plane",
+      "summary_zh": "开源的 Jira / Linear / ClickUp 替代品（★61k+）：工作项、周期（Sprint）、模块、看板与甘特图、项目文档与收件箱分诊一体，API 与 Webhook 齐全；自托管提供 Docker Compose 与 Kubernetes 两种部署并带实例管理面板（God Mode），另有云服务版。Django + Next.js 构建。",
+      "summary_en": "An open-source Jira/Linear alternative for project management: work items, cycles, modules, kanban boards, gantt charts, docs and inbox triage; self-host via Docker Compose or Kubernetes.",
+      "category_dir": "business-office",
+      "category_name": "商业与办公",
+      "mode": "deploy",
+      "mode_label": "部署运行",
+      "tags": [
+        "office",
+        "project-management",
+        "kanban",
+        "self-hosted",
+        "docker"
+      ],
+      "languages": [
+        "typescript",
+        "python"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "AGPL-3.0",
+      "license_bucket": "copyleft",
+      "homepage": "https://plane.so",
+      "repo": "https://github.com/makeplane/plane",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "office",
+        "self-hosted"
+      ],
+      "aliases": [
+        "Plane Labs",
+        "makeplane"
+      ],
+      "risk_notes": "AGPL-3.0：对 Plane 做修改后以网络服务对外提供，需按协议开源修改版本；品牌与商标使用受上游政策约束；自托管版默认面向可信网络设计，暴露公网前先做访问控制与加固。",
+      "added_at": "2026-10-29",
+      "updated_at": "2026-10-29",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "curl -fsSL https://raw.githubusercontent.com/makeplane/plane/master/deployments/cli/community/install.sh | bash\n# 浏览器打开 http://localhost 完成工作区初始化；升级与迁移脚本在同目录",
+      "detail_url": "skills/plane.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/business-office/plane/ENTRY.md"
+    },
+    {
       "id": "toolknit-desktop",
       "name_zh": "ToolKnit Desktop 本地文件工作台（桌面 / CLI / MCP）",
       "name_en": "ToolKnit Desktop — Local-first File Workbench with CLI and MCP",
@@ -1677,6 +1727,55 @@
       "quickstart": "# 1) 克隆仓库（含全部案例、模板与 Agent Skill）\ngit clone --depth 1 https://github.com/freestylefly/awesome-gpt-image-2.git /tmp/gpt-image2\n\n# 2) 直接使用：复制 docs/ 下的模板与案例提示词到你的生图工作流\n#    浏览式体验见在线站 https://gpt-image2.canghe.ai\n\n# 3) （可选）装入自带的 Agent Skill 到 Claude Code\nmkdir -p \"$HOME/.claude/skills\"\nln -s /tmp/gpt-image2/agents/skills/gpt-image-2-style-library \"$HOME/.claude/skills/gpt-image-2-style-library\"",
       "detail_url": "skills/awesome-gpt-image-2.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/awesome-gpt-image-2/ENTRY.md"
+    },
+    {
+      "id": "beeftv",
+      "name_zh": "BeefTV AI 原生视频创作工作台",
+      "name_en": "BeefTV",
+      "summary_zh": "面向 AI 时代的视频创作工作台：在一张自由画布里连接创意、模型与素材，与 BeefTV Agent 一起从分镜、素材推进到成片，用 Skills 扩展方法、用工作流复用过程；桌面版（macOS / Windows）本地优先，工程全程可继续编辑、迭代和积累。",
+      "summary_en": "An AI-native video creation workspace: an infinite canvas connecting ideas, models and assets, with an agent, skills and reusable workflows; a local-first desktop app for macOS and Windows.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "mode": "deploy",
+      "mode_label": "部署运行",
+      "tags": [
+        "canvas",
+        "ai-agent",
+        "video-production",
+        "image-generation"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "LicenseRef-BeefTV-Source-Available-1.0",
+      "license_bucket": "commercial",
+      "homepage": "https://beeftv.app/",
+      "repo": "https://github.com/glanderness/BeefTV",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "canvas",
+        "video-production"
+      ],
+      "aliases": [
+        "BeefTV",
+        "beeftv"
+      ],
+      "risk_notes": "自定义「BeefTV Source Available License 1.0」（GitHub 识别为 NOASSERTION，以 LICENSE 原文为准）：个人、学习、研究与组织内部使用（含对客户交付创作成果）免费，对外提供托管 / API 形式的 External Service 需另行取得商务授权；历史 MIT 材料保留 MIT（Part B）。桌面版需从 Releases 下载安装，生成类功能需自备模型 API Key。",
+      "added_at": "2026-10-29",
+      "updated_at": "2026-10-29",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "# 打开最新 Release 页下载安装包；或访问官网 https://beeftv.app/\ngh browse glanderness/BeefTV --release",
+      "detail_url": "skills/beeftv.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/beeftv/ENTRY.md"
     },
     {
       "id": "bigbanana-ai-director",
@@ -2434,6 +2533,53 @@
       "quickstart": "git clone https://github.com/renmu2017/Hell-Grind-AIGC-Skill.git\ncd Hell-Grind-AIGC-Skill\n./scripts/install.sh",
       "detail_url": "skills/hell-grind-aigc-skill.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/hell-grind-aigc-skill/ENTRY.md"
+    },
+    {
+      "id": "house-plan-designer",
+      "name_zh": "House Plan Designer 户型图设计器技能",
+      "name_en": "House Plan Designer",
+      "summary_zh": "把一张户型图（图片 / 截图 / PDF / CAD 的 DXF）交给 Agent，自动量墙识图、补全门窗房间与家具水电，生成一个双击即开的单文件 HTML 装修设计器：2D 布置、3D 漫游、五类管线自动排布、光线追踪出图，还能导出国标 DXF 施工图，全程离线可用。",
+      "summary_en": "An agent skill that turns a floor-plan photo, PDF or CAD DXF into a single-file offline HTML interior designer with 2D editing, 3D walkthrough, auto MEP routing and DXF export.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "mode": "install",
+      "mode_label": "装进 Agent",
+      "tags": [
+        "ai-agent",
+        "claude-code",
+        "skill"
+      ],
+      "languages": [
+        "html"
+      ],
+      "doc_languages": [
+        "zh"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/ZWD11/house-plan-designer",
+      "repo": "https://github.com/ZWD11/house-plan-designer",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "ai-agent",
+        "skill"
+      ],
+      "aliases": [
+        "户型图设计器",
+        "house-plan-designer"
+      ],
+      "risk_notes": "识别与布置质量依赖上游对图纸的解析，复杂图纸可能误读，上游明确建议不要用豆包等弱工具型模型跑满血流程；算量报价仅供参考，正式施工以专业设计与现场复核为准。",
+      "added_at": "2026-10-29",
+      "updated_at": "2026-10-29",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "git clone https://github.com/ZWD11/house-plan-designer ~/.claude/skills/house-plan-designer\npip install numpy pillow opencv-python pymupdf ezdxf   # 后两个用于 CAD 图纸（PDF / DXF）\ncd ~/.claude/skills/house-plan-designer/scripts && npm install   # puppeteer-core，自查截图用",
+      "detail_url": "skills/house-plan-designer.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/house-plan-designer/ENTRY.md"
     },
     {
       "id": "huashu-design",
@@ -3408,6 +3554,55 @@
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/seedance-20/ENTRY.md"
     },
     {
+      "id": "slate",
+      "name_zh": "Slate（场记）短片制作与拉片工作台",
+      "name_en": "Slate",
+      "summary_zh": "面向短片制作与拉片分析的本地 Web 工作台：以分镜 JSON 为唯一制作数据，串起剧本工作区、角色与场景资产、分镜与镜头创作、三层视频（转场 / 分镜 / 成集）；拉片线提供影片解构、台词 OCR/ASR、逐帧提取与深度动作。接入本地 ComfyUI 与云端 API 生图生视频，数据全部存本机。",
+      "summary_en": "A local web workbench for short-film production and shot analysis: storyboard JSON drives script, assets, shots and three-layer videos, with film deconstruction, ComfyUI and cloud API integrations.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "mode": "deploy",
+      "mode_label": "部署运行",
+      "tags": [
+        "short-drama",
+        "storyboard",
+        "video-production",
+        "ai-agent"
+      ],
+      "languages": [
+        "python",
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/coracoo/Slate",
+      "repo": "https://github.com/coracoo/Slate",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "short-drama",
+        "video-production"
+      ],
+      "aliases": [
+        "场记",
+        "Slate"
+      ],
+      "risk_notes": "目前主要支持 Windows 本机部署，macOS / Linux 与无桌面服务器的完整链路未验证；Python 必须用 uv 固定 3.12 并安装锁文件（勿用系统 Python 建 venv），前端需 Node 构建并装 FFmpeg；服务监听 0.0.0.0:8775，管理接口面向可信网络，不要直接映射公网；首次启动不启用任何 AI 厂商，需在环境检查中手动配置。",
+      "added_at": "2026-10-29",
+      "updated_at": "2026-10-29",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "git clone https://github.com/coracoo/Slate.git; cd Slate\nuv python install 3.12\nuv venv --python 3.12 --seed .venv\n.\\.venv\\Scripts\\python.exe -m pip install --require-hashes -r requirements-win-py312.lock\nPush-Location workbench/web; npm ci; npm run build; Pop-Location\n.\\.venv\\Scripts\\python.exe workbench/server.py 8775   # 打开 http://127.0.0.1:8775",
+      "detail_url": "skills/slate.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/slate/ENTRY.md"
+    },
+    {
       "id": "toonflow",
       "name_zh": "Toonflow 一站式 AI 短剧创作工具",
       "name_en": "Toonflow — AI Short Drama Creation Workbench",
@@ -3952,6 +4147,54 @@
       "quickstart": "npm install -g @alibaba-group/open-code-review   # 装完全局可用 ocr 命令\n\n# 配置 LLM（交互式选 provider、填 API key、选模型，自动测连通性）\nocr config provider\nocr config model",
       "detail_url": "skills/open-code-review.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/dev-engineering/open-code-review/ENTRY.md"
+    },
+    {
+      "id": "ruoyi-vue-pro",
+      "name_zh": "芋道 ruoyi-vue-pro 快速开发平台",
+      "name_en": "ruoyi-vue-pro (yudao)",
+      "summary_zh": "芋道出品的 Spring Boot 快速开发平台（RuoYi-Vue 全新 Pro 版，★40k+）：RBAC 动态权限、数据权限、SaaS 多租户、Flowable 工作流、三方登录、支付、短信、商城、CRM、ERP、AI 大模型、IoT 等模块开箱即用；提供 JDK8 / 17 / 25 三条分支与代码生成器，支持 MySQL、Oracle、PostgreSQL 及达梦等国产数据库。",
+      "summary_en": "A Spring Boot rapid development platform with RBAC, SaaS multi-tenancy, Flowable workflows, pay, mall, CRM/ERP, AI and IoT modules, a code generator, and three JDK branches (8/17/25).",
+      "category_dir": "dev-engineering",
+      "category_name": "研发与代码",
+      "mode": "deploy",
+      "mode_label": "部署运行",
+      "tags": [
+        "framework",
+        "software-engineering",
+        "cn-localization"
+      ],
+      "languages": [
+        "java"
+      ],
+      "doc_languages": [
+        "zh"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://doc.iocoder.cn/",
+      "repo": "https://github.com/YunaiV/ruoyi-vue-pro",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "framework",
+        "software-engineering"
+      ],
+      "aliases": [
+        "yudao",
+        "芋道",
+        "RuoYi-Vue-Pro"
+      ],
+      "risk_notes": "完整版模块庞大（商城、ERP、工作流等全量内置），上手建议按官方《迁移文档》裁剪到精简版 yudao-boot-mini；JDK8 / 17-21 / 25 对应 master / master-jdk17 / master-jdk25 三条分支，选型前先对齐团队技术栈；信创与国产数据库支持依赖官方持续适配，关键项目升级前先看兼容性说明。",
+      "added_at": "2026-10-29",
+      "updated_at": "2026-10-29",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "git clone -b master-jdk17 https://github.com/YunaiV/ruoyi-vue-pro.git\n# 1) 导入 sql/mysql/ 目录的初始化脚本（Oracle / PostgreSQL / 达梦等见 sql/ 各对应目录）\n# 2) 修改 yudao-server/src/main/resources/application-local.yaml 的 MySQL / Redis 连接\n# 3) IDE 运行 yudao-server 模块的 YudaoServerApplication（Maven 构建可先 -DskipTests）",
+      "detail_url": "skills/ruoyi-vue-pro.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/dev-engineering/ruoyi-vue-pro/ENTRY.md"
     },
     {
       "id": "wshobson-agents",
@@ -4853,6 +5096,55 @@
       "quickstart": "# 克隆仓库\ngit clone https://github.com/eternityspring/shuohao-skills.git\ncd shuohao-skills\n\n# 自动检测并安装到 Claude Code / Codex，或指定\n./scripts/install.sh              # 自动检测\n./scripts/install.sh --codex      # 仅装到 Codex\n./scripts/install.sh novel-characters  # 只装某一个\n\n# 手动软链\nln -s \"$PWD/skills/novel-characters\" ~/.codex/skills/novel-characters",
       "detail_url": "skills/shuohao-skills.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/writing-docs/shuohao-skills/ENTRY.md"
+    },
+    {
+      "id": "wedraft",
+      "name_zh": "WeDraft 公众号排版技能",
+      "name_en": "WeDraft",
+      "summary_zh": "小哈公社出品的微信公众号文章 Markdown 排版工具：网页版、macOS 桌面版、CLI、MCP 与 Skill 共用同一排版核心。七款阅读模板一键换风格、双向实时预览、复制前问题检查；让 AI 一句话把 Markdown 排成适合微信阅读的富文本，只管排版、不自动发布。",
+      "summary_en": "A WeChat Official Account Markdown formatting tool whose web, macOS, CLI, MCP and Skill forms share one core; agents format articles into rich text with a single sentence.",
+      "category_dir": "writing-docs",
+      "category_name": "写作与文档",
+      "mode": "install",
+      "mode_label": "装进 Agent",
+      "tags": [
+        "writing",
+        "ai-agent",
+        "mcp",
+        "cli",
+        "skill"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "zh"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://wedraft.xiaoha.org",
+      "repo": "https://github.com/pafa/WeDraft",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "writing",
+        "ai-agent"
+      ],
+      "aliases": [
+        "小哈公众号排版",
+        "WeDraft"
+      ],
+      "risk_notes": "公开网页版为测试版，源码当前准备 0.2.0，实际部署以官网 release.json 为准；安装器当前支持 macOS / Linux，其他本地 stdio MCP 客户端见上游接入指南；工具只负责排版，不操作微信、不自动发布，发布前仍需人工检查。",
+      "added_at": "2026-10-29",
+      "updated_at": "2026-10-29",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "# 自动准备 CLI、MCP 和 Skill，并自动配置 Codex；缺 Node 会装专用运行时（macOS / Linux）\ncurl -fsSL 'https://wedraft.xiaoha.org/integrations/install.sh' | sh -s -- 'https://wedraft.xiaoha.org/integrations/'",
+      "detail_url": "skills/wedraft.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/writing-docs/wedraft/ENTRY.md"
     },
     {
       "id": "zenstory",

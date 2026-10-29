@@ -1,6 +1,7 @@
 name: index-check
 # 注意：本 workflow 按路径触发（SKILL.md / scripts / site / INDEX.md 等），
 # 纯历史归位类 PR 不触发这些检查，会让必需检查一直停在 expected 而无法合并。
+# 2026-10-28 回流说明：PR #60 已把批次1+2 发往 main（261028d）。
 
 on:
   workflow_dispatch:
@@ -28,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.13'
       - run: python -m pip install -r scripts/requirements.txt
@@ -41,7 +42,7 @@ jobs:
       - uses: actions/checkout@v5
 
       - name: 设置 Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.13'
 
@@ -58,7 +59,7 @@ jobs:
       - uses: actions/checkout@v5
 
       - name: 设置 Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.13'
 
@@ -75,7 +76,7 @@ jobs:
       - uses: actions/checkout@v5
 
       - name: 设置 Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.13'
 

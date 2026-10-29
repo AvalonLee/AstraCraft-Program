@@ -19,6 +19,7 @@
 - **发布（2026-10-28）**：本次重界定经 PR #56 合入 `dev`、PR #57 合入 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261028c`，共 96 条。
 
 ### 新增
+- **OpenCodeReview AI 代码审查 CLI（2026-10-29）**：收录 `dev-engineering/open-code-review`（Apache-2.0）。★48.8k 的阿里巴巴官方开源 AI 代码审查 CLI（Go 编写、npm 分发，内部验证两年后开源）：确定性流水线兜底文件选取、智能打包与规则匹配（内置 NPE、线程安全、XSS、SQL 注入等多语言规则集），LLM Agent 负责动态决策与上下文检索，产出行级精准评论；官方 AACR-Bench 基准显示同模型下精度与 F1 显著高于通用 Agent、token 约为其 1/9（召回率有意调低换低噪音）。`npm install -g @alibaba-group/open-code-review` 安装，`ocr config` 配置模型端点，支持工作区 / 分支区间 / 单提交评审与 `ocr scan` 全文件扫描、delegation 模式（无需配 LLM）与 Claude Code、Codex、Cursor、Kimi Code 集成。注意 diff 会发送到所配置的 LLM 服务商，涉密仓库先做合规评估。评级：常规。目录总数由 96 增至 **97**。
 - **Onetake 一镜到底连贯动效视频技能（2026-10-28）**：收录 `design-creative/onetake`（PolyForm Noncommercial 1.0.0）。★3.4k 的 Claude Agent Skill，让 coding agent 拍「一镜到底」的产品发布影片与功能演示：全程一个连续镜头，每个节拍从上一拍自然生长，由连贯性 oracle 逐帧验收，解决 AI 生成视频「切幻灯片」式硬切；八步流程（解构参考 → 概念 → 分镜 → 素材/UI → 合成 → 渲染 → 音效 → 校验），产出 4K60 带真实 UI、运动模糊与音效。注意 PolyForm Noncommercial 仅限非商业用途（商用请用同类 Apache-2.0 条目 video-shotcraft）；依赖 Python 科学计算栈 + playwright + ffmpeg + Node；上游 2026-09-26 创建，尚属新项目。评级：常规。目录总数由 95 增至 **96**。
 
 ### 更新

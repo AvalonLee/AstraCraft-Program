@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "dataset_version": "261028d",
-  "generated_at": "2026-10-28T15:30:34Z",
-  "count": 96,
+  "dataset_version": "261029c",
+  "generated_at": "2026-10-29T01:44:42Z",
+  "count": 97,
   "modes": [
     {
       "value": "install",
@@ -3801,6 +3801,57 @@
       "quickstart": "/plugin marketplace add multica-ai/andrej-karpathy-skills\n/plugin install andrej-karpathy-skills@karpathy-skills",
       "detail_url": "skills/andrej-karpathy-skills.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/dev-engineering/andrej-karpathy-skills/ENTRY.md"
+    },
+    {
+      "id": "open-code-review",
+      "name_zh": "OpenCodeReview AI 代码审查 CLI",
+      "name_en": "OpenCodeReview",
+      "summary_zh": "阿里巴巴开源的 AI 代码审查 CLI（内部验证两年后开源）：确定性流水线负责文件选取、打包与规则匹配等硬约束，LLM Agent 负责动态决策与上下文检索，产出行级精准评论；内置 NPE、线程安全、XSS、SQL 注入等多语言规则集，兼容 OpenAI / Anthropic 接口。",
+      "summary_en": "Alibaba's AI code review CLI: deterministic pipelines handle file selection, bundling and rule matching while an LLM agent does dynamic retrieval, producing precise line-level comments.",
+      "category_dir": "dev-engineering",
+      "category_name": "研发与代码",
+      "mode": "connect",
+      "mode_label": "接入 Agent",
+      "tags": [
+        "code-review",
+        "ai-agent",
+        "cli",
+        "claude-code"
+      ],
+      "languages": [
+        "go"
+      ],
+      "doc_languages": [
+        "en",
+        "zh"
+      ],
+      "license": "Apache-2.0",
+      "license_bucket": "open",
+      "homepage": "https://open-codereview.ai",
+      "repo": "https://github.com/alibaba/open-code-review",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "ai-agent",
+        "cli"
+      ],
+      "aliases": [
+        "OpenCodeReview",
+        "Open Code Review",
+        "open-code-review",
+        "ocr"
+      ],
+      "risk_notes": "评审召回率低于通用 Agent（官方有意以精度换低噪音），不宜作为唯一质量防线；diff 与相关文件内容会发送到所配置的 LLM 服务商（delegation 模式则交给宿主编码 Agent 执行），涉密仓库先做合规评估；token 与精度对比数据来自官方 AACR-Bench 自测基准。",
+      "added_at": "2026-10-29",
+      "updated_at": "2026-10-29",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "npm install -g @alibaba-group/open-code-review   # 装完全局可用 ocr 命令\n\n# 配置 LLM（交互式选 provider、填 API key、选模型，自动测连通性）\nocr config provider\nocr config model",
+      "detail_url": "skills/open-code-review.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/dev-engineering/open-code-review/ENTRY.md"
     },
     {
       "id": "wshobson-agents",

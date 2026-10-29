@@ -19,6 +19,7 @@
 - **发布（2026-10-28）**：本次重界定经 PR #56 合入 `dev`、PR #57 合入 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261028c`，共 96 条。
 
 ### 新增
+- **Answer me with HTML 网页讲解技能（2026-10-29）**：收录 `design-creative/answer-me-with-html`（MIT）。★4.6k 的 Agent Skill，让 Agent 用一页可读的 HTML 回答复杂问题：模型只写 Markdown 草稿，技能内置 CLI 约 50ms 渲染成带 SVG 图解、对比表格与时间线的单文件离线页面；上游基准显示写页 token 约为手写 HTML 的 1/8、约 2.6 倍速，一行可答的小问题仍返回一行回答，另支持 3Blue1Brown 风格讲解视频。`npx skills add QingYunA/answer-me-with-html` 一条命令装入，适配 Claude Code、Codex、Cursor、OpenCode、Pi、DeepSeek Harness。注意生成的页面落盘在 `~/.answer-me-with-html/pages/`（含提问与代码片段，注意隐私）；上游 2026-10-02 创建、迭代很快。评级：常规。目录总数由 96 增至 **97**。
 - **Onetake 一镜到底连贯动效视频技能（2026-10-28）**：收录 `design-creative/onetake`（PolyForm Noncommercial 1.0.0）。★3.4k 的 Claude Agent Skill，让 coding agent 拍「一镜到底」的产品发布影片与功能演示：全程一个连续镜头，每个节拍从上一拍自然生长，由连贯性 oracle 逐帧验收，解决 AI 生成视频「切幻灯片」式硬切；八步流程（解构参考 → 概念 → 分镜 → 素材/UI → 合成 → 渲染 → 音效 → 校验），产出 4K60 带真实 UI、运动模糊与音效。注意 PolyForm Noncommercial 仅限非商业用途（商用请用同类 Apache-2.0 条目 video-shotcraft）；依赖 Python 科学计算栈 + playwright + ffmpeg + Node；上游 2026-09-26 创建，尚属新项目。评级：常规。目录总数由 95 增至 **96**。
 
 ### 更新

@@ -21,6 +21,7 @@
 - **发布（2026-10-29，第二次）**：六条目批次与核验快照刷新经 PR #67/#68 合入 `dev`、PR #69 发往 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261029e`，共 105 条，九个新条目全部 `verified`。
 
 ### 新增
+- **Background Removal JS 浏览器端抠图库（2026-10-29）**：收录 `design-creative/background-removal-js`（AGPL-3.0）。★7.4k 的 IMG.LY 开源抠图库：ONNX Runtime + ISNet 分割模型在浏览器 / Node.js 本地推理，图片不上传、无按张计费，`npm install @imgly/background-removal` 一行接入（浏览器包需 peer 依赖 onnxruntime-web@1.21.0，Node 端用独立包 background-removal-node），支持前景 / 背景 / 蒙版三种输出、WebGPU 加速与量化小模型，模型资产默认 IMG.LY CDN 托管、可自托管。注意 AGPL-3.0——闭源商业集成需购买授权或按协议开源；首次运行需从默认 CDN 下载约 40–80MB 模型；上游最后推送 2025-07、更新放缓但未归档。评级：常规。目录总数由 105 增至 **106**。
 - **House Plan Designer 户型图设计器技能（2026-10-29）**：收录 `design-creative/house-plan-designer`（MIT）。★217 的 Agent Skill：一张户型图（图片 / PDF / CAD DXF）交给 Agent，自动量墙识图、补全门窗房间与家具水电，生成双击即开的单文件 HTML 装修设计器——2D 布置、3D 漫游、五类管线自动排布分开导出、光线追踪出图、导出国标 DXF 施工图，离线可用；也支持整套 CAD 布置图还原办公 / 商业楼层。注意上游建议不要用豆包等弱工具型模型跑满血流程，算量报价仅供参考。评级：常规。
 - **WeDraft 公众号排版技能（2026-10-29）**：收录 `writing-docs/wedraft`（MIT）。★37 的小哈公社公众号 Markdown 排版工具：网页 / macOS / CLI / MCP / Skill 五形态共用排版核心，七款模板一键换风格、双向实时预览、复制前问题检查；AI 一句话排版成微信富文本，只管排版不自动发布。注意公开网页版为测试版（源码准备 0.2.0），安装器当前支持 macOS / Linux。评级：常规。
 - **Slate（场记）短片制作与拉片工作台（2026-10-29）**：收录 `design-creative/slate`（MIT）。★51 的本地 Web 工作台：分镜 JSON 为唯一制作数据，制作线（剧本 → 角色 → 素材 → 分镜 → 镜头 → 三层视频）与拉片线（影片解构、台词 OCR/ASR、逐帧提取、深度动作）双主线，接本地 ComfyUI 与云端 API，数据全存本机。注意目前主要支持 Windows 本机部署，Python 需 uv 固定 3.12 锁文件，服务监听 0.0.0.0:8775 勿直接暴露公网。评级：常规。

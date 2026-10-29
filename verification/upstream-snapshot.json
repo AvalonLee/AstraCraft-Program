@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T06:28:28Z",
+  "generated_at": "2026-10-29T09:45:00Z",
   "entries": {
     "0xsline-awesome-deepseek-harness": {
       "repo": "https://github.com/0xsline/awesome-deepseek-harness",
@@ -1385,6 +1385,30 @@
       "license": "AGPL-3.0",
       "pushed_at": "2025-07-18T12:56:39Z",
       "stars": 7360
+    },
+    "reverse-skill": {
+      "repo": "https://github.com/zhaoxuya520/reverse-skill",
+      "head_sha": "cab634bd855fc287f6e420c1f36fd1a6b9245960",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "MIT",
+      "pushed_at": "2026-09-22T06:43:21Z",
+      "stars": 43696
+    },
+    "pentagi": {
+      "repo": "https://github.com/vxcontrol/pentagi",
+      "head_sha": "cffed9485aa1cca70762cd08a57ac62a80406258",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "MIT",
+      "pushed_at": "2026-10-22T23:26:13Z",
+      "stars": 32692
     }
   }
 }

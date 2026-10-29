@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T06:28:28Z",
+  "generated_at": "2026-10-29T08:55:00Z",
   "entries": {
     "0xsline-awesome-deepseek-harness": {
       "repo": "https://github.com/0xsline/awesome-deepseek-harness",
@@ -1385,6 +1385,20 @@
       "license": "AGPL-3.0",
       "pushed_at": "2025-07-18T12:56:39Z",
       "stars": 7360
+    },
+    "we-article": {
+      "repo": "https://github.com/hongqun/we-article",
+      "head_sha": "8b967fa59725c36d75980e9ddeb5cc6a95ab6987",
+      "status": "needs-review",
+      "health_score": 75,
+      "max_tier": "standard",
+      "issues": [
+        "E_LICENSE_UNKNOWN"
+      ],
+      "archived": false,
+      "license": "UNKNOWN",
+      "pushed_at": "2026-10-15T01:47:09Z",
+      "stars": 16
     }
   }
 }

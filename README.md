@@ -8,9 +8,13 @@
 按「装进 Agent / 接入 Agent / 部署运行 / 阅读参考」四种消费方式组织。不收录上游源码快照。
 
 <<<<<<< HEAD
+[![entries](https://img.shields.io/badge/entries-108-blue.svg)](site/index.html)
+=======
+<<<<<<< HEAD
 [![entries](https://img.shields.io/badge/entries-107-blue.svg)](site/index.html)
 =======
-[![entries](https://img.shields.io/badge/entries-109-blue.svg)](site/index.html)
+[![entries](https://img.shields.io/badge/entries-111-blue.svg)](site/index.html)
+>>>>>>> dev
 >>>>>>> dev
 [![license](https://img.shields.io/badge/docs-CC%20BY%204.0-blue.svg)](LICENSE)
 [![code license](https://img.shields.io/badge/code-MIT-green.svg)](LICENSE)

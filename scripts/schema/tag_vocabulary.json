@@ -89,7 +89,9 @@
     "comfyui",
     "image-generation",
     "image-editing",
-    "image-matting"
+    "image-matting",
+    "security",
+    "reverse-engineering"
   ],
   "aliases": {
     "claude": "claude-code",

@@ -19,7 +19,6 @@ metrics:
   pushed_at: "2026-10-09T18:45:52Z"
   checked_at: "2026-10-28"
   archived: false
-related: [superpowers]
 aliases: [Agent Skills Specification, agentskills]
 risk_notes: 规范是活的标准，本仓库刻意不冻结副本，始终指向官方最新版；规范页与 GitHub 仓库均未标注许可证（2026-10-28 核验），引用前请自行确认授权。
 added_at: "2026-08-10"

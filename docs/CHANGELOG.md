@@ -19,6 +19,8 @@
 - **发布（2026-10-28）**：本次重界定经 PR #56 合入 `dev`、PR #57 合入 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261028c`，共 96 条。
 
 ### 新增
+
+- **GitNexus 代码知识图谱（2026-10-29）**：收录 `dev-engineering/gitnexus`（PolyForm Noncommercial 1.0.0）。把代码库静态分析成符号、调用、依赖与执行流的知识图谱，Agent 通过 MCP 工具（`query` / `impact` / `trace` 等）、CLI 或网页图浏览器查询，回答「谁调用这个函数」「改动影响什么」时有真实代码依据；`npx gitnexus analyze` 一条命令建索引，`setup` 支持 Claude Code、Cursor、Codex、Qoder 等编辑器。注意 PolyForm Noncommercial 仅限非商业用途；默认 `analyze` 会改写仓库内 AGENTS.md / CLAUDE.md 并注册 hooks（`--index-only` 可只建索引）。评级：常规。目录总数由 96 增至 **97**。
 - **Onetake 一镜到底连贯动效视频技能（2026-10-28）**：收录 `design-creative/onetake`（PolyForm Noncommercial 1.0.0）。★3.4k 的 Claude Agent Skill，让 coding agent 拍「一镜到底」的产品发布影片与功能演示：全程一个连续镜头，每个节拍从上一拍自然生长，由连贯性 oracle 逐帧验收，解决 AI 生成视频「切幻灯片」式硬切；八步流程（解构参考 → 概念 → 分镜 → 素材/UI → 合成 → 渲染 → 音效 → 校验），产出 4K60 带真实 UI、运动模糊与音效。注意 PolyForm Noncommercial 仅限非商业用途（商用请用同类 Apache-2.0 条目 video-shotcraft）；依赖 Python 科学计算栈 + playwright + ffmpeg + Node；上游 2026-09-26 创建，尚属新项目。评级：常规。目录总数由 95 增至 **96**。
 
 ### 更新

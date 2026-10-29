@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T06:28:28Z",
+  "generated_at": "2026-10-29T09:10:00Z",
   "entries": {
     "0xsline-awesome-deepseek-harness": {
       "repo": "https://github.com/0xsline/awesome-deepseek-harness",
@@ -1385,6 +1385,18 @@
       "license": "AGPL-3.0",
       "pushed_at": "2025-07-18T12:56:39Z",
       "stars": 7360
+    },
+    "rea": {
+      "repo": "https://github.com/morluto/rea",
+      "head_sha": "131fbe0754332cdcf6f2ce951dad3b026f982e8d",
+      "status": "verified",
+      "health_score": 100,
+      "max_tier": "core",
+      "issues": [],
+      "archived": false,
+      "license": "MIT",
+      "pushed_at": "2026-10-29T08:26:51Z",
+      "stars": 404489
     }
   }
 }

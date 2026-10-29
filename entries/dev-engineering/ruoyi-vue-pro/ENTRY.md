@@ -15,7 +15,7 @@ homepage: https://doc.iocoder.cn/
 repo: https://github.com/YunaiV/ruoyi-vue-pro
 tier: standard
 metrics:
-  stars: 40103
+  stars: 40106
   pushed_at: "2026-10-29T02:08:54Z"
   checked_at: "2026-10-29"
   archived: false

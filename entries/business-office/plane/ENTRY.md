@@ -16,7 +16,7 @@ repo: https://github.com/makeplane/plane
 docs_url: https://developers.plane.so/
 tier: standard
 metrics:
-  stars: 61632
+  stars: 61640
   pushed_at: "2026-10-28T21:48:56Z"
   checked_at: "2026-10-29"
   archived: false

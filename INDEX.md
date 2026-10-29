@@ -538,13 +538,13 @@ star 数不参与收录判断，仅作为排序维度。`—` 表示尚未采集
 | 11 | [OpenMontage 开源智能体视频制作系统](entries/design-creative/openmontage/ENTRY.md) | 72470 | 2026-10-24T00:49:34Z |
 | 12 | [MediaCrawler 自媒体爬虫](entries/research-intel/mediacrawler/ENTRY.md) | 68759 | 2026-10-27T00:36:40Z |
 | 13 | [AI Job Search 求职申请框架](entries/business-office/ai-job-search/ENTRY.md) | 66798 | 2026-10-27T15:16:51Z |
-| 14 | [Plane 开源项目管理平台](entries/business-office/plane/ENTRY.md) | 61632 | 2026-10-28T21:48:56Z |
+| 14 | [Plane 开源项目管理平台](entries/business-office/plane/ENTRY.md) | 61640 | 2026-10-28T21:48:56Z |
 | 15 | [Voicebox 本地 AI 语音工作室](entries/design-creative/voicebox/ENTRY.md) | 58773 | 2026-10-07T01:17:58Z |
 | 16 | [Emil Kowalski 设计与动效技能集](entries/design-creative/emilkowalski-skills/ENTRY.md) | 50721 | 2026-10-11T13:58:36Z |
-| 17 | [OpenCodeReview AI 代码审查 CLI](entries/dev-engineering/open-code-review/ENTRY.md) | 48837 | 2026-10-22T04:24:26Z |
-| 18 | [GitNexus 代码知识图谱](entries/dev-engineering/gitnexus/ENTRY.md) | 48094 | 2026-10-28T23:36:31Z |
+| 17 | [OpenCodeReview AI 代码审查 CLI](entries/dev-engineering/open-code-review/ENTRY.md) | 48873 | 2026-10-29T04:18:23Z |
+| 18 | [GitNexus 代码知识图谱](entries/dev-engineering/gitnexus/ENTRY.md) | 48099 | 2026-10-29T01:20:03Z |
 | 19 | [VoxCPM2 无 Tokenizer TTS](entries/design-creative/voxcpm/ENTRY.md) | 40741 | 2026-10-08T03:26:41Z |
-| 20 | [芋道 ruoyi-vue-pro 快速开发平台](entries/dev-engineering/ruoyi-vue-pro/ENTRY.md) | 40103 | 2026-10-29T02:08:54Z |
+| 20 | [芋道 ruoyi-vue-pro 快速开发平台](entries/dev-engineering/ruoyi-vue-pro/ENTRY.md) | 40106 | 2026-10-29T02:08:54Z |
 | 21 | [OpenScreen 开源录屏演示工具](entries/design-creative/openscreen/ENTRY.md) | 39920 | 2026-10-17T03:25:14Z |
 | 22 | [WeKnora 开源 LLM 知识平台](entries/agent-infra/weknora/ENTRY.md) | 35661 | 2026-10-27T06:30:27Z |
 | 23 | [GPT-Image2 工业级提示词引擎与模板库](entries/design-creative/awesome-gpt-image-2/ENTRY.md) | 35119 | 2026-10-14T08:48:21Z |

@@ -33,6 +33,7 @@
 
 ### 更新
 
+- **上游指标全量刷新（2026-10-29）**：`verify_upstreams.py --refresh` 全量刷新 105 条的核验快照，九个新条目（gitnexus、answer-me-with-html、open-code-review、house-plan-designer、wedraft、slate、beeftv、ruoyi-vue-pro、plane）首次纳入快照并全部 `verified`（verified 总数 97）；九条的 frontmatter `metrics` 同步至快照最新值。beeftv（自定义 Source Available 协议，GitHub 返回 NOASSERTION）与 gitnexus（PolyForm，GitHub 不可机器识别）按规范登记人工复核清单，按证据文件 blob SHA 校验。`blocked` 维持 2 条（deepseek-pp、openscreen 已归档），`needs-review` 剩 6 条均为上游无许可声明的已知存量。
 - **4 条许可证按上游更正（2026-10-28）**：全量核验发现 4 条声明与上游 LICENSE 不一致，已按上游现状更新——`agent-infra/caveman` 整仓改为 Apache-2.0（原 MIT + BSL-1.1 拆分，上游已整仓开源）、`design-creative/directors-console` 由专有改为 MIT、`design-creative/toonflow` 由 Apache-2.0 改为 MIT；`agent-infra/codexplusplus` 保留 AGPL-3.0-only 的精确写法，核验器改为把 GitHub 返回的旧别名 `AGPL-3.0` 视为同一协议，不再误报冲突。
 - **2 条已归档条目降为观察（2026-10-28）**：`agent-infra/deepseek-pp`、`design-creative/openscreen` 上游仓库已归档，评级由常规降为观察（watch）；openscreen 使用建议改为其社区 fork。
 - **20 条许可证人工复核（2026-10-28）**：逐条对照上游 LICENSE 与 README，更正 4 条错误声明——`agent-infra/cc-haha` 改为自定义 Community Source License 1.0（原文案误标 MIT）、`design-creative/huobao-canvas` 改为 CC BY-NC-SA 4.0（误标 MIT）、`design-creative/bigbanana-ai-director` 以 LICENSE 全文改为 BigBanana Community License 1.0、`business-office/toolknit-desktop` 改为 PolyForm Noncommercial 1.0.0（上游 2026-10-14 换协议，原 Apache-2.0 不再适用）；`meta-skillcraft/agent-skills-spec` 因规范页与仓库均无许可声明改为 UNKNOWN。其余 14 条声明与上游一致，另有 6 条上游确实没有许可声明（保持 UNKNOWN）；这些条目因上游许可不可机器识别而保留 needs-review。分类置信度误报通过补齐关键词（`self-hosted`、`web-crawler`）消除。

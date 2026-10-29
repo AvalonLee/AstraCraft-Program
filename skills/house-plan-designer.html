@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>House Plan Designer 户型图设计器技能 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览条目</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">设计与创意</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">House Plan Designer 户型图设计器技能</h1>
+      <p class="hero-subtitle">House Plan Designer</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>装进 Agent</span>
+    </div>
+    <p class="muted detail-meta">把一张户型图（图片 / 截图 / PDF / CAD 的 DXF）交给 Agent，自动量墙识图、补全门窗房间与家具水电，生成一个双击即开的单文件 HTML 装修设计器：2D 布置、3D 漫游、五类管线自动排布、光线追踪出图，还能导出国标 DXF 施工图，全程离线可用。</p>
+    <p class="detail-upstream">上游状态：217 stars · 2026-10-29 核验</p>
+    
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/ZWD11/house-plan-designer" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/ZWD11/house-plan-designer" target="_blank" rel="noopener">项目主页</a>
+    </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code>git clone https://github.com/ZWD11/house-plan-designer ~/.claude/skills/house-plan-designer
+pip install numpy pillow opencv-python pymupdf ezdxf   # 后两个用于 CAD 图纸（PDF / DXF）
+cd ~/.claude/skills/house-plan-designer/scripts &amp;&amp; npm install   # puppeteer-core，自查截图用</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>House Plan Designer 户型图设计器技能</h1>
+<blockquote>一张户型图，一句话，Agent 把它还原成可 2D / 3D 直接设计的装修设计器网页。上游：<a href="https://github.com/ZWD11/house-plan-designer" target="_blank" rel="noopener">ZWD11/house-plan-designer</a> · 许可证：MIT</blockquote>
+<h2>这是什么</h2>
+<p>一个装进 Agent 技能目录的 skill（MIT，中文文档）：Agent 按 <code>SKILL.md</code> 的流程自动量墙、看懂图纸、补全门窗和房间、布置家具与水电，最后产出一个<strong>双击就能打开的单文件 HTML</strong> 设计器，离线可用。</p>
+<p>生成的设计器覆盖装修全流程：2D 布置与拖拽改尺寸、3D 漫游与夜景开灯、19 个空间的家具库与一键换风格、插座 / 照明 / 网线 / 冷热水 / 排水五类管线自动排布且可分开导出、算量报价、整套施工图，以及<strong>导出符合国标的 CAD 图纸（DXF）</strong>；还有写实建模与光线追踪出图。除住宅外，也支持办公 / 培训 / 商业楼层——装修公司给的整套 CAD 布置图 DXF 能按图块逐件还原并与原图对账。</p>
+<h2>怎么安装</h2>
+<p>把仓库克隆进 Agent 的技能目录并装依赖（Claude Code 示例）：</p>
+<pre><code class="lang-bash">git clone https://github.com/ZWD11/house-plan-designer ~/.claude/skills/house-plan-designer
+pip install numpy pillow opencv-python pymupdf ezdxf   # 后两个用于 CAD 图纸（PDF / DXF）
+cd ~/.claude/skills/house-plan-designer/scripts &amp;&amp; npm install   # puppeteer-core，自查截图用</code></pre>
+<p>其他支持 Skill 的 Agent 放到各自约定的 skills 目录即可。本机需要有 Chrome 或 Edge（自查截图用），找不到时设置环境变量 <code>CHROME_PATH</code> 指向浏览器程序。</p>
+<h2>怎么用</h2>
+<p>对 Agent 说「把这张户型图做成装修设计器网页」，附上户型图（图片、截图、PDF、DXF 都行）；可以顺带提要求，Agent 会写进方案，例如：</p>
+<pre><code class="lang-text">客厅铺 800×800 灰色大板，主卧人字拼木地板；风格要奶油风；城市是杭州</code></pre>
+<p>产出 <code>&lt;户型名&gt;-装修设计器.html</code>，并附 2D / 3D 截图与识别说明（哪些尺寸按标注、哪些按图形量、图纸哪里前后矛盾），双击 HTML 即可进入设计器继续编辑。</p>
+<h2>注意事项</h2>
+<ul><li><strong>模型有要求</strong>：识别与布置质量依赖模型能力，上游明确建议不要用豆包等弱工具型模型跑满血流程，推荐 Claude Code 等支持 Skill 的编码 Agent。</li><li><strong>结果是参考</strong>：复杂图纸可能误读，算量报价仅供参考；正式施工以专业设计与现场复核为准，CAD 对账结果建议人工抽查。</li><li>MIT 许可，可商用；纯前端单文件产物，不依赖云端服务。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-10-29 · 更新于 2026-10-29 · AstraCraft Program 轻量索引</p>
+</main>
+<script src="../assets/copy.js"></script>
+</body>
+</html>

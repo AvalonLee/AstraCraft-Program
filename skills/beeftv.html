@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BeefTV AI 原生视频创作工作台 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览条目</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">设计与创意</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">BeefTV AI 原生视频创作工作台</h1>
+      <p class="hero-subtitle">BeefTV</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>常规</span><span class="lic-badge lic-commercial" title="LicenseRef-BeefTV-Source-Available-1.0">商用需授权</span><span>部署运行</span>
+    </div>
+    <p class="muted detail-meta">面向 AI 时代的视频创作工作台：在一张自由画布里连接创意、模型与素材，与 BeefTV Agent 一起从分镜、素材推进到成片，用 Skills 扩展方法、用工作流复用过程；桌面版（macOS / Windows）本地优先，工程全程可继续编辑、迭代和积累。</p>
+    <p class="detail-upstream">上游状态：1.9k stars · 2026-10-29 核验</p>
+    
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/glanderness/BeefTV" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://beeftv.app/" target="_blank" rel="noopener">项目主页</a>
+    </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code># 打开最新 Release 页下载安装包；或访问官网 https://beeftv.app/
+gh browse glanderness/BeefTV --release</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>BeefTV AI 原生视频创作工作台</h1>
+<blockquote>在一个自由画布中连接创意、模型与素材，和 Agent 一起做视频。上游：<a href="https://github.com/glanderness/BeefTV" target="_blank" rel="noopener">glanderness/BeefTV</a> · 许可证：BeefTV Source Available License 1.0</blockquote>
+<h2>这是什么</h2>
+<p>面向 AI 时代的视频创作工作台（★1.9k，中英双语）：核心是一张<strong>自由画布</strong>，把创意、模型与素材作为节点自由连接，从分镜、素材到成片在同一工程里推进，产出可继续编辑、迭代和积累，而不是一次性出片。</p>
+<p>三个抓手：<strong>BeefTV Agent</strong> 作为创作助手贯通分镜方案、制作与成片导出，带影音检查；<strong>Skills</strong> 市场用技能扩展创作方法，支持固定版本安装、回退与私人改写；<strong>工作流</strong>把过程沉淀为可复用流程。生成能力覆盖 AI 图片 / 视频 / 音乐（Seedream 图层拆分、Topaz 超分等），桌面版 macOS / Windows 本地优先。</p>
+<h2>怎么部署运行</h2>
+<p>桌面版从 GitHub Releases 下载安装（macOS / Windows）：</p>
+<pre><code class="lang-bash"># 打开最新 Release 页下载安装包；或访问官网 https://beeftv.app/
+gh browse glanderness/BeefTV --release</code></pre>
+<p>安装后在设置里配置所需模型的 API Key 即可开始；工作区本地优先，工程数据保存在本机。</p>
+<h2>怎么用</h2>
+<p>在画布中新建工程，把素材与生成节点连接起来推进创作：让 Agent 出分镜方案、逐镜头生成与修改，用 Skills 安装特定风格方法，把跑通的过程存成工作流复用；成片导出前跑一遍影音检查。具体操作见官方 QUICKSTART 与功能清单文档。</p>
+<h2>注意事项</h2>
+<ul><li><strong>协议要读懂</strong>：不是标准开源协议——个人 / 学习 / 研究 / 组织内部使用（含向客户交付创作成果）免费，但<strong>对外提供托管、远程桌面或 API 形式的服务</strong>需取得商务授权（LICENSE 原文 Part A：External Service 条款）；分发不得收取商业对价。商用集成前先核对原文或联系上游。</li><li><strong>迭代快</strong>：v2.x 更新频繁（最近仍每周发版），行为与界面可能随版本变化。</li><li>生成类功能依赖第三方模型 API，费用与内容合规自行把握；版本 v2.0 起支持技能市场与可复用工作流。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-10-29 · 更新于 2026-10-29 · AstraCraft Program 轻量索引</p>
+</main>
+<script src="../assets/copy.js"></script>
+</body>
+</html>

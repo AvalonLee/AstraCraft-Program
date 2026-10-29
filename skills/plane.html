@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Plane 开源项目管理平台 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览条目</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">商业与办公</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Plane 开源项目管理平台</h1>
+      <p class="hero-subtitle">Plane</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>商业与办公</span><span>常规</span><span class="lic-badge lic-copyleft" title="AGPL-3.0">部分开源</span><span>部署运行</span>
+    </div>
+    <p class="muted detail-meta">开源的 Jira / Linear / ClickUp 替代品（★61k+）：工作项、周期（Sprint）、模块、看板与甘特图、项目文档与收件箱分诊一体，API 与 Webhook 齐全；自托管提供 Docker Compose 与 Kubernetes 两种部署并带实例管理面板（God Mode），另有云服务版。Django + Next.js 构建。</p>
+    <p class="detail-upstream">上游状态：61.6k stars · 2026-10-29 核验</p>
+    
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/makeplane/plane" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://plane.so" target="_blank" rel="noopener">项目主页</a>
+    </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code>curl -fsSL https://raw.githubusercontent.com/makeplane/plane/master/deployments/cli/community/install.sh | bash
+# 浏览器打开 http://localhost 完成工作区初始化；升级与迁移脚本在同目录</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Plane 开源项目管理平台</h1>
+<blockquote>现代项目管理平台：管理任务、Sprint、文档与分诊，Jira / Linear / Monday / ClickUp 的开源替代。上游：<a href="https://github.com/makeplane/plane" target="_blank" rel="noopener">makeplane/plane</a> · 许可证：AGPL-3.0</blockquote>
+<h2>这是什么</h2>
+<p>Plane 是开源（AGPL-3.0）的现代项目管理平台（★61k+）：以工作项（Work Items）为中心，配富文本编辑器与子属性引用；周期（Cycles）跑 Sprint、模块（Modules）按功能切分、视图（Views）自定义筛选、甘特图与看板可视化进度；项目文档（Pages）协作、收件箱（Inbox）分诊缺陷与反馈。提供完整 API 与 Webhook，方便接入自动化。</p>
+<p>技术栈 Django + Next.js + PostgreSQL/Redis；交付形态三种：Plane Cloud（免运维）、自托管 Docker Compose、自托管 Kubernetes，自托管附带实例管理面板 God Mode（统一配置 SMTP、认证方式等）。</p>
+<h2>怎么部署运行</h2>
+<p>社区版一条脚本起全栈（生成 <code>plane-app/</code> 目录并 docker compose 拉起）：</p>
+<pre><code class="lang-bash">curl -fsSL https://raw.githubusercontent.com/makeplane/plane/master/deployments/cli/community/install.sh | bash
+# 浏览器打开 http://localhost 完成工作区初始化；升级与迁移脚本在同目录</code></pre>
+<p>Kubernetes 部署、环境变量与外置数据库等进阶配置见官方自托管文档（developers.plane.so/self-hosting）。</p>
+<h2>怎么用</h2>
+<p>注册后创建工作区（Workspace）→ 建项目，按「工作项 + 周期 + 模块」组织开发节奏，看板拖拽流转、甘特图看排期；用 Pages 沉淀需求与会议纪要，Inbox 收集外部反馈并分诊成工作项。管理员在 God Mode 里配置实例参数。</p>
+<h2>注意事项</h2>
+<ul><li><strong>协议</strong>：AGPL-3.0——修改后对外提供网络服务需开源对应修改；二次开发做商业分发前先评估协议义务与上游商标政策。</li><li><strong>数据与升级</strong>：版本迭代较快，升级前按官方文档跑迁移脚本并备份数据卷；面向公网部署时做好认证与反代加固。</li><li>与同类相比偏产品团队的全功能项目管理；轻量任务看板可对比仓库内 kaneo、dootask 条目。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-10-29 · 更新于 2026-10-29 · AstraCraft Program 轻量索引</p>
+</main>
+<script src="../assets/copy.js"></script>
+</body>
+</html>

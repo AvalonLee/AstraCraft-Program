@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "dataset_version": "261103a",
-  "generated_at": "2026-11-03T08:08:51Z",
+  "dataset_version": "261103b",
+  "generated_at": "2026-11-03T08:19:56Z",
   "count": 114,
   "modes": [
     {
@@ -1459,7 +1459,7 @@
         "en"
       ],
       "license": "LicenseRef-MIT-Commons-Clause",
-      "license_bucket": "unknown",
+      "license_bucket": "commercial",
       "homepage": "https://animate-ui.com",
       "repo": "https://github.com/imskyleen/animate-ui",
       "tier": "standard",

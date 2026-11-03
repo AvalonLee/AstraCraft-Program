@@ -12,6 +12,20 @@
 
 ---
 
+## 2026-11
+
+### 结构
+
+- **上游归档核验政策调整（2026-11-03）**：`upstream-refresh` 夜检自 2026-11-03 起连续失败，根因是 `deepseek-pp`（zhu1090093659/deepseek-pp）与 `openscreen`（siddharthvaddem/openscreen）两个上游仓库被作者归档，核验无条件判 `blocked`（E_REPO_ARCHIVED）并以非零退出。两条目 2026-10-28 已降为 `watch` 观察档且 risk_notes 注明。本次按「归档 → 降观察」的收录政策调整 `scripts/upstream_verify.py`：**条目已处观察档时，上游归档只记 needs-review 提醒，不再阻断夜检**；非观察档条目归档仍判 blocked。附回归测试锁定该分支。
+
+### 新增
+
+- **shadcn/ui 组件库（2026-11-03）**：收录 `design-creative/shadcn-ui`（MIT）。★127.2k 的「组件源码复制进你项目」前端组件库：React + Tailwind CSS，可访问性默认值齐全，无 npm 包、代码归使用者所有，CLI `npx shadcn@latest init / add` 按需添加，AI 编码时代事实上的 UI 底座。注意组件升级不自动、需手动同步。评级：常规。
+- **awesome-reverse-engineered 逆向工程开源工具索引（2026-11-03）**：收录 `dev-engineering/awesome-reverse-engineered`（MIT，数据 CC0）。★1.15k、17,726 个逆向成果索引：游戏反编译、IoT/硬件、非官方 API 客户端、文件格式等 20 分类，带搜索站、Agent 技能（`npx skills add`）与 MCP 服务端，每晚自动刷新；关联 rea / reverse-skill。注意收录的是索引而非工具本体，非官方客户端合规自担。评级：常规。
+- **Animate UI 动效组件库（2026-11-03）**：收录 `design-creative/animate-ui`（MIT + Commons Clause，`LicenseRef-MIT-Commons-Clause`）。★4.86k 的动效基元库：为 Radix UI / Base UI / React Aria（Vue 侧 reka-ui）提供 API 完全一致的 Motion 动画版，换 import 即生效；CLI codemod 一键动画化已装 shadcn/ui 组件，随仓库附 Agent 技能。注意 Commons Clause 禁止单独/打包转售组件本体；codemod 原地改写文件，先提交工作区或 `--dry-run` 预览。评级：常规。本批次经 PR #81 合入 `dev`，目录总数由 111 增至 **114**（数据版本 261103b）。
+
+---
+
 ## 2026-10
 
 ### 发布

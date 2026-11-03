@@ -60,6 +60,19 @@ def test_blocked_entry_makes_refresh_fail() -> None:
     assert snapshot["entries"]["tool"]["status"] == "blocked"
 
 
+def test_archived_watch_entry_does_not_block_refresh() -> None:
+    payload = healthy_payload()
+    payload["archived"] = True
+
+    snapshot, exit_code = build_snapshot(
+        [catalog_entry(tier="watch")], lambda _: payload, "2026-08-27T00:00:00Z"
+    )
+
+    assert exit_code == 0
+    assert snapshot["entries"]["tool"]["status"] == "needs-review"
+    assert snapshot["entries"]["tool"]["archived"] is True
+
+
 def test_needs_review_is_reported_without_blocking_refresh() -> None:
     payload = healthy_payload()
     payload["api_license"] = "UNKNOWN"

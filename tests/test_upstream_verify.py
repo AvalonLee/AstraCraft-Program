@@ -67,6 +67,12 @@ def test_archived_repository_is_blocked() -> None:
     assert "E_REPO_ARCHIVED" in result.issue_codes
 
 
+def test_archived_watch_entry_only_needs_review() -> None:
+    result = verify_entry(entry(tier="watch"), facts(archived=True))
+    assert result.status == "needs-review"
+    assert "E_REPO_ARCHIVED" in result.issue_codes
+
+
 def test_license_conflict_needs_review() -> None:
     result = verify_entry(entry(), facts(api_license="MIT", text_license="Apache-2.0"))
     assert result.status == "needs-review"

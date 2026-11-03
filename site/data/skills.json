@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "dataset_version": "261029k",
-  "generated_at": "2026-11-03T03:34:16Z",
-  "count": 113,
+  "dataset_version": "261103a",
+  "generated_at": "2026-11-03T08:08:51Z",
+  "count": 114,
   "modes": [
     {
       "value": "install",
@@ -1434,6 +1434,54 @@
       "quickstart": "git clone https://github.com/morsoli/aimangastudio.git\ncd aimangastudio\nnpm install",
       "detail_url": "skills/aimangastudio.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/aimangastudio/ENTRY.md"
+    },
+    {
+      "id": "animate-ui",
+      "name_zh": "Animate UI 动效组件库",
+      "name_en": "Animate UI",
+      "summary_zh": "给 shadcn/ui 组件一键加动效的 Radix/Base UI/React Aria 动画基元库：换一行 import 就有 Motion 弹簧动效，附带 CLI codemod、Vue 版本与 Agent 技能，让现有组件原地「活」起来。",
+      "summary_en": "Animated drop-in primitives for Radix UI, Base UI and React Aria built with Motion: swap the import to keep your shadcn/ui components, with a CLI codemod, Vue port and an agent skill.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "mode": "install",
+      "mode_label": "装进 Agent",
+      "tags": [
+        "design-system",
+        "motion-design",
+        "framework",
+        "react",
+        "tailwindcss"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "LicenseRef-MIT-Commons-Clause",
+      "license_bucket": "unknown",
+      "homepage": "https://animate-ui.com",
+      "repo": "https://github.com/imskyleen/animate-ui",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "shadcn-ui"
+      ],
+      "aliases": [
+        "Animate UI",
+        "animate-ui"
+      ],
+      "risk_notes": "协议为 MIT + Commons Clause：可用于任何应用/网站/产品（含商用），但不得单独或打包出售、再分发组件本体；复制进项目后自行维护升级，上游更新不自动同步；CLI codemod 会原地改写组件文件，建议先提交工作区或用 --dry-run 预览。",
+      "added_at": "2026-11-03",
+      "updated_at": "2026-11-03",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "npx @animate-ui/cli@latest animate all      # 已装的 shadcn/ui 组件全部换用动画基元（原地改写）\nnpx @animate-ui/cli@latest animate dialog tooltip   # 或只动指定组件；--dry-run 先预览",
+      "detail_url": "skills/animate-ui.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/animate-ui/ENTRY.md"
     },
     {
       "id": "animejs",

@@ -24,6 +24,8 @@
 - **awesome-reverse-engineered 逆向工程开源工具索引（2026-11-03）**：收录 `dev-engineering/awesome-reverse-engineered`（MIT，数据 CC0）。★1.15k、17,726 个逆向成果索引：游戏反编译、IoT/硬件、非官方 API 客户端、文件格式等 20 分类，带搜索站、Agent 技能（`npx skills add`）与 MCP 服务端，每晚自动刷新；关联 rea / reverse-skill。注意收录的是索引而非工具本体，非官方客户端合规自担。评级：常规。
 - **Animate UI 动效组件库（2026-11-03）**：收录 `design-creative/animate-ui`（MIT + Commons Clause，`LicenseRef-MIT-Commons-Clause`）。★4.86k 的动效基元库：为 Radix UI / Base UI / React Aria（Vue 侧 reka-ui）提供 API 完全一致的 Motion 动画版，换 import 即生效；CLI codemod 一键动画化已装 shadcn/ui 组件，随仓库附 Agent 技能。注意 Commons Clause 禁止单独/打包转售组件本体；codemod 原地改写文件，先提交工作区或 `--dry-run` 预览。评级：常规。本批次经 PR #81 合入 `dev`，目录总数由 111 增至 **114**（数据版本 261103b）。
 
+- **岛仔 Daozai 桌面信息岛（2026-11-04）**：收录 `business-office/xiaotang-daozai`（MIT）。★138 的 Rust + egui Windows 桌面信息岛：贴顶小刘海收展自如，聚合音乐歌词与媒体控制、邮件验证码一键复制、工作日历（飞书/钉钉/企业微信 CalDAV）与邮件日程、待办提醒、专注/饮水计时、文件置物架与 AI 额度圆环（Codex / Claude / Kimi / Grok / Gemini 多账号）；数据留本机、密码走 Windows 凭据管理器。注意未做商业代码签名，安装前用 SHA256SUMS 核对；钉钉/企业微信日历尚未完成真实账号验收；仅 Win10/11 x64。评级：常规。目录总数由 114 增至 **115**（数据版本 261104a）。
+
 ---
 
 ## 2026-10

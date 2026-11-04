@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "dataset_version": "261103b",
-  "generated_at": "2026-11-03T08:19:56Z",
-  "count": 114,
+  "generated_at": "2026-11-04T02:46:04Z",
+  "count": 115,
   "modes": [
     {
       "value": "install",
@@ -1297,6 +1297,54 @@
       "quickstart": "npm install --global @toolknit/cli\ntoolknit doctor --json\ntoolknit --help",
       "detail_url": "skills/toolknit-desktop.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/business-office/toolknit-desktop/ENTRY.md"
+    },
+    {
+      "id": "xiaotang-daozai",
+      "name_zh": "岛仔 Daozai 桌面信息岛",
+      "name_en": "Daozai",
+      "summary_zh": "Rust + egui 构建的 Windows 桌面信息岛：贴在屏幕顶部收起为一条小刘海，展开即音乐歌词、邮件验证码、日程提醒、待办、饮水专注与 AI 额度圆环，重要信息轻轻出现、不打断手头的事。",
+      "summary_en": "A Windows desktop info island built with Rust and egui: docks at the screen top as a slim notch, expanding into music lyrics, email codes, calendar reminders, todos and AI usage rings.",
+      "category_dir": "business-office",
+      "category_name": "商业与办公",
+      "mode": "deploy",
+      "mode_label": "部署运行",
+      "tags": [
+        "desktop-app",
+        "office",
+        "windows",
+        "productivity",
+        "email",
+        "calendar"
+      ],
+      "languages": [
+        "rust"
+      ],
+      "doc_languages": [
+        "zh"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/Renly1994/xiaotang-daozai",
+      "repo": "https://github.com/Renly1994/xiaotang-daozai",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "岛仔",
+        "Daozai",
+        "xiaotang-daozai"
+      ],
+      "risk_notes": "当前程序未做商业代码签名，Windows 可能提示未知发布者，安装前用 Release 附带的 SHA256SUMS.txt 核对校验值；邮箱/日历/AI 额度需提供授权码或本机登录凭据，密码存 Windows 凭据管理器，勿上传到 Issue；Windows 11 已实测，Win10、不同显卡与多显示器组合兼容性待更多反馈；钉钉/企业微信日历接入尚未完成真实账号验收；仅提供 Windows 10/11 x64 成品包。",
+      "added_at": "2026-11-04",
+      "updated_at": "2026-11-04",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "Get-FileHash -Algorithm SHA256 .\\Daozai-Setup-v0.6.49-x64.exe   # 与发布页 SHA256SUMS.txt 比对\n.\\Daozai-Setup-v0.6.49-x64.exe",
+      "detail_url": "skills/xiaotang-daozai.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/business-office/xiaotang-daozai/ENTRY.md"
     },
     {
       "id": "abogen",

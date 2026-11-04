@@ -12,6 +12,22 @@
 
 ---
 
+## 2026-11
+
+### 结构
+
+- **上游归档核验政策调整（2026-11-03）**：`upstream-refresh` 夜检自 2026-11-03 起连续失败，根因是 `deepseek-pp`（zhu1090093659/deepseek-pp）与 `openscreen`（siddharthvaddem/openscreen）两个上游仓库被作者归档，核验无条件判 `blocked`（E_REPO_ARCHIVED）并以非零退出。两条目 2026-10-28 已降为 `watch` 观察档且 risk_notes 注明。本次按「归档 → 降观察」的收录政策调整 `scripts/upstream_verify.py`：**条目已处观察档时，上游归档只记 needs-review 提醒，不再阻断夜检**；非观察档条目归档仍判 blocked。附回归测试锁定该分支。
+
+### 新增
+
+- **shadcn/ui 组件库（2026-11-03）**：收录 `design-creative/shadcn-ui`（MIT）。★127.2k 的「组件源码复制进你项目」前端组件库：React + Tailwind CSS，可访问性默认值齐全，无 npm 包、代码归使用者所有，CLI `npx shadcn@latest init / add` 按需添加，AI 编码时代事实上的 UI 底座。注意组件升级不自动、需手动同步。评级：常规。
+- **awesome-reverse-engineered 逆向工程开源工具索引（2026-11-03）**：收录 `dev-engineering/awesome-reverse-engineered`（MIT，数据 CC0）。★1.15k、17,726 个逆向成果索引：游戏反编译、IoT/硬件、非官方 API 客户端、文件格式等 20 分类，带搜索站、Agent 技能（`npx skills add`）与 MCP 服务端，每晚自动刷新；关联 rea / reverse-skill。注意收录的是索引而非工具本体，非官方客户端合规自担。评级：常规。
+- **Animate UI 动效组件库（2026-11-03）**：收录 `design-creative/animate-ui`（MIT + Commons Clause，`LicenseRef-MIT-Commons-Clause`）。★4.86k 的动效基元库：为 Radix UI / Base UI / React Aria（Vue 侧 reka-ui）提供 API 完全一致的 Motion 动画版，换 import 即生效；CLI codemod 一键动画化已装 shadcn/ui 组件，随仓库附 Agent 技能。注意 Commons Clause 禁止单独/打包转售组件本体；codemod 原地改写文件，先提交工作区或 `--dry-run` 预览。评级：常规。本批次经 PR #81 合入 `dev`，目录总数由 111 增至 **114**（数据版本 261103b）。
+
+- **岛仔 Daozai 桌面信息岛（2026-11-04）**：收录 `business-office/xiaotang-daozai`（MIT）。★138 的 Rust + egui Windows 桌面信息岛：贴顶小刘海收展自如，聚合音乐歌词与媒体控制、邮件验证码一键复制、工作日历（飞书/钉钉/企业微信 CalDAV）与邮件日程、待办提醒、专注/饮水计时、文件置物架与 AI 额度圆环（Codex / Claude / Kimi / Grok / Gemini 多账号）；数据留本机、密码走 Windows 凭据管理器。注意未做商业代码签名，安装前用 SHA256SUMS 核对；钉钉/企业微信日历尚未完成真实账号验收；仅 Win10/11 x64。评级：常规。目录总数由 114 增至 **115**（数据版本 261104a）。
+
+---
+
 ## 2026-10
 
 ### 发布
@@ -20,6 +36,7 @@
 - **发布（2026-10-29）**：三个新条目经 PR #62/#63/#64 合入 `dev`、PR #65 发往 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261029c`，共 99 条。
 - **发布（2026-10-29，第二次）**：六条目批次与核验快照刷新经 PR #67/#68 合入 `dev`、PR #69 发往 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261029e`，共 105 条，九个新条目全部 `verified`。
 - **发布（2026-10-29，第三次）**：新条目收录（#71）与建库期陈旧文件清理（#72）经 PR #71/#72 合入 `dev`、PR #73 发往 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261029g`，共 106 条。
+- **发布（2026-10-29，第四次）**：五条目批次（mythpen / we-article / rea / reverse-skill / pentagi）经 PR #75–#78 合入 `dev`、PR #79 发往 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261029k`，共 111 条。
 
 ### 新增
 - **reverse-skill 安全技能路由包（2026-10-29）**：收录 `dev-engineering/reverse-skill`（MIT）。★43.7k 的装给 AI 代码客户端的安全技能路由包：遇到 APK / 二进制 / 前端 JS 加密 / CTF / 渗透目标时按 44 条路由规则（R0–R45）导向正确方法论与工具链（jadx、Frida、IDA、BurpSuite 等），带 175 例回归基准、Windows / Ubuntu 跨平台 CI、按需自举工具链与自动进化经验库，支持 Claude Code / Codex / Cursor / Cline / Kiro。`git clone` 后按平台刷新工具索引即可挂载。注意双用途能力——工作流强制先经 scope.md 登记授权范围才可对目标动手，勿绕过；商业工具须自行合法取得；Windows 主场；上游 2026-09-22 后暂无推送。评级：常规。

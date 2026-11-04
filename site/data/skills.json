@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "dataset_version": "261029k",
-  "generated_at": "2026-10-29T09:11:41Z",
-  "count": 111,
+  "dataset_version": "261104a",
+  "generated_at": "2026-11-04T02:49:38Z",
+  "count": 115,
   "modes": [
     {
       "value": "install",
@@ -1299,6 +1299,54 @@
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/business-office/toolknit-desktop/ENTRY.md"
     },
     {
+      "id": "xiaotang-daozai",
+      "name_zh": "岛仔 Daozai 桌面信息岛",
+      "name_en": "Daozai",
+      "summary_zh": "Rust + egui 构建的 Windows 桌面信息岛：贴在屏幕顶部收起为一条小刘海，展开即音乐歌词、邮件验证码、日程提醒、待办、饮水专注与 AI 额度圆环，重要信息轻轻出现、不打断手头的事。",
+      "summary_en": "A Windows desktop info island built with Rust and egui: docks at the screen top as a slim notch, expanding into music lyrics, email codes, calendar reminders, todos and AI usage rings.",
+      "category_dir": "business-office",
+      "category_name": "商业与办公",
+      "mode": "deploy",
+      "mode_label": "部署运行",
+      "tags": [
+        "desktop-app",
+        "office",
+        "windows",
+        "productivity",
+        "email",
+        "calendar"
+      ],
+      "languages": [
+        "rust"
+      ],
+      "doc_languages": [
+        "zh"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/Renly1994/xiaotang-daozai",
+      "repo": "https://github.com/Renly1994/xiaotang-daozai",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "岛仔",
+        "Daozai",
+        "xiaotang-daozai"
+      ],
+      "risk_notes": "当前程序未做商业代码签名，Windows 可能提示未知发布者，安装前用 Release 附带的 SHA256SUMS.txt 核对校验值；邮箱/日历/AI 额度需提供授权码或本机登录凭据，密码存 Windows 凭据管理器，勿上传到 Issue；Windows 11 已实测，Win10、不同显卡与多显示器组合兼容性待更多反馈；钉钉/企业微信日历接入尚未完成真实账号验收；仅提供 Windows 10/11 x64 成品包。",
+      "added_at": "2026-11-04",
+      "updated_at": "2026-11-04",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "Get-FileHash -Algorithm SHA256 .\\Daozai-Setup-v0.6.49-x64.exe   # 与发布页 SHA256SUMS.txt 比对\n.\\Daozai-Setup-v0.6.49-x64.exe",
+      "detail_url": "skills/xiaotang-daozai.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/business-office/xiaotang-daozai/ENTRY.md"
+    },
+    {
       "id": "abogen",
       "name_zh": "Abogen 有声书生成器",
       "name_en": "Abogen",
@@ -1434,6 +1482,54 @@
       "quickstart": "git clone https://github.com/morsoli/aimangastudio.git\ncd aimangastudio\nnpm install",
       "detail_url": "skills/aimangastudio.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/aimangastudio/ENTRY.md"
+    },
+    {
+      "id": "animate-ui",
+      "name_zh": "Animate UI 动效组件库",
+      "name_en": "Animate UI",
+      "summary_zh": "给 shadcn/ui 组件一键加动效的 Radix/Base UI/React Aria 动画基元库：换一行 import 就有 Motion 弹簧动效，附带 CLI codemod、Vue 版本与 Agent 技能，让现有组件原地「活」起来。",
+      "summary_en": "Animated drop-in primitives for Radix UI, Base UI and React Aria built with Motion: swap the import to keep your shadcn/ui components, with a CLI codemod, Vue port and an agent skill.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "mode": "install",
+      "mode_label": "装进 Agent",
+      "tags": [
+        "design-system",
+        "motion-design",
+        "framework",
+        "react",
+        "tailwindcss"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "LicenseRef-MIT-Commons-Clause",
+      "license_bucket": "commercial",
+      "homepage": "https://animate-ui.com",
+      "repo": "https://github.com/imskyleen/animate-ui",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "shadcn-ui"
+      ],
+      "aliases": [
+        "Animate UI",
+        "animate-ui"
+      ],
+      "risk_notes": "协议为 MIT + Commons Clause：可用于任何应用/网站/产品（含商用），但不得单独或打包出售、再分发组件本体；复制进项目后自行维护升级，上游更新不自动同步；CLI codemod 会原地改写组件文件，建议先提交工作区或用 --dry-run 预览。",
+      "added_at": "2026-11-03",
+      "updated_at": "2026-11-03",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "npx @animate-ui/cli@latest animate all      # 已装的 shadcn/ui 组件全部换用动画基元（原地改写）\nnpx @animate-ui/cli@latest animate dialog tooltip   # 或只动指定组件；--dry-run 先预览",
+      "detail_url": "skills/animate-ui.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/animate-ui/ENTRY.md"
     },
     {
       "id": "animejs",
@@ -3601,6 +3697,53 @@
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/seedance-20/ENTRY.md"
     },
     {
+      "id": "shadcn-ui",
+      "name_zh": "shadcn/ui 组件库",
+      "name_en": "shadcn/ui",
+      "summary_zh": "把组件源码复制进你自己项目的前端组件库：基于 React + Tailwind CSS，可访问性默认值齐全，代码归你所有、可随意改，是 AI 编码时代事实上的 UI 底座，经 CLI 一条命令安装。",
+      "summary_en": "A component collection you copy into your project: React + Tailwind CSS, accessible defaults, code you own and customize. The de-facto UI base for AI-assisted coding, installed via CLI.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "mode": "install",
+      "mode_label": "装进 Agent",
+      "tags": [
+        "design-system",
+        "framework",
+        "cli",
+        "react",
+        "tailwindcss",
+        "frontend"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://ui.shadcn.com",
+      "repo": "https://github.com/shadcn-ui/ui",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "shadcn",
+        "shadcn/ui"
+      ],
+      "risk_notes": "组件源码复制进项目后由使用者自行维护升级，上游更新不会自动同步；依赖 React 与 Tailwind CSS 技术栈，非 React 项目不适用；未收录测试快照，升级后需自行回归。",
+      "added_at": "2026-11-03",
+      "updated_at": "2026-11-03",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "npx shadcn@latest init        # 初始化：生成 components.json、写主题变量\nnpx shadcn@latest add button dialog   # 按需添加组件，源码落在 components/ui/",
+      "detail_url": "skills/shadcn-ui.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/shadcn-ui/ENTRY.md"
+    },
+    {
       "id": "slate",
       "name_zh": "Slate（场记）短片制作与拉片工作台",
       "name_en": "Slate",
@@ -4093,6 +4236,57 @@
       "quickstart": "/plugin marketplace add multica-ai/andrej-karpathy-skills\n/plugin install andrej-karpathy-skills@karpathy-skills",
       "detail_url": "skills/andrej-karpathy-skills.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/dev-engineering/andrej-karpathy-skills/ENTRY.md"
+    },
+    {
+      "id": "awesome-reverse-engineered",
+      "name_zh": "awesome-reverse-engineered 逆向工程开源工具索引",
+      "name_en": "awesome-reverse-engineered",
+      "summary_zh": "17,000+ 个把闭源应用、API、设备、协议、文件格式和游戏逆向出来的开源工具索引，带搜索站、Agent 技能与 MCP 服务端，每晚自动刷新——动手逆向前先查这里，别重复造轮子。",
+      "summary_en": "An index of 17,000+ open-source tools built by reverse engineering closed apps, APIs, devices, protocols, file formats and games — searchable site, agent skill and MCP server, refreshed nightly.",
+      "category_dir": "dev-engineering",
+      "category_name": "研发与代码",
+      "mode": "install",
+      "mode_label": "装进 Agent",
+      "tags": [
+        "awesome-list",
+        "agent-skills",
+        "reverse-engineering",
+        "mcp",
+        "claude-code",
+        "interoperability"
+      ],
+      "languages": [
+        "python"
+      ],
+      "doc_languages": [
+        "en",
+        "zh"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://alexgaoth.github.io/awesome-reverse-engineered/",
+      "repo": "https://github.com/alexgaoth/awesome-reverse-engineered",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "rea",
+        "reverse-skill"
+      ],
+      "aliases": [
+        "awesome-reverse-engineered",
+        "逆向工程索引"
+      ],
+      "risk_notes": "收录的是索引而非工具本体，其中大量条目为非官方 API 客户端、固件或协议实现，可能违反目标服务条款或随上游变更失效，使用前自行评估合规与安全；数据每晚自动刷新，个别条目可能已失维护；项目与所列工具的官方厂商均无关联。",
+      "added_at": "2026-11-03",
+      "updated_at": "2026-11-03",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "npx skills add alexgaoth/awesome-reverse-engineered",
+      "detail_url": "skills/awesome-reverse-engineered.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/dev-engineering/awesome-reverse-engineered/ENTRY.md"
     },
     {
       "id": "gitnexus",

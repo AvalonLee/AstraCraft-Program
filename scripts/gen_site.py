@@ -347,6 +347,7 @@ LICENSE_BUCKETS = {
     "LicenseRef-BigBanana-Community-1.0": "commercial",
     "LicenseRef-cc-haha-Community-Source-1.0": "commercial",
     "LicenseRef-GSAP-Standard-No-Charge": "commercial",
+    "LicenseRef-MIT-Commons-Clause": "commercial",
     "LicenseRef-NC-Learning": "commercial",
     "PolyForm-Noncommercial-1.0.0": "commercial",
     "Commercial": "commercial", "Proprietary": "commercial",

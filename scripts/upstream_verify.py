@@ -118,8 +118,16 @@ def licenses_agree(declared: str, upstream: str) -> bool:
 
 def verify_entry(entry: dict, facts: UpstreamFacts) -> VerificationResult:
     issues: list[VerificationIssue] = []
+    # 收录政策：归档上游把条目降为观察档后视为已确认，只提醒不再阻断夜检
+    archived_acknowledged = facts.archived and str(entry.get("tier")) == "watch"
     if facts.archived:
-        issues.append(VerificationIssue("E_REPO_ARCHIVED", "blocked", "repository is archived"))
+        issues.append(
+            VerificationIssue(
+                "E_REPO_ARCHIVED",
+                "review" if archived_acknowledged else "blocked",
+                "repository is archived",
+            )
+        )
 
     if facts.api_license != facts.text_license:
         issues.append(
@@ -156,7 +164,9 @@ def verify_entry(entry: dict, facts: UpstreamFacts) -> VerificationResult:
         )
 
     health_score, max_tier = calculate_health(facts)
-    if any(issue.severity == "blocked" for issue in issues) or max_tier == "blocked":
+    if any(issue.severity == "blocked" for issue in issues) or (
+        max_tier == "blocked" and not archived_acknowledged
+    ):
         status = "blocked"
     elif issues:
         status = "needs-review"

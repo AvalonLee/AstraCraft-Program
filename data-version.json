@@ -1,7 +1,7 @@
 {
-  "version": "261029k",
-  "updated_at": "2026-10-29",
-  "entry_count": 111,
+  "version": "261104a",
+  "updated_at": "2026-11-04",
+  "entry_count": 115,
   "source": "https://github.com/AvalonLee/AstraCraft-Program",
   "note": "项目数据库版本号（YYMMDD）。每次维护者刷新 entries/ 后递增，并与 data-version.json 一并提交。"
 }

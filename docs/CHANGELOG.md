@@ -14,6 +14,10 @@
 
 ## 2026-11
 
+### 发布
+
+- **发布（2026-11-04）**：四条目收录批次（shadcn-ui / awesome-reverse-engineered / animate-ui / 岛仔 Daozai）、协议桶修复与上游归档核验政策调整经 PR #81–#83 合入 `dev`、PR #84 发往 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261104a`，共 115 条。
+
 ### 结构
 
 - **上游归档核验政策调整（2026-11-03）**：`upstream-refresh` 夜检自 2026-11-03 起连续失败，根因是 `deepseek-pp`（zhu1090093659/deepseek-pp）与 `openscreen`（siddharthvaddem/openscreen）两个上游仓库被作者归档，核验无条件判 `blocked`（E_REPO_ARCHIVED）并以非零退出。两条目 2026-10-28 已降为 `watch` 观察档且 risk_notes 注明。本次按「归档 → 降观察」的收录政策调整 `scripts/upstream_verify.py`：**条目已处观察档时，上游归档只记 needs-review 提醒，不再阻断夜检**；非观察档条目归档仍判 blocked。附回归测试锁定该分支。

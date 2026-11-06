@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "dataset_version": "261106a",
-  "generated_at": "2026-11-06T05:12:17Z",
-  "count": 116,
+  "dataset_version": "261106b",
+  "generated_at": "2026-11-06T05:36:10Z",
+  "count": 120,
   "modes": [
     {
       "value": "install",
@@ -1921,6 +1921,105 @@
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/beeftv/ENTRY.md"
     },
     {
+      "id": "bencho",
+      "name_zh": "Bencho 交互动效块与界面音效",
+      "name_en": "Bencho",
+      "summary_zh": "46 个可直接拷进项目的 React 交互动效块（悬停、拖拽、滑动、按压、输入、选择六类）配 24 个零素材合成的界面音效，一个单文件播放；无 npm 包，复制目录即用。",
+      "summary_en": "46 interactive React blocks (hover, drag, swipe, press, type, select) plus 24 synthesized UI sounds in one zero-asset file: copy a folder, ship it.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "mode": "install",
+      "mode_label": "装进 Agent",
+      "tags": [
+        "motion-design",
+        "react",
+        "micro-interactions",
+        "web-audio",
+        "ui-animation"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://bencho.dev",
+      "repo": "https://github.com/cabralorenzo/bencho",
+      "tier": "watch",
+      "tier_label": "观察",
+      "featured": false,
+      "related": [
+        "shadcn-ui",
+        "animate-ui"
+      ],
+      "aliases": [
+        "Bencho",
+        "bencho.dev"
+      ],
+      "risk_notes": "单人维护、创建约三周、无 release 与版本 tag、无 CI 与测试，升级需手动重拷目录；PR 实际不合并（仓库由 bencho.dev 生成，真源在站点），只能靠 Issue 反馈；免费 46 块属完整 MIT，站点上的 Pro 块另按 Bencho Pro 许可，Bencho 名称与 goat 商标、站点照片不在授权范围；beacon / plop 两个音效重建自第三方素材，依赖 framer-motion、lucide-react 等各自协议。",
+      "added_at": "2026-11-06",
+      "updated_at": "2026-11-06",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "cp -r blocks/like src/components/like\nnpm install framer-motion lucide-react   # 按 blocks/README.md 的依赖表逐块选装",
+      "detail_url": "skills/bencho.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/bencho/ENTRY.md"
+    },
+    {
+      "id": "beui",
+      "name_zh": "beUI 动效组件库",
+      "name_en": "beUI (ui-components)",
+      "summary_zh": "109 个动效 React 组件的 shadcn 兼容注册表：motion 驱动的动效块、区块、Agent 组件、图表与博彩组件，一条 `npx shadcn add @beui/...` 拷源码进项目，另有 Agent 技能与托管 MCP。",
+      "summary_en": "109 motion-driven React components shipped as a shadcn-compatible registry: copy source with one `npx shadcn@latest add @beui/<slug>`, plus an agent skill and hosted MCP server.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "mode": "install",
+      "mode_label": "装进 Agent",
+      "tags": [
+        "design-system",
+        "motion-design",
+        "react",
+        "shadcn",
+        "mcp"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://beui.dev",
+      "repo": "https://github.com/starc007/ui-components",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "shadcn-ui",
+        "animate-ui",
+        "boardui"
+      ],
+      "aliases": [
+        "beUI",
+        "ui-components"
+      ],
+      "risk_notes": "仓库名（ui-components）与产品名（beUI）不一致，检索与引用时以 beui.dev 为准；无 npm 包可锁版本，升级依赖 registry URL 的公开契约；运行前提为 React 19 + Tailwind v4 + motion 12，停在旧版本的项目有摩擦；含 casino 类博彩组件（Crash / Mines / Plinko），上线前自行确认合规；beUI Pro 与部分 Agent 技能在付费墙后；单人主导（作者 695 次提交），bus factor 低，测试以可访问性为主、动效质量靠人工浏览器验证。",
+      "added_at": "2026-11-06",
+      "updated_at": "2026-11-06",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "npx shadcn@latest add @beui/animated-toast-stack        # 官方命名空间装单个组件\nnpx shadcn@latest add https://beui.dev/r/<slug>.json    # 或直接指定 registry URL",
+      "detail_url": "skills/beui.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/beui/ENTRY.md"
+    },
+    {
       "id": "bigbanana-ai-director",
       "name_zh": "BigBanana AI 漫剧导演工场",
       "name_en": "BigBanana AI Director",
@@ -2727,6 +2826,55 @@
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/hell-grind-aigc-skill/ENTRY.md"
     },
     {
+      "id": "heroui",
+      "name_zh": "HeroUI React 组件库",
+      "name_en": "HeroUI",
+      "summary_zh": "前身 NextUI 的现代 React 组件库：可访问性走 React Aria、样式走 Tailwind CSS v4 纯 CSS，89 个组件以 npm 包发布，v3 去掉 Provider 包裹与运行时 CSS，配 CLI、MCP 与 Agent 技能。",
+      "summary_en": "The modern React UI library formerly known as NextUI: React Aria for accessibility, Tailwind CSS v4 for styles, 89 components as an npm package, with CLI, MCP server and agent skills.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "mode": "install",
+      "mode_label": "装进 Agent",
+      "tags": [
+        "design-system",
+        "framework",
+        "react",
+        "tailwindcss",
+        "accessibility"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "Apache-2.0",
+      "license_bucket": "open",
+      "homepage": "https://heroui.com",
+      "repo": "https://github.com/heroui-inc/heroui",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "shadcn-ui",
+        "boardui"
+      ],
+      "aliases": [
+        "NextUI",
+        "HeroUI"
+      ],
+      "risk_notes": "硬约束 React 19+ 与 Tailwind CSS v4，Tailwind v3 / React 18 项目须先整体升级；v2 到 v3 破坏性变更大（移除 HeroUIProvider、部分 hooks 改名或废弃、集合项改用 id+textValue、Autocomplete 并入 ComboBox），官方明确 v2/v3 不可共存；npm 上残留 alpha/rc 标签易误装，应显式锁 ^3.2；旧资料仍以 NextUI 命名易踩错版本；CLI、MCP 与 heroui-native 分属独立仓库与包，版本不联动。",
+      "added_at": "2026-11-06",
+      "updated_at": "2026-11-06",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "npm i @heroui/styles @heroui/react",
+      "detail_url": "skills/heroui.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/heroui/ENTRY.md"
+    },
+    {
       "id": "house-plan-designer",
       "name_zh": "House Plan Designer 户型图设计器技能",
       "name_en": "House Plan Designer",
@@ -2966,6 +3114,57 @@
       "quickstart": "git clone https://github.com/MeiGen-AI/InfiniteTalk.git\ncd InfiniteTalk\npip install -r requirements.txt\n# 下载模型权重（Hugging Face）\nhuggingface-cli download MeiGen-AI/InfiniteTalk --local-dir ./weights",
       "detail_url": "skills/infinitetalk.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/infinitetalk/ENTRY.md"
+    },
+    {
+      "id": "libraries-dev",
+      "name_zh": "Libraries.dev AI 界面效果库",
+      "name_en": "Libraries.dev",
+      "summary_zh": "一组零运行时依赖的 React「AI 界面效果」小包（光束边框、思考球、机器人头像、液态模糊、语音波形等），配教 Agent 何时该用哪种效果的技能与 CLI，代码 MIT、模型文件另有许可。",
+      "summary_en": "Zero-dependency React packages for next-gen AI interface effects (border beams, thinking orbs, liquid gooey, voice glow), plus an agent skill and CLI that decide which effect fits which wait time.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "mode": "install",
+      "mode_label": "装进 Agent",
+      "tags": [
+        "design-system",
+        "motion-design",
+        "react",
+        "ai-agent",
+        "agent-skills",
+        "mcp"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://libraries.dev",
+      "repo": "https://github.com/Jakubantalik/Libraries.dev",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "shadcn-ui",
+        "animate-ui",
+        "beui"
+      ],
+      "aliases": [
+        "Libraries.dev",
+        "libraries-dev"
+      ],
+      "risk_notes": "双层许可：代码 MIT，站点下载的 .mfxl 模型文件另按 LICENSE-MODEL（免费仅限开发/原型/非商业，商用发布需订阅），Studio 导出与 Pro 预设按订阅授权；Pro 技能、MCP 与调参后端 api.libraries.dev 在私有仓库、不可自托管，强依赖订阅 token；单人维护（675 次提交全为作者）、已关闭 Issue 为 0、13 个 PR 挂空，协作通道基本不开放；「按等待时长选效果」是作者主观约定而非客观基准；img-fx / metal-fx 走 WebGL，有体积与性能成本；README 部分文档链接已失效。",
+      "added_at": "2026-11-06",
+      "updated_at": "2026-11-06",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "npm install border-beam\nnpm install thinking-orbs liquid-gooey",
+      "detail_url": "skills/libraries-dev.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/libraries-dev/ENTRY.md"
     },
     {
       "id": "manju-laoli-skill",

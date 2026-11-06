@@ -29,6 +29,7 @@
 - **Animate UI 动效组件库（2026-11-03）**：收录 `design-creative/animate-ui`（MIT + Commons Clause，`LicenseRef-MIT-Commons-Clause`）。★4.86k 的动效基元库：为 Radix UI / Base UI / React Aria（Vue 侧 reka-ui）提供 API 完全一致的 Motion 动画版，换 import 即生效；CLI codemod 一键动画化已装 shadcn/ui 组件，随仓库附 Agent 技能。注意 Commons Clause 禁止单独/打包转售组件本体；codemod 原地改写文件，先提交工作区或 `--dry-run` 预览。评级：常规。本批次经 PR #81 合入 `dev`，目录总数由 111 增至 **114**（数据版本 261103b）。
 
 - **岛仔 Daozai 桌面信息岛（2026-11-04）**：收录 `business-office/xiaotang-daozai`（MIT）。★138 的 Rust + egui Windows 桌面信息岛：贴顶小刘海收展自如，聚合音乐歌词与媒体控制、邮件验证码一键复制、工作日历（飞书/钉钉/企业微信 CalDAV）与邮件日程、待办提醒、专注/饮水计时、文件置物架与 AI 额度圆环（Codex / Claude / Kimi / Grok / Gemini 多账号）；数据留本机、密码走 Windows 凭据管理器。注意未做商业代码签名，安装前用 SHA256SUMS 核对；钉钉/企业微信日历尚未完成真实账号验收；仅 Win10/11 x64。评级：常规。目录总数由 114 增至 **115**（数据版本 261104a）。
+- **BoardUI 智能体界面设计系统（2026-11-06）**：收录 `design-creative/boardui`（MIT）。★1.03k 的面向 Agent 产品的 React 设计系统：聊天 / 思考态 / Agent 日志 / 输入框与仪表盘表格卡片同属一套视觉语言，69 个免费组件以源码进项目（`npx boardui add`），React Aria + Tailwind v4、400+ 语义令牌、明暗与 RTL 支持；仓库首页即可跑的 AI 聊天（BYO Key、服务端流式），自带 MCP 服务端、Agent 技能与 `AGENTS.md` 规则；关联 shadcn-ui / animate-ui。注意仓库自动生成、不接受 PR，首页聊天对拿到 URL 的人开放、须给 Key 设花费上限。评级：常规。目录总数由 115 增至 **116**（数据版本 261106a）。
 
 ---
 

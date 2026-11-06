@@ -30,6 +30,10 @@
 
 - **岛仔 Daozai 桌面信息岛（2026-11-04）**：收录 `business-office/xiaotang-daozai`（MIT）。★138 的 Rust + egui Windows 桌面信息岛：贴顶小刘海收展自如，聚合音乐歌词与媒体控制、邮件验证码一键复制、工作日历（飞书/钉钉/企业微信 CalDAV）与邮件日程、待办提醒、专注/饮水计时、文件置物架与 AI 额度圆环（Codex / Claude / Kimi / Grok / Gemini 多账号）；数据留本机、密码走 Windows 凭据管理器。注意未做商业代码签名，安装前用 SHA256SUMS 核对；钉钉/企业微信日历尚未完成真实账号验收；仅 Win10/11 x64。评级：常规。目录总数由 114 增至 **115**（数据版本 261104a）。
 - **BoardUI 智能体界面设计系统（2026-11-06）**：收录 `design-creative/boardui`（MIT）。★1.03k 的面向 Agent 产品的 React 设计系统：聊天 / 思考态 / Agent 日志 / 输入框与仪表盘表格卡片同属一套视觉语言，69 个免费组件以源码进项目（`npx boardui add`），React Aria + Tailwind v4、400+ 语义令牌、明暗与 RTL 支持；仓库首页即可跑的 AI 聊天（BYO Key、服务端流式），自带 MCP 服务端、Agent 技能与 `AGENTS.md` 规则；关联 shadcn-ui / animate-ui。注意仓库自动生成、不接受 PR，首页聊天对拿到 URL 的人开放、须给 Key 设花费上限。评级：常规。目录总数由 115 增至 **116**（数据版本 261106a）。
+- **HeroUI React 组件库（2026-11-06）**：收录 `design-creative/heroui`（Apache-2.0）。★31.1k、248 位贡献者，前身 NextUI：89 个组件走 npm 依赖模式，可访问性用 React Aria、样式用 Tailwind CSS v4 纯 CSS（v3 起免 Provider 包裹），最新稳定 v3.2.7；配 `heroui-cli` 脚手架 / 升级 / 体检、MCP 服务端、官方技能与 `AGENTS.md` 生成。注意硬约束 React 19 + Tailwind v4；v2→v3 破坏性变更大且不可共存；npm 残留 alpha/rc 标签。评级：常规。
+- **beUI 动效组件库（2026-11-06）**：收录 `design-creative/beui`（MIT，仓库名 `starc007/ui-components`）。★1.93k 的动效件注册表：109 项分动效 / 区块 / Agent 组件 / 图表 / casino 五类、156 个可安装 slug，基于 motion 12，经 shadcn 兼容 registry 以 `npx shadcn@latest add @beui/<slug>` 拷源码进项目，另有 Agent 技能与托管 MCP。注意无 npm 版本可锁；casino 组件有合规风险；单人主导。评级：常规。
+- **Libraries.dev AI 界面效果库（2026-11-06）**：收录 `design-creative/libraries-dev`（代码 MIT）。★4.61k 的 AI 界面效果 monorepo：`border-beam` / `thinking-orbs` / `liquid-gooey` / `voice-glow` 等 10 个已发布 npm 包，几乎零运行时依赖；配套 Agent 技能按等待时长（<2s / ≥2s / >3s）决定反馈效果，另有 CLI 与 MCP。注意 `.mfxl` 模型文件按 LICENSE-MODEL 另授权（免费仅非商业，商用发布需订阅）；Pro / MCP 后端不可自托管；单人维护、0 已关闭 Issue。评级：常规。
+- **Bencho 交互动效块与界面音效（2026-11-06）**：收录 `design-creative/bencho`（MIT）。★87 的新项目：46 个按悬停 / 拖拽 / 滑动 / 按压 / 输入 / 选择分类的交互动效块，`cp -r` 目录即用、不用 Tailwind；附 24 个 Web Audio 现场合成音效（单文件 7.8KB、零音频素材）。注意单人维护、无 release / tag / CI、PR 实际不合并（仓库由 bencho.dev 生成）；Pro 块与品牌名不在 MIT 范围。评级：**观察**（新收录、维护证据不足）。本批次目录总数由 116 增至 **120**（数据版本 261106b）。
 
 ---
 

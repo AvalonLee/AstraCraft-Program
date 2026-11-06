@@ -35,6 +35,7 @@
 - **beUI 动效组件库（2026-11-06）**：收录 `design-creative/beui`（MIT，仓库名 `starc007/ui-components`）。★1.93k 的动效件注册表：109 项分动效 / 区块 / Agent 组件 / 图表 / casino 五类、156 个可安装 slug，基于 motion 12，经 shadcn 兼容 registry 以 `npx shadcn@latest add @beui/<slug>` 拷源码进项目，另有 Agent 技能与托管 MCP。注意无 npm 版本可锁；casino 组件有合规风险；单人主导。评级：常规。
 - **Libraries.dev AI 界面效果库（2026-11-06）**：收录 `design-creative/libraries-dev`（代码 MIT）。★4.61k 的 AI 界面效果 monorepo：`border-beam` / `thinking-orbs` / `liquid-gooey` / `voice-glow` 等 10 个已发布 npm 包，几乎零运行时依赖；配套 Agent 技能按等待时长（<2s / ≥2s / >3s）决定反馈效果，另有 CLI 与 MCP。注意 `.mfxl` 模型文件按 LICENSE-MODEL 另授权（免费仅非商业，商用发布需订阅）；Pro / MCP 后端不可自托管；单人维护、0 已关闭 Issue。评级：常规。
 - **Bencho 交互动效块与界面音效（2026-11-06）**：收录 `design-creative/bencho`（MIT）。★87 的新项目：46 个按悬停 / 拖拽 / 滑动 / 按压 / 输入 / 选择分类的交互动效块，`cp -r` 目录即用、不用 Tailwind；附 24 个 Web Audio 现场合成音效（单文件 7.8KB、零音频素材）。注意单人维护、无 release / tag / CI、PR 实际不合并（仓库由 bencho.dev 生成）；Pro 块与品牌名不在 MIT 范围。评级：**观察**（新收录、维护证据不足）。本批次目录总数由 116 增至 **120**（数据版本 261106b）。
+- **BISHENG 企业级 Agent 平台（2026-11-06）**：收录 `agent-infra/bisheng`（Apache-2.0）。★12.1k、fork 1.99k 的开源企业级一站式 Agent 平台（数据元素出品）：任务模式主 Agent 拆单 + 子 Agent 并行 + Human in the loop、交付报告/PPT/Excel/Word 且引用可溯源；工作流支持成环 / 并行 / 批量；知识空间权限细到单文件（RBAC + ReBAC），另有频道订阅、统一模型管理、评测、数据集与 SFT、可免费私有化的高精度文档解析，信创适配 MySQL 与达梦 DM8，桌面客户端基于 DSH 协同。注意官方要求 8 核 / 32 GB 且附带 ES / Milvus / Onlyoffice，首个注册用户即 admin；统计看板、SSO/LDAP、高可用属商业版。评级：常规。目录总数由 120 增至 **121**（数据版本 261106c）。
 
 ---
 

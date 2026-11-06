@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "dataset_version": "261104a",
-  "generated_at": "2026-11-04T02:49:38Z",
-  "count": 115,
+  "dataset_version": "261106a",
+  "generated_at": "2026-11-06T05:12:17Z",
+  "count": 116,
   "modes": [
     {
       "value": "install",
@@ -1970,6 +1970,55 @@
       "quickstart": "git clone https://github.com/shuyu-labs/BigBanana-AI-Director.git\ncd BigBanana-AI-Director\ndocker-compose up -d",
       "detail_url": "skills/bigbanana-ai-director.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/bigbanana-ai-director/ENTRY.md"
+    },
+    {
+      "id": "boardui",
+      "name_zh": "BoardUI 智能体界面设计系统",
+      "name_en": "BoardUI",
+      "summary_zh": "面向 Agent 产品的 React 设计系统：聊天、思考态、Agent 日志、输入框与仪表盘表格卡片同属一套视觉语言，69 个免费组件以源码拷进项目，自带可用的 AI 聊天首页与 MCP / Agent 技能接入。",
+      "summary_en": "A React design system for agentic interfaces: chat, thinking, agent-log and dashboard blocks in one visual language, 69 free components as source, homepage is a runnable AI chat.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "mode": "install",
+      "mode_label": "装进 Agent",
+      "tags": [
+        "design-system",
+        "react",
+        "tailwindcss",
+        "ai-agent",
+        "mcp",
+        "agent-skills"
+      ],
+      "languages": [
+        "typescript"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://www.boardui.com",
+      "repo": "https://github.com/BoardUI/boardui",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "shadcn-ui",
+        "animate-ui"
+      ],
+      "aliases": [
+        "BoardUI"
+      ],
+      "risk_notes": "仓库由 BoardUI 源自动生成、明确不接受 PR，组件更新只能靠 CLI 重装；本仓库为免费层 69 项，付费组件不在此；自带聊天首页对任何拿到 URL 的人开放，模型 Key 虽只在服务端读取，仍须给 Key 设花费上限；MCP 与 Agent 技能会向项目写入组件源码文件，安装前确认工作区状态。",
+      "added_at": "2026-11-06",
+      "updated_at": "2026-11-06",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "npx boardui@latest list                # 看全部组件\nnpx boardui@latest add data-table      # 装单个组件及其依赖\nnpx boardui@latest add --all           # 装下本仓库全部免费组件",
+      "detail_url": "skills/boardui.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/boardui/ENTRY.md"
     },
     {
       "id": "capcut-mate",

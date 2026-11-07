@@ -19,6 +19,7 @@
 - **发布（2026-11-04）**：四条目收录批次（shadcn-ui / awesome-reverse-engineered / animate-ui / 岛仔 Daozai）、协议桶修复与上游归档核验政策调整经 PR #81–#83 合入 `dev`、PR #84 发往 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261104a`，共 115 条。
 - **发布（2026-11-06）**：五个新条目（BoardUI + HeroUI / beUI / Libraries.dev / Bencho 批次）经 PR #86/#87 合入 `dev`、PR #88 发往 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261106b`，共 120 条。
 - **发布（2026-11-07）**：BISHENG 收录经 PR #90 合入 `dev`、PR #91 发往 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261106c`，共 121 条。
+- **发布（2026-11-07 · README 修复）**：README 嵌套冲突标记清除、entries 徽章更正为 121，index-check 触发路径补 `README.md`，经 PR #93 合入 `dev`、PR #94 发往 `main`；线上站点由 `deploy.yml` 自动发布，数据版本不变 `261106c`，共 121 条。
 
 ### 结构
 

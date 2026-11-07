@@ -21,6 +21,7 @@ on:
       - 'tests/**'
       - 'verification/**'
       - 'INDEX.md'
+      - 'README.md'
       - '.github/workflows/index-check.yml'
       - '.github/workflows/upstream-refresh.yml'
 

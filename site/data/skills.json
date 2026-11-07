@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "dataset_version": "261106b",
-  "generated_at": "2026-11-06T05:36:10Z",
-  "count": 120,
+  "dataset_version": "261106c",
+  "generated_at": "2026-11-06T11:51:39Z",
+  "count": 121,
   "modes": [
     {
       "value": "install",
@@ -206,6 +206,59 @@
       "quickstart": "git clone --depth 1 https://github.com/awesome-dsh-plugin/dsh-find-plugin.git\ncd dsh-find-plugin",
       "detail_url": "skills/awesome-dsh-plugin-dsh-find-plugin.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/awesome-dsh-plugin-dsh-find-plugin/ENTRY.md"
+    },
+    {
+      "id": "bisheng",
+      "name_zh": "BISHENG 企业级 Agent 平台",
+      "name_en": "BISHENG",
+      "summary_zh": "开源的企业级一站式 Agent 平台：任务模式的多步 Agent 与子 Agent 并行、可成环并行的工作流编排、权限细到单文件的知识空间、评测与 SFT、OCR 文档解析，Docker Compose 私有化部署。",
+      "summary_en": "A self-hosted enterprise LLM platform: multi-step agents with parallel sub-agents, workflow orchestration, permissioned knowledge spaces, evaluation, SFT and OCR document parsing.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "mode": "deploy",
+      "mode_label": "部署运行",
+      "tags": [
+        "ai-agent",
+        "multi-agent",
+        "rag",
+        "workflow",
+        "self-hosted",
+        "docker"
+      ],
+      "languages": [
+        "python"
+      ],
+      "doc_languages": [
+        "zh",
+        "en",
+        "ja"
+      ],
+      "license": "Apache-2.0",
+      "license_bucket": "open",
+      "homepage": "https://www.bisheng.ai",
+      "repo": "https://github.com/dataelement/bisheng",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [
+        "deepseek-ai-deepseek-harness",
+        "staffdeck"
+      ],
+      "aliases": [
+        "BiSheng",
+        "BISHENG",
+        "bisheng"
+      ],
+      "risk_notes": "部署资源门槛高（官方要求 CPU ≥ 8 核、RAM ≥ 32 GB，默认附带 ES / Milvus / Onlyoffice 等第三方组件）；首个注册用户自动成为系统 admin，公网暴露前必须先注册占位并改密；统计看板、SSO/LDAP、高可用部署等属商业版能力，README 明列开源版不含；官方部署与使用文档托管在飞书 wiki，部分页面需登录；高精度文档解析模型虽可免费私有化，但模型文件本身不在本仓库、需另行获取。",
+      "added_at": "2026-11-06",
+      "updated_at": "2026-11-06",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "git clone https://github.com/dataelement/bisheng.git\ncd bisheng/docker\ndocker compose -f docker-compose.yml -p bisheng up -d",
+      "detail_url": "skills/bisheng.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/bisheng/ENTRY.md"
     },
     {
       "id": "browser-use",

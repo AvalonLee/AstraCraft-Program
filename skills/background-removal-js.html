@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Background Removal JS 浏览器端抠图库 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览条目</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">设计与创意</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Background Removal JS 浏览器端抠图库</h1>
+      <p class="hero-subtitle">@imgly/background-removal</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>常规</span><span class="lic-badge lic-copyleft" title="AGPL-3.0">部分开源</span><span>接入 Agent</span>
+    </div>
+    <p class="muted detail-meta">IMG.LY 开源的浏览器 / Node.js 图片背景移除库：ONNX Runtime + ISNet 分割模型全部在本地设备推理，图片不上传、无按张计费；npm 一行接入，支持输出前景 / 背景 / 蒙版、GPU（WebGPU）加速、量化小模型与模型资产自托管。</p>
+    <p class="detail-upstream">上游状态：7.4k stars · 2026-10-29 核验</p>
+    
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/imgly/background-removal-js" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://img.ly/showcases/cesdk/web/background-removal/web" target="_blank" rel="noopener">项目主页</a>
+    </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code>npm install @imgly/background-removal onnxruntime-web@1.21.0</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Background Removal JS 浏览器端抠图库</h1>
+<blockquote>在浏览器 / Node.js 里本地完成图片抠图：图片不上传、无按张计费。上游：<a href="https://github.com/imgly/background-removal-js" target="_blank" rel="noopener">imgly/background-removal-js</a> · 许可证：AGPL-3.0</blockquote>
+<h2>这是什么</h2>
+<p>IMG.LY（商用创意 SDK 厂商）开源的图像背景移除库（★7.4k），提供两个 npm 包：<code>@imgly/background-removal</code>（浏览器端）与 <code>@imgly/background-removal-node</code>（Node.js）。推理基于 ONNX Runtime（WASM / WebGPU）与 ISNet 图像分割模型，全程在本地设备完成，不需要部署后端，也没有云 API 的按张计费。模型与 WASM 资产默认由 IMG.LY 静态 CDN 托管，支持切换成自托管；库本体亦可与 IMG.LY 的 CreativeEditor SDK 配合，但无强制依赖。</p>
+<h2>怎么接入</h2>
+<p>浏览器包需一并安装 peer 依赖 <code>onnxruntime-web</code>（要求 1.21.0）：</p>
+<pre><code class="lang-bash">npm install @imgly/background-removal onnxruntime-web@1.21.0</code></pre>
+<p>Node.js 环境改用独立包，无需 peer 依赖：</p>
+<pre><code class="lang-bash">npm install @imgly/background-removal-node</code></pre>
+<p>一行调用（浏览器端为默认导出，Node 端为命名导出）：</p>
+<pre><code class="lang-typescript">import imglyRemoveBackground from &quot;@imgly/background-removal&quot;;
+
+const blob = await imglyRemoveBackground(imageSrc);
+// imageSrc 支持 URL / string / Blob / File / ImageData / ArrayBuffer / Uint8Array
+// 返回 PNG Blob，可 URL.createObjectURL(blob) 后赋给 &lt;img&gt;.src</code></pre>
+<h2>怎么用</h2>
+<p>传入图片源即可拿到抠图结果，可选配置项控制模型、设备与输出：</p>
+<pre><code class="lang-typescript">const blob = await imglyRemoveBackground(imageSrc, {
+  device: &quot;gpu&quot;, // &quot;cpu&quot; | &quot;gpu&quot;（gpu 走 WebGPU，可用时更快）
+  model: &quot;isnet_fp16&quot;, // &quot;isnet&quot; | &quot;isnet_fp16&quot;（默认，~80MB）| &quot;isnet_quint8&quot;（~40MB，更小但有瑕疵）
+  output: {
+    format: &quot;image/png&quot;, // 或 image/jpeg / image/webp
+    type: &quot;foreground&quot;, // &quot;foreground&quot; 前景 | &quot;background&quot; 背景 | &quot;mask&quot; 蒙版
+    quality: 0.8,
+  },
+});</code></pre>
+<p>首次运行会按需下载模型与 WASM 文件（几十 MB），浏览器与模型缓存会让后续调用明显变快；典型用途是电商商品图实时去背、在线设计工具的内嵌抠图。</p>
+<h2>注意事项</h2>
+<ul><li><strong>协议</strong>：AGPL-3.0——闭源商业产品集成需向 IMG.LY 购买商业授权（上游 README 注明联系 support@img.ly），或按协议履行开源义务。</li><li><strong>模型资产外链</strong>：默认从 IMG.LY CDN（staticimgly.com）下载模型与 WASM，约 40–80MB；面向隐私敏感场景请自托管资产并通过 <code>publicPath</code> 指向自有地址。</li><li><strong>框架兼容</strong>：Web 包上游 README 说明目前仅支持 NextJS 15；低端设备上纯浏览器推理速度有限，可改用量化小模型 <code>isnet_quint8</code>。</li><li><strong>维护节奏</strong>：上游最后推送为 2025-07，更新放缓但未归档，API 已稳定。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-10-29 · 更新于 2026-10-29 · AstraCraft Program 轻量索引</p>
+</main>
+<script src="../assets/copy.js"></script>
+</body>
+</html>

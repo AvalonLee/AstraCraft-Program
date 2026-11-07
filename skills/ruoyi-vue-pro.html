@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>芋道 ruoyi-vue-pro 快速开发平台 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览条目</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">研发与代码</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">芋道 ruoyi-vue-pro 快速开发平台</h1>
+      <p class="hero-subtitle">ruoyi-vue-pro (yudao)</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>研发与代码</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>部署运行</span>
+    </div>
+    <p class="muted detail-meta">芋道出品的 Spring Boot 快速开发平台（RuoYi-Vue 全新 Pro 版，★40k+）：RBAC 动态权限、数据权限、SaaS 多租户、Flowable 工作流、三方登录、支付、短信、商城、CRM、ERP、AI 大模型、IoT 等模块开箱即用；提供 JDK8 / 17 / 25 三条分支与代码生成器，支持 MySQL、Oracle、PostgreSQL 及达梦等国产数据库。</p>
+    <p class="detail-upstream">上游状态：40.1k stars · 2026-10-29 核验</p>
+    
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/YunaiV/ruoyi-vue-pro" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://doc.iocoder.cn/" target="_blank" rel="noopener">项目主页</a>
+    </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code>git clone -b master-jdk17 https://github.com/YunaiV/ruoyi-vue-pro.git
+# 1) 导入 sql/mysql/ 目录的初始化脚本（Oracle / PostgreSQL / 达梦等见 sql/ 各对应目录）
+# 2) 修改 yudao-server/src/main/resources/application-local.yaml 的 MySQL / Redis 连接
+# 3) IDE 运行 yudao-server 模块的 YudaoServerApplication（Maven 构建可先 -DskipTests）</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>芋道 ruoyi-vue-pro 快速开发平台</h1>
+<blockquote>以开发者为中心的中国主流 Spring Boot 快速开发平台，个人与企业可 100% 免费使用。上游：<a href="https://github.com/YunaiV/ruoyi-vue-pro" target="_blank" rel="noopener">YunaiV/ruoyi-vue-pro</a> · 许可证：MIT</blockquote>
+<h2>这是什么</h2>
+<p>芋道（yudao）出品的后台管理系统 + 快速开发平台，RuoYi-Vue 的全新重构 Pro 版（★40k+，中文文档完善）：后端 Spring Boot 多模块 + MyBatis Plus + Redis/Redisson，管理台 Vue3（element-plus / vben 两版）+ uni-app 移动端一套代码多端适配。</p>
+<p>功能覆盖：RBAC 动态权限与按钮级控制、数据权限、SaaS 多租户、Flowable 工作流（在线设计流程、会签或签）、三方登录、支付、短信、商城、会员、CRM、ERP、MES、HRM、IM、AI 大模型、IoT 等；代码生成器一键生成 Java / Vue 前后端代码与 SQL。支持 MySQL、Oracle、PostgreSQL、SQL Server 及达梦、人大金仓、openGauss 等国产数据库（信创适配）。另有只含系统与基础设施功能的精简版 <a href="https://github.com/yudaocode/yudao-boot-mini" target="_blank" rel="noopener">yudao-boot-mini</a>。</p>
+<h2>怎么部署运行</h2>
+<p>前置：JDK（按分支选 8 / 17-21 / 25）、Maven、MySQL、Redis。以 master-jdk17 分支为例：</p>
+<pre><code class="lang-bash">git clone -b master-jdk17 https://github.com/YunaiV/ruoyi-vue-pro.git
+# 1) 导入 sql/mysql/ 目录的初始化脚本（Oracle / PostgreSQL / 达梦等见 sql/ 各对应目录）
+# 2) 修改 yudao-server/src/main/resources/application-local.yaml 的 MySQL / Redis 连接
+# 3) IDE 运行 yudao-server 模块的 YudaoServerApplication（Maven 构建可先 -DskipTests）</code></pre>
+<p>启动后访问管理台，默认账号 admin / admin123；管理台前端在 yudao-ui-admin 系列仓库（Vue3 两版），完整步骤见官方《快速启动》文档（doc.iocoder.cn/quick-start）。</p>
+<h2>怎么用</h2>
+<p>用代码生成器对准数据库表一键生成增删改查的前后端代码与接口文档；按需在「基础设施 → 代码生成」导入表结构即可。新业务模块建议基于精简版起步，再按《迁移文档》（约 5-10 分钟一个模块）从完整版按需搬功能。</p>
+<h2>注意事项</h2>
+<ul><li><strong>分支与裁剪</strong>：三条 JDK 分支功能一致、依赖版本不同；完整版体量大，正式项目先裁剪（精简版 + 按需迁移）再开发。</li><li><strong>协议与商业</strong>：MIT 开源、个人与企业 100% 免费商用；上游另有配套商业服务与文档站，边界以官网说明为准。</li><li><strong>信创适配</strong>：国产数据库 / 中间件支持依赖上游持续维护，生产升级前先核对其信创兼容文档。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-10-29 · 更新于 2026-10-29 · AstraCraft Program 轻量索引</p>
+</main>
+<script src="../assets/copy.js"></script>
+</body>
+</html>

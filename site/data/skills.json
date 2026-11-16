@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "dataset_version": "261106c",
-  "generated_at": "2026-11-06T11:51:39Z",
-  "count": 121,
+  "dataset_version": "261116m",
+  "generated_at": "2026-11-16T01:30:53Z",
+  "count": 134,
   "modes": [
     {
       "value": "install",
@@ -742,6 +742,54 @@
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/dsh-market-dsh-market/ENTRY.md"
     },
     {
+      "id": "freetoken",
+      "name_zh": "FreeToken 边缘 MoE 推理引擎",
+      "name_en": "FreeToken",
+      "summary_zh": "面向消费级硬件的边缘 MoE 推理引擎：协同 GPU、CPU 与主机内存，在游戏 PC 上跑 290B+ 开源大模型；支持 DeepSeek-V4 / Qwen3 / GLM-5 / gpt-oss / Gemma-4 等与 GGUF，暴露 OpenAI / Anthropic 兼容 API，一条命令接 Claude Code / Codex 等编码 Agent。",
+      "summary_en": "Edge-native MoE serving engine for consumer hardware: runs 290B+ open models on a gaming PC via GPU/CPU/host-memory co-execution, serves OpenAI and Anthropic APIs, and launches coding agents.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "mode": "deploy",
+      "mode_label": "部署运行",
+      "tags": [
+        "self-hosted",
+        "ai-agent",
+        "cli",
+        "inference",
+        "moe"
+      ],
+      "languages": [
+        "python",
+        "cuda",
+        "cpp"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "Apache-2.0",
+      "license_bucket": "open",
+      "homepage": "https://www.flashml.ai/",
+      "repo": "https://github.com/FlashML-org/FreeToken",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "freetoken",
+        "FreeToken"
+      ],
+      "risk_notes": "硬件门槛硬：CLI 仅 Linux x86_64，需 NVIDIA RTX 30/40/50 与驱动 r580+（CUDA 13），首次运行 JIT 编译 CUDA 内核还要 nvcc；Windows 只有桌面应用，macOS 不支持，AMD ROCm 仍 WIP；模型权重动辄数十到数百 GB，需要相应显存 / 内存 / 磁盘，所谓 290B+ 跑在游戏 PC 上依赖 offload 与 PCIe 带宽，速度与「交互级」为主张、未独立复现；引擎 Apache-2.0 但各模型权重另有许可与使用政策；服务默认绑 127.0.0.1:1919 且未见内置鉴权，勿直接暴露公网；ft launch 会改写编码 Agent 的供应商配置并可能安装其 CLI，先加 --dry-run 预览；项目 2026-07 创建、迭代快，nightly 轮子滚动发布需锁 URL。",
+      "added_at": "2026-11-16",
+      "updated_at": "2026-11-16",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "# 方式一：桌面应用（内置引擎与 GUI，Windows / Linux）\n# 下载：https://www.flashml.ai/\n\n# 方式二：PyPI 安装（Linux + NVIDIA）\nuv venv && source .venv/bin/activate\nuv pip install \"freetoken[accel]\"\nft --version\n\n# 方式三：源码安装\ngit clone https://github.com/FlashML-org/FreeToken.git && cd FreeToken\nuv venv && source .venv/bin/activate\nuv pip install -e \".[accel]\"\n\n# 启动服务（默认监听 127.0.0.1:1919；模型可给本地目录、HF repo id 或 .gguf）\nft serve --model ~/models/Qwen3.6-35B-A3B\ncurl http://127.0.0.1:1919/v1/models",
+      "detail_url": "skills/freetoken.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/freetoken/ENTRY.md"
+    },
+    {
       "id": "kaneo",
       "name_zh": "Kaneo 开源极简项目管理平台",
       "name_en": "Kaneo",
@@ -786,6 +834,104 @@
       "quickstart": "# 1) 自托管 Kaneo（仓库自带 compose.yml / .env.sample）\ngit clone https://github.com/usekaneo/kaneo.git\ncd kaneo\ncp .env.sample .env   # 设置 POSTGRES_PASSWORD、AUTH_SECRET、KANEO_CLIENT_URL=http://localhost:5173\ndocker compose up -d\n# 打开 http://localhost:5173\n\n# 2) 给 AI 工具接入官方 MCP（stdio 方式）\n# 在 Claude Code / Cursor / Codex 等 MCP 客户端添加：\n#   command: npx\n#   args: [\"-y\", \"@kaneo/mcp\"]\n# 自托管实例的 HTTP MCP endpoint：<你的实例地址>/api/mcp",
       "detail_url": "skills/kaneo.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/kaneo/ENTRY.md"
+    },
+    {
+      "id": "lightpanda",
+      "name_zh": "Lightpanda 轻量无头浏览器",
+      "name_en": "Lightpanda Browser",
+      "summary_zh": "用 Zig 从零编写的无头浏览器，专为 AI 与自动化设计：兼容 CDP 与 WebDriver BiDi，可替换 Puppeteer / Playwright 的浏览器端点；官方基准称内存约为无头 Chrome 的 1/16、速度快约 9 倍，支持 HTML / Markdown / PDF 导出、MCP 服务与内置 Agent 模式。",
+      "summary_en": "A headless browser written from scratch in Zig for AI and automation: CDP and WebDriver BiDi compatible, with fetches, MCP, agent mode and a claimed 16x memory / 9x speed win over headless Chrome.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "mode": "connect",
+      "mode_label": "接入 Agent",
+      "tags": [
+        "web-crawler",
+        "browser-automation",
+        "ai-agent",
+        "mcp",
+        "cli"
+      ],
+      "languages": [
+        "zig",
+        "javascript"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "AGPL-3.0",
+      "license_bucket": "copyleft",
+      "homepage": "https://lightpanda.io",
+      "repo": "https://github.com/lightpanda-io/browser",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "lightpanda",
+        "Lightpanda"
+      ],
+      "risk_notes": "AGPL-3.0：修改后对外提供网络服务须开源修改版本；不是 Chromium 等价物，Web 平台特性是子集，复杂站点 / JS 可能渲染或交互失败，替换前先用目标站点回归；稳定版 1.0.4 已发布，但 README 快速开始仍指向 nightly，接口可能变化；无原生 Windows 二进制，只能 WSL2；Linux 二进制链接 glibc（musl / Alpine 不可用，arm64 需 glibc 2.38+）；默认开启匿名遥测（LIGHTPANDA_DISABLE_TELEMETRY=true 关闭）；默认不遵守 robots.txt，需显式 --obey-robots；CDP 示例绑定 127.0.0.1，勿直接暴露公网；Agent 模式会把页面内容发送给所选模型供应商；内存 / 速度数据为上游自报基准。",
+      "added_at": "2026-11-16",
+      "updated_at": "2026-11-16",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "# 下载稳定版二进制（最新 release 为 1.0.4）\ncurl -L -o lightpanda https://github.com/lightpanda-io/browser/releases/latest/download/lightpanda-x86_64-linux\nchmod a+x ./lightpanda\n./lightpanda version\n\n# 或者 Homebrew / Docker\nbrew install lightpanda-io/browser/lightpanda\ndocker run -d --name lightpanda -p 127.0.0.1:9222:9222 lightpanda/browser:latest\n\n# 启动 CDP 服务\n./lightpanda serve --obey-robots --host 127.0.0.1 --port 9222",
+      "detail_url": "skills/lightpanda.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/lightpanda/ENTRY.md"
+    },
+    {
+      "id": "openmausbot",
+      "name_zh": "OpenMausBot 多 Bot 桌面 Agent 工作台",
+      "name_en": "OpenMausBot",
+      "summary_zh": "开源版 Grok Bot：像聊天软件一样管理一队 AI Agent，每个 Bot 有自己的模型、人格、记忆与一台虚拟机；底层跑你本机已登录的 Claude / Codex / Grok CLI，数据留在 ~/.openmausbot，敏感操作先弹审批卡，可通过 Composio 接 500+ 应用。",
+      "summary_en": "Open-source Grok Bot alternative: a chat app where each bot is a real local Claude/Codex/Grok agent with its own model, memory, VM and connected apps, plus approval cards.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "mode": "deploy",
+      "mode_label": "部署运行",
+      "tags": [
+        "ai-agent",
+        "multi-agent",
+        "self-hosted",
+        "mcp",
+        "claude-code",
+        "codex",
+        "computer-use"
+      ],
+      "languages": [
+        "typescript",
+        "javascript"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "Apache-2.0",
+      "license_bucket": "open",
+      "homepage": "https://www.mausbot.com/",
+      "repo": "https://github.com/milind-soni/OpenMausBot",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "openmausbot",
+        "OpenMausBot",
+        "MausBot",
+        "OpenGrokBot"
+      ],
+      "risk_notes": "早期版本（2026-08 创建，v0.1.x）：Ubuntu 版为 beta、Wayland 下禁用本机控制，Windows 安装包未签名（SmartScreen 提示未知发布者）；不自带模型，必须已装并登录 claude / codex / grok CLI 或用自带 Key；云电脑（Boat）试用后付费，Composio 与托管语音各有账号与条款，模型用量按你的订阅 / Key 计费；Bot 可控制本机（需显式开启），务必保留审批卡、不给不可信 Bot 开主机权限；打包桌面版用系统钥匙串加密供应商与服务密钥，但 CLI / 服务器模式的 config.json 以明文保存部分密钥（0600），引擎 Key 与 MCP header 也可能落在 config.json；许可证 Apache-2.0，但 enterprise/ 目录为另行授权的 source-available；与 xAI / Meta / OpenAI / Manus 无关联，也无任何代币。",
+      "added_at": "2026-11-16",
+      "updated_at": "2026-11-16",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "# 方式一：下载桌面安装包（macOS Apple silicon / Intel .dmg，Windows x64 .exe，Ubuntu .deb / AppImage）\n# https://github.com/milind-soni/OpenMausBot/releases/latest\n\n# 方式二：源码运行（开发）\ngit clone https://github.com/milind-soni/OpenMausBot && cd OpenMausBot\npnpm install\npnpm dev:server     # harness → 127.0.0.1:8799\npnpm dev            # 应用 → http://127.0.0.1:5199\npnpm dev:desktop    # Electron 壳（保持上面两个进程运行）\n\n# 方式三：CLI / 服务器\nnpm install -g openmausbot\nopenmausbot          # 首次引导选模型、登录取 Key，打开本地界面\nnpx openmausbot serve --public-url https://your.domain   # 也可 --tailscale / --lan / --tunnel",
+      "detail_url": "skills/openmausbot.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/openmausbot/ENTRY.md"
     },
     {
       "id": "openopc",
@@ -843,6 +989,53 @@
       "quickstart": "# 1. uv 环境（macOS / Linux）\ncd /path/to/OpenOPC\nuv python install 3.12\nuv venv --python 3.12\nsource .venv/bin/activate\n\n# 2. 安装 OpenOPC\nuv pip install -e .\n\n# 3. 可选：浏览器工具\nuv run python -m playwright install chromium\n\n# 4. 初始化本地配置、记忆、技能、项目与工作区\nuv run opc init\n\n# 5. 编辑 .opc/config/llm_config.yaml 填入 API Key\n\n# 6. 启动 Office UI（默认 http://localhost:8765）\nuv run opc ui",
       "detail_url": "skills/openopc.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/openopc/ENTRY.md"
+    },
+    {
+      "id": "pilotdeck",
+      "name_zh": "PilotDeck 任务型 Agent 生产力平台",
+      "name_en": "PilotDeck",
+      "summary_zh": "OpenBMB 与清华 THUNLP 等联合开源的 Agent 生产力平台：以 WorkSpace 隔离文件、记忆与技能，主打白盒可追溯记忆、按任务难度智能路由降本与后台常驻执行；自带 Web UI / CLI / IM 前端，原生支持 MCP，可本地一键安装或 Docker 自托管。",
+      "summary_en": "Open-source agent productivity platform with WorkSpace isolation, traceable white-box memory, smart model routing, always-on execution, MCP native, and Web UI, CLI and IM front-ends.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "mode": "deploy",
+      "mode_label": "部署运行",
+      "tags": [
+        "ai-agent",
+        "memory",
+        "mcp",
+        "self-hosted"
+      ],
+      "languages": [
+        "typescript",
+        "javascript"
+      ],
+      "doc_languages": [
+        "en",
+        "zh"
+      ],
+      "license": "AGPL-3.0",
+      "license_bucket": "copyleft",
+      "homepage": "https://pilotdeck.openbmb.cn",
+      "repo": "https://github.com/OpenBMB/PilotDeck",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "pilotdeck",
+        "PilotDeck"
+      ],
+      "risk_notes": "AGPL-3.0：修改后对外提供网络服务须开源修改版本；Node 运行时硬要求 22.13+ 且低于 23（依赖内置 node:sqlite），升级 Node 前先确认；一键安装脚本是官方 raw.githubusercontent 上的 curl | bash / irm | iex，执行前先审阅；必须配置模型供应商与 API Key（或本地 Ollama），费用与数据边界由所选供应商决定；常驻后台执行会持续消耗 token，需设预算并盯用量；性能与降本数据为上游自报基准，未独立复现；项目迭代快（2026-05 开源、2026-10 发 2.0），升级前看变更说明。",
+      "added_at": "2026-11-16",
+      "updated_at": "2026-11-16",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "# 方式一：一键安装（macOS / Linux；国内网络可加镜像变量）\ncurl -fsSL https://raw.githubusercontent.com/OpenBMB/PilotDeck/main/install.sh | bash\n# 网络慢时：\n# curl -fsSL https://raw.githubusercontent.com/OpenBMB/PilotDeck/main/install.sh | \\\n#   PILOTDECK_NODE_DIST_MIRROR=https://npmmirror.com/mirrors/node \\\n#   NPM_CONFIG_REGISTRY=https://registry.npmmirror.com bash\n\n# 启动（默认 http://localhost:3001）\npilotdeck\npilotdeck status\n\n# 方式二：Windows PowerShell（普通用户权限）\npowershell -ExecutionPolicy Bypass -c \"irm https://raw.githubusercontent.com/OpenBMB/PilotDeck/main/install.ps1 | iex\"\npilotdeck\n\n# 方式三：源码运行\nGIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/OpenBMB/PilotDeck.git\ncd PilotDeck\ncorepack enable\ncorepack pnpm install --frozen-lockfile --filter pilotdeck --filter pilotdeck-ui\ncd ui && npm run start        # 生产模式 http://localhost:3001；开发模式用 npm run dev\n\n# 方式四：Docker Compose\ndocker compose up -d --build",
+      "detail_url": "skills/pilotdeck.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/pilotdeck/ENTRY.md"
     },
     {
       "id": "staffdeck",
@@ -1195,6 +1388,57 @@
       "quickstart": "curl -fsSL https://raw.githubusercontent.com/kuaifan/dootask/pro/bin/install | bash",
       "detail_url": "skills/dootask.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/business-office/dootask/ENTRY.md"
+    },
+    {
+      "id": "monkeycode",
+      "name_zh": "百智办公 MonkeyAI 团队 AI 工作台",
+      "name_en": "MonkeyCode / MonkeyAI",
+      "summary_zh": "长亭科技开源的企业级团队 AI 办公工作台：用自然语言让 AI 完成 PPT / 文档 / 表格、编程与设计任务并直接交付成果；自带企业管理面板，统一管理模型、知识库、技能、专家、MCP 与规则，支持权限审计与用量计费，可私有化部署。",
+      "summary_en": "Open-source team AI office workbench for slides, documents, spreadsheets, coding and design, with enterprise resource management, permissions, audit and usage billing; self-hosted.",
+      "category_dir": "business-office",
+      "category_name": "商业与办公",
+      "mode": "deploy",
+      "mode_label": "部署运行",
+      "tags": [
+        "office",
+        "ai-agent",
+        "self-hosted",
+        "document-generation",
+        "docker"
+      ],
+      "languages": [
+        "typescript",
+        "go",
+        "rust",
+        "python"
+      ],
+      "doc_languages": [
+        "zh"
+      ],
+      "license": "AGPL-3.0",
+      "license_bucket": "copyleft",
+      "homepage": "https://work.baizhi.cloud/",
+      "repo": "https://github.com/chaitin/MonkeyCode",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "MonkeyCode",
+        "monkeyai",
+        "MonkeyAI",
+        "百智办公"
+      ],
+      "risk_notes": "AGPL-3.0：修改后对外提供网络服务须开源修改版本；一键安装脚本是官方域名下的 curl | bash，执行前先审阅或改用源码 Docker Compose；首次启动才创建初始管理员，之后务必移除 .env 中的初始账号密码并修改数据库密码，生产环境用 HTTPS；数据存自有服务器，但使用外部模型 / 工具时相关内容仍会发送到所配置服务；远程执行中转默认开启，需设备本机授权，runtime 卷保存控制面标识与签名私钥，备份时一并保存（down -v 会删除）；云电脑、更丰富内置内容与技术支持属付费版，免费版最多 10 席；云端执行环境上游仍标注待统一人工验收。",
+      "added_at": "2026-11-16",
+      "updated_at": "2026-11-16",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "# 方式一：官方一键安装脚本（会从 release.monkeycode-ai.com 拉取并执行安装脚本，建议先审阅）\nbash -c \"$(curl -kfsSL https://release.monkeycode-ai.com/public/monkeyai-install.sh)\"\n\n# 方式二：源码 Docker Compose（需要 Docker 与 Compose，仓库内置 PostgreSQL）\ngit clone https://github.com/chaitin/MonkeyCode.git\ncd MonkeyCode/monkeyai\ncp .env.example .env\n# 至少修改数据库密码、初始管理员邮箱 / 密码与 MONKEYAI_PUBLIC_URL\ndocker compose up --build\n# 启动后访问 http://localhost:8080，点「管理后台」登录",
+      "detail_url": "skills/monkeycode.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/business-office/monkeycode/ENTRY.md"
     },
     {
       "id": "officecli",
@@ -2588,6 +2832,52 @@
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/depth-studio/ENTRY.md"
     },
     {
+      "id": "design-studio",
+      "name_zh": "Design Studio 本地原型沙盒",
+      "name_en": "Design Studio",
+      "summary_zh": "面向设计师与产品经理的开源本地原型沙盒：把想法交给 Codex / Claude Code / Cursor 等编码 Agent，产出可交互的 React 原型、线框、Mermaid 图与 Excalidraw 画布；设计系统、产品上下文与决策文档同放一个自有文件夹，自带浏览器预览。",
+      "summary_en": "Open-source local prototyping sandbox for designers and PMs using coding agents: interactive React prototypes, wireframes, diagrams, canvases and context docs in one owned folder with browser preview.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "mode": "deploy",
+      "mode_label": "部署运行",
+      "tags": [
+        "design-system",
+        "ui-generation",
+        "ai-agent",
+        "canvas"
+      ],
+      "languages": [
+        "typescript",
+        "javascript"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://itspatmorgan.com/design-studio",
+      "repo": "https://github.com/itspatmorgan/design-studio",
+      "tier": "watch",
+      "tier_label": "观察",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "design-studio",
+        "Design Studio"
+      ],
+      "risk_notes": "早期 beta（2026-10 创建，v0.2.0）：目录结构、模块与安装流程仍可能变化，升级需手动跟随 release；自身不提供编码 Agent，需自备 Codex / Claude Code / Cursor 等能读写文件夹并执行命令的 harness 与账号；安装依赖 Git + mise（Node 24 / pnpm 12），接受 mise 信任前先审阅 mise.toml；发布的是静态浏览站，无内置登录，私密访问取决于托管平台；纯前端原型环境，数据与服务行为为模拟，接生产服务需额外开发。",
+      "added_at": "2026-11-16",
+      "updated_at": "2026-11-16",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "# 在存放项目的目录执行；文件夹名可改，已存在时不要覆盖\ngit clone --filter=blob:none --branch v0.2.0 https://github.com/itspatmorgan/design-studio.git design-studio\ncd design-studio\ngit remote rename origin upstream\ngit switch -c main\n\n# 安装工具链、依赖并启动预览\nmise install          # 接受信任前先审阅 mise.toml\nmise exec -- pnpm install --frozen-lockfile\nmise exec -- pnpm dev",
+      "detail_url": "skills/design-studio.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/design-studio/ENTRY.md"
+    },
+    {
       "id": "directors-console",
       "name_zh": "Director's Console AI 影视工作台",
       "name_en": "Director's Console",
@@ -3375,6 +3665,53 @@
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/money-printer-turbo/ENTRY.md"
     },
     {
+      "id": "novel-to-game",
+      "name_zh": "NovelToGame 小说改编游戏技能集",
+      "name_en": "NovelToGame",
+      "summary_zh": "把小说改编成可玩游戏的 AI 技能合集（5 个 skill）：整本阅读并做带章节引用的设定考据，比较并淘汰游戏方向，产出概念、世界、美术与玩法设计文档，按本机工具链适配构建，最后以首次玩家盲测 + 一次完整验收记录收尾；适配 Claude Code / Codex / Kimi Code。",
+      "summary_en": "Five skills that adapt a whole novel into a playable game: cited source bible, concept vetoes, design and art direction, environment-aware builds, blind first-player QA and one verified run.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "mode": "install",
+      "mode_label": "装进 Agent",
+      "tags": [
+        "skill-pack",
+        "ai-agent",
+        "claude-code",
+        "game-design",
+        "interactive-fiction"
+      ],
+      "languages": [
+        "markdown"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://zenstory.ai/zh/novel-to-game",
+      "repo": "https://github.com/zenstory-ai/novel-to-game",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "novel-to-game",
+        "NovelToGame"
+      ],
+      "risk_notes": "只提供技能与流程，运行依赖你自己的编码 Agent（Claude Code / Codex / Kimi Code）与模型额度，没有托管服务；npx skills add -g 会全局写入各 Agent 的技能目录（去掉 -g 才是项目内），执行前清楚装了什么；改编对象必须是自有或已获授权的小说，示例《金瓶梅》路线含 18+ 内容，示例游戏与生成素材的版权、形象与配音授权由使用者负责；整书分析、构建与盲测 QA 会消耗大量 token 与时间，QA 只覆盖实际测过的环境，未测环境列为限制；语音为可选项，启用后会把相关文本交给所选 TTS 服务并可能产生费用。",
+      "added_at": "2026-11-16",
+      "updated_at": "2026-11-16",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "# Claude Code（调用：/novel-to-game）\nnpx skills add zenstory-ai/novel-to-game -g -y -a claude-code -s '*'\n\n# Codex（调用：$novel-to-game）\nnpx skills add zenstory-ai/novel-to-game -g -y -a codex -s '*'\n\n# Kimi Code（调用：/skill:novel-to-game）\nnpx skills add zenstory-ai/novel-to-game -g -y -a kimi-code-cli -s '*'\n\n# 三个 CLI 一次装齐\nnpx skills add zenstory-ai/novel-to-game -g -y -s '*' \\\n  -a claude-code -a codex -a kimi-code-cli",
+      "detail_url": "skills/novel-to-game.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/novel-to-game/ENTRY.md"
+    },
+    {
       "id": "onetake",
       "name_zh": "Onetake 一镜到底连贯动效视频技能",
       "name_en": "Onetake — One-Take Motion Film Skill",
@@ -3944,6 +4281,52 @@
       "quickstart": "npx skills add remotion-dev/skills",
       "detail_url": "skills/remotion-skills.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/remotion-skills/ENTRY.md"
+    },
+    {
+      "id": "sc-datav",
+      "name_zh": "sc-datav 3D 地图可视化大屏",
+      "name_en": "sc-datav",
+      "summary_zh": "基于 Three.js + React 19 + ECharts 的 3D 数据可视化大屏模板：精确呈现四川省地理轮廓，带动画飞线、侧边扫光、柱状 / 折线图联动与 Leva 实时调参；Vite 构建、autofit 自适应，可直接作为省市级 3D 大屏项目起点。",
+      "summary_en": "A 3D data-visualization dashboard template built with Three.js, React 19 and ECharts: accurate provincial map outlines, animated fly-lines, side sweep lighting and linked charts.",
+      "category_dir": "design-creative",
+      "category_name": "设计与创意",
+      "mode": "deploy",
+      "mode_label": "部署运行",
+      "tags": [
+        "threejs",
+        "data-visualization",
+        "dashboard",
+        "canvas"
+      ],
+      "languages": [
+        "typescript",
+        "javascript"
+      ],
+      "doc_languages": [
+        "zh"
+      ],
+      "license": "Apache-2.0",
+      "license_bucket": "open",
+      "homepage": "https://knight-l.github.io/sc-datav/",
+      "repo": "https://github.com/knight-L/sc-datav",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "sc-datav",
+        "SCDataV"
+      ],
+      "risk_notes": "内置地理数据只有四川省（sc.json / sc_outline.json 与轮廓贴图），换省市要替换 GeoJSON、轮廓与贴图，不是改标题即可，轮廓贴图可用配套 sat-hunter 工具生成；上游最后推送 2026-03（约 8 个月无更新，未归档），依赖用 React 19.1 / Three 0.181 / Vite Rolldown 版，自行升级需回归；大屏图表与数值为演示数据，接真实数据要改数据源与刷新逻辑；3D 地图 + 多 ECharts 实例对低端设备有压力；省份地理数据可能有来源与商用授权要求。",
+      "added_at": "2026-11-16",
+      "updated_at": "2026-11-16",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "git clone https://github.com/knight-L/sc-datav.git\ncd sc-datav\npnpm install\n\n# 开发（Vite 开发服务器）\npnpm dev\n\n# 构建与本地预览\npnpm build\npnpm preview",
+      "detail_url": "skills/sc-datav.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/design-creative/sc-datav/ENTRY.md"
     },
     {
       "id": "seedance-20",
@@ -4590,6 +4973,54 @@
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/dev-engineering/awesome-reverse-engineered/ENTRY.md"
     },
     {
+      "id": "claude-code-game-studios",
+      "name_zh": "Claude Code Game Studios 游戏工坊模板",
+      "name_en": "Claude Code Game Studios",
+      "summary_zh": "把 Claude Code 变成一支完整游戏开发团队：克隆模板即得 49 个角色 Agent（制作人、设计、程序、美术、QA 等）与近百个流程技能，从提问、一页需求简报到可玩的浏览器游戏，再到逐步迭代、分享与发行收尾，全程有检查与回滚点。",
+      "summary_en": "Turn Claude Code into a full game studio: 49 role agents and ~99 workflow skills take an idea from questions and a brief to a playable browser game, then iterate and cut it for release.",
+      "category_dir": "dev-engineering",
+      "category_name": "研发与代码",
+      "mode": "install",
+      "mode_label": "装进 Agent",
+      "tags": [
+        "ai-agent",
+        "multi-agent",
+        "claude-code",
+        "skill-pack",
+        "game-development"
+      ],
+      "languages": [
+        "shell",
+        "markdown"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+      "repo": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "claude-code-game-studios",
+        "Claude Code Game Studios",
+        "game-studios"
+      ],
+      "risk_notes": "只支持 Claude Code——需要可用的 Claude Code 与模型额度，不是独立游戏引擎；Python 3 必装（每个技能 / hook 都读 project.yaml，缺失时设置会静默回落到默认值），Bash 必装（Windows 用 Git Bash，否则 hooks 自跳过、会话提示检查关闭），/prototype 的自动验收需本机 Chrome / Edge / Chromium；必须在仓库根目录启动 Claude Code，子目录启动会跳过 hooks、deny 规则与 ask-first 权限；模板带 hooks / deny 规则 / statusline 等 Agent 行为改造，使用前读 CLAUDE.md 与 .claude/settings.json；每个项目克隆一份，升级需按 UPGRADING.md 手动合并；上游自述引擎路线（Godot / Unity / Unreal）已实现但尚未像浏览器路线那样经过对照测试。",
+      "added_at": "2026-11-16",
+      "updated_at": "2026-11-16",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "# 1) 克隆模板到你的游戏项目目录（每个项目一份，不要把游戏做在本仓库副本之外）\ngit clone https://github.com/Donchitos/Claude-Code-Game-Studios.git my-game\ncd my-game\n\n# 2) 必须在含 CLAUDE.md 与 project.yaml 的根目录启动 Claude Code（子目录会跳过 hooks 与权限规则）\nclaude\n\n# 3) 在会话里选一条入口\n# /start                          按引导回答你在哪一步，自动选择流程\n# /prototype a fishing game where the rare fish only bite at dusk\n# /setup-engine godot 4.7         已确定引擎时先配置（Web / Godot / Unity / Unreal）",
+      "detail_url": "skills/claude-code-game-studios.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/dev-engineering/claude-code-game-studios/ENTRY.md"
+    },
+    {
       "id": "gitnexus",
       "name_zh": "GitNexus 代码知识图谱",
       "name_en": "GitNexus — Zero-Server Code Intelligence Engine",
@@ -4738,6 +5169,52 @@
       "quickstart": "mkdir -p pentagi && cd pentagi\nwget -O installer.zip https://pentagi.com/downloads/linux/amd64/installer-latest.zip\nunzip installer.zip\nsudo ./installer   # 引导完成系统检查、.env 生成、LLM 供应商与搜索引擎配置、安全加固并 docker compose 拉起",
       "detail_url": "skills/pentagi.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/dev-engineering/pentagi/ENTRY.md"
+    },
+    {
+      "id": "public-apis",
+      "name_zh": "Public APIs 免费 API 合集",
+      "name_en": "Public APIs",
+      "summary_zh": "GitHub 星标最高的免费 API 合集：50+ 分类、约 2400 条公开 API 索引，每条标注是否需要认证、HTTPS 与 CORS；附带可搜索官网、免 Key 列表、实时状态页与给 Agent 用的 MCP 服务列表，找外部数据源先从这里查。",
+      "summary_en": "One of GitHub's most-starred free API directories: ~2,400 public APIs in 50+ categories with Auth, HTTPS and CORS tags, plus a searchable site, no-key list, live status and MCP servers for agents.",
+      "category_dir": "dev-engineering",
+      "category_name": "研发与代码",
+      "mode": "read",
+      "mode_label": "阅读参考",
+      "tags": [
+        "awesome-list",
+        "api",
+        "mcp"
+      ],
+      "languages": [
+        "markdown",
+        "python"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://publicapis.lol",
+      "repo": "https://github.com/public-apis/public-apis",
+      "tier": "core",
+      "tier_label": "主推",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "public-apis",
+        "Public APIs",
+        "PublicAPIs"
+      ],
+      "risk_notes": "这是索引不是运行时：条目由社区手工维护，可能过期、下线、收费化或缩减免费额度，Auth / HTTPS / CORS 标注也未必准确（常见 Unknown）；接入前务必读官方文档与条款，免费不等于无限制（限流、注册、署名要求都可能存在）；MIT 只覆盖清单本身，不覆盖各 API 的数据与使用条款；README 顶部有赞助商内容，部分条目是付费服务的免费档。",
+      "added_at": "2026-11-16",
+      "updated_at": "2026-11-16",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "# 拉取最新清单（README 即完整列表）\ncurl -fsSL https://raw.githubusercontent.com/public-apis/public-apis/master/README.md -o public-apis.md\n\n# 列出所有分类\ngrep '^### ' public-apis.md\n\n# 只找无需认证的条目（Auth 列为 No，且支持 HTTPS）\ngrep '| No | Yes |' public-apis.md | head -20\n\n# 或只克隆清单与校验脚本（不带历史）\ngit clone --depth 1 https://github.com/public-apis/public-apis.git",
+      "detail_url": "skills/public-apis.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/dev-engineering/public-apis/ENTRY.md"
     },
     {
       "id": "rea",
@@ -5263,6 +5740,52 @@
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/research-intel/crawl4ai/ENTRY.md"
     },
     {
+      "id": "creatorhub",
+      "name_zh": "CreatorHub 多平台内容管理工作台",
+      "name_en": "CreatorHub",
+      "summary_zh": "本地运行的多平台内容管理工作台：一个 Web 面板管起抖音 / 小红书 / 快手 / 视频号 / TikTok 的账号登录、作品与评论监控、采集下载、发布与私信管理；Python + FastAPI + SQLite + 浏览器自动化，数据与登录态全部留在本机，提供 Windows 安装包与源码启动两种方式。",
+      "summary_en": "Local workbench for Douyin, Xiaohongshu, Kuaishou, WeChat Channels and TikTok: account login, content/comment monitoring, collection, downloads, publishing and DM management, all data local.",
+      "category_dir": "research-intel",
+      "category_name": "研究与信息获取",
+      "mode": "deploy",
+      "mode_label": "部署运行",
+      "tags": [
+        "social-media",
+        "web-crawler",
+        "self-hosted",
+        "short-video"
+      ],
+      "languages": [
+        "python",
+        "javascript"
+      ],
+      "doc_languages": [
+        "zh"
+      ],
+      "license": "UNKNOWN",
+      "license_bucket": "unknown",
+      "homepage": "https://3441293738.github.io/creatorhub/",
+      "repo": "https://github.com/3441293738/creatorhub",
+      "tier": "watch",
+      "tier_label": "观察",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "creatorhub",
+        "CreatorHub"
+      ],
+      "risk_notes": "仓库未附 LICENSE 文件（UNKNOWN，默认保留所有权利），商用或二次分发前先与作者确认；各平台能力依赖浏览器自动化与登录态，平台风控或接口变动可能导致采集 / 发布失效，账号风险自担；视频号仅限本账号内容，TikTok 仅支持单视频发布、不支持图文与直播；正式安装包只覆盖 Windows 10/11 x64，Releases 中的 macOS 包被上游标注 UNTESTED，macOS / Linux 建议源码运行。",
+      "added_at": "2026-11-16",
+      "updated_at": "2026-11-16",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "# 方式一：Windows 10/11 x64 安装包（推荐）\n# 1) 从 Releases 下载 CreatorHub-Setup-<版本>-windows-x64.exe\n#    https://github.com/3441293738/creatorhub/releases/latest\n# 2) 双击安装，通过桌面快捷方式启动，点「启动本地服务」，等待浏览器组件就绪\n\n# 方式二：源码运行（macOS / Linux / 开发者）\ngit clone https://github.com/3441293738/creatorhub.git\ncd creatorhub\n\n# macOS / Linux\nchmod +x start.sh && ./start.sh\n\n# Windows（PowerShell / cmd）\n.\\start.cmd",
+      "detail_url": "skills/creatorhub.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/research-intel/creatorhub/ENTRY.md"
+    },
+    {
       "id": "future-house-paper-qa",
       "name_zh": "PaperQA 文献问答",
       "name_en": "PaperQA",
@@ -5304,6 +5827,57 @@
       "quickstart": "git clone --depth 1 https://github.com/Future-House/paper-qa.git\ncd paper-qa",
       "detail_url": "skills/future-house-paper-qa.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/research-intel/future-house-paper-qa/ENTRY.md"
+    },
+    {
+      "id": "jiangshan-map",
+      "name_zh": "江山时序 中国历史交互地图",
+      "name_en": "Chronicles of the Realm (jiangshan-map)",
+      "summary_zh": "交互式中国历史地图集：从战国（前 403 年）到当代，18 个历史时期、198 幅疆域快照，拖时间轴看疆域、都城、山川与政区演变；点城市看 2400 年地名沿革，点人物看生平轨迹，支持诗词路线、地图猜城与可嵌入深链；另带 MCP server、Agent Skill 与 GeoJSON 导出。",
+      "summary_en": "Interactive historical atlas of China (403 BCE–today): 18 periods, 198 territory snapshots, place genealogies, person chronicles, poetry routes and deep links, plus MCP and GeoJSON export.",
+      "category_dir": "research-intel",
+      "category_name": "研究与信息获取",
+      "mode": "deploy",
+      "mode_label": "部署运行",
+      "tags": [
+        "mcp",
+        "self-hosted",
+        "multilingual",
+        "visualization",
+        "historical-map"
+      ],
+      "languages": [
+        "javascript",
+        "html",
+        "css"
+      ],
+      "doc_languages": [
+        "zh",
+        "en",
+        "ja"
+      ],
+      "license": "GPL-3.0",
+      "license_bucket": "copyleft",
+      "homepage": "https://deanchen.me/jiangshan-map/",
+      "repo": "https://github.com/DeanChensj/jiangshan-map",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "jiangshan-map",
+        "江山时序",
+        "Jiangshan Atlas"
+      ],
+      "risk_notes": "历史疆域为教学 / 可视化用途的近似示意，不是权威边界数据，也不代表现代政治边界；研究引用前核对原始出处。代码 GPL-3.0，修改后分发需按协议开源。GeoJSON 导出默认不含 CHGIS 派生的郡 / 州 / 府图层，因为 CHGIS 条款禁止再分发；--with-prefectures 仅限本地学术非商用，导出结果不得公开。地图几何、历史事件与坐标可能有个别错误，古籍原文属公版但现代译文 / 整理文本可能有版权。MCP server 与 Agent Skill 读取本地仓库、截图依赖本机 Chrome / Chromium，不是托管 API；静态站无鉴权，部署即公开全部数据。",
+      "added_at": "2026-11-16",
+      "updated_at": "2026-11-16",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "# 方式一：直接静态服务（无需安装依赖、无构建步骤）\ngit clone https://github.com/DeanChensj/jiangshan-map.git\ncd jiangshan-map\npython3 -m http.server 8000\n# 浏览器打开 http://localhost:8000\n\n# 方式二：Docker Compose（nginx:alpine 静态镜像）\ndocker compose up -d --build\n# 浏览器打开 http://localhost:8008（端口映射见 docker-compose.yml）",
+      "detail_url": "skills/jiangshan-map.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/research-intel/jiangshan-map/ENTRY.md"
     },
     {
       "id": "k-dense-ai-scientific-agent-skills",
@@ -5438,6 +6012,51 @@
       "quickstart": "git clone --depth 1 https://github.com/microsoft/RD-Agent.git\ncd RD-Agent",
       "detail_url": "skills/microsoft-rd-agent.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/research-intel/microsoft-rd-agent/ENTRY.md"
+    },
+    {
+      "id": "sherlock",
+      "name_zh": "Sherlock 用户名跨平台检索",
+      "name_en": "Sherlock",
+      "summary_zh": "开源 OSINT 用户名检索 CLI：输入一个用户名，批量核查 400+ 社交网站是否存在同名账号，无需登录、无需 API Key；支持 CSV / XLSX / JSON 输出、站点白名单、代理与超时控制，是账号足迹排查的事实标准工具。",
+      "summary_en": "Open-source OSINT CLI that hunts down social media accounts by username across 400+ networks, with CSV/XLSX/JSON output, site filters, proxy and timeout controls — no login or API key required.",
+      "category_dir": "research-intel",
+      "category_name": "研究与信息获取",
+      "mode": "connect",
+      "mode_label": "接入 Agent",
+      "tags": [
+        "social-media",
+        "security",
+        "cli",
+        "osint"
+      ],
+      "languages": [
+        "python"
+      ],
+      "doc_languages": [
+        "en"
+      ],
+      "license": "MIT",
+      "license_bucket": "open",
+      "homepage": "https://sherlockproject.xyz",
+      "repo": "https://github.com/sherlock-project/sherlock",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [
+        "sherlock",
+        "Sherlock"
+      ],
+      "risk_notes": "OSINT 双用途工具：只应查询公开信息并用于合法授权场景（自查账号足迹、渗透测试授权范围、反诈溯源），不得用于骚扰、跟踪或人肉；结果存在误报 / 漏报，站点规则持续变化；一次查询会向数百个站点发请求，可能被限流或封 IP，必要时配代理与超时；--nsfw 会纳入成人站点，默认关闭；上游提示 ParrotOS 与 Ubuntu 24.04 的第三方包已损坏，请用 pipx / uv / pip 或 Docker 安装。",
+      "added_at": "2026-11-16",
+      "updated_at": "2026-11-16",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "# 推荐：pipx 隔离安装（也可用 uv tool install sherlock-project）\npipx install sherlock-project\n\n# 或 Docker\ndocker run -it --rm sherlock/sherlock\n\n# 或用 venv + pip\npython -m venv .venv && . .venv/bin/activate\npip install sherlock-project\n\n# 验证\nsherlock --version",
+      "detail_url": "skills/sherlock.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/research-intel/sherlock/ENTRY.md"
     },
     {
       "id": "stanford-oval-storm",

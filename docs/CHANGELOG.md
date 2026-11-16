@@ -20,6 +20,7 @@
 - **发布（2026-11-06）**：五个新条目（BoardUI + HeroUI / beUI / Libraries.dev / Bencho 批次）经 PR #86/#87 合入 `dev`、PR #88 发往 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261106b`，共 120 条。
 - **发布（2026-11-07）**：BISHENG 收录经 PR #90 合入 `dev`、PR #91 发往 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261106c`，共 121 条。
 - **发布（2026-11-07 · README 修复）**：README 嵌套冲突标记清除、entries 徽章更正为 121，index-check 触发路径补 `README.md`，经 PR #93 合入 `dev`、PR #94 发往 `main`；线上站点由 `deploy.yml` 自动发布，数据版本不变 `261106c`，共 121 条。
+- **发布（2026-11-16）**：13 个新条目（CreatorHub / Sherlock / MonkeyCode / Design Studio / PilotDeck / Public APIs / Claude Code Game Studios / Lightpanda / FreeToken / sc-datav / NovelToGame / 江山时序 / OpenMausBot）经 PR #96 合入 `dev`、PR #97 发往 `main`；线上站点由 `deploy.yml` 自动发布，数据版本 `261116m`，共 134 条。
 
 ### 结构
 

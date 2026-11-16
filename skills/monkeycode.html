@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>百智办公 MonkeyAI 团队 AI 工作台 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览条目</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">商业与办公</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">百智办公 MonkeyAI 团队 AI 工作台</h1>
+      <p class="hero-subtitle">MonkeyCode / MonkeyAI</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>商业与办公</span><span>常规</span><span class="verify-badge verify-unverified">暂不推荐</span><span class="lic-badge lic-copyleft" title="AGPL-3.0">部分开源</span><span>部署运行</span>
+    </div>
+    <p class="muted detail-meta">长亭科技开源的企业级团队 AI 办公工作台：用自然语言让 AI 完成 PPT / 文档 / 表格、编程与设计任务并直接交付成果；自带企业管理面板，统一管理模型、知识库、技能、专家、MCP 与规则，支持权限审计与用量计费，可私有化部署。</p>
+    <p class="detail-upstream">上游状态：2026-10-29 核验</p>
+    <p class="detail-verify-note">该条目尚未通过上游核验，使用前先自行核对。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/chaitin/MonkeyCode" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://work.baizhi.cloud/" target="_blank" rel="noopener">项目主页</a>
+    </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code># 方式一：官方一键安装脚本（会从 release.monkeycode-ai.com 拉取并执行安装脚本，建议先审阅）
+bash -c &quot;$(curl -kfsSL https://release.monkeycode-ai.com/public/monkeyai-install.sh)&quot;
+
+# 方式二：源码 Docker Compose（需要 Docker 与 Compose，仓库内置 PostgreSQL）
+git clone https://github.com/chaitin/MonkeyCode.git
+cd MonkeyCode/monkeyai
+cp .env.example .env
+# 至少修改数据库密码、初始管理员邮箱 / 密码与 MONKEYAI_PUBLIC_URL
+docker compose up --build
+# 启动后访问 http://localhost:8080，点「管理后台」登录</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>百智办公 MonkeyAI 团队 AI 工作台</h1>
+<blockquote>开源的企业级团队 AI 办公工作台（原 MonkeyCode）。上游：<a href="https://github.com/chaitin/MonkeyCode" target="_blank" rel="noopener">chaitin/MonkeyCode</a> · 许可证：AGPL-3.0 · 文档：<a href="https://work.docs.baizhi.cloud/" target="_blank" rel="noopener">work.docs.baizhi.cloud</a></blockquote>
+<h2>这是什么</h2>
+<p>百智办公（MonkeyAI，仓库仍名 MonkeyCode）是长亭科技开源的团队级 AI 办公工作台：成员用自然语言提出需求，AI 直接交付办公、编程与设计成果——做汇报 PPT、写文档、处理表格、整理文件，也能按需求实现功能、补测试、修问题，或制作海报与页面设计。</p>
+<p>它不只是单体 Agent，而是一套带企业管理面板的私有化平台：</p>
+<ul><li><strong>团队资源共享</strong>：在团队内共享大模型、知识库、技能、专家、MCP 连接器与规则，成员直接复用</li><li><strong>统一管控</strong>：资源访问权限、使用审计、用量统计与计费管理</li><li><strong>自带模型与工具</strong>：接入自有模型服务，通过 MCP 连接业务系统，再叠加知识库、技能与规则</li><li><strong>多端接入</strong>：Web、Windows x64、macOS（Apple Silicon / Intel）、Linux x64 客户端连接同一个团队服务器</li></ul>
+<p>免费版最多 10 个席位；云电脑、更丰富的内置内容与技术支持属付费版。</p>
+<h2>怎么部署运行</h2>
+<p>两种方式：一键安装脚本（最省事），或从源码用 Docker Compose 自建。最低配置 1 核 CPU + 1 GB 内存，可随团队规模调整。</p>
+<pre><code class="lang-bash"># 方式一：官方一键安装脚本（会从 release.monkeycode-ai.com 拉取并执行安装脚本，建议先审阅）
+bash -c &quot;$(curl -kfsSL https://release.monkeycode-ai.com/public/monkeyai-install.sh)&quot;
+
+# 方式二：源码 Docker Compose（需要 Docker 与 Compose，仓库内置 PostgreSQL）
+git clone https://github.com/chaitin/MonkeyCode.git
+cd MonkeyCode/monkeyai
+cp .env.example .env
+# 至少修改数据库密码、初始管理员邮箱 / 密码与 MONKEYAI_PUBLIC_URL
+docker compose up --build
+# 启动后访问 http://localhost:8080，点「管理后台」登录</code></pre>
+<p>首次启动时若用户表为空会创建初始管理员，成功后可从 <code>.env</code> 移除 <code>MONKEYAI_INITIAL_ADMIN_EMAIL</code> 与 <code>MONKEYAI_INITIAL_ADMIN_PASSWORD</code>；生产环境把 <code>MONKEYAI_PUBLIC_URL</code> 设为实际 HTTPS 地址，Admin 镜像内置了自动申请和续期 Let's Encrypt 证书的开关。</p>
+<h2>怎么用</h2>
+<p>1. 用初始管理员登录管理后台，先改密码，再配置模型服务（也可用团队共享的模型）。 2. 按需导入知识库、技能、专家、规则，接入 MCP 连接器，并给团队分配访问权限。 3. 成员用 Web 或桌面客户端填写团队服务器地址登录，直接用自然语言派活：整理资料成 PPT、汇总表格、实现功能、做海报等。 4. 管理端查看用量统计与审计记录，按团队需要调整席位、模型与资源配额。</p>
+<p>上游提供演示环境可先试：Web 端 &lt;https://demo.work.baizhi.cloud/&gt;，管理后台 &lt;https://admin.demo.work.baizhi.cloud/&gt;（演示账号见上游 README）。客户端下载地址在官网与仓库 <code>admin/public/downloads.json</code> 中配置。</p>
+<h2>注意事项</h2>
+<ul><li><strong>AGPL-3.0</strong>：可自由使用、修改与二次开发，但修改后对外提供网络服务须按协议开源修改版本。</li><li><strong>部署安全</strong>：一键安装脚本是 <code>curl | bash</code>，执行前先阅读脚本或改用源码 Compose；必须在 <code>.env</code> 中改掉数据库密码与初始管理员密码，生产环境配 HTTPS 与可信代理网段（<code>MONKEYAI_TRUSTED_PROXY_CIDRS</code>），否则来源 IP 与 OAuth 回调可能不可靠。</li><li><strong>数据边界</strong>：团队数据存在自有服务器，但调用外部模型、MCP 工具或对象存储时，相关内容会发送到所配置的服务，接入前做数据合规评估。</li><li><strong>远程执行与备份</strong>：服务端远程执行中转默认开启，设备需在本机开启远程访问并批准权限；<code>runtime</code> 卷保存身份标识与签名私钥，备份要一并保存，<code>docker compose down -v</code> 会删除。</li><li><strong>功能成熟度</strong>：云端执行环境（containerd / gVisor 云电脑）上游仍标注待统一人工验收，Firecracker 与 Kubernetes 属后续扩展；免费版席位与内置内容有限。</li><li><strong>许可证与品牌</strong>：AGPL-3.0 只覆盖代码；「百智办公 / MonkeyAI」等品牌与付费服务不在开源授权内。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-11-16 · 更新于 2026-11-16 · AstraCraft Program 轻量索引</p>
+</main>
+<script src="../assets/copy.js"></script>
+</body>
+</html>

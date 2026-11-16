@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sherlock 用户名跨平台检索 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览条目</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">研究与信息获取</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Sherlock 用户名跨平台检索</h1>
+      <p class="hero-subtitle">Sherlock</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>研究与信息获取</span><span>常规</span><span class="verify-badge verify-unverified">暂不推荐</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>接入 Agent</span>
+    </div>
+    <p class="muted detail-meta">开源 OSINT 用户名检索 CLI：输入一个用户名，批量核查 400+ 社交网站是否存在同名账号，无需登录、无需 API Key；支持 CSV / XLSX / JSON 输出、站点白名单、代理与超时控制，是账号足迹排查的事实标准工具。</p>
+    <p class="detail-upstream">上游状态：2026-10-29 核验</p>
+    <p class="detail-verify-note">该条目尚未通过上游核验，使用前先自行核对。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/sherlock-project/sherlock" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://sherlockproject.xyz" target="_blank" rel="noopener">项目主页</a>
+    </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code># 推荐：pipx 隔离安装（也可用 uv tool install sherlock-project）
+pipx install sherlock-project
+
+# 或 Docker
+docker run -it --rm sherlock/sherlock
+
+# 或用 venv + pip
+python -m venv .venv &amp;&amp; . .venv/bin/activate
+pip install sherlock-project
+
+# 验证
+sherlock --version</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Sherlock 用户名跨平台检索</h1>
+<blockquote>按用户名追踪跨平台社交账号的 OSINT 工具。上游：<a href="https://github.com/sherlock-project/sherlock" target="_blank" rel="noopener">sherlock-project/sherlock</a> · 许可证：MIT · 官网：<a href="https://sherlockproject.xyz" target="_blank" rel="noopener">sherlockproject.xyz</a></blockquote>
+<h2>这是什么</h2>
+<p>Sherlock 是一个用 Python 编写的用户名检索 CLI：给一个用户名，它按上游维护的站点清单逐站请求公开主页，判断该用户名在 400+ 社交网络、论坛与开发平台上是否存在同名账号。不需要登录、不需要 API Key，是 OSINT 与账号足迹排查领域使用最广的开源工具（★112k）。</p>
+<p>主要能力：</p>
+<ul><li>支持一次检索多个用户名，结果默认写入 <code>&lt;用户名&gt;.txt</code></li><li>输出 CSV / XLSX / JSON，或用 <code>--browse</code> 直接打开命中的主页</li><li><code>--site</code> 限定站点、<code>--proxy</code> 走代理、<code>--timeout</code> 控制超时</li><li><code>--print-all</code> 同时显示未命中的站点，<code>--nsfw</code> 可选纳入成人站点（默认关闭）</li><li>默认拉取上游最新站点清单；<code>--local</code> 强制使用随包内置的 <code>data.json</code>，离线或需要固定数据时用</li></ul>
+<h2>怎么接入</h2>
+<p>前置：Python 3.9–3.14（上游要求 <code>&gt;=3.9,&lt;4.0</code>）。推荐用 pipx / uv 隔离安装，避免污染全局环境。</p>
+<pre><code class="lang-bash"># 推荐：pipx 隔离安装（也可用 uv tool install sherlock-project）
+pipx install sherlock-project
+
+# 或 Docker
+docker run -it --rm sherlock/sherlock
+
+# 或用 venv + pip
+python -m venv .venv &amp;&amp; . .venv/bin/activate
+pip install sherlock-project
+
+# 验证
+sherlock --version</code></pre>
+<p>上游提示：ParrotOS 与 Ubuntu 24.04 的第三方软件包当前是坏的，这两个系统请改用 pipx / uv / pip 或 Docker。</p>
+<h2>怎么用</h2>
+<pre><code class="lang-bash"># 查单个用户名
+sherlock user123
+
+# 一次查多个
+sherlock user1 user2 user3
+
+# 只查指定站点，并导出 CSV / XLSX
+sherlock --site GitHub --site Reddit --csv --xlsx -o results user123
+
+# 走代理、收紧超时（大批量查询时建议）
+sherlock --proxy socks5://127.0.0.1:1080 --timeout 15 user123
+
+# 使用内置站点清单（不拉上游最新数据）
+sherlock --local user123</code></pre>
+<p>结果默认落在当前目录的 <code>&lt;用户名&gt;.txt</code>；完整参数见 <code>sherlock --help</code>，或上游的<a href="https://sherlockproject.xyz/usage" target="_blank" rel="noopener">使用文档</a>。</p>
+<h2>注意事项</h2>
+<ul><li><strong>合法与伦理边界</strong>：只用于查询公开信息与合法授权场景，例如自查账号足迹、授权渗透测试、反诈溯源；不得用于骚扰、跟踪或人肉搜索，使用前确认所在地法律与目标平台服务条款。</li><li><strong>结果不是证据</strong>：同名账号可能属于不同的人，站点检测规则也会带来误报 / 漏报；结论需人工复核。</li><li><strong>请求量与风控</strong>：一次查询会向数百个站点发请求，容易被限流或封 IP；批量查询时调低并发、设置 <code>--timeout</code> 并考虑代理。</li><li><strong>数据新鲜度</strong>：默认从上游拉取站点清单，站点增删频繁；<code>--local</code> 使用内置快照，可能滞后。</li><li><strong>许可证</strong>：MIT，可商用与修改，保留版权声明即可；上游为社区项目，第三方发行版（Debian / Homebrew / Kali 等）不属官方支持范围。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-11-16 · 更新于 2026-11-16 · AstraCraft Program 轻量索引</p>
+</main>
+<script src="../assets/copy.js"></script>
+</body>
+</html>

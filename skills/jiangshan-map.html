@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>江山时序 中国历史交互地图 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览条目</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">研究与信息获取</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">江山时序 中国历史交互地图</h1>
+      <p class="hero-subtitle">Chronicles of the Realm (jiangshan-map)</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>研究与信息获取</span><span>常规</span><span class="verify-badge verify-unverified">暂不推荐</span><span class="lic-badge lic-copyleft" title="GPL-3.0">部分开源</span><span>部署运行</span>
+    </div>
+    <p class="muted detail-meta">交互式中国历史地图集：从战国（前 403 年）到当代，18 个历史时期、198 幅疆域快照，拖时间轴看疆域、都城、山川与政区演变；点城市看 2400 年地名沿革，点人物看生平轨迹，支持诗词路线、地图猜城与可嵌入深链；另带 MCP server、Agent Skill 与 GeoJSON 导出。</p>
+    <p class="detail-upstream">上游状态：2026-10-29 核验</p>
+    <p class="detail-verify-note">该条目尚未通过上游核验，使用前先自行核对。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/DeanChensj/jiangshan-map" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://deanchen.me/jiangshan-map/" target="_blank" rel="noopener">项目主页</a>
+    </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code># 方式一：直接静态服务（无需安装依赖、无构建步骤）
+git clone https://github.com/DeanChensj/jiangshan-map.git
+cd jiangshan-map
+python3 -m http.server 8000
+# 浏览器打开 http://localhost:8000
+
+# 方式二：Docker Compose（nginx:alpine 静态镜像）
+docker compose up -d --build
+# 浏览器打开 http://localhost:8008（端口映射见 docker-compose.yml）</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>江山时序 中国历史交互地图</h1>
+<blockquote>从战国到当代的交互式中国历史地图集。上游：<a href="https://github.com/DeanChensj/jiangshan-map" target="_blank" rel="noopener">DeanChensj/jiangshan-map</a> · 许可证：GPL-3.0 · 在线演示：<a href="https://deanchen.me/jiangshan-map/" target="_blank" rel="noopener">deanchen.me/jiangshan-map</a></blockquote>
+<h2>这是什么</h2>
+<p>江山时序（Chronicles of the Realm）是一套纯静态的交互式中国历史地图：把 <strong>2,400+ 年</strong>历史压缩成 <strong>18 个时期、198 幅疆域快照</strong>，拖时间轴即可看疆域、都城、君主年号、政区与山川如何一步步演变。它由个人作者开发，支持简体 / 繁体 / 英文 / 日文界面，2026-11 仍在更新。</p>
+<p>主要能力：</p>
+<ul><li><strong>时间轴与疆域</strong>：多政权同屏对照（战国七雄、三国、南北朝、五代十国、宋辽夏金等），悬停图例高亮疆域、点击看政权简介；每次疆域变更可查看上一阶段的虚线「Ghost Boundary」差异；时间轴可缩放，气泡显示在位君主与年号</li><li><strong>点地溯源</strong>：点任意古城 / 关隘（或双击地图），弹出该地 2,400 年的政区沿革卡片：双语地名典故、历朝隶属、<code>Capital</code> 标记与发生在此的重大事件，可一键穿越到事件年份</li><li><strong>点人溯事</strong>：搜索人物（秦始皇、张骞、诸葛亮、玄奘、李白、苏轼、王阳明等）查看编号足迹与生平；支持多人合并对照、同途相逢标记，以及楚汉相争、安史之乱、靖康之变等事件线</li><li><strong>诗词与战场</strong>：名关（函谷关、潼关、剑门关、玉门关、山海关等）、战场（赤壁、长平、淝水等）与文学地标，可按诗中的「年份 + 地名」绘制单点、同年多点或跨年时空路线</li><li><strong>地图猜城</strong>：10 轮古代地名定位小游戏，按大圆距离计分并授予古代舆图官职</li><li><strong>可分享 / 可嵌入</strong>：<code>?year=</code>、<code>?place=</code>、<code>?person=</code>、<code>?event=</code>、<code>?quiz=locate</code> 等深链，<code>&amp;embed=1</code> 生成 iframe 嵌入视图</li><li><strong>给 Agent 用</strong>：<code>llms.txt</code> 机器说明、零依赖 stdio MCP server（<code>inspect_place</code> / <code>inspect_person</code> / <code>search_atlas</code>）、可安装的 Agent Skill 与 CLI 截图脚本、浏览器 <code>window.atlasAPI</code> 与 WebMCP</li></ul>
+<p>技术上无需构建：仓库按目录直接作为静态站点运行；同时提供 GeoJSON 导出脚本（RFC 7946，403 BCE–1948），方便在 Leaflet / MapLibre / QGIS 中复用。</p>
+<h2>怎么部署运行</h2>
+<p>前置只需 Git 与任意静态 HTTP 服务器；本地跑不依赖 Node / Python 构建链。</p>
+<pre><code class="lang-bash"># 方式一：直接静态服务（无需安装依赖、无构建步骤）
+git clone https://github.com/DeanChensj/jiangshan-map.git
+cd jiangshan-map
+python3 -m http.server 8000
+# 浏览器打开 http://localhost:8000
+
+# 方式二：Docker Compose（nginx:alpine 静态镜像）
+docker compose up -d --build
+# 浏览器打开 http://localhost:8008（端口映射见 docker-compose.yml）</code></pre>
+<p>MCP 接入（零依赖 Node 脚本，适合 Claude Desktop / Cursor / Windsurf / Gemini CLI）：</p>
+<pre><code class="lang-json">{
+  &quot;mcpServers&quot;: {
+    &quot;jiangshan-atlas&quot;: {
+      &quot;command&quot;: &quot;node&quot;,
+      &quot;args&quot;: [&quot;/absolute/path/to/jiangshan-map/scripts/mcp_server.js&quot;]
+    }
+  }
+}</code></pre>
+<h2>怎么用</h2>
+<p>1. 打开站点后拖时间轴或用 <code>←</code> / <code>→</code> 逐步、<code>Shift + ←/→</code> 十年一跳、<code>Space</code> 自动播放；<code>/</code> 或 <code>Ctrl/Cmd + K</code> 聚焦搜索框。 2. 点城市 / 关隘 / 战场查看「点地溯源」；搜索人物查看「点人溯事」，多人用逗号分隔；事件线路会同步推进时间轴与疆域。 3. 需要分享时直接复制地址栏（已带 <code>year</code> / <code>place</code> / <code>person</code> 参数）；嵌入博客或课程页时在 URL 后加 <code>&amp;embed=1</code> 放进 iframe。 4. 让 Agent 用时：装 Agent Skill（<code>cp -r skills/jiangshan-atlas ~/.claude/skills/</code>），或让模型只提取 <code>year</code> 与 <code>place</code> 两个语义参数，调用 MCP 工具 / CLI 生成深链与截图：</p>
+<pre><code class="lang-bash">   python3 skills/jiangshan-atlas/scripts/jiangshan.py --year 819 --place 蓝关 --out /tmp/languan_819.png</code></pre>
+<p>截图需要本机有 Chrome / Chromium（或 Playwright 浏览器缓存）；<code>--inspect</code> 可只查结构化历史地理信息。 5. 需要矢量图层时在本地跑 <code>node scripts/export_geojson.js</code>，输出在 <code>geojson/</code>（默认不含 CHGIS 派生图层，原因见注意事项）。</p>
+<h2>注意事项</h2>
+<ul><li><strong>疆域数据是近似示意</strong>：项目面向教学、可视化与探索，不是权威历史地理边界数据集，也不代表现代政治边界；学术引用前核对原始出处与审图要求。</li><li><strong>CHGIS 图层不可再分发</strong>：郡 / 州 / 府图层由 CHGIS 派生，其条款禁止再分发；<code>--with-prefectures</code> 只在本地做学术、非商业用途，导出的 GeoJSON 不要公开发布。</li><li><strong>许可证</strong>：代码 GPL-3.0，修改后分发需按协议开放源码；公开托管未修改版本不受影响。古籍原文属公版，但现代译文、整理文本与部分素材可能有独立版权。</li><li><strong>数据准确性</strong>：198 幅快照与事件坐标由人工整理，可能有个别年代、地名消歧或几何错误；同名异地（如不同时期的「江州」）需按时代判断。</li><li><strong>Agent 集成边界</strong>：MCP server 与 Skill 读取本地仓库文件，不是托管 API；CLI 截图依赖本机 Chrome / Chromium，无浏览器时只有 URL 与 JSON 查询可用。</li><li><strong>部署即公开</strong>：静态站没有鉴权与后端，部署到公网即公开全部数据；嵌入模式会隐藏站点外壳，但同样暴露数据。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-11-16 · 更新于 2026-11-16 · AstraCraft Program 轻量索引</p>
+</main>
+<script src="../assets/copy.js"></script>
+</body>
+</html>

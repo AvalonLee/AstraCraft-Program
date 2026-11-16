@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>REA Agent 逆向工程工具链 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览条目</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">研发与代码</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">REA Agent 逆向工程工具链</h1>
+      <p class="hero-subtitle">REA — Reverse Engineer Anything</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>研发与代码</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>接入 Agent</span>
+    </div>
+    <p class="muted detail-meta">让 Agent 逆向万物的统一 MCP + CLI 工具链：`npx rea-agents setup` 一键接入 Claude Code / Codex / Cursor 等，本地分析原生二进制、JS/Electron 应用、.NET、APK、固件、GPU 代码与模型文件等 30+ 类目标，结论带证据与局限；原生深度分析可接 Ghidra / IDA / Hopper / Kuna。</p>
+    <p class="detail-upstream">上游状态：404.5k stars · 2026-10-29 核验</p>
+    
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/morluto/rea" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://rea.tools" target="_blank" rel="noopener">项目主页</a>
+    </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code>npx rea-agents setup
+# 选择要接入的 Agent，审阅变更后批准；完成后重启 Agent 生效</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>REA Agent 逆向工程工具链</h1>
+<blockquote>一个 MCP 覆盖二进制、应用与运行时行为的 Agent 逆向工程。上游：<a href="https://github.com/morluto/rea" target="_blank" rel="noopener">morluto/rea</a> · 许可证：MIT</blockquote>
+<h2>这是什么</h2>
+<p>REA（Reverse Engineer Anything，★404k）把逆向工程的工具面统一成一个 MCP server + CLI：Agent 通过 MCP 检查目标、追踪相关代码，返回的结论<strong>附带证据与局限</strong>，Agent 再据此追问、解释行为或实现并验证一个自己的版本。分析覆盖 30+ 类目标——原生二进制（伪代码 / 汇编 / 符号 / 调用引用）、桌面安装、JS/Electron 应用、网站与抓包（HAR/SAZ/pcap）、.NET 程序集、Android APK 与设备（ADB）、固件、Go/Rust/IL2CPP/Godot/PyInstaller 产物、GPU 代码对象（CUDA/HIP/PTX）、模型文件（GGUF/safetensors）、EVM 字节码、SQLite、崩溃转储等。分析在本地运行；JS/Electron 与 .NET 静态分析无需原生分析引擎，原生深度分析可接 Ghidra / IDA / Hopper / Kuna。还支持把录制的 Web 会话导出为可跑任务的 RL 环境做训练评测。</p>
+<h2>怎么接入</h2>
+<p>前置 Node.js 22.x（≥22.23.4）/ 24.x（≥24.22.1）/ 26.12.1+ 与 npm。一条命令把 MCP server 与配套工作流说明注册进 Claude Code、Codex、Cursor、Gemini CLI、Grok Build 等 Agent（会备份既有配置）：</p>
+<pre><code class="lang-bash">npx rea-agents setup
+# 选择要接入的 Agent，审阅变更后批准；完成后重启 Agent 生效</code></pre>
+<p>也可全局安装 CLI 供终端直接使用：</p>
+<pre><code class="lang-bash">npm install --global rea-agents
+rea --help
+rea update   # REA 迭代很快，保持更新并按提示刷新 Agent 注册</code></pre>
+<h2>怎么用</h2>
+<p>直接向 Agent 下达调查任务：</p>
+<pre><code class="lang-text">Understand how search works in the Notes app, show me the evidence,
+and build a similar feature for my project.</code></pre>
+<p>或用 CLI 一次性分析（返回模块、导入、Electron 边界及证据）：</p>
+<pre><code class="lang-bash">npx -y rea-agents@latest analyze-javascript-application /absolute/path/to/app --json</code></pre>
+<p>原生二进制分析需本机已装 Ghidra / IDA / Hopper / Kuna 之一（setup 可在批准后代装 Hopper；IDA / JEB 等商业工具须自行合法取得授权），provider 选择与大文件超时调优见 <a href="https://rea.tools/guides/" target="_blank" rel="noopener">CLI 与证据指南</a>。MCP 默认用紧凑输入 schema 降上下文开销，需要完整字段指引时在注册里设 <code>REA_MCP_INPUT_SCHEMA_PROFILE=full</code>。</p>
+<h2>注意事项</h2>
+<ul><li><strong>合规红线（官方免责声明）</strong>：仅限合法研究、教育、互操作、软件保存，以及分析<strong>你拥有或被授权检查</strong>的软件；非法或未授权使用的立场覆盖所有发行渠道。参照他人应用「重建类似功能」时注意著作权与许可协议边界。</li><li><strong>商业工具授权</strong>：IDA Pro / Hex-Rays、Hopper、JEB 等必须自行合法取得许可，REA 不提供任何 key 或激活授权，破解版与共享 key 均不受支持。</li><li><strong>运行时副作用</strong>：静态分析只读文件；运行时捕获会以当前用户权限执行 / 交互目标进程，敏感目标建议放虚拟机或沙箱。</li><li><strong>迭代节奏</strong>：更新非常频繁（<code>rea update</code>），API 与能力面持续扩张；Linux 上部分流程需要 procps 兼容的 <code>ps</code>。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-10-29 · 更新于 2026-10-29 · AstraCraft Program 轻量索引</p>
+</main>
+<script src="../assets/copy.js"></script>
+</body>
+</html>

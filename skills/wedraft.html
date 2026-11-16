@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WeDraft 公众号排版技能 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览条目</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">写作与文档</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">WeDraft 公众号排版技能</h1>
+      <p class="hero-subtitle">WeDraft</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>写作与文档</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>装进 Agent</span>
+    </div>
+    <p class="muted detail-meta">小哈公社出品的微信公众号文章 Markdown 排版工具：网页版、macOS 桌面版、CLI、MCP 与 Skill 共用同一排版核心。七款阅读模板一键换风格、双向实时预览、复制前问题检查；让 AI 一句话把 Markdown 排成适合微信阅读的富文本，只管排版、不自动发布。</p>
+    <p class="detail-upstream">上游状态：37 stars · 2026-10-29 核验</p>
+    
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/pafa/WeDraft" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://wedraft.xiaoha.org" target="_blank" rel="noopener">项目主页</a>
+    </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code># 自动准备 CLI、MCP 和 Skill，并自动配置 Codex；缺 Node 会装专用运行时（macOS / Linux）
+curl -fsSL &#x27;https://wedraft.xiaoha.org/integrations/install.sh&#x27; | sh -s -- &#x27;https://wedraft.xiaoha.org/integrations/&#x27;</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>WeDraft 公众号排版技能</h1>
+<blockquote>把 Markdown 变成适合微信阅读的文章：网页里边改边看，或让 AI 直接完成排版。上游：<a href="https://github.com/pafa/WeDraft" target="_blank" rel="noopener">pafa/WeDraft</a> · 许可证：MIT</blockquote>
+<h2>这是什么</h2>
+<p>小哈公社出品的微信公众号 Markdown 排版工具（MIT，中文）：标题、段落、引用、列表、代码、表格、图片与来源说明由统一模板处理，完成后复制富文本正文粘贴到公众号后台。网页版、macOS 桌面版、CLI、MCP 与 Skill <strong>共用同一排版核心</strong>，手工编辑与 AI 工作流效果一致。</p>
+<p>核心能力：七款阅读模板一键换风格（不改原文）、Markdown 与排版实时联动且预览中微调会写回原稿、iPhone / Android 尺寸检查阅读效果、复制前检查并定位不支持的语法与图片问题（减少内容静默丢失）、导出 <code>.wedraft.zip</code> 把原稿 + 模板 + 本地图片打包带走。</p>
+<h2>怎么安装</h2>
+<p>让能执行本机命令的 Agent 自己接入（推荐），或终端一条命令：</p>
+<pre><code class="lang-sh"># 自动准备 CLI、MCP 和 Skill，并自动配置 Codex；缺 Node 会装专用运行时（macOS / Linux）
+curl -fsSL &#x27;https://wedraft.xiaoha.org/integrations/install.sh&#x27; | sh -s -- &#x27;https://wedraft.xiaoha.org/integrations/&#x27;</code></pre>
+<p>也可以把这句话交给任意 Agent：<code>读取 https://wedraft.xiaoha.org/connect.md，帮我接入 WeDraft</code>。不想装任何东西，直接用网页版 <a href="https://wedraft.xiaoha.org" target="_blank" rel="noopener">wedraft.xiaoha.org</a>。</p>
+<h2>怎么用</h2>
+<p>接入后每篇文章一句话，例如：</p>
+<pre><code class="lang-text">用 WeDraft 的青岚模板排版这篇 Markdown，保留原文、链接和图片来源，给我可以复制富文本的预览。</code></pre>
+<p>AI 会生成 <code>preview.html</code> 和文章包；打开预览复制正文即可，需要继续修改时把文章包导入网页。网页版流程则是：粘贴 Markdown → 选模板、对照预览调整 → 复制排版 → 到公众号后台粘贴发布。</p>
+<h2>注意事项</h2>
+<ul><li><strong>版本节奏</strong>：公开网页版是测试版，源码准备 0.2.0，部署形态以官网 <code>release.json</code> 为准；迭代期行为可能变化。</li><li><strong>平台支持</strong>：本机安装器当前支持 macOS / Linux；其他本地 stdio MCP 客户端见上游接入指南。</li><li><strong>边界清晰</strong>：只管排版，不操作微信、不自动发布；标题需在公众号后台单独填写并检查。</li><li>MIT 许可，可商用；上游为小哈公社（xiaoha.org）维护。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-10-29 · 更新于 2026-10-29 · AstraCraft Program 轻量索引</p>
+</main>
+<script src="../assets/copy.js"></script>
+</body>
+</html>

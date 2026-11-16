@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>sc-datav 3D 地图可视化大屏 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览条目</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">设计与创意</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">sc-datav 3D 地图可视化大屏</h1>
+      <p class="hero-subtitle">sc-datav</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>常规</span><span class="verify-badge verify-unverified">暂不推荐</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>部署运行</span>
+    </div>
+    <p class="muted detail-meta">基于 Three.js + React 19 + ECharts 的 3D 数据可视化大屏模板：精确呈现四川省地理轮廓，带动画飞线、侧边扫光、柱状 / 折线图联动与 Leva 实时调参；Vite 构建、autofit 自适应，可直接作为省市级 3D 大屏项目起点。</p>
+    <p class="detail-upstream">上游状态：2026-10-29 核验</p>
+    <p class="detail-verify-note">该条目尚未通过上游核验，使用前先自行核对。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/knight-L/sc-datav" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://knight-l.github.io/sc-datav/" target="_blank" rel="noopener">项目主页</a>
+    </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code>git clone https://github.com/knight-L/sc-datav.git
+cd sc-datav
+pnpm install
+
+# 开发（Vite 开发服务器）
+pnpm dev
+
+# 构建与本地预览
+pnpm build
+pnpm preview</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>sc-datav 3D 地图可视化大屏</h1>
+<blockquote>Three.js 驱动的省市级 3D 数据大屏模板。上游：<a href="https://github.com/knight-L/sc-datav" target="_blank" rel="noopener">knight-L/sc-datav</a> · 许可证：Apache-2.0 · 在线预览：<a href="https://knight-l.github.io/sc-datav/#/demo0" target="_blank" rel="noopener">knight-l.github.io/sc-datav</a></blockquote>
+<h2>这是什么</h2>
+<p>sc-datav 是一个开箱可跑的 3D 数据可视化大屏项目：以 Three.js 渲染省级地理轮廓，叠加动画飞线、侧边扫光、柱状 / 折线图联动与实时调参面板，适合当作省市数据大屏、指挥中心看板的起点。当前内置的是<strong>四川省</strong>轮廓与演示数据，提供 demo0–demo3 四套页面可在线预览。</p>
+<p>技术栈：React 19 + TypeScript + Vite（Rolldown 版）；3D 用 Three.js + @react-three/fiber + drei；图表用 ECharts；地理数据处理用 D3-geo；动画用 GSAP；样式用 Styled-components；调参用 Leva；自适应用 autofit.js。目录结构清晰：</p>
+<table><thead><tr><th>位置</th><th>作用</th></tr></thead><tbody><tr><td><code>src/pages/SCDataV/index.tsx</code></td><td>大屏页面入口</td></tr><tr><td><code>src/pages/SCDataV/scMap.tsx</code></td><td>3D 地图渲染</td></tr><tr><td><code>src/pages/SCDataV/flyLine.tsx</code></td><td>轮廓飞线动画</td></tr><tr><td><code>src/pages/SCDataV/chart1..3.tsx</code></td><td>联动图表</td></tr><tr><td><code>src/assets/sc.json</code> / <code>sc_outline.json</code></td><td>四川省地理与轮廓数据</td></tr></tbody></table>
+<p>配套项目 <a href="https://github.com/knight-L/sat-hunter" target="_blank" rel="noopener">sat-hunter</a> 可下载 / 生成地图轮廓贴图，换省市时用它出图。</p>
+<h2>怎么部署运行</h2>
+<p>前置：Node.js &gt;= 18、pnpm &gt;= 8。</p>
+<pre><code class="lang-bash">git clone https://github.com/knight-L/sc-datav.git
+cd sc-datav
+pnpm install
+
+# 开发（Vite 开发服务器）
+pnpm dev
+
+# 构建与本地预览
+pnpm build
+pnpm preview</code></pre>
+<p>构建产物在 <code>dist/</code>，可直接部署到任意静态托管（GitHub Pages、Nginx 等）。项目用 hash 路由，子路径部署一般不需要改 history fallback。</p>
+<h2>怎么用</h2>
+<p>1. 打开预览地址的 <code>#/demo0</code> 至 <code>#/demo3</code>，挑一套布局作模板。 2. 替换 <code>src/assets/sc.json</code> 与 <code>sc_outline.json</code> 为目标省市的 GeoJSON / 轮廓数据，并用 sat-hunter 生成对应轮廓贴图；地图尺寸与相机参数在 <code>scMap.tsx</code> 中调整。 3. 图表数据在 <code>chart1..3.tsx</code> 中替换为真实接口；飞线起止点与样式在 <code>flyLine.tsx</code>；整体布局与文案在 <code>content.tsx</code>。 4. 开着 Leva 调试面板实时调材质、颜色、动画参数，满意后把值写回组件默认参数。 5. 需要多屏自适应时保留 autofit.js，按设计稿比例配置，不要把固定像素散落在组件里。</p>
+<h2>注意事项</h2>
+<ul><li><strong>只内置四川省</strong>：换省市不是改标题，而是替换地理数据、轮廓与贴图三件套；没有对应数据时飞线与地图轮廓会对不上。</li><li><strong>维护状态</strong>：上游最后推送 2026-03-13（约 8 个月无更新，仓库未归档），项目已具备完整可运行示例，但新 issue 与依赖升级响应可能变慢；React 19.1 / Three 0.181 / Vite Rolldown 均较新，升级前先回归。</li><li><strong>演示数据</strong>：图表数值、地名与飞线均为示例，接真实数据要改数据源、刷新节奏与空态 / 异常态处理。</li><li><strong>性能</strong>：3D 地图 + 多个 ECharts 实例对低端核显有压力，autofit 只解决缩放，不解决渲染开销；数据量大时需降采样 / 分片。</li><li><strong>许可证与数据合规</strong>：代码 Apache-2.0；省份地理数据与地图审图号、数据来源可能有独立要求，商用或公开发布前确认授权与合规。</li><li><strong>路由与部署</strong>：默认 hash 路由；若改成 history 路由或部署到子路径，需要同步调整 Vite <code>base</code> 与服务器 fallback。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-11-16 · 更新于 2026-11-16 · AstraCraft Program 轻量索引</p>
+</main>
+<script src="../assets/copy.js"></script>
+</body>
+</html>

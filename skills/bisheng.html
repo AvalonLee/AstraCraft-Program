@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BISHENG 企业级 Agent 平台 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览条目</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent 基础设施</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">BISHENG 企业级 Agent 平台</h1>
+      <p class="hero-subtitle">BISHENG</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>Agent 基础设施</span><span>常规</span><span class="verify-badge verify-unverified">暂不推荐</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>部署运行</span>
+    </div>
+    <p class="muted detail-meta">开源的企业级一站式 Agent 平台：任务模式的多步 Agent 与子 Agent 并行、可成环并行的工作流编排、权限细到单文件的知识空间、评测与 SFT、OCR 文档解析，Docker Compose 私有化部署。</p>
+    <p class="detail-upstream">上游状态：2026-10-29 核验</p>
+    <p class="detail-verify-note">该条目尚未通过上游核验，使用前先自行核对。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/dataelement/bisheng" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://www.bisheng.ai" target="_blank" rel="noopener">项目主页</a>
+    </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code>git clone https://github.com/dataelement/bisheng.git
+cd bisheng/docker
+docker compose -f docker-compose.yml -p bisheng up -d</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>BISHENG 企业级 Agent 平台</h1>
+<blockquote>把企业 AI 落地要的那些事——编排、知识、权限、评测、微调——收进一个可私有化部署的平台。上游：<a href="https://github.com/dataelement/bisheng" target="_blank" rel="noopener">dataelement/bisheng</a> · 许可证：Apache-2.0</blockquote>
+<h2>这是什么</h2>
+<p>一个开源的<strong>企业级一站式 Agent 平台</strong>（★12.1k、fork 1.99k，2023 年起持续维护，作者为数据元素）：给目标即可跑的<strong>任务模式</strong>通用 Agent，主 Agent 动态拆任务清单、子 Agent 并行做调研，遇到只有你知道的关键信息会停下等人（Human in the loop），交付报告 / PPT / Excel / Word 且结论带可点开原文的引用角标；内置 PPT、Excel、Word 三个技能包，也能从本地或 GitHub 导入团队自己的技能。工作流编排不区分 chatflow 与 workflow，支持<strong>画圈成环、并行、批量</strong>与流程中途等人确认。知识空间按多级文件夹与标签组织，权限细到单个文件（RBAC 管功能菜单、ReBAC 管空间/文件夹/文件），检索时会再校验权限；另有频道订阅（公众号与网站自动聚合）、统一模型管理、评测、数据集与 SFT 微调，以及基于五年数据沉淀的高精度文档解析（印刷体 / 手写体 / 生僻字 / 表格 / 版式 / 印章，可免费私有化）。企业侧提供部门与配额、操作审批、审计、API Key 权限边界、信创适配（MySQL 与达梦 DM8）。桌面客户端基于 DeepSeek Harness（DSH）开发，与平台协同，另有开源的 <a href="https://github.com/dataelement/bisheng-desktop" target="_blank" rel="noopener">bisheng-desktop</a> 可改造。</p>
+<h2>怎么部署运行</h2>
+<p>前置（官方要求）：CPU ≥ 8 核、RAM ≥ 32 GB、Docker 19.03.9+、Docker Compose 1.25.1+。拉代码后用 Docker Compose 起：</p>
+<pre><code class="lang-bash">git clone https://github.com/dataelement/bisheng.git
+cd bisheng/docker
+docker compose -f docker-compose.yml -p bisheng up -d</code></pre>
+<p>启动后浏览器访问 <code>http://IP:3001</code> 出现登录页并注册——<strong>第一个注册的用户会成为系统 admin</strong>，公网部署请先完成这一步再对外开放。除前后端外，默认还会一并装 Elasticsearch、Milvus 与 Onlyoffice。没有 git 时可下 zip：<code>wget https://github.com/dataelement/bisheng/archive/refs/heads/main.zip &amp;&amp; unzip main.zip &amp;&amp; cd bisheng-main/docker</code>。</p>
+<h2>怎么用</h2>
+<p>进平台后按场景挑入口：只要一个结果就用<strong>任务模式</strong>（附上文件、知识库、工具与技能，等它交付报告）；要把固定流程沉淀下来用<strong>工作流</strong>编排（成环做审核类循环、并行做批量、多选做批处理）；团队资料放<strong>知识空间</strong>并按部门授权，问答自动带溯源。模型、技能、插件与 MCP 工具由管理员在后台统一配置，员工按授权取用。平台也提供 API 与服务账号密钥签发，可配有效期、接口权限与可访问的应用/知识库范围。</p>
+<h2>注意事项</h2>
+<ul><li><strong>资源与运维门槛</strong>：32 GB 内存起步并附带 ES / Milvus / Onlyoffice，是「一套系统」而不是「一个容器」；生产环境要评估存储、备份与升级成本。</li><li><strong>开源版与商业版边界</strong>：统计看板、SSO/LDAP、高可用部署方案、安全审查、流量控制、监控与漏洞修复等企业能力属商业版，README 已明确标注，选型前先对照。</li><li><strong>权限初始化</strong>：首个注册用户即 admin，公网暴露前务必先注册占位、改默认口令并配好角色，避免他人抢先注册。</li><li><strong>文档入口</strong>：官方私有化部署与使用说明托管在飞书 wiki，部分页面需要登录，离线环境建议先导出留档；模型文件与解析服务需按上游说明另行获取。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-11-06 · 更新于 2026-11-06 · AstraCraft Program 轻量索引</p>
+</main>
+<script src="../assets/copy.js"></script>
+</body>
+</html>

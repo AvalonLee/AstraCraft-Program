@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NovelToGame 小说改编游戏技能集 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览条目</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">设计与创意</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">NovelToGame 小说改编游戏技能集</h1>
+      <p class="hero-subtitle">NovelToGame</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>常规</span><span class="verify-badge verify-unverified">暂不推荐</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>装进 Agent</span>
+    </div>
+    <p class="muted detail-meta">把小说改编成可玩游戏的 AI 技能合集（5 个 skill）：整本阅读并做带章节引用的设定考据，比较并淘汰游戏方向，产出概念、世界、美术与玩法设计文档，按本机工具链适配构建，最后以首次玩家盲测 + 一次完整验收记录收尾；适配 Claude Code / Codex / Kimi Code。</p>
+    <p class="detail-upstream">上游状态：2026-10-29 核验</p>
+    <p class="detail-verify-note">该条目尚未通过上游核验，使用前先自行核对。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/zenstory-ai/novel-to-game" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://zenstory.ai/zh/novel-to-game" target="_blank" rel="noopener">项目主页</a>
+    </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code># Claude Code（调用：/novel-to-game）
+npx skills add zenstory-ai/novel-to-game -g -y -a claude-code -s &#x27;*&#x27;
+
+# Codex（调用：$novel-to-game）
+npx skills add zenstory-ai/novel-to-game -g -y -a codex -s &#x27;*&#x27;
+
+# Kimi Code（调用：/skill:novel-to-game）
+npx skills add zenstory-ai/novel-to-game -g -y -a kimi-code-cli -s &#x27;*&#x27;
+
+# 三个 CLI 一次装齐
+npx skills add zenstory-ai/novel-to-game -g -y -s &#x27;*&#x27; \
+  -a claude-code -a codex -a kimi-code-cli</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>NovelToGame 小说改编游戏技能集</h1>
+<blockquote>把一整本小说变成可玩的游戏。上游：<a href="https://github.com/zenstory-ai/novel-to-game" target="_blank" rel="noopener">zenstory-ai/novel-to-game</a> · 许可证：MIT · 项目页：<a href="https://zenstory.ai/zh/novel-to-game" target="_blank" rel="noopener">zenstory.ai/novel-to-game</a></blockquote>
+<h2>这是什么</h2>
+<p>NovelToGame 是 5 个开源的 Agent 技能，装进你已经在用的编码 Agent（Claude Code、Codex 或 Kimi Code）后，把「给一本小说做个游戏」拆成有文档、有检查的流水线：整本阅读 → 带引用的设定考据 → 方向筛选 → 概念 / 世界 / 美术 / 玩法设计 → 按本机环境适配构建 → 首次玩家盲测与完整验收。最后交付一个指定完成度的可玩版本 + 背后的设计文档。</p>
+<p>它的几个关键做法：</p>
+<ul><li><strong>事实与设计分离</strong>：<code>SOURCE_BIBLE</code> 覆盖主线、冲突场景、人物关系与动机、秘密与信息差、世界规则、标志性场景道具与改编边界，每条都标章节或文件出处；事实分 <code>immutable</code> / <code>adaptable</code> / <code>open</code> / <code>conflicted</code>，小说没写的部分标记为设计发明，不能冒充原著事实</li><li><strong>方向要经得起淘汰</strong>：概念阶段比较多个真实候选方向，并列出「一击否决」理由（核心循环无视小说核心矛盾、去掉专有名词只剩通用模板、玩家只能花资源释放固定剧情等），概念、世界、美术分阶段写成不同文档，构建时不得偷偷重设计</li><li><strong>按你的机器决定怎么建</strong>：先写一页产品需求锁定平台、引擎与可测试运行时，再探测本机实际可用的栈（Three.js、Hunyuan3D 等图 / 文生 3D、Blender CLI/Python/MCP、2D Canvas/WebGL、原生 Godot/Unity），缺原生工具链不会静默降级成网页</li><li><strong>盲测 QA</strong>：先不看源码与设计文档，以第一次玩的玩家身份从标题页开始跑，记录引导、交互、节奏与移动端问题（<code>qa/playtest-report.md</code>），再对照设计文档核对，并留下一次覆盖 <code>launch</code> / <code>render</code> / <code>input</code> / <code>coreLoop</code> / <code>outcome</code> / <code>restart</code> 的完整验收记录（<code>qa/verification.json</code>）</li><li><strong>互动小说 / 互动影游是一等路线</strong>：连续场景、对话、证词与关键选择可以撑起整个游戏；重要选择后用短过场演给你看，每个选项都有自己的过场，视频不可用时仍以静帧完整可玩</li></ul>
+<p>仓库自带两个可玩示例：《西游记·三借芭蕉扇》（回合制 RPG，浏览器在线玩）与《金瓶梅·欲海账簿》（互动影游，18+）。技能正文与示例文档以中文为主，README 提供中英双语。</p>
+<h2>怎么安装</h2>
+<p>前置：已在使用 Claude Code、Codex 或 Kimi Code，终端里能跑 <code>npx</code>（Node.js）。按你的 Agent 选一条：</p>
+<pre><code class="lang-bash"># Claude Code（调用：/novel-to-game）
+npx skills add zenstory-ai/novel-to-game -g -y -a claude-code -s &#x27;*&#x27;
+
+# Codex（调用：$novel-to-game）
+npx skills add zenstory-ai/novel-to-game -g -y -a codex -s &#x27;*&#x27;
+
+# Kimi Code（调用：/skill:novel-to-game）
+npx skills add zenstory-ai/novel-to-game -g -y -a kimi-code-cli -s &#x27;*&#x27;
+
+# 三个 CLI 一次装齐
+npx skills add zenstory-ai/novel-to-game -g -y -s &#x27;*&#x27; \
+  -a claude-code -a codex -a kimi-code-cli</code></pre>
+<p><code>-g</code> 表示全局安装（任意目录可用），去掉则只装到当前目录。更新时重跑同一命令，或 <code>npx skills update</code>。也支持原生插件安装：Claude Code 用 <code>/plugin marketplace add zenstory-ai/novel-to-game</code> 后 <code>/plugin install novel-to-game@novel-to-game-skills</code>；Codex / Kimi Code 的命令见上游 README。</p>
+<h2>怎么用</h2>
+<p>1. 在 Agent 里调用 <code>/novel-to-game</code>（或对应值），给出小说全文 / 文件与想要的目标平台或引擎；没有偏好就让技能帮你选。 2. 它会先通读整本、写 <code>analysis/SOURCE_BIBLE.md</code>，再在 <code>concepts/CONCEPT.md</code> 里列出候选方向与否决理由，供你拍板。 3. 方向确定后依次产出 <code>design/GAME_DESIGN.md</code>、<code>ART_DIRECTION.md</code>、产品需求与构建方案，并按本机可用工具链实现可玩版本。 4. 构建完成后做首次玩家盲测 QA，留下报告与验收 JSON；未测到的环境会明确列为限制。 5. 想快速试水可用 <code>quick</code> 档（例如 <code>/novel-to-game quick</code>），完整跑则给出更高完成度与更全文档。</p>
+<h2>注意事项</h2>
+<ul><li><strong>依赖你的 Agent 与模型额度</strong>：技能本身不含模型与托管服务，长流程（整书分析 + 构建 + 盲测）会消耗较多 token 与时间，先用短篇或 <code>quick</code> 档试。</li><li><strong>安装范围</strong>：<code>-g</code> 会全局写进各 Agent 的技能目录；只给某个项目用就去掉 <code>-g</code>，安装前确认目标目录。</li><li><strong>版权与内容边界</strong>：只能改编自有或已获授权的小说；示例含 18+ 路线，生成游戏的素材、字体、配音与角色形象授权由使用者负责。语音生成默认不启用，启用后相关文本会交给所选 TTS 服务并可能产生费用。</li><li><strong>构建环境</strong>：<code>game-build</code> 按本机实际工具链选路线，环境缺什么会影响完成度；设计文档是引擎无关的 Markdown，但可玩版本依赖真实可用的运行时。</li><li><strong>QA 有边界</strong>：验收只证明测过的路径与环境，未测平台、移动端与极端数据量会标为限制，不等于全面质量保证。</li><li><strong>许可证</strong>：技能代码 MIT；小说原文、改编设定与生成内容的权利归各自权利人，商用发布前自行清算。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-11-16 · 更新于 2026-11-16 · AstraCraft Program 轻量索引</p>
+</main>
+<script src="../assets/copy.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GitNexus 代码知识图谱 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览条目</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">研发与代码</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">GitNexus 代码知识图谱</h1>
+      <p class="hero-subtitle">GitNexus — Zero-Server Code Intelligence Engine</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>研发与代码</span><span>常规</span><span class="lic-badge lic-commercial" title="PolyForm-Noncommercial-1.0.0">商用需授权</span><span>接入 Agent</span>
+    </div>
+    <p class="muted detail-meta">把代码库索引成符号、调用、依赖与执行流的知识图谱，让编码 Agent 回答「谁调用这个函数」「这个改动影响什么」时有真实代码依据；npx 一条命令建索引，通过 MCP 工具、CLI 或网页图浏览器使用，支持 Claude Code、Cursor、Codex、Qoder 等编辑器。</p>
+    <p class="detail-upstream">上游状态：48.1k stars · 2026-10-29 核验</p>
+    
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/abhigyanpatwari/GitNexus" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://gitnexus.vercel.app" target="_blank" rel="noopener">项目主页</a>
+    </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code># 建索引 + 安装 Agent 技能 + 注册 hooks + 写 AGENTS.md / CLAUDE.md
+npx gitnexus analyze
+
+# 只建索引，不改仓库集成文件
+npx gitnexus analyze --index-only
+
+# 检测并配置 MCP（可多选：claude-code,cursor,codex,qoder 等）
+npx gitnexus setup</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>GitNexus 代码知识图谱</h1>
+<blockquote>把代码库建成符号与调用关系的知识图谱，让 Agent 的代码问答有据可查。上游：<a href="https://github.com/abhigyanpatwari/GitNexus" target="_blank" rel="noopener">abhigyanpatwari/GitNexus</a> · 许可证：PolyForm Noncommercial 1.0.0</blockquote>
+<h2>这是什么</h2>
+<p>GitNexus 对代码库做静态分析，索引成一张知识图谱：函数与类等符号、调用关系、依赖和执行流。建好索引后，编码 Agent 回答「这个函数被谁调用」「这个改动会影响哪些路径」时可以查图谱，而不是靠全文搜索猜。</p>
+<p>它提供三条使用路径：</p>
+<ul><li><strong>MCP 工具</strong>：把 <code>query</code> / <code>context</code> / <code>impact</code> / <code>trace</code> / <code>detect_changes</code> / <code>rename</code> 等工具注册进 Claude Code、Cursor、Codex、Qoder 等编辑器，Agent 直接调用。</li><li><strong>CLI</strong>：命令行查询图谱，适合脚本与 CI。</li><li><strong>网页图浏览器</strong>：可视化浏览符号与调用关系。</li></ul>
+<h2>怎么接入</h2>
+<p>要求 Node.js 22.18+（22.x）或 24.11+。在仓库根目录建索引并完成编辑器接入：</p>
+<pre><code class="lang-bash"># 建索引 + 安装 Agent 技能 + 注册 hooks + 写 AGENTS.md / CLAUDE.md
+npx gitnexus analyze
+
+# 只建索引，不改仓库集成文件
+npx gitnexus analyze --index-only
+
+# 检测并配置 MCP（可多选：claude-code,cursor,codex,qoder 等）
+npx gitnexus setup</code></pre>
+<p>频繁使用可全局安装：<code>npm install -g gitnexus</code>。</p>
+<h2>怎么用</h2>
+<p>索引建好后，在支持的编辑器里直接让 Agent 调用 MCP 工具提问：</p>
+<ul><li><code>query</code>：找代码与相关执行流；</li><li><code>context</code>：看某个符号的调用方与依赖；</li><li><code>impact</code>：评估一处改动可能影响什么；</li><li><code>trace</code>：在两个符号之间找调用路径；</li><li><code>detect_changes</code>：审查一个 Git diff 的影响面；</li><li><code>rename</code>：预览并应用语义化重命名。</li></ul>
+<p>也可以直接在 CLI 里问同类问题。回答会标注歧义、索引新鲜度与覆盖范围，拿不准的点先看这些标注。</p>
+<h2>注意事项</h2>
+<ul><li><strong>非商业许可</strong>：PolyForm Noncommercial 1.0.0，公司项目或商业产品使用需另行取得授权（同类场景可对比 Apache-2.0 条目）。</li><li><strong>仓库集成文件</strong>：默认 <code>analyze</code> 会写 <code>AGENTS.md</code> / <code>CLAUDE.md</code> 并注册 Claude Code hooks，在他人仓库或严谨工程里接入前先确认影响，必要时用 <code>--index-only</code>。</li><li><strong>结果有边界</strong>：解析依赖语言支持与索引新鲜度，重构后记得重新 <code>analyze</code>；图谱结论是参考，重大决策仍需人工核对源码。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-10-29 · 更新于 2026-10-29 · AstraCraft Program 轻量索引</p>
+</main>
+<script src="../assets/copy.js"></script>
+</body>
+</html>

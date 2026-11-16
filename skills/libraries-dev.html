@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Libraries.dev AI 界面效果库 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览条目</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">设计与创意</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Libraries.dev AI 界面效果库</h1>
+      <p class="hero-subtitle">Libraries.dev</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>常规</span><span class="verify-badge verify-unverified">暂不推荐</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>装进 Agent</span>
+    </div>
+    <p class="muted detail-meta">一组零运行时依赖的 React「AI 界面效果」小包（光束边框、思考球、机器人头像、液态模糊、语音波形等），配教 Agent 何时该用哪种效果的技能与 CLI，代码 MIT、模型文件另有许可。</p>
+    <p class="detail-upstream">上游状态：2026-10-29 核验</p>
+    <p class="detail-verify-note">该条目尚未通过上游核验，使用前先自行核对。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/Jakubantalik/Libraries.dev" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://libraries.dev" target="_blank" rel="noopener">项目主页</a>
+    </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code>npm install border-beam
+npm install thinking-orbs liquid-gooey</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Libraries.dev AI 界面效果库</h1>
+<blockquote>代码 MIT、效果即装即用；何时用哪种效果，交给那份给 Agent 的技能。上游：<a href="https://github.com/Jakubantalik/Libraries.dev" target="_blank" rel="noopener">Jakubantalik/Libraries.dev</a> · 许可证：MIT（模型文件另有许可）</blockquote>
+<h2>这是什么</h2>
+<p>一个面向「AI 产品界面」的 monorepo（★4.6k）：<code>packages/</code> 下 7 至 9 个各含单个组件的 React 小包——光束边框 <code>border-beam</code>、思考态圆球 <code>thinking-orbs</code>、机器人头像 <code>bot-avatars</code>、液态模糊 <code>liquid-gooey</code>、语音波形 <code>voice-glow</code>、金属质感 <code>metal-fx</code>、图像特效 <code>img-fx</code> 等，除个别需要 <code>three</code> 外<strong>零运行时依赖</strong>，已实际发布 10 个 npm 包。配套一份 Agent 技能（<code>skills/libraries-dev/SKILL.md</code> + 7 份参数参考）：按用户等待时长（&lt;2 秒 / ≥2 秒 / &gt;3 秒）决定该给哪种反馈效果，再落到具体包与参数。另有 CLI、站点的 Studio 调参后端与 <code>llms.txt</code> 入口。</p>
+<h2>怎么安装</h2>
+<p>组件按包安装（在项目根目录，任选需要的效果）：</p>
+<pre><code class="lang-bash">npm install border-beam
+npm install thinking-orbs liquid-gooey</code></pre>
+<p>把「何时用哪种效果」的判断交给编码 Agent：</p>
+<pre><code class="lang-bash">npx libraries-dev skill                      # 免费技能，装到 ~/.claude/skills
+npx skills add Jakubantalik/Libraries.dev    # 通用技能安装器
+npx libraries-dev mcp --claude               # MCP 接入（需 Business 席位）</code></pre>
+<p>前置：React ≥ 18，Node 20（仓库 <code>.node-version</code>，CLI 要求 Node ≥ 18）；仓库内开发用 <code>npm install &amp;&amp; npm run build:site-home</code>，类型检查 <code>npm run typecheck</code>。</p>
+<h2>怎么用</h2>
+<p>import 后按 props 配置即可，例如给加载态套 <code>thinking-orbs</code>、给等待超过三秒的任务上 <code>border-beam</code>；参数规格在每个包的 <code>spec.ts</code> 与技能参考里。深度调参、Pro 预设与 Studio 导出属于站点订阅（<code>https://api.libraries.dev</code>），模型文件 <code>.mfxl</code> 需从站点下载。</p>
+<h2>注意事项</h2>
+<ul><li><strong>协议分层要交底</strong>：代码是 MIT，但 <code>.mfxl</code> 模型文件按 <code>LICENSE-MODEL.md</code> 授权——<strong>免费仅限开发、原型与非商业，商用发布需要 Pro / Business / Enterprise 订阅</strong>；Studio 导出与 Pro 预设同样按订阅授权。</li><li><strong>不可自托管</strong>：Pro 技能、MCP 与调参后端在私有仓库 <code>libraries-pro</code>，强依赖订阅 token，价值与 libraries.dev 站点可用性绑定。</li><li><strong>维护与协作</strong>：单人项目（作者一人 675 次提交），开放 Issue 8 个、PR 13 个但<strong>已关闭 Issue 为 0</strong>，实际协作基本不开放；README 里部分文档链接已失效。</li><li><strong>效果规则是主观约定</strong>：按等待时长选效果、动效克制程度等是作者审美判断，不是客观基准；WebGL 类（<code>img-fx</code> / <code>metal-fx</code>）有体积与性能成本，低端设备慎用。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-11-06 · 更新于 2026-11-06 · AstraCraft Program 轻量索引</p>
+</main>
+<script src="../assets/copy.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lightpanda 轻量无头浏览器 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览条目</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent 基础设施</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Lightpanda 轻量无头浏览器</h1>
+      <p class="hero-subtitle">Lightpanda Browser</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>Agent 基础设施</span><span>常规</span><span class="verify-badge verify-unverified">暂不推荐</span><span class="lic-badge lic-copyleft" title="AGPL-3.0">部分开源</span><span>接入 Agent</span>
+    </div>
+    <p class="muted detail-meta">用 Zig 从零编写的无头浏览器，专为 AI 与自动化设计：兼容 CDP 与 WebDriver BiDi，可替换 Puppeteer / Playwright 的浏览器端点；官方基准称内存约为无头 Chrome 的 1/16、速度快约 9 倍，支持 HTML / Markdown / PDF 导出、MCP 服务与内置 Agent 模式。</p>
+    <p class="detail-upstream">上游状态：2026-10-29 核验</p>
+    <p class="detail-verify-note">该条目尚未通过上游核验，使用前先自行核对。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/lightpanda-io/browser" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://lightpanda.io" target="_blank" rel="noopener">项目主页</a>
+    </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code># 下载稳定版二进制（最新 release 为 1.0.4）
+curl -L -o lightpanda https://github.com/lightpanda-io/browser/releases/latest/download/lightpanda-x86_64-linux
+chmod a+x ./lightpanda
+./lightpanda version
+
+# 或者 Homebrew / Docker
+brew install lightpanda-io/browser/lightpanda
+docker run -d --name lightpanda -p 127.0.0.1:9222:9222 lightpanda/browser:latest
+
+# 启动 CDP 服务
+./lightpanda serve --obey-robots --host 127.0.0.1 --port 9222</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Lightpanda 轻量无头浏览器</h1>
+<blockquote>从零重写的 AI 专用无头浏览器。上游：<a href="https://github.com/lightpanda-io/browser" target="_blank" rel="noopener">lightpanda-io/browser</a> · 许可证：AGPL-3.0 · 官网：<a href="https://lightpanda.io" target="_blank" rel="noopener">lightpanda.io</a></blockquote>
+<h2>这是什么</h2>
+<p>Lightpanda 是一个用 Zig 从零编写的无头浏览器——不是 Chromium 的分支，也不是 WebKit 的补丁——目标是把浏览器做成 AI Agent 与自动化任务的轻量运行时。它对外提供与 Chrome 兼容的 <strong>CDP</strong>（Chrome DevTools Protocol）服务，也支持 <strong>WebDriver BiDi</strong>，因此 Puppeteer / Playwright 只需把连接地址指过来即可驱动；另有原生 MCP 服务、内置 Agent 模式和命令行抓取。</p>
+<p>官方基准（AWS m5.large 上请求 933 个真实网页，自报数据）：100 页峰值内存 123MB vs 无头 Chrome 2GB（约 1/16），执行时间 5s vs 46s（约 9 倍）。已实现的能力包括 HTML5 解析、V8 JavaScript、DOM API、XHR / Fetch、点击与表单输入、Cookie、自定义 Header、代理、网络拦截、广告拦截、<code>robots.txt</code> 遵循（需显式开启）与 HTML / Markdown / PNG / PDF / structured_data 导出。</p>
+<p>两种用法：</p>
+<ul><li><strong>标准自动化</strong>：<code>lightpanda serve</code> 起 CDP 服务（默认示例绑 <code>127.0.0.1:9222</code>），Puppeteer <code>connect({ browserWSEndpoint })</code> 或 Playwright <code>connectOverCDP</code> 直接接入，脚本基本不用改</li><li><strong>Agent 原生</strong>：<code>lightpanda agent</code> 用自然语言或斜杠命令驱动浏览器，支持 Anthropic / OpenAI / Gemini / Vertex / Mistral / Hugging Face / OpenRouter / Vercel AI Gateway / 任意 OpenAI 兼容端点与本地 Ollama；会话可 <code>/save</code> 导出为 <strong>PandaScript</strong>（原生 JS 原语），<code>lightpanda run</code> 无模型、确定性重放</li><li><strong>MCP</strong>：<code>lightpanda mcp</code> 走 stdio，或 <code>lightpanda mcp --port 9223</code> 走 HTTP 并按 session 隔离多个 Agent 的浏览上下文</li></ul>
+<h2>怎么接入</h2>
+<p>支持 Linux x86_64 / aarch64 与 macOS x86_64 / aarch64；<strong>没有原生 Windows 二进制</strong>，需在 WSL2 里按 Linux 方式安装。Linux 二进制依赖 glibc（Alpine 等 musl 系统不可用；arm64 需 glibc 2.38+ 的镜像）。</p>
+<pre><code class="lang-bash"># 下载稳定版二进制（最新 release 为 1.0.4）
+curl -L -o lightpanda https://github.com/lightpanda-io/browser/releases/latest/download/lightpanda-x86_64-linux
+chmod a+x ./lightpanda
+./lightpanda version
+
+# 或者 Homebrew / Docker
+brew install lightpanda-io/browser/lightpanda
+docker run -d --name lightpanda -p 127.0.0.1:9222:9222 lightpanda/browser:latest
+
+# 启动 CDP 服务
+./lightpanda serve --obey-robots --host 127.0.0.1 --port 9222</code></pre>
+<p>Puppeteer 接入示例（Playwright 用 <code>connectOverCDP('http://127.0.0.1:9222')</code>）：</p>
+<pre><code class="lang-js">import puppeteer from &#x27;puppeteer-core&#x27;;
+
+const browser = await puppeteer.connect({
+  browserWSEndpoint: &#x27;ws://127.0.0.1:9222&#x27;,
+});
+const context = await browser.createBrowserContext();
+const page = await context.newPage();
+await page.goto(&#x27;https://example.com&#x27;, { waitUntil: &#x27;networkidle0&#x27; });
+console.log(await page.evaluate(() =&gt; document.title));
+await browser.disconnect();</code></pre>
+<p>接入 MCP 客户端（Claude Desktop / Cursor 等）：</p>
+<pre><code class="lang-json">{
+  &quot;mcpServers&quot;: {
+    &quot;lightpanda&quot;: {
+      &quot;command&quot;: &quot;/path/to/lightpanda&quot;,
+      &quot;args&quot;: [&quot;mcp&quot;]
+    }
+  }
+}</code></pre>
+<h2>怎么用</h2>
+<pre><code class="lang-bash"># 按 URL 抓取并导出（支持 html / markdown / png / pdf / structured_data）
+./lightpanda fetch --obey-robots --dump markdown https://example.com
+./lightpanda fetch --dump structured_data https://example.com
+
+# Agent 模式：自然语言驱动，导出可复放脚本
+./lightpanda agent --task &quot;top story on news.ycombinator.com?&quot;
+./lightpanda run session.js          # 无模型、确定性重放 PandaScript
+
+# MCP over HTTP（多 Agent 各用独立 session）
+./lightpanda mcp --port 9223</code></pre>
+<p>抓取时可加 <code>--wait-until</code>、<code>--wait-ms</code>、<code>--wait-selector</code>、<code>--wait-script</code> 控制等待时机；需要走代理、带 Header 或拦截网络时用对应的 CDP 会话参数即可。完整的 CDP / BiDi 能力与 Web 平台覆盖度见<a href="https://lightpanda.io/docs" target="_blank" rel="noopener">上游文档</a>与 WPT 结果。</p>
+<h2>注意事项</h2>
+<ul><li><strong>不是 Chromium 等价物</strong>：Web 平台特性是逐步实现的子集，复杂站点、深层 JS 交互与像素级渲染可能与 Chrome 不同；替换现有 Playwright 流程前，先对目标站点跑一轮回归。PNG / PDF 导出是文本化渲染，不是浏览器截图。</li><li><strong>许可证 AGPL-3.0</strong>：修改后对外提供网络服务须开源修改版本；把浏览器嵌进闭源服务前先评估合规。</li><li><strong>版本与平台</strong>：稳定版 1.0.4（2026-11-13）已提供二进制，但 README 的快速开始仍指向 nightly，功能与参数可能变化；无原生 Windows，WSL2 运行；Linux 依赖 glibc（musl 不可用），arm64 对 glibc 版本要求更高。</li><li><strong>隐私与合规</strong>：默认开启匿名遥测，用 <code>LIGHTPANDA_DISABLE_TELEMETRY=true</code> 关闭；默认不遵守 <code>robots.txt</code>，抓取需显式加 <code>--obey-robots</code>，合法性仍由使用者负责；Agent 模式会把页面内容发给所配置的模型供应商。</li><li><strong>服务暴露</strong>：CDP / MCP 示例都只绑 <code>127.0.0.1</code>，没有内置鉴权，不要直接暴露公网；远程使用请走 SSH 隧道或带鉴权的反向代理。</li><li><strong>面板数据为自报</strong>：16x 内存 / 9x 速度是上游基准（933 页、m5.large），实际收益取决于页面复杂度与任务类型。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-11-16 · 更新于 2026-11-16 · AstraCraft Program 轻量索引</p>
+</main>
+<script src="../assets/copy.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>awesome-reverse-engineered 逆向工程开源工具索引 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览条目</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">研发与代码</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">awesome-reverse-engineered 逆向工程开源工具索引</h1>
+      <p class="hero-subtitle">awesome-reverse-engineered</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>研发与代码</span><span>常规</span><span class="verify-badge verify-unverified">暂不推荐</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>装进 Agent</span>
+    </div>
+    <p class="muted detail-meta">17,000+ 个把闭源应用、API、设备、协议、文件格式和游戏逆向出来的开源工具索引，带搜索站、Agent 技能与 MCP 服务端，每晚自动刷新——动手逆向前先查这里，别重复造轮子。</p>
+    <p class="detail-upstream">上游状态：2026-10-29 核验</p>
+    <p class="detail-verify-note">该条目尚未通过上游核验，使用前先自行核对。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/alexgaoth/awesome-reverse-engineered" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://alexgaoth.github.io/awesome-reverse-engineered/" target="_blank" rel="noopener">项目主页</a>
+    </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code>npx skills add alexgaoth/awesome-reverse-engineered</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>awesome-reverse-engineered 逆向工程开源工具索引</h1>
+<blockquote>别把同一个东西逆向两遍：17,000+ 个前人逆向成果，先搜再动手。上游：<a href="https://github.com/alexgaoth/awesome-reverse-engineered" target="_blank" rel="noopener">alexgaoth/awesome-reverse-engineered</a> · 许可证：MIT（数据 CC0）</blockquote>
+<h2>这是什么</h2>
+<p>一份持续维护的逆向工程开源工具索引（★1.1k+，每晚自动刷新）：17,726 个项目，覆盖游戏反编译（6,100+）、设备/IoT/硬件（3,100+）、非官方 API 客户端（990+）、中文平台工具（770+）、文件格式、固件、车机、网络协议、RE 工具链等 20 个分类，合计 1,230 万 star；另有 129 个「被官方砍掉、被开源续命」的产品案例。它不收录源码，只做索引与检索：可上<a href="https://alexgaoth.github.io/awesome-reverse-engineered/" target="_blank" rel="noopener">搜索站</a>按分类、语言、健康度筛选，也可装成 Agent 技能或 MCP 服务端，让 Agent 遇到"要跟没有官方 API 的东西打交道"的任务时先查这里。</p>
+<h2>怎么安装</h2>
+<p>装成 Agent 技能（索引数据随技能分发，无需 clone）：</p>
+<pre><code class="lang-bash">npx skills add alexgaoth/awesome-reverse-engineered</code></pre>
+<p>其他形态：Claude Code 插件 <code>/plugin install reverse-engineered --marketplace alexgaoth/awesome-reverse-engineered</code>；MCP 服务端 <code>claude mcp add reverse-engineered -- uvx --from "git+https://github.com/alexgaoth/awesome-reverse-engineered#subdirectory=mcp" reverse-engineered-mcp</code>；任何能跑 Python 的环境可直接下载单文件脚本 <code>plugin/skills/find-reverse-engineered/scripts/re_index.py</code>（仅用标准库）离线检索。</p>
+<h2>怎么用</h2>
+<p>把任务直接交给装好技能的 Agent：例如"找一个控制 Tuya 智能插座的本地开源方案"，Agent 会在索引里按 star 数、活跃度、许可证排序并给出 README 摘要。命令行方式：<code>python3 re_index.py search tuya local</code> 列出匹配，<code>info &lt;条目&gt;</code> 看详情，<code>clone &lt;条目&gt;</code> 浅克隆到 <code>vendor/</code>。</p>
+<h2>注意事项</h2>
+<ul><li><strong>合规自担</strong>：索引里大量条目是非官方客户端、固件与协议实现，可能违反目标服务条款或随上游改版失效；用在授权与合规范围内，法律风险自行评估。</li><li><strong>索引非工具</strong>：本条目收录的是检索层，不是其中任何工具的发行版；单个子项目的质量、维护状态与协议以各自上游为准。</li><li><strong>厂商无关联</strong>：项目与所列产品的官方厂商均无关联，属社区互操作性成果。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-11-03 · 更新于 2026-11-03 · AstraCraft Program 轻量索引</p>
+</main>
+<script src="../assets/copy.js"></script>
+</body>
+</html>

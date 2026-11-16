@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Animate UI 动效组件库 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览条目</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">设计与创意</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Animate UI 动效组件库</h1>
+      <p class="hero-subtitle">Animate UI</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>设计与创意</span><span>常规</span><span class="verify-badge verify-unverified">暂不推荐</span><span class="lic-badge lic-commercial" title="LicenseRef-MIT-Commons-Clause">商用需授权</span><span>装进 Agent</span>
+    </div>
+    <p class="muted detail-meta">给 shadcn/ui 组件一键加动效的 Radix/Base UI/React Aria 动画基元库：换一行 import 就有 Motion 弹簧动效，附带 CLI codemod、Vue 版本与 Agent 技能，让现有组件原地「活」起来。</p>
+    <p class="detail-upstream">上游状态：2026-10-29 核验</p>
+    <p class="detail-verify-note">该条目尚未通过上游核验，使用前先自行核对。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/imskyleen/animate-ui" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://animate-ui.com" target="_blank" rel="noopener">项目主页</a>
+    </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code>npx @animate-ui/cli@latest animate all      # 已装的 shadcn/ui 组件全部换用动画基元（原地改写）
+npx @animate-ui/cli@latest animate dialog tooltip   # 或只动指定组件；--dry-run 先预览</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Animate UI 动效组件库</h1>
+<blockquote>换一行 import，shadcn/ui 组件原地动起来：Motion 弹簧动效的 Radix / Base UI / React Aria 基元。上游：<a href="https://github.com/imskyleen/animate-ui" target="_blank" rel="noopener">imskyleen/animate-ui</a> · 许可证：MIT + Commons Clause</blockquote>
+<h2>这是什么</h2>
+<p>一套「即插即用」的动画基元库（★4.9k，Vercel OSS 计划项目）：为 Radix UI、Base UI、React Aria（Vue 侧为 reka-ui）的每个基元提供 <strong>API 完全一致</strong>的 Motion 动画版——组件代码不用改，只换 import 源，弹窗、下拉、手风琴等就带上统一的弹簧动效。动效体系成体系：几乎全部走弹簧、每种运动角色一个令牌、入场离场 ease-out、按压反馈与轻模糊过渡（借鉴 Emil Kowalski 的实践规则）。配套三条上手路径：官方 CLI 对已装的 shadcn/ui 组件整体做 codemod；shadcn 注册表直接加装图标、背景、特效按钮等成品；仓库还随附一份 Agent 技能（<code>skills/animate-ui</code>），让 AI 编码助手按规则给任意组件加动效、审计卡顿动画、把任意图标变成动效图标。</p>
+<h2>怎么安装</h2>
+<p>前置：已有 shadcn/ui 项目（含 <code>components.json</code>），Node.js ≥ 22.12。在项目根目录执行：</p>
+<pre><code class="lang-bash">npx @animate-ui/cli@latest animate all      # 已装的 shadcn/ui 组件全部换用动画基元（原地改写）
+npx @animate-ui/cli@latest animate dialog tooltip   # 或只动指定组件；--dry-run 先预览</code></pre>
+<p>不用 CLI 也可手动换 import（组件代码零改动）：</p>
+<pre><code class="lang-tsx">import { Accordion as AccordionPrimitive } from &#x27;@animate-ui/react/primitives/radix-ui&#x27;;</code></pre>
+<p>让 AI 助手直接检索并加装它的图标 / 背景 / 成品组件：在 <code>components.json</code> 加注册表 <code>"@animate-ui": "https://animate-ui.com/r/{name}.json"</code>，再跑 <code>npx shadcn@latest mcp init --client claude</code> 配好 shadcn MCP。Vue / Nuxt 项目用 <code>@animate-ui/vue</code>（基于 reka-ui 与 motion-v），见<a href="https://animate-ui.com/docs" target="_blank" rel="noopener">官方文档</a>。</p>
+<h2>怎么用</h2>
+<p>codemod 跑完后项目里的 shadcn/ui 组件即已是动画版，业务代码不需要任何改动；想调节奏（更快/更慢/更克制）按文档的 tokens 一节调弹簧参数。把仓库里的 <code>skills/animate-ui</code> 目录装进 Agent 技能目录后，可直接让 Agent「给这个组件加入场/按压动画」「审计页面里卡顿的动效」「把这个 Lucide 图标变成动效图标」。</p>
+<h2>注意事项</h2>
+<ul><li><strong>协议限制</strong>：MIT + Commons Clause——随应用/产品使用（含商用）没问题，但<strong>不得把组件本体单独或打包出售、再分发</strong>；商用分发产品前读一遍上游 <a href="https://github.com/imskyleen/animate-ui/blob/main/LICENSE.md" target="_blank" rel="noopener">LICENSE.md</a>。</li><li><strong>codemod 原地改写</strong>：<code>animate</code> 命令直接修改组件文件并删除被 Motion 取代的 CSS 动画，执行前先提交工作区或用 <code>--dry-run</code> 预览；它不复制任何组件，升级随 npm 包走。</li><li><strong>技术栈限定</strong>：面向 React（Radix / Base UI / React Aria）与 Vue（reka-ui）+ Tailwind CSS 生态，与 shadcn/ui 的安装约定（<code>components.json</code>）深度耦合，非该技术栈不适用。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-11-03 · 更新于 2026-11-03 · AstraCraft Program 轻量索引</p>
+</main>
+<script src="../assets/copy.js"></script>
+</body>
+</html>

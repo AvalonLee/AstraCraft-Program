@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Claude Code Game Studios 游戏工坊模板 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览条目</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">研发与代码</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Claude Code Game Studios 游戏工坊模板</h1>
+      <p class="hero-subtitle">Claude Code Game Studios</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>研发与代码</span><span>常规</span><span class="verify-badge verify-unverified">暂不推荐</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>装进 Agent</span>
+    </div>
+    <p class="muted detail-meta">把 Claude Code 变成一支完整游戏开发团队：克隆模板即得 49 个角色 Agent（制作人、设计、程序、美术、QA 等）与近百个流程技能，从提问、一页需求简报到可玩的浏览器游戏，再到逐步迭代、分享与发行收尾，全程有检查与回滚点。</p>
+    <p class="detail-upstream">上游状态：2026-10-29 核验</p>
+    <p class="detail-verify-note">该条目尚未通过上游核验，使用前先自行核对。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/Donchitos/Claude-Code-Game-Studios" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://github.com/Donchitos/Claude-Code-Game-Studios" target="_blank" rel="noopener">项目主页</a>
+    </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code># 1) 克隆模板到你的游戏项目目录（每个项目一份，不要把游戏做在本仓库副本之外）
+git clone https://github.com/Donchitos/Claude-Code-Game-Studios.git my-game
+cd my-game
+
+# 2) 必须在含 CLAUDE.md 与 project.yaml 的根目录启动 Claude Code（子目录会跳过 hooks 与权限规则）
+claude
+
+# 3) 在会话里选一条入口
+# /start                          按引导回答你在哪一步，自动选择流程
+# /prototype a fishing game where the rare fish only bite at dusk
+# /setup-engine godot 4.7         已确定引擎时先配置（Web / Godot / Unity / Unreal）</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Claude Code Game Studios 游戏工坊模板</h1>
+<blockquote>克隆一份模板，把 Claude Code 变成一支游戏工作室。上游：<a href="https://github.com/Donchitos/Claude-Code-Game-Studios" target="_blank" rel="noopener">Donchitos/Claude-Code-Game-Studios</a> · 许可证：MIT</blockquote>
+<h2>这是什么</h2>
+<p>Claude Code Game Studios 是一个面向 Claude Code 的游戏开发项目模板：克隆到一个新文件夹，就等于搭起一套「虚拟工作室」——49 个角色化 Agent（制作人、游戏设计、程序、美术、音频、QA、无障碍等）配上近百个流程技能（<code>/start</code>、<code>/prototype</code>、<code>/next-step</code>、<code>/project-settings</code>、<code>/setup-engine</code>、<code>/create-stories</code>、<code>/cut</code> 等），用 <code>.claude/</code> 下的 hooks、权限规则与 <code>project.yaml</code> 把流程、质量和安全边界固定下来。</p>
+<p>它主打「从一句想法到能玩的东西」：你说一个游戏点子，Claude Code 先问一轮关键问题（怎么玩、手感、画面、难度、目标），写出一页 <code>design/game-brief.md</code> 给你确认，然后在 <code>prototypes/&lt;name&gt;/</code> 生成双击即开的浏览器游戏；自动用无头浏览器做按键与布局检查，逐条核对需求简报告知哪些已实现、缺失或损坏。之后可以按需求改（每次接受都留检查点）、导出干净的 itch.io 分享版、长成 Vite + TypeScript 工程逐步加功能，最后用 <code>/cut</code> 定裁剪与打磨清单。已有浏览器游戏也能用 <code>/prototype --from &lt;path&gt;</code> 接入。</p>
+<p>支持 Web（默认，可加 three.js / Phaser / PixiJS）、Godot 4、Unity、Unreal Engine 5 四条引擎路线；<code>project.yaml</code> 用 <code>modes.rigor</code>（minimal / standard / full）一个旋钮控制需求文档、QA、评审与团队规模，适合先轻后重。</p>
+<h2>怎么安装</h2>
+<p>前置：Git；可用的 <a href="https://code.claude.com/docs/en/setup" target="_blank" rel="noopener">Claude Code</a>；<strong>Python 3</strong>（读 <code>project.yaml</code>，缺失时设置静默回落）；<strong>Bash</strong>（Windows 装 Git for Windows 用 Git Bash）；验证阶段需要 Chrome / Edge / Chromium；推荐 Node.js（长成 Web 工程、three.js、构建测试）与 jq（hook 校验）。</p>
+<pre><code class="lang-bash"># 1) 克隆模板到你的游戏项目目录（每个项目一份，不要把游戏做在本仓库副本之外）
+git clone https://github.com/Donchitos/Claude-Code-Game-Studios.git my-game
+cd my-game
+
+# 2) 必须在含 CLAUDE.md 与 project.yaml 的根目录启动 Claude Code（子目录会跳过 hooks 与权限规则）
+claude
+
+# 3) 在会话里选一条入口
+# /start                          按引导回答你在哪一步，自动选择流程
+# /prototype a fishing game where the rare fish only bite at dusk
+# /setup-engine godot 4.7         已确定引擎时先配置（Web / Godot / Unity / Unreal）</code></pre>
+<p>安装不需要往全局 skills 目录复制文件；模板本身就是项目骨架（<code>.claude/agents</code>、<code>.claude/skills</code>、<code>.claude/hooks</code>、<code>CLAUDE.md</code>、<code>project.yaml</code>）。升级已有项目请按 <code>UPGRADING.md</code> 手动合并。</p>
+<h2>怎么用</h2>
+<p>1. <code>/start</code> 或 <code>/prototype &lt;想法&gt;</code>：回答一轮问题 → 读 <code>design/game-brief.md</code> → 说 Build it，得到 <code>prototypes/&lt;name&gt;/</code> 下的可玩浏览器游戏。 2. 玩过后直接提修改：每次改动对照你「要保留 / 要避免」的约束检查，接受的改动成为可回滚检查点；说「tune it」会生成带滑块的调参面板。 3. 满意后导出分享版（去掉调参面板与工作文件），或让模板长成 Vite + TypeScript 正式工程，一次加一个功能并自动跑同一套种子测试。 4. 需要正式流程时再开 stories（<code>/create-stories</code> → <code>/dev-story</code> → <code>/story-done</code>），用 <code>/project-settings modes.rigor=full</code> 提高文档 / QA / 评审强度；<code>/cut</code> 给出裁剪与打磨清单。 5. 随时用 <code>/next-step</code> 让工作室告诉你下一步；用 <code>/project-settings</code> 查看或修改引擎、命名、流程与自动化档位。</p>
+<p>上游说明：浏览器路线的「先做简报再开发」在三次盲测中被选中三次；引擎路线（Godot / Unity / Unreal）与设计文档深挖已实现并通过框架自检，但尚未做同类对照测试。模板刻意不附带成品游戏。</p>
+<h2>注意事项</h2>
+<ul><li><strong>绑定 Claude Code</strong>：这是 Claude Code 的项目模板，需要可用的 Claude Code 与模型额度；不适用于其他 Agent harness，也不是独立游戏引擎。</li><li><strong>Python 3 与 Bash 是硬前提</strong>：缺 Python 时 <code>project.yaml</code> 设置会静默回落到默认值；Windows 缺 Bash 时 hooks 全部跳过，质量检查等于关闭。缺 Chrome 类浏览器时自动验收会标注「未评估」。</li><li><strong>从根目录启动</strong>：在子目录（如 <code>src/</code>）启动 Claude Code 会跳过 hooks、deny 规则与 ask-first 权限模式，等于绕过安全网。</li><li><strong>会改造 Agent 行为</strong>：模板包含 hooks、权限 deny 规则、statusline 与规则文件；使用前读 <code>CLAUDE.md</code> 与 <code>.claude/settings.json</code>，确认允许的命令范围。</li><li><strong>模板而非产品</strong>：每个项目克隆一份，升级按 <code>UPGRADING.md</code> 手动合并；不附带示例游戏；引擎路线成熟度低于浏览器路线。</li><li><strong>许可证</strong>：MIT，可商用与修改；生成游戏的知识产权与素材合规由使用者负责，注意不要复刻受版权保护的现有游戏。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-11-16 · 更新于 2026-11-16 · AstraCraft Program 轻量索引</p>
+</main>
+<script src="../assets/copy.js"></script>
+</body>
+</html>

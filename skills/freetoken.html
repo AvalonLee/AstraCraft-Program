@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FreeToken 边缘 MoE 推理引擎 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览条目</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">Agent 基础设施</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">FreeToken 边缘 MoE 推理引擎</h1>
+      <p class="hero-subtitle">FreeToken</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>Agent 基础设施</span><span>常规</span><span class="verify-badge verify-unverified">暂不推荐</span><span class="lic-badge lic-open" title="Apache-2.0">完全开源</span><span>部署运行</span>
+    </div>
+    <p class="muted detail-meta">面向消费级硬件的边缘 MoE 推理引擎：协同 GPU、CPU 与主机内存，在游戏 PC 上跑 290B+ 开源大模型；支持 DeepSeek-V4 / Qwen3 / GLM-5 / gpt-oss / Gemma-4 等与 GGUF，暴露 OpenAI / Anthropic 兼容 API，一条命令接 Claude Code / Codex 等编码 Agent。</p>
+    <p class="detail-upstream">上游状态：2026-10-29 核验</p>
+    <p class="detail-verify-note">该条目尚未通过上游核验，使用前先自行核对。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/FlashML-org/FreeToken" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://www.flashml.ai/" target="_blank" rel="noopener">项目主页</a>
+    </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code># 方式一：桌面应用（内置引擎与 GUI，Windows / Linux）
+# 下载：https://www.flashml.ai/
+
+# 方式二：PyPI 安装（Linux + NVIDIA）
+uv venv &amp;&amp; source .venv/bin/activate
+uv pip install &quot;freetoken[accel]&quot;
+ft --version
+
+# 方式三：源码安装
+git clone https://github.com/FlashML-org/FreeToken.git &amp;&amp; cd FreeToken
+uv venv &amp;&amp; source .venv/bin/activate
+uv pip install -e &quot;.[accel]&quot;
+
+# 启动服务（默认监听 127.0.0.1:1919；模型可给本地目录、HF repo id 或 .gguf）
+ft serve --model ~/models/Qwen3.6-35B-A3B
+curl http://127.0.0.1:1919/v1/models</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>FreeToken 边缘 MoE 推理引擎</h1>
+<blockquote>在消费级硬件上跑前沿 MoE 模型。上游：<a href="https://github.com/FlashML-org/FreeToken" target="_blank" rel="noopener">FlashML-org/FreeToken</a> · 许可证：Apache-2.0 · 官网：<a href="https://www.flashml.ai/" target="_blank" rel="noopener">flashml.ai</a> · 论文：<a href="https://arxiv.org/abs/2608.16157" target="_blank" rel="noopener">arXiv:2608.16157</a></blockquote>
+<h2>这是什么</h2>
+<p>FreeToken 是一个面向个人与消费级硬件的<strong>边缘原生 MoE 推理引擎</strong>：把 GPU、CPU、主机内存与互连当作一个弹性的统一推理平台，用带宽自适应的 CPU–GPU 协同执行，在游戏 PC 上运行 290B+ 参数的开源 MoE 模型。它由 FlashML 团队开源，论文作者包括 Song Han、Matei Zaharia、Ion Stoica 等，设计上参考了 SGLang、vLLM、llama.cpp 等项目。</p>
+<p>核心能力：</p>
+<ul><li><strong>边缘运行时</strong>：带宽自适应的 CPU–GPU 协同（$q^\star$ 策略）、全层双缓冲 prefill 流式、全局 LRU 专家缓存、图执行与 FTW 快速权重格式</li><li><strong>语义感知缓存</strong>：用语义锚点保存循环状态与 KV cache，Agent 的工具调用、思考块等上下文编辑不必重算整段</li><li><strong>弹性显存</strong>：运行中在专家缓存与 KV 之间动态分配 VRAM，无需重启或重新加载权重</li><li><strong>模型覆盖</strong>：DeepSeek-V4.1-Flash、Qwen3.6 / Qwen3.8、GLM-5.3-Flash / 5.2、gpt-oss-120b、Gemma-4、MiniMax-M2/M3、Qwen3-VL 等；支持 MXFP4 / NVFP4 / FP8 / BF16 与本地 GGUF，视觉模型可带图像输入</li><li><strong>Agent 友好</strong>：同时提供 OpenAI（<code>/v1/chat/completions</code>、<code>/v1/responses</code>、<code>/v1/models</code>）与 Anthropic（<code>/v1/messages</code>、<code>/v1/messages/count_tokens</code>）兼容 API，<code>ft launch</code> 一条命令把 Claude Code / Codex / DSH / Hermes / OpenClaw / OpenCode 接到本地服务</li></ul>
+<p>MoE 执行策略可切换：<code>auto</code> / <code>fused</code>（专家常驻 GPU）/ <code>offload</code>（专家放主机内存，GPU 只留 LRU 缓存）/ <code>cpu</code>（未命中在 CPU 计算）/ <code>hybrid</code>（PCIe 拉取与 CPU 计算重叠）。</p>
+<h2>怎么部署运行</h2>
+<p>桌面应用支持 Windows / Linux；CLI 与源码要求 <strong>Linux x86_64 + NVIDIA GPU（驱动 r580+，CUDA 13）</strong>、Python ≥ 3.10，首次运行会 JIT 编译 CUDA 内核（需要 <code>nvcc</code>）。AMD ROCm 仍在 WIP。</p>
+<pre><code class="lang-bash"># 方式一：桌面应用（内置引擎与 GUI，Windows / Linux）
+# 下载：https://www.flashml.ai/
+
+# 方式二：PyPI 安装（Linux + NVIDIA）
+uv venv &amp;&amp; source .venv/bin/activate
+uv pip install &quot;freetoken[accel]&quot;
+ft --version
+
+# 方式三：源码安装
+git clone https://github.com/FlashML-org/FreeToken.git &amp;&amp; cd FreeToken
+uv venv &amp;&amp; source .venv/bin/activate
+uv pip install -e &quot;.[accel]&quot;
+
+# 启动服务（默认监听 127.0.0.1:1919；模型可给本地目录、HF repo id 或 .gguf）
+ft serve --model ~/models/Qwen3.6-35B-A3B
+curl http://127.0.0.1:1919/v1/models</code></pre>
+<h2>怎么用</h2>
+<pre><code class="lang-bash"># 终端聊天（独占进程，或 --server 接管已有服务）
+ft shell --model ~/models/Qwen3.6-35B-A3B
+ft shell
+
+# 接到编码 Agent（会写供应商配置，缺 CLI 时安装；先预览用 --dry-run）
+ft launch claude          # 也支持 codex / dsh / hermes / openclaw / opencode
+
+# 看本机带宽、选 MoE 策略
+ft bench bw --model ~/models/Qwen3.6-35B-A3B
+ft serve --model ~/models/Qwen3.6-35B-A3B --moe-strategy hybrid</code></pre>
+<p>任何 OpenAI 或 Anthropic SDK 把 base URL 指到 <code>http://127.0.0.1:1919</code> 即可调用。选模型前先看<a href="https://github.com/FlashML-org/FreeToken/blob/main/docs/models.md" target="_blank" rel="noopener">支持列表</a>，量化格式与显存 / 内存规划见<a href="https://github.com/FlashML-org/FreeToken/blob/main/docs/install.md" target="_blank" rel="noopener">安装文档</a>与 <a href="https://github.com/FlashML-org/FreeToken/blob/main/docs/cli.md" target="_blank" rel="noopener">CLI 参考</a>。</p>
+<h2>注意事项</h2>
+<ul><li><strong>硬件门槛</strong>：CLI 仅 Linux x86_64，需要 RTX 30 / 40 / 50 系列与驱动 r580+（CUDA 13）；Windows 只能用桌面应用，macOS 不支持，AMD 仍 WIP；首次运行 JIT 编译内核需要 <code>nvcc</code>，冷启动慢属正常。</li><li><strong>容量与速度</strong>：模型权重动辄数十至数百 GB，需要匹配的显存 / 内存 / 磁盘；290B+ 模型跑在游戏 PC 上依赖 CPU / 内存 offload 与 PCIe 带宽，实际 token 速度因机器差异很大，上游的「交互级」说法未独立复现，建议先跑 <code>ft bench bw</code>。</li><li><strong>模型许可另算</strong>：引擎是 Apache-2.0，但 DeepSeek、Qwen、GLM、Gemma、gpt-oss 等权重各有自己的许可与使用政策，商用前逐个确认。</li><li><strong>服务暴露</strong>：默认只绑 <code>127.0.0.1:1919</code>，未见内置鉴权，不要直接暴露公网；远程访问请用 SSH 隧道或带鉴权的反向代理。</li><li><strong>会改写 Agent 配置</strong>：<code>ft launch</code> 会写 Claude Code / Codex 等的供应商配置，并在缺失时安装其 CLI，先用 <code>--dry-run</code> 看改动。</li><li><strong>迭代快</strong>：项目 2026-07 创建，CLI 与 API 可能变化；nightly 轮子带 <code>+g&lt;sha&gt;</code> 滚动更新，脚本里应锁具体 URL 而不是 <code>nightly</code> 标签。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-11-16 · 更新于 2026-11-16 · AstraCraft Program 轻量索引</p>
+</main>
+<script src="../assets/copy.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Public APIs 免费 API 合集 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览条目</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">研发与代码</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">Public APIs 免费 API 合集</h1>
+      <p class="hero-subtitle">Public APIs</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>研发与代码</span><span>主推</span><span class="verify-badge verify-unverified">暂不推荐</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>阅读参考</span>
+    </div>
+    <p class="muted detail-meta">GitHub 星标最高的免费 API 合集：50+ 分类、约 2400 条公开 API 索引，每条标注是否需要认证、HTTPS 与 CORS；附带可搜索官网、免 Key 列表、实时状态页与给 Agent 用的 MCP 服务列表，找外部数据源先从这里查。</p>
+    <p class="detail-upstream">上游状态：2026-10-29 核验</p>
+    <p class="detail-verify-note">该条目尚未通过上游核验，使用前先自行核对。</p>
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/public-apis/public-apis" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://publicapis.lol" target="_blank" rel="noopener">项目主页</a>
+    </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code># 拉取最新清单（README 即完整列表）
+curl -fsSL https://raw.githubusercontent.com/public-apis/public-apis/master/README.md -o public-apis.md
+
+# 列出所有分类
+grep &#x27;^### &#x27; public-apis.md
+
+# 只找无需认证的条目（Auth 列为 No，且支持 HTTPS）
+grep &#x27;| No | Yes |&#x27; public-apis.md | head -20
+
+# 或只克隆清单与校验脚本（不带历史）
+git clone --depth 1 https://github.com/public-apis/public-apis.git</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>Public APIs 免费 API 合集</h1>
+<blockquote>找免费公开 API 的第一站。上游：<a href="https://github.com/public-apis/public-apis" target="_blank" rel="noopener">public-apis/public-apis</a> · 许可证：MIT · 搜索站：<a href="https://publicapis.lol" target="_blank" rel="noopener">publicapis.lol</a></blockquote>
+<h2>这是什么</h2>
+<p>Public APIs 是持续维护了十年的免费 API 合集：社区手工整理，按领域分成 50+ 个分类（动物、金融、地理编码、机器学习、新闻、天气、安全等），当前约 2,400 条 API 条目（2026-11 核对）。每条记录四个关键字段：</p>
+<table><thead><tr><th>字段</th><th>含义</th></tr></thead><tbody><tr><td>Auth</td><td>是否需要 API Key / OAuth，<code>No</code> 表示可直接调用</td></tr><tr><td>HTTPS</td><td>是否支持 HTTPS</td></tr><tr><td>CORS</td><td>是否允许浏览器跨域调用（<code>Unknown</code> 需自行验证）</td></tr><tr><td>Description</td><td>一句话说明能拿到什么数据</td></tr></tbody></table>
+<p>除 README 主表外，还有给 AI Agent 用的 <strong>MCP Servers</strong> 表（列出 transport 与安装入口），以及官方搜索站 <a href="https://publicapis.lol" target="_blank" rel="noopener">publicapis.lol</a>：可按认证方式 / HTTPS / CORS 筛选、看「免 Key」专区、实时状态页与 API 索引自身提供的查询接口。星标近 50 万，是这一领域的默认清单；但它只做导航，不托管接口，也不为任何 API 的可用性背书。</p>
+<h2>怎么阅读</h2>
+<p>清单就是仓库根目录的 <code>README.md</code>；也可以在官方搜索站直接浏览。要离线查或让 Agent 读，拉一份到本地：</p>
+<pre><code class="lang-bash"># 拉取最新清单（README 即完整列表）
+curl -fsSL https://raw.githubusercontent.com/public-apis/public-apis/master/README.md -o public-apis.md
+
+# 列出所有分类
+grep &#x27;^### &#x27; public-apis.md
+
+# 只找无需认证的条目（Auth 列为 No，且支持 HTTPS）
+grep &#x27;| No | Yes |&#x27; public-apis.md | head -20
+
+# 或只克隆清单与校验脚本（不带历史）
+git clone --depth 1 https://github.com/public-apis/public-apis.git</code></pre>
+<h2>怎么用</h2>
+<p>1. 先看 Index 定位分类，或在 <a href="https://publicapis.lol/search" target="_blank" rel="noopener">publicapis.lol/search</a> 按关键词、认证方式过滤。 2. 在表里比较 Description 与 Auth / HTTPS / CORS，点进链接读官方文档，确认免费额度、限流、署名与商用条款。 3. 想让 Agent 用，把 <code>public-apis.md</code> 放进项目上下文，或从 MCP Servers 表挑一个可直接安装的 MCP 服务（按 transport 与 Install 列操作）。 4. 想贡献条目：按 <code>CONTRIBUTING.md</code> 的格式提 PR；仓库带 Python 校验脚本（<code>scripts/validate</code>、<code>scripts/tests</code>），适合批量核对链接与字段格式。</p>
+<h2>注意事项</h2>
+<ul><li><strong>索引会过期</strong>：社区手工维护，条目可能已下线、转为付费或缩减免费额度；Auth / HTTPS / CORS 也可能不准，接入前以官方文档为准。</li><li><strong>免费不等于无限制</strong>：多数接口仍有速率限制、注册 / Key、署名或非商用条款；部分条目是商业服务的免费档，README 顶部与个别条目含赞助内容。</li><li><strong>许可证边界</strong>：MIT 只覆盖清单文本与脚本，不覆盖各 API 的数据、商标与使用条款；商用前逐条确认。</li><li><strong>不做 SLA 背书</strong>：清单不保证任何接口的稳定性与合规性，生产接入要自己做可用性与合规评估。</li><li><strong>官网归属</strong>：publicapis.lol 由上游 README 标注为官方搜索站，站点内容（每日测试、状态页）也属第三方运营，结论仍以 API 官方文档为准。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-11-16 · 更新于 2026-11-16 · AstraCraft Program 轻量索引</p>
+</main>
+<script src="../assets/copy.js"></script>
+</body>
+</html>

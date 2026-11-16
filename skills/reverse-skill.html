@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>reverse-skill 安全技能路由包 · AstraCraft Program</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* 详情正文排版：复用设计令牌，与首页视觉保持一致 */
+  .detail-body { color: var(--text); font-size: 15px; line-height: 1.8; letter-spacing: -0.01em; }
+  .detail-body h2 { font-size: 22px; font-weight: 680; letter-spacing: -0.03em; margin: 28px 0 12px; }
+  .detail-body h3 { font-size: 18px; font-weight: 640; letter-spacing: -0.02em; margin: 22px 0 10px; }
+  .detail-body p { margin: 0 0 14px; color: rgba(15, 23, 42, 0.78); }
+  .detail-body ul, .detail-body ol { margin: 0 0 14px; padding-left: 22px; }
+  .detail-body li { margin: 4px 0; }
+  .detail-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .detail-body strong { font-weight: 680; }
+  .detail-body blockquote { margin: 0 0 14px; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 10px 10px 0; color: var(--muted); }
+  .detail-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  .detail-body pre { margin: 0 0 16px; padding: 16px 18px; background: #0b1220; border-radius: 12px; overflow: auto; }
+  .detail-body pre code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 13px; line-height: 1.7; color: #e8edf7; }
+  .detail-body code { font-family: "SF Mono", "IBM Plex Mono", "Menlo", monospace; font-size: 0.92em; background: rgba(15, 23, 42, 0.06); padding: 1px 6px; border-radius: 6px; color: #1d3fd8; }
+  .detail-meta { margin-top: 10px; }
+</style>
+</head>
+<body class="page-home">
+<main class="page-shell">
+  <header class="topbar">
+    <div class="brand-lockup">
+    <div class="brand-name">AstraCraft Program</div>
+    <div class="brand-sub">天工计划 · AI 开源项目中文索引</div>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="../index.html">浏览条目</a>
+      <a class="nav-link" href="https://github.com/AvalonLee/AstraCraft-Program" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero-shell">
+    <div class="eyebrow">研发与代码</div>
+    <div class="hero-copy-block">
+      <h1 class="hero-title">reverse-skill 安全技能路由包</h1>
+      <p class="hero-subtitle">reverse-skill — Cybersecurity Skills Router</p>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#body">阅读说明</a>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top:24px;">
+    <div class="mini-tags">
+      <span>研发与代码</span><span>常规</span><span class="lic-badge lic-open" title="MIT">完全开源</span><span>装进 Agent</span>
+    </div>
+    <p class="muted detail-meta">装给 AI 代码客户端的安全技能路由包：遇到 APK / 二进制 / 前端 JS 加密 / CTF / 渗透目标时，按 44 条规则路由到正确方法论与工具链（jadx、Frida、IDA、BurpSuite 等），带 175 例回归基准、按需自举工具链与自动进化经验库，支持 Claude Code / Codex / Cursor / Cline 等。</p>
+    <p class="detail-upstream">上游状态：43.7k stars · 2026-10-29 核验</p>
+    
+    <div class="link-row" style="margin-top:14px;">
+      <a class="button button-secondary" href="https://github.com/zhaoxuya520/reverse-skill" target="_blank" rel="noopener">查看仓库 / 源码</a>
+      <a class="button button-ghost" href="https://reverse.apivix.com/" target="_blank" rel="noopener">项目主页</a>
+    </div>
+    <div class="detail-quick"><p class="panel-label">上手命令</p><div class="detail-quick-row"><pre id="detail-quickstart-cmd"><code>git clone https://github.com/zhaoxuya520/reverse-skill.git
+
+# Windows
+powershell -File skills/scripts/refresh-tool-index.ps1
+# Linux / macOS
+bash skills/scripts/refresh-tool-index.sh
+# Kali Linux
+bash kali/scripts/refresh-tool-index.sh</code></pre><button class="install-copy" type="button" data-copy-target="detail-quickstart-cmd">复制</button></div></div>
+  </div>
+
+  <article id="body" class="content-panel detail-body" style="margin-top:24px;">
+<h1>reverse-skill 安全技能路由包</h1>
+<blockquote>让 AI 客户端接安全任务不再瞎猜命令：44 条路由规则 + 按需工具链 + 经验复用。上游：<a href="https://github.com/zhaoxuya520/reverse-skill" target="_blank" rel="noopener">zhaoxuya520/reverse-skill</a> · 许可证：MIT</blockquote>
+<h2>这是什么</h2>
+<p>一个装给 AI 代码客户端（Claude Code、Codex、Cursor、OpenCode、Cline、Kiro 等）的<strong>安全技能路由包</strong>（★43.7k）：当 Agent 遇到 APK、原生二进制、前端 JS 加密、CTF 题目或渗透测试目标时，按 44 条路由规则（R0–R45）把它导向正确的方法论、检查本机可用工具并执行可复现的工作流，而不是瞎猜命令。核心是一份结构化路由配置（PRIMARY 阶梯 + 全量矩阵），经 175 例回归基准与 Windows / Ubuntu 跨平台 CI 验证，与可选的客户端适配器分离；工具、MCP 与脚本按需自举，执行过程中的时间线、证据链（Evidence→Finding→Path）沉淀为经验库与现场日志供后续任务复用。</p>
+<h2>怎么安装</h2>
+<p>前置：Java / JDK（jadx、apktool）、Node.js ≥ 22.12、Python 3.x（Frida 与辅助脚本）按需安装。克隆后刷新工具索引：</p>
+<pre><code class="lang-bash">git clone https://github.com/zhaoxuya520/reverse-skill.git
+
+# Windows
+powershell -File skills/scripts/refresh-tool-index.ps1
+# Linux / macOS
+bash skills/scripts/refresh-tool-index.sh
+# Kali Linux
+bash kali/scripts/refresh-tool-index.sh</code></pre>
+<p>查看 <code>skills/tool-index.md</code> 确认识别到的工具；把仓库（或其中的 skills 目录）挂进所用客户端的技能 / 工作流配置即可，Agent 侧入口见上游 <code>README_AI.md</code>。</p>
+<h2>怎么用</h2>
+<p>把任务直接交给接好路由包的 Agent：先经 <code>case-init</code> 生成 <code>scope.md</code>（登记<strong>授权范围</strong>与网络档位），再走 <code>MASTER-ROUTING</code> / <code>master-route.ps1</code> 主路由选场景技能，按技能指引调用工具 / MCP / 脚本执行，最后产出时间线、证据链与报告并写入经验日志。快速上手与教程见<a href="https://reverse.apivix.com/docs/" target="_blank" rel="noopener">官方文档</a>。</p>
+<h2>注意事项</h2>
+<ul><li><strong>授权红线</strong>：仅限对已获授权的目标使用；工作流本身强制先登记授权范围（scope.md）才允许对目标实际操作——不要绕过这一步。</li><li><strong>平台与工具</strong>：路由核心以 PowerShell 为主，Windows 是主场（Ubuntu 有 CI 覆盖，Kali 有专门脚本）；方法论只做路由，工具链本身（IDA、BurpSuite 等商业工具）须自行合法取得。</li><li><strong>维护节奏</strong>：上游 2026-09-22 后暂无推送，版本 v1.0.1；路由规则与基准可自行扩展（结构化配置 + 回归测试护住质量）。</li></ul>
+  </article>
+
+  <p class="footer">收录于 2026-10-29 · 更新于 2026-10-29 · AstraCraft Program 轻量索引</p>
+</main>
+<script src="../assets/copy.js"></script>
+</body>
+</html>

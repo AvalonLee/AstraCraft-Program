@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "dataset_version": "261116m",
-  "generated_at": "2026-11-16T01:30:53Z",
-  "count": 134,
+  "generated_at": "2026-11-24T13:00:25Z",
+  "count": 135,
   "modes": [
     {
       "value": "install",
@@ -881,6 +881,51 @@
       "quickstart": "# 下载稳定版二进制（最新 release 为 1.0.4）\ncurl -L -o lightpanda https://github.com/lightpanda-io/browser/releases/latest/download/lightpanda-x86_64-linux\nchmod a+x ./lightpanda\n./lightpanda version\n\n# 或者 Homebrew / Docker\nbrew install lightpanda-io/browser/lightpanda\ndocker run -d --name lightpanda -p 127.0.0.1:9222:9222 lightpanda/browser:latest\n\n# 启动 CDP 服务\n./lightpanda serve --obey-robots --host 127.0.0.1 --port 9222",
       "detail_url": "skills/lightpanda.html",
       "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/lightpanda/ENTRY.md"
+    },
+    {
+      "id": "open-agent-api",
+      "name_zh": "Open Agent API 自托管智能体网关",
+      "name_en": "Open Agent API",
+      "summary_zh": "把本机已配置的编程智能体发布为 API。调用方用限定到指定智能体的密钥提交任务、查看进度、读取正文和文件；审批与调用权限可以分开。内置离线 ACP 示例，不用模型账号就能试一次完整调用。",
+      "summary_en": "A self-hosted gateway that exposes configured coding agents as an API, with scoped caller keys, run results, and separate approval authority.",
+      "category_dir": "agent-infra",
+      "category_name": "Agent 基础设施",
+      "mode": "deploy",
+      "mode_label": "部署运行",
+      "tags": [
+        "ai-agent",
+        "self-hosted",
+        "acp",
+        "mcp",
+        "api"
+      ],
+      "languages": [
+        "typescript",
+        "javascript"
+      ],
+      "doc_languages": [
+        "zh",
+        "en"
+      ],
+      "license": "Apache-2.0",
+      "license_bucket": "open",
+      "homepage": "https://openagentapi.pages.dev/",
+      "repo": "https://github.com/jiangxingfan1-coder/Open-Agent-API",
+      "tier": "standard",
+      "tier_label": "常规",
+      "featured": false,
+      "related": [],
+      "aliases": [],
+      "risk_notes": "",
+      "added_at": "2026-11-24",
+      "updated_at": "2026-11-24",
+      "verification_status": "unverified",
+      "health_score": null,
+      "stars": null,
+      "checked_at": null,
+      "quickstart": "git clone --depth 1 --branch v0.0.71 https://github.com/jiangxingfan1-coder/Open-Agent-API.git\ncd Open-Agent-API\nnpm ci\nnpm run build\ndemo=\"$(mktemp -d)\"\nnpm run oaa -- quickstart --dir \"$demo/gateway\" --port 19761",
+      "detail_url": "skills/open-agent-api.html",
+      "source_url": "https://raw.githubusercontent.com/AvalonLee/AstraCraft-Program/main/entries/agent-infra/open-agent-api/ENTRY.md"
     },
     {
       "id": "openmausbot",
